@@ -647,10 +647,10 @@
                 <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" opacity="0.8"/>
                 <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" opacity="0.8"/>
                 <circle cx="50" cy="50" r="8" fill="#4ECDC4"/>
-                <!-- Electron particles positioned on rings -->
-                <circle cx="30" cy="15" r="3" fill="#4ECDC4"/>
-                <circle cx="85" cy="65" r="3" fill="#FFA07A"/>
-                <circle cx="50" cy="38" r="3" fill="#BB8FCE"/>
+                <!-- Electron particles on orbital rings (positioned on ellipse path, then rotated with parent) -->
+                <circle cx="75" cy="56" r="3" fill="#4ECDC4" transform="rotate(-60 50 50)"/>
+                <circle cx="25" cy="56" r="3" fill="#FFA07A" transform="rotate(60 50 50)"/>
+                <circle cx="90" cy="50" r="3" fill="#BB8FCE"/>
               </svg>
               <span class="orbital-text">polarity</span>
             </div>
@@ -677,9 +677,9 @@
         </a>
 
         <!-- 360 Sound -->
-        <a href="https://youtube.com/playlist?list=PLDbiHgLJCldhYCkz-76FjazHXO06Egv-b" target="_blank" class="project-card">
-          <div class="project-thumbnail youtube-thumbnail">
-            <img src="https://img.youtube.com/vi/u9lKwQdgV4o/maxresdefault.jpg" alt="360 Sound" onerror="this.src='https://img.youtube.com/vi/u9lKwQdgV4o/hqdefault.jpg'">
+        <a href="https://youtube.com/playlist?list=PLDbiHgLJCldhYCkz-76FjazHXO06Egv-b" target="_blank" class="project-card" id="sound360-card">
+          <div class="project-thumbnail youtube-thumbnail" id="sound360-thumbnail">
+            <img src="https://img.youtube.com/vi/y8UAFTnbQvw/maxresdefault.jpg" alt="360 Sound" id="sound360-img" onerror="this.src='https://img.youtube.com/vi/y8UAFTnbQvw/hqdefault.jpg'">
             <div class="play-button"></div>
           </div>
           <div class="project-info">
@@ -802,75 +802,115 @@
       });
     }
 
-    // Fetch latest YouTube video
-    async function fetchLatestVideo() {
+    // Fetch latest YouTube videos for AVDP and 360 Sound
+    async function fetchLatestVideos() {
+      // AVDP - use channel RSS feed
+      fetchAVDPVideo();
+      // 360 Sound - use playlist
+      fetch360SoundVideo();
+    }
+
+    async function fetchAVDPVideo() {
       const channelId = 'UCEdsKG3TMPbJavCJvYyUCHA';
+      const fallbackVideoId = 'Px0B7Twse1k'; // AVDP Episode 1
       const thumbnail = document.getElementById('avdp-thumbnail');
       const img = document.getElementById('avdp-img');
-      const title = document.getElementById('avdp-title');
       const card = document.getElementById('avdp-card');
 
+      // Immediately set fallback to ensure thumbnail always shows
+      setVideoThumbnail(img, fallbackVideoId, thumbnail);
+      card.href = `https://www.youtube.com/watch?v=${fallbackVideoId}`;
+
+      // Then try to fetch the latest video in the background
       try {
-        // Using YouTube RSS feed via a CORS proxy or direct fetch
-        // For now, use a placeholder with channel thumbnail
-        // In production, you'd use YouTube Data API with your API key
-
-        // Fallback to channel art / latest video thumbnail pattern
-        const videoId = await getLatestVideoId(channelId);
-
-        if (videoId) {
-          img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-          img.style.display = 'block';
-          img.onerror = () => {
-            img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-          };
+        const videoId = await getLatestVideoFromChannel(channelId);
+        if (videoId && videoId !== fallbackVideoId) {
+          setVideoThumbnail(img, videoId, thumbnail);
           card.href = `https://www.youtube.com/watch?v=${videoId}`;
-
-          // Remove loading text
-          const loadingEl = thumbnail.querySelector('div:last-child');
-          if (loadingEl && loadingEl.textContent.includes('Loading')) {
-            loadingEl.style.display = 'none';
-          }
         }
       } catch (err) {
-        console.log('Could not fetch latest video:', err);
-        // Keep fallback to channel link
+        console.log('AVDP fetch failed, using fallback:', err);
       }
     }
 
-    async function getLatestVideoId(channelId) {
-      try {
-        // Try fetching channel RSS feed
-        const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+    async function fetch360SoundVideo() {
+      const playlistId = 'PLDbiHgLJCldhYCkz-76FjazHXO06Egv-b';
+      const fallbackVideoId = 'y8UAFTnbQvw'; // Current fallback
+      const img = document.getElementById('sound360-img');
+      const card = document.getElementById('sound360-card');
 
-        // Use a CORS proxy for client-side fetching
-        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
+      try {
+        const videoId = await getLatestVideoFromPlaylist(playlistId) || fallbackVideoId;
+        img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+        img.onerror = () => {
+          img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        };
+        card.href = `https://www.youtube.com/watch?v=${videoId}&list=${playlistId}`;
+      } catch (err) {
+        console.log('360 Sound fetch failed, keeping fallback:', err);
+      }
+    }
+
+    function setVideoThumbnail(img, videoId, container) {
+      img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+      img.style.display = 'block';
+      img.onerror = () => {
+        img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+      };
+      // Remove loading text if present
+      if (container) {
+        const loadingEl = container.querySelector('div:last-child');
+        if (loadingEl && loadingEl.textContent.includes('Loading')) {
+          loadingEl.style.display = 'none';
+        }
+      }
+    }
+
+    async function getLatestVideoFromChannel(channelId) {
+      try {
+        const rssUrl = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+        const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(rssUrl)}`;
 
         const response = await fetch(proxyUrl);
         const text = await response.text();
 
-        // Parse the RSS feed to get the latest video ID
         const parser = new DOMParser();
         const xml = parser.parseFromString(text, 'text/xml');
         const entries = xml.querySelectorAll('entry');
 
         if (entries.length > 0) {
-          const latestEntry = entries[0];
-          const videoIdEl = latestEntry.querySelector('yt\\:videoId, videoId');
-          if (videoIdEl) {
-            return videoIdEl.textContent;
-          }
+          const videoIdEl = entries[0].querySelector('yt\\:videoId, videoId');
+          if (videoIdEl) return videoIdEl.textContent;
         }
-
         return null;
       } catch (err) {
-        console.log('RSS fetch failed:', err);
+        console.log('Channel RSS fetch failed:', err);
+        return null;
+      }
+    }
+
+    async function getLatestVideoFromPlaylist(playlistId) {
+      try {
+        const playlistUrl = `https://www.youtube.com/playlist?list=${playlistId}`;
+        const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(playlistUrl)}`;
+
+        const response = await fetch(proxyUrl);
+        const text = await response.text();
+
+        // Extract first video ID from playlist page
+        const videoIdMatch = text.match(/\"videoId\":\"([a-zA-Z0-9_-]{11})\"/);
+        if (videoIdMatch && videoIdMatch[1]) {
+          return videoIdMatch[1];
+        }
+        return null;
+      } catch (err) {
+        console.log('Playlist fetch failed:', err);
         return null;
       }
     }
 
     // Initialize
-    fetchLatestVideo();
+    fetchLatestVideos();
 
     // Contact section functionality
     const contactExpanded = document.getElementById('contact-expanded');
