@@ -647,10 +647,14 @@
                 <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" opacity="0.8"/>
                 <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" opacity="0.8"/>
                 <circle cx="50" cy="50" r="8" fill="#4ECDC4"/>
-                <!-- Electron particles on orbital rings (positioned on ellipse path, then rotated with parent) -->
-                <circle cx="75" cy="56" r="3" fill="#4ECDC4" transform="rotate(-60 50 50)"/>
-                <circle cx="25" cy="56" r="3" fill="#FFA07A" transform="rotate(60 50 50)"/>
-                <circle cx="90" cy="50" r="3" fill="#BB8FCE"/>
+                <!-- Electron particles - grouped with their orbital ring using same transform -->
+                <g transform="rotate(-60 50 50)">
+                  <circle cx="90" cy="50" r="3" fill="#4ECDC4"/>
+                </g>
+                <g transform="rotate(60 50 50)">
+                  <circle cx="90" cy="50" r="3" fill="#FFA07A"/>
+                </g>
+                <circle cx="10" cy="50" r="3" fill="#BB8FCE"/>
               </svg>
               <span class="orbital-text">polarity</span>
             </div>
