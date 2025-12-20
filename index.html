@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#0A0A0A">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="description" content="Shadrack Annor - Developer, Researcher, Creative. Building at the intersection of AI, music, and mental health.">
+  <meta name="description" content="Theo Addo - Developer, Researcher, Creative. Building at the intersection of AI, music, and mental health.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Shadrack Annor</title>
+  <title>Theo Addo</title>
   <style>
     *, *::before, *::after {
       margin: 0;
@@ -243,6 +243,172 @@
     .project-card:nth-child(2) { animation-delay: 0.2s; }
     .project-card:nth-child(3) { animation-delay: 0.3s; }
 
+    /* Contact section styles */
+    .contact-trigger {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: clamp(36px, 8vw, 80px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 0.95;
+      opacity: 0.7;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+      padding: 0;
+    }
+
+    .contact-trigger:hover {
+      opacity: 1;
+    }
+
+    .footer-tagline.hidden {
+      opacity: 0;
+      pointer-events: none;
+      height: 0;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .contact-expanded {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.8s ease-out, opacity 0.5s;
+      opacity: 0;
+    }
+
+    .contact-expanded.active {
+      max-height: none;
+      opacity: 1;
+      margin-top: clamp(30px, 5vw, 50px);
+      margin-bottom: clamp(30px, 5vw, 50px);
+    }
+
+    .contact-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: clamp(30px, 4vw, 40px);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: row;
+      gap: clamp(20px, 3vw, 30px);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .contact-links-email {
+      display: flex;
+      gap: clamp(20px, 3vw, 30px);
+    }
+
+    .contact-links-social {
+      display: flex;
+      gap: clamp(20px, 3vw, 30px);
+    }
+
+    .contact-link {
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 14px;
+      opacity: 0.5;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+      padding: 8px 0;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .contact-link:hover {
+      opacity: 0.8;
+    }
+
+    .contact-link.active {
+      opacity: 1;
+      color: #4ECDC4;
+    }
+
+    .contact-link svg {
+      flex-shrink: 0;
+    }
+
+    .contact-description {
+      max-width: 600px;
+      text-align: left;
+    }
+
+    .contact-description .copied-toast {
+      font-size: 12px;
+      color: #4ECDC4;
+      margin-top: clamp(-10px, -1vw, -5px);
+      margin-bottom: clamp(30px, 4vw, 40px);
+      text-align: center;
+      opacity: 1;
+      max-height: 50px;
+      transition: opacity 0.5s ease-out, max-height 0.5s ease-out, margin 0.5s ease-out;
+    }
+
+    .contact-description .copied-toast.fade-out {
+      opacity: 0;
+      max-height: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      overflow: hidden;
+    }
+
+    /* Copy animation - cyan fill from left to right */
+    .contact-link.copying {
+      position: relative;
+      background: linear-gradient(to right, #4ECDC4 50%, transparent 50%);
+      background-size: 200% 100%;
+      background-position: 100% 0;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: copyFill 0.4s ease-out forwards;
+    }
+
+    @keyframes copyFill {
+      0% {
+        background-position: 100% 0;
+      }
+      100% {
+        background-position: 0% 0;
+      }
+    }
+
+    .contact-description p {
+      font-size: clamp(14px, 1.5vw, 15px);
+      line-height: 1.8;
+      opacity: 0.6;
+      font-weight: 300;
+      margin-bottom: 1em;
+    }
+
+    .contact-description p:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .contact-content {
+        gap: clamp(20px, 4vw, 30px);
+      }
+
+      .contact-links,
+      .contact-links-social {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
     .project-card:hover {
       transform: translateY(-8px);
       border-color: rgba(255,255,255,0.15);
@@ -364,8 +530,7 @@
     /* Footer section */
     .footer {
       text-align: center;
-      padding-top: clamp(40px, 6vw, 80px);
-      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: clamp(60px, 8vw, 100px);
     }
 
     .footer-tagline {
@@ -374,7 +539,7 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       opacity: 0.3;
-      margin-bottom: clamp(30px, 5vw, 60px);
+      margin-bottom: clamp(60px, 10vw, 120px);
     }
 
     .footer-links {
@@ -404,6 +569,7 @@
     .footer-copyright {
       font-size: 12px;
       opacity: 0.2;
+      margin-top: clamp(60px, 10vw, 120px);
     }
 
     /* Accent colors */
@@ -466,7 +632,7 @@
 
     <!-- Hero -->
     <section class="hero">
-      <h1>hi, i'm shadrack</h1>
+      <h1>hi, I'm theo</h1>
     </section>
 
     <!-- Projects -->
@@ -481,10 +647,10 @@
                 <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" opacity="0.8"/>
                 <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" opacity="0.8"/>
                 <circle cx="50" cy="50" r="8" fill="#4ECDC4"/>
-                <!-- Electron particles -->
-                <circle cx="70" cy="25" r="3" fill="#4ECDC4"/>
-                <circle cx="30" cy="25" r="3" fill="#FFA07A"/>
-                <circle cx="90" cy="50" r="3" fill="#BB8FCE"/>
+                <!-- Electron particles positioned on rings -->
+                <circle cx="30" cy="15" r="3" fill="#4ECDC4"/>
+                <circle cx="85" cy="65" r="3" fill="#FFA07A"/>
+                <circle cx="50" cy="38" r="3" fill="#BB8FCE"/>
               </svg>
               <span class="orbital-text">polarity</span>
             </div>
@@ -510,27 +676,6 @@
           </div>
         </a>
 
-        <!-- WaxFeed -->
-        <a href="https://wax-feed.com" target="_blank" class="project-card">
-          <div class="project-thumbnail" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); display: flex; align-items: center; justify-content: center;">
-            <div style="text-align: center;">
-              <div style="font-size: 48px; margin-bottom: 10px;">
-                <svg width="60" height="60" viewBox="0 0 100 100" fill="none">
-                  <circle cx="50" cy="50" r="45" stroke="#FFA07A" stroke-width="3" fill="none"/>
-                  <circle cx="50" cy="50" r="30" stroke="#FFA07A" stroke-width="2" fill="none" opacity="0.6"/>
-                  <circle cx="50" cy="50" r="15" stroke="#FFA07A" stroke-width="1.5" fill="none" opacity="0.4"/>
-                  <circle cx="50" cy="50" r="5" fill="#FFA07A"/>
-                </svg>
-              </div>
-              <span style="font-weight: 300; font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.5;">waxfeed</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>waxfeed</h3>
-            <p>letterboxd for albums - social music discovery platform</p>
-          </div>
-        </a>
-
         <!-- 360 Sound -->
         <a href="https://youtube.com/playlist?list=PLDbiHgLJCldhYCkz-76FjazHXO06Egv-b" target="_blank" class="project-card">
           <div class="project-thumbnail youtube-thumbnail">
@@ -547,31 +692,67 @@
 
     <!-- Footer -->
     <footer class="footer">
-      <p class="footer-tagline">your mountain is waiting.</p>
+      <p class="footer-tagline" id="footer-tagline">your mountain is waiting.</p>
 
       <div class="footer-links">
-        <a href="mailto:shadrack@brown.edu">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-          shadrack@brown.edu
-        </a>
-        <a href="https://github.com/sh6drack" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-          </svg>
-          github
-        </a>
-        <a href="https://www.linkedin.com/in/shadrack-annor-38a627235/" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-          </svg>
-          linkedin
-        </a>
+        <button class="contact-trigger" id="contact-trigger" onclick="toggleContact()">let's connect</button>
       </div>
 
-      <p class="footer-copyright">brown university '27 - cs & religious studies</p>
+      <!-- Expanded contact section -->
+      <div class="contact-expanded" id="contact-expanded">
+        <div class="contact-content">
+          <!-- Email contacts with descriptions -->
+          <div class="contact-links">
+            <button class="contact-link" data-contact="brown" data-email="theodore_addo@brown.edu" onclick="showContactInfo('brown')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18"/>
+                <path d="M5 21V7l7-4 7 4v14"/>
+                <path d="M9 21v-6h6v6"/>
+                <path d="M10 10h4"/>
+              </svg>
+              brown
+            </button>
+            <button class="contact-link" data-contact="wbru" data-email="rd@wbru.com" onclick="showContactInfo('wbru')">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              wbru
+            </button>
+            <button class="contact-link" data-contact="polarity" data-email="theo@polarity-lab.com" onclick="showContactInfo('polarity')">
+              <svg width="18" height="18" viewBox="0 0 100 100">
+                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="currentColor" stroke-width="6" transform="rotate(-60 50 50)" opacity="0.8"/>
+                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="currentColor" stroke-width="6" transform="rotate(60 50 50)" opacity="0.8"/>
+                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="currentColor" stroke-width="6" opacity="0.8"/>
+                <circle cx="50" cy="50" r="10" fill="currentColor"/>
+              </svg>
+              polarity
+            </button>
+          </div>
+
+          <!-- Description area -->
+          <div class="contact-description" id="contact-description">
+          </div>
+
+          <!-- Social links (separate) -->
+          <div class="contact-links-social">
+            <a class="contact-link" href="https://github.com/taiscoding" target="_blank">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              github
+            </a>
+            <a class="contact-link" href="https://www.linkedin.com/in/theo-addo/" target="_blank">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              linkedin
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <p class="footer-copyright">alpert medical school, brown university - md '26</p>
     </footer>
   </div>
 
@@ -592,10 +773,10 @@
 
         try {
           // Formspree endpoint - create yours at formspree.io
-          const response = await fetch('https://formspree.io/f/mrezbbwk', {
+          const response = await fetch('https://formspree.io/f/xnjanerr', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, source: 'shadrack-portfolio' })
+            body: JSON.stringify({ email, source: 'theo-portfolio' })
           });
 
           if (response.ok) {
@@ -690,6 +871,91 @@
 
     // Initialize
     fetchLatestVideo();
+
+    // Contact section functionality
+    const contactExpanded = document.getElementById('contact-expanded');
+    const contactDescription = document.getElementById('contact-description');
+    const contactLinks = document.querySelectorAll('.contact-link[data-contact]');
+    const contactPlaceholder = document.getElementById('contact-placeholder');
+    const contactContent = document.querySelector('.contact-content');
+
+    // Contact info content
+    const contactInfo = {
+      brown: {
+        description: `I grew up doing science experiments and fairs, but formal research started at UMBC in Rachel Brewster's developmental neurobiology lab, studying how zebrafish survive low oxygen environments. In 2020, I interned at MIT in Ed Boyden's lab, working on whole brain imaging and trying to link kin recognition behavior in zebrafish to actual molecular processes. That's what stuck with me: how do you bridge the gap between what you can observe and what's actually happening in the tissue?
+
+Ed pioneered expansion microscopy, but the limitation was invasiveness. That's the challenge of all brain research: the brain lives in a protective casing that intentionally separates it from the outside world. Most efforts fail because once you make contact, the person is no longer awake. Radiology became the answer to that question for me. It's the closest we have to studying the living brain non-invasively, a window into the body at a level we don't typically access while someone is still conscious and functioning.
+
+I'm applying for diagnostic radiology residency because I want to be at the intersection of what we can observe and what's actually happening in tissue. The human side informs my systems thinking, and I'm drawn to programs that value both technical precision and the ability to see the bigger picture. If you're interested in talking about radiology, residency, or how research shapes clinical thinking, reach out.`,
+        email: 'theodore_addo@brown.edu'
+      },
+      wbru: {
+        description: `When I joined WBRU this summer, I told them I wanted to do anything. I have a sharp ability to detect friction in a workplace, confront it, and design systems to solve it. I noticed immediately that WBRU had space to offer creatives but struggled with continuity: new students every semester, no one staying longer than four years.
+
+One semester in, I started AVDP (A Very Distant Perspective), a podcast with long-form conversations that documents the creative process, not just the finished product. I laid the groundwork for Pain Points, the artist-in-residence incubator where we bring artists into WBRU, give them space and resources to work, and use AVDP to share their progress with audiences. I advanced the 360 sound DJ sets, started hosting artist exhibits, recruited students, fostered connections with community DJs, and began creating infrastructure within the station again.
+
+The artist-in-residence program matters to me personally because it allows artists space to be fully themselves without worrying about cost. R&D and creativity are both about innovation, and I think the R&D role is essential for any creative space. Pushing the needle has always been the most important factor. If you're an artist interested in the residency program, want to be a guest on AVDP, or have a creative project you'd like to collaborate on, let's talk.`,
+        email: 'rd@wbru.com'
+      },
+      polarity: {
+        description: `The first time I built something that made me realize "oh, this works" was back when Polarity was running off paper and pencil. I had become suspicious of the way the brain connects information. I believed that information you engage with in relation to the same location or type of music is likely more closely related in the brain than information you don't, so I began keeping to-do and notes lists within every room in my home to see if patterns arose. It helped me get organized, but like all manual systems, it became too much to handle.
+
+Now Polarity listens, responds, and organizes what you say to engage with later. You talk to Polarity like you're thinking out loud. It captures what you say, organizes it into a knowledge graph (concepts, connections, tasks, ideas), and surfaces relevant information back when you need it. If you mention "zebrafish" today and "brain imaging" next week, Polarity connects them because they're part of the same conceptual territory. It's externalizing how the brain naturally organizes information so you can see the structure of your own thinking.
+
+Polarity feels effortless because to most accurately map the brain, it needs to feel like thoughts are just flowing. That conversational data reveals patterns in how the Default Mode Network organizes knowledge, which can eventually be correlated with actual brain imaging. The gap between internal understanding and external articulation closes when you can externalize cognitive patterns and see them. If you're interested in research collaboration, computational psychiatry, early access, or just want to talk about how we instrument cognition, reach out.`,
+        email: 'theo@polarity-lab.com'
+      }
+    };
+
+    function toggleContact() {
+      // Toggle the expanded section
+      contactExpanded.classList.toggle('active');
+
+      if (!contactExpanded.classList.contains('active')) {
+        // Reset active states when closing
+        contactLinks.forEach(link => link.classList.remove('active'));
+        contactDescription.innerHTML = '';
+      }
+    }
+
+    function showContactInfo(type) {
+      const info = contactInfo[type];
+      if (!info) return;
+
+      // Update active state, copy email, and trigger animation
+      contactLinks.forEach(link => {
+        if (link.dataset.contact === type) {
+          link.classList.add('active');
+
+          // Trigger copy animation
+          link.classList.remove('copying');
+          void link.offsetWidth; // Force reflow to restart animation
+          link.classList.add('copying');
+
+          // Copy email to clipboard
+          if (link.dataset.email) {
+            navigator.clipboard.writeText(link.dataset.email);
+          }
+        } else {
+          link.classList.remove('active');
+          link.classList.remove('copying');
+        }
+      });
+
+      // Update description with copied toast
+      contactDescription.innerHTML = `
+        <div class="copied-toast">${info.email} copied</div>
+        <p>${info.description}</p>
+      `;
+
+      // Fade out the toast after 2 seconds
+      setTimeout(() => {
+        const toast = contactDescription.querySelector('.copied-toast');
+        if (toast) {
+          toast.classList.add('fade-out');
+        }
+      }, 2000);
+    }
   </script>
 </body>
 </html>
