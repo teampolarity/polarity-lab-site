@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#0A0A0A">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="description" content="Theo Addo - Developer, Researcher, Creative. Building at the intersection of AI, music, and mental health.">
+  <meta name="description" content="Polarity Lab - Building at the intersection of AI, music, and creativity.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Theo Addo</title>
+  <title>Polarity Lab</title>
   <style>
     *, *::before, *::after {
       margin: 0;
@@ -19,20 +19,26 @@
     html {
       scroll-behavior: smooth;
       -webkit-tap-highlight-color: transparent;
+      scroll-snap-type: y proximity;
     }
 
     body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-weight: 500;
-      background: #0A0A0A;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      background: #1a1d21;
       color: #fff;
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      min-height: 100vh;
+      letter-spacing: -0.01em;
     }
 
-    /* Animated background particles - Polarity style */
+    /* Smooth section snapping */
+    section {
+      scroll-snap-align: start;
+    }
+
+    /* Foggy condensation background */
     .backdrop {
       position: fixed;
       top: 0;
@@ -41,6 +47,13 @@
       bottom: 0;
       pointer-events: none;
       z-index: 0;
+      background:
+        linear-gradient(180deg,
+          #1a1d21 0%,
+          #252a30 30%,
+          #2d3339 50%,
+          #3a4249 70%,
+          #252a30 100%);
     }
 
     .backdrop::before {
@@ -48,41 +61,23 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background-image:
-        radial-gradient(60px 60px at 88% 12%, rgba(78, 205, 196, 0.15) 0%, transparent 70%),
-        radial-gradient(100px 100px at 15% 25%, rgba(78, 205, 196, 0.08) 0%, transparent 70%),
-        radial-gradient(120px 120px at 75% 70%, rgba(255, 160, 122, 0.07) 0%, transparent 70%),
-        radial-gradient(90px 90px at 50% 50%, rgba(187, 143, 206, 0.06) 0%, transparent 70%),
-        radial-gradient(4px 4px at 15% 20%, #4ECDC4 0%, rgba(78, 205, 196, 0.4) 40%, transparent 70%),
-        radial-gradient(5px 5px at 88% 12%, #4ECDC4 0%, rgba(78, 205, 196, 0.5) 40%, transparent 70%),
-        radial-gradient(3px 3px at 45% 85%, #4ECDC4 0%, rgba(78, 205, 196, 0.4) 40%, transparent 70%),
-        radial-gradient(5px 5px at 75% 30%, #FFA07A 0%, rgba(255, 160, 122, 0.4) 40%, transparent 70%),
-        radial-gradient(4px 4px at 25% 70%, #FFA07A 0%, rgba(255, 160, 122, 0.4) 40%, transparent 70%),
-        radial-gradient(3px 3px at 90% 55%, #FFA07A 0%, rgba(255, 160, 122, 0.3) 40%, transparent 70%),
-        radial-gradient(4px 4px at 60% 45%, #BB8FCE 0%, rgba(187, 143, 206, 0.4) 40%, transparent 70%),
-        radial-gradient(5px 5px at 10% 60%, #BB8FCE 0%, rgba(187, 143, 206, 0.4) 40%, transparent 70%),
-        radial-gradient(3px 3px at 35% 35%, #BB8FCE 0%, rgba(187, 143, 206, 0.3) 40%, transparent 70%),
-        radial-gradient(2px 2px at 5% 15%, rgba(78, 205, 196, 0.7) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 12% 42%, rgba(255, 160, 122, 0.6) 0%, transparent 100%),
-        radial-gradient(2px 2px at 8% 78%, rgba(187, 143, 206, 0.6) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 22% 8%, rgba(78, 205, 196, 0.5) 0%, transparent 100%),
-        radial-gradient(2px 2px at 28% 55%, rgba(255, 160, 122, 0.5) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 35% 92%, rgba(187, 143, 206, 0.5) 0%, transparent 100%),
-        radial-gradient(2px 2px at 42% 18%, rgba(78, 205, 196, 0.6) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 55% 65%, rgba(255, 160, 122, 0.5) 0%, transparent 100%),
-        radial-gradient(2px 2px at 62% 5%, rgba(187, 143, 206, 0.6) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 68% 88%, rgba(78, 205, 196, 0.5) 0%, transparent 100%),
-        radial-gradient(2px 2px at 78% 38%, rgba(255, 160, 122, 0.6) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 85% 72%, rgba(187, 143, 206, 0.5) 0%, transparent 100%),
-        radial-gradient(2px 2px at 92% 25%, rgba(78, 205, 196, 0.6) 0%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 95% 95%, rgba(255, 160, 122, 0.5) 0%, transparent 100%);
-      animation: float 20s ease-in-out infinite;
+        radial-gradient(ellipse 80vw 50vh at 20% 20%, rgba(180, 190, 200, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 60vw 40vh at 80% 30%, rgba(160, 175, 190, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 70vw 45vh at 50% 70%, rgba(170, 180, 195, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse 50vw 35vh at 10% 80%, rgba(150, 165, 180, 0.05) 0%, transparent 50%),
+        radial-gradient(ellipse 55vw 38vh at 90% 75%, rgba(165, 175, 190, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 30vw 20vh at 30% 40%, rgba(200, 210, 220, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 25vw 18vh at 70% 55%, rgba(190, 200, 215, 0.035) 0%, transparent 60%),
+        radial-gradient(ellipse 35vw 22vh at 15% 60%, rgba(195, 205, 220, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse 28vw 19vh at 85% 45%, rgba(185, 195, 210, 0.035) 0%, transparent 60%);
+      animation: drift 30s ease-in-out infinite;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      25% { transform: translate(-10px, 10px) scale(1.02); }
-      50% { transform: translate(5px, -5px) scale(0.98); }
-      75% { transform: translate(10px, 5px) scale(1.01); }
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0) scale(1); opacity: 1; }
+      25% { transform: translate(-15px, 8px) scale(1.02); opacity: 0.95; }
+      50% { transform: translate(10px, -5px) scale(0.98); opacity: 1; }
+      75% { transform: translate(5px, 12px) scale(1.01); opacity: 0.97; }
     }
 
     .backdrop::after {
@@ -90,115 +85,55 @@
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
       background:
-        radial-gradient(ellipse 50vw 35vh at 20% 30%, rgba(78, 205, 196, 0.025) 0%, transparent 50%),
-        radial-gradient(ellipse 40vw 28vh at 80% 65%, rgba(255, 160, 122, 0.02) 0%, transparent 50%),
-        radial-gradient(ellipse 45vw 30vh at 50% 80%, rgba(187, 143, 206, 0.02) 0%, transparent 50%);
+        radial-gradient(circle 3px at 15% 25%, rgba(255, 255, 255, 0.08) 0%, transparent 100%),
+        radial-gradient(circle 2px at 25% 15%, rgba(255, 255, 255, 0.06) 0%, transparent 100%),
+        radial-gradient(circle 4px at 40% 35%, rgba(255, 255, 255, 0.05) 0%, transparent 100%),
+        radial-gradient(circle 2px at 55% 20%, rgba(255, 255, 255, 0.07) 0%, transparent 100%),
+        radial-gradient(circle 3px at 70% 40%, rgba(255, 255, 255, 0.06) 0%, transparent 100%),
+        radial-gradient(circle 2px at 85% 30%, rgba(255, 255, 255, 0.05) 0%, transparent 100%),
+        radial-gradient(circle 3px at 20% 60%, rgba(255, 255, 255, 0.06) 0%, transparent 100%),
+        radial-gradient(circle 2px at 45% 70%, rgba(255, 255, 255, 0.07) 0%, transparent 100%),
+        radial-gradient(circle 4px at 65% 55%, rgba(255, 255, 255, 0.05) 0%, transparent 100%),
+        radial-gradient(circle 2px at 80% 65%, rgba(255, 255, 255, 0.06) 0%, transparent 100%),
+        radial-gradient(circle 3px at 30% 85%, rgba(255, 255, 255, 0.05) 0%, transparent 100%),
+        radial-gradient(circle 2px at 60% 80%, rgba(255, 255, 255, 0.07) 0%, transparent 100%),
+        radial-gradient(circle 3px at 90% 85%, rgba(255, 255, 255, 0.06) 0%, transparent 100%),
+        radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(20, 25, 30, 0.4) 100%);
+      animation: shimmer 25s ease-in-out infinite;
     }
 
-    /* Main content */
-    .container {
+    @keyframes shimmer {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.85; }
+    }
+
+    /* ============================================
+       SECTION 1: FULL-PAGE HERO
+       ============================================ */
+    .hero-section {
       position: relative;
       z-index: 1;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: clamp(40px, 8vw, 100px) clamp(20px, 5vw, 60px);
-    }
-
-    /* Navigation / Header */
-    .header {
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: clamp(60px, 10vw, 120px);
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    .newsletter-form {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .newsletter-form span {
-      font-size: 14px;
-      opacity: 0.5;
-      font-weight: 300;
-    }
-
-    .newsletter-form input {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px;
-      padding: 10px 16px;
-      font-size: 14px;
-      color: #fff;
-      font-family: inherit;
-      width: 200px;
-      outline: none;
-      transition: all 0.3s;
-    }
-
-    .newsletter-form input:focus {
-      border-color: #4ECDC4;
-      box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.1);
-    }
-
-    .newsletter-form input::placeholder {
-      color: rgba(255,255,255,0.3);
-    }
-
-    .newsletter-form button {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      border-radius: 8px;
-      padding: 10px;
-      width: 40px;
-      height: 40px;
-      color: #fff;
-      cursor: pointer;
-      transition: all 0.3s;
-      display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-    }
-
-    .newsletter-form button:hover {
-      background: rgba(255,255,255,0.15);
-      border-color: rgba(255,255,255,0.3);
-    }
-
-    @media (max-width: 600px) {
-      .newsletter-form {
-        width: 100%;
-      }
-      .newsletter-form span {
-        width: 100%;
-        text-align: center;
-      }
-      .newsletter-form input {
-        flex: 1;
-        min-width: 0;
-      }
-    }
-
-    /* Hero section */
-    .hero {
-      margin-bottom: clamp(80px, 12vw, 160px);
       text-align: center;
+      padding: clamp(40px, 8vw, 80px);
     }
 
-    .hero h1 {
-      font-weight: 700;
-      font-size: clamp(36px, 8vw, 80px);
-      letter-spacing: -0.02em;
-      line-height: 0.95;
-      margin-bottom: 20px;
+    .hero-title {
+      font-weight: 500;
+      font-size: clamp(42px, 8vw, 80px);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
       opacity: 0;
       transform: translateY(30px);
-      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+      background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.7) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     @keyframes fadeUp {
@@ -208,216 +143,107 @@
       }
     }
 
-    /* Projects grid */
+    /* ============================================
+       SECTION 2: PROJECTS
+       ============================================ */
     .projects-section {
-      margin-bottom: clamp(80px, 12vw, 160px);
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 64px;
+      box-sizing: border-box;
+    }
+
+    .projects-wrapper {
+      max-width: 1000px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+
+    .section-heading {
+      font-weight: 500;
+      font-size: clamp(20px, 2.5vw, 28px);
+      letter-spacing: -0.02em;
+      opacity: 0.9;
+      text-align: center;
+      margin: 0;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: clamp(20px, 3vw, 40px);
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      width: 100%;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1100px) {
+      .projects-section {
+        padding: 40px 48px;
+      }
+      .projects-grid {
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .projects-section {
+        height: auto;
+        min-height: 100vh;
+        padding: 60px 32px;
+      }
+
+      .projects-wrapper {
+        height: auto;
+      }
+
       .projects-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
       }
     }
 
     .project-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
       overflow: hidden;
-      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       text-decoration: none;
       color: inherit;
       display: block;
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
     }
 
-    .project-card:nth-child(1) { animation-delay: 0.1s; }
-    .project-card:nth-child(2) { animation-delay: 0.2s; }
-    .project-card:nth-child(3) { animation-delay: 0.3s; }
-
-    /* Contact section styles */
-    .contact-trigger {
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: clamp(36px, 8vw, 80px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 0.95;
-      opacity: 0.7;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-family: inherit;
-      padding: 0;
-    }
-
-    .contact-trigger:hover {
+    .project-card.visible {
       opacity: 1;
+      transform: translateY(0);
     }
 
-    .footer-tagline.hidden {
-      opacity: 0;
-      pointer-events: none;
-      height: 0;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
-
-    .contact-expanded {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.8s ease-out, opacity 0.5s;
-      opacity: 0;
-    }
-
-    .contact-expanded.active {
-      max-height: none;
-      opacity: 1;
-      margin-top: clamp(30px, 5vw, 50px);
-      margin-bottom: clamp(30px, 5vw, 50px);
-    }
-
-    .contact-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: clamp(30px, 4vw, 40px);
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: row;
-      gap: clamp(20px, 3vw, 30px);
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .contact-links-email {
-      display: flex;
-      gap: clamp(20px, 3vw, 30px);
-    }
-
-    .contact-links-social {
-      display: flex;
-      gap: clamp(20px, 3vw, 30px);
-    }
-
-    .contact-link {
-      background: transparent;
-      border: none;
-      color: #fff;
-      font-size: 14px;
-      opacity: 0.5;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-family: inherit;
-      padding: 8px 0;
-      text-align: left;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .contact-link:hover {
-      opacity: 0.8;
-    }
-
-    .contact-link.active {
-      opacity: 1;
-      color: #4ECDC4;
-    }
-
-    .contact-link svg {
-      flex-shrink: 0;
-    }
-
-    .contact-description {
-      max-width: 600px;
-      text-align: left;
-    }
-
-    .contact-description .copied-toast {
-      font-size: 12px;
-      color: #4ECDC4;
-      margin-top: clamp(-10px, -1vw, -5px);
-      margin-bottom: clamp(30px, 4vw, 40px);
-      text-align: center;
-      opacity: 1;
-      max-height: 50px;
-      transition: opacity 0.5s ease-out, max-height 0.5s ease-out, margin 0.5s ease-out;
-    }
-
-    .contact-description .copied-toast.fade-out {
-      opacity: 0;
-      max-height: 0;
-      margin-top: 0;
-      margin-bottom: 0;
-      overflow: hidden;
-    }
-
-    /* Copy animation - cyan fill from left to right */
-    .contact-link.copying {
-      position: relative;
-      background: linear-gradient(to right, #4ECDC4 50%, transparent 50%);
-      background-size: 200% 100%;
-      background-position: 100% 0;
-      -webkit-background-clip: text;
-      background-clip: text;
-      animation: copyFill 0.4s ease-out forwards;
-    }
-
-    @keyframes copyFill {
-      0% {
-        background-position: 100% 0;
-      }
-      100% {
-        background-position: 0% 0;
-      }
-    }
-
-    .contact-description p {
-      font-size: clamp(14px, 1.5vw, 15px);
-      line-height: 1.8;
-      opacity: 0.6;
-      font-weight: 300;
-      margin-bottom: 1em;
-    }
-
-    .contact-description p:last-child {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 768px) {
-      .contact-content {
-        gap: clamp(20px, 4vw, 30px);
-      }
-
-      .contact-links,
-      .contact-links-social {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-    }
+    .project-card:nth-child(1) { transition-delay: 0.05s; }
+    .project-card:nth-child(2) { transition-delay: 0.1s; }
+    .project-card:nth-child(3) { transition-delay: 0.15s; }
 
     .project-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(255,255,255,0.15);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
     }
 
     .project-thumbnail {
-      aspect-ratio: 16/10;
-      background: #111;
+      aspect-ratio: 4/3;
+      background: rgba(0, 0, 0, 0.3);
       position: relative;
       overflow: hidden;
     }
@@ -429,11 +255,6 @@
       object-fit: cover;
     }
 
-    .project-thumbnail iframe {
-      pointer-events: none;
-    }
-
-    /* Polarity card special styling */
     .project-card.polarity .project-thumbnail {
       display: flex;
       align-items: center;
@@ -463,31 +284,33 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-weight: 300;
-      font-size: 14px;
-      letter-spacing: 0.3em;
+      font-weight: 400;
+      font-size: 12px;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      opacity: 0.6;
+      opacity: 0.5;
     }
 
     .project-info {
-      padding: clamp(20px, 3vw, 30px);
+      padding: clamp(16px, 2.5vw, 22px);
     }
 
     .project-info h3 {
-      font-weight: 700;
-      font-size: clamp(18px, 2vw, 22px);
-      margin-bottom: 8px;
+      font-weight: 500;
+      font-size: clamp(15px, 1.5vw, 17px);
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
     }
 
     .project-info p {
-      font-weight: 300;
-      font-size: 14px;
+      font-weight: 400;
+      font-size: 13px;
       opacity: 0.5;
-      line-height: 1.5;
+      line-height: 1.4;
+      letter-spacing: -0.005em;
     }
 
-    /* YouTube embed styling */
+    /* YouTube thumbnail styling */
     .youtube-thumbnail {
       position: relative;
       cursor: pointer;
@@ -504,105 +327,330 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 68px;
-      height: 48px;
-      background: #ff0000;
-      border-radius: 12px;
+      width: 56px;
+      height: 40px;
+      background: rgba(255, 0, 0, 0.9);
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .play-button::after {
       content: '';
       border-style: solid;
-      border-width: 10px 0 10px 18px;
+      border-width: 8px 0 8px 14px;
       border-color: transparent transparent transparent #fff;
-      margin-left: 4px;
+      margin-left: 3px;
     }
 
     .project-card:hover .play-button {
-      background: #cc0000;
-      transform: translate(-50%, -50%) scale(1.1);
+      background: rgba(255, 0, 0, 1);
+      transform: translate(-50%, -50%) scale(1.05);
     }
 
-    /* Footer section */
-    .footer {
+    /* ============================================
+       SECTION 3: CONTACT/FOOTER
+       ============================================ */
+    .contact-section {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding-top: clamp(60px, 8vw, 100px);
+      padding: clamp(80px, 12vh, 140px) clamp(40px, 8vw, 120px);
+    }
+
+    .contact-wrapper {
+      max-width: 480px;
+      width: 100%;
     }
 
     .footer-tagline {
-      font-weight: 200;
-      font-size: clamp(14px, 2vw, 18px);
-      letter-spacing: 0.2em;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      opacity: 0.3;
-      margin-bottom: clamp(60px, 10vw, 120px);
+      opacity: 0.25;
+      margin-bottom: 48px;
     }
 
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: clamp(20px, 4vw, 50px);
-      flex-wrap: wrap;
-      margin-bottom: clamp(30px, 5vw, 60px);
-    }
-
-    .footer-links a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      opacity: 0.5;
-      transition: all 0.3s;
+    .newsletter-form {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 12px;
     }
 
-    .footer-links a:hover {
-      opacity: 1;
-      color: #4ECDC4;
+    .newsletter-form span {
+      font-size: 13px;
+      opacity: 0.4;
+      font-weight: 400;
+      letter-spacing: -0.01em;
     }
 
-    .footer-copyright {
-      font-size: 12px;
-      opacity: 0.2;
-      margin-top: clamp(60px, 10vw, 120px);
+    .newsletter-form input {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-size: 14px;
+      color: #fff;
+      font-family: inherit;
+      width: 200px;
+      outline: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Accent colors */
-    .teal { color: #4ECDC4; }
-    .coral { color: #FFA07A; }
-    .purple { color: #BB8FCE; }
+    .newsletter-form input:focus {
+      border-color: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.06);
+    }
 
-    /* Form message */
+    .newsletter-form input::placeholder {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .newsletter-form button {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 11px;
+      width: 42px;
+      height: 42px;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .newsletter-form button:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
     .form-message {
       font-size: 12px;
-      margin-top: 8px;
+      margin-bottom: 64px;
+      min-height: 16px;
       opacity: 0;
       transition: opacity 0.3s;
+      font-weight: 400;
     }
 
     .form-message.visible {
       opacity: 1;
     }
 
+    .contact-trigger {
+      color: #fff;
+      font-size: clamp(24px, 4vw, 32px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      opacity: 0.9;
+      margin-bottom: 28px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: clamp(32px, 6vw, 56px);
+      margin-bottom: 0;
+    }
+
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      opacity: 0.4;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 400;
+    }
+
+    .footer-links a:hover {
+      opacity: 0.8;
+    }
+
+    .footer-links a svg {
+      width: 18px;
+      height: 18px;
+      opacity: 0.7;
+    }
+
+    .footer-copyright {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      opacity: 0.15;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
     /* Responsive */
     @media (max-width: 600px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
       .newsletter-form {
-        width: 100%;
+        flex-direction: column;
+        gap: 12px;
       }
-
+      .newsletter-form span {
+        margin-bottom: 4px;
+      }
+      .newsletter-form .input-group {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        max-width: 280px;
+      }
       .newsletter-form input {
         flex: 1;
         min-width: 0;
+      }
+      .contact-section {
+        padding-bottom: 80px;
+      }
+    }
+
+    /* Global Scroll Navigation - Smart contextual buttons */
+    .scroll-nav {
+      position: fixed;
+      bottom: 32px;
+      z-index: 50;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .scroll-nav.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .scroll-nav.left {
+      left: 24px;
+      transform: translateX(-20px);
+    }
+
+    .scroll-nav.left.visible {
+      transform: translateX(0);
+    }
+
+    .scroll-nav.right {
+      right: 24px;
+      transform: translateX(20px);
+    }
+
+    .scroll-nav.right.visible {
+      transform: translateX(0);
+    }
+
+    .scroll-nav-btn {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .scroll-nav-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .scroll-nav.left:hover .scroll-nav-btn {
+      transform: scale(1.05) translateY(-3px);
+    }
+
+    .scroll-nav.right:hover .scroll-nav-btn {
+      transform: scale(1.05) translateY(3px);
+    }
+
+    .scroll-nav-btn:active {
+      transform: scale(0.95);
+    }
+
+    .scroll-nav-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .scroll-nav-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      transition: color 0.3s;
+    }
+
+    .scroll-nav:hover .scroll-nav-label {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Arrow bounce animation */
+    @keyframes bounceUp {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-2px); }
+    }
+
+    @keyframes bounceDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(2px); }
+    }
+
+    .scroll-nav.left .scroll-nav-btn svg {
+      animation: bounceUp 2s ease-in-out infinite;
+    }
+
+    .scroll-nav.right .scroll-nav-btn svg {
+      animation: bounceDown 2s ease-in-out infinite;
+    }
+
+    @media (max-width: 600px) {
+      .scroll-nav {
+        bottom: 20px;
+      }
+      .scroll-nav.left {
+        left: 16px;
+      }
+      .scroll-nav.right {
+        right: 16px;
+      }
+      .scroll-nav-btn {
+        width: 56px;
+        height: 56px;
+      }
+      .scroll-nav-btn svg {
+        width: 20px;
+        height: 20px;
+      }
+      .scroll-nav-label {
+        font-size: 9px;
       }
     }
 
@@ -619,24 +667,34 @@
 <body>
   <div class="backdrop"></div>
 
-  <div class="container">
-    <!-- Header with newsletter -->
-    <header class="header">
-      <form class="newsletter-form" id="newsletter-form">
-        <span>stay updated with my journey</span>
-        <input type="email" name="email" placeholder="enter your email" required>
-        <button type="submit" aria-label="Subscribe"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-      </form>
-      <p id="newsletter-message" class="form-message"></p>
-    </header>
+  <!-- Global Scroll Navigation -->
+  <div class="scroll-nav left" id="scroll-up">
+    <div class="scroll-nav-btn" role="button" tabindex="0" aria-label="Scroll to top">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
+      </svg>
+    </div>
+    <span class="scroll-nav-label">Back to Top</span>
+  </div>
 
-    <!-- Hero -->
-    <section class="hero">
-      <h1>hi, I'm theo</h1>
-    </section>
+  <div class="scroll-nav right" id="scroll-down">
+    <span class="scroll-nav-label">Scroll Down</span>
+    <div class="scroll-nav-btn" role="button" tabindex="0" aria-label="Scroll down">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
+      </svg>
+    </div>
+  </div>
 
-    <!-- Projects -->
-    <section class="projects-section">
+  <!-- SECTION 1: Full-page Hero -->
+  <section class="hero-section" id="hero">
+    <h1 class="hero-title">Welcome to Polarity Lab<sup style="font-size: 0.3em; position: relative; top: -0.6em; opacity: 0.7;">©</sup></h1>
+  </section>
+
+  <!-- SECTION 2: Projects -->
+  <section class="projects-section" id="projects">
+    <div class="projects-wrapper">
+      <h2 class="section-heading">Polarity Projects</h2>
       <div class="projects-grid">
         <!-- Polarity -->
         <a href="https://www.polarity-lab.com/" target="_blank" class="project-card polarity">
@@ -647,7 +705,6 @@
                 <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" opacity="0.8"/>
                 <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" opacity="0.8"/>
                 <circle cx="50" cy="50" r="8" fill="#4ECDC4"/>
-                <!-- Electron particles - grouped with their orbital ring using same transform -->
                 <g transform="rotate(-60 50 50)">
                   <circle cx="90" cy="50" r="3" fill="#4ECDC4"/>
                 </g>
@@ -680,87 +737,77 @@
           </div>
         </a>
 
-        <!-- 360 Sound -->
-        <a href="https://youtube.com/playlist?list=PLDbiHgLJCldhYCkz-76FjazHXO06Egv-b" target="_blank" class="project-card" id="sound360-card">
-          <div class="project-thumbnail youtube-thumbnail" id="sound360-thumbnail">
-            <img src="https://img.youtube.com/vi/y8UAFTnbQvw/maxresdefault.jpg" alt="360 Sound" id="sound360-img" onerror="this.src='https://img.youtube.com/vi/y8UAFTnbQvw/hqdefault.jpg'">
-            <div class="play-button"></div>
+        <!-- WaxFeed -->
+        <a href="https://wax-feed.com" target="_blank" class="project-card" id="waxfeed-card">
+          <div class="project-thumbnail" style="display: flex; align-items: center; justify-content: center; background: #0A0A0A;">
+            <img src="waxfeed-logo-512-dark.png" alt="WaxFeed" style="max-width: 200px; max-height: 150px; object-fit: contain;">
           </div>
           <div class="project-info">
-            <h3>360 sound</h3>
-            <p>live DJ sets from scenic locations across providence</p>
+            <h3>waxfeed</h3>
+            <p>discover and share vinyl records with collectors worldwide</p>
           </div>
         </a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-      <p class="footer-tagline" id="footer-tagline">your mountain is waiting.</p>
+  <!-- SECTION 3: Contact -->
+  <section class="contact-section" id="contact">
+    <div class="contact-wrapper">
+      <p class="footer-tagline">your mountain is waiting.</p>
+
+      <form class="newsletter-form" id="newsletter-form">
+        <span>stay updated</span>
+        <input type="email" name="email" placeholder="enter your email" required>
+        <button type="submit" aria-label="Subscribe">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+      <p id="newsletter-message" class="form-message"></p>
+
+      <p class="contact-trigger">let's connect</p>
 
       <div class="footer-links">
-        <button class="contact-trigger" id="contact-trigger" onclick="toggleContact()">let's connect</button>
+        <a href="mailto:theo@polarity-lab.com">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          email
+        </a>
+        <a href="https://www.linkedin.com/company/polarity-lab/" target="_blank">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+          linkedin
+        </a>
       </div>
 
-      <!-- Expanded contact section -->
-      <div class="contact-expanded" id="contact-expanded">
-        <div class="contact-content">
-          <!-- Email contacts with descriptions -->
-          <div class="contact-links">
-            <button class="contact-link" data-contact="brown" data-email="theodore_addo@brown.edu" onclick="showContactInfo('brown')">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 21h18"/>
-                <path d="M5 21V7l7-4 7 4v14"/>
-                <path d="M9 21v-6h6v6"/>
-                <path d="M10 10h4"/>
-              </svg>
-              brown
-            </button>
-            <button class="contact-link" data-contact="wbru" data-email="rd@wbru.com" onclick="showContactInfo('wbru')">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <circle cx="12" cy="12" r="3"/>
-              </svg>
-              wbru
-            </button>
-            <button class="contact-link" data-contact="polarity" data-email="theo@polarity-lab.com" onclick="showContactInfo('polarity')">
-              <svg width="18" height="18" viewBox="0 0 100 100">
-                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="currentColor" stroke-width="6" transform="rotate(-60 50 50)" opacity="0.8"/>
-                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="currentColor" stroke-width="6" transform="rotate(60 50 50)" opacity="0.8"/>
-                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="currentColor" stroke-width="6" opacity="0.8"/>
-                <circle cx="50" cy="50" r="10" fill="currentColor"/>
-              </svg>
-              polarity
-            </button>
-          </div>
-
-          <!-- Description area -->
-          <div class="contact-description" id="contact-description">
-          </div>
-
-          <!-- Social links (separate) -->
-          <div class="contact-links-social">
-            <a class="contact-link" href="https://github.com/taiscoding" target="_blank">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-              github
-            </a>
-            <a class="contact-link" href="https://www.linkedin.com/in/theo-addo/" target="_blank">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-              </svg>
-              linkedin
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <p class="footer-copyright">alpert medical school, brown university - md '26</p>
-    </footer>
-  </div>
+      <p class="footer-copyright">© 2025 Polarity Lab</p>
+    </div>
+  </section>
 
   <script>
+    // Scroll-triggered animations for project cards
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.project-card').forEach(card => {
+      observer.observe(card);
+    });
+
     // Newsletter form handler
     const newsletterForm = document.getElementById('newsletter-form');
     const newsletterMessage = document.getElementById('newsletter-message');
@@ -770,17 +817,14 @@
         e.preventDefault();
         const email = newsletterForm.email.value;
         const button = newsletterForm.querySelector('button');
-        const originalText = button.textContent;
 
-        button.textContent = '...';
         button.disabled = true;
 
         try {
-          // Formspree endpoint - create yours at formspree.io
-          const response = await fetch('https://formspree.io/f/xnjanerr', {
+          const response = await fetch('https://formspree.io/f/xblvelep', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, source: 'theo-portfolio' })
+            body: JSON.stringify({ email, source: 'polarity-lab' })
           });
 
           if (response.ok) {
@@ -797,7 +841,6 @@
           newsletterMessage.classList.add('visible');
         }
 
-        button.textContent = originalText;
         button.disabled = false;
 
         setTimeout(() => {
@@ -806,26 +849,21 @@
       });
     }
 
-    // Fetch latest YouTube videos for AVDP and 360 Sound
+    // Fetch latest YouTube video for AVDP
     async function fetchLatestVideos() {
-      // AVDP - use channel RSS feed
       fetchAVDPVideo();
-      // 360 Sound - use playlist
-      fetch360SoundVideo();
     }
 
     async function fetchAVDPVideo() {
       const channelId = 'UCEdsKG3TMPbJavCJvYyUCHA';
-      const fallbackVideoId = 'Px0B7Twse1k'; // AVDP Episode 1
+      const fallbackVideoId = 'Px0B7Twse1k';
       const thumbnail = document.getElementById('avdp-thumbnail');
       const img = document.getElementById('avdp-img');
       const card = document.getElementById('avdp-card');
 
-      // Immediately set fallback to ensure thumbnail always shows
       setVideoThumbnail(img, fallbackVideoId, thumbnail);
       card.href = `https://www.youtube.com/watch?v=${fallbackVideoId}`;
 
-      // Then try to fetch the latest video in the background
       try {
         const videoId = await getLatestVideoFromChannel(channelId);
         if (videoId && videoId !== fallbackVideoId) {
@@ -837,31 +875,12 @@
       }
     }
 
-    async function fetch360SoundVideo() {
-      const playlistId = 'PLDbiHgLJCldhYCkz-76FjazHXO06Egv-b';
-      const fallbackVideoId = 'y8UAFTnbQvw'; // Current fallback
-      const img = document.getElementById('sound360-img');
-      const card = document.getElementById('sound360-card');
-
-      try {
-        const videoId = await getLatestVideoFromPlaylist(playlistId) || fallbackVideoId;
-        img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
-        img.onerror = () => {
-          img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-        };
-        card.href = `https://www.youtube.com/watch?v=${videoId}&list=${playlistId}`;
-      } catch (err) {
-        console.log('360 Sound fetch failed, keeping fallback:', err);
-      }
-    }
-
     function setVideoThumbnail(img, videoId, container) {
       img.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
       img.style.display = 'block';
       img.onerror = () => {
         img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
       };
-      // Remove loading text if present
       if (container) {
         const loadingEl = container.querySelector('div:last-child');
         if (loadingEl && loadingEl.textContent.includes('Loading')) {
@@ -893,113 +912,99 @@
       }
     }
 
-    async function getLatestVideoFromPlaylist(playlistId) {
-      try {
-        const playlistUrl = `https://www.youtube.com/playlist?list=${playlistId}`;
-        const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(playlistUrl)}`;
-
-        const response = await fetch(proxyUrl);
-        const text = await response.text();
-
-        // Extract first video ID from playlist page
-        const videoIdMatch = text.match(/\"videoId\":\"([a-zA-Z0-9_-]{11})\"/);
-        if (videoIdMatch && videoIdMatch[1]) {
-          return videoIdMatch[1];
-        }
-        return null;
-      } catch (err) {
-        console.log('Playlist fetch failed:', err);
-        return null;
-      }
-    }
-
     // Initialize
     fetchLatestVideos();
 
-    // Contact section functionality
-    const contactExpanded = document.getElementById('contact-expanded');
-    const contactDescription = document.getElementById('contact-description');
-    const contactLinks = document.querySelectorAll('.contact-link[data-contact]');
-    const contactPlaceholder = document.getElementById('contact-placeholder');
-    const contactContent = document.querySelector('.contact-content');
+    // Contextual Scroll Navigation - Smart up/down buttons
+    (function() {
+      const scrollUpNav = document.getElementById('scroll-up');
+      const scrollDownNav = document.getElementById('scroll-down');
+      let showUp = false;
+      let showDown = true;
 
-    // Contact info content
-    const contactInfo = {
-      brown: {
-        description: `I grew up doing science experiments and fairs, but formal research started at UMBC in Rachel Brewster's developmental neurobiology lab, studying how zebrafish survive low oxygen environments. In 2020, I interned at MIT in Ed Boyden's lab, working on whole brain imaging and trying to link kin recognition behavior in zebrafish to actual molecular processes. That's what stuck with me: how do you bridge the gap between what you can observe and what's actually happening in the tissue?
+      function handleScroll() {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
 
-Ed pioneered expansion microscopy, but the limitation was invasiveness. That's the challenge of all brain research: the brain lives in a protective casing that intentionally separates it from the outside world. Most efforts fail because once you make contact, the person is no longer awake. Radiology became the answer to that question for me. It's the closest we have to studying the living brain non-invasively, a window into the body at a level we don't typically access while someone is still conscious and functioning.
+        // Show up arrow after scrolling past 40% of first viewport
+        const shouldShowUp = scrollY > windowHeight * 0.4;
 
-I'm applying for diagnostic radiology residency because I want to be at the intersection of what we can observe and what's actually happening in tissue. The human side informs my systems thinking, and I'm drawn to programs that value both technical precision and the ability to see the bigger picture. If you're interested in talking about radiology, residency, or how research shapes clinical thinking, reach out.`,
-        email: 'theodore_addo@brown.edu'
-      },
-      wbru: {
-        description: `When I joined WBRU this summer, I told them I wanted to do anything. I have a sharp ability to detect friction in a workplace, confront it, and design systems to solve it. I noticed immediately that WBRU had space to offer creatives but struggled with continuity: new students every semester, no one staying longer than four years.
+        // Hide down arrow near bottom (within 300px)
+        const shouldShowDown = scrollY < documentHeight - windowHeight - 300;
 
-One semester in, I started AVDP (A Very Distant Perspective), a podcast with long-form conversations that documents the creative process, not just the finished product. I laid the groundwork for Pain Points, the artist-in-residence incubator where we bring artists into WBRU, give them space and resources to work, and use AVDP to share their progress with audiences. I advanced the 360 sound DJ sets, started hosting artist exhibits, recruited students, fostered connections with community DJs, and began creating infrastructure within the station again.
-
-The artist-in-residence program matters to me personally because it allows artists space to be fully themselves without worrying about cost. R&D and creativity are both about innovation, and I think the R&D role is essential for any creative space. Pushing the needle has always been the most important factor. If you're an artist interested in the residency program, want to be a guest on AVDP, or have a creative project you'd like to collaborate on, let's talk.`,
-        email: 'rd@wbru.com'
-      },
-      polarity: {
-        description: `The first time I built something that made me realize "oh, this works" was back when Polarity was running off paper and pencil. I had become suspicious of the way the brain connects information. I believed that information you engage with in relation to the same location or type of music is likely more closely related in the brain than information you don't, so I began keeping to-do and notes lists within every room in my home to see if patterns arose. It helped me get organized, but like all manual systems, it became too much to handle.
-
-Now Polarity listens, responds, and organizes what you say to engage with later. You talk to Polarity like you're thinking out loud. It captures what you say, organizes it into a knowledge graph (concepts, connections, tasks, ideas), and surfaces relevant information back when you need it. If you mention "zebrafish" today and "brain imaging" next week, Polarity connects them because they're part of the same conceptual territory. It's externalizing how the brain naturally organizes information so you can see the structure of your own thinking.
-
-Polarity feels effortless because to most accurately map the brain, it needs to feel like thoughts are just flowing. That conversational data reveals patterns in how the Default Mode Network organizes knowledge, which can eventually be correlated with actual brain imaging. The gap between internal understanding and external articulation closes when you can externalize cognitive patterns and see them. If you're interested in research collaboration, computational psychiatry, early access, or just want to talk about how we instrument cognition, reach out.`,
-        email: 'theo@polarity-lab.com'
-      }
-    };
-
-    function toggleContact() {
-      // Toggle the expanded section
-      contactExpanded.classList.toggle('active');
-
-      if (!contactExpanded.classList.contains('active')) {
-        // Reset active states when closing
-        contactLinks.forEach(link => link.classList.remove('active'));
-        contactDescription.innerHTML = '';
-      }
-    }
-
-    function showContactInfo(type) {
-      const info = contactInfo[type];
-      if (!info) return;
-
-      // Update active state, copy email, and trigger animation
-      contactLinks.forEach(link => {
-        if (link.dataset.contact === type) {
-          link.classList.add('active');
-
-          // Trigger copy animation
-          link.classList.remove('copying');
-          void link.offsetWidth; // Force reflow to restart animation
-          link.classList.add('copying');
-
-          // Copy email to clipboard
-          if (link.dataset.email) {
-            navigator.clipboard.writeText(link.dataset.email);
+        // Update visibility if changed
+        if (shouldShowUp !== showUp) {
+          showUp = shouldShowUp;
+          if (showUp) {
+            scrollUpNav.classList.add('visible');
+          } else {
+            scrollUpNav.classList.remove('visible');
           }
+        }
+
+        if (shouldShowDown !== showDown) {
+          showDown = shouldShowDown;
+          if (showDown) {
+            scrollDownNav.classList.add('visible');
+          } else {
+            scrollDownNav.classList.remove('visible');
+          }
+        }
+      }
+
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      function scrollToNext() {
+        // Find all sections with IDs on the page
+        const sections = Array.from(document.querySelectorAll('section[id]'));
+        const currentScroll = window.scrollY;
+        const offset = 100; // Small offset to determine "current" section
+
+        // Find the next section below current scroll position
+        const nextSection = sections.find(section => {
+          const rect = section.getBoundingClientRect();
+          const sectionTop = rect.top + currentScroll;
+          return sectionTop > currentScroll + offset;
+        });
+
+        if (nextSection) {
+          // Scroll to the next section
+          nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
-          link.classList.remove('active');
-          link.classList.remove('copying');
+          // Fallback: scroll down by viewport if no section found
+          const targetScroll = currentScroll + windowHeight * 0.9;
+          window.scrollTo({ top: targetScroll, behavior: 'smooth' });
+        }
+      }
+
+      // Add event listeners
+      window.addEventListener('scroll', handleScroll);
+
+      // Make buttons clickable
+      scrollUpNav.addEventListener('click', scrollToTop);
+      scrollDownNav.addEventListener('click', scrollToNext);
+
+      // Add keyboard support
+      scrollUpNav.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          scrollToTop();
         }
       });
 
-      // Update description with copied toast
-      contactDescription.innerHTML = `
-        <div class="copied-toast">${info.email} copied</div>
-        <p>${info.description}</p>
-      `;
-
-      // Fade out the toast after 2 seconds
-      setTimeout(() => {
-        const toast = contactDescription.querySelector('.copied-toast');
-        if (toast) {
-          toast.classList.add('fade-out');
+      scrollDownNav.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          scrollToNext();
         }
-      }, 2000);
-    }
+      });
+
+      // Initial check
+      handleScroll();
+    })();
   </script>
 </body>
 </html>
