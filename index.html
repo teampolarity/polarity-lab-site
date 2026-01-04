@@ -688,7 +688,7 @@
 
   <!-- SECTION 1: Full-page Hero -->
   <section class="hero-section" id="hero">
-    <h1 class="hero-title">Welcome to Polarity Lab<sup style="font-size: 0.3em; position: relative; top: -0.6em; opacity: 0.7;">©</sup></h1>
+    <h1 class="hero-title">Welcome to Polarity Lab<sup style="font-size: 0.4em; position: relative; top: -0.5em; opacity: 1; background: none; -webkit-background-clip: unset; -webkit-text-fill-color: rgba(255, 255, 255, 0.7); background-clip: unset;">©</sup></h1>
   </section>
 
   <!-- SECTION 2: Projects -->
@@ -921,6 +921,9 @@
       const scrollDownNav = document.getElementById('scroll-down');
       let showUp = false;
       let showDown = true;
+
+      // Show down arrow immediately on page load
+      scrollDownNav.classList.add('visible');
 
       function handleScroll() {
         const scrollY = window.scrollY;
