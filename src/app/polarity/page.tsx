@@ -947,10 +947,10 @@ export default function OpeningPage() {
 
   return (
     <div className="min-h-screen text-white" style={{ background: 'transparent' }}>
-      {/* Contextual Scroll Navigation now handled globally by AppShell */}
-      
-      {/* Day Space Background - handled by SpaceBackground in AppShell */}
-      {/* Additional stars overlay for landing page */}
+      {/* Hub Section - Landing */}
+      <div id="hub">
+
+      {/* Stars overlay */}
       <div className="fixed inset-0 pointer-events-none">
         {/* Stars overlay */}
         <div 
@@ -1534,116 +1534,128 @@ export default function OpeningPage() {
           
         </div>
       </Section>
+      </div>{/* End Hub Section */}
 
-      {/* Science Page Link - Make it obvious */}
-      <Section className="min-h-screen flex items-start justify-center py-24 px-6 sm:px-10 lg:px-16" id="science-link">
-        <div className="w-full max-w-[75rem] mx-auto">
+      {/* Science Section */}
+      <div id="science">
+      <Section className="min-h-screen flex items-start justify-center py-24 px-6 sm:px-10 lg:px-16">
+        <div className="w-full max-w-[85rem] mx-auto">
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8, ease }}
+            className="text-center mb-16"
           >
-            <Link
-              href="/polarity/science"
-              className="block p-14 rounded-[32px] relative overflow-hidden group"
+            <motion.div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-8"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
               style={{
-                background: `
-                  radial-gradient(ellipse 150% 100% at 50% -20%, rgba(139, 92, 246, 0.15) 0%, transparent 60%),
-                  rgba(255, 255, 255, 0.04)
-                `,
-                backdropFilter: 'blur(60px) saturate(180%)',
-                WebkitBackdropFilter: 'blur(60px) saturate(180%)',
-                border: '1px solid rgba(139, 92, 246, 0.25)',
-                boxShadow: `
-                  inset 0 1px 0 rgba(255, 255, 255, 0.12),
-                  0 12px 40px rgba(139, 92, 246, 0.2)
-                `,
-                transition: 'all 0.3s ease',
+                background: 'rgba(139, 92, 246, 0.1)',
+                border: '1px solid rgba(139, 92, 246, 0.2)',
               }}
             >
-              {/* Hover glow effect */}
-              <div 
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+              <div className="w-2 h-2 rounded-full bg-violet-500" />
+              <span style={{ fontSize: '12px', fontWeight: 600, color: '#8B5CF6', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+                Neuroscience
+              </span>
+            </motion.div>
+
+            <h2 style={{
+              fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+              fontWeight: 600,
+              color: '#ffffff',
+              marginBottom: '1.5rem',
+              letterSpacing: '-0.03em',
+              lineHeight: 1.1
+            }}>
+              The Science Behind Polarity
+            </h2>
+            <p style={{
+              fontSize: 'clamp(17px, 2vw, 19px)',
+              color: 'rgba(255,255,255,0.6)',
+              maxWidth: '48rem',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              lineHeight: 1.7
+            }}>
+              Polarity maps your memories to real brain regions using MNI coordinates from neuroscience research.
+            </p>
+          </motion.div>
+
+          {/* Brain Region Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {BRAIN_REGIONS.map((region, index) => (
+              <motion.div
+                key={region.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-50px' }}
+                transition={{ duration: 0.6, delay: index * 0.1, ease }}
+                whileHover={{ y: -5, transition: { duration: 0.3 } }}
+                className="p-6 rounded-2xl cursor-default"
                 style={{
-                  background: 'radial-gradient(ellipse 100% 80% at 50% 50%, rgba(139, 92, 246, 0.2) 0%, transparent 70%)',
+                  background: `linear-gradient(135deg, ${region.color}10 0%, transparent 60%), rgba(255,255,255,0.02)`,
+                  backdropFilter: 'blur(20px)',
+                  border: `1px solid ${region.color}20`,
                 }}
-              />
-
-              <div className="relative z-10 text-center">
-                {/* Icon */}
-                <motion.div 
-                  className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-8"
-                  style={{
-                    background: 'rgba(139, 92, 246, 0.15)',
-                    border: '1px solid rgba(139, 92, 246, 0.3)',
-                  }}
-                  whileHover={{ scale: 1.05, rotate: 3 }}
-                  transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                >
-                  <svg className="w-10 h-10 text-[#8B5CF6]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
-                  </svg>
-                </motion.div>
-
-                {/* Label badge */}
-                <div 
-                  className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-6"
-                  style={{
-                    background: 'rgba(139, 92, 246, 0.15)',
-                    border: '1px solid rgba(139, 92, 246, 0.3)',
-                  }}
-                >
-                  <span style={{ fontSize: '11px', fontWeight: 600, color: '#8B5CF6', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                    Dedicated Page
-                  </span>
+              >
+                {/* Header */}
+                <div className="flex items-center gap-3 mb-4">
+                  <motion.div
+                    className="w-10 h-10 rounded-xl flex items-center justify-center"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    style={{ background: `${region.color}20`, border: `1px solid ${region.color}30` }}
+                  >
+                    <div
+                      className="w-3 h-3 rounded-full"
+                      style={{ background: region.color, boxShadow: `0 0 12px ${region.color}` }}
+                    />
+                  </motion.div>
+                  <div>
+                    <h4 className="text-white font-semibold">{region.name}</h4>
+                    <p className="text-white/40 text-xs">{region.simpleRole}</p>
+                  </div>
                 </div>
 
-                {/* Title */}
-                <h3 
-                  className="mb-5"
-                  style={{ 
-                    fontSize: 'clamp(2rem, 4vw, 2.5rem)', 
-                    fontWeight: 600, 
-                    color: '#ffffff', 
-                    letterSpacing: '-0.025em', 
-                    lineHeight: 1.2 
-                  }}
-                >
-                  The Science Behind Polarity
-                </h3>
-                
                 {/* Description */}
-                <p 
-                  className="mb-8"
-                  style={{ 
-                    fontSize: '18px', 
-                    lineHeight: '1.7', 
-                    color: 'rgba(255,255,255,0.65)',
-                    maxWidth: '40rem',
-                    marginLeft: 'auto',
-                    marginRight: 'auto',
-                  }}
-                >
-                  Explore the neuroscience, brain mapping, and memory research that powers Polarity. See how MNI coordinates map your memories to real brain regions.
+                <p className="text-white/55 text-sm leading-relaxed mb-4">
+                  {region.description}
                 </p>
 
-                {/* CTA Arrow */}
-                <div className="flex items-center justify-center gap-2 text-[#8B5CF6] group-hover:gap-3 transition-all">
-                  <span style={{ fontSize: '16px', fontWeight: 600 }}>Explore the research</span>
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
+                {/* What Polarity Uses */}
+                <div
+                  className="p-3 rounded-xl mb-3"
+                  style={{ background: 'rgba(139,92,246,0.08)', border: '1px solid rgba(139,92,246,0.12)' }}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <svg className="w-3 h-3 text-violet-400" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                    </svg>
+                    <span className="text-violet-400 text-xs font-medium">Polarity Usage</span>
+                  </div>
+                  <p className="text-white/50 text-xs">{region.whatPolarity}</p>
                 </div>
-              </div>
-            </Link>
-          </motion.div>
-          
+
+                {/* MNI Coordinates */}
+                <div className="flex items-center justify-between">
+                  <span className="text-white/30 text-xs font-mono">MNI {region.coordinates}</span>
+                  <span className="text-amber-400/60 text-xs">{region.funFact.split(' ').slice(0, 4).join(' ')}...</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </Section>
+      </div>{/* End Science Section */}
 
-      {/* Final CTA - Spacious & Inviting */}
-      <Section className="min-h-screen flex items-start justify-center py-32 px-6 sm:px-10 lg:px-16" id="final-cta">
+      {/* Polarity Section - CTA */}
+      <div id="polarity">
+      <Section className="min-h-screen flex items-start justify-center py-32 px-6 sm:px-10 lg:px-16">
         <div className="w-full max-w-[85rem] mx-auto text-center">
           <motion.div 
             className="mb-16"
@@ -1719,6 +1731,7 @@ export default function OpeningPage() {
 
         </div>
       </Section>
+      </div>{/* End Polarity Section */}
 
       {/* Footer */}
       <footer className="py-20 px-6 sm:px-10 lg:px-16 border-t border-white/[0.05]">

@@ -1,176 +1,177 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AuthProvider } from '@/lib/auth-context';
+import { NavContext } from '@/lib/nav-context';
 
 const navItems = [
-  { href: '/polarity', label: 'Hub', description: 'Main landing page' },
-  { href: '/polarity/science', label: 'Science', description: 'Brain mapping & research' },
-  { href: '/polarity/app', label: 'App', description: 'Access Polarity' },
+  { id: 'hub', label: 'Hub' },
+  { id: 'science', label: 'Science' },
+  { id: 'polarity', label: 'Polarity' },
 ];
 
-function Navigation() {
-  const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  // Close menu when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Close menu on route change
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+function SideNavigation({ activeSection, scrollToSection }: { activeSection: string; scrollToSection: (id: string) => void }) {
+  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
   return (
     <motion.nav
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-      className="fixed top-6 left-6 z-[100]"
-      ref={menuRef}
+      initial={{ x: -30, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+      className="fixed left-8 top-1/2 -translate-y-1/2 z-[100] hidden md:block"
     >
-      {/* Logo button that opens dropdown */}
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className="relative w-12 h-12 rounded-2xl flex items-center justify-center cursor-pointer"
-        style={{
-          background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.2) 0%, rgba(78, 205, 196, 0.2) 100%)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          boxShadow: isOpen || isHovered
-            ? '0 8px 32px rgba(139, 92, 246, 0.3), inset 0 1px 0 rgba(255,255,255,0.1)'
-            : '0 4px 20px rgba(139, 92, 246, 0.15)',
-        }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        {/* Rotating orbital rings */}
-        <motion.div
-          className="absolute inset-0"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        >
-          <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="absolute inset-0">
-            <circle cx="24" cy="24" r="18" stroke="url(#orbitGrad)" strokeWidth="1" strokeDasharray="4 4" opacity="0.4" />
-          </svg>
-        </motion.div>
+      <div className="flex flex-col items-start gap-1">
+        {navItems.map((item, index) => {
+          const isActive = activeSection === item.id;
+          const isHovered = hoveredItem === item.id;
 
-        {/* Inner logo */}
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" className="relative z-10">
-          <circle cx="12" cy="12" r="10" stroke="url(#logoGrad)" strokeWidth="1.5" />
-          <circle cx="12" cy="12" r="4" fill="url(#logoGrad)" />
-          <defs>
-            <linearGradient id="logoGrad" x1="0" y1="0" x2="24" y2="24">
-              <stop stopColor="#8B5CF6" />
-              <stop offset="1" stopColor="#4ECDC4" />
-            </linearGradient>
-            <linearGradient id="orbitGrad" x1="0" y1="0" x2="48" y2="48">
-              <stop stopColor="#8B5CF6" />
-              <stop offset="1" stopColor="#4ECDC4" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </motion.button>
-
-      {/* Dropdown menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -10, scale: 0.95 }}
-            transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute top-16 left-0 w-56 py-2 rounded-2xl overflow-hidden"
-            style={{
-              background: 'rgba(15, 15, 20, 0.95)',
-              backdropFilter: 'blur(40px)',
-              WebkitBackdropFilter: 'blur(40px)',
-              border: '1px solid rgba(255, 255, 255, 0.08)',
-              boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.05)',
-            }}
-          >
-            {navItems.map((item, index) => {
-              const isActive = pathname === item.href;
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="block"
-                >
-                  <motion.div
-                    className="relative px-4 py-3 mx-2 rounded-xl transition-colors"
-                    style={{
-                      background: isActive ? 'rgba(139, 92, 246, 0.15)' : 'transparent',
-                    }}
-                    whileHover={{
-                      background: isActive ? 'rgba(139, 92, 246, 0.2)' : 'rgba(255, 255, 255, 0.05)',
-                    }}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.05 }}
-                  >
-                    <div className="flex items-center justify-between">
-                      <span
-                        className={`font-medium ${isActive ? 'text-white' : 'text-white/70'}`}
-                        style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', fontSize: '15px' }}
-                      >
-                        {item.label}
-                      </span>
-                      {isActive && (
-                        <motion.div
-                          layoutId="activeIndicator"
-                          className="w-1.5 h-1.5 rounded-full"
-                          style={{ background: 'linear-gradient(135deg, #8B5CF6, #4ECDC4)' }}
-                        />
-                      )}
-                    </div>
-                    <span
-                      className="text-white/40 mt-0.5 block"
-                      style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', fontSize: '12px' }}
-                    >
-                      {item.description}
-                    </span>
-                  </motion.div>
-                </Link>
-              );
-            })}
-
-            {/* Divider */}
-            <div className="mx-4 my-2 h-px bg-white/10" />
-
-            {/* Back to Portfolio */}
-            <Link href="/" className="block">
+          return (
+            <motion.button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              onMouseEnter={() => setHoveredItem(item.id)}
+              onMouseLeave={() => setHoveredItem(null)}
+              className="relative flex items-center gap-3 py-2 px-1 group cursor-pointer"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4 + index * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* Indicator line */}
               <motion.div
-                className="px-4 py-3 mx-2 rounded-xl transition-colors"
-                whileHover={{ background: 'rgba(255, 255, 255, 0.05)' }}
+                className="relative w-8 h-[2px] rounded-full overflow-hidden"
+                style={{ background: 'rgba(255, 255, 255, 0.1)' }}
               >
-                <div className="flex items-center gap-2 text-white/50">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                  </svg>
-                  <span style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', fontSize: '14px' }}>
-                    Portfolio
-                  </span>
-                </div>
+                <motion.div
+                  className="absolute inset-y-0 left-0 rounded-full"
+                  initial={{ width: '0%' }}
+                  animate={{
+                    width: isActive ? '100%' : isHovered ? '60%' : '0%',
+                  }}
+                  transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  style={{
+                    background: isActive
+                      ? 'linear-gradient(90deg, #8B5CF6, #4ECDC4)'
+                      : 'rgba(255, 255, 255, 0.5)',
+                  }}
+                />
               </motion.div>
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+              {/* Label */}
+              <motion.span
+                className="text-sm font-medium whitespace-nowrap"
+                animate={{
+                  color: isActive ? '#ffffff' : isHovered ? 'rgba(255,255,255,0.8)' : 'rgba(255,255,255,0.4)',
+                  x: isHovered || isActive ? 4 : 0,
+                }}
+                transition={{ duration: 0.2 }}
+                style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+              >
+                {item.label}
+              </motion.span>
+
+              {/* Active glow */}
+              <AnimatePresence>
+                {isActive && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    className="absolute -left-2 top-1/2 -translate-y-1/2 w-1 h-1 rounded-full"
+                    style={{
+                      background: '#8B5CF6',
+                      boxShadow: '0 0 10px #8B5CF6, 0 0 20px #8B5CF6',
+                    }}
+                  />
+                )}
+              </AnimatePresence>
+            </motion.button>
+          );
+        })}
+
+        {/* Divider */}
+        <motion.div
+          className="w-8 h-px my-3 ml-1"
+          style={{ background: 'rgba(255, 255, 255, 0.1)' }}
+          initial={{ opacity: 0, scaleX: 0 }}
+          animate={{ opacity: 1, scaleX: 1 }}
+          transition={{ delay: 0.8, duration: 0.4 }}
+        />
+
+        {/* Back arrow */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.9, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+        >
+          <Link
+            href="/"
+            className="flex items-center justify-center w-8 h-8 rounded-full text-white/30 hover:text-white/60 hover:bg-white/5 transition-all"
+          >
+            <motion.svg
+              className="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={1.5}
+              whileHover={{ x: -2 }}
+              transition={{ duration: 0.2 }}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </motion.svg>
+          </Link>
+        </motion.div>
+      </div>
+    </motion.nav>
+  );
+}
+
+// Mobile nav - bottom bar
+function MobileNavigation({ activeSection, scrollToSection }: { activeSection: string; scrollToSection: (id: string) => void }) {
+  return (
+    <motion.nav
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.5 }}
+      className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[100] md:hidden"
+    >
+      <div
+        className="flex items-center gap-1 px-2 py-2 rounded-full"
+        style={{
+          background: 'rgba(15, 15, 20, 0.9)',
+          backdropFilter: 'blur(20px)',
+          WebkitBackdropFilter: 'blur(20px)',
+          border: '1px solid rgba(255, 255, 255, 0.08)',
+          boxShadow: '0 10px 40px rgba(0, 0, 0, 0.4)',
+        }}
+      >
+        {navItems.map((item) => {
+          const isActive = activeSection === item.id;
+          return (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="relative px-4 py-2 rounded-full transition-all"
+            >
+              {isActive && (
+                <motion.div
+                  layoutId="mobileActiveTab"
+                  className="absolute inset-0 rounded-full"
+                  style={{ background: 'rgba(139, 92, 246, 0.2)' }}
+                  transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                />
+              )}
+              <span
+                className={`relative z-10 text-xs font-medium ${isActive ? 'text-white' : 'text-white/50'}`}
+                style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+              >
+                {item.label}
+              </span>
+            </button>
+          );
+        })}
+      </div>
     </motion.nav>
   );
 }
@@ -178,7 +179,13 @@ function Navigation() {
 // Spatial background
 function SpaceBackground() {
   return (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden" style={{ zIndex: -1 }}>
+    <motion.div
+      className="fixed inset-0 pointer-events-none overflow-hidden"
+      style={{ zIndex: -1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1.5 }}
+    >
       {/* Deep space gradient */}
       <div
         className="absolute inset-0"
@@ -193,8 +200,11 @@ function SpaceBackground() {
       />
 
       {/* Subtle grid */}
-      <div
+      <motion.div
         className="absolute inset-0 opacity-[0.015]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.015 }}
+        transition={{ duration: 2, delay: 0.5 }}
         style={{
           backgroundImage: `
             linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
@@ -203,7 +213,30 @@ function SpaceBackground() {
           backgroundSize: '60px 60px',
         }}
       />
-    </div>
+
+      {/* Floating particles */}
+      {[...Array(20)].map((_, i) => (
+        <motion.div
+          key={i}
+          className="absolute w-1 h-1 rounded-full"
+          style={{
+            background: i % 2 === 0 ? 'rgba(139, 92, 246, 0.4)' : 'rgba(78, 205, 196, 0.4)',
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+          }}
+          animate={{
+            y: [0, -30, 0],
+            opacity: [0.2, 0.6, 0.2],
+          }}
+          transition={{
+            duration: 4 + Math.random() * 4,
+            repeat: Infinity,
+            delay: Math.random() * 2,
+            ease: 'easeInOut',
+          }}
+        />
+      ))}
+    </motion.div>
   );
 }
 
@@ -212,13 +245,53 @@ export default function PolarityLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const [activeSection, setActiveSection] = useState('hub');
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(id);
+    }
+  };
+
+  // Track scroll position to update active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => ({
+        id: item.id,
+        element: document.getElementById(item.id),
+      }));
+
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section.element && section.element.offsetTop <= scrollPosition) {
+          setActiveSection(section.id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <AuthProvider>
-      <SpaceBackground />
-      <Navigation />
-      <main>
-        {children}
-      </main>
+      <NavContext.Provider value={{ activeSection, setActiveSection, scrollToSection }}>
+        <SpaceBackground />
+        <SideNavigation activeSection={activeSection} scrollToSection={scrollToSection} />
+        <MobileNavigation activeSection={activeSection} scrollToSection={scrollToSection} />
+        <motion.main
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          {children}
+        </motion.main>
+      </NavContext.Provider>
     </AuthProvider>
   );
 }
