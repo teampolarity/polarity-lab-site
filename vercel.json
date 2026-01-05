@@ -1,9 +1,3 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
-  "rewrites": [
-    { "source": "/polarity", "destination": "/polarity" },
-    { "source": "/polarity/:path*", "destination": "/polarity/:path*" },
-    { "source": "/((?!polarity|_next|api).*)", "destination": "/index.html" }
-  ]
+  "framework": "nextjs"
 }

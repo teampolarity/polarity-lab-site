@@ -1,8 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Output as standalone for Vercel
-  output: 'standalone',
+  async rewrites() {
+    return {
+      beforeFiles: [
+        // Serve static index.html at root
+        {
+          source: '/',
+          destination: '/index.html',
+        },
+      ],
+    }
+  },
 }
 
 module.exports = nextConfig
