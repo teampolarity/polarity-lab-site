@@ -11,9 +11,15 @@ import { useAuth } from '@/lib/auth-context';
 // Apple Vision Pro Level • Zero AI Mentions • Human Feel
 // ═══════════════════════════════════════════════════════════════════════════════
 
-const springConfig = { stiffness: 120, damping: 25, mass: 0.8 };
-const ease = [0.16, 1, 0.3, 1];
-const bouncy = [0.34, 1.56, 0.64, 1];
+// Performance-optimized animation configs
+const springConfig = { stiffness: 100, damping: 20 };
+const ease = [0.16, 1, 0.3, 1] as const;
+const bouncy = [0.34, 1.56, 0.64, 1] as const;
+
+// Reduce motion for users who prefer it
+const prefersReducedMotion = typeof window !== 'undefined'
+  ? window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  : false;
 
 // Removed ScrollIndicator - using global nav buttons instead
 
@@ -1734,188 +1740,14 @@ export default function OpeningPage() {
       
 
       {/* Footer */}
-      <footer className="py-20 px-6 sm:px-10 lg:px-16 border-t border-white/[0.05]">
+      <footer className="py-12 px-6 sm:px-10 lg:px-16 border-t border-white/[0.05]">
         <div className="w-full max-w-[90rem] mx-auto">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-8">
-            {/* Left: Logo */}
-            <div className="flex items-center gap-3">
-              <div className="relative w-8 h-8">
-                <div 
-                  className="absolute inset-0 rounded-full"
-                  style={{
-                    background: 'radial-gradient(circle, rgba(78,205,196,0.3) 0%, transparent 70%)',
-                    filter: 'blur(4px)',
-                    transform: 'scale(1.4)',
-                  }}
-                />
-                <motion.div
-                  className="absolute"
-                  style={{
-                    width: 26,
-                    height: 9,
-                    left: '50%',
-                    top: '50%',
-                    marginLeft: -13,
-                    marginTop: -4.5,
-                    borderRadius: '50%',
-                    border: '1.5px solid rgba(78,205,196,0.85)',
-                    boxShadow: '0 0 8px rgba(78,205,196,0.5)',
-                    transform: 'rotateX(70deg) rotateZ(-60deg)',
-                  }}
-                  animate={{ rotateZ: [-60, 300] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-                />
-                <motion.div
-                  className="absolute"
-                  style={{
-                    width: 26,
-                    height: 9,
-                    left: '50%',
-                    top: '50%',
-                    marginLeft: -13,
-                    marginTop: -4.5,
-                    borderRadius: '50%',
-                    border: '1.5px solid rgba(255,160,122,0.85)',
-                    boxShadow: '0 0 8px rgba(255,160,122,0.5)',
-                    transform: 'rotateX(70deg) rotateZ(60deg)',
-                  }}
-                  animate={{ rotateZ: [60, -300] }}
-                  transition={{ duration: 10, repeat: Infinity, ease: 'linear' }}
-                />
-                <motion.div
-                  className="absolute"
-                  style={{
-                    width: 26,
-                    height: 9,
-                    left: '50%',
-                    top: '50%',
-                    marginLeft: -13,
-                    marginTop: -4.5,
-                    borderRadius: '50%',
-                    border: '1.5px solid rgba(187,143,206,0.85)',
-                    boxShadow: '0 0 8px rgba(187,143,206,0.5)',
-                    transform: 'rotateX(70deg) rotateZ(0deg)',
-                  }}
-                  animate={{ rotateZ: [0, 360] }}
-                  transition={{ duration: 12, repeat: Infinity, ease: 'linear' }}
-                />
-                <motion.div
-                  className="absolute rounded-full"
-                  style={{
-                    width: 12,
-                    height: 12,
-                    left: '50%',
-                    top: '50%',
-                    marginLeft: -6,
-                    marginTop: -6,
-                    background: 'radial-gradient(circle at 35% 35%, #6EE7DF, #4ECDC4, #2BA89F)',
-                    boxShadow: '0 0 10px rgba(78,205,196,0.7), 0 0 20px rgba(78,205,196,0.3)',
-                  }}
-                  animate={{ scale: [1, 1.08, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                />
-              </div>
-              <span className="text-white/60 text-sm font-semibold tracking-[0.12em]">POLARITY</span>
-            </div>
-            
-            {/* Center: Tagline (hidden on mobile) */}
-            <p className="text-white/35 text-sm hidden md:block">
-              Your memory, preserved
-            </p>
-            
-            {/* Right: Social Icons */}
-            <div className="flex items-center gap-2.5">
-              {/* Instagram */}
-              <motion.a
-                href="https://instagram.com/polarity"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl flex items-center justify-center cursor-pointer"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.04)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                }}
-                whileHover={{ 
-                  scale: 1.08,
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  borderColor: 'rgba(255, 255, 255, 0.2)',
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
-                <svg className="w-[18px] h-[18px] text-white/60" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-              </motion.a>
-
-              {/* Email */}
-              <motion.a
-                href="mailto:hello@polarity.app"
-                className="w-10 h-10 rounded-xl flex items-center justify-center cursor-pointer"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.04)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                }}
-                whileHover={{ 
-                  scale: 1.08,
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  borderColor: 'rgba(255, 255, 255, 0.2)',
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
-                <svg className="w-[18px] h-[18px] text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                </svg>
-              </motion.a>
-
-              {/* LinkedIn */}
-              <motion.a
-                href="https://linkedin.com/company/polarity"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl flex items-center justify-center cursor-pointer"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.04)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                }}
-                whileHover={{ 
-                  scale: 1.08,
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  borderColor: 'rgba(255, 255, 255, 0.2)',
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
-                <svg className="w-[18px] h-[18px] text-white/60" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-              </motion.a>
-
-              {/* Website */}
-              <motion.a
-                href="https://polarity.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl flex items-center justify-center cursor-pointer"
-                style={{
-                  background: 'rgba(255, 255, 255, 0.04)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                }}
-                whileHover={{ 
-                  scale: 1.08,
-                  background: 'rgba(255, 255, 255, 0.08)',
-                  borderColor: 'rgba(255, 255, 255, 0.2)',
-                }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
-              >
-                <svg className="w-[18px] h-[18px] text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
-                </svg>
-              </motion.a>
-            </div>
-          </div>
+          <p
+            className="text-center text-white/30 text-sm"
+            style={{ fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif' }}
+          >
+            &copy; 2025 POLARITY LAB LLC. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
