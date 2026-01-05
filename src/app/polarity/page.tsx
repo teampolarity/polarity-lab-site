@@ -948,7 +948,7 @@ export default function OpeningPage() {
   return (
     <div className="min-h-screen text-white" style={{ background: 'transparent' }}>
       {/* Hub Section - Landing */}
-      <div id="hub">
+      
 
       {/* Stars overlay */}
       <div className="fixed inset-0 pointer-events-none">
@@ -1534,10 +1534,10 @@ export default function OpeningPage() {
           
         </div>
       </Section>
-      </div>{/* End Hub Section */}
+      
 
       {/* Science Section */}
-      <div id="science">
+      
       <Section className="min-h-screen flex items-start justify-center py-24 px-6 sm:px-10 lg:px-16">
         <div className="w-full max-w-[85rem] mx-auto">
           {/* Section Header */}
@@ -1651,10 +1651,10 @@ export default function OpeningPage() {
           </div>
         </div>
       </Section>
-      </div>{/* End Science Section */}
+      
 
       {/* Polarity Section - CTA */}
-      <div id="polarity">
+      
       <Section className="min-h-screen flex items-start justify-center py-32 px-6 sm:px-10 lg:px-16">
         <div className="w-full max-w-[85rem] mx-auto text-center">
           <motion.div 
@@ -1731,7 +1731,7 @@ export default function OpeningPage() {
 
         </div>
       </Section>
-      </div>{/* End Polarity Section */}
+      
 
       {/* Footer */}
       <footer className="py-20 px-6 sm:px-10 lg:px-16 border-t border-white/[0.05]">
