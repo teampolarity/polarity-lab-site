@@ -1037,6 +1037,30 @@
       background: #0A0A0A;
     }
 
+    /* WaxFeed spinning disc */
+    #waxfeed-card .project-thumbnail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0A0A0A;
+    }
+
+    #waxfeed-card .project-thumbnail img {
+      width: 85%;
+      height: 85%;
+      object-fit: contain;
+      animation: spin-disc 8s linear infinite;
+    }
+
+    @keyframes spin-disc {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    #waxfeed-card:hover .project-thumbnail img {
+      animation-duration: 2s;
+    }
+
     .orbital-animation {
       width: 200px;
       height: 200px;
@@ -2241,8 +2265,8 @@
 
         <!-- WaxFeed -->
         <a href="https://wax-feed.com" target="_blank" class="project-card" id="waxfeed-card">
-          <div class="project-thumbnail" style="display: flex; align-items: center; justify-content: center; background: #0A0A0A;">
-            <img src="waxfeed_logo_v7.svg" alt="WaxFeed" style="max-width: 200px; max-height: 150px; object-fit: contain;">
+          <div class="project-thumbnail">
+            <img src="waxfeed_disc.svg" alt="WaxFeed">
           </div>
           <div class="project-info">
             <h3>waxfeed</h3>
