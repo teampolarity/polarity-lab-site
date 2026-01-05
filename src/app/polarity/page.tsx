@@ -1545,7 +1545,7 @@ export default function OpeningPage() {
             transition={{ duration: 0.6 }}
           >
             <Link
-              href="/science"
+              href="/polarity/science"
               className="block p-14 rounded-[32px] relative overflow-hidden group"
               style={{
                 background: `
