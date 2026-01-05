@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Polarity - Personal Memory Companion',
+  title: 'POLARITY',
   description: 'Your personal memory companion. Never forget what matters.',
 };
 

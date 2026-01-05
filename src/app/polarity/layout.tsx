@@ -4,34 +4,23 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { AuthProvider } from '@/lib/auth-context';
 
-// Simple top-left back button - that's it
+// Simple back button - no animation, just there
 function BackButton() {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -10 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-      className="fixed top-6 left-6 z-[100]"
+    <Link
+      href="/"
+      className="fixed top-6 left-6 z-[100] flex items-center justify-center w-9 h-9 rounded-full opacity-40 hover:opacity-70 transition-opacity"
     >
-      <Link
-        href="/"
-        className="flex items-center justify-center w-10 h-10 rounded-full transition-all hover:bg-white/5"
-        style={{
-          background: 'rgba(255, 255, 255, 0.03)',
-          border: '1px solid rgba(255, 255, 255, 0.08)',
-        }}
+      <svg
+        className="w-4 h-4 text-white"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        strokeWidth={2}
       >
-        <svg
-          className="w-5 h-5 text-white/50 hover:text-white/80 transition-colors"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={1.5}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-        </svg>
-      </Link>
-    </motion.div>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+      </svg>
+    </Link>
   );
 }
 
