@@ -1165,7 +1165,703 @@
     }
 
     /* ============================================
-       SECTION 3: CONTACT/FOOTER
+       SECTION 3: RESEARCH
+       ============================================ */
+    .research-section {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 100px 64px 180px 64px;
+      box-sizing: border-box;
+    }
+
+    .research-wrapper {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 0;
+      padding-top: 20px;
+    }
+
+    .research-overview {
+      max-width: 700px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .research-intro {
+      font-size: clamp(16px, 2vw, 20px);
+      font-weight: 400;
+      line-height: 1.6;
+      color: rgba(29, 29, 31, 0.7);
+      letter-spacing: -0.01em;
+    }
+
+    body.dark-mode .research-intro {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .research-intro .accent {
+      color: rgba(78, 205, 196, 1);
+      font-weight: 500;
+    }
+
+    body.dark-mode .research-intro .accent {
+      color: rgba(78, 205, 196, 0.9);
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    @media (max-width: 1100px) {
+      .research-section {
+        padding: 80px 32px 140px 32px;
+      }
+      .research-grid {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .research-section {
+        height: auto;
+        min-height: 100vh;
+      }
+
+      .research-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+    }
+
+    .research-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      padding: 24px;
+      opacity: 0;
+      transform: translateY(20px);
+      box-shadow: 0 4px 20px rgba(78, 205, 196, 0.08);
+    }
+
+    body.dark-mode .research-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .research-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .research-card:nth-child(1) { transition-delay: 0.05s; }
+    .research-card:nth-child(2) { transition-delay: 0.1s; }
+    .research-card:nth-child(3) { transition-delay: 0.15s; }
+
+    .research-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(78, 205, 196, 0.3);
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: 0 12px 40px rgba(78, 205, 196, 0.15);
+    }
+
+    body.dark-mode .research-card:hover {
+      border-color: rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .research-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(78, 205, 196, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .research-icon {
+      background: rgba(78, 205, 196, 0.15);
+    }
+
+    .research-icon svg {
+      width: 24px;
+      height: 24px;
+      color: rgba(78, 205, 196, 1);
+    }
+
+    .research-card:hover .research-icon {
+      background: rgba(78, 205, 196, 0.2);
+      transform: scale(1.05);
+    }
+
+    .research-info {
+      flex: 1;
+    }
+
+    .research-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(78, 205, 196, 1);
+      background: rgba(78, 205, 196, 0.12);
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+
+    body.dark-mode .research-tag {
+      background: rgba(78, 205, 196, 0.2);
+      color: rgba(78, 205, 196, 0.9);
+    }
+
+    .research-info h3 {
+      font-weight: 500;
+      font-size: clamp(16px, 1.6vw, 18px);
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+      color: #1d1d1f;
+    }
+
+    body.dark-mode .research-info h3 {
+      color: #f5f5f7;
+    }
+
+    .research-info p {
+      font-weight: 400;
+      font-size: 14px;
+      opacity: 0.65;
+      line-height: 1.5;
+      letter-spacing: -0.005em;
+    }
+
+    body.dark-mode .research-info p {
+      opacity: 0.55;
+    }
+
+    @media (max-width: 768px) {
+      .research-section {
+        padding: 60px 20px 140px 20px;
+        align-items: flex-start;
+      }
+
+      .research-wrapper {
+        padding-top: 0;
+      }
+
+      .research-overview {
+        margin-bottom: 32px;
+      }
+
+      .research-intro {
+        font-size: 15px;
+      }
+
+      .research-grid {
+        gap: 16px;
+      }
+
+      .research-card {
+        padding: 20px;
+        border-radius: 14px;
+      }
+
+      .research-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 14px;
+      }
+
+      .research-icon svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .research-info h3 {
+        font-size: 15px;
+      }
+
+      .research-info p {
+        font-size: 13px;
+      }
+    }
+
+    /* ============================================
+       SECTION 4: ABOUT
+       ============================================ */
+    .about-section {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 100px 64px 120px 64px;
+      box-sizing: border-box;
+    }
+
+    .about-wrapper {
+      max-width: 1000px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+    }
+
+    .about-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    /* Mission Statement */
+    .about-mission {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .mission-text {
+      font-size: clamp(18px, 2.2vw, 22px);
+      font-weight: 400;
+      line-height: 1.7;
+      color: rgba(29, 29, 31, 0.75);
+      letter-spacing: -0.01em;
+    }
+
+    body.dark-mode .mission-text {
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .mission-text .accent {
+      color: rgba(78, 205, 196, 1);
+      font-weight: 500;
+    }
+
+    body.dark-mode .mission-text .accent {
+      color: rgba(78, 205, 196, 0.9);
+    }
+
+    /* CCX Section */
+    .ccx-section {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 4px 24px rgba(78, 205, 196, 0.08);
+    }
+
+    body.dark-mode .ccx-section {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .ccx-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .ccx-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(78, 205, 196, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ccx-icon svg {
+      width: 26px;
+      height: 26px;
+      color: rgba(78, 205, 196, 1);
+    }
+
+    .ccx-header h3 {
+      font-size: clamp(18px, 2vw, 22px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #1d1d1f;
+    }
+
+    body.dark-mode .ccx-header h3 {
+      color: #f5f5f7;
+    }
+
+    .ccx-description {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(29, 29, 31, 0.7);
+      margin: 0;
+    }
+
+    body.dark-mode .ccx-description {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* Umbrella/Ecosystem Grid */
+    .umbrella-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .umbrella-card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: left;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px rgba(78, 205, 196, 0.06);
+    }
+
+    body.dark-mode .umbrella-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .umbrella-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(78, 205, 196, 0.12);
+    }
+
+    body.dark-mode .umbrella-card:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .umbrella-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .umbrella-card-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .umbrella-card-icon.polarity-accent {
+      background: rgba(78, 205, 196, 0.15);
+      color: rgba(78, 205, 196, 1);
+    }
+
+    .umbrella-card-icon.avdp-accent {
+      background: rgba(187, 143, 206, 0.15);
+      color: rgba(187, 143, 206, 1);
+    }
+
+    .umbrella-card-icon.waxfeed-accent {
+      background: rgba(255, 160, 122, 0.15);
+      color: rgba(255, 160, 122, 1);
+    }
+
+    .umbrella-card h4 {
+      font-size: 17px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 4px;
+      color: #1d1d1f;
+    }
+
+    body.dark-mode .umbrella-card h4 {
+      color: #f5f5f7;
+    }
+
+    .umbrella-card-tagline {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: rgba(78, 205, 196, 0.9);
+      margin-bottom: 12px;
+    }
+
+    .umbrella-card:nth-child(2) .umbrella-card-tagline {
+      color: rgba(187, 143, 206, 0.9);
+    }
+
+    .umbrella-card:nth-child(3) .umbrella-card-tagline {
+      color: rgba(255, 160, 122, 0.9);
+    }
+
+    .umbrella-card-desc {
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(29, 29, 31, 0.65);
+      margin: 0;
+    }
+
+    body.dark-mode .umbrella-card-desc {
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    /* About Section Mobile */
+    @media (max-width: 900px) {
+      .umbrella-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        padding: 60px 20px 100px 20px;
+      }
+
+      .about-content {
+        gap: 36px;
+      }
+
+      .mission-text {
+        font-size: 17px;
+      }
+
+      .ccx-section {
+        padding: 24px;
+        border-radius: 16px;
+      }
+
+      .ccx-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .ccx-header h3 {
+        font-size: 18px;
+      }
+
+      .ccx-description {
+        font-size: 15px;
+      }
+
+      .umbrella-card {
+        padding: 20px;
+      }
+    }
+
+    /* ============================================
+       SECTION 5: ECOSYSTEM
+       ============================================ */
+    .ecosystem-section {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 64px 120px 64px;
+      box-sizing: border-box;
+    }
+
+    .ecosystem-wrapper {
+      max-width: 1100px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .ecosystem-subtitle {
+      font-size: 16px;
+      color: rgba(29, 29, 31, 0.6);
+      margin-bottom: 48px;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    body.dark-mode .ecosystem-subtitle {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 900px) {
+      .ecosystem-section {
+        min-height: auto;
+        padding: 80px 32px 100px 32px;
+      }
+
+      .ecosystem-wrapper .umbrella-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ecosystem-section {
+        padding: 60px 20px 80px 20px;
+      }
+
+      .ecosystem-subtitle {
+        font-size: 15px;
+        margin-bottom: 32px;
+      }
+    }
+
+    /* ============================================
+       SECTION 6: TEAM
+       ============================================ */
+    .team-page-section {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 64px 120px 64px;
+      box-sizing: border-box;
+    }
+
+    .team-page-wrapper {
+      max-width: 800px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .team-page-subtitle {
+      font-size: 17px;
+      color: rgba(29, 29, 31, 0.6);
+      margin-bottom: 56px;
+      line-height: 1.5;
+    }
+
+    body.dark-mode .team-page-subtitle {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .team-page-grid {
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+
+    .team-page-member {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .team-page-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(187, 143, 206, 0.2));
+      border: 3px solid rgba(78, 205, 196, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: 500;
+      color: rgba(78, 205, 196, 1);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.dark-mode .team-page-avatar {
+      background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(187, 143, 206, 0.15));
+      border-color: rgba(78, 205, 196, 0.25);
+    }
+
+    .team-page-member:hover .team-page-avatar {
+      transform: scale(1.1);
+      border-color: rgba(78, 205, 196, 0.6);
+      box-shadow: 0 12px 40px rgba(78, 205, 196, 0.25);
+    }
+
+    .team-page-member h4 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #1d1d1f;
+      margin: 0;
+    }
+
+    body.dark-mode .team-page-member h4 {
+      color: #f5f5f7;
+    }
+
+    .team-page-member p {
+      font-size: 14px;
+      color: rgba(29, 29, 31, 0.5);
+      margin: 0;
+    }
+
+    body.dark-mode .team-page-member p {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .team-page-section {
+        padding: 60px 20px 80px 20px;
+      }
+
+      .team-page-subtitle {
+        font-size: 15px;
+        margin-bottom: 40px;
+      }
+
+      .team-page-grid {
+        gap: 40px;
+      }
+
+      .team-page-avatar {
+        width: 80px;
+        height: 80px;
+        font-size: 28px;
+      }
+
+      .team-page-member h4 {
+        font-size: 18px;
+      }
+    }
+
+    /* ============================================
+       SECTION 7: CONTACT/FOOTER
        ============================================ */
     .contact-section {
       position: relative;
@@ -1519,22 +2215,20 @@
     }
 
 
-    /* Global Scroll Navigation - Center buttons container */
+    /* Global Scroll Navigation - Side positioned */
     .scroll-nav-container {
       position: fixed;
-      bottom: 60px;
-      left: 0;
-      right: 0;
+      right: 32px;
+      top: 50%;
+      transform: translateY(-50%);
       z-index: 50;
       display: flex;
-      flex-direction: row;
-      align-items: flex-end;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      gap: 32px;
+      gap: 16px;
       transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       pointer-events: none;
-      padding: 0;
-      width: 100%;
     }
 
     .scroll-nav-container > * {
@@ -1546,135 +2240,80 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 8px;
       opacity: 0;
       visibility: hidden;
-      transform: translateY(20px);
-      transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s;
+      transform: translateX(20px);
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
       pointer-events: none;
-      flex-shrink: 0;
-      text-align: center;
-      position: absolute;
     }
 
     .scroll-nav.visible {
       opacity: 1;
       visibility: visible;
-      transform: translateY(0);
+      transform: translateX(0);
       pointer-events: auto;
-      position: relative;
     }
 
-    /* Scroll down button - label on top, button below */
-    #scroll-down {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    #scroll-down > .scroll-nav-label {
-      order: 1;
-      text-align: center;
-    }
-
-    #scroll-down > .scroll-nav-btn {
-      order: 2;
-    }
-
-    /* Scroll up button - button on top, label below */
-    #scroll-up {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    #scroll-up > .scroll-nav-btn {
-      order: 1;
-    }
-
-    #scroll-up > .scroll-nav-label {
-      order: 2;
-      text-align: center;
+    /* Hide labels on side nav - cleaner look */
+    .scroll-nav-label {
+      display: none;
     }
 
     .scroll-nav-btn {
-      width: 60px;
-      height: 60px;
+      width: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.8);
       backdrop-filter: blur(20px) saturate(180%);
       -webkit-backdrop-filter: blur(20px) saturate(180%);
       border: 1px solid rgba(0, 0, 0, 0.08);
-      box-shadow: 0 8px 32px rgba(78, 205, 196, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.6);
-      color: rgba(29, 29, 31, 0.75);
+      box-shadow: 0 4px 20px rgba(78, 205, 196, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      color: rgba(29, 29, 31, 0.6);
       cursor: pointer;
       transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
       margin: 0;
     }
 
     body.dark-mode .scroll-nav-btn {
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      color: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.6);
     }
 
     .scroll-nav-btn:hover {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       border-color: rgba(78, 205, 196, 0.4);
-      color: rgba(29, 29, 31, 0.95);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(78, 205, 196, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      color: rgba(29, 29, 31, 0.9);
+      transform: scale(1.1);
+      box-shadow: 0 8px 28px rgba(78, 205, 196, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.8);
     }
 
     body.dark-mode .scroll-nav-btn:hover {
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.15);
       border-color: rgba(255, 255, 255, 0.25);
-      color: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.12);
     }
 
     .scroll-nav-btn:active {
-      transform: translateY(0) scale(0.96);
+      transform: scale(0.95);
     }
 
     .scroll-nav-btn svg {
-      width: 24px;
-      height: 24px;
+      width: 20px;
+      height: 20px;
       display: block;
-    }
-
-    .scroll-nav-label {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(29, 29, 31, 0.45);
-      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-      text-align: center;
-      white-space: nowrap;
-      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
-    }
-
-    body.dark-mode .scroll-nav-label {
-      color: rgba(255, 255, 255, 0.4);
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    }
-
-    .scroll-nav:hover .scroll-nav-label {
-      color: rgba(29, 29, 31, 0.65);
-      transform: translateY(-1px);
-    }
-
-    body.dark-mode .scroll-nav:hover .scroll-nav-label {
-      color: rgba(255, 255, 255, 0.6);
     }
 
     /* Subtle pulse animation for arrows */
     @keyframes subtlePulse {
       0%, 100% { 
-        opacity: 0.75;
+        opacity: 0.6;
         transform: scale(1);
       }
       50% { 
@@ -1934,29 +2573,27 @@
 
       /* Scroll Nav Mobile */
       .scroll-nav-container {
+        right: 16px;
+        top: auto;
         bottom: 24px;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .scroll-nav {
+        transform: none;
+        flex-direction: row;
         gap: 12px;
       }
 
+      .scroll-nav {
+        gap: 8px;
+      }
+
       .scroll-nav-btn {
-        width: 52px;
-        height: 52px;
-        box-shadow: 0 4px 20px rgba(78, 205, 196, 0.15);
+        width: 44px;
+        height: 44px;
+        box-shadow: 0 4px 16px rgba(78, 205, 196, 0.12);
       }
 
       .scroll-nav-btn svg {
-        width: 22px;
-        height: 22px;
-      }
-
-      .scroll-nav-label {
-        font-size: 9px;
-        letter-spacing: 0.12em;
+        width: 18px;
+        height: 18px;
       }
 
       /* Theme toggle mobile */
@@ -2008,12 +2645,20 @@
       }
 
       .scroll-nav-container {
-        bottom: 16px;
+        right: 16px;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
       }
 
       .scroll-nav-btn {
-        width: 44px;
-        height: 44px;
+        width: 36px;
+        height: 36px;
+      }
+
+      .scroll-nav-btn svg {
+        width: 16px;
+        height: 16px;
       }
 
       .grid-floor {
@@ -2052,9 +2697,19 @@
         font-size: 26px;
       }
 
+      .scroll-nav-container {
+        right: 12px;
+        bottom: 20px;
+      }
+
       .scroll-nav-btn {
-        width: 48px;
-        height: 48px;
+        width: 40px;
+        height: 40px;
+      }
+
+      .scroll-nav-btn svg {
+        width: 16px;
+        height: 16px;
       }
 
       .theme-toggle {
@@ -2087,11 +2742,6 @@
 
       .newsletter-form {
         max-width: 280px;
-      }
-
-      .scroll-nav-label {
-        font-size: 7px;
-        max-width: 80px;
       }
     }
 
@@ -2160,8 +2810,12 @@
     <!-- Dropdown Navigation Menu -->
     <div class="nav-dropdown" id="nav-dropdown">
       <a href="#hero">Home</a>
-      <a href="#projects">Polarity Projects</a>
-      <a href="#contact">Let's Connect</a>
+      <a href="#projects">Projects</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Connect</a>
     </div>
   </nav>
 
@@ -2264,7 +2918,174 @@
     </div>
   </section>
 
-  <!-- SECTION 3: Contact -->
+  <!-- SECTION 3: Ecosystem -->
+  <section class="ecosystem-section" id="ecosystem">
+    <div class="ecosystem-wrapper">
+      <h2 class="section-heading">The Polarity Ecosystem</h2>
+      <p class="ecosystem-subtitle">All our projects operate under the CCX science umbrella, each exploring different dimensions of how we think, create, and connect.</p>
+      
+      <div class="umbrella-grid">
+        <!-- Polarity App -->
+        <div class="umbrella-card">
+          <div class="umbrella-card-icon polarity-accent">
+            <svg viewBox="0 0 100 100">
+              <ellipse cx="50" cy="50" rx="30" ry="10" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(-60 50 50)"/>
+              <ellipse cx="50" cy="50" rx="30" ry="10" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(60 50 50)"/>
+              <ellipse cx="50" cy="50" rx="30" ry="10" fill="none" stroke="currentColor" stroke-width="2"/>
+              <circle cx="50" cy="50" r="6" fill="currentColor"/>
+            </svg>
+          </div>
+          <h4>Polarity</h4>
+          <p class="umbrella-card-tagline">AI Exocortex</p>
+          <p class="umbrella-card-desc">The core platform — an AI-powered tool that maps your cognitive patterns through conversation, helping you externalize and understand your own thinking.</p>
+        </div>
+
+        <!-- AVDP -->
+        <div class="umbrella-card">
+          <div class="umbrella-card-icon avdp-accent">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m-4 0h8"/>
+              <circle cx="12" cy="8" r="4"/>
+            </svg>
+          </div>
+          <h4>A Very Distant Perspective</h4>
+          <p class="umbrella-card-tagline">Experimental Podcast</p>
+          <p class="umbrella-card-desc">Long-form conversations that matter. AVDP explores the depths of human experience through dialogue — CCX principles in practice.</p>
+        </div>
+
+        <!-- WaxFeed -->
+        <div class="umbrella-card">
+          <div class="umbrella-card-icon waxfeed-accent">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <circle cx="12" cy="12" r="3"/>
+              <circle cx="12" cy="12" r="6" stroke-dasharray="2 2"/>
+            </svg>
+          </div>
+          <h4>WaxFeed</h4>
+          <p class="umbrella-card-tagline">Social Music Discovery</p>
+          <p class="umbrella-card-desc">Letterboxd for albums. Understanding how shared taste and musical dialogue shapes community and identity — the social layer of CCX.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: About -->
+  <section class="about-section" id="about">
+    <div class="about-wrapper">
+      <h2 class="section-heading">About Polarity</h2>
+      
+      <div class="about-content">
+        <!-- Mission Statement -->
+        <div class="about-mission">
+          <p class="mission-text">
+            <span class="accent">Polarity Lab</span> is a research collective building at the intersection of AI, conversation, and human cognition. We're pioneering the emerging field of <span class="accent">Conversational Connectomics (CCX)</span> — the study of how dialogue shapes thought and reveals the architecture of the mind.
+          </p>
+        </div>
+
+        <!-- CCX Explanation -->
+        <div class="ccx-section">
+          <div class="ccx-header">
+            <div class="ccx-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
+                <path d="M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
+              </svg>
+            </div>
+            <h3>What is Conversational Connectomics?</h3>
+          </div>
+          <p class="ccx-description">
+            CCX is an emerging interdisciplinary field that maps the neural and cognitive patterns formed through human dialogue. Just as traditional connectomics maps the brain's physical wiring, CCX explores how conversations create, reinforce, and reshape our mental frameworks — building an "exocortex" of externalized thought.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Research -->
+  <section class="research-section" id="research">
+    <div class="research-wrapper">
+      <h2 class="section-heading">Research</h2>
+      
+      <div class="research-overview">
+        <p class="research-intro">Exploring <span class="accent">Conversational Connectomics</span> — the emerging study of how dialogue shapes and reveals the architecture of thought.</p>
+      </div>
+
+      <div class="research-grid">
+        <!-- Research Paper 1 -->
+        <a href="#" class="research-card" target="_blank">
+          <div class="research-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <div class="research-info">
+            <span class="research-tag">Coming Soon</span>
+            <h3>Research Paper Title</h3>
+            <p>Placeholder for upcoming research publication on conversational connectomics methodology.</p>
+          </div>
+        </a>
+
+        <!-- Research Paper 2 -->
+        <a href="#" class="research-card" target="_blank">
+          <div class="research-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <div class="research-info">
+            <span class="research-tag">Coming Soon</span>
+            <h3>Research Paper Title</h3>
+            <p>Placeholder for upcoming research publication on neural dialogue patterns.</p>
+          </div>
+        </a>
+
+        <!-- Research Paper 3 -->
+        <a href="#" class="research-card" target="_blank">
+          <div class="research-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <div class="research-info">
+            <span class="research-tag">Coming Soon</span>
+            <h3>Research Paper Title</h3>
+            <p>Placeholder for upcoming research publication on cognitive mapping frameworks.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Team -->
+  <section class="team-page-section" id="team">
+    <div class="team-page-wrapper">
+      <h2 class="section-heading">The Team</h2>
+      <p class="team-page-subtitle">The minds behind Polarity Lab</p>
+      
+      <div class="team-page-grid">
+        <div class="team-page-member">
+          <div class="team-page-avatar">T</div>
+          <h4>Theo</h4>
+          <p>Co-Founder</p>
+        </div>
+        <div class="team-page-member">
+          <div class="team-page-avatar">S</div>
+          <h4>Shadrack</h4>
+          <p>Co-Founder</p>
+        </div>
+        <div class="team-page-member">
+          <div class="team-page-avatar">N</div>
+          <h4>Nathan</h4>
+          <p>Co-Founder</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: Contact -->
   <section class="contact-section" id="contact">
     <div class="contact-wrapper">
       <p class="contact-trigger">let's connect</p>
@@ -2759,6 +3580,11 @@
       observer.observe(card);
     });
 
+    // Also observe research cards
+    document.querySelectorAll('.research-card').forEach(card => {
+      observer.observe(card);
+    });
+
     // Newsletter form handler
     const newsletterForm = document.getElementById('newsletter-form');
     const newsletterMessage = document.getElementById('newsletter-message');
@@ -2896,43 +3722,27 @@
         const documentHeight = document.documentElement.scrollHeight;
         const newSection = getCurrentSection();
         
-        // Update label if section changed
+        // Update current section tracking
         if (newSection !== currentSection) {
           currentSection = newSection;
-          
-          if (currentSection === 'hero') {
-            scrollDownLabel.textContent = 'view polarity projects';
-          } else if (currentSection === 'projects') {
-            scrollDownLabel.textContent = "let's connect";
-          }
         }
 
-        // Cleaner show/hide logic
-        const isAtTop = scrollY < windowHeight * 0.2;
-        const isAtBottom = scrollY > documentHeight - windowHeight - 200;
-        const inHero = scrollY < windowHeight * 0.7;
-        const inProjects = scrollY >= windowHeight * 0.7 && scrollY < documentHeight - windowHeight - windowHeight * 0.5;
-        const inContact = scrollY >= documentHeight - windowHeight - windowHeight * 0.5;
+        // Simple logic: show up arrow if not at top, show down arrow if not at bottom
+        const nearTop = scrollY < windowHeight * 0.3;
+        const nearBottom = scrollY > documentHeight - windowHeight - 100;
 
-        // Hero section: only down arrow
-        if (inHero) {
+        // Show/hide up arrow
+        if (nearTop) {
           scrollUpNav.classList.remove('visible');
-          scrollDownNav.classList.add('visible');
-        } 
-        // Projects section: both arrows (middle of page)
-        else if (inProjects && !isAtBottom) {
+        } else {
           scrollUpNav.classList.add('visible');
-          scrollDownNav.classList.add('visible');
-        } 
-        // Contact section: only up arrow
-        else if (inContact || isAtBottom) {
-          scrollUpNav.classList.add('visible');
-          scrollDownNav.classList.remove('visible');
         }
-        // Default fallback
-        else {
-          scrollUpNav.classList.add('visible');
+
+        // Show/hide down arrow
+        if (nearBottom) {
           scrollDownNav.classList.remove('visible');
+        } else {
+          scrollDownNav.classList.add('visible');
         }
       }
 
@@ -2966,6 +3776,14 @@
         if (current === 'hero') {
           targetSection = document.getElementById('projects');
         } else if (current === 'projects') {
+          targetSection = document.getElementById('ecosystem');
+        } else if (current === 'ecosystem') {
+          targetSection = document.getElementById('about');
+        } else if (current === 'about') {
+          targetSection = document.getElementById('research');
+        } else if (current === 'research') {
+          targetSection = document.getElementById('team');
+        } else if (current === 'team') {
           targetSection = document.getElementById('contact');
         }
 
