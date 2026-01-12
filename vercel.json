@@ -5,10 +5,5 @@
   "redirects": [
     { "source": "/polarity", "destination": "https://app.polarity-lab.com", "permanent": false },
     { "source": "/polarity/:path*", "destination": "https://app.polarity-lab.com/:path*", "permanent": false }
-  ],
-  "git": {
-    "deploymentEnabled": {
-      "main": true
-    }
-  }
+  ]
 }
