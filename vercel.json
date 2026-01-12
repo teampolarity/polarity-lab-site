@@ -1,6 +1,8 @@
 {
-  "framework": "nextjs",
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" }
+  "framework": null,
+  "outputDirectory": "public",
+  "redirects": [
+    { "source": "/polarity", "destination": "https://app.polarity-lab.com", "permanent": false },
+    { "source": "/polarity/:path*", "destination": "https://app.polarity-lab.com/:path*", "permanent": false }
   ]
 }
