@@ -3424,20 +3424,57 @@
         padding: 20px 16px !important;
       }
       
-      /* SLIDE 3: Flywheel → stack vertically */
-      [style*="grid-template-columns: 1fr auto 1fr"] {
+      /* SLIDE 3: Primary block + 3-column grid → stack */
+      [style*="grid-template-columns: repeat(3, 1fr)"] {
         grid-template-columns: 1fr !important;
         gap: 16px !important;
       }
       
-      [style*="grid-template-columns: 1fr auto 1fr"] > div {
-        padding: 20px !important;
+      /* Primary Lab block mobile */
+      [style*="padding: 40px"][style*="border-radius: 28px"] {
+        padding: 24px 20px !important;
+        margin-bottom: 20px !important;
       }
       
-      /* Center cycle arrows on mobile */
-      [style*="flex-direction: column"][style*="padding: 0 24px"] {
-        padding: 16px 0 !important;
-        flex-direction: row !important;
+      [style*="padding: 40px"][style*="border-radius: 28px"] > div[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 16px !important;
+      }
+      
+      [style*="width: 64px"][style*="height: 64px"] {
+        width: 48px !important;
+        height: 48px !important;
+        margin: 0 auto !important;
+      }
+      
+      [style*="width: 64px"] svg {
+        width: 24px !important;
+        height: 24px !important;
+      }
+      
+      [style*="font-size: 20px"][style*="font-weight: 600"] {
+        font-size: 18px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+      }
+      
+      [style*="font-size: 16px"][style*="line-height: 1.75"] {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+      }
+      
+      /* Supporting blocks mobile */
+      [style*="grid-template-columns: repeat(3, 1fr)"] > div {
+        padding: 20px 16px !important;
+      }
+      
+      [style*="grid-template-columns: repeat(3, 1fr)"] h4 {
+        font-size: 15px !important;
+      }
+      
+      [style*="grid-template-columns: repeat(3, 1fr)"] p {
+        font-size: 13px !important;
       }
       
       /* SLIDE 4: Team cards → single column */
@@ -5257,68 +5294,68 @@
 
   <!-- SLIDE 3: Who We Are -->
   <div class="slide" data-slide="3">
-    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 50px 64px; box-sizing: border-box;">
+    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 64px; box-sizing: border-box;">
       
-      <div style="max-width: 1000px; margin: 0 auto; width: 100%;">
+      <div style="max-width: 1100px; margin: 0 auto; width: 100%;">
         
-        <!-- Title -->
-        <div style="text-align: center; margin-bottom: 40px;">
-          <h2 class="section-heading" style="margin-bottom: 0;">Who We Are</h2>
+        <!-- Header -->
+        <div style="text-align: center; margin-bottom: 48px;">
+          <h2 class="section-heading" style="margin-bottom: 12px;">Who We Are</h2>
+          <p style="font-size: 17px; color: #6e6e73; max-width: 700px; margin: 0 auto; line-height: 1.6;">A research lab building products that generate conversational data—turning dialogue into insights about cognition.</p>
         </div>
         
-        <!-- Four Narrative Blocks -->
-        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
-          
-          <!-- Block 1: The Lab -->
-          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 24px; padding: 32px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);">
-            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
-              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.08)); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                  <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
-                </svg>
-              </div>
-              <p style="font-size: 11px; color: #4ECDC4; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0;">The Lab</p>
+        <!-- Primary Block: The Lab (Full Width) -->
+        <div style="background: rgba(255, 255, 255, 0.55); backdrop-filter: blur(40px); border-radius: 28px; padding: 40px; border: 1px solid rgba(255, 255, 255, 0.65); box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08); margin-bottom: 28px;">
+          <div style="display: flex; align-items: flex-start; gap: 20px;">
+            <div style="width: 64px; height: 64px; background: linear-gradient(135deg, rgba(78, 205, 196, 0.25), rgba(78, 205, 196, 0.1)); border-radius: 18px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+              </svg>
             </div>
-            <p style="font-size: 15px; color: #1d1d1f; line-height: 1.7; margin: 0;">A lab that builds products which generate conversational data. This data informs our understanding of cognition, specifically how one connects ideas in speech and organizes their thoughts.</p>
+            <div style="flex: 1;">
+              <h3 style="font-size: 20px; font-weight: 600; color: #1d1d1f; margin: 0 0 8px 0; display: flex; align-items: center; gap: 10px;">
+                <span>The Lab</span>
+                <span style="font-size: 11px; color: #4ECDC4; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600;">Core Mission</span>
+              </h3>
+              <p style="font-size: 16px; color: #1d1d1f; line-height: 1.75; margin: 0;">We build products that generate conversational data. This data informs our understanding of cognition—specifically how one connects ideas in speech and organizes their thoughts.</p>
+            </div>
           </div>
+        </div>
+        
+        <!-- Three Supporting Blocks -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
           
           <!-- Block 2: Open Platform -->
-          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 24px; padding: 32px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);">
-            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
-              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(255, 107, 129, 0.2), rgba(255, 107, 129, 0.08)); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#FF6B81" stroke-width="1.5">
-                  <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
-                </svg>
-              </div>
-              <p style="font-size: 11px; color: #FF6B81; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0;">Open Platform</p>
+          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 24px; padding: 28px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);">
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(255, 107, 129, 0.2), rgba(255, 107, 129, 0.08)); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#FF6B81" stroke-width="1.5">
+                <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+              </svg>
             </div>
-            <p style="font-size: 15px; color: #1d1d1f; line-height: 1.7; margin: 0;">We provide a venue for others to build products on our intelligence and to contribute to our research as collaborators. Build with us, learn with us.</p>
+            <h4 style="font-size: 16px; font-weight: 600; color: #1d1d1f; margin: 0 0 10px 0;">Open Platform</h4>
+            <p style="font-size: 14px; color: #424245; line-height: 1.65; margin: 0;">We provide a venue for others to build products on our intelligence and contribute to research as collaborators.</p>
           </div>
           
           <!-- Block 3: The Purpose -->
-          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 24px; padding: 32px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);">
-            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
-              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(187, 143, 206, 0.2), rgba(187, 143, 206, 0.08)); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
-                  <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
-                </svg>
-              </div>
-              <p style="font-size: 11px; color: #BB8FCE; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0;">The Purpose</p>
+          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 24px; padding: 28px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);">
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(187, 143, 206, 0.2), rgba(187, 143, 206, 0.08)); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
+                <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418"/>
+              </svg>
             </div>
-            <p style="font-size: 15px; color: #1d1d1f; line-height: 1.7; margin: 0;">Through our study of conversation, we aim to understand the greater spectrum of the human condition. The things that make us different and similar, all in hopes of bringing the world closer together.</p>
+            <h4 style="font-size: 16px; font-weight: 600; color: #1d1d1f; margin: 0 0 10px 0;">The Purpose</h4>
+            <p style="font-size: 14px; color: #424245; line-height: 1.65; margin: 0;">Through conversation, we understand the human condition—what makes us different and similar—bringing the world closer together.</p>
           </div>
           
           <!-- Block 4: The Studio -->
-          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 24px; padding: 32px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);">
-            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 16px;">
-              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(255, 160, 122, 0.2), rgba(255, 160, 122, 0.08)); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#FFA07A" stroke-width="1.5">
-                  <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
-                </svg>
-              </div>
-              <p style="font-size: 11px; color: #FFA07A; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0;">The Studio</p>
+          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 24px; padding: 28px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);">
+            <div style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(255, 160, 122, 0.2), rgba(255, 160, 122, 0.08)); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#FFA07A" stroke-width="1.5">
+                <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
+              </svg>
             </div>
-            <p style="font-size: 15px; color: #1d1d1f; line-height: 1.7; margin: 0;">A Very Distant Perspective captures people in an environment that allows their authentic selves to shine, packaging it in an entertainment format for others to experience.</p>
+            <h4 style="font-size: 16px; font-weight: 600; color: #1d1d1f; margin: 0 0 10px 0;">The Studio</h4>
+            <p style="font-size: 14px; color: #424245; line-height: 1.65; margin: 0;">A Very Distant Perspective captures authentic selves in conversation, packaging them as entertainment for others to experience.</p>
           </div>
           
         </div>
