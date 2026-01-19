@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- POLARITY LLC - 4K Logo (Light Background) - CLEAN VERSION -->
+<!-- Dimensions: 3840 x 2160 (4K UHD) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3840 2160" width="3840" height="2160">
+  <!-- Background -->
+  <rect width="3840" height="2160" fill="#F5F5F7"/>
+  
+  <defs>
+    <!-- Node gradient - clean -->
+    <radialGradient id="nodeGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#FF8899"/>
+      <stop offset="100%" stop-color="#CC2244"/>
+    </radialGradient>
+    
+    <!-- P gradient - detailed like sphere -->
+    <linearGradient id="pGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6680"/>
+      <stop offset="50%" stop-color="#FF4466"/>
+      <stop offset="100%" stop-color="#CC2244"/>
+    </linearGradient>
+    
+    <!-- P node gradient - enhanced -->
+    <radialGradient id="pNodeGrad" cx="30%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="15%" stop-color="#FFD8DD"/>
+      <stop offset="35%" stop-color="#FF8899"/>
+      <stop offset="55%" stop-color="#FF4466"/>
+      <stop offset="75%" stop-color="#CC2244"/>
+      <stop offset="100%" stop-color="#881133"/>
+    </radialGradient>
+    
+    <!-- Sphere gradient - clean and sharp -->
+    <radialGradient id="sphereGrad" cx="30%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="15%" stop-color="#FFD8DD"/>
+      <stop offset="35%" stop-color="#FF8899"/>
+      <stop offset="55%" stop-color="#FF4466"/>
+      <stop offset="75%" stop-color="#CC2244"/>
+      <stop offset="100%" stop-color="#881133"/>
+    </radialGradient>
+    
+    <!-- Ring gradient -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF4466" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#FFAABB"/>
+      <stop offset="100%" stop-color="#FF4466" stop-opacity="0.2"/>
+    </linearGradient>
+    
+    <!-- Beam gradient -->
+    <linearGradient id="beamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF4466" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#FF4466" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#FF4466" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#FF4466" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#FF4466" stop-opacity="0"/>
+    </linearGradient>
+    
+    <!-- Teal node gradient for LLC -->
+    <radialGradient id="tealNodeGrad" cx="30%" cy="25%" r="75%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="15%" stop-color="#B8E8E8"/>
+      <stop offset="35%" stop-color="#66CCCC"/>
+      <stop offset="55%" stop-color="#20B2AA"/>
+      <stop offset="75%" stop-color="#008B8B"/>
+      <stop offset="100%" stop-color="#005555"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Center the logo: translate to center, scale 2x -->
+  <g transform="translate(920, 780) scale(2)">
+    <!-- P - ENHANCED WITH DETAIL LIKE SPHERE -->
+    <g transform="translate(10, 20)">
+      <!-- P stroke with gradient -->
+      <path d="M 18 100 L 18 8 L 52 8 C 82 8, 82 54, 52 54 L 18 54" stroke="url(#pGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <!-- Bottom node - sphere style -->
+      <circle cx="18" cy="100" r="8" fill="url(#pNodeGrad)"/>
+      <ellipse cx="14" cy="96" rx="3" ry="2.5" fill="white" opacity="0.35"/>
+      <circle cx="13" cy="95" r="1.5" fill="white" opacity="0.55"/>
+      <!-- Top node - sphere style -->
+      <circle cx="18" cy="8" r="8" fill="url(#pNodeGrad)"/>
+      <ellipse cx="14" cy="4" rx="3" ry="2.5" fill="white" opacity="0.35"/>
+      <circle cx="13" cy="3" r="1.5" fill="white" opacity="0.55"/>
+      <!-- Curve node - sphere style -->
+      <circle cx="70" cy="31" r="7" fill="url(#pNodeGrad)"/>
+      <ellipse cx="66" cy="27" rx="2.5" ry="2" fill="white" opacity="0.35"/>
+      <circle cx="65" cy="26" r="1.2" fill="white" opacity="0.55"/>
+    </g>
+
+    <!-- O - THE SPHERE -->
+    <g transform="translate(95, 20)">
+      <rect x="49" y="-10" width="6" height="30" rx="3" fill="url(#beamGrad)"/>
+      <rect x="49" y="88" width="6" height="30" rx="3" fill="url(#beamGrad)"/>
+      <ellipse cx="52" cy="54" rx="46" ry="13" transform="rotate(-20 52 54)" stroke="url(#ringGrad)" stroke-width="2.5" fill="none"/>
+      <ellipse cx="52" cy="54" rx="42" ry="11" transform="rotate(25 52 54)" stroke="url(#ringGrad)" stroke-width="1.5" fill="none" opacity="0.6"/>
+      <circle cx="52" cy="54" r="32" fill="url(#sphereGrad)"/>
+      <ellipse cx="42" cy="44" rx="9" ry="7" fill="white" opacity="0.35"/>
+      <circle cx="38" cy="40" r="4" fill="white" opacity="0.55"/>
+    </g>
+
+    <!-- L -->
+    <g transform="translate(205, 20)">
+      <path d="M 18 8 L 18 100 L 72 100" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="18" cy="8" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="18" cy="100" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="72" cy="100" r="6" fill="url(#nodeGrad)"/>
+    </g>
+
+    <!-- A -->
+    <g transform="translate(290, 20)">
+      <path d="M 8 100 L 45 8 L 82 100 M 20 68 L 70 68" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="8" cy="100" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="45" cy="8" r="7" fill="url(#nodeGrad)"/>
+      <circle cx="82" cy="100" r="6" fill="url(#nodeGrad)"/>
+    </g>
+
+    <!-- R -->
+    <g transform="translate(385, 20)">
+      <path d="M 18 100 L 18 8 L 52 8 C 82 8, 82 52, 52 52 L 18 52 M 46 52 L 78 100" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="18" cy="8" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="18" cy="100" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="70" cy="30" r="5" fill="url(#nodeGrad)"/>
+      <circle cx="78" cy="100" r="6" fill="url(#nodeGrad)"/>
+    </g>
+
+    <!-- I -->
+    <g transform="translate(480, 20)">
+      <path d="M 20 8 L 60 8 M 40 8 L 40 100 M 20 100 L 60 100" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <circle cx="20" cy="8" r="5" fill="url(#nodeGrad)"/>
+      <circle cx="60" cy="8" r="5" fill="url(#nodeGrad)"/>
+      <circle cx="40" cy="8" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="40" cy="100" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="20" cy="100" r="5" fill="url(#nodeGrad)"/>
+      <circle cx="60" cy="100" r="5" fill="url(#nodeGrad)"/>
+    </g>
+
+    <!-- T -->
+    <g transform="translate(560, 20)">
+      <path d="M 8 8 L 72 8 M 40 8 L 40 100" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none"/>
+      <circle cx="8" cy="8" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="72" cy="8" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="40" cy="8" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="40" cy="100" r="6" fill="url(#nodeGrad)"/>
+    </g>
+
+    <!-- Y -->
+    <g transform="translate(650, 20)">
+      <path d="M 8 8 L 42 54 L 76 8 M 42 54 L 42 100" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="8" cy="8" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="76" cy="8" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="42" cy="54" r="6" fill="url(#nodeGrad)"/>
+      <circle cx="42" cy="100" r="6" fill="url(#nodeGrad)"/>
+    </g>
+
+    <!-- LLC - TEAL -->
+    <!-- L -->
+    <g transform="translate(755, 20)">
+      <path d="M 18 8 L 18 100 L 62 100" stroke="#20B2AA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="18" cy="8" r="6" fill="url(#tealNodeGrad)"/>
+      <ellipse cx="14" cy="4" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+      <circle cx="18" cy="100" r="6" fill="url(#tealNodeGrad)"/>
+      <ellipse cx="14" cy="96" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+      <circle cx="62" cy="100" r="6" fill="url(#tealNodeGrad)"/>
+      <ellipse cx="58" cy="96" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+    </g>
+
+    <!-- L -->
+    <g transform="translate(830, 20)">
+      <path d="M 18 8 L 18 100 L 62 100" stroke="#20B2AA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="18" cy="8" r="6" fill="url(#tealNodeGrad)"/>
+      <ellipse cx="14" cy="4" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+      <circle cx="18" cy="100" r="6" fill="url(#tealNodeGrad)"/>
+      <ellipse cx="14" cy="96" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+      <circle cx="62" cy="100" r="6" fill="url(#tealNodeGrad)"/>
+      <ellipse cx="58" cy="96" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+    </g>
+
+    <!-- C -->
+    <g transform="translate(905, 20)">
+      <path d="M 62 20 C 30 8, 8 30, 8 54 C 8 78, 30 100, 62 88" stroke="#20B2AA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <circle cx="62" cy="20" r="6" fill="url(#tealNodeGrad)"/>
+      <ellipse cx="58" cy="16" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+      <circle cx="62" cy="88" r="6" fill="url(#tealNodeGrad)"/>
+      <ellipse cx="58" cy="84" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+    </g>
+  </g>
+  
+  <!-- Tagline -->
+  <text x="1920" y="1320" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="42" font-weight="600" letter-spacing="0.25em" fill="#1d1d1f">RESEARCH LAB</text>
+  <text x="1920" y="1380" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="28" font-weight="400" letter-spacing="0.15em" fill="#666666">Conversational Connectomics</text>
+  <text x="1920" y="1480" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif" font-size="20" font-weight="400" letter-spacing="0.3em" fill="#999999">PROVIDENCE, RI</text>
+</svg>

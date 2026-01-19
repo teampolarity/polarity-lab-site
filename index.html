@@ -6,9 +6,9 @@
   <meta name="theme-color" content="#0A0A0A">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="description" content="Polarity Lab - Building at the intersection of AI, music, and creativity.">
+  <meta name="description" content="Polarity Lab - Research laboratory studying Conversational Connectomics (CCX). Extracting cognitive signals from natural language. 2 provisional patents. Providence, RI.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <title>Polarity Lab</title>
+  <title>Polarity Lab | Conversational Connectomics Research</title>
   <style>
     *, *::before, *::after {
       margin: 0;
@@ -17,9 +17,7 @@
     }
 
     html {
-      scroll-behavior: smooth;
       -webkit-tap-highlight-color: transparent;
-      scroll-snap-type: y proximity;
     }
 
     body {
@@ -27,11 +25,214 @@
       font-weight: 400;
       background: #f5f5f7;
       color: #1d1d1f;
-      overflow-x: hidden;
+      overflow: hidden;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       letter-spacing: -0.01em;
       transition: background-color 0.4s ease, color 0.4s ease;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    /* ============================================
+       HORIZONTAL SLIDESHOW SYSTEM
+       ============================================ */
+    .slides-container {
+      display: flex;
+      height: 100vh;
+      width: max-content;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      flex-shrink: 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .slide > section {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    /* Slide Navigation Arrows */
+    .slide-nav {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .slide-nav:hover {
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 8px 32px rgba(78, 205, 196, 0.25);
+      border-color: rgba(78, 205, 196, 0.4);
+    }
+
+    .slide-nav:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    .slide-nav.disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .slide-nav svg {
+      width: 24px;
+      height: 24px;
+      color: #1d1d1f;
+      transition: color 0.3s ease;
+    }
+
+    body.dark-mode .slide-nav {
+      background: rgba(30, 30, 30, 0.9);
+      border-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark-mode .slide-nav svg {
+      color: #f5f5f7;
+    }
+
+    body.dark-mode .slide-nav:hover {
+      border-color: rgba(78, 205, 196, 0.4);
+      box-shadow: 0 8px 32px rgba(78, 205, 196, 0.2);
+    }
+
+    .slide-nav-prev {
+      left: 24px;
+    }
+
+    .slide-nav-next {
+      right: 24px;
+    }
+
+    /* Slide Indicators (Dots) */
+    .slide-indicators {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      display: flex;
+      gap: 12px;
+      padding: 12px 20px;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 30px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    body.dark-mode .slide-indicators {
+      background: rgba(30, 30, 30, 0.8);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .slide-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .slide-dot {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .slide-dot:hover {
+      background: rgba(78, 205, 196, 0.5);
+      transform: scale(1.2);
+    }
+
+    .slide-dot.active {
+      background: #4ECDC4;
+      transform: scale(1.2);
+      box-shadow: 0 0 12px rgba(78, 205, 196, 0.5);
+    }
+
+    /* Slide Counter */
+    .slide-counter {
+      position: fixed;
+      bottom: 32px;
+      right: 32px;
+      z-index: 100;
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(29, 29, 31, 0.5);
+      letter-spacing: 0.05em;
+    }
+
+    body.dark-mode .slide-counter {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .slide-counter .current {
+      color: #4ECDC4;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      .slide-nav {
+        width: 44px;
+        height: 44px;
+      }
+
+      .slide-nav svg {
+        width: 20px;
+        height: 20px;
+      }
+
+      .slide-nav-prev {
+        left: 12px;
+      }
+
+      .slide-nav-next {
+        right: 12px;
+      }
+
+      .slide-indicators {
+        bottom: 20px;
+        padding: 10px 16px;
+        gap: 10px;
+      }
+
+      .slide-dot {
+        width: 8px;
+        height: 8px;
+      }
+
+      .slide-counter {
+        bottom: 20px;
+        right: 20px;
+        font-size: 12px;
+      }
     }
 
     /* Dark mode */
@@ -413,9 +614,11 @@
       50% { opacity: 0.6; }
     }
 
-    /* Smooth section snapping */
-    section {
-      scroll-snap-align: start;
+    /* Slide sections - content inside slides */
+    .slide section {
+      min-height: auto;
+      height: auto;
+      padding: 60px 64px;
     }
 
     /* Navigation Bar with 3D Polarity Logo */
@@ -709,8 +912,8 @@
     .hero-section {
       position: relative;
       z-index: 1;
-      min-height: 100vh;
-      height: 100vh;
+      min-height: auto;
+      height: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -719,6 +922,114 @@
       padding: clamp(40px, 8vw, 80px);
       transform-style: preserve-3d;
       perspective: 2000px;
+      background: transparent;
+    }
+    
+    /* Hero inside slide - full height - TRANSPARENT to show particles */
+    .slide .hero-section {
+      min-height: 100vh;
+      padding: 0 clamp(40px, 8vw, 80px);
+      background: transparent;
+    }
+    
+    /* POLARITY Wordmark - Premium 2050 */
+    #polarity-wordmark {
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    #polarity-wordmark:hover {
+      transform: scale(1.02);
+      filter: drop-shadow(0 8px 40px rgba(255, 68, 102, 0.25));
+    }
+    
+    /* Premium CTA Button */
+    .premium-cta:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 16px 48px rgba(255, 68, 102, 0.45), 0 4px 12px rgba(255, 68, 102, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+      background: linear-gradient(135deg, rgba(255, 80, 110, 0.95) 0%, rgba(210, 50, 90, 1) 100%) !important;
+    }
+    
+    .premium-cta:active {
+      transform: translateY(-1px) scale(1.01);
+    }
+    
+    /* Logo Container */
+    .logo-container {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Homepage Projects Grid - Premium 2050 */
+    .home-projects-grid {
+      width: 90vw;
+    }
+    
+    .home-projects-grid .project-card {
+      opacity: 1 !important;
+      transform: none !important;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(60px) saturate(200%);
+      -webkit-backdrop-filter: blur(60px) saturate(200%);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 
+        0 8px 40px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(255, 255, 255, 0.3) inset,
+        0 2px 0 rgba(255, 255, 255, 0.5) inset;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .home-projects-grid .project-card:hover {
+      transform: translateY(-12px) scale(1.02) !important;
+      box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset,
+        0 2px 0 rgba(255, 255, 255, 0.8) inset;
+      background: rgba(255, 255, 255, 0.25);
+    }
+    
+    .home-projects-grid .project-thumbnail {
+      aspect-ratio: 16/10;
+      border-radius: 23px 23px 0 0;
+    }
+    
+    .home-projects-grid .project-info {
+      padding: 20px 24px 24px;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    
+    .home-projects-grid .project-info h3 {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #1d1d1f;
+    }
+    
+    .home-projects-grid .project-info p {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #555;
+      margin-top: 6px;
+    }
+    
+    @media (max-width: 900px) {
+      .home-projects-grid {
+        max-width: 380px !important;
+        gap: 24px !important;
+      }
+    }
+    
+    /* Hero CTA hover effect */
+    .hero-cta-btn:hover {
+      background: rgba(255, 68, 102, 0.25) !important;
+      border-color: rgba(255, 68, 102, 0.7) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(255, 68, 102, 0.35) !important;
     }
 
     .hero-title {
@@ -726,9 +1037,8 @@
       font-size: clamp(42px, 8vw, 80px);
       letter-spacing: -0.03em;
       line-height: 1.1;
-      opacity: 0;
-      transform: translateY(30px) translateZ(0);
-      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+      opacity: 1;
+      transform: translateY(0) translateZ(50px);
       background: linear-gradient(180deg, #1d1d1f 0%, rgba(29, 29, 31, 0.7) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -795,9 +1105,8 @@
       line-height: 1.5;
       color: rgba(29, 29, 31, 0.65);
       max-width: 900px;
-      opacity: 0;
-      transform: translateY(20px) translateZ(0);
-      animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+      opacity: 1;
+      transform: translateY(0) translateZ(30px);
       white-space: nowrap;
       text-shadow: 
         0 1px 2px rgba(78, 205, 196, 0.08),
@@ -838,6 +1147,14 @@
         opacity: 1;
         transform: translateY(0) translateZ(50px);
       }
+    }
+
+    /* Hero CTA Button */
+    .hero-cta-btn:hover {
+      background: rgba(78, 205, 196, 0.25) !important;
+      border-color: rgba(78, 205, 196, 0.6) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(78, 205, 196, 0.2);
     }
     
     /* 3D Spatial Box Container for Hero Text */
@@ -973,11 +1290,11 @@
     }
 
     .project-card {
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 20px;
       overflow: hidden;
       transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       text-decoration: none;
@@ -985,16 +1302,22 @@
       display: block;
       opacity: 0;
       transform: translateY(20px);
-      box-shadow: 0 4px 20px rgba(78, 205, 196, 0.08);
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+        0 1px 0 rgba(255, 255, 255, 0.6) inset;
     }
 
     body.dark-mode .project-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
     }
 
-    .project-card.visible {
+    .project-card.visible,
+    .hero-section .project-card {
       opacity: 1;
       transform: translateY(0);
     }
@@ -1004,10 +1327,13 @@
     .project-card:nth-child(3) { transition-delay: 0.15s; }
 
     .project-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(78, 205, 196, 0.3);
-      background: rgba(255, 255, 255, 0.75);
-      box-shadow: 0 12px 40px rgba(78, 205, 196, 0.15);
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.35);
+      box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(255, 255, 255, 0.2) inset,
+        0 1px 0 rgba(255, 255, 255, 0.8) inset;
     }
 
     body.dark-mode .project-card:hover {
@@ -1038,18 +1364,22 @@
     }
 
     /* WaxFeed spinning disc */
-    #waxfeed-card .project-thumbnail {
+    #waxfeed-card .project-thumbnail,
+    #home-waxfeed-card .project-thumbnail {
       display: flex;
       align-items: center;
       justify-content: center;
       background: #0A0A0A;
     }
 
-    #waxfeed-card .project-thumbnail img {
+    #waxfeed-card .project-thumbnail img,
+    #home-waxfeed-card .project-thumbnail img {
       width: 85%;
       height: 85%;
       object-fit: contain;
-      animation: spin-disc 8s linear infinite;
+      animation: spin-disc 10s linear infinite;
+      filter: drop-shadow(0 0 25px rgba(200, 180, 220, 0.4));
+      transition: filter 0.5s ease;
     }
 
     @keyframes spin-disc {
@@ -1057,8 +1387,10 @@
       to { transform: rotate(360deg); }
     }
 
-    #waxfeed-card:hover .project-thumbnail img {
+    #waxfeed-card:hover .project-thumbnail img,
+    #home-waxfeed-card:hover .project-thumbnail img {
       animation-duration: 2s;
+      filter: drop-shadow(0 0 40px rgba(200, 180, 220, 0.7));
     }
 
     .orbital-animation {
@@ -1070,7 +1402,13 @@
     .orbital-animation svg {
       width: 100%;
       height: 100%;
-      animation: spin 20s linear infinite;
+      animation: spin 25s linear infinite;
+      filter: drop-shadow(0 0 20px rgba(78, 205, 196, 0.3));
+    }
+    
+    .project-card:hover .orbital-animation svg {
+      animation-duration: 8s;
+      filter: drop-shadow(0 0 30px rgba(78, 205, 196, 0.5));
     }
 
     @keyframes spin {
@@ -1092,13 +1430,18 @@
 
     .project-info {
       padding: clamp(16px, 2.5vw, 20px);
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
     }
 
     .project-info h3 {
-      font-weight: 500;
+      font-weight: 600;
       font-size: clamp(16px, 1.6vw, 18px);
       margin-bottom: 6px;
       letter-spacing: -0.01em;
+      color: #1d1d1f;
       text-shadow: 
         0 1px 2px rgba(78, 205, 196, 0.08),
         0 2px 4px rgba(78, 205, 196, 0.05);
@@ -1141,12 +1484,14 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 56px;
-      height: 40px;
-      background: rgba(255, 0, 0, 0.9);
-      border-radius: 8px;
+      width: 68px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(255, 0, 0, 0.95) 0%, rgba(200, 0, 0, 1) 100%);
+      border-radius: 14px;
       display: flex;
       align-items: center;
+      box-shadow: 0 8px 32px rgba(255, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
       justify-content: center;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -1160,8 +1505,9 @@
     }
 
     .project-card:hover .play-button {
-      background: rgba(255, 0, 0, 1);
-      transform: translate(-50%, -50%) scale(1.05);
+      background: linear-gradient(135deg, rgba(255, 30, 30, 1) 0%, rgba(220, 0, 0, 1) 100%);
+      transform: translate(-50%, -50%) scale(1.12);
+      box-shadow: 0 12px 40px rgba(255, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
     /* ============================================
@@ -2769,6 +3115,756 @@
         bottom: max(32px, calc(env(safe-area-inset-bottom) + 16px));
       }
     }
+
+    /* ============================================
+       APPLE-STYLE PROFESSIONAL COMPONENTS
+       ============================================ */
+    
+    /* The Question Section */
+    .question-section {
+      position: relative;
+      z-index: 1;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 64px;
+      background: linear-gradient(180deg, transparent 0%, rgba(78, 205, 196, 0.02) 50%, transparent 100%);
+    }
+
+    .question-wrapper {
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .question-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #4ECDC4;
+      margin-bottom: 24px;
+      opacity: 0.9;
+    }
+
+    .question-text {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 500;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      margin-bottom: 32px;
+    }
+
+    body.dark-mode .question-text {
+      color: #f5f5f7;
+    }
+
+    .question-analogy {
+      font-size: 18px;
+      color: rgba(29, 29, 31, 0.6);
+      line-height: 1.7;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    body.dark-mode .question-analogy {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 64px;
+    }
+
+    .stats-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 48px;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 32px 16px;
+    }
+
+    .stat-number {
+      font-size: clamp(48px, 6vw, 72px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #4ECDC4 0%, #BB8FCE 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(29, 29, 31, 0.7);
+      letter-spacing: 0.02em;
+    }
+
+    body.dark-mode .stat-label {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    @media (max-width: 900px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-section {
+        padding: 60px 24px;
+      }
+      .stats-grid {
+        gap: 24px;
+      }
+      .stat-number {
+        font-size: 42px;
+      }
+    }
+
+    /* CCX Visual Framework */
+    .ccx-visual-section {
+      position: relative;
+      z-index: 1;
+      padding: 120px 64px;
+    }
+
+    .ccx-visual-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .ccx-header-block {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .ccx-header-block .section-label {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #4ECDC4;
+      margin-bottom: 16px;
+    }
+
+    .ccx-constructs-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+    }
+
+    .ccx-construct-card {
+      padding: 32px 24px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.dark-mode .ccx-construct-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .ccx-construct-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(78, 205, 196, 0.15);
+      border-color: rgba(78, 205, 196, 0.3);
+    }
+
+    .ccx-construct-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ccx-construct-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .ccx-construct-card h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: inherit;
+    }
+
+    .ccx-construct-card .construct-code {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #4ECDC4;
+      margin-bottom: 12px;
+    }
+
+    .ccx-construct-card p {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(29, 29, 31, 0.6);
+    }
+
+    body.dark-mode .ccx-construct-card p {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 1100px) {
+      .ccx-constructs-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .ccx-visual-section {
+        padding: 80px 24px;
+      }
+      .ccx-constructs-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .ccx-construct-card {
+        padding: 24px 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .ccx-constructs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Validation Progress */
+    .validation-section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 64px;
+      background: linear-gradient(180deg, rgba(78, 205, 196, 0.02) 0%, transparent 100%);
+    }
+
+    .validation-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .validation-progress {
+      margin: 48px 0;
+      position: relative;
+    }
+
+    .validation-track {
+      height: 8px;
+      background: rgba(0, 0, 0, 0.08);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body.dark-mode .validation-track {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .validation-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 40%;
+      background: linear-gradient(90deg, #4ECDC4 0%, #BB8FCE 100%);
+      border-radius: 4px;
+      transition: width 1s ease;
+    }
+
+    .validation-markers {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 16px;
+      position: relative;
+    }
+
+    .validation-marker {
+      text-align: center;
+      flex: 1;
+    }
+
+    .validation-marker .marker-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: rgba(29, 29, 31, 0.4);
+      margin-bottom: 4px;
+    }
+
+    body.dark-mode .validation-marker .marker-label {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .validation-marker.active .marker-label {
+      color: #4ECDC4;
+    }
+
+    .validation-marker .marker-name {
+      font-size: 12px;
+      color: rgba(29, 29, 31, 0.6);
+    }
+
+    body.dark-mode .validation-marker .marker-name {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .validation-current {
+      margin-top: 40px;
+      padding: 24px 32px;
+      background: rgba(78, 205, 196, 0.08);
+      border: 1px solid rgba(78, 205, 196, 0.2);
+      border-radius: 16px;
+      display: inline-block;
+    }
+
+    .validation-current h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #4ECDC4;
+      margin-bottom: 8px;
+    }
+
+    .validation-current p {
+      font-size: 14px;
+      color: rgba(29, 29, 31, 0.7);
+    }
+
+    body.dark-mode .validation-current p {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .validation-section {
+        padding: 60px 24px;
+      }
+      .validation-markers {
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+      .validation-marker {
+        flex: 0 0 calc(33.33% - 12px);
+      }
+    }
+
+    /* Lab Arms Section */
+    .lab-arms-section {
+      position: relative;
+      z-index: 1;
+      padding: 80px 64px;
+    }
+
+    .lab-arms-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .lab-arms-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .lab-arm-card {
+      padding: 32px 24px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 20px;
+      text-align: center;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.dark-mode .lab-arm-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .lab-arm-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(78, 205, 196, 0.3);
+    }
+
+    .lab-arm-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lab-arm-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .lab-arm-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .lab-arm-card p {
+      font-size: 13px;
+      color: rgba(29, 29, 31, 0.6);
+      line-height: 1.5;
+    }
+
+    body.dark-mode .lab-arm-card p {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 900px) {
+      .lab-arms-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .lab-arms-section {
+        padding: 60px 24px;
+      }
+      .lab-arms-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Flywheel Visual */
+    .flywheel-text {
+      font-size: 15px;
+      color: rgba(29, 29, 31, 0.6);
+      max-width: 600px;
+      margin: 24px auto 0;
+      line-height: 1.7;
+    }
+
+    body.dark-mode .flywheel-text {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Get Involved Pro */
+    .involve-section {
+      position: relative;
+      z-index: 1;
+      padding: 120px 64px;
+      background: linear-gradient(180deg, transparent 0%, rgba(78, 205, 196, 0.03) 100%);
+    }
+
+    .involve-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .involve-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 64px;
+    }
+
+    .involve-card {
+      padding: 40px 32px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 24px;
+      text-align: left;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.dark-mode .involve-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .involve-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 64px rgba(78, 205, 196, 0.12);
+    }
+
+    .involve-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .involve-icon svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    .involve-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .involve-card p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(29, 29, 31, 0.6);
+      margin-bottom: 24px;
+    }
+
+    body.dark-mode .involve-card p {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .involve-card a {
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s ease;
+    }
+
+    .involve-card a:hover {
+      gap: 10px;
+    }
+
+    .involve-cta {
+      margin-top: 64px;
+      padding: 24px 40px;
+      background: rgba(78, 205, 196, 0.1);
+      border: 1px solid rgba(78, 205, 196, 0.3);
+      border-radius: 16px;
+      display: inline-block;
+    }
+
+    .involve-cta p {
+      font-size: 16px;
+      color: inherit;
+    }
+
+    .involve-cta strong {
+      color: #4ECDC4;
+    }
+
+    @media (max-width: 900px) {
+      .involve-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 48px auto 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .involve-section {
+        padding: 80px 24px;
+      }
+      .involve-card {
+        padding: 32px 24px;
+      }
+    }
+
+    /* Safety Section */
+    .safety-section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 64px;
+    }
+
+    .safety-wrapper {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .safety-intro {
+      font-size: 17px;
+      color: rgba(29, 29, 31, 0.7);
+      max-width: 600px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+
+    body.dark-mode .safety-intro {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .safety-item {
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 16px;
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .safety-item {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .safety-item:hover {
+      border-color: rgba(78, 205, 196, 0.3);
+    }
+
+    .safety-item h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #4ECDC4;
+      margin-bottom: 8px;
+    }
+
+    .safety-item p {
+      font-size: 13px;
+      color: rgba(29, 29, 31, 0.6);
+      line-height: 1.5;
+    }
+
+    body.dark-mode .safety-item p {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    @media (max-width: 768px) {
+      .safety-section {
+        padding: 60px 24px;
+      }
+      .safety-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Patents Section */
+    .patents-section {
+      position: relative;
+      z-index: 1;
+      padding: 100px 64px;
+      background: linear-gradient(180deg, rgba(78, 205, 196, 0.02) 0%, transparent 100%);
+    }
+
+    .patents-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .patents-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .patent-card {
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 20px;
+      text-align: left;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body.dark-mode .patent-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .patent-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(78, 205, 196, 0.3);
+    }
+
+    .patent-number {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: #4ECDC4;
+      margin-bottom: 12px;
+    }
+
+    .patent-card h4 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .patent-card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .patent-card li {
+      font-size: 13px;
+      color: rgba(29, 29, 31, 0.7);
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    body.dark-mode .patent-card li {
+      color: rgba(255, 255, 255, 0.6);
+      border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .patent-card li:last-child {
+      border-bottom: none;
+    }
+
+    .patent-inventor {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(78, 205, 196, 0.2);
+      font-size: 12px;
+      color: rgba(29, 29, 31, 0.5);
+    }
+
+    body.dark-mode .patent-inventor {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .patents-section {
+        padding: 60px 24px;
+      }
+      .patents-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -2842,40 +3938,285 @@
   </div>
   <canvas id="particles-canvas"></canvas>
 
-  <!-- Global Scroll Navigation -->
-  <div class="scroll-nav-container">
-    <div class="scroll-nav" id="scroll-up">
-      <div class="scroll-nav-btn" role="button" tabindex="0" aria-label="Scroll to top">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4.5 15.75l7.5-7.5 7.5 7.5"/>
-        </svg>
-      </div>
-      <span class="scroll-nav-label">back to top</span>
-    </div>
+  <!-- Slide Navigation Arrows -->
+  <button class="slide-nav slide-nav-prev disabled" id="slide-prev" aria-label="Previous slide">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+  </button>
+  <button class="slide-nav slide-nav-next" id="slide-next" aria-label="Next slide">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18l6-6-6-6"/>
+    </svg>
+  </button>
 
-    <div class="scroll-nav" id="scroll-down">
-      <span class="scroll-nav-label">view polarity projects</span>
-      <div class="scroll-nav-btn" role="button" tabindex="0" aria-label="Scroll down">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M19.5 8.25l-7.5 7.5-7.5-7.5"/>
-        </svg>
-      </div>
-    </div>
+  <!-- Slide Indicators -->
+  <div class="slide-indicators" id="slide-indicators"></div>
+
+  <!-- Slide Counter -->
+  <div class="slide-counter">
+    <span class="current" id="slide-current">1</span> / <span id="slide-total">12</span>
   </div>
 
-  <!-- SECTION 1: Full-page Hero -->
-  <section class="hero-section" id="hero">
-    <div class="hero-spatial-container">
-      <div class="spatial-box"></div>
-      <h1 class="hero-title" data-text="Welcome to Polarity Lab©">Welcome to Polarity Lab<sup style="font-size: 0.4em; position: relative; top: -0.5em; opacity: 1; background: none; -webkit-background-clip: unset; -webkit-text-fill-color: rgba(255, 255, 255, 0.7); background-clip: unset;">©</sup></h1>
-      <p class="hero-subtitle"><span class="accent">Polarity Lab</span> · Studying Conversational Connectomics</p>
+  <!-- SLIDES CONTAINER -->
+  <div class="slides-container" id="slides-container">
+
+  <!-- SLIDE 1: Hero -->
+  <div class="slide" data-slide="1">
+    <section class="hero-section" id="hero">
+    <div class="hero-spatial-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; z-index: 1; padding: 60px 20px 40px;">
+      
+      <!-- POLARITY LLC WORDMARK - CLEAN VERSION -->
+      <div class="logo-container">
+        <svg id="polarity-wordmark" viewBox="0 0 1000 140" style="width: min(90vw, 820px); height: auto; filter: drop-shadow(0 4px 20px rgba(255, 68, 102, 0.15));">
+          <defs>
+            <!-- Node gradient - clean -->
+            <radialGradient id="nodeGrad" cx="30%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="40%" stop-color="#FF8899"/>
+              <stop offset="100%" stop-color="#CC2244"/>
+            </radialGradient>
+            
+            <!-- P gradient - detailed like sphere -->
+            <linearGradient id="pGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF6680"/>
+              <stop offset="50%" stop-color="#FF4466"/>
+              <stop offset="100%" stop-color="#CC2244"/>
+            </linearGradient>
+            
+            <!-- P node gradient - enhanced -->
+            <radialGradient id="pNodeGrad" cx="30%" cy="25%" r="75%">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="15%" stop-color="#FFD8DD"/>
+              <stop offset="35%" stop-color="#FF8899"/>
+              <stop offset="55%" stop-color="#FF4466"/>
+              <stop offset="75%" stop-color="#CC2244"/>
+              <stop offset="100%" stop-color="#881133"/>
+            </radialGradient>
+            
+            <!-- Sphere gradient - clean -->
+            <radialGradient id="sphereGrad" cx="30%" cy="25%" r="75%">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="15%" stop-color="#FFD8DD"/>
+              <stop offset="35%" stop-color="#FF8899"/>
+              <stop offset="55%" stop-color="#FF4466"/>
+              <stop offset="75%" stop-color="#CC2244"/>
+              <stop offset="100%" stop-color="#881133"/>
+            </radialGradient>
+            
+            <!-- Ring gradient -->
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#FF4466" stop-opacity="0.2"/>
+              <stop offset="50%" stop-color="#FFAABB"/>
+              <stop offset="100%" stop-color="#FF4466" stop-opacity="0.2"/>
+            </linearGradient>
+            
+            <!-- Beam gradient -->
+            <linearGradient id="beamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#FF4466" stop-opacity="0"/>
+              <stop offset="30%" stop-color="#FF4466" stop-opacity="0.4"/>
+              <stop offset="50%" stop-color="#FF4466" stop-opacity="0.8"/>
+              <stop offset="70%" stop-color="#FF4466" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#FF4466" stop-opacity="0"/>
+            </linearGradient>
+            
+            <!-- Teal node gradient for LLC -->
+            <radialGradient id="tealNodeGrad" cx="30%" cy="25%" r="75%">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="15%" stop-color="#B8E8E8"/>
+              <stop offset="35%" stop-color="#66CCCC"/>
+              <stop offset="55%" stop-color="#20B2AA"/>
+              <stop offset="75%" stop-color="#008B8B"/>
+              <stop offset="100%" stop-color="#005555"/>
+            </radialGradient>
+          </defs>
+
+          <!-- P - ENHANCED WITH DETAIL LIKE SPHERE -->
+          <g transform="translate(10, 20)">
+            <path d="M 18 100 L 18 8 L 52 8 C 82 8, 82 54, 52 54 L 18 54" stroke="url(#pGrad)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="18" cy="100" r="8" fill="url(#pNodeGrad)"/>
+            <ellipse cx="14" cy="96" rx="3" ry="2.5" fill="white" opacity="0.35"/>
+            <circle cx="13" cy="95" r="1.5" fill="white" opacity="0.55"/>
+            <circle cx="18" cy="8" r="8" fill="url(#pNodeGrad)"/>
+            <ellipse cx="14" cy="4" rx="3" ry="2.5" fill="white" opacity="0.35"/>
+            <circle cx="13" cy="3" r="1.5" fill="white" opacity="0.55"/>
+            <circle cx="70" cy="31" r="7" fill="url(#pNodeGrad)"/>
+            <ellipse cx="66" cy="27" rx="2.5" ry="2" fill="white" opacity="0.35"/>
+            <circle cx="65" cy="26" r="1.2" fill="white" opacity="0.55"/>
+          </g>
+
+          <!-- O - THE SPHERE -->
+          <g transform="translate(95, 20)">
+            <rect x="49" y="-10" width="6" height="30" rx="3" fill="url(#beamGrad)"/>
+            <rect x="49" y="88" width="6" height="30" rx="3" fill="url(#beamGrad)"/>
+            <ellipse cx="52" cy="54" rx="46" ry="13" transform="rotate(-20 52 54)" stroke="url(#ringGrad)" stroke-width="2.5" fill="none"/>
+            <ellipse cx="52" cy="54" rx="42" ry="11" transform="rotate(25 52 54)" stroke="url(#ringGrad)" stroke-width="1.5" fill="none" opacity="0.6"/>
+            <circle cx="52" cy="54" r="32" fill="url(#sphereGrad)"/>
+            <ellipse cx="42" cy="44" rx="9" ry="7" fill="white" opacity="0.35"/>
+            <circle cx="38" cy="40" r="4" fill="white" opacity="0.55"/>
+          </g>
+
+          <!-- L -->
+          <g transform="translate(205, 20)">
+            <path d="M 18 8 L 18 100 L 72 100" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="18" cy="8" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="18" cy="100" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="72" cy="100" r="6" fill="url(#nodeGrad)"/>
+          </g>
+
+          <!-- A -->
+          <g transform="translate(290, 20)">
+            <path d="M 8 100 L 45 8 L 82 100 M 20 68 L 70 68" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="8" cy="100" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="45" cy="8" r="7" fill="url(#nodeGrad)"/>
+            <circle cx="82" cy="100" r="6" fill="url(#nodeGrad)"/>
+          </g>
+
+          <!-- R -->
+          <g transform="translate(385, 20)">
+            <path d="M 18 100 L 18 8 L 52 8 C 82 8, 82 52, 52 52 L 18 52 M 46 52 L 78 100" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="18" cy="8" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="18" cy="100" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="70" cy="30" r="5" fill="url(#nodeGrad)"/>
+            <circle cx="78" cy="100" r="6" fill="url(#nodeGrad)"/>
+          </g>
+
+          <!-- I -->
+          <g transform="translate(480, 20)">
+            <path d="M 20 8 L 60 8 M 40 8 L 40 100 M 20 100 L 60 100" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <circle cx="20" cy="8" r="5" fill="url(#nodeGrad)"/>
+            <circle cx="60" cy="8" r="5" fill="url(#nodeGrad)"/>
+            <circle cx="40" cy="8" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="40" cy="100" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="20" cy="100" r="5" fill="url(#nodeGrad)"/>
+            <circle cx="60" cy="100" r="5" fill="url(#nodeGrad)"/>
+          </g>
+
+          <!-- T -->
+          <g transform="translate(560, 20)">
+            <path d="M 8 8 L 72 8 M 40 8 L 40 100" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <circle cx="8" cy="8" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="72" cy="8" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="40" cy="8" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="40" cy="100" r="6" fill="url(#nodeGrad)"/>
+          </g>
+
+          <!-- Y -->
+          <g transform="translate(650, 20)">
+            <path d="M 8 8 L 42 54 L 76 8 M 42 54 L 42 100" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="8" cy="8" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="76" cy="8" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="42" cy="54" r="6" fill="url(#nodeGrad)"/>
+            <circle cx="42" cy="100" r="6" fill="url(#nodeGrad)"/>
+          </g>
+
+          <!-- LLC - TEAL -->
+          <!-- L -->
+          <g transform="translate(755, 20)">
+            <path d="M 18 8 L 18 100 L 62 100" stroke="#20B2AA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="18" cy="8" r="6" fill="url(#tealNodeGrad)"/>
+            <ellipse cx="14" cy="4" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+            <circle cx="18" cy="100" r="6" fill="url(#tealNodeGrad)"/>
+            <ellipse cx="14" cy="96" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+            <circle cx="62" cy="100" r="6" fill="url(#tealNodeGrad)"/>
+            <ellipse cx="58" cy="96" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+          </g>
+
+          <!-- L -->
+          <g transform="translate(830, 20)">
+            <path d="M 18 8 L 18 100 L 62 100" stroke="#20B2AA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="18" cy="8" r="6" fill="url(#tealNodeGrad)"/>
+            <ellipse cx="14" cy="4" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+            <circle cx="18" cy="100" r="6" fill="url(#tealNodeGrad)"/>
+            <ellipse cx="14" cy="96" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+            <circle cx="62" cy="100" r="6" fill="url(#tealNodeGrad)"/>
+            <ellipse cx="58" cy="96" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+          </g>
+
+          <!-- C -->
+          <g transform="translate(905, 20)">
+            <path d="M 62 20 C 30 8, 8 30, 8 54 C 8 78, 30 100, 62 88" stroke="#20B2AA" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <circle cx="62" cy="20" r="6" fill="url(#tealNodeGrad)"/>
+            <ellipse cx="58" cy="16" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+            <circle cx="62" cy="88" r="6" fill="url(#tealNodeGrad)"/>
+            <ellipse cx="58" cy="84" rx="2" ry="1.5" fill="white" opacity="0.35"/>
+          </g>
+        </svg>
+      </div>
+
+      <p class="hero-subtitle" style="margin-top: 24px; font-size: 13px; letter-spacing: 0.35em; color: #1d1d1f; text-transform: uppercase; font-weight: 500; opacity: 0.7;">Research Lab · Conversational Connectomics · Providence, RI</p>
+      
+      <!-- QUICK LINKS - Premium Project Cards -->
+      <div class="projects-grid home-projects-grid" style="margin-top: 50px; max-width: 1100px; gap: 28px;">
+        <!-- Polarity -->
+        <a href="/polarity" class="project-card polarity">
+          <div class="project-thumbnail">
+            <div class="orbital-animation">
+              <svg viewBox="0 0 100 100">
+                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#4ECDC4" stroke-width="1.5" transform="rotate(-60 50 50)" opacity="0.8"/>
+                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" opacity="0.8"/>
+                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" opacity="0.8"/>
+                <circle cx="50" cy="50" r="8" fill="#4ECDC4"/>
+                <g transform="rotate(-60 50 50)">
+                  <circle cx="90" cy="50" r="3" fill="#4ECDC4"/>
+                </g>
+                <g transform="rotate(60 50 50)">
+                  <circle cx="90" cy="50" r="3" fill="#FFA07A"/>
+                </g>
+                <circle cx="10" cy="50" r="3" fill="#BB8FCE"/>
+              </svg>
+              <span class="orbital-text">polarity</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3>polarity</h3>
+            <p>Cognitive memory service - a friend who never forgets. Knowledge graphs from conversation.</p>
+          </div>
+        </a>
+
+        <!-- AVDP Podcast -->
+        <a href="https://www.youtube.com/channel/UCEdsKG3TMPbJavCJvYyUCHA" target="_blank" class="project-card" id="home-avdp-card">
+          <div class="project-thumbnail youtube-thumbnail" id="home-avdp-thumbnail">
+            <img src="" alt="Latest AVDP Episode" id="home-avdp-img" style="display: none;">
+            <div class="play-button"></div>
+            <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #111;">
+              <span style="opacity: 0.3; font-size: 14px;">Loading latest episode...</span>
+            </div>
+          </div>
+          <div class="project-info">
+            <h3 id="home-avdp-title">a very distant perspective</h3>
+            <p>conversations that matter - experimental interview podcast</p>
+          </div>
+        </a>
+
+        <!-- WaxFeed -->
+        <a href="https://wax-feed.com" target="_blank" class="project-card" id="home-waxfeed-card">
+          <div class="project-thumbnail">
+            <img src="waxfeed_disc.svg" alt="WaxFeed">
+          </div>
+          <div class="project-info">
+            <h3>waxfeed</h3>
+            <p>letterboxd for albums - social music discovery platform</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Contact CTA - Premium -->
+      <div class="hero-cta-container" style="margin-top: 45px;">
+        <a href="mailto:polarity@polarity-lab.com" class="hero-cta-btn premium-cta" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: linear-gradient(135deg, rgba(255, 68, 102, 0.9) 0%, rgba(200, 40, 80, 0.95) 100%); border: none; border-radius: 14px; color: #fff; font-weight: 600; font-size: 14px; letter-spacing: 0.03em; text-decoration: none; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 8px 32px rgba(255, 68, 102, 0.35), 0 2px 8px rgba(255, 68, 102, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
+          <span>Get Involved</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
     </div>
   </section>
+  </div>
 
-  <!-- SECTION 2: Projects -->
-  <section class="projects-section" id="projects">
-    <div class="projects-wrapper">
-      <h2 class="section-heading">Polarity Projects</h2>
+  <!-- SLIDE 2: Projects -->
+  <div class="slide" data-slide="2">
+    <section class="projects-section" id="projects">
+      <div class="projects-wrapper">
+        <h2 class="section-heading">Polarity Projects</h2>
       <div class="projects-grid">
         <!-- Polarity -->
         <a href="/polarity" class="project-card polarity">
@@ -2899,7 +4240,7 @@
           </div>
           <div class="project-info">
             <h3>polarity</h3>
-            <p>AI exocortex - map your brain, know yourself</p>
+            <p>Cognitive memory service - a friend who never forgets. Knowledge graphs from conversation.</p>
           </div>
         </a>
 
@@ -2931,12 +4272,95 @@
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- SECTION 3: Ecosystem -->
-  <section class="ecosystem-section" id="ecosystem">
-    <div class="ecosystem-wrapper">
-      <h2 class="section-heading">The Polarity Ecosystem</h2>
-      <p class="ecosystem-subtitle">All our projects operate under the CCX science umbrella, each exploring different dimensions of how we think, create, and connect.</p>
+  <!-- SLIDE 3: The Question + Stats -->
+  <div class="slide" data-slide="3">
+    <section class="question-section" id="question">
+    <div class="question-wrapper">
+      <p class="question-label">The Research Question</p>
+      <h2 class="question-text">Can we measure how your brain organizes knowledge — just from how you talk?</h2>
+      <p class="question-analogy">A doctor can learn about your lungs by listening to you breathe with a stethoscope. We're asking: can we learn about your brain's knowledge structure by analyzing how you talk — with algorithms?</p>
+    </div>
+  </section>
+
+  <!-- STATS: Key numbers, Apple-style large typography -->
+  <section class="stats-section" id="stats">
+    <div class="stats-wrapper">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-number">2</div>
+          <div class="stat-label">Provisional Patents</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">23</div>
+          <div class="stat-label">Patent Claims</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">12</div>
+          <div class="stat-label">Cognitive Units</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">258</div>
+          <div class="stat-label">Page Framework</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- SLIDE 4: Ecosystem -->
+  <div class="slide" data-slide="4">
+    <section class="ecosystem-section" id="ecosystem">
+      <div class="ecosystem-wrapper">
+        <h2 class="section-heading">The Polarity Ecosystem</h2>
+      <p class="ecosystem-subtitle">Four arms, one mission: Measure the Mind</p>
+      
+      <!-- Lab Structure Visual - Professional SVG Icons -->
+      <div class="lab-arms-grid" style="margin-bottom: 48px;">
+        <div class="lab-arm-card">
+          <div class="lab-arm-icon" style="background: rgba(78, 205, 196, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+              <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h4>Research Lab</h4>
+          <p>CCX science, peer-reviewed papers, provisional patents, PI structure</p>
+        </div>
+        <div class="lab-arm-card">
+          <div class="lab-arm-icon" style="background: rgba(187, 143, 206, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h4>Startup</h4>
+          <p>Products that commercialize the research and generate data</p>
+        </div>
+        <div class="lab-arm-card">
+          <div class="lab-arm-icon" style="background: rgba(255, 160, 122, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
+            </svg>
+          </div>
+          <h4>Venture</h4>
+          <p>Fund aligned projects and research initiatives</p>
+        </div>
+        <div class="lab-arm-card">
+          <div class="lab-arm-icon" style="background: rgba(78, 205, 196, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+              <path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m-4 0h8M12 3a4 4 0 00-4 4v4a4 4 0 008 0V7a4 4 0 00-4-4z"/>
+            </svg>
+          </div>
+          <h4>Studio</h4>
+          <p>AVDP podcast, content, scientific storytelling</p>
+        </div>
+      </div>
+      
+      <!-- Flywheel - Cleaner -->
+      <p class="flywheel-text">
+        <strong>The Flywheel:</strong> Products generate data → Data enables research → Research produces papers + patents → Papers bring credibility → Credibility brings users + funding → Repeat
+      </p>
       
       <div class="umbrella-grid">
         <!-- Polarity App -->
@@ -2950,8 +4374,8 @@
             </svg>
           </div>
           <h4>Polarity</h4>
-          <p class="umbrella-card-tagline">AI Exocortex</p>
-          <p class="umbrella-card-desc">The core platform. An AI-powered tool that maps your cognitive patterns through conversation, helping you externalize and understand your own thinking.</p>
+          <p class="umbrella-card-tagline">Cognitive Memory Service</p>
+          <p class="umbrella-card-desc">The primary research platform for CCX. You talk, it remembers. Memories become a knowledge graph with Polarity Points weighting the connections. Proactive surfacing keeps important things from fading.</p>
         </div>
 
         <!-- AVDP -->
@@ -2963,8 +4387,8 @@
             </svg>
           </div>
           <h4>A Very Distant Perspective</h4>
-          <p class="umbrella-card-tagline">Experimental Podcast</p>
-          <p class="umbrella-card-desc">Long-form conversations that matter. AVDP explores the depths of human experience through dialogue. CCX principles in practice.</p>
+          <p class="umbrella-card-tagline">Deep Dive Podcast</p>
+          <p class="umbrella-card-desc">3-5 episodes with one guest to build comprehensive cognitive profiles. Then we match guests based on predicted compatibility. CCX demonstrations in public.</p>
         </div>
 
         <!-- WaxFeed -->
@@ -2977,54 +4401,219 @@
             </svg>
           </div>
           <h4>WaxFeed</h4>
-          <p class="umbrella-card-tagline">Social Music Discovery</p>
-          <p class="umbrella-card-desc">Letterboxd for albums. Understanding how shared taste and musical dialogue shapes community and identity. The social layer of CCX.</p>
+          <p class="umbrella-card-tagline">Social Music Platform</p>
+          <p class="umbrella-card-desc">Where music lovers discover, share, and connect. DJ discovery by taste alignment. Music preferences are stable, measurable, and emotional - perfect CCX data.</p>
         </div>
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- SECTION 4: About -->
-  <section class="about-section" id="about">
-    <div class="about-wrapper">
-      <h2 class="section-heading">About Polarity</h2>
+  <!-- SLIDE 5: CCX Framework -->
+  <div class="slide" data-slide="5">
+    <section class="ccx-visual-section" id="about">
+    <div class="ccx-visual-wrapper">
+      <div class="ccx-header-block">
+        <p class="section-label">The Framework</p>
+        <h2 class="section-heading">Conversational Connectomics</h2>
+        <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 600px; margin: 16px auto 0; line-height: 1.7;">Five interlocking constructs that extract cognitive signals from natural language</p>
+      </div>
       
-      <div class="about-content">
-        <!-- Mission Statement -->
-        <div class="about-mission">
-          <p class="mission-text">
-            <span class="accent">Polarity Lab</span> is a research collective building at the intersection of AI, conversation, and human cognition. We're pioneering the emerging field of <span class="accent">Conversational Connectomics (CCX)</span>, the study of how dialogue shapes thought and reveals the architecture of the mind.
-          </p>
-        </div>
-
-        <!-- CCX Explanation -->
-        <div class="ccx-section">
-          <div class="ccx-header">
-            <div class="ccx-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
-                <path d="M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
-              </svg>
-            </div>
-            <h3>What is Conversational Connectomics?</h3>
+      <div class="ccx-constructs-grid">
+        <!-- UoC -->
+        <div class="ccx-construct-card">
+          <div class="ccx-construct-icon" style="background: rgba(78, 205, 196, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+              <path d="M8 9h8M8 13h6M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
           </div>
-          <p class="ccx-description">
-            CCX is an emerging interdisciplinary field that maps the neural and cognitive patterns formed through human dialogue. Just as traditional connectomics maps the brain's physical wiring, CCX explores how conversations create, reinforce, and reshape our mental frameworks. Think of it as building an "exocortex" of externalized thought.
-          </p>
+          <h4>Units of Cognition</h4>
+          <p class="construct-code">12 TYPES</p>
+          <p>ASSERTION, ACTION, QUESTION, PLAN, EMOTION, EVALUATION, REQUEST, MEMORY_REF, REPAIR, SOCIAL, META, INTENTION</p>
         </div>
-
+        
+        <!-- MEG-Proxy -->
+        <div class="ccx-construct-card">
+          <div class="ccx-construct-icon" style="background: rgba(187, 143, 206, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
+              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+            </svg>
+          </div>
+          <h4>MEG-Proxy States</h4>
+          <p class="construct-code">12 MODES</p>
+          <p>Cognitive modes inferred from language patterns, standing in for what brain imaging would show</p>
+        </div>
+        
+        <!-- Polarity Points -->
+        <div class="ccx-construct-card">
+          <div class="ccx-construct-icon" style="background: rgba(255, 160, 122, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+          </div>
+          <h4>Polarity Points</h4>
+          <p class="construct-code">0-100 SCALE</p>
+          <p>Connection strength via Bayesian Beta-Bernoulli estimation. PP = f(R, C, T, Q)</p>
+        </div>
+        
+        <!-- BrainID -->
+        <div class="ccx-construct-card">
+          <div class="ccx-construct-icon" style="background: rgba(78, 205, 196, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+              <path d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/>
+            </svg>
+          </div>
+          <h4>BrainID</h4>
+          <p class="construct-code">POL-XXXX-XXXX-XXXX</p>
+          <p>Unique cognitive fingerprint from state transitions, PP distribution, temporal patterns</p>
+        </div>
+        
+        <!-- Consolidation Gate -->
+        <div class="ccx-construct-card">
+          <div class="ccx-construct-icon" style="background: rgba(187, 143, 206, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
+              <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+            </svg>
+          </div>
+          <h4>Consolidation Gate</h4>
+          <p class="construct-code">MEMORY STAGES</p>
+          <p>LABILE → STABILIZING → CONSOLIDATED → PERMANENT. Mimics hippocampal gating.</p>
+        </div>
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- SECTION 5: Research -->
-  <section class="research-section" id="research">
-    <div class="research-wrapper">
-      <h2 class="section-heading">Reading Room</h2>
+  <!-- SLIDE 6: Validation -->
+  <div class="slide" data-slide="6">
+    <section class="validation-section" id="validation">
+    <div class="validation-wrapper">
+      <p class="question-label">Scientific Rigor</p>
+      <h2 class="section-heading">The Claim Ladder</h2>
+      <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 500px; margin: 16px auto 0; line-height: 1.7;">Science doesn't jump from idea to proven. We're explicit about where we are.</p>
+      
+      <div class="validation-progress">
+        <div class="validation-track">
+          <div class="validation-fill"></div>
+        </div>
+        <div class="validation-markers">
+          <div class="validation-marker">
+            <div class="marker-label">L0</div>
+            <div class="marker-name">Speculation</div>
+          </div>
+          <div class="validation-marker">
+            <div class="marker-label">L1</div>
+            <div class="marker-name">Theoretical</div>
+          </div>
+          <div class="validation-marker active">
+            <div class="marker-label">L2</div>
+            <div class="marker-name">Computational</div>
+          </div>
+          <div class="validation-marker">
+            <div class="marker-label">L3</div>
+            <div class="marker-name">Behavioral</div>
+          </div>
+          <div class="validation-marker">
+            <div class="marker-label">L4</div>
+            <div class="marker-name">Neural</div>
+          </div>
+          <div class="validation-marker">
+            <div class="marker-label">L5</div>
+            <div class="marker-name">Causal</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="validation-current">
+        <h4>Currently at L2: Computational</h4>
+        <p>Algorithms work. UoC classification: 69% accuracy. State classification: 58% accuracy.<br>Next: L3 Behavioral validation with clinical tests (MMSE, MoCA).</p>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- SLIDE 7: Patents -->
+  <div class="slide" data-slide="7">
+    <section class="patents-section" id="patents">
+      <div class="patents-wrapper">
+        <p class="question-label">Intellectual Property</p>
+      <h2 class="section-heading">2 Provisional Patents</h2>
+      
+      <div class="patents-grid">
+        <div class="patent-card">
+          <div class="patent-number">APPLICATION #63/940,728 · DEC 2025</div>
+          <h4>The Product: Knowledge Authentication</h4>
+          <ul>
+            <li>Knowledge graph construction from conversation</li>
+            <li>BrainID generation and encoding</li>
+            <li>N-BKDF authentication protocol</li>
+            <li>Drift-tolerant verification</li>
+          </ul>
+          <p class="patent-inventor">Key insight by Shadrack: "What if the knowledge graph IS the password?"</p>
+        </div>
+        
+        <div class="patent-card">
+          <div class="patent-number">APPLICATION #63/960,633 · JAN 2026</div>
+          <h4>The Science: CCX Methods</h4>
+          <ul>
+            <li>Polarity Points formula (Claims 1-4)</li>
+            <li>Unit of Cognition classification (Claims 5-6)</li>
+            <li>MEG-Proxy States inference (Claims 7-8)</li>
+            <li>Consolidation Gate + Cognitive Fingerprint (Claims 9-12)</li>
+          </ul>
+          <p class="patent-inventor">Nathan helped formalize CCX as a defensible research field</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- SLIDE 8: Safety -->
+  <div class="slide" data-slide="8">
+    <section class="safety-section" id="safety">
+      <div class="safety-wrapper">
+        <p class="question-label">Non-Negotiable</p>
+      <h2 class="section-heading">Safety & Ethics</h2>
+      <p class="safety-intro">Cognitive monitoring could enable surveillance and abuse. We are not naive about this. These principles are foundational.</p>
+      
+      <div class="safety-grid">
+        <div class="safety-item">
+          <h4>User-Only Access</h4>
+          <p>Your cognitive data is yours alone. No one else sees it.</p>
+        </div>
+        <div class="safety-item">
+          <h4>No Default Sharing</h4>
+          <p>Caregiver access requires explicit, revocable consent.</p>
+        </div>
+        <div class="safety-item">
+          <h4>Coercion Detection</h4>
+          <p>Patterns suggesting forced access trigger protective protocols.</p>
+        </div>
+        <div class="safety-item">
+          <h4>Right to Deletion</h4>
+          <p>Full data purge on request. No exceptions.</p>
+        </div>
+        <div class="safety-item">
+          <h4>No Predictive Policing</h4>
+          <p>Never used for risk scoring or preemptive judgment.</p>
+        </div>
+        <div class="safety-item">
+          <h4>IRB Required</h4>
+          <p>Clinical validation proceeds only with ethics board approval.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  </div>
+
+  <!-- SLIDE 9: Research -->
+  <div class="slide" data-slide="9">
+    <section class="research-section" id="research">
+      <div class="research-wrapper">
+        <h2 class="section-heading">Reading Room</h2>
       
       <div class="research-overview">
-        <p class="research-intro">Exploring <span class="accent">Conversational Connectomics</span>, the emerging study of how dialogue shapes and reveals the architecture of thought.</p>
+        <p class="research-intro">Exploring <span class="accent">Conversational Connectomics</span> - inferring how concepts connect in your mind using natural language. 258-page framework document. 12 computational experiments. 2 provisional patents.</p>
       </div>
 
       <div class="research-grid">
@@ -3038,7 +4627,7 @@
           <div class="research-info">
             <span class="research-tag">PNAS 2010</span>
             <h3>Your Brain Syncs With Who You Talk To</h3>
-            <p>Stephens, Silbert & Hasson show that during real conversation, brains literally synchronize. The better they sync, the better the understanding. Successful communication creates measurable alignment between minds.</p>
+            <p>Stephens, Silbert & Hasson show that during real conversation, brains literally synchronize. The better they sync, the better the understanding.</p>
           </div>
         </a>
 
@@ -3052,7 +4641,7 @@
           <div class="research-info">
             <span class="research-tag">Neuron 2017</span>
             <h3>Your Brain Chunks Life Into Episodes</h3>
-            <p>Baldassano et al. reveal that the brain automatically segments experience into discrete events at multiple timescales. These boundaries trigger memory encoding, explaining why we remember life as episodes.</p>
+            <p>Baldassano et al. reveal that the brain automatically segments experience into discrete events. These boundaries trigger memory encoding.</p>
           </div>
         </a>
 
@@ -3066,45 +4655,122 @@
           <div class="research-info">
             <span class="research-tag">Nature Reviews Neuroscience 2009</span>
             <h3>Your Mind Is a Network</h3>
-            <p>Bullmore & Sporns establish that the brain is organized like a well-designed network, complete with clusters, hubs, and efficient pathways. Thinking isn't in one place. It's the pattern across this network.</p>
+            <p>Bullmore & Sporns establish that the brain is organized like a network with clusters, hubs, and efficient pathways. Thinking is the pattern across this network.</p>
           </div>
         </a>
       </div>
 
-      <p class="papers-incoming">Papers Incoming 2026...</p>
+      <!-- CCX Constructs Summary -->
+      <div style="margin-top: 48px; padding: 32px; background: rgba(78, 205, 196, 0.08); border: 1px solid rgba(78, 205, 196, 0.2); border-radius: 16px; text-align: center;">
+        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 16px; color: inherit;">CCX Framework Constructs</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; font-size: 12px; color: rgba(78, 205, 196, 0.9);">
+          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Units of Cognition (12 types)</span>
+          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">MEG-Proxy States (12 modes)</span>
+          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Polarity Points (0-100)</span>
+          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">BrainID Fingerprint</span>
+          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Consolidation Gate</span>
+        </div>
+      </div>
+
+      <p class="papers-incoming">Paper Pipeline: CCX Framework (drafting) · BrainID Validation (Q2 2026) · Polarity Points Reliability (Q3 2026)</p>
     </div>
   </section>
+  </div>
 
-  <!-- SECTION 6: Team -->
-  <section class="team-page-section" id="team">
-    <div class="team-page-wrapper">
+  <!-- SLIDE 10: Team -->
+  <div class="slide" data-slide="10">
+    <section class="team-page-section" id="team">
+      <div class="team-page-wrapper">
+        <p class="question-label">Providence, RI · Founded December 2025</p>
       <h2 class="section-heading">The Team</h2>
-      <p class="team-page-subtitle">The minds behind Polarity Lab</p>
       
       <div class="team-page-grid">
         <div class="team-page-member">
-          <div class="team-page-avatar">T</div>
-          <h4>Theo</h4>
-          <p>Co-Founder</p>
+          <div class="team-page-avatar" style="border-color: rgba(78, 205, 196, 0.5);">T</div>
+          <h4>Theodore Addo</h4>
+          <p style="color: #4ECDC4; font-weight: 500; font-size: 13px;">Founder & Principal Investigator</p>
+          <p style="font-size: 12px; opacity: 0.6; margin-top: 8px; line-height: 1.6;">MD Candidate, Brown '26<br>MIT Boyden Lab Alum<br>100% Owner, Polarity Lab LLC</p>
         </div>
         <div class="team-page-member">
-          <div class="team-page-avatar">S</div>
-          <h4>Shadrack</h4>
-          <p>Co-Founder</p>
+          <div class="team-page-avatar" style="border-color: rgba(187, 143, 206, 0.5);">S</div>
+          <h4>Shadrack Annor</h4>
+          <p style="color: #BB8FCE; font-weight: 500; font-size: 13px;">Cofounder & Principal of WaxFeed</p>
+          <p style="font-size: 12px; opacity: 0.6; margin-top: 8px; line-height: 1.6;">Brown University<br>Co-inventor, Patent #1</p>
         </div>
         <div class="team-page-member">
-          <div class="team-page-avatar">N</div>
-          <h4>Nathan</h4>
-          <p>Co-Founder</p>
+          <div class="team-page-avatar" style="border-color: rgba(255, 160, 122, 0.5);">N</div>
+          <h4>Nathan Amankwah</h4>
+          <p style="color: #FFA07A; font-weight: 500; font-size: 13px;">Cofounder & Chief Systems Architect</p>
+          <p style="font-size: 12px; opacity: 0.6; margin-top: 8px; line-height: 1.6;">University of Ottawa<br>Co-inventor, Patent #2</p>
         </div>
+      </div>
+      
+      <p style="font-size: 12px; opacity: 0.4; margin-top: 32px; text-align: center;">Cofounders participate via Profit Participation Agreements, not equity.</p>
+    </div>
+  </section>
+  </div>
+
+  <!-- SLIDE 11: Get Involved -->
+  <div class="slide" data-slide="11">
+    <section class="involve-section" id="get-involved">
+      <div class="involve-wrapper">
+        <p class="question-label">Join the Research</p>
+      <h2 class="section-heading">Get Involved</h2>
+      <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 500px; margin: 16px auto 0; line-height: 1.7;">Multiple pathways to participate in building the future of cognitive science</p>
+      
+      <div class="involve-grid">
+        <!-- Research Collaborators -->
+        <div class="involve-card">
+          <div class="involve-icon" style="background: rgba(78, 205, 196, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/>
+            </svg>
+          </div>
+          <h3>Research Collaborators</h3>
+          <p>Domain experts for L3/L4 validation. Clinical psychologists, neuroimaging researchers, cognitive scientists. Co-authorship available on publications.</p>
+          <a href="mailto:polarity@polarity-lab.com?subject=Research%20Collaboration" style="color: #4ECDC4;">Discuss Collaboration <span>→</span></a>
+        </div>
+        
+        <!-- Advisors -->
+        <div class="involve-card">
+          <div class="involve-icon" style="background: rgba(187, 143, 206, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3>Advisors</h3>
+          <p>Occasional feedback on direction, ethics, and clinical pathway. Especially interested in cognitive science, neurology, AI safety, and research ethics.</p>
+          <a href="mailto:polarity@polarity-lab.com?subject=Advisory%20Interest" style="color: #BB8FCE;">Express Interest <span>→</span></a>
+        </div>
+        
+        <!-- Contributors -->
+        <div class="involve-card">
+          <div class="involve-icon" style="background: rgba(255, 160, 122, 0.15);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h3>Contributors</h3>
+          <p>Our Pain Points model: build an MVP for a project you care about, become Principal, earn the highest share. We reward builders who ship.</p>
+          <a href="mailto:polarity@polarity-lab.com?subject=Contributor%20Interest" style="color: #FFA07A;">Pitch a Project <span>→</span></a>
+        </div>
+      </div>
+      
+      <div class="involve-cta">
+        <p>The immediate ask: <strong>30 minutes</strong> to discuss whether there's alignment.</p>
       </div>
     </div>
   </section>
+  </div>
 
-  <!-- SECTION 7: Contact -->
-  <section class="contact-section" id="contact">
-    <div class="contact-wrapper">
-      <p class="contact-trigger">let's connect</p>
+  <!-- SLIDE 12: Contact -->
+  <div class="slide" data-slide="12">
+    <section class="contact-section" id="contact">
+      <div class="contact-wrapper">
+        <p class="contact-trigger">let's connect</p>
 
       <div class="footer-links">
         <!-- Email Options -->
@@ -3154,9 +4820,12 @@
       </form>
       <p id="newsletter-message" class="form-message"></p>
 
-      <p class="footer-copyright">© 2025 POLARITY LAB LLC</p>
+      <p class="footer-copyright">© 2025 POLARITY LAB LLC · Providence, RI · 2 Provisional Patents Filed</p>
     </div>
   </section>
+  </div>
+
+  </div><!-- End slides-container -->
 
   <script>
     // ============================================
@@ -3186,7 +4855,138 @@
     })();
 
     // ============================================
-    // PARTICLE PHYSICS SYSTEM
+    // HORIZONTAL SLIDESHOW NAVIGATION
+    // ============================================
+    (function() {
+      const slidesContainer = document.getElementById('slides-container');
+      const slides = document.querySelectorAll('.slide');
+      const prevBtn = document.getElementById('slide-prev');
+      const nextBtn = document.getElementById('slide-next');
+      const indicatorsContainer = document.getElementById('slide-indicators');
+      const currentSlideEl = document.getElementById('slide-current');
+      const totalSlidesEl = document.getElementById('slide-total');
+      
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+      
+      // Update total slides display
+      totalSlidesEl.textContent = totalSlides;
+      
+      // Create indicators
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('data-slide', i);
+        dot.addEventListener('click', () => goToSlide(i));
+        indicatorsContainer.appendChild(dot);
+      }
+      
+      const dots = document.querySelectorAll('.slide-dot');
+      
+      function updateSlide() {
+        // Move slides container
+        slidesContainer.style.transform = `translateX(-${currentSlide * 100}vw)`;
+        
+        // Update current slide display
+        currentSlideEl.textContent = currentSlide + 1;
+        
+        // Update indicators
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentSlide);
+        });
+        
+        // Update nav button states
+        prevBtn.classList.toggle('disabled', currentSlide === 0);
+        nextBtn.classList.toggle('disabled', currentSlide === totalSlides - 1);
+      }
+      
+      function goToSlide(index) {
+        if (index >= 0 && index < totalSlides) {
+          currentSlide = index;
+          updateSlide();
+        }
+      }
+      
+      function nextSlide() {
+        if (currentSlide < totalSlides - 1) {
+          currentSlide++;
+          updateSlide();
+        }
+      }
+      
+      function prevSlide() {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateSlide();
+        }
+      }
+      
+      // Button click handlers
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+          nextSlide();
+        } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+          prevSlide();
+        } else if (e.key === 'Home') {
+          goToSlide(0);
+        } else if (e.key === 'End') {
+          goToSlide(totalSlides - 1);
+        }
+      });
+      
+      // Touch/Swipe support
+      let touchStartX = 0;
+      let touchEndX = 0;
+      
+      document.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+      
+      document.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, { passive: true });
+      
+      function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+          if (diff > 0) {
+            nextSlide(); // Swipe left = next
+          } else {
+            prevSlide(); // Swipe right = prev
+          }
+        }
+      }
+      
+      // Mouse wheel navigation (horizontal)
+      let wheelTimeout;
+      document.addEventListener('wheel', function(e) {
+        // Throttle wheel events
+        if (wheelTimeout) return;
+        
+        wheelTimeout = setTimeout(() => {
+          wheelTimeout = null;
+        }, 800);
+        
+        if (e.deltaY > 0 || e.deltaX > 0) {
+          nextSlide();
+        } else if (e.deltaY < 0 || e.deltaX < 0) {
+          prevSlide();
+        }
+      }, { passive: true });
+      
+      // Initialize
+      updateSlide();
+    })();
+
+    // ============================================
+    // PARTICLE PHYSICS SYSTEM - HORIZONTAL WIND
     // ============================================
     (function() {
       const canvas = document.getElementById('particles-canvas');
@@ -3200,43 +5000,52 @@
       let targetMouseX = width / 2;
       let targetMouseY = height / 2;
       
-      // Responsive particle count - fewer for better legibility
+      // Navigation arrow positions for collision
+      const NAV_ARROW_RADIUS = 40;
+      let leftArrowX = 52;  // 24px margin + 28px radius
+      let rightArrowX;      // Will be set on resize
+      let arrowY;           // Middle of screen
+      
+      // Responsive particle count
       const isMobile = window.innerWidth < 768;
-      const PARTICLE_COUNT = isMobile ? 25 : 50;
-      const GRAVITY = 0.08; // Gentler gravity for smoother motion
+      const PARTICLE_COUNT = isMobile ? 30 : 60;
+      const WIND = 0.06; // Horizontal wind blowing RIGHT
+      const GRAVITY = 0.02; // Very subtle gravity
       const MOUSE_RADIUS = 150;
-      const MOUSE_FORCE = 0.6; // Softer mouse interaction
+      const MOUSE_FORCE = 0.6;
+      const TURBULENCE = 0.03; // Random wind gusts
       
       class Particle {
         constructor(spawnImmediately = false) {
-          // Give each particle unique characteristics - more subtle
-          this.bounce = Math.random() * 0.2 + 0.65; // 0.65 to 0.85 - gentler bouncing
-          this.friction = Math.random() * 0.015 + 0.98; // 0.98 to 0.995 - smoother motion
-          this.floorFriction = Math.random() * 0.08 + 0.88; // Less aggressive floor friction
-          this.radius = Math.random() * 3.5 + 1.8; // Better visibility: 1.8 to 5.3px
+          // Particle characteristics
+          this.bounce = Math.random() * 0.2 + 0.65;
+          this.friction = Math.random() * 0.015 + 0.98;
+          this.wallFriction = Math.random() * 0.08 + 0.88;
+          this.radius = Math.random() * 3.5 + 1.8;
           this.mass = this.radius * this.radius;
-          this.gravityMultiplier = Math.random() * 0.3 + 0.85; // More consistent gravity
+          this.windMultiplier = Math.random() * 0.4 + 0.8; // How affected by wind
           this.color = this.getRandomColor();
-          this.opacity = Math.random() * 0.3 + 0.3; // Better visibility: 0.3 to 0.6
-          this.glowIntensity = Math.random() * 0.4 + 0.3; // Softer glow
+          this.opacity = Math.random() * 0.3 + 0.3;
+          this.glowIntensity = Math.random() * 0.4 + 0.3;
           this.impactFlash = 0;
-          this.spawnDelay = spawnImmediately ? 0 : Math.random() * 3000; // Random spawn time
+          this.spawnDelay = spawnImmediately ? 0 : Math.random() * 3000;
           this.spawned = spawnImmediately;
-          this.fadeIn = spawnImmediately ? 1 : 0; // Fade in effect
+          this.fadeIn = spawnImmediately ? 1 : 0;
           
           this.reset(spawnImmediately);
           if (spawnImmediately) {
-            // Start with random positions for initial state
-            this.x = Math.random() * width;
-            this.y = Math.random() * height * 0.8;
+            // Start scattered across screen
+            this.x = Math.random() * width * 0.8;
+            this.y = Math.random() * height;
           }
         }
         
         reset(spawnImmediately = false) {
-          this.x = Math.random() * width;
-          this.y = -20;
-          this.vx = (Math.random() - 0.5) * 1.5; // Gentler horizontal velocity
-          this.vy = Math.random() * 1.5 + 0.5; // Softer fall speed
+          // SPAWN FROM LEFT SIDE
+          this.x = -20;
+          this.y = Math.random() * height;
+          this.vx = Math.random() * 2 + 1; // Initial rightward velocity
+          this.vy = (Math.random() - 0.5) * 1.5; // Slight vertical variance
           this.life = 1.0;
           this.spawned = spawnImmediately;
           this.fadeIn = spawnImmediately ? 1 : 0;
@@ -3247,9 +5056,9 @@
         
         getRandomColor() {
           const colors = [
-            { r: 78, g: 205, b: 196 },   // Teal (main brand color)
-            { r: 187, g: 143, b: 206 },  // Purple (main brand color)
-            { r: 255, g: 160, b: 122 },  // Coral (main brand color)
+            { r: 78, g: 205, b: 196 },   // Teal
+            { r: 187, g: 143, b: 206 },  // Purple
+            { r: 255, g: 160, b: 122 },  // Coral
             { r: 100, g: 180, b: 220 },  // Soft Blue
             { r: 200, g: 140, b: 180 },  // Muted Pink
             { r: 140, g: 200, b: 160 },  // Soft Green
@@ -3258,26 +5067,32 @@
         }
         
         update(deltaTime) {
-          // Check if particle should spawn yet
           if (!this.spawned) {
-            this.spawnDelay -= deltaTime * 16.67; // Convert to ms
+            this.spawnDelay -= deltaTime * 16.67;
             if (this.spawnDelay <= 0) {
               this.spawned = true;
               this.fadeIn = 0;
             } else {
-              return; // Don't update or draw yet
+              return;
             }
           }
           
-          // Fade in effect
+          // Fade in
           if (this.fadeIn < 1) {
             this.fadeIn = Math.min(1, this.fadeIn + deltaTime * 0.05);
           }
           
-          // Apply gravity with particle's unique gravity multiplier - smoothly
-          this.vy += GRAVITY * this.gravityMultiplier * deltaTime;
+          // HORIZONTAL WIND - blowing RIGHT
+          this.vx += WIND * this.windMultiplier * deltaTime;
           
-          // Mouse interaction - gentle push away
+          // Subtle gravity (keeps particles grounded)
+          this.vy += GRAVITY * deltaTime;
+          
+          // Turbulence - random gusts
+          this.vx += (Math.random() - 0.5) * TURBULENCE * deltaTime;
+          this.vy += (Math.random() - 0.5) * TURBULENCE * 2 * deltaTime;
+          
+          // Mouse interaction
           const dx = this.x - mouseX;
           const dy = this.y - mouseY;
           const dist = Math.sqrt(dx * dx + dy * dy);
@@ -3285,56 +5100,76 @@
           if (dist < MOUSE_RADIUS && dist > 0) {
             const force = (1 - dist / MOUSE_RADIUS) * MOUSE_FORCE;
             const angle = Math.atan2(dy, dx);
-            // Gentle push away from mouse
             this.vx += Math.cos(angle) * force * 0.5;
             this.vy += Math.sin(angle) * force * 0.5;
+          }
+          
+          // NAV ARROW COLLISION - Left Arrow
+          const dxLeft = this.x - leftArrowX;
+          const dyLeft = this.y - arrowY;
+          const distLeft = Math.sqrt(dxLeft * dxLeft + dyLeft * dyLeft);
+          
+          if (distLeft < NAV_ARROW_RADIUS + this.radius && distLeft > 0) {
+            const force = (1 - distLeft / (NAV_ARROW_RADIUS + this.radius)) * 1.5;
+            const angle = Math.atan2(dyLeft, dxLeft);
+            this.vx += Math.cos(angle) * force;
+            this.vy += Math.sin(angle) * force;
+            this.impactFlash = 0.3;
+          }
+          
+          // NAV ARROW COLLISION - Right Arrow
+          const dxRight = this.x - rightArrowX;
+          const dyRight = this.y - arrowY;
+          const distRight = Math.sqrt(dxRight * dxRight + dyRight * dyRight);
+          
+          if (distRight < NAV_ARROW_RADIUS + this.radius && distRight > 0) {
+            const force = (1 - distRight / (NAV_ARROW_RADIUS + this.radius)) * 1.5;
+            const angle = Math.atan2(dyRight, dxRight);
+            this.vx += Math.cos(angle) * force;
+            this.vy += Math.sin(angle) * force;
+            this.impactFlash = 0.3;
           }
           
           // Apply velocity
           this.x += this.vx * deltaTime;
           this.y += this.vy * deltaTime;
           
-          // Apply this particle's unique air friction
+          // Air friction
           this.vx *= this.friction;
           this.vy *= this.friction;
           
-          // Floor collision (bottom of screen)
-          if (this.y + this.radius > height) {
-            this.y = height - this.radius;
-            const impactSpeed = Math.abs(this.vy);
-            this.vy *= -this.bounce; // Use particle's unique bounce
-            this.vx *= this.floorFriction; // Use particle's unique floor friction
-            
-            // Subtle flash effect on impact
+          // RIGHT WALL - particles exit and respawn from left
+          if (this.x - this.radius > width + 20) {
+            this.reset(true);
+            return;
+          }
+          
+          // LEFT WALL - bounce (wind pushes back)
+          if (this.x - this.radius < 0) {
+            this.x = this.radius;
+            const impactSpeed = Math.abs(this.vx);
+            this.vx *= -this.bounce * 0.7;
             if (impactSpeed > 0.8) {
-              this.impactFlash = impactSpeed * 0.15; // Much subtler flash
-            }
-            
-            // Give a gentle bounce if nearly stopped
-            if (Math.abs(this.vy) < 0.2) {
-              this.vy = -(Math.random() * 0.8 + 0.3);
+              this.impactFlash = impactSpeed * 0.15;
             }
           }
           
-          // Fade impact flash smoothly
+          // TOP/BOTTOM walls - gentle bounce
+          if (this.y + this.radius > height) {
+            this.y = height - this.radius;
+            this.vy *= -this.bounce * 0.8;
+            this.vx *= this.wallFriction;
+          }
+          
+          if (this.y - this.radius < 0) {
+            this.y = this.radius;
+            this.vy *= -this.bounce * 0.8;
+          }
+          
+          // Fade impact flash
           if (this.impactFlash) {
             this.impactFlash *= 0.85;
             if (this.impactFlash < 0.01) this.impactFlash = 0;
-          }
-          
-          // Side walls with unique bounce
-          if (this.x - this.radius < 0) {
-            this.x = this.radius;
-            this.vx *= -this.bounce * 0.9;
-          } else if (this.x + this.radius > width) {
-            this.x = width - this.radius;
-            this.vx *= -this.bounce * 0.9;
-          }
-          
-          // Ceiling with unique bounce
-          if (this.y - this.radius < 0) {
-            this.y = this.radius;
-            this.vy *= -this.bounce * 0.9;
           }
         }
         
@@ -3402,6 +5237,11 @@
         mouseY = height / 2;
         targetMouseX = width / 2;
         targetMouseY = height / 2;
+        
+        // Update nav arrow positions for collision
+        rightArrowX = width - 52; // 24px margin + 28px radius from right edge
+        arrowY = height / 2;
+        leftArrowX = 52;
       }
       
       function init() {
@@ -3650,18 +5490,38 @@
     async function fetchAVDPVideo() {
       const channelId = 'UCEdsKG3TMPbJavCJvYyUCHA';
       const fallbackVideoId = 'Px0B7Twse1k';
+      
+      // Projects section card
       const thumbnail = document.getElementById('avdp-thumbnail');
       const img = document.getElementById('avdp-img');
       const card = document.getElementById('avdp-card');
+      
+      // Homepage card
+      const homeThumbnail = document.getElementById('home-avdp-thumbnail');
+      const homeImg = document.getElementById('home-avdp-img');
+      const homeCard = document.getElementById('home-avdp-card');
 
-      setVideoThumbnail(img, fallbackVideoId, thumbnail);
-      card.href = `https://www.youtube.com/watch?v=${fallbackVideoId}`;
+      // Set fallback for both
+      if (img && thumbnail) {
+        setVideoThumbnail(img, fallbackVideoId, thumbnail);
+        card.href = `https://www.youtube.com/watch?v=${fallbackVideoId}`;
+      }
+      if (homeImg && homeThumbnail) {
+        setVideoThumbnail(homeImg, fallbackVideoId, homeThumbnail);
+        homeCard.href = `https://www.youtube.com/watch?v=${fallbackVideoId}`;
+      }
 
       try {
         const videoId = await getLatestVideoFromChannel(channelId);
         if (videoId && videoId !== fallbackVideoId) {
-          setVideoThumbnail(img, videoId, thumbnail);
-          card.href = `https://www.youtube.com/watch?v=${videoId}`;
+          if (img && thumbnail) {
+            setVideoThumbnail(img, videoId, thumbnail);
+            card.href = `https://www.youtube.com/watch?v=${videoId}`;
+          }
+          if (homeImg && homeThumbnail) {
+            setVideoThumbnail(homeImg, videoId, homeThumbnail);
+            homeCard.href = `https://www.youtube.com/watch?v=${videoId}`;
+          }
         }
       } catch (err) {
         console.log('AVDP fetch failed, using fallback:', err);
@@ -3708,134 +5568,8 @@
     // Initialize
     fetchLatestVideos();
 
-    // Contextual Scroll Navigation - Both buttons in center bottom
-    (function() {
-      const scrollUpNav = document.getElementById('scroll-up');
-      const scrollDownNav = document.getElementById('scroll-down');
-      const scrollDownLabel = scrollDownNav.querySelector('.scroll-nav-label');
-      let currentSection = 'hero';
-
-      function getCurrentSection() {
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const sections = document.querySelectorAll('section[id]');
-        
-        for (let section of sections) {
-          const rect = section.getBoundingClientRect();
-          const sectionTop = rect.top + scrollY;
-          const sectionBottom = sectionTop + rect.height;
-          
-          if (scrollY >= sectionTop - windowHeight * 0.3 && scrollY < sectionBottom - windowHeight * 0.3) {
-            return section.id;
-          }
-        }
-        return 'hero';
-      }
-
-      function updateScrollButtons() {
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const documentHeight = document.documentElement.scrollHeight;
-        const newSection = getCurrentSection();
-        
-        // Update current section tracking
-        if (newSection !== currentSection) {
-          currentSection = newSection;
-        }
-
-        // Simple logic: show up arrow if not at top, show down arrow if not at bottom
-        const nearTop = scrollY < windowHeight * 0.3;
-        const nearBottom = scrollY > documentHeight - windowHeight - 100;
-
-        // Show/hide up arrow
-        if (nearTop) {
-          scrollUpNav.classList.remove('visible');
-        } else {
-          scrollUpNav.classList.add('visible');
-        }
-
-        // Show/hide down arrow
-        if (nearBottom) {
-          scrollDownNav.classList.remove('visible');
-        } else {
-          scrollDownNav.classList.add('visible');
-        }
-      }
-
-      function handleScroll() {
-        updateScrollButtons();
-        
-        // 3D Parallax effect for hero text
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const heroTitle = document.querySelector('.hero-title');
-        const heroSubtitle = document.querySelector('.hero-subtitle');
-        if (heroTitle && scrollY < windowHeight) {
-          const scrollPercent = scrollY / windowHeight;
-          const translateZ = 50 - scrollPercent * 100;
-          const rotateX = scrollPercent * 5;
-          heroTitle.style.transform = `translateY(${scrollY * 0.3}px) translateZ(${translateZ}px) rotateX(${rotateX}deg)`;
-          if (heroSubtitle) {
-            heroSubtitle.style.transform = `translateY(${scrollY * 0.2}px) translateZ(${translateZ - 20}px)`;
-          }
-        }
-      }
-
-      function scrollToTop() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-
-      function scrollToNext() {
-        const current = getCurrentSection();
-        let targetSection;
-
-        if (current === 'hero') {
-          targetSection = document.getElementById('projects');
-        } else if (current === 'projects') {
-          targetSection = document.getElementById('ecosystem');
-        } else if (current === 'ecosystem') {
-          targetSection = document.getElementById('about');
-        } else if (current === 'about') {
-          targetSection = document.getElementById('research');
-        } else if (current === 'research') {
-          targetSection = document.getElementById('team');
-        } else if (current === 'team') {
-          targetSection = document.getElementById('contact');
-        }
-
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-
-      // Add event listeners
-      window.addEventListener('scroll', handleScroll);
-
-      // Make buttons clickable
-      scrollUpNav.addEventListener('click', scrollToTop);
-      scrollDownNav.addEventListener('click', scrollToNext);
-
-      // Add keyboard support
-      const scrollUpBtn = scrollUpNav.querySelector('.scroll-nav-btn');
-      const scrollDownBtn = scrollDownNav.querySelector('.scroll-nav-btn');
-      
-      scrollUpBtn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          scrollToTop();
-        }
-      });
-
-      scrollDownBtn.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          scrollToNext();
-        }
-      });
-
-      // Initial setup
-      updateScrollButtons();
-    })();
+    // REMOVED: Old vertical scroll navigation - replaced by horizontal slideshow
+    // See HORIZONTAL SLIDESHOW NAVIGATION above
 
     // Contact dropdown toggles
     (function() {

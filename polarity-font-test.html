@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POLARITY Font System - TEST</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #080808;
+            min-height: 100vh;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        #particles {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 50px 30px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            font-size: 16px;
+            color: #444;
+            letter-spacing: 10px;
+            margin-bottom: 30px;
+        }
+        .test-display {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0 50px;
+        }
+        .test-display svg { width: 160px; height: 160px; }
+        .section-title {
+            color: #FF4466;
+            font-size: 12px;
+            letter-spacing: 8px;
+            text-align: center;
+            margin: 50px 0 20px;
+            text-shadow: 0 0 20px rgba(255,68,102,0.5);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 15px;
+        }
+        .cell {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .cell svg { width: 110px; height: 110px; }
+        .label {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #444;
+            font-size: 10px;
+            letter-spacing: 2px;
+        }
+        .footer {
+            text-align: center;
+            color: #333;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 1px solid #1a1a1a;
+            font-size: 10px;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="particles"></canvas>
+    
+    <svg width="0" height="0">
+        <defs>
+            <radialGradient id="node" cx="30%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#FFF"/>
+                <stop offset="40%" stop-color="#FF7788"/>
+                <stop offset="100%" stop-color="#DD3355"/>
+            </radialGradient>
+            <filter id="glow">
+                <feGaussianBlur stdDeviation="2.5" result="b1"/>
+                <feGaussianBlur stdDeviation="5" result="b2"/>
+                <feMerge>
+                    <feMergeNode in="b2"/>
+                    <feMergeNode in="b1"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+            <filter id="glow2">
+                <feGaussianBlur stdDeviation="3" result="b"/>
+                <feMerge>
+                    <feMergeNode in="b"/>
+                    <feMergeNode in="b"/>
+                    <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+            </filter>
+            <linearGradient id="ring" x1="0%" y1="0%" x2="100%">
+                <stop offset="0%" stop-color="#FF4466" stop-opacity="0.2"/>
+                <stop offset="50%" stop-color="#FFAACC"/>
+                <stop offset="100%" stop-color="#FF4466" stop-opacity="0.2"/>
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <div class="container">
+        <h1>TEST</h1>
+        
+        <div class="test-display">
+            <!-- T -->
+            <svg viewBox="0 0 100 100">
+                <path d="M 15 15 L 85 15 M 50 15 L 50 88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+                <circle cx="15" cy="15" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                <circle cx="85" cy="15" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                <circle cx="50" cy="15" r="6" fill="url(#node)" filter="url(#glow2)"/>
+                <circle cx="50" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+            </svg>
+            <!-- E -->
+            <svg viewBox="0 0 100 100">
+                <path d="M 25 15 L 25 88 M 25 15 L 78 15 M 25 50 L 68 50 M 25 88 L 78 88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+                <circle cx="25" cy="15" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                <circle cx="78" cy="15" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                <circle cx="68" cy="50" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                <circle cx="25" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                <circle cx="78" cy="88" r="4" fill="url(#node)" filter="url(#glow2)"/>
+            </svg>
+            <!-- S -->
+            <svg viewBox="0 0 100 100">
+                <path d="M 75 28 C 75 8, 25 8, 25 28 C 25 44, 75 50, 75 66 C 75 88, 25 88, 25 68" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                <circle cx="75" cy="28" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                <circle cx="25" cy="68" r="5" fill="url(#node)" filter="url(#glow2)"/>
+            </svg>
+            <!-- T -->
+            <svg viewBox="0 0 100 100">
+                <path d="M 15 15 L 85 15 M 50 15 L 50 88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+                <circle cx="15" cy="15" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                <circle cx="85" cy="15" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                <circle cx="50" cy="15" r="6" fill="url(#node)" filter="url(#glow2)"/>
+                <circle cx="50" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+            </svg>
+        </div>
+
+        <div class="section-title">COMPLETE ALPHABET</div>
+        
+        <div class="grid">
+            <!-- A -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="50" y1="12" x2="15" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="50" y1="12" x2="85" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="28" y1="60" x2="72" y2="60" stroke="#FF4466" stroke-width="5" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="50" cy="12" r="6" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="15" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="85" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">A</span>
+            </div>
+            <!-- B -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="22" y1="12" x2="22" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <path d="M 22 12 L 55 12 C 78 12, 78 50, 50 50 L 22 50" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+                    <path d="M 22 50 L 58 50 C 82 50, 82 88, 55 88 L 22 88" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+                    <circle cx="22" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="22" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="68" cy="31" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="72" cy="69" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">B</span>
+            </div>
+            <!-- C -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 78 25 C 60 2, 18 15, 18 50 C 18 85, 60 98, 78 75" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="78" cy="25" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="75" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">C</span>
+            </div>
+            <!-- D -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="22" y1="12" x2="22" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <path d="M 22 12 L 45 12 C 88 12, 88 88, 45 88 L 22 88" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+                    <circle cx="22" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="22" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="50" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">D</span>
+            </div>
+            <!-- E -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 22 12 L 22 88 M 22 12 L 78 12 M 22 50 L 68 50 M 22 88 L 78 88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+                    <circle cx="22" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="12" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="68" cy="50" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="22" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="88" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">E</span>
+            </div>
+            <!-- F -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 22 12 L 22 88 M 22 12 L 78 12 M 22 50 L 65 50" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+                    <circle cx="22" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="12" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="65" cy="50" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="22" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">F</span>
+            </div>
+            <!-- G -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 78 25 C 60 2, 15 15, 15 50 C 15 85, 60 98, 78 72 L 78 52 L 52 52" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+                    <circle cx="78" cy="25" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="52" cy="52" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="52" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">G</span>
+            </div>
+            <!-- H -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 20 12 L 20 88 M 80 12 L 80 88 M 20 50 L 80 50" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+                    <circle cx="20" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="20" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="80" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="80" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">H</span>
+            </div>
+            <!-- I -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 35 12 L 65 12 M 50 12 L 50 88 M 35 88 L 65 88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+                    <circle cx="35" cy="12" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="65" cy="12" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="35" cy="88" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="65" cy="88" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">I</span>
+            </div>
+            <!-- J -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="35" y1="12" x2="72" y2="12" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <path d="M 58 12 L 58 62 C 58 88, 22 88, 20 62" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="35" cy="12" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="72" cy="12" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="58" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="20" cy="62" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">J</span>
+            </div>
+            <!-- K -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="22" y1="12" x2="22" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="22" y1="52" x2="78" y2="12" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="22" y1="52" x2="78" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="22" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="22" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="22" cy="52" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">K</span>
+            </div>
+            <!-- L -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 25 12 L 25 88 L 78 88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)"/>
+                    <circle cx="25" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="25" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">L</span>
+            </div>
+            <!-- M -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 12 88 L 12 12 L 50 55 L 88 12 L 88 88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)"/>
+                    <circle cx="12" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="12" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="55" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="88" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="88" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">M</span>
+            </div>
+            <!-- N -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 18 88 L 18 12 L 82 88 L 82 12" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)"/>
+                    <circle cx="18" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="18" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="82" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="82" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">N</span>
+            </div>
+            <!-- O -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <rect x="47" y="5" width="6" height="20" rx="3" fill="url(#ring)" opacity="0.6"/>
+                    <rect x="47" y="75" width="6" height="20" rx="3" fill="url(#ring)" opacity="0.6"/>
+                    <ellipse cx="50" cy="50" rx="36" ry="10" transform="rotate(-15 50 50)" stroke="url(#ring)" stroke-width="2.5" fill="none" filter="url(#glow)"/>
+                    <circle cx="50" cy="50" r="20" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="44" cy="44" r="7" fill="white" opacity="0.25"/>
+                </svg>
+                <span class="label">O</span>
+            </div>
+            <!-- P -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="22" y1="12" x2="22" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <path d="M 22 12 L 55 12 C 85 12, 85 55, 55 55 L 22 55" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+                    <circle cx="22" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="22" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="72" cy="33" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="22" cy="55" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">P</span>
+            </div>
+            <!-- Q -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <ellipse cx="48" cy="45" rx="28" ry="33" fill="none" stroke="#FF4466" stroke-width="6" filter="url(#glow)"/>
+                    <line x1="58" y1="65" x2="82" y2="92" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="48" cy="12" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="48" cy="78" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="20" cy="45" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="76" cy="45" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="82" cy="92" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">Q</span>
+            </div>
+            <!-- R -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="22" y1="12" x2="22" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <path d="M 22 12 L 55 12 C 82 12, 82 52, 55 52 L 22 52" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+                    <line x1="50" y1="52" x2="78" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="22" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="22" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="70" cy="32" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">R</span>
+            </div>
+            <!-- S -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 75 28 C 75 8, 25 8, 25 28 C 25 44, 75 50, 75 66 C 75 88, 25 88, 25 68" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="75" cy="28" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="25" cy="68" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">S</span>
+            </div>
+            <!-- T -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 15 12 L 85 12 M 50 12 L 50 88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" fill="none" filter="url(#glow)"/>
+                    <circle cx="15" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="85" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">T</span>
+            </div>
+            <!-- U -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 20 12 L 20 60 C 20 90, 80 90, 80 60 L 80 12" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="20" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="80" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="82" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">U</span>
+            </div>
+            <!-- V -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="12" y1="12" x2="50" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="88" y1="12" x2="50" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="12" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="88" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="88" r="6" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">V</span>
+            </div>
+            <!-- W -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="5" y1="12" x2="27" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="27" y1="88" x2="50" y2="38" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="50" y1="38" x2="73" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="73" y1="88" x2="95" y2="12" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="5" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="27" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="38" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="73" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="95" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">W</span>
+            </div>
+            <!-- X -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="15" y1="12" x2="85" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="85" y1="12" x2="15" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="15" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="85" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="50" r="6" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="15" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="85" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">X</span>
+            </div>
+            <!-- Y -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 12 12 L 50 50 L 88 12 M 50 50 L 50 88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)"/>
+                    <circle cx="12" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="88" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="50" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">Y</span>
+            </div>
+            <!-- Z -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 18 12 L 82 12 L 18 88 L 82 88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#glow)"/>
+                    <circle cx="18" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="82" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="18" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="82" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">Z</span>
+            </div>
+        </div>
+
+        <div class="section-title">NUMERALS</div>
+        
+        <div class="grid">
+            <!-- 0 -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <ellipse cx="50" cy="50" rx="28" ry="38" fill="none" stroke="#FF4466" stroke-width="6" filter="url(#glow)"/>
+                    <circle cx="50" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">0</span>
+            </div>
+            <!-- 1 -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="35" y1="28" x2="50" y2="12" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="50" y1="12" x2="50" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="32" y1="88" x2="68" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="35" cy="28" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="32" cy="88" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="68" cy="88" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">1</span>
+            </div>
+            <!-- 2 -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 22 30 C 22 5, 78 5, 78 30 C 78 50, 22 68, 22 88 L 78 88" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+                    <circle cx="22" cy="30" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="30" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="22" cy="88" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="78" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">2</span>
+            </div>
+            <!-- 3 -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 25 22 C 25 5, 78 5, 78 28 C 78 42, 55 48, 55 50 C 55 52, 78 56, 78 72 C 78 95, 25 95, 25 78" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="25" cy="22" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="55" cy="50" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="25" cy="78" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">3</span>
+            </div>
+            <!-- 4 -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="65" y1="12" x2="65" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="65" y1="12" x2="18" y2="62" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="18" y1="62" x2="82" y2="62" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="65" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="65" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="18" cy="62" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="82" cy="62" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">4</span>
+            </div>
+            <!-- 5 -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="75" y1="12" x2="25" y2="12" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="25" y1="12" x2="25" y2="48" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <path d="M 25 48 C 78 42, 82 95, 28 88" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="75" cy="12" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="25" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="25" cy="48" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="28" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">5</span>
+            </div>
+            <!-- 6 -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 72 20 C 48 2, 20 25, 20 55 C 20 88, 80 88, 80 62 C 80 40, 20 40, 20 62" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="72" cy="20" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="65" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">6</span>
+            </div>
+            <!-- 7 -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <line x1="20" y1="12" x2="80" y2="12" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <line x1="80" y1="12" x2="40" y2="88" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="20" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="80" cy="12" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="40" cy="88" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">7</span>
+            </div>
+            <!-- 8 -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <ellipse cx="50" cy="30" rx="22" ry="18" fill="none" stroke="#FF4466" stroke-width="6" filter="url(#glow)"/>
+                    <ellipse cx="50" cy="68" rx="26" ry="20" fill="none" stroke="#FF4466" stroke-width="6" filter="url(#glow)"/>
+                    <circle cx="50" cy="12" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="48" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="88" r="4" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">8</span>
+            </div>
+            <!-- 9 -->
+            <div class="cell">
+                <svg viewBox="0 0 100 100">
+                    <path d="M 28 80 C 52 98, 80 75, 80 45 C 80 12, 20 12, 20 38 C 20 60, 80 60, 80 38" fill="none" stroke="#FF4466" stroke-width="6" stroke-linecap="round" filter="url(#glow)"/>
+                    <circle cx="28" cy="80" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                    <circle cx="50" cy="35" r="5" fill="url(#node)" filter="url(#glow2)"/>
+                </svg>
+                <span class="label">9</span>
+            </div>
+        </div>
+
+        <div class="footer">POLARITY TYPEFACE SYSTEM</div>
+    </div>
+
+    <script>
+        const c = document.getElementById('particles');
+        const x = c.getContext('2d');
+        let p = [];
+        function resize() { c.width = innerWidth; c.height = innerHeight; }
+        function init() {
+            p = [];
+            for (let i = 0; i < 80; i++) {
+                p.push({
+                    x: Math.random() * c.width,
+                    y: Math.random() * c.height,
+                    s: Math.random() * 2 + 0.5,
+                    vx: (Math.random() - 0.5) * 0.15,
+                    vy: (Math.random() - 0.5) * 0.15,
+                    o: Math.random() * 0.3 + 0.1,
+                    h: Math.random() * 40 + 35
+                });
+            }
+        }
+        function draw() {
+            x.clearRect(0, 0, c.width, c.height);
+            p.forEach(pt => {
+                pt.x += pt.vx; pt.y += pt.vy;
+                if (pt.x < 0) pt.x = c.width;
+                if (pt.x > c.width) pt.x = 0;
+                if (pt.y < 0) pt.y = c.height;
+                if (pt.y > c.height) pt.y = 0;
+                x.beginPath();
+                x.arc(pt.x, pt.y, pt.s * 2, 0, Math.PI * 2);
+                x.fillStyle = `hsla(${pt.h},60%,50%,${pt.o * 0.12})`;
+                x.fill();
+                x.beginPath();
+                x.arc(pt.x, pt.y, pt.s, 0, Math.PI * 2);
+                x.fillStyle = `hsla(${pt.h},70%,60%,${pt.o})`;
+                x.fill();
+            });
+            requestAnimationFrame(draw);
+        }
+        resize(); init(); draw();
+        addEventListener('resize', () => { resize(); init(); });
+    </script>
+</body>
+</html>
