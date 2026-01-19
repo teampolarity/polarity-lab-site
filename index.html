@@ -25,22 +25,22 @@
       font-weight: 400;
       background: 
         /* Teal wash - top left */
-        radial-gradient(ellipse 100% 80% at 0% 0%, rgba(78, 205, 196, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 120% 100% at 0% 0%, rgba(78, 205, 196, 0.25) 0%, transparent 55%),
         /* Red/coral wash - top right */
-        radial-gradient(ellipse 80% 60% at 100% 0%, rgba(255, 107, 129, 0.12) 0%, transparent 45%),
+        radial-gradient(ellipse 100% 80% at 100% 0%, rgba(255, 107, 129, 0.2) 0%, transparent 50%),
         /* Teal wash - bottom right */
-        radial-gradient(ellipse 90% 70% at 100% 100%, rgba(78, 205, 196, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 110% 90% at 100% 100%, rgba(78, 205, 196, 0.22) 0%, transparent 55%),
         /* Red wash - bottom left */
-        radial-gradient(ellipse 70% 50% at 0% 100%, rgba(255, 107, 129, 0.1) 0%, transparent 45%),
+        radial-gradient(ellipse 90% 70% at 0% 100%, rgba(255, 107, 129, 0.18) 0%, transparent 50%),
         /* Center subtle blend */
-        radial-gradient(ellipse 60% 40% at 50% 50%, rgba(255, 255, 255, 0.5) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 60% at 50% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 70%),
         /* Base gradient - warm to cool */
         linear-gradient(135deg, 
-          rgba(255, 245, 247, 1) 0%, 
-          rgba(250, 250, 252, 1) 25%,
-          rgba(245, 250, 252, 1) 50%,
-          rgba(240, 250, 249, 1) 75%,
-          rgba(245, 252, 251, 1) 100%);
+          rgba(255, 242, 245, 1) 0%, 
+          rgba(248, 250, 252, 1) 25%,
+          rgba(242, 250, 252, 1) 50%,
+          rgba(238, 250, 249, 1) 75%,
+          rgba(242, 252, 250, 1) 100%);
       background-attachment: fixed;
       color: #1d1d1f;
       overflow: hidden;
@@ -75,6 +75,44 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    /* Alternating color tints for slides */
+    .slide:nth-child(odd)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse 80% 60% at 20% 80%, rgba(78, 205, 196, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .slide:nth-child(even)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse 80% 60% at 80% 20%, rgba(255, 107, 129, 0.06) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Dark mode slide tints - STRONGER */
+    body.dark-mode .slide:nth-child(odd)::before {
+      background: 
+        radial-gradient(ellipse 100% 80% at 20% 20%, rgba(78, 205, 196, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 80% 80%, rgba(255, 107, 129, 0.1) 0%, transparent 50%);
+    }
+
+    body.dark-mode .slide:nth-child(even)::before {
+      background: 
+        radial-gradient(ellipse 100% 80% at 80% 20%, rgba(255, 107, 129, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(78, 205, 196, 0.12) 0%, transparent 50%);
     }
 
     .slide > section {
@@ -288,21 +326,23 @@
     /* Dark mode */
     body.dark-mode {
       background: 
-        /* Teal wash - top left */
-        radial-gradient(ellipse 100% 80% at 0% 0%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
-        /* Red/coral wash - top right */
-        radial-gradient(ellipse 80% 60% at 100% 0%, rgba(255, 107, 129, 0.08) 0%, transparent 45%),
-        /* Teal wash - bottom right */
-        radial-gradient(ellipse 90% 70% at 100% 100%, rgba(78, 205, 196, 0.08) 0%, transparent 50%),
-        /* Red wash - bottom left */
-        radial-gradient(ellipse 70% 50% at 0% 100%, rgba(255, 107, 129, 0.06) 0%, transparent 45%),
+        /* Teal wash - top left - STRONG */
+        radial-gradient(ellipse 120% 100% at 0% 0%, rgba(78, 205, 196, 0.25) 0%, transparent 55%),
+        /* Red/coral wash - top right - STRONG */
+        radial-gradient(ellipse 100% 80% at 100% 0%, rgba(255, 107, 129, 0.18) 0%, transparent 50%),
+        /* Teal wash - bottom right - STRONG */
+        radial-gradient(ellipse 110% 90% at 100% 100%, rgba(78, 205, 196, 0.2) 0%, transparent 55%),
+        /* Red wash - bottom left - STRONG */
+        radial-gradient(ellipse 90% 70% at 0% 100%, rgba(255, 107, 129, 0.15) 0%, transparent 50%),
+        /* Center subtle teal glow */
+        radial-gradient(ellipse 60% 40% at 50% 50%, rgba(78, 205, 196, 0.08) 0%, transparent 70%),
         /* Base gradient - deep with brand hints */
         linear-gradient(135deg, 
-          rgba(15, 12, 14, 1) 0%, 
-          rgba(10, 10, 12, 1) 25%,
-          rgba(8, 12, 14, 1) 50%,
-          rgba(10, 14, 14, 1) 75%,
-          rgba(8, 12, 12, 1) 100%);
+          rgba(12, 14, 18, 1) 0%, 
+          rgba(8, 10, 14, 1) 25%,
+          rgba(6, 12, 16, 1) 50%,
+          rgba(8, 14, 16, 1) 75%,
+          rgba(6, 12, 14, 1) 100%);
       background-attachment: fixed;
       color: #f5f5f7;
     }
@@ -1534,11 +1574,17 @@
     }
 
     body.dark-mode .project-card {
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(30, 35, 40, 0.85);
       border: 1px solid rgba(255, 255, 255, 0.12);
       box-shadow: 
         0 8px 32px rgba(0, 0, 0, 0.3),
         0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    }
+    body.dark-mode .project-card h3 {
+      color: #f5f5f7;
+    }
+    body.dark-mode .project-card p {
+      color: rgba(255, 255, 255, 0.7);
     }
 
     .project-card.visible,
@@ -1747,10 +1793,11 @@
       z-index: 1;
       min-height: 100vh;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
-      padding: 100px 64px 180px 64px;
+      padding: 60px 64px;
       box-sizing: border-box;
+      background: radial-gradient(ellipse 70% 50% at 85% 70%, rgba(78, 205, 196, 0.1) 0%, transparent 50%);
     }
 
     .research-wrapper {
@@ -1800,8 +1847,8 @@
     }
 
     .papers-incoming {
-      margin-top: 48px;
-      font-size: clamp(14px, 1.5vw, 16px);
+      margin-top: 24px;
+      font-size: clamp(13px, 1.4vw, 15px);
       font-weight: 400;
       color: rgba(29, 29, 31, 0.5);
       letter-spacing: 0.02em;
@@ -1846,16 +1893,22 @@
       color: inherit;
       display: flex;
       flex-direction: column;
-      padding: 24px;
+      padding: 20px;
       opacity: 0;
       transform: translateY(20px);
       box-shadow: 0 4px 20px rgba(78, 205, 196, 0.08);
     }
 
     body.dark-mode .research-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+      background: rgba(30, 35, 40, 0.85) !important;
+      border: 1px solid rgba(255, 255, 255, 0.12) !important;
+      box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
+    }
+    body.dark-mode .research-card h3 {
+      color: #f5f5f7 !important;
+    }
+    body.dark-mode .research-card p {
+      color: rgba(255, 255, 255, 0.7) !important;
     }
 
     .research-card.visible {
@@ -1881,9 +1934,9 @@
     }
 
     .research-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
       background: rgba(78, 205, 196, 0.12);
       display: flex;
       align-items: center;
@@ -2141,9 +2194,9 @@
     }
 
     body.dark-mode .umbrella-card {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      background: rgba(30, 35, 40, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     }
 
     .umbrella-card:hover {
@@ -2222,7 +2275,7 @@
     }
 
     body.dark-mode .umbrella-card-desc {
-      color: rgba(255, 255, 255, 0.55);
+      color: rgba(255, 255, 255, 0.75);
     }
 
     /* About Section Mobile */
@@ -2289,8 +2342,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 100px 64px 120px 64px;
+      padding: 60px 64px;
       box-sizing: border-box;
+      background: radial-gradient(ellipse 60% 50% at 80% 80%, rgba(78, 205, 196, 0.1) 0%, transparent 50%);
     }
 
     .ecosystem-wrapper {
@@ -2497,7 +2551,8 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 80px 64px 60px 64px;
+      padding: 60px 64px;
+      box-sizing: border-box;
     }
 
     .contact-wrapper {
@@ -3446,21 +3501,82 @@
       color: rgba(255, 255, 255, 0.6) !important;
     }
     
-    body.dark-mode .about-combined-section [style*="background: rgba(255, 255, 255"] {
-      background: rgba(255, 255, 255, 0.06) !important;
-      border-color: rgba(255, 255, 255, 0.1) !important;
+    /* ============================================
+       DARK MODE - GLOBAL INLINE STYLE OVERRIDES
+       ============================================ */
+    
+    /* Fix ALL cards with white/light backgrounds */
+    body.dark-mode [style*="background: rgba(255, 255, 255"] {
+      background: rgba(30, 35, 40, 0.85) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
     }
     
-    body.dark-mode .about-combined-section [style*="color: #6e6e73"] {
-      color: rgba(255, 255, 255, 0.5) !important;
+    /* Fix teal definition boxes */
+    body.dark-mode [style*="background: rgba(78, 205, 196"] {
+      background: rgba(78, 205, 196, 0.15) !important;
+      border-color: rgba(78, 205, 196, 0.3) !important;
     }
     
-    body.dark-mode .about-combined-section [style*="color: #86868b"] {
-      color: rgba(255, 255, 255, 0.4) !important;
+    /* Fix red/coral boxes */
+    body.dark-mode [style*="background: rgba(255, 107, 129"] {
+      background: rgba(255, 107, 129, 0.15) !important;
+      border-color: rgba(255, 107, 129, 0.3) !important;
     }
     
-    body.dark-mode .about-combined-section [style*="color: #1d1d1f"] {
+    /* Fix purple boxes */
+    body.dark-mode [style*="background: rgba(187, 143, 206"] {
+      background: rgba(187, 143, 206, 0.15) !important;
+      border-color: rgba(187, 143, 206, 0.3) !important;
+    }
+    
+    /* Fix gray text colors */
+    body.dark-mode [style*="color: #6e6e73"] {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+    
+    body.dark-mode [style*="color: #86868b"] {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+    
+    body.dark-mode [style*="color: #424245"] {
+      color: rgba(255, 255, 255, 0.75) !important;
+    }
+    
+    /* Fix dark text to light */
+    body.dark-mode [style*="color: #1d1d1f"] {
       color: #f5f5f7 !important;
+    }
+    
+    /* Fix linear gradients on icons */
+    body.dark-mode [style*="background: linear-gradient"] {
+      opacity: 0.9;
+    }
+    
+    /* SLIDE 3 & 4: Who We Are + Team - DARK MODE CARDS */
+    body.dark-mode .slide [style*="backdrop-filter: blur"] {
+      background: rgba(30, 35, 40, 0.9) !important;
+      border-color: rgba(255, 255, 255, 0.15) !important;
+    }
+    
+    /* Team cards text fixes */
+    body.dark-mode .slide [style*="width: 280px"] p,
+    body.dark-mode .slide [style*="width: 280px"] h4 {
+      color: #f5f5f7 !important;
+    }
+    
+    body.dark-mode .slide [style*="width: 280px"] [style*="color: #6e6e73"],
+    body.dark-mode .slide [style*="width: 280px"] [style*="color: #424245"],
+    body.dark-mode .slide [style*="width: 280px"] [style*="color: #86868b"] {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+    
+    /* Flywheel pill dark mode */
+    body.dark-mode [style*="border-radius: 100px"][style*="backdrop-filter"] {
+      background: rgba(30, 35, 40, 0.85) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+    }
+    body.dark-mode [style*="border-radius: 100px"][style*="backdrop-filter"] p {
+      color: rgba(255, 255, 255, 0.8) !important;
     }
     
     /* About Section Responsive */
@@ -3557,17 +3673,23 @@
     .ccx-visual-section {
       position: relative;
       z-index: 1;
-      padding: 120px 64px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 64px;
+      box-sizing: border-box;
     }
 
     .ccx-visual-wrapper {
       max-width: 1200px;
+      width: 100%;
       margin: 0 auto;
     }
 
     .ccx-header-block {
       text-align: center;
-      margin-bottom: 80px;
+      margin-bottom: 40px;
     }
 
     .ccx-header-block .section-label {
@@ -3597,8 +3719,11 @@
     }
 
     body.dark-mode .ccx-construct-card {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.08);
+      background: rgba(30, 35, 40, 0.85) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+    }
+    body.dark-mode .ccx-construct-card h4 {
+      color: #f5f5f7 !important;
     }
 
     .ccx-construct-card:hover {
@@ -3644,7 +3769,7 @@
     }
 
     body.dark-mode .ccx-construct-card p {
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.75);
     }
 
     @media (max-width: 1100px) {
@@ -3676,19 +3801,33 @@
     .validation-section {
       position: relative;
       z-index: 1;
-      padding: 100px 64px;
-      background: linear-gradient(180deg, rgba(78, 205, 196, 0.02) 0%, transparent 100%);
+      padding: 60px 64px;
+      box-sizing: border-box;
+      background: 
+        radial-gradient(ellipse 70% 50% at 90% 80%, rgba(78, 205, 196, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 40% at 10% 20%, rgba(255, 107, 129, 0.06) 0%, transparent 50%),
+        linear-gradient(180deg, rgba(78, 205, 196, 0.03) 0%, transparent 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
     }
 
     .validation-wrapper {
       max-width: 900px;
+      width: 100%;
       margin: 0 auto;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .validation-progress {
       margin: 48px 0;
       position: relative;
+      width: 100%;
     }
 
     .validation-track {
@@ -3820,8 +3959,11 @@
     }
 
     body.dark-mode .lab-arm-card {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.08);
+      background: rgba(30, 35, 40, 0.85);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+    body.dark-mode .lab-arm-card h4 {
+      color: #f5f5f7;
     }
 
     .lab-arm-card:hover {
@@ -3857,7 +3999,7 @@
     }
 
     body.dark-mode .lab-arm-card p {
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.75);
     }
 
     /* Ecosystem Arm Cards - Rich Hover Effects */
@@ -3881,14 +4023,14 @@
     }
 
     body.dark-mode .ecosystem-arm-card {
-      background: rgba(255, 255, 255, 0.06);
-      border-color: rgba(255, 255, 255, 0.1);
+      background: rgba(30, 35, 40, 0.85) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
     }
     body.dark-mode .ecosystem-arm-card h4 {
-      color: #f5f5f7;
+      color: #f5f5f7 !important;
     }
     body.dark-mode .ecosystem-arm-card p {
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(255, 255, 255, 0.7) !important;
     }
 
     @media (max-width: 900px) {
@@ -3923,12 +4065,20 @@
     .involve-section {
       position: relative;
       z-index: 1;
-      padding: 120px 64px;
-      background: linear-gradient(180deg, transparent 0%, rgba(78, 205, 196, 0.03) 100%);
+      padding: 60px 64px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: 
+        radial-gradient(ellipse 60% 50% at 15% 80%, rgba(78, 205, 196, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 40% at 85% 20%, rgba(255, 107, 129, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, transparent 0%, rgba(78, 205, 196, 0.04) 100%);
     }
 
     .involve-wrapper {
       max-width: 1000px;
+      width: 100%;
       margin: 0 auto;
       text-align: center;
     }
@@ -3936,24 +4086,27 @@
     .involve-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 64px;
+      gap: 20px;
+      margin-top: 32px;
     }
 
     .involve-card {
-      padding: 40px 32px;
+      padding: 24px 20px;
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(0, 0, 0, 0.06);
-      border-radius: 24px;
+      border-radius: 20px;
       text-align: left;
       transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     body.dark-mode .involve-card {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.08);
+      background: rgba(30, 35, 40, 0.85) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+    }
+    body.dark-mode .involve-card h3 {
+      color: #f5f5f7 !important;
     }
 
     .involve-card:hover {
@@ -3962,35 +4115,35 @@
     }
 
     .involve-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
 
     .involve-icon svg {
-      width: 28px;
-      height: 28px;
+      width: 22px;
+      height: 22px;
     }
 
     .involve-card h3 {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 600;
-      margin-bottom: 12px;
+      margin-bottom: 8px;
     }
 
     .involve-card p {
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 13px;
+      line-height: 1.6;
       color: rgba(29, 29, 31, 0.6);
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
 
     body.dark-mode .involve-card p {
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.75);
     }
 
     .involve-card a {
@@ -4008,11 +4161,11 @@
     }
 
     .involve-cta {
-      margin-top: 64px;
-      padding: 24px 40px;
+      margin-top: 32px;
+      padding: 16px 32px;
       background: rgba(78, 205, 196, 0.1);
       border: 1px solid rgba(78, 205, 196, 0.3);
-      border-radius: 16px;
+      border-radius: 12px;
       display: inline-block;
     }
 
@@ -4046,11 +4199,18 @@
     .safety-section {
       position: relative;
       z-index: 1;
-      padding: 100px 64px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 64px;
+      box-sizing: border-box;
+      background: radial-gradient(ellipse 70% 50% at 20% 30%, rgba(255, 107, 129, 0.08) 0%, transparent 50%);
     }
 
     .safety-wrapper {
       max-width: 1000px;
+      width: 100%;
       margin: 0 auto;
       text-align: center;
     }
@@ -4083,8 +4243,8 @@
     }
 
     body.dark-mode .safety-item {
-      background: rgba(255, 255, 255, 0.03);
-      border-color: rgba(255, 255, 255, 0.06);
+      background: rgba(30, 35, 40, 0.85);
+      border-color: rgba(255, 255, 255, 0.12);
     }
 
     .safety-item:hover {
@@ -4105,7 +4265,7 @@
     }
 
     body.dark-mode .safety-item p {
-      color: rgba(255, 255, 255, 0.5);
+      color: rgba(255, 255, 255, 0.75);
     }
 
     @media (max-width: 768px) {
@@ -4121,12 +4281,21 @@
     .patents-section {
       position: relative;
       z-index: 1;
-      padding: 100px 64px;
-      background: linear-gradient(180deg, rgba(78, 205, 196, 0.02) 0%, transparent 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 64px;
+      box-sizing: border-box;
+      background: 
+        radial-gradient(ellipse 60% 40% at 10% 70%, rgba(78, 205, 196, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 40% at 90% 30%, rgba(255, 107, 129, 0.08) 0%, transparent 50%),
+        linear-gradient(180deg, rgba(78, 205, 196, 0.03) 0%, transparent 100%);
     }
 
     .patents-wrapper {
       max-width: 900px;
+      width: 100%;
       margin: 0 auto;
       text-align: center;
     }
@@ -4149,8 +4318,11 @@
     }
 
     body.dark-mode .patent-card {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.08);
+      background: rgba(30, 35, 40, 0.85) !important;
+      border-color: rgba(255, 255, 255, 0.12) !important;
+    }
+    body.dark-mode .patent-card h4 {
+      color: #f5f5f7 !important;
     }
 
     .patent-card:hover {
@@ -4185,8 +4357,8 @@
     }
 
     body.dark-mode .patent-card li {
-      color: rgba(255, 255, 255, 0.6);
-      border-color: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.8);
+      border-color: rgba(255, 255, 255, 0.1);
     }
 
     .patent-card li:last-child {
@@ -4322,7 +4494,7 @@
 
   <!-- Slide Counter -->
   <div class="slide-counter">
-    <span class="current" id="slide-current">1</span> / <span id="slide-total">11</span>
+    <span class="current" id="slide-current">1</span> / <span id="slide-total">12</span>
   </div>
 
   <!-- SLIDES CONTAINER -->
@@ -4331,7 +4503,7 @@
   <!-- SLIDE 1: Hero -->
   <div class="slide" data-slide="1">
     <section class="hero-section" id="hero">
-    <div class="hero-spatial-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; z-index: 1; padding: 40px 20px; width: 100%; margin: 0 auto;">
+      <div class="hero-spatial-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; z-index: 1; padding: 60px 64px; width: 100%; margin: 0 auto; box-sizing: border-box;">
       
       <!-- POLARITY LLC WORDMARK - CLEAN VERSION -->
       <div class="logo-container">
@@ -4588,7 +4760,7 @@
 
   <!-- SLIDE 2: What is CCX? -->
   <div class="slide" data-slide="2">
-    <section class="about-combined-section" id="about-us" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 50px 40px;">
+    <section class="about-combined-section" id="about-us" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 64px; box-sizing: border-box;">
       
       <div style="max-width: 900px; margin: 0 auto; text-align: center;">
         
@@ -4653,7 +4825,7 @@
 
   <!-- SLIDE 3: Our Mission -->
   <div class="slide" data-slide="3">
-    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px;">
+    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 64px; box-sizing: border-box;">
       
       <div style="max-width: 1100px; margin: 0 auto; width: 100%;">
         
@@ -4758,7 +4930,7 @@
 
   <!-- SLIDE 4: The Team -->
   <div class="slide" data-slide="4">
-    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 40px;">
+    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 64px; box-sizing: border-box;">
       
       <div style="max-width: 900px; margin: 0 auto; text-align: center;">
         
@@ -4775,10 +4947,10 @@
           
           <!-- Theodore Card -->
           <div style="background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 20px; padding: 28px 24px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); width: 280px; text-align: left;">
-            <p style="font-size: 11px; color: #E85A71; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 8px; text-transform: uppercase;">Founder & PI</p>
+            <p style="font-size: 11px; color: #E85A71; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 8px; text-transform: uppercase;">Founder & Principal Investigator</p>
             <h4 style="font-size: 22px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">Theodore Addo</h4>
             <p style="font-size: 13px; color: #6e6e73; margin-bottom: 12px;">MD Candidate, Brown Alpert Medical School '26</p>
-            <p style="font-size: 13px; color: #424245; line-height: 1.6; margin-bottom: 16px;">11 years on this question. MIT Boyden Lab alum. Radiology-bound.</p>
+            <p style="font-size: 13px; color: #424245; line-height: 1.6; margin-bottom: 16px;">MIT Boyden Lab researcher. Centaur Labs AI Consultant. HealthCORE Program Director. 11 years on this question. Radiology-bound.</p>
             <div style="border-top: 1px solid rgba(0,0,0,0.08); padding-top: 14px;">
               <p style="font-size: 12px; color: #86868b; line-height: 1.5;"><span style="font-weight: 600; color: #1d1d1f;">Role:</span> 100% owner. PI on all research. Domain Lead for Polarity, AVDP, Pain Points.</p>
             </div>
@@ -4786,10 +4958,10 @@
           
           <!-- Shadrack Card -->
           <div style="background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 20px; padding: 28px 24px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); width: 280px; text-align: left;">
-            <p style="font-size: 11px; color: #6e6e73; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 8px; text-transform: uppercase;">Cofounder</p>
+            <p style="font-size: 11px; color: #6e6e73; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 8px; text-transform: uppercase;">Cofounder & Platform Lead</p>
             <h4 style="font-size: 22px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">Shadrack Annor</h4>
-            <p style="font-size: 13px; color: #6e6e73; margin-bottom: 12px;">Brown University</p>
-            <p style="font-size: 13px; color: #424245; line-height: 1.6; margin-bottom: 16px;">Music-tech expertise. Built Waxfeed. Originated the evolvable cryptography insight (Patent #1).</p>
+            <p style="font-size: 13px; color: #6e6e73; margin-bottom: 12px;">Brown University, Computer Science & Religious Studies '27</p>
+            <p style="font-size: 13px; color: #424245; line-height: 1.6; margin-bottom: 16px;">Brown CS Research Assistant. WBRU Creative Director. MLT Member. Built Waxfeed. Originated evolvable cryptography (Patent #1).</p>
             <div style="border-top: 1px solid rgba(0,0,0,0.08); padding-top: 14px;">
               <p style="font-size: 12px; color: #86868b; line-height: 1.5;"><span style="font-weight: 600; color: #1d1d1f;">Role:</span> Principal of Waxfeed (50%). Partner on other projects. Co-inventor on both patents.</p>
             </div>
@@ -4797,12 +4969,12 @@
           
           <!-- Nathan Card -->
           <div style="background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 20px; padding: 28px 24px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); width: 280px; text-align: left;">
-            <p style="font-size: 11px; color: #6e6e73; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 8px; text-transform: uppercase;">Cofounder</p>
+            <p style="font-size: 11px; color: #6e6e73; font-weight: 600; letter-spacing: 0.5px; margin-bottom: 8px; text-transform: uppercase;">Cofounder & Head of Product Architecture</p>
             <h4 style="font-size: 22px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">Nathan Amankwah</h4>
-            <p style="font-size: 13px; color: #6e6e73; margin-bottom: 12px;">University of Ottawa</p>
-            <p style="font-size: 13px; color: #424245; line-height: 1.6; margin-bottom: 16px;">Frontend/UX lead. Made Polarity beautiful. Formalized CCX as a field (Patent #2).</p>
+            <p style="font-size: 13px; color: #6e6e73; margin-bottom: 12px;">University of Ottawa, Telfer School of Management '27 (Finance & BTM)</p>
+            <p style="font-size: 13px; color: #424245; line-height: 1.6; margin-bottom: 16px;">HOIST ERP Consultant. UOttawa AI research. Built LLC, contracts, execution model. MEG integration. Full-stack architecture.</p>
             <div style="border-top: 1px solid rgba(0,0,0,0.08); padding-top: 14px;">
-              <p style="font-size: 12px; color: #86868b; line-height: 1.5;"><span style="font-weight: 600; color: #1d1d1f;">Role:</span> Partner on all projects (25% each). Dev Lead. Co-inventor on Patent #2.</p>
+              <p style="font-size: 12px; color: #86868b; line-height: 1.5;"><span style="font-weight: 600; color: #1d1d1f;">Role:</span> Partner on all projects (25% each). Dev Lead. Business architecture. Co-inventor on Patent #2.</p>
             </div>
           </div>
           
@@ -4816,7 +4988,7 @@
   <!-- SLIDE 5: Ecosystem -->
   <div class="slide" data-slide="5">
     <section class="ecosystem-section" id="ecosystem">
-      <div class="ecosystem-wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 60px 40px;">
+      <div class="ecosystem-wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
         
         <h2 class="section-heading" style="margin-bottom: 12px;">How We Work</h2>
         <p style="font-size: 20px; color: #6e6e73; margin-bottom: 50px; text-align: center; font-weight: 500;">Four teams, one goal: understand the mind.</p>
@@ -4884,12 +5056,12 @@
   <!-- SLIDE 6: CCX Framework -->
   <div class="slide" data-slide="6">
     <section class="ccx-visual-section" id="about">
-    <div class="ccx-visual-wrapper">
-      <div class="ccx-header-block">
-        <p class="section-label">The Science</p>
-        <h2 class="section-heading">How We Read Conversations</h2>
-        <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 600px; margin: 16px auto 0; line-height: 1.7;">When you talk, your brain leaves clues. Here are the five things we look for.</p>
-      </div>
+      <div class="ccx-visual-wrapper">
+        <div class="ccx-header-block">
+          <p class="section-label">The Science</p>
+          <h2 class="section-heading">How We Read Conversations</h2>
+          <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 600px; margin: 16px auto 0; line-height: 1.7;">When you talk, your brain leaves clues. Here are the five things we look for.</p>
+        </div>
       
       <div class="ccx-constructs-grid">
         <!-- UoC -->
@@ -4959,10 +5131,10 @@
   <!-- SLIDE 7: Validation -->
   <div class="slide" data-slide="7">
     <section class="validation-section" id="validation">
-    <div class="validation-wrapper">
-      <p class="question-label">Honest Science</p>
-      <h2 class="section-heading">Where We Are Today</h2>
-      <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 500px; margin: 16px auto 0; line-height: 1.7;">Real science is a journey. We're not going to oversell. Here's exactly where we are.</p>
+      <div class="validation-wrapper">
+        <p class="question-label">Honest Science</p>
+        <h2 class="section-heading">Where We Are Today</h2>
+        <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 500px; margin: 16px auto 0; line-height: 1.7;">Real science is a journey. We're not going to oversell. Here's exactly where we are.</p>
       
       <div class="validation-progress">
         <div class="validation-track">
@@ -5002,7 +5174,7 @@
       </div>
       
       <!-- Research Roadmap -->
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; max-width: 700px;">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px auto 0; max-width: 700px; width: 100%;">
         <div style="background: rgba(78, 205, 196, 0.08); border-radius: 12px; padding: 16px; text-align: left; border: 1px solid rgba(78, 205, 196, 0.15);">
           <p style="font-size: 11px; color: #4ECDC4; font-weight: 600; margin: 0 0 4px 0;">2026</p>
           <p style="font-size: 13px; color: #1d1d1f; font-weight: 600; margin: 0 0 4px 0;">L3 Behavioral</p>
@@ -5030,7 +5202,7 @@
     <section class="patents-section" id="patents">
       <div class="patents-wrapper">
         <p class="question-label">Protected Innovation</p>
-      <h2 class="section-heading">2 Patents Filed</h2>
+        <h2 class="section-heading">2 Patents Filed</h2>
       
       <div class="patents-grid">
         <div class="patent-card">
@@ -5066,7 +5238,7 @@
     <section class="safety-section" id="safety">
       <div class="safety-wrapper">
         <p class="question-label">Non-Negotiable</p>
-      <h2 class="section-heading">Safety & Ethics</h2>
+        <h2 class="section-heading">Safety & Ethics</h2>
       <p class="safety-intro">Cognitive monitoring could enable surveillance and abuse. We are not naive about this. These principles are foundational.</p>
       
       <div class="safety-grid">
@@ -5104,10 +5276,10 @@
     <section class="research-section" id="research">
       <div class="research-wrapper">
         <h2 class="section-heading">Reading Room</h2>
-      
-      <div class="research-overview">
-        <p class="research-intro">We stand on the shoulders of giants. Here's some of the research that inspired our work.</p>
-      </div>
+        
+        <div class="research-overview">
+          <p class="research-intro">We stand on the shoulders of giants. Here's some of the research that inspired our work.</p>
+        </div>
 
       <div class="research-grid">
         <!-- Research Paper 1: Neural Coupling -->
@@ -5120,7 +5292,7 @@
           <div class="research-info">
             <span class="research-tag">PNAS 2010</span>
             <h3>Your Brain Syncs With Who You Talk To</h3>
-            <p>Stephens, Silbert & Hasson show that during real conversation, brains literally synchronize. The better they sync, the better the understanding.</p>
+            <p>Stephens, Silbert & Hasson show that brains literally synchronize during conversation.</p>
           </div>
         </a>
 
@@ -5134,7 +5306,7 @@
           <div class="research-info">
             <span class="research-tag">Neuron 2017</span>
             <h3>Your Brain Chunks Life Into Episodes</h3>
-            <p>Baldassano et al. reveal that the brain automatically segments experience into discrete events. These boundaries trigger memory encoding.</p>
+            <p>Baldassano et al. reveal the brain segments experience into discrete events that trigger memory.</p>
           </div>
         </a>
 
@@ -5148,14 +5320,14 @@
           <div class="research-info">
             <span class="research-tag">Nature Reviews Neuroscience 2009</span>
             <h3>Your Mind Is a Network</h3>
-            <p>Bullmore & Sporns establish that the brain is organized like a network with clusters, hubs, and efficient pathways. Thinking is the pattern across this network.</p>
+            <p>Bullmore & Sporns establish the brain is organized with clusters, hubs, and efficient pathways.</p>
           </div>
         </a>
       </div>
 
       <!-- CCX Constructs Summary -->
-      <div style="margin-top: 48px; padding: 32px; background: rgba(78, 205, 196, 0.08); border: 1px solid rgba(78, 205, 196, 0.2); border-radius: 16px; text-align: center;">
-        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 16px; color: inherit;">The Five Clues We Look For</h3>
+      <div style="margin-top: 32px; padding: 24px; background: rgba(78, 205, 196, 0.08); border: 1px solid rgba(78, 205, 196, 0.2); border-radius: 16px; text-align: center;">
+        <h3 style="font-size: 16px; font-weight: 600; margin-bottom: 12px; color: inherit;">The Five Clues We Look For</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; font-size: 12px; color: rgba(78, 205, 196, 0.9);">
           <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Thought Types</span>
           <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Brain Gears</span>
@@ -5176,8 +5348,8 @@
     <section class="involve-section" id="get-involved">
       <div class="involve-wrapper">
         <p class="question-label">Join the Research</p>
-      <h2 class="section-heading">Get Involved</h2>
-      <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 500px; margin: 16px auto 0; line-height: 1.7;">Multiple pathways to participate in building the future of cognitive science</p>
+        <h2 class="section-heading">Get Involved</h2>
+        <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 500px; margin: 16px auto 0; line-height: 1.7;">Multiple pathways to participate in building the future of cognitive science</p>
       
       <div class="involve-grid">
         <!-- Research Collaborators -->
@@ -5189,7 +5361,7 @@
             </svg>
           </div>
           <h3>Research Collaborators</h3>
-          <p>Domain experts for L3/L4 validation. Clinical psychologists, neuroimaging researchers, cognitive scientists. Co-authorship available on publications.</p>
+          <p>Domain experts for L3/L4 validation. Clinical psychologists, neuroimaging researchers. Co-authorship available.</p>
           <a href="mailto:polarity@polarity-lab.com?subject=Research%20Collaboration" style="color: #4ECDC4;">Discuss Collaboration <span>→</span></a>
         </div>
         
@@ -5203,7 +5375,7 @@
             </svg>
           </div>
           <h3>Advisors</h3>
-          <p>Occasional feedback on direction, ethics, and clinical pathway. Especially interested in cognitive science, neurology, AI safety, and research ethics.</p>
+          <p>Occasional feedback on direction, ethics, and clinical pathway. Interested in cognitive science, neurology, AI safety.</p>
           <a href="mailto:polarity@polarity-lab.com?subject=Advisory%20Interest" style="color: #BB8FCE;">Express Interest <span>→</span></a>
         </div>
         
@@ -5215,7 +5387,7 @@
             </svg>
           </div>
           <h3>Contributors</h3>
-          <p>Our Pain Points model: build an MVP for a project you care about, become Principal, earn the highest share. We reward builders who ship.</p>
+          <p>Pain Points model: build an MVP, become Principal, earn the highest share. We reward builders who ship.</p>
           <a href="mailto:polarity@polarity-lab.com?subject=Contributor%20Interest" style="color: #FFA07A;">Pitch a Project <span>→</span></a>
         </div>
       </div>
@@ -5233,7 +5405,7 @@
       <div class="contact-wrapper">
         <p class="contact-trigger">let's connect</p>
 
-      <div class="footer-links">
+        <div class="footer-links">
         <!-- Email Options -->
         <div class="contact-option-wrapper">
           <div class="main-contact-btn" id="email-trigger">
@@ -5890,10 +6062,8 @@
           return;
         }
         
-        // Clear with more trail for smoother, softer motion
-        const isDarkMode = document.body.classList.contains('dark-mode');
-        ctx.fillStyle = isDarkMode ? 'rgba(10, 10, 10, 0.25)' : 'rgba(245, 245, 247, 0.25)';
-        ctx.fillRect(0, 0, width, height);
+        // Clear canvas to show background tints through
+        ctx.clearRect(0, 0, width, height);
         
         // Update and draw particles
         particles.forEach(particle => {
