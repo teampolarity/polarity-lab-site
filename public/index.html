@@ -4924,7 +4924,7 @@
 
   <!-- Slide Counter -->
   <div class="slide-counter">
-    <span class="current" id="slide-current">1</span> / <span id="slide-total">12</span>
+    <span class="current" id="slide-current">1</span> / <span id="slide-total">11</span>
   </div>
 
   <!-- SLIDES CONTAINER -->
@@ -5255,98 +5255,132 @@
     </section>
   </div>
 
-  <!-- SLIDE 3: Our Mission -->
+  <!-- SLIDE 3: Who We Are (Combined) -->
   <div class="slide" data-slide="3">
-    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 64px; box-sizing: border-box;">
+    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 50px 64px; box-sizing: border-box;">
       
       <div style="max-width: 1100px; margin: 0 auto; width: 100%;">
         
-        <!-- Top Section: Title -->
-        <div style="text-align: center; margin-bottom: 32px;">
-          <h2 class="section-heading" style="margin-bottom: 24px;">Who We Are</h2>
-          
-          <!-- Definition Box -->
-          <div style="background: rgba(78, 205, 196, 0.06); border-radius: 16px; padding: 24px 32px; border: 1px solid rgba(78, 205, 196, 0.15); max-width: 700px; margin: 0 auto 20px; text-align: center;">
-            <p style="font-size: 17px; color: #1d1d1f; margin: 0 0 10px 0; line-height: 1.5; font-weight: 600;">
-              A Research Lab That Builds Products
-            </p>
-            <p style="font-size: 14px; color: #6e6e73; margin: 0; line-height: 1.7;">
-              Think of a university lab that also makes apps. Our apps generate data. Our research studies that data. The research makes better apps. Everyone benefits.
-            </p>
-          </div>
-          
-          <!-- How it works label -->
-          <p style="font-size: 12px; color: #86868b; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0; font-weight: 500;">How it works</p>
+        <!-- Title & Definition -->
+        <div style="text-align: center; margin-bottom: 28px;">
+          <h2 class="section-heading" style="margin-bottom: 16px;">Who We Are</h2>
+          <p style="font-size: 16px; color: #6e6e73; max-width: 600px; margin: 0 auto;">A research lab that builds products. Our apps generate data, our research studies it, and the cycle continues.</p>
         </div>
         
-        <!-- Main Visual: The Flywheel -->
-        <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; align-items: center; margin-bottom: 40px;">
+        <!-- Four Teams Grid -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px;">
           
-          <!-- Left: Research Card -->
-          <div style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 24px; padding: 32px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
-              <div style="width: 56px; height: 56px; background: linear-gradient(135deg, rgba(255, 107, 129, 0.2), rgba(255, 107, 129, 0.05)); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#FF6B81" stroke-width="1.5">
+          <!-- Research -->
+          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); border-radius: 20px; padding: 24px 20px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);">
+            <div style="width: 56px; height: 56px; margin: 0 auto 14px; background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.08)); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+              </svg>
+            </div>
+            <h4 style="font-size: 16px; font-weight: 600; color: #1d1d1f; margin-bottom: 6px;">Research</h4>
+            <p style="font-size: 13px; color: #6e6e73; line-height: 1.4; margin: 0;">We do the science</p>
+          </div>
+          
+          <!-- Products -->
+          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); border-radius: 20px; padding: 24px 20px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);">
+            <div style="width: 56px; height: 56px; margin: 0 auto 14px; background: linear-gradient(135deg, rgba(255, 107, 129, 0.2), rgba(255, 107, 129, 0.08)); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#FF6B81" stroke-width="1.5">
+                <path d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+              </svg>
+            </div>
+            <h4 style="font-size: 16px; font-weight: 600; color: #1d1d1f; margin-bottom: 6px;">Products</h4>
+            <p style="font-size: 13px; color: #6e6e73; line-height: 1.4; margin: 0;">We build the tools</p>
+          </div>
+          
+          <!-- Ventures -->
+          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); border-radius: 20px; padding: 24px 20px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);">
+            <div style="width: 56px; height: 56px; margin: 0 auto 14px; background: linear-gradient(135deg, rgba(187, 143, 206, 0.2), rgba(187, 143, 206, 0.08)); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#BB8FCE" stroke-width="1.5">
+                <path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/>
+              </svg>
+            </div>
+            <h4 style="font-size: 16px; font-weight: 600; color: #1d1d1f; margin-bottom: 6px;">Ventures</h4>
+            <p style="font-size: 13px; color: #6e6e73; line-height: 1.4; margin: 0;">We fund aligned missions</p>
+          </div>
+          
+          <!-- Studio -->
+          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); border-radius: 20px; padding: 24px 20px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);">
+            <div style="width: 56px; height: 56px; margin: 0 auto 14px; background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.08)); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                <path d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"/>
+              </svg>
+            </div>
+            <h4 style="font-size: 16px; font-weight: 600; color: #1d1d1f; margin-bottom: 6px;">Studio</h4>
+            <p style="font-size: 13px; color: #6e6e73; line-height: 1.4; margin: 0;">We teach what we learn</p>
+          </div>
+          
+        </div>
+        
+        <!-- The Cycle Visual -->
+        <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; align-items: center; margin-bottom: 24px;">
+          
+          <!-- Left: Research -->
+          <div style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 20px; padding: 24px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);">
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(255, 107, 129, 0.2), rgba(255, 107, 129, 0.05)); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#FF6B81" stroke-width="1.5">
                   <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
                 </svg>
               </div>
               <div>
-                <p style="font-size: 11px; color: #FF6B81; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0 0 4px 0;">The Science</p>
-                <p style="font-size: 20px; font-weight: 600; color: #1d1d1f; margin: 0;">CCX Research</p>
+                <p style="font-size: 10px; color: #FF6B81; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0 0 2px 0;">The Science</p>
+                <p style="font-size: 17px; font-weight: 600; color: #1d1d1f; margin: 0;">CCX Research</p>
               </div>
             </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <span style="background: rgba(255, 107, 129, 0.1); color: #FF6B81; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">2 Patents</span>
-              <span style="background: rgba(255, 107, 129, 0.1); color: #FF6B81; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">12 Experiments</span>
-              <span style="background: rgba(255, 107, 129, 0.1); color: #FF6B81; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">258 Pages</span>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="background: rgba(255, 107, 129, 0.1); color: #FF6B81; padding: 5px 10px; border-radius: 16px; font-size: 11px; font-weight: 500;">2 Patents</span>
+              <span style="background: rgba(255, 107, 129, 0.1); color: #FF6B81; padding: 5px 10px; border-radius: 16px; font-size: 11px; font-weight: 500;">12 Experiments</span>
+              <span style="background: rgba(255, 107, 129, 0.1); color: #FF6B81; padding: 5px 10px; border-radius: 16px; font-size: 11px; font-weight: 500;">258 Pages</span>
             </div>
           </div>
           
-          <!-- Center: Cycle Arrows -->
-          <div style="display: flex; flex-direction: column; align-items: center; padding: 0 24px;">
-            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#4ECDC4" stroke-width="2" style="transform: rotate(180deg);">
-                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-              </svg>
-              <div style="width: 48px; height: 48px; background: rgba(78, 205, 196, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4ECDC4" stroke-width="2">
-                  <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-                </svg>
-              </div>
-              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#4ECDC4" stroke-width="2">
-                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+          <!-- Center: Arrows -->
+          <div style="display: flex; flex-direction: column; align-items: center; padding: 0 20px;">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#4ECDC4" stroke-width="2" style="transform: rotate(180deg);">
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+            <div style="width: 40px; height: 40px; background: rgba(78, 205, 196, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 6px 0;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#4ECDC4" stroke-width="2">
+                <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
               </svg>
             </div>
-            <p style="font-size: 11px; color: #4ECDC4; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 12px; font-weight: 600;">The Cycle</p>
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#4ECDC4" stroke-width="2">
+              <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
           </div>
           
-          <!-- Right: Products Card -->
-          <div style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 24px; padding: 32px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);">
-            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
-              <div style="width: 56px; height: 56px; background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.05)); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+          <!-- Right: Products -->
+          <div style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 20px; padding: 24px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);">
+            <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 14px;">
+              <div style="width: 48px; height: 48px; background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.05)); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
                   <path d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
                 </svg>
               </div>
               <div>
-                <p style="font-size: 11px; color: #4ECDC4; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0 0 4px 0;">The Apps</p>
-                <p style="font-size: 20px; font-weight: 600; color: #1d1d1f; margin: 0;">4 Products</p>
+                <p style="font-size: 10px; color: #4ECDC4; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0 0 2px 0;">The Apps</p>
+                <p style="font-size: 17px; font-weight: 600; color: #1d1d1f; margin: 0;">4 Products</p>
               </div>
             </div>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">Waxfeed</span>
-              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">Polarity</span>
-              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">AVDP</span>
-              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">Pain Points</span>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 5px 10px; border-radius: 16px; font-size: 11px; font-weight: 500;">Waxfeed</span>
+              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 5px 10px; border-radius: 16px; font-size: 11px; font-weight: 500;">Polarity</span>
+              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 5px 10px; border-radius: 16px; font-size: 11px; font-weight: 500;">AVDP</span>
+              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 5px 10px; border-radius: 16px; font-size: 11px; font-weight: 500;">Pain Points</span>
             </div>
           </div>
           
         </div>
         
-        <!-- Bottom: The Logic -->
+        <!-- Bottom Logic -->
         <div style="text-align: center;">
-          <div style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(30px); border-radius: 16px; padding: 20px 32px; border: 1px solid rgba(255, 255, 255, 0.5); display: inline-block;">
-            <p style="font-size: 15px; color: #1d1d1f; margin: 0; line-height: 1.6;">
+          <div style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(30px); border-radius: 100px; padding: 14px 28px; border: 1px solid rgba(255, 255, 255, 0.5); display: inline-block;">
+            <p style="font-size: 14px; color: #1d1d1f; margin: 0;">
               <span style="color: #4ECDC4; font-weight: 600;">Apps</span> generate data → 
               <span style="color: #FF6B81; font-weight: 600;">Research</span> studies data → 
               Research improves <span style="color: #4ECDC4; font-weight: 600;">Apps</span> → 
@@ -5417,76 +5451,8 @@
     </section>
   </div>
 
-  <!-- SLIDE 5: Ecosystem -->
+  <!-- SLIDE 5: CCX Framework -->
   <div class="slide" data-slide="5">
-    <section class="ecosystem-section" id="ecosystem">
-      <div class="ecosystem-wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%;">
-        
-        <h2 class="section-heading" style="margin-bottom: 12px;">How We Work</h2>
-        <p style="font-size: 20px; color: #6e6e73; margin-bottom: 50px; text-align: center; font-weight: 500;">Four teams, one goal: understand the mind.</p>
-        
-        <!-- Rich 4 Arms Grid with Glassy Cards -->
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1000px; width: 100%;">
-          
-          <!-- Research Card -->
-          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 24px; padding: 32px 24px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer;">
-            <div style="width: 72px; height: 72px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.08)); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(78, 205, 196, 0.15);">
-              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
-              </svg>
-            </div>
-            <h4 style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">Research</h4>
-            <p style="font-size: 14px; color: #6e6e73; line-height: 1.5;">We do the science</p>
-          </div>
-          
-          <!-- Products Card -->
-          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 24px; padding: 32px 24px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer;">
-            <div style="width: 72px; height: 72px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(255, 107, 129, 0.2), rgba(255, 107, 129, 0.08)); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(255, 107, 129, 0.15);">
-              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#FF6B81" stroke-width="1.5">
-                <path d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
-              </svg>
-            </div>
-            <h4 style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">Products</h4>
-            <p style="font-size: 14px; color: #6e6e73; line-height: 1.5;">We build the tools</p>
-          </div>
-          
-          <!-- Ventures Card -->
-          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 24px; padding: 32px 24px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer;">
-            <div style="width: 72px; height: 72px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(187, 143, 206, 0.2), rgba(187, 143, 206, 0.08)); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(187, 143, 206, 0.15);">
-              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#BB8FCE" stroke-width="1.5">
-                <path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/>
-              </svg>
-            </div>
-            <h4 style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">Ventures</h4>
-            <p style="font-size: 14px; color: #6e6e73; line-height: 1.5;">We fund others who share our mission</p>
-          </div>
-          
-          <!-- Studio Card -->
-          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 24px; padding: 32px 24px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer;">
-            <div style="width: 72px; height: 72px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.08)); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(78, 205, 196, 0.15);">
-              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                <path d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"/>
-              </svg>
-            </div>
-            <h4 style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">Studio</h4>
-            <p style="font-size: 14px; color: #6e6e73; line-height: 1.5;">We teach what we learn</p>
-          </div>
-          
-        </div>
-        
-        <!-- Flywheel as glassy pill -->
-        <div style="margin-top: 48px; background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border-radius: 100px; padding: 16px 32px; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);">
-          <p style="font-size: 14px; color: #6e6e73; text-align: center; margin: 0; font-weight: 500;">
-            Build → Learn → Share → Grow → Repeat
-          </p>
-        </div>
-        
-      </div>
-    </section>
-  </div>
-
-  <!-- SLIDE 6: CCX Framework -->
-  <div class="slide" data-slide="6">
     <section class="ccx-visual-section" id="about">
       <div class="ccx-visual-wrapper">
         <div class="ccx-header-block">
@@ -5560,8 +5526,8 @@
   </section>
   </div>
 
-  <!-- SLIDE 7: Validation -->
-  <div class="slide" data-slide="7">
+  <!-- SLIDE 6: Validation -->
+  <div class="slide" data-slide="6">
     <section class="validation-section" id="validation">
       <div class="validation-wrapper">
         <p class="question-label">Honest Science</p>
@@ -5629,8 +5595,8 @@
   </section>
   </div>
 
-  <!-- SLIDE 8: Patents -->
-  <div class="slide" data-slide="8">
+  <!-- SLIDE 7: Patents -->
+  <div class="slide" data-slide="7">
     <section class="patents-section" id="patents">
       <div class="patents-wrapper">
         <p class="question-label">Protected Innovation</p>
@@ -5665,8 +5631,8 @@
   </section>
   </div>
 
-  <!-- SLIDE 9: Safety -->
-  <div class="slide" data-slide="9">
+  <!-- SLIDE 8: Safety -->
+  <div class="slide" data-slide="8">
     <section class="safety-section" id="safety">
       <div class="safety-wrapper">
         <p class="question-label">Non-Negotiable</p>
@@ -5703,8 +5669,8 @@
   </section>
   </div>
 
-  <!-- SLIDE 10: Research -->
-  <div class="slide" data-slide="10">
+  <!-- SLIDE 9: Research -->
+  <div class="slide" data-slide="9">
     <section class="research-section" id="research">
       <div class="research-wrapper">
         <h2 class="section-heading">Reading Room</h2>
@@ -5775,8 +5741,8 @@
   </div>
 
 
-  <!-- SLIDE 11: Get Involved -->
-  <div class="slide" data-slide="11">
+  <!-- SLIDE 10: Get Involved -->
+  <div class="slide" data-slide="10">
     <section class="involve-section" id="get-involved">
       <div class="involve-wrapper">
         <p class="question-label">Join the Research</p>
@@ -5831,8 +5797,8 @@
   </section>
   </div>
 
-  <!-- SLIDE 12: Contact -->
-  <div class="slide" data-slide="12">
+  <!-- SLIDE 11: Contact -->
+  <div class="slide" data-slide="11">
     <section class="contact-section" id="contact">
       <div class="contact-wrapper">
         <p class="contact-trigger">let's connect</p>
