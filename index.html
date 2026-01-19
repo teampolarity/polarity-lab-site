@@ -23,7 +23,25 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
       font-weight: 400;
-      background: #f5f5f7;
+      background: 
+        /* Teal wash - top left */
+        radial-gradient(ellipse 100% 80% at 0% 0%, rgba(78, 205, 196, 0.15) 0%, transparent 50%),
+        /* Red/coral wash - top right */
+        radial-gradient(ellipse 80% 60% at 100% 0%, rgba(255, 107, 129, 0.12) 0%, transparent 45%),
+        /* Teal wash - bottom right */
+        radial-gradient(ellipse 90% 70% at 100% 100%, rgba(78, 205, 196, 0.12) 0%, transparent 50%),
+        /* Red wash - bottom left */
+        radial-gradient(ellipse 70% 50% at 0% 100%, rgba(255, 107, 129, 0.1) 0%, transparent 45%),
+        /* Center subtle blend */
+        radial-gradient(ellipse 60% 40% at 50% 50%, rgba(255, 255, 255, 0.5) 0%, transparent 70%),
+        /* Base gradient - warm to cool */
+        linear-gradient(135deg, 
+          rgba(255, 245, 247, 1) 0%, 
+          rgba(250, 250, 252, 1) 25%,
+          rgba(245, 250, 252, 1) 50%,
+          rgba(240, 250, 249, 1) 75%,
+          rgba(245, 252, 251, 1) 100%);
+      background-attachment: fixed;
       color: #1d1d1f;
       overflow: hidden;
       -webkit-font-smoothing: antialiased;
@@ -67,7 +85,7 @@
     /* Slide Navigation Arrows */
     .slide-nav {
       position: fixed;
-      top: 50%;
+      top: 55%;
       transform: translateY(-50%);
       z-index: 100;
       width: 56px;
@@ -123,11 +141,11 @@
     }
 
     .slide-nav-prev {
-      left: 24px;
+      left: 40px;
     }
 
     .slide-nav-next {
-      right: 24px;
+      right: 40px;
     }
 
     /* Slide Indicators (Dots) */
@@ -160,6 +178,7 @@
       background: rgba(0, 0, 0, 0.2);
       cursor: pointer;
       transition: all 0.3s ease;
+      position: relative;
     }
 
     body.dark-mode .slide-dot {
@@ -175,6 +194,37 @@
       background: #4ECDC4;
       transform: scale(1.2);
       box-shadow: 0 0 12px rgba(78, 205, 196, 0.5);
+    }
+
+    .slide-dot::before {
+      content: attr(data-label);
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(29, 29, 31, 0.9);
+      color: #fff;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.2s ease;
+      pointer-events: none;
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    }
+
+    .slide-dot:hover::before {
+      opacity: 1;
+      visibility: visible;
+      bottom: 28px;
+    }
+
+    body.dark-mode .slide-dot::before {
+      background: rgba(255, 255, 255, 0.95);
+      color: #1d1d1f;
     }
 
     /* Slide Counter */
@@ -210,11 +260,11 @@
       }
 
       .slide-nav-prev {
-        left: 12px;
+        left: 16px;
       }
 
       .slide-nav-next {
-        right: 12px;
+        right: 16px;
       }
 
       .slide-indicators {
@@ -237,7 +287,23 @@
 
     /* Dark mode */
     body.dark-mode {
-      background: #0a0a0a;
+      background: 
+        /* Teal wash - top left */
+        radial-gradient(ellipse 100% 80% at 0% 0%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
+        /* Red/coral wash - top right */
+        radial-gradient(ellipse 80% 60% at 100% 0%, rgba(255, 107, 129, 0.08) 0%, transparent 45%),
+        /* Teal wash - bottom right */
+        radial-gradient(ellipse 90% 70% at 100% 100%, rgba(78, 205, 196, 0.08) 0%, transparent 50%),
+        /* Red wash - bottom left */
+        radial-gradient(ellipse 70% 50% at 0% 100%, rgba(255, 107, 129, 0.06) 0%, transparent 45%),
+        /* Base gradient - deep with brand hints */
+        linear-gradient(135deg, 
+          rgba(15, 12, 14, 1) 0%, 
+          rgba(10, 10, 12, 1) 25%,
+          rgba(8, 12, 14, 1) 50%,
+          rgba(10, 14, 14, 1) 75%,
+          rgba(8, 12, 12, 1) 100%);
+      background-attachment: fixed;
       color: #f5f5f7;
     }
 
@@ -332,6 +398,88 @@
       transform: rotate(-180deg) scale(0.8);
     }
 
+    /* Particles Toggle Button */
+    .particles-toggle {
+      position: fixed;
+      top: 20px;
+      right: 100px;
+      z-index: 101;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark-mode .particles-toggle {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .particles-toggle:hover {
+      transform: scale(1.08);
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(78, 205, 196, 0.4);
+    }
+
+    .particles-toggle:active {
+      transform: scale(0.95);
+    }
+
+    .particles-toggle svg {
+      width: 22px;
+      height: 22px;
+      color: #1d1d1f;
+      transition: all 0.3s ease;
+    }
+
+    body.dark-mode .particles-toggle svg {
+      color: #f5f5f7;
+    }
+
+    /* Particles OFF state */
+    .particles-toggle.particles-off {
+      opacity: 0.5;
+    }
+
+    .particles-toggle.particles-off svg {
+      opacity: 0.4;
+    }
+
+    .particles-icon {
+      position: absolute;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .particles-icon.on {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .particles-toggle.particles-off .particles-icon.on {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    .particles-icon.off {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+
+    .particles-toggle.particles-off .particles-icon.off {
+      opacity: 1;
+      transform: scale(1);
+    }
 
     /* 3D Space Environment */
     .space-environment {
@@ -369,15 +517,15 @@
         repeating-linear-gradient(90deg,
           transparent 0px,
           transparent 49px,
-          rgba(78, 205, 196, 0.25) 49px,
-          rgba(78, 205, 196, 0.25) 50px,
+          rgba(78, 205, 196, 0.15) 49px,
+          rgba(78, 205, 196, 0.15) 50px,
           transparent 50px,
           transparent 99px,
-          rgba(78, 205, 196, 0.15) 99px,
-          rgba(78, 205, 196, 0.15) 100px
+          rgba(78, 205, 196, 0.08) 99px,
+          rgba(78, 205, 196, 0.08) 100px
         );
       background-size: 100px 100px;
-      opacity: 0.4;
+      opacity: 0.25;
       animation: gridPulse 10s ease-in-out infinite;
       mask-image: linear-gradient(to top, 
         rgba(0,0,0,0.8) 0%, 
@@ -421,12 +569,12 @@
 
     @keyframes gridPulse {
       0%, 100% { 
-        opacity: 0.4;
+        opacity: 0.25;
         transform: translateX(-50%) rotateX(75deg) translateZ(-100px);
       }
       50% { 
-        opacity: 0.5;
-        transform: translateX(-50%) rotateX(75deg) translateZ(-85px);
+        opacity: 0.3;
+        transform: translateX(-50%) rotateX(75deg) translateZ(-90px);
       }
     }
 
@@ -471,34 +619,34 @@
     .wall-glow.left {
       left: 0;
       background: linear-gradient(to right,
-        rgba(187, 143, 206, 0.35) 0%,
-        rgba(187, 143, 206, 0.15) 50%,
+        rgba(255, 107, 129, 0.25) 0%,
+        rgba(255, 107, 129, 0.1) 50%,
         transparent 100%);
-      box-shadow: 0 0 70px 30px rgba(187, 143, 206, 0.2);
-      animation: wallPulseLeft 8s ease-in-out infinite;
+      box-shadow: 0 0 80px 30px rgba(255, 107, 129, 0.15);
+      animation: wallPulseLeft 12s ease-in-out infinite;
     }
 
     .wall-glow.right {
       right: 0;
       background: linear-gradient(to left,
-        rgba(255, 160, 122, 0.35) 0%,
-        rgba(255, 160, 122, 0.15) 50%,
+        rgba(78, 205, 196, 0.25) 0%,
+        rgba(78, 205, 196, 0.1) 50%,
         transparent 100%);
-      box-shadow: 0 0 70px 30px rgba(255, 160, 122, 0.2);
-      animation: wallPulseRight 8s ease-in-out infinite;
+      box-shadow: 0 0 80px 30px rgba(78, 205, 196, 0.15);
+      animation: wallPulseRight 12s ease-in-out infinite;
     }
 
     body.dark-mode .wall-glow.left {
       background: linear-gradient(to right,
-        rgba(187, 143, 206, 0.25) 0%,
-        rgba(187, 143, 206, 0.1) 50%,
+        rgba(255, 107, 129, 0.2) 0%,
+        rgba(255, 107, 129, 0.08) 50%,
         transparent 100%);
-      box-shadow: 0 0 60px 25px rgba(187, 143, 206, 0.15);
+      box-shadow: 0 0 60px 25px rgba(255, 107, 129, 0.12);
     }
 
     body.dark-mode .wall-glow.right {
       background: linear-gradient(to left,
-        rgba(255, 160, 122, 0.25) 0%,
+        rgba(78, 205, 196, 0.2) 0%,
         rgba(255, 160, 122, 0.1) 50%,
         transparent 100%);
       box-shadow: 0 0 60px 25px rgba(255, 160, 122, 0.15);
@@ -556,7 +704,7 @@
       }
     }
 
-    /* Atmospheric gradient */
+    /* Atmospheric gradient - Polarity brand colors */
     .atmosphere {
       position: fixed;
       top: 0;
@@ -566,43 +714,61 @@
       pointer-events: none;
       z-index: 0;
       background: 
-        radial-gradient(ellipse 100% 40% at 50% 0%,
-          rgba(78, 205, 196, 0.06) 0%,
+        /* Teal aurora - top */
+        radial-gradient(ellipse 150% 50% at 50% -10%,
+          rgba(78, 205, 196, 0.18) 0%,
+          rgba(78, 205, 196, 0.05) 40%,
           transparent 60%),
-        radial-gradient(ellipse 80% 50% at 50% 100%,
-          rgba(78, 205, 196, 0.08) 0%,
-          rgba(78, 205, 196, 0.025) 30%,
+        /* Red/pink aurora - sides */
+        radial-gradient(ellipse 60% 80% at -10% 50%,
+          rgba(255, 107, 129, 0.12) 0%,
           transparent 50%),
-        radial-gradient(ellipse 60% 60% at 20% 50%,
-          rgba(187, 143, 206, 0.04) 0%,
+        radial-gradient(ellipse 60% 80% at 110% 50%,
+          rgba(255, 107, 129, 0.12) 0%,
           transparent 50%),
-        radial-gradient(ellipse 60% 60% at 80% 50%,
-          rgba(255, 160, 122, 0.04) 0%,
-          transparent 50%);
-      animation: atmospherePulse 12s ease-in-out infinite;
+        /* Teal floor glow */
+        radial-gradient(ellipse 120% 40% at 50% 110%,
+          rgba(78, 205, 196, 0.15) 0%,
+          rgba(78, 205, 196, 0.05) 40%,
+          transparent 60%);
+      animation: atmosphereShift 25s ease-in-out infinite;
       transition: opacity 0.4s ease;
     }
 
     body.dark-mode .atmosphere {
       background: 
-        radial-gradient(ellipse 100% 40% at 50% 0%,
-          rgba(78, 205, 196, 0.03) 0%,
+        /* Teal aurora - top */
+        radial-gradient(ellipse 150% 50% at 50% -10%,
+          rgba(78, 205, 196, 0.12) 0%,
+          rgba(78, 205, 196, 0.03) 40%,
           transparent 60%),
-        radial-gradient(ellipse 80% 50% at 50% 100%,
-          rgba(78, 205, 196, 0.05) 0%,
-          rgba(78, 205, 196, 0.015) 30%,
+        /* Red/pink aurora - sides */
+        radial-gradient(ellipse 60% 80% at -10% 50%,
+          rgba(255, 107, 129, 0.08) 0%,
           transparent 50%),
-        radial-gradient(ellipse 60% 60% at 20% 50%,
-          rgba(187, 143, 206, 0.025) 0%,
+        radial-gradient(ellipse 60% 80% at 110% 50%,
+          rgba(255, 107, 129, 0.08) 0%,
           transparent 50%),
-        radial-gradient(ellipse 60% 60% at 80% 50%,
-          rgba(255, 160, 122, 0.025) 0%,
-          transparent 50%);
+        /* Teal floor glow */
+        radial-gradient(ellipse 120% 40% at 50% 110%,
+          rgba(78, 205, 196, 0.1) 0%,
+          rgba(78, 205, 196, 0.03) 40%,
+          transparent 60%);
     }
 
-    @keyframes atmospherePulse {
-      0%, 100% { opacity: 0.9; }
-      50% { opacity: 0.7; }
+    @keyframes atmosphereShift {
+      0%, 100% { 
+        opacity: 1;
+        transform: scale(1);
+      }
+      33% {
+        opacity: 0.85;
+        transform: scale(1.05);
+      }
+      66% { 
+        opacity: 0.95;
+        transform: scale(0.98);
+      }
     }
 
     body.dark-mode .atmosphere {
@@ -849,29 +1015,35 @@
       pointer-events: none;
     }
 
-    /* Nav dropdown menu */
+    /* Nav dropdown menu - glassmorphism style */
     .nav-dropdown {
       position: absolute;
-      top: 75px;
+      top: 70px;
       left: 32px;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.35);
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      border: 1px solid rgba(255, 255, 255, 0.5);
       border-radius: 16px;
       padding: 8px;
-      min-width: 200px;
+      min-width: 160px;
       opacity: 0;
       visibility: hidden;
       transform: translateY(-10px);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 12px 40px rgba(78, 205, 196, 0.12);
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        0 2px 8px rgba(0, 0, 0, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
     }
 
     body.dark-mode .nav-dropdown {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      background: rgba(30, 30, 30, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 2px 8px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
     }
 
     .nav-dropdown.visible {
@@ -883,25 +1055,26 @@
     .nav-dropdown a {
       display: flex;
       align-items: center;
-      padding: 12px 16px;
+      padding: 10px 14px;
       color: #1d1d1f;
       text-decoration: none;
       border-radius: 10px;
       font-size: 14px;
-      font-weight: 400;
-      transition: all 0.2s;
+      font-weight: 500;
+      transition: all 0.2s ease;
     }
 
     body.dark-mode .nav-dropdown a {
-      color: #fff;
+      color: rgba(255, 255, 255, 0.9);
     }
 
     .nav-dropdown a:hover {
-      background: rgba(78, 205, 196, 0.12);
+      background: rgba(78, 205, 196, 0.15);
+      transform: translateX(4px);
     }
 
     body.dark-mode .nav-dropdown a:hover {
-      background: rgba(255, 255, 255, 0.08);
+      background: rgba(78, 205, 196, 0.12);
     }
 
 
@@ -928,18 +1101,36 @@
     /* Hero inside slide - full height - TRANSPARENT to show particles */
     .slide .hero-section {
       min-height: 100vh;
+      height: 100%;
+      width: 100%;
       padding: 0 clamp(40px, 8vw, 80px);
+      padding-bottom: 80px;
       background: transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     
     /* POLARITY Wordmark - Premium 2050 */
     #polarity-wordmark {
       transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      animation: logoGlow 8s ease-in-out infinite;
+    }
+    
+    @keyframes logoGlow {
+      0%, 100% {
+        filter: drop-shadow(0 4px 20px rgba(255, 68, 102, 0.15)) drop-shadow(0 4px 20px rgba(78, 205, 196, 0.1));
+      }
+      50% {
+        filter: drop-shadow(0 6px 30px rgba(255, 68, 102, 0.25)) drop-shadow(0 6px 30px rgba(78, 205, 196, 0.15));
+      }
     }
     
     #polarity-wordmark:hover {
       transform: scale(1.02);
-      filter: drop-shadow(0 8px 40px rgba(255, 68, 102, 0.25));
+      filter: drop-shadow(0 8px 40px rgba(255, 68, 102, 0.35)) drop-shadow(0 8px 40px rgba(78, 205, 196, 0.2));
+      animation: none;
     }
     
     /* Premium CTA Button */
@@ -956,47 +1147,79 @@
     /* Logo Container */
     .logo-container {
       position: relative;
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
+      width: 100%;
     }
     
     /* Homepage Projects Grid - Premium 2050 */
     .home-projects-grid {
-      width: 90vw;
+      width: 100%;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
     }
     
     .home-projects-grid .project-card {
       opacity: 1 !important;
       transform: none !important;
-      border-radius: 24px;
-      background: rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.2);
       backdrop-filter: blur(60px) saturate(200%);
       -webkit-backdrop-filter: blur(60px) saturate(200%);
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.5);
       box-shadow: 
-        0 8px 40px rgba(0, 0, 0, 0.06),
-        0 0 0 1px rgba(255, 255, 255, 0.3) inset,
-        0 2px 0 rgba(255, 255, 255, 0.5) inset;
-      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        0 4px 24px rgba(0, 0, 0, 0.04),
+        0 0 0 1px rgba(255, 255, 255, 0.3) inset;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
     .home-projects-grid .project-card:hover {
-      transform: translateY(-12px) scale(1.02) !important;
+      transform: translateY(-6px) scale(1.02) !important;
       box-shadow: 
-        0 30px 80px rgba(0, 0, 0, 0.12),
-        0 0 0 1px rgba(255, 255, 255, 0.5) inset,
-        0 2px 0 rgba(255, 255, 255, 0.8) inset;
-      background: rgba(255, 255, 255, 0.25);
+        0 16px 48px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+      background: rgba(255, 255, 255, 0.35);
+    }
+    
+    /* Color accents per card */
+    .home-projects-grid .project-card:nth-child(1):hover {
+      box-shadow: 
+        0 16px 48px rgba(78, 205, 196, 0.2),
+        0 0 0 2px rgba(78, 205, 196, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(78, 205, 196, 0.08) 100%);
+    }
+    
+    .home-projects-grid .project-card:nth-child(2):hover {
+      box-shadow: 
+        0 16px 48px rgba(187, 143, 206, 0.2),
+        0 0 0 2px rgba(187, 143, 206, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(187, 143, 206, 0.08) 100%);
+    }
+    
+    .home-projects-grid .project-card:nth-child(3):hover {
+      box-shadow: 
+        0 16px 48px rgba(255, 160, 122, 0.2),
+        0 0 0 2px rgba(255, 160, 122, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 160, 122, 0.08) 100%);
     }
     
     .home-projects-grid .project-thumbnail {
-      aspect-ratio: 16/10;
-      border-radius: 23px 23px 0 0;
+      aspect-ratio: 4/3;
+      border-radius: 20px 20px 0 0;
+      background: transparent;
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
+      padding: 24px 0;
     }
     
     .home-projects-grid .project-info {
-      padding: 20px 24px 24px;
+      padding: 16px 20px 20px;
       background: rgba(255, 255, 255, 0.3);
       backdrop-filter: blur(40px);
       -webkit-backdrop-filter: blur(40px);
@@ -1004,23 +1227,25 @@
     }
     
     .home-projects-grid .project-info h3 {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 600;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.01em;
       color: #1d1d1f;
     }
     
     .home-projects-grid .project-info p {
       font-size: 13px;
       line-height: 1.5;
-      color: #555;
-      margin-top: 6px;
+      color: #6e6e73;
+      margin-top: 4px;
+      font-weight: 500;
     }
     
     @media (max-width: 900px) {
       .home-projects-grid {
-        max-width: 380px !important;
-        gap: 24px !important;
+        max-width: 320px !important;
+        gap: 20px !important;
+        grid-template-columns: 1fr !important;
       }
     }
     
@@ -1100,8 +1325,8 @@
 
     .hero-subtitle {
       font-weight: 400;
-      font-size: clamp(14px, 1.8vw, 18px);
-      letter-spacing: 0.02em;
+      font-size: clamp(15px, 1.9vw, 18px);
+      letter-spacing: 0.15em;
       line-height: 1.5;
       color: rgba(29, 29, 31, 0.65);
       max-width: 900px;
@@ -1344,7 +1569,9 @@
 
     .project-thumbnail {
       aspect-ratio: 16/10;
-      background: rgba(0, 0, 0, 0.3);
+      background: transparent;
+      backdrop-filter: blur(40px);
+      -webkit-backdrop-filter: blur(40px);
       position: relative;
       overflow: hidden;
     }
@@ -1360,7 +1587,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #0A0A0A;
+      background: transparent;
     }
 
     /* WaxFeed spinning disc */
@@ -1369,16 +1596,13 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #0A0A0A;
+      background: transparent;
     }
 
     #waxfeed-card .project-thumbnail img,
     #home-waxfeed-card .project-thumbnail img {
-      width: 85%;
-      height: 85%;
-      object-fit: contain;
       animation: spin-disc 10s linear infinite;
-      filter: drop-shadow(0 0 25px rgba(200, 180, 220, 0.4));
+      filter: drop-shadow(0 0 20px rgba(200, 180, 220, 0.3));
       transition: filter 0.5s ease;
     }
 
@@ -1389,8 +1613,8 @@
 
     #waxfeed-card:hover .project-thumbnail img,
     #home-waxfeed-card:hover .project-thumbnail img {
-      animation-duration: 2s;
-      filter: drop-shadow(0 0 40px rgba(200, 180, 220, 0.7));
+      animation-duration: 3s;
+      filter: drop-shadow(0 0 30px rgba(200, 180, 220, 0.5));
     }
 
     .orbital-animation {
@@ -1471,12 +1695,17 @@
     .youtube-thumbnail {
       position: relative;
       cursor: pointer;
+      background: transparent;
     }
 
     .youtube-thumbnail img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+    
+    .youtube-thumbnail > div:last-child {
+      background: transparent !important;
     }
 
     .play-button {
@@ -2042,6 +2271,14 @@
       }
     }
 
+    /* About Combined Section (Slide 2) Mobile */
+    @media (max-width: 900px) {
+      .about-combined-section > div > div[style*="grid-template-columns: repeat(3"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+    }
+
     /* ============================================
        SECTION 5: ECOSYSTEM
        ============================================ */
@@ -2087,6 +2324,12 @@
         grid-template-columns: 1fr;
         max-width: 400px;
       }
+      
+      /* Ecosystem arm cards - 2 columns on tablet */
+      .ecosystem-wrapper > div[style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
     }
 
     @media (max-width: 768px) {
@@ -2097,6 +2340,27 @@
       .ecosystem-subtitle {
         font-size: 15px;
         margin-bottom: 32px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      /* Ecosystem arm cards - 2x2 grid on mobile */
+      .ecosystem-wrapper > div[style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px !important;
+        max-width: 100% !important;
+      }
+      
+      .ecosystem-arm-card {
+        padding: 24px 16px !important;
+      }
+      
+      .ecosystem-arm-card h4 {
+        font-size: 15px !important;
+      }
+      
+      .ecosystem-arm-card p {
+        font-size: 12px !important;
       }
     }
 
@@ -2756,7 +3020,7 @@
       }
 
       .hero-subtitle {
-        font-size: clamp(13px, 3.5vw, 16px);
+        font-size: clamp(14px, 3.5vw, 17px);
         line-height: 1.4;
         max-width: 100%;
         padding: 0 8px;
@@ -2994,7 +3258,7 @@
       }
 
       .hero-subtitle {
-        font-size: clamp(12px, 3vw, 14px);
+        font-size: clamp(13px, 3vw, 15px);
         white-space: normal;
         text-align: center;
       }
@@ -3043,7 +3307,7 @@
       }
 
       .hero-subtitle {
-        font-size: 12px;
+        font-size: 13px;
         padding: 0 4px;
         white-space: normal;
         text-align: center;
@@ -3169,6 +3433,59 @@
 
     body.dark-mode .question-analogy {
       color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* About Combined Section - Dark Mode */
+    body.dark-mode .about-combined-section h2,
+    body.dark-mode .about-combined-section h3,
+    body.dark-mode .about-combined-section h4 {
+      color: #f5f5f7 !important;
+    }
+    
+    body.dark-mode .about-combined-section p {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+    
+    body.dark-mode .about-combined-section [style*="background: rgba(255, 255, 255"] {
+      background: rgba(255, 255, 255, 0.06) !important;
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    
+    body.dark-mode .about-combined-section [style*="color: #6e6e73"] {
+      color: rgba(255, 255, 255, 0.5) !important;
+    }
+    
+    body.dark-mode .about-combined-section [style*="color: #86868b"] {
+      color: rgba(255, 255, 255, 0.4) !important;
+    }
+    
+    body.dark-mode .about-combined-section [style*="color: #1d1d1f"] {
+      color: #f5f5f7 !important;
+    }
+    
+    /* About Section Responsive */
+    @media (max-width: 900px) {
+      .about-combined-section [style*="grid-template-columns: 1fr 2fr"] {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .about-combined-section [style*="grid-template-columns: repeat(4"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .about-combined-section {
+        padding: 40px 20px !important;
+      }
+      
+      .about-combined-section [style*="gap: 24px"] {
+        gap: 16px !important;
+      }
+      
+      .about-combined-section [style*="min-width: 200px"] {
+        min-width: 100% !important;
+      }
     }
 
     /* Stats Section */
@@ -3543,6 +3860,37 @@
       color: rgba(255, 255, 255, 0.5);
     }
 
+    /* Ecosystem Arm Cards - Rich Hover Effects */
+    .ecosystem-arm-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      border-color: rgba(255, 255, 255, 0.7);
+    }
+
+    .ecosystem-arm-card:nth-child(1):hover {
+      box-shadow: 0 20px 60px rgba(78, 205, 196, 0.2);
+    }
+    .ecosystem-arm-card:nth-child(2):hover {
+      box-shadow: 0 20px 60px rgba(255, 107, 129, 0.2);
+    }
+    .ecosystem-arm-card:nth-child(3):hover {
+      box-shadow: 0 20px 60px rgba(187, 143, 206, 0.2);
+    }
+    .ecosystem-arm-card:nth-child(4):hover {
+      box-shadow: 0 20px 60px rgba(78, 205, 196, 0.2);
+    }
+
+    body.dark-mode .ecosystem-arm-card {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+    body.dark-mode .ecosystem-arm-card h4 {
+      color: #f5f5f7;
+    }
+    body.dark-mode .ecosystem-arm-card p {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
     @media (max-width: 900px) {
       .lab-arms-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -3868,6 +4216,25 @@
   </style>
 </head>
 <body>
+  <!-- Particles Toggle Button -->
+  <button class="particles-toggle" id="particles-toggle" aria-label="Toggle particles">
+    <!-- Particles ON icon (sparkles/bubbles) -->
+    <svg class="particles-icon on" viewBox="0 0 24 24" fill="currentColor">
+      <circle cx="12" cy="12" r="3"/>
+      <circle cx="5" cy="8" r="2"/>
+      <circle cx="19" cy="6" r="2.5"/>
+      <circle cx="7" cy="18" r="1.5"/>
+      <circle cx="17" cy="16" r="2"/>
+      <circle cx="4" cy="13" r="1"/>
+      <circle cx="20" cy="11" r="1.5"/>
+    </svg>
+    <!-- Particles OFF icon (empty circle) -->
+    <svg class="particles-icon off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="4" y1="4" x2="20" y2="20"/>
+    </svg>
+  </button>
+
   <!-- Theme Toggle Button -->
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
     <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -3955,7 +4322,7 @@
 
   <!-- Slide Counter -->
   <div class="slide-counter">
-    <span class="current" id="slide-current">1</span> / <span id="slide-total">12</span>
+    <span class="current" id="slide-current">1</span> / <span id="slide-total">11</span>
   </div>
 
   <!-- SLIDES CONTAINER -->
@@ -3964,11 +4331,11 @@
   <!-- SLIDE 1: Hero -->
   <div class="slide" data-slide="1">
     <section class="hero-section" id="hero">
-    <div class="hero-spatial-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; z-index: 1; padding: 60px 20px 40px;">
+    <div class="hero-spatial-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; z-index: 1; padding: 40px 20px; width: 100%; margin: 0 auto;">
       
       <!-- POLARITY LLC WORDMARK - CLEAN VERSION -->
       <div class="logo-container">
-        <svg id="polarity-wordmark" viewBox="0 0 1000 140" style="width: min(90vw, 820px); height: auto; filter: drop-shadow(0 4px 20px rgba(255, 68, 102, 0.15));">
+        <svg id="polarity-wordmark" viewBox="0 0 1000 140" style="width: min(85vw, 720px); height: auto; filter: drop-shadow(0 4px 20px rgba(255, 68, 102, 0.15)); display: block; margin: 0 auto;">
           <defs>
             <!-- Node gradient - clean -->
             <radialGradient id="nodeGrad" cx="30%" cy="30%" r="70%">
@@ -4144,279 +4511,375 @@
         </svg>
       </div>
 
-      <p class="hero-subtitle" style="margin-top: 24px; font-size: 13px; letter-spacing: 0.35em; color: #1d1d1f; text-transform: uppercase; font-weight: 500; opacity: 0.7;">Research Lab · Conversational Connectomics · Providence, RI</p>
+      <p class="hero-subtitle" style="margin-top: 20px; font-size: 18px; letter-spacing: 0.02em; color: #515154; font-weight: 600; text-align: center; width: 100%; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;">Psychoradiology Lab · Studying Conversational Connectomics · Est 2025<br>(CCX)</p>
       
       <!-- QUICK LINKS - Premium Project Cards -->
-      <div class="projects-grid home-projects-grid" style="margin-top: 50px; max-width: 1100px; gap: 28px;">
+      <div class="projects-grid home-projects-grid" style="margin-top: 40px; gap: 24px; display: grid; grid-template-columns: repeat(3, 1fr); width: 100%; max-width: 1000px;">
         <!-- Polarity -->
-        <a href="/polarity" class="project-card polarity">
-          <div class="project-thumbnail">
-            <div class="orbital-animation">
-              <svg viewBox="0 0 100 100">
-                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#4ECDC4" stroke-width="1.5" transform="rotate(-60 50 50)" opacity="0.8"/>
-                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" opacity="0.8"/>
-                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" opacity="0.8"/>
-                <circle cx="50" cy="50" r="8" fill="#4ECDC4"/>
-                <g transform="rotate(-60 50 50)">
-                  <circle cx="90" cy="50" r="3" fill="#4ECDC4"/>
-                </g>
-                <g transform="rotate(60 50 50)">
-                  <circle cx="90" cy="50" r="3" fill="#FFA07A"/>
-                </g>
-                <circle cx="10" cy="50" r="3" fill="#BB8FCE"/>
-              </svg>
-              <span class="orbital-text">polarity</span>
-            </div>
+        <a href="https://app.polarity-lab.com/" target="_blank" class="project-card polarity">
+          <div class="project-thumbnail" style="display: flex; align-items: center; justify-content: center;">
+            <svg viewBox="0 0 200 200" style="width: 100px; height: 100px; filter: drop-shadow(0 6px 20px rgba(32, 178, 170, 0.25));">
+              <defs>
+                <!-- Main sphere gradient - 3D metallic teal -->
+                <radialGradient id="sphereGrad" cx="35%" cy="30%" r="65%">
+                  <stop offset="0%" stop-color="#7EEEE6"/>
+                  <stop offset="30%" stop-color="#4ECDC4"/>
+                  <stop offset="70%" stop-color="#2BA8A0"/>
+                  <stop offset="100%" stop-color="#1A7A74"/>
+                </radialGradient>
+                <!-- Highlight gradient -->
+                <radialGradient id="highlightGrad" cx="30%" cy="25%" r="40%">
+                  <stop offset="0%" stop-color="rgba(255,255,255,0.9)"/>
+                  <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+                </radialGradient>
+                <!-- Orbit glow -->
+                <filter id="orbitGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <!-- Orbital rings -->
+              <ellipse cx="100" cy="100" rx="75" ry="22" fill="none" stroke="#4ECDC4" stroke-width="3.5" transform="rotate(-30 100 100)" opacity="0.9" filter="url(#orbitGlow)"/>
+              <ellipse cx="100" cy="100" rx="75" ry="22" fill="none" stroke="#FFA07A" stroke-width="3.5" transform="rotate(50 100 100)" opacity="0.85" filter="url(#orbitGlow)"/>
+              <!-- Central sphere -->
+              <circle cx="100" cy="100" r="32" fill="url(#sphereGrad)"/>
+              <ellipse cx="88" cy="88" rx="12" ry="8" fill="url(#highlightGrad)" opacity="0.7"/>
+              <!-- Orbiting particles -->
+              <circle cx="100" cy="100" r="6" fill="#4ECDC4" transform="rotate(-30 100 100) translate(75, 0)" filter="url(#orbitGlow)">
+                <animateTransform attributeName="transform" type="rotate" from="-30 100 100" to="330 100 100" dur="8s" repeatCount="indefinite" additive="sum"/>
+              </circle>
+              <circle cx="100" cy="100" r="5" fill="#FFA07A" transform="rotate(50 100 100) translate(75, 0)" filter="url(#orbitGlow)">
+                <animateTransform attributeName="transform" type="rotate" from="50 100 100" to="410 100 100" dur="10s" repeatCount="indefinite" additive="sum"/>
+              </circle>
+            </svg>
           </div>
           <div class="project-info">
-            <h3>polarity</h3>
-            <p>Cognitive memory service - a friend who never forgets. Knowledge graphs from conversation.</p>
-          </div>
-        </a>
-
-        <!-- AVDP Podcast -->
-        <a href="https://www.youtube.com/channel/UCEdsKG3TMPbJavCJvYyUCHA" target="_blank" class="project-card" id="home-avdp-card">
-          <div class="project-thumbnail youtube-thumbnail" id="home-avdp-thumbnail">
-            <img src="" alt="Latest AVDP Episode" id="home-avdp-img" style="display: none;">
-            <div class="play-button"></div>
-            <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #111;">
-              <span style="opacity: 0.3; font-size: 14px;">Loading latest episode...</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3 id="home-avdp-title">a very distant perspective</h3>
-            <p>conversations that matter - experimental interview podcast</p>
+            <h3>Polarity</h3>
+            <p>CCX Memory Platform</p>
           </div>
         </a>
 
         <!-- WaxFeed -->
         <a href="https://wax-feed.com" target="_blank" class="project-card" id="home-waxfeed-card">
-          <div class="project-thumbnail">
-            <img src="waxfeed_disc.svg" alt="WaxFeed">
+          <div class="project-thumbnail" style="display: flex; align-items: center; justify-content: center;">
+            <img src="waxfeed_disc.svg" alt="WaxFeed" style="width: 100px; height: 100px; object-fit: contain;">
           </div>
           <div class="project-info">
-            <h3>waxfeed</h3>
-            <p>letterboxd for albums - social music discovery platform</p>
-          </div>
-        </a>
-      </div>
-
-      <!-- Contact CTA - Premium -->
-      <div class="hero-cta-container" style="margin-top: 45px;">
-        <a href="mailto:polarity@polarity-lab.com" class="hero-cta-btn premium-cta" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: linear-gradient(135deg, rgba(255, 68, 102, 0.9) 0%, rgba(200, 40, 80, 0.95) 100%); border: none; border-radius: 14px; color: #fff; font-weight: 600; font-size: 14px; letter-spacing: 0.03em; text-decoration: none; transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 8px 32px rgba(255, 68, 102, 0.35), 0 2px 8px rgba(255, 68, 102, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);">
-          <span>Get Involved</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-  </section>
-  </div>
-
-  <!-- SLIDE 2: Projects -->
-  <div class="slide" data-slide="2">
-    <section class="projects-section" id="projects">
-      <div class="projects-wrapper">
-        <h2 class="section-heading">Polarity Projects</h2>
-      <div class="projects-grid">
-        <!-- Polarity -->
-        <a href="/polarity" class="project-card polarity">
-          <div class="project-thumbnail">
-            <div class="orbital-animation">
-              <svg viewBox="0 0 100 100">
-                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#4ECDC4" stroke-width="1.5" transform="rotate(-60 50 50)" opacity="0.8"/>
-                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" opacity="0.8"/>
-                <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" opacity="0.8"/>
-                <circle cx="50" cy="50" r="8" fill="#4ECDC4"/>
-                <g transform="rotate(-60 50 50)">
-                  <circle cx="90" cy="50" r="3" fill="#4ECDC4"/>
-                </g>
-                <g transform="rotate(60 50 50)">
-                  <circle cx="90" cy="50" r="3" fill="#FFA07A"/>
-                </g>
-                <circle cx="10" cy="50" r="3" fill="#BB8FCE"/>
-              </svg>
-              <span class="orbital-text">polarity</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h3>polarity</h3>
-            <p>Cognitive memory service - a friend who never forgets. Knowledge graphs from conversation.</p>
+            <h3>WaxFeed</h3>
+            <p>CCX Music Discovery</p>
           </div>
         </a>
 
         <!-- AVDP Podcast -->
-        <a href="https://www.youtube.com/channel/UCEdsKG3TMPbJavCJvYyUCHA" target="_blank" class="project-card" id="avdp-card">
-          <div class="project-thumbnail youtube-thumbnail" id="avdp-thumbnail">
-            <img src="" alt="Latest AVDP Episode" id="avdp-img" style="display: none;">
-            <div class="play-button"></div>
-            <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #111;">
-              <span style="opacity: 0.3; font-size: 14px;">Loading latest episode...</span>
+        <a href="https://www.youtube.com/channel/UCEdsKG3TMPbJavCJvYyUCHA" target="_blank" class="project-card" id="home-avdp-card">
+          <div class="project-thumbnail" style="display: flex; align-items: center; justify-content: center;">
+            <img src="AVDPLOGOREAL.jpg" alt="A Very Distant Perspective" style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; filter: drop-shadow(0 4px 16px rgba(0,0,0,0.3));">
+          </div>
+          <div class="project-info">
+            <h3 id="home-avdp-title">A Very Distant Perspective</h3>
+            <p>CCX Interview Podcast</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+  </div>
+
+  <!-- SLIDE 2: What is CCX? -->
+  <div class="slide" data-slide="2">
+    <section class="about-combined-section" id="about-us" style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 50px 40px;">
+      
+      <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+        
+        <!-- Title -->
+        <h2 class="section-heading" style="margin-bottom: 24px;">What is CCX?</h2>
+        
+        <!-- Definition Box -->
+        <div style="background: rgba(78, 205, 196, 0.06); border-radius: 16px; padding: 24px 32px; border: 1px solid rgba(78, 205, 196, 0.15); max-width: 700px; margin: 0 auto 32px; text-align: center;">
+          <p style="font-size: 17px; color: #1d1d1f; margin: 0 0 10px 0; line-height: 1.5; font-weight: 600;">
+            Conversational Connectomics
+          </p>
+          <p style="font-size: 14px; color: #6e6e73; margin: 0; line-height: 1.7;">
+            A way to understand how your brain works by analyzing how you talk. Instead of expensive brain scans, we map how ideas connect in your mind through natural conversation.
+          </p>
+        </div>
+        
+        <!-- How it works label -->
+        <p style="font-size: 12px; color: #86868b; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 20px; font-weight: 500;">How it works</p>
+        
+        <!-- Three Card Story -->
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          
+          <!-- Card 1: The Problem -->
+          <div style="background: rgba(255, 107, 129, 0.06); border-radius: 20px; padding: 28px 24px; text-align: left; border: 1px solid rgba(255, 107, 129, 0.12);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <div style="width: 36px; height: 36px; background: rgba(255, 107, 129, 0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 16px; font-weight: 600; color: #FF6B81;">1</span>
+              </div>
+              <p style="font-size: 13px; color: #FF6B81; text-transform: uppercase; letter-spacing: 0.08em; margin: 0; font-weight: 600;">The Problem</p>
+            </div>
+            <p style="font-size: 15px; color: #1d1d1f; line-height: 1.65; margin: 0;">Brain scans cost thousands. Most people never get one until something is already wrong.</p>
+          </div>
+          
+          <!-- Card 2: The Insight -->
+          <div style="background: rgba(78, 205, 196, 0.06); border-radius: 20px; padding: 28px 24px; text-align: left; border: 1px solid rgba(78, 205, 196, 0.12);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <div style="width: 36px; height: 36px; background: rgba(78, 205, 196, 0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 16px; font-weight: 600; color: #4ECDC4;">2</span>
+              </div>
+              <p style="font-size: 13px; color: #4ECDC4; text-transform: uppercase; letter-spacing: 0.08em; margin: 0; font-weight: 600;">The Insight</p>
+            </div>
+            <p style="font-size: 15px; color: #1d1d1f; line-height: 1.65; margin: 0;">The way you talk reveals how your brain works. Patterns in conversation are clues to cognitive health.</p>
+          </div>
+          
+          <!-- Card 3: Our Solution -->
+          <div style="background: rgba(187, 143, 206, 0.06); border-radius: 20px; padding: 28px 24px; text-align: left; border: 1px solid rgba(187, 143, 206, 0.12);">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+              <div style="width: 36px; height: 36px; background: rgba(187, 143, 206, 0.12); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                <span style="font-size: 16px; font-weight: 600; color: #BB8FCE;">3</span>
+              </div>
+              <p style="font-size: 13px; color: #BB8FCE; text-transform: uppercase; letter-spacing: 0.08em; margin: 0; font-weight: 600;">Our Solution</p>
+            </div>
+            <p style="font-size: 15px; color: #1d1d1f; line-height: 1.65; margin: 0;">CCX reads those patterns. Like a doctor listens to your heart, we listen to your words.</p>
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </section>
+  </div>
+
+  <!-- SLIDE 3: Our Mission -->
+  <div class="slide" data-slide="3">
+    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px;">
+      
+      <div style="max-width: 1100px; margin: 0 auto; width: 100%;">
+        
+        <!-- Top Section: Title -->
+        <div style="text-align: center; margin-bottom: 32px;">
+          <h2 class="section-heading" style="margin-bottom: 24px;">Who We Are</h2>
+          
+          <!-- Definition Box -->
+          <div style="background: rgba(78, 205, 196, 0.06); border-radius: 16px; padding: 24px 32px; border: 1px solid rgba(78, 205, 196, 0.15); max-width: 700px; margin: 0 auto 20px; text-align: center;">
+            <p style="font-size: 17px; color: #1d1d1f; margin: 0 0 10px 0; line-height: 1.5; font-weight: 600;">
+              A Research Lab That Builds Products
+            </p>
+            <p style="font-size: 14px; color: #6e6e73; margin: 0; line-height: 1.7;">
+              Think of a university lab that also makes apps. Our apps generate data. Our research studies that data. The research makes better apps. Everyone benefits.
+            </p>
+          </div>
+          
+          <!-- How it works label -->
+          <p style="font-size: 12px; color: #86868b; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0; font-weight: 500;">How it works</p>
+        </div>
+        
+        <!-- Main Visual: The Flywheel -->
+        <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 0; align-items: center; margin-bottom: 40px;">
+          
+          <!-- Left: Research Card -->
+          <div style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 24px; padding: 32px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+              <div style="width: 56px; height: 56px; background: linear-gradient(135deg, rgba(255, 107, 129, 0.2), rgba(255, 107, 129, 0.05)); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#FF6B81" stroke-width="1.5">
+                  <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+                </svg>
+              </div>
+              <div>
+                <p style="font-size: 11px; color: #FF6B81; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0 0 4px 0;">The Science</p>
+                <p style="font-size: 20px; font-weight: 600; color: #1d1d1f; margin: 0;">CCX Research</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <span style="background: rgba(255, 107, 129, 0.1); color: #FF6B81; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">2 Patents</span>
+              <span style="background: rgba(255, 107, 129, 0.1); color: #FF6B81; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">12 Experiments</span>
+              <span style="background: rgba(255, 107, 129, 0.1); color: #FF6B81; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">258 Pages</span>
             </div>
           </div>
-          <div class="project-info">
-            <h3 id="avdp-title">a very distant perspective</h3>
-            <p>conversations that matter - experimental interview podcast</p>
+          
+          <!-- Center: Cycle Arrows -->
+          <div style="display: flex; flex-direction: column; align-items: center; padding: 0 24px;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#4ECDC4" stroke-width="2" style="transform: rotate(180deg);">
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+              <div style="width: 48px; height: 48px; background: rgba(78, 205, 196, 0.15); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#4ECDC4" stroke-width="2">
+                  <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+              </div>
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#4ECDC4" stroke-width="2">
+                <path d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+              </svg>
+            </div>
+            <p style="font-size: 11px; color: #4ECDC4; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 12px; font-weight: 600;">The Cycle</p>
           </div>
-        </a>
-
-        <!-- WaxFeed -->
-        <a href="https://wax-feed.com" target="_blank" class="project-card" id="waxfeed-card">
-          <div class="project-thumbnail">
-            <img src="waxfeed_disc.svg" alt="WaxFeed">
+          
+          <!-- Right: Products Card -->
+          <div style="background: rgba(255, 255, 255, 0.5); backdrop-filter: blur(40px); border-radius: 24px; padding: 32px; border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);">
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+              <div style="width: 56px; height: 56px; background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.05)); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                  <path d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/>
+                </svg>
+              </div>
+              <div>
+                <p style="font-size: 11px; color: #4ECDC4; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin: 0 0 4px 0;">The Apps</p>
+                <p style="font-size: 20px; font-weight: 600; color: #1d1d1f; margin: 0;">4 Products</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">Waxfeed</span>
+              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">Polarity</span>
+              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">AVDP</span>
+              <span style="background: rgba(78, 205, 196, 0.1); color: #4ECDC4; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">Pain Points</span>
+            </div>
           </div>
-          <div class="project-info">
-            <h3>waxfeed</h3>
-            <p>letterboxd for albums - social music discovery platform</p>
+          
+        </div>
+        
+        <!-- Bottom: The Logic -->
+        <div style="text-align: center;">
+          <div style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(30px); border-radius: 16px; padding: 20px 32px; border: 1px solid rgba(255, 255, 255, 0.5); display: inline-block;">
+            <p style="font-size: 15px; color: #1d1d1f; margin: 0; line-height: 1.6;">
+              <span style="color: #4ECDC4; font-weight: 600;">Apps</span> generate data → 
+              <span style="color: #FF6B81; font-weight: 600;">Research</span> studies data → 
+              Research improves <span style="color: #4ECDC4; font-weight: 600;">Apps</span> → 
+              <span style="color: #6e6e73;">Repeat</span>
+            </p>
           </div>
-        </a>
+        </div>
+        
       </div>
-    </div>
-  </section>
+      
+    </section>
   </div>
 
-  <!-- SLIDE 3: The Question + Stats -->
-  <div class="slide" data-slide="3">
-    <section class="question-section" id="question">
-    <div class="question-wrapper">
-      <p class="question-label">The Research Question</p>
-      <h2 class="question-text">Can we measure how your brain organizes knowledge — just from how you talk?</h2>
-      <p class="question-analogy">A doctor can learn about your lungs by listening to you breathe with a stethoscope. We're asking: can we learn about your brain's knowledge structure by analyzing how you talk — with algorithms?</p>
-    </div>
-  </section>
-
-  <!-- STATS: Key numbers, Apple-style large typography -->
-  <section class="stats-section" id="stats">
-    <div class="stats-wrapper">
-      <div class="stats-grid">
-        <div class="stat-item">
-          <div class="stat-number">2</div>
-          <div class="stat-label">Provisional Patents</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">23</div>
-          <div class="stat-label">Patent Claims</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">12</div>
-          <div class="stat-label">Cognitive Units</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">258</div>
-          <div class="stat-label">Page Framework</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  </div>
-
-  <!-- SLIDE 4: Ecosystem -->
+  <!-- SLIDE 4: The Team -->
   <div class="slide" data-slide="4">
-    <section class="ecosystem-section" id="ecosystem">
-      <div class="ecosystem-wrapper">
-        <h2 class="section-heading">The Polarity Ecosystem</h2>
-      <p class="ecosystem-subtitle">Four arms, one mission: Measure the Mind</p>
+    <section style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px 40px;">
       
-      <!-- Lab Structure Visual - Professional SVG Icons -->
-      <div class="lab-arms-grid" style="margin-bottom: 48px;">
-        <div class="lab-arm-card">
-          <div class="lab-arm-icon" style="background: rgba(78, 205, 196, 0.15);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-              <path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4"/>
-              <circle cx="12" cy="12" r="3"/>
-            </svg>
-          </div>
-          <h4>Research Lab</h4>
-          <p>CCX science, peer-reviewed papers, provisional patents, PI structure</p>
+      <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+        
+        <h2 class="section-heading" style="margin-bottom: 24px;">The Team</h2>
+        
+        <!-- Definition Box -->
+        <div style="background: rgba(78, 205, 196, 0.06); border-radius: 16px; padding: 20px 32px; border: 1px solid rgba(78, 205, 196, 0.15); max-width: 500px; margin: 0 auto 32px; text-align: center;">
+          <p style="font-size: 14px; color: #6e6e73; margin: 0; line-height: 1.6;">
+            Three cofounders from Brown, MIT, and Ottawa. Based in Providence, RI.
+          </p>
         </div>
-        <div class="lab-arm-card">
-          <div class="lab-arm-icon" style="background: rgba(187, 143, 206, 0.15);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
-              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
-            </svg>
+        
+        <div style="display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;">
+          
+          <!-- Theodore Card -->
+          <div style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 24px; padding: 32px 28px; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); width: 220px; text-align: center;">
+            <div style="width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%; background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.05)); border: 2px solid rgba(78, 205, 196, 0.4); display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 500; color: #4ECDC4;">T</div>
+            <h4 style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 6px;">Theodore Addo</h4>
+            <p style="font-size: 13px; color: #4ECDC4; font-weight: 500; margin-bottom: 8px;">Founder</p>
+            <p style="font-size: 12px; color: #86868b; line-height: 1.6;">Brown Med '26 · MIT<br>He asked the question that started it all</p>
           </div>
-          <h4>Startup</h4>
-          <p>Products that commercialize the research and generate data</p>
-        </div>
-        <div class="lab-arm-card">
-          <div class="lab-arm-icon" style="background: rgba(255, 160, 122, 0.15);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/>
-            </svg>
+          
+          <!-- Shadrack Card -->
+          <div style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 24px; padding: 32px 28px; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); width: 220px; text-align: center;">
+            <div style="width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%; background: linear-gradient(135deg, rgba(187, 143, 206, 0.2), rgba(187, 143, 206, 0.05)); border: 2px solid rgba(187, 143, 206, 0.4); display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 500; color: #BB8FCE;">S</div>
+            <h4 style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 6px;">Shadrack Annor</h4>
+            <p style="font-size: 13px; color: #BB8FCE; font-weight: 500; margin-bottom: 8px;">Cofounder</p>
+            <p style="font-size: 12px; color: #86868b; line-height: 1.6;">Brown · Waxfeed<br>He built the music platform</p>
           </div>
-          <h4>Venture</h4>
-          <p>Fund aligned projects and research initiatives</p>
-        </div>
-        <div class="lab-arm-card">
-          <div class="lab-arm-icon" style="background: rgba(78, 205, 196, 0.15);">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-              <path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m-4 0h8M12 3a4 4 0 00-4 4v4a4 4 0 008 0V7a4 4 0 00-4-4z"/>
-            </svg>
+          
+          <!-- Nathan Card -->
+          <div style="background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 24px; padding: 32px 28px; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); width: 220px; text-align: center;">
+            <div style="width: 72px; height: 72px; margin: 0 auto 16px; border-radius: 50%; background: linear-gradient(135deg, rgba(255, 160, 122, 0.2), rgba(255, 160, 122, 0.05)); border: 2px solid rgba(255, 160, 122, 0.4); display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 500; color: #FFA07A;">N</div>
+            <h4 style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 6px;">Nathan Amankwah</h4>
+            <p style="font-size: 13px; color: #FFA07A; font-weight: 500; margin-bottom: 8px;">Cofounder</p>
+            <p style="font-size: 12px; color: #86868b; line-height: 1.6;">Ottawa · Dev Lead<br>He builds what we dream up</p>
           </div>
-          <h4>Studio</h4>
-          <p>AVDP podcast, content, scientific storytelling</p>
+          
         </div>
+        
       </div>
       
-      <!-- Flywheel - Cleaner -->
-      <p class="flywheel-text">
-        <strong>The Flywheel:</strong> Products generate data → Data enables research → Research produces papers + patents → Papers bring credibility → Credibility brings users + funding → Repeat
-      </p>
-      
-      <div class="umbrella-grid">
-        <!-- Polarity App -->
-        <div class="umbrella-card">
-          <div class="umbrella-card-icon polarity-accent">
-            <svg viewBox="0 0 100 100">
-              <ellipse cx="50" cy="50" rx="30" ry="10" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(-60 50 50)"/>
-              <ellipse cx="50" cy="50" rx="30" ry="10" fill="none" stroke="currentColor" stroke-width="2" transform="rotate(60 50 50)"/>
-              <ellipse cx="50" cy="50" rx="30" ry="10" fill="none" stroke="currentColor" stroke-width="2"/>
-              <circle cx="50" cy="50" r="6" fill="currentColor"/>
-            </svg>
-          </div>
-          <h4>Polarity</h4>
-          <p class="umbrella-card-tagline">Cognitive Memory Service</p>
-          <p class="umbrella-card-desc">The primary research platform for CCX. You talk, it remembers. Memories become a knowledge graph with Polarity Points weighting the connections. Proactive surfacing keeps important things from fading.</p>
-        </div>
-
-        <!-- AVDP -->
-        <div class="umbrella-card">
-          <div class="umbrella-card-icon avdp-accent">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m-4 0h8"/>
-              <circle cx="12" cy="8" r="4"/>
-            </svg>
-          </div>
-          <h4>A Very Distant Perspective</h4>
-          <p class="umbrella-card-tagline">Deep Dive Podcast</p>
-          <p class="umbrella-card-desc">3-5 episodes with one guest to build comprehensive cognitive profiles. Then we match guests based on predicted compatibility. CCX demonstrations in public.</p>
-        </div>
-
-        <!-- WaxFeed -->
-        <div class="umbrella-card">
-          <div class="umbrella-card-icon waxfeed-accent">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="12" cy="12" r="10"/>
-              <circle cx="12" cy="12" r="3"/>
-              <circle cx="12" cy="12" r="6" stroke-dasharray="2 2"/>
-            </svg>
-          </div>
-          <h4>WaxFeed</h4>
-          <p class="umbrella-card-tagline">Social Music Platform</p>
-          <p class="umbrella-card-desc">Where music lovers discover, share, and connect. DJ discovery by taste alignment. Music preferences are stable, measurable, and emotional - perfect CCX data.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
   </div>
 
-  <!-- SLIDE 5: CCX Framework -->
+  <!-- SLIDE 5: Ecosystem -->
   <div class="slide" data-slide="5">
+    <section class="ecosystem-section" id="ecosystem">
+      <div class="ecosystem-wrapper" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 60px 40px;">
+        
+        <h2 class="section-heading" style="margin-bottom: 12px;">How We Work</h2>
+        <p style="font-size: 20px; color: #6e6e73; margin-bottom: 50px; text-align: center; font-weight: 500;">Four teams, one goal: understand the mind.</p>
+        
+        <!-- Rich 4 Arms Grid with Glassy Cards -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1000px; width: 100%;">
+          
+          <!-- Research Card -->
+          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 24px; padding: 32px 24px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer;">
+            <div style="width: 72px; height: 72px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.08)); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(78, 205, 196, 0.15);">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                <path d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+              </svg>
+            </div>
+            <h4 style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">Research</h4>
+            <p style="font-size: 14px; color: #6e6e73; line-height: 1.5;">We do the science</p>
+          </div>
+          
+          <!-- Products Card -->
+          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 24px; padding: 32px 24px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer;">
+            <div style="width: 72px; height: 72px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(255, 107, 129, 0.2), rgba(255, 107, 129, 0.08)); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(255, 107, 129, 0.15);">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#FF6B81" stroke-width="1.5">
+                <path d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+              </svg>
+            </div>
+            <h4 style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">Products</h4>
+            <p style="font-size: 14px; color: #6e6e73; line-height: 1.5;">We build the tools</p>
+          </div>
+          
+          <!-- Ventures Card -->
+          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 24px; padding: 32px 24px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer;">
+            <div style="width: 72px; height: 72px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(187, 143, 206, 0.2), rgba(187, 143, 206, 0.08)); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(187, 143, 206, 0.15);">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#BB8FCE" stroke-width="1.5">
+                <path d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/>
+              </svg>
+            </div>
+            <h4 style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">Ventures</h4>
+            <p style="font-size: 14px; color: #6e6e73; line-height: 1.5;">We fund others who share our mission</p>
+          </div>
+          
+          <!-- Studio Card -->
+          <div class="ecosystem-arm-card" style="background: rgba(255, 255, 255, 0.45); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border-radius: 24px; padding: 32px 24px; text-align: center; border: 1px solid rgba(255, 255, 255, 0.5); box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); cursor: pointer;">
+            <div style="width: 72px; height: 72px; margin: 0 auto 20px; background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.08)); border-radius: 18px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(78, 205, 196, 0.15);">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                <path d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"/>
+              </svg>
+            </div>
+            <h4 style="font-size: 18px; font-weight: 600; color: #1d1d1f; margin-bottom: 8px;">Studio</h4>
+            <p style="font-size: 14px; color: #6e6e73; line-height: 1.5;">We teach what we learn</p>
+          </div>
+          
+        </div>
+        
+        <!-- Flywheel as glassy pill -->
+        <div style="margin-top: 48px; background: rgba(255, 255, 255, 0.35); backdrop-filter: blur(30px); -webkit-backdrop-filter: blur(30px); border-radius: 100px; padding: 16px 32px; border: 1px solid rgba(255, 255, 255, 0.4); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);">
+          <p style="font-size: 14px; color: #6e6e73; text-align: center; margin: 0; font-weight: 500;">
+            Build → Learn → Share → Grow → Repeat
+          </p>
+        </div>
+        
+      </div>
+    </section>
+  </div>
+
+  <!-- SLIDE 6: CCX Framework -->
+  <div class="slide" data-slide="6">
     <section class="ccx-visual-section" id="about">
     <div class="ccx-visual-wrapper">
       <div class="ccx-header-block">
-        <p class="section-label">The Framework</p>
-        <h2 class="section-heading">Conversational Connectomics</h2>
-        <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 600px; margin: 16px auto 0; line-height: 1.7;">Five interlocking constructs that extract cognitive signals from natural language</p>
+        <p class="section-label">The Science</p>
+        <h2 class="section-heading">How We Read Conversations</h2>
+        <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 600px; margin: 16px auto 0; line-height: 1.7;">When you talk, your brain leaves clues. Here are the five things we look for.</p>
       </div>
       
       <div class="ccx-constructs-grid">
@@ -4427,9 +4890,9 @@
               <path d="M8 9h8M8 13h6M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
           </div>
-          <h4>Units of Cognition</h4>
+          <h4>What Type of Thought</h4>
           <p class="construct-code">12 TYPES</p>
-          <p>ASSERTION, ACTION, QUESTION, PLAN, EMOTION, EVALUATION, REQUEST, MEMORY_REF, REPAIR, SOCIAL, META, INTENTION</p>
+          <p>Are you asking, remembering, planning, or feeling? There are 12 basic types of thoughts. We notice which ones you use most.</p>
         </div>
         
         <!-- MEG-Proxy -->
@@ -4439,9 +4902,9 @@
               <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
             </svg>
           </div>
-          <h4>MEG-Proxy States</h4>
+          <h4>Your Brain's Gear</h4>
           <p class="construct-code">12 MODES</p>
-          <p>Cognitive modes inferred from language patterns, standing in for what brain imaging would show</p>
+          <p>Like a car has gears, your brain has modes. Planning mode, memory mode, creative mode. We can tell which gear you're in.</p>
         </div>
         
         <!-- Polarity Points -->
@@ -4451,9 +4914,9 @@
               <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
-          <h4>Polarity Points</h4>
+          <h4>How Ideas Link</h4>
           <p class="construct-code">0-100 SCALE</p>
-          <p>Connection strength via Bayesian Beta-Bernoulli estimation. PP = f(R, C, T, Q)</p>
+          <p>When you hear "beach," do you think of family vacations or summer jobs? We measure how strongly any two ideas connect for you.</p>
         </div>
         
         <!-- BrainID -->
@@ -4463,9 +4926,9 @@
               <path d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"/>
             </svg>
           </div>
-          <h4>BrainID</h4>
-          <p class="construct-code">POL-XXXX-XXXX-XXXX</p>
-          <p>Unique cognitive fingerprint from state transitions, PP distribution, temporal patterns</p>
+          <h4>Your Thinking Style</h4>
+          <p class="construct-code">UNIQUE TO YOU</p>
+          <p>Everyone thinks a little differently. Like a fingerprint, no two minds are exactly alike. We capture what makes yours unique.</p>
         </div>
         
         <!-- Consolidation Gate -->
@@ -4475,22 +4938,22 @@
               <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
             </svg>
           </div>
-          <h4>Consolidation Gate</h4>
-          <p class="construct-code">MEMORY STAGES</p>
-          <p>LABILE → STABILIZING → CONSOLIDATED → PERMANENT. Mimics hippocampal gating.</p>
+          <h4>How Memories Form</h4>
+          <p class="construct-code">FRAGILE → SOLID</p>
+          <p>New memories are like wet cement. Over time, they harden. We track where your memories are in that process.</p>
         </div>
       </div>
     </div>
   </section>
   </div>
 
-  <!-- SLIDE 6: Validation -->
-  <div class="slide" data-slide="6">
+  <!-- SLIDE 7: Validation -->
+  <div class="slide" data-slide="7">
     <section class="validation-section" id="validation">
     <div class="validation-wrapper">
-      <p class="question-label">Scientific Rigor</p>
-      <h2 class="section-heading">The Claim Ladder</h2>
-      <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 500px; margin: 16px auto 0; line-height: 1.7;">Science doesn't jump from idea to proven. We're explicit about where we are.</p>
+      <p class="question-label">Honest Science</p>
+      <h2 class="section-heading">Where We Are Today</h2>
+      <p style="font-size: 17px; color: rgba(29, 29, 31, 0.6); max-width: 500px; margin: 16px auto 0; line-height: 1.7;">Real science is a journey. We're not going to oversell. Here's exactly where we are.</p>
       
       <div class="validation-progress">
         <div class="validation-track">
@@ -4525,51 +4988,72 @@
       </div>
       
       <div class="validation-current">
-        <h4>Currently at L2: Computational</h4>
-        <p>Algorithms work. UoC classification: 69% accuracy. State classification: 58% accuracy.<br>Next: L3 Behavioral validation with clinical tests (MMSE, MoCA).</p>
+        <h4>Currently at L2: Computational Validation</h4>
+        <p>Algorithms work. UoC classification: 69% accuracy. State classification: 58% accuracy. 12 experiments run.</p>
       </div>
+      
+      <!-- Research Roadmap -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 24px; max-width: 700px;">
+        <div style="background: rgba(78, 205, 196, 0.08); border-radius: 12px; padding: 16px; text-align: left; border: 1px solid rgba(78, 205, 196, 0.15);">
+          <p style="font-size: 11px; color: #4ECDC4; font-weight: 600; margin: 0 0 4px 0;">2026</p>
+          <p style="font-size: 13px; color: #1d1d1f; font-weight: 600; margin: 0 0 4px 0;">L3 Behavioral</p>
+          <p style="font-size: 12px; color: #6e6e73; margin: 0; line-height: 1.4;">Correlate with MMSE/MoCA clinical tests</p>
+        </div>
+        <div style="background: rgba(187, 143, 206, 0.08); border-radius: 12px; padding: 16px; text-align: left; border: 1px solid rgba(187, 143, 206, 0.15);">
+          <p style="font-size: 11px; color: #BB8FCE; font-weight: 600; margin: 0 0 4px 0;">2027</p>
+          <p style="font-size: 13px; color: #1d1d1f; font-weight: 600; margin: 0 0 4px 0;">L4 Neural</p>
+          <p style="font-size: 12px; color: #6e6e73; margin: 0; line-height: 1.4;">Neuroimaging confirmation (fMRI/MEG)</p>
+        </div>
+        <div style="background: rgba(255, 107, 129, 0.08); border-radius: 12px; padding: 16px; text-align: left; border: 1px solid rgba(255, 107, 129, 0.15);">
+          <p style="font-size: 11px; color: #FF6B81; font-weight: 600; margin: 0 0 4px 0;">2028+</p>
+          <p style="font-size: 13px; color: #1d1d1f; font-weight: 600; margin: 0 0 4px 0;">Clinical Path</p>
+          <p style="font-size: 12px; color: #6e6e73; margin: 0; line-height: 1.4;">If validated, pursue clinical utility</p>
+        </div>
+      </div>
+      
+      <p style="font-size: 12px; color: #86868b; margin-top: 16px; font-style: italic;">If null results, we publish those too. Science is about truth.</p>
     </div>
   </section>
   </div>
 
-  <!-- SLIDE 7: Patents -->
-  <div class="slide" data-slide="7">
+  <!-- SLIDE 8: Patents -->
+  <div class="slide" data-slide="8">
     <section class="patents-section" id="patents">
       <div class="patents-wrapper">
-        <p class="question-label">Intellectual Property</p>
-      <h2 class="section-heading">2 Provisional Patents</h2>
+        <p class="question-label">Protected Innovation</p>
+      <h2 class="section-heading">2 Patents Filed</h2>
       
       <div class="patents-grid">
         <div class="patent-card">
-          <div class="patent-number">APPLICATION #63/940,728 · DEC 2025</div>
-          <h4>The Product: Knowledge Authentication</h4>
+          <div class="patent-number">FILED DEC 2025</div>
+          <h4>Your Mind as Your Password</h4>
           <ul>
-            <li>Knowledge graph construction from conversation</li>
-            <li>BrainID generation and encoding</li>
-            <li>N-BKDF authentication protocol</li>
-            <li>Drift-tolerant verification</li>
+            <li>Use your unique knowledge as authentication</li>
+            <li>No passwords to remember or steal</li>
+            <li>Adapts as you grow and change</li>
+            <li>Only you can answer questions about your life</li>
           </ul>
-          <p class="patent-inventor">Key insight by Shadrack: "What if the knowledge graph IS the password?"</p>
+          <p class="patent-inventor">Shadrack's breakthrough: "What if the way you think IS the password?"</p>
         </div>
         
         <div class="patent-card">
-          <div class="patent-number">APPLICATION #63/960,633 · JAN 2026</div>
-          <h4>The Science: CCX Methods</h4>
+          <div class="patent-number">FILED JAN 2026</div>
+          <h4>The Science Behind It All</h4>
           <ul>
-            <li>Polarity Points formula (Claims 1-4)</li>
-            <li>Unit of Cognition classification (Claims 5-6)</li>
-            <li>MEG-Proxy States inference (Claims 7-8)</li>
-            <li>Consolidation Gate + Cognitive Fingerprint (Claims 9-12)</li>
+            <li>How we measure connection strength</li>
+            <li>How we identify what you're saying</li>
+            <li>How we track your mental modes</li>
+            <li>How we create your unique fingerprint</li>
           </ul>
-          <p class="patent-inventor">Nathan helped formalize CCX as a defensible research field</p>
+          <p class="patent-inventor">Nathan helped turn the science into defensible research</p>
         </div>
       </div>
     </div>
   </section>
   </div>
 
-  <!-- SLIDE 8: Safety -->
-  <div class="slide" data-slide="8">
+  <!-- SLIDE 9: Safety -->
+  <div class="slide" data-slide="9">
     <section class="safety-section" id="safety">
       <div class="safety-wrapper">
         <p class="question-label">Non-Negotiable</p>
@@ -4606,14 +5090,14 @@
   </section>
   </div>
 
-  <!-- SLIDE 9: Research -->
-  <div class="slide" data-slide="9">
+  <!-- SLIDE 10: Research -->
+  <div class="slide" data-slide="10">
     <section class="research-section" id="research">
       <div class="research-wrapper">
         <h2 class="section-heading">Reading Room</h2>
       
       <div class="research-overview">
-        <p class="research-intro">Exploring <span class="accent">Conversational Connectomics</span> - inferring how concepts connect in your mind using natural language. 258-page framework document. 12 computational experiments. 2 provisional patents.</p>
+        <p class="research-intro">We stand on the shoulders of giants. Here's some of the research that inspired our work.</p>
       </div>
 
       <div class="research-grid">
@@ -4662,53 +5146,21 @@
 
       <!-- CCX Constructs Summary -->
       <div style="margin-top: 48px; padding: 32px; background: rgba(78, 205, 196, 0.08); border: 1px solid rgba(78, 205, 196, 0.2); border-radius: 16px; text-align: center;">
-        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 16px; color: inherit;">CCX Framework Constructs</h3>
+        <h3 style="font-size: 18px; font-weight: 600; margin-bottom: 16px; color: inherit;">The Five Clues We Look For</h3>
         <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; font-size: 12px; color: rgba(78, 205, 196, 0.9);">
-          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Units of Cognition (12 types)</span>
-          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">MEG-Proxy States (12 modes)</span>
-          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Polarity Points (0-100)</span>
-          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">BrainID Fingerprint</span>
-          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Consolidation Gate</span>
+          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Thought Types</span>
+          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Brain Gears</span>
+          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Idea Links</span>
+          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Thinking Style</span>
+          <span style="padding: 6px 12px; background: rgba(78, 205, 196, 0.15); border-radius: 20px;">Memory Stages</span>
         </div>
       </div>
 
-      <p class="papers-incoming">Paper Pipeline: CCX Framework (drafting) · BrainID Validation (Q2 2026) · Polarity Points Reliability (Q3 2026)</p>
+      <p class="papers-incoming">Our own papers are coming soon. We'll share them here when they're ready.</p>
     </div>
   </section>
   </div>
 
-  <!-- SLIDE 10: Team -->
-  <div class="slide" data-slide="10">
-    <section class="team-page-section" id="team">
-      <div class="team-page-wrapper">
-        <p class="question-label">Providence, RI · Founded December 2025</p>
-      <h2 class="section-heading">The Team</h2>
-      
-      <div class="team-page-grid">
-        <div class="team-page-member">
-          <div class="team-page-avatar" style="border-color: rgba(78, 205, 196, 0.5);">T</div>
-          <h4>Theodore Addo</h4>
-          <p style="color: #4ECDC4; font-weight: 500; font-size: 13px;">Founder & Principal Investigator</p>
-          <p style="font-size: 12px; opacity: 0.6; margin-top: 8px; line-height: 1.6;">MD Candidate, Brown '26<br>MIT Boyden Lab Alum<br>100% Owner, Polarity Lab LLC</p>
-        </div>
-        <div class="team-page-member">
-          <div class="team-page-avatar" style="border-color: rgba(187, 143, 206, 0.5);">S</div>
-          <h4>Shadrack Annor</h4>
-          <p style="color: #BB8FCE; font-weight: 500; font-size: 13px;">Cofounder & Principal of WaxFeed</p>
-          <p style="font-size: 12px; opacity: 0.6; margin-top: 8px; line-height: 1.6;">Brown University<br>Co-inventor, Patent #1</p>
-        </div>
-        <div class="team-page-member">
-          <div class="team-page-avatar" style="border-color: rgba(255, 160, 122, 0.5);">N</div>
-          <h4>Nathan Amankwah</h4>
-          <p style="color: #FFA07A; font-weight: 500; font-size: 13px;">Cofounder & Chief Systems Architect</p>
-          <p style="font-size: 12px; opacity: 0.6; margin-top: 8px; line-height: 1.6;">University of Ottawa<br>Co-inventor, Patent #2</p>
-        </div>
-      </div>
-      
-      <p style="font-size: 12px; opacity: 0.4; margin-top: 32px; text-align: center;">Cofounders participate via Profit Participation Agreements, not equity.</p>
-    </div>
-  </section>
-  </div>
 
   <!-- SLIDE 11: Get Involved -->
   <div class="slide" data-slide="11">
@@ -4872,11 +5324,27 @@
       // Update total slides display
       totalSlidesEl.textContent = totalSlides;
       
+      // Slide labels for tooltips
+      const slideLabels = [
+        'Home',
+        'What is CCX',
+        'The Team',
+        'Ecosystem',
+        'CCX Framework',
+        'Validation',
+        'Patents',
+        'Safety',
+        'Research',
+        'Get Involved',
+        'Contact'
+      ];
+      
       // Create indicators
       for (let i = 0; i < totalSlides; i++) {
         const dot = document.createElement('div');
         dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
         dot.setAttribute('data-slide', i);
+        dot.setAttribute('data-label', slideLabels[i] || `Slide ${i + 1}`);
         dot.addEventListener('click', () => goToSlide(i));
         indicatorsContainer.appendChild(dot);
       }
@@ -4922,15 +5390,25 @@
       }
       
       // Button click handlers
-      nextBtn.addEventListener('click', nextSlide);
-      prevBtn.addEventListener('click', prevSlide);
+      nextBtn.addEventListener('click', function() {
+        nextSlide();
+        // Open right gate for particles
+        if (window.openRightGate) window.openRightGate();
+      });
+      prevBtn.addEventListener('click', function() {
+        prevSlide();
+        // Open left gate for particles
+        if (window.openLeftGate) window.openLeftGate();
+      });
       
       // Keyboard navigation
       document.addEventListener('keydown', function(e) {
         if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
           nextSlide();
+          if (window.openRightGate) window.openRightGate();
         } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
           prevSlide();
+          if (window.openLeftGate) window.openLeftGate();
         } else if (e.key === 'Home') {
           goToSlide(0);
         } else if (e.key === 'End') {
@@ -5000,33 +5478,95 @@
       let targetMouseX = width / 2;
       let targetMouseY = height / 2;
       
+      // Particles enabled state
+      let particlesEnabled = localStorage.getItem('particlesEnabled') !== 'false';
+      
+      // Toggle button setup
+      const particlesToggle = document.getElementById('particles-toggle');
+      if (particlesToggle) {
+        // Set initial state
+        if (!particlesEnabled) {
+          particlesToggle.classList.add('particles-off');
+          canvas.style.opacity = '0';
+        }
+        
+        particlesToggle.addEventListener('click', function() {
+          particlesEnabled = !particlesEnabled;
+          localStorage.setItem('particlesEnabled', particlesEnabled);
+          
+          if (particlesEnabled) {
+            particlesToggle.classList.remove('particles-off');
+            canvas.style.transition = 'opacity 0.5s ease';
+            canvas.style.opacity = '1';
+          } else {
+            particlesToggle.classList.add('particles-off');
+            canvas.style.transition = 'opacity 0.5s ease';
+            canvas.style.opacity = '0';
+          }
+        });
+      }
+      
       // Navigation arrow positions for collision
       const NAV_ARROW_RADIUS = 40;
       let leftArrowX = 52;  // 24px margin + 28px radius
       let rightArrowX;      // Will be set on resize
       let arrowY;           // Middle of screen
       
-      // Responsive particle count
+      // Gate state - walls block particles unless gate is open
+      let leftGateOpen = false;
+      let rightGateOpen = false;
+      let leftGateTimer = 0;
+      let rightGateTimer = 0;
+      const GATE_OPEN_DURATION = 2500; // ms gate stays open
+      const WALL_MARGIN = 70; // Distance from edge where walls are
+      
+      // Global functions to open gates (called by nav buttons)
+      window.openLeftGate = function() {
+        leftGateOpen = true;
+        leftGateTimer = GATE_OPEN_DURATION;
+        // Energy burst - shake all particles left and up!
+        particles.forEach(p => {
+          if (p.spawned) {
+            p.vx -= Math.random() * 3 + 2; // Push left
+            p.vy -= Math.random() * 4 + 2; // Bounce up
+            p.impactFlash = 0.5;
+          }
+        });
+      };
+      window.openRightGate = function() {
+        rightGateOpen = true;
+        rightGateTimer = GATE_OPEN_DURATION;
+        // Energy burst - shake all particles right and up!
+        particles.forEach(p => {
+          if (p.spawned) {
+            p.vx += Math.random() * 3 + 2; // Push right
+            p.vy -= Math.random() * 4 + 2; // Bounce up
+            p.impactFlash = 0.5;
+          }
+        });
+      };
+      
+      // Responsive particle count - balanced for clean but fun
       const isMobile = window.innerWidth < 768;
-      const PARTICLE_COUNT = isMobile ? 30 : 60;
-      const WIND = 0.06; // Horizontal wind blowing RIGHT
-      const GRAVITY = 0.02; // Very subtle gravity
-      const MOUSE_RADIUS = 150;
-      const MOUSE_FORCE = 0.6;
-      const TURBULENCE = 0.03; // Random wind gusts
+      const PARTICLE_COUNT = isMobile ? 24 : 45;
+      const WIND = 0.01; // Very gentle wind (balls settle more)
+      const GRAVITY = 0.08; // Stronger gravity for settling
+      const MOUSE_RADIUS = 120;
+      const MOUSE_FORCE = 0.4;
+      const TURBULENCE = 0.02; // Calmer random gusts
       
       class Particle {
         constructor(spawnImmediately = false) {
           // Particle characteristics
-          this.bounce = Math.random() * 0.2 + 0.65;
+          this.bounce = Math.random() * 0.15 + 0.8; // Higher bounce (0.8-0.95)
           this.friction = Math.random() * 0.015 + 0.98;
           this.wallFriction = Math.random() * 0.08 + 0.88;
-          this.radius = Math.random() * 3.5 + 1.8;
+          this.radius = Math.random() * 4 + 2.5; // Bigger balls (2.5-6.5)
           this.mass = this.radius * this.radius;
           this.windMultiplier = Math.random() * 0.4 + 0.8; // How affected by wind
           this.color = this.getRandomColor();
-          this.opacity = Math.random() * 0.3 + 0.3;
-          this.glowIntensity = Math.random() * 0.4 + 0.3;
+          this.opacity = Math.random() * 0.3 + 0.5; // Much more visible (0.5-0.8)
+          this.glowIntensity = Math.random() * 0.3 + 0.4; // Stronger glow
           this.impactFlash = 0;
           this.spawnDelay = spawnImmediately ? 0 : Math.random() * 3000;
           this.spawned = spawnImmediately;
@@ -5034,18 +5574,26 @@
           
           this.reset(spawnImmediately);
           if (spawnImmediately) {
-            // Start scattered across screen
-            this.x = Math.random() * width * 0.8;
-            this.y = Math.random() * height;
+            // Start scattered in contained area, some on floor
+            this.x = WALL_MARGIN + Math.random() * (width - WALL_MARGIN * 2);
+            const floorY = height - 80;
+            // 40% start on/near floor, 60% scattered above
+            if (Math.random() < 0.4) {
+              this.y = floorY - this.radius - Math.random() * 20;
+              this.vy = 0;
+              this.vx = (Math.random() - 0.5) * 0.5;
+            } else {
+              this.y = Math.random() * (floorY - 100);
+            }
           }
         }
         
         reset(spawnImmediately = false) {
-          // SPAWN FROM LEFT SIDE
-          this.x = -20;
-          this.y = Math.random() * height;
-          this.vx = Math.random() * 2 + 1; // Initial rightward velocity
-          this.vy = (Math.random() - 0.5) * 1.5; // Slight vertical variance
+          // SPAWN FROM TOP - drop like rain
+          this.x = WALL_MARGIN + Math.random() * (width - WALL_MARGIN * 2);
+          this.y = -20 - Math.random() * 100; // Start above screen
+          this.vx = (Math.random() - 0.5) * 1; // Slight horizontal drift
+          this.vy = Math.random() * 0.5 + 0.5; // Gentle downward start
           this.life = 1.0;
           this.spawned = spawnImmediately;
           this.fadeIn = spawnImmediately ? 1 : 0;
@@ -5138,32 +5686,65 @@
           this.vx *= this.friction;
           this.vy *= this.friction;
           
-          // RIGHT WALL - particles exit and respawn from left
-          if (this.x - this.radius > width + 20) {
-            this.reset(true);
-            return;
+          // LEFT WALL - bounce unless gate is open
+          if (this.x - this.radius < WALL_MARGIN) {
+            if (leftGateOpen) {
+              // Gate open - let particle through, respawn when off screen
+              if (this.x + this.radius < -20) {
+                this.reset(true);
+                return;
+              }
+            } else {
+              // Wall bounce
+              this.x = WALL_MARGIN + this.radius;
+              const impactSpeed = Math.abs(this.vx);
+              this.vx *= -this.bounce;
+              if (impactSpeed > 0.5) {
+                this.impactFlash = impactSpeed * 0.2;
+              }
+            }
           }
           
-          // LEFT WALL - bounce (wind pushes back)
-          if (this.x - this.radius < 0) {
-            this.x = this.radius;
-            const impactSpeed = Math.abs(this.vx);
-            this.vx *= -this.bounce * 0.7;
+          // RIGHT WALL - bounce unless gate is open
+          if (this.x + this.radius > width - WALL_MARGIN) {
+            if (rightGateOpen) {
+              // Gate open - let particle through, respawn when off screen
+              if (this.x - this.radius > width + 20) {
+                this.reset(true);
+                return;
+              }
+            } else {
+              // Wall bounce
+              this.x = width - WALL_MARGIN - this.radius;
+              const impactSpeed = Math.abs(this.vx);
+              this.vx *= -this.bounce;
+              if (impactSpeed > 0.5) {
+                this.impactFlash = impactSpeed * 0.2;
+              }
+            }
+          }
+          
+          // FLOOR - particles settle and bounce
+          const floorY = height - 80; // Floor level above bottom
+          if (this.y + this.radius > floorY) {
+            this.y = floorY - this.radius;
+            const impactSpeed = Math.abs(this.vy);
+            this.vy *= -this.bounce * 0.85; // Bouncy floor!
+            this.vx *= 0.95; // Less friction, more rolling
+            
+            // Stop tiny bounces - settle (lower threshold)
+            if (Math.abs(this.vy) < 0.15) {
+              this.vy = 0;
+            }
             if (impactSpeed > 0.8) {
               this.impactFlash = impactSpeed * 0.15;
             }
           }
           
-          // TOP/BOTTOM walls - gentle bounce
-          if (this.y + this.radius > height) {
-            this.y = height - this.radius;
-            this.vy *= -this.bounce * 0.8;
-            this.vx *= this.wallFriction;
-          }
-          
+          // CEILING - gentle bounce
           if (this.y - this.radius < 0) {
             this.y = this.radius;
-            this.vy *= -this.bounce * 0.8;
+            this.vy *= -this.bounce * 0.5;
           }
           
           // Fade impact flash
@@ -5213,20 +5794,31 @@
           ctx.arc(this.x, this.y, glowSize, 0, Math.PI * 2);
           ctx.fill();
           
-          // Soft core
-          const coreOpacity = Math.min((this.opacity * 1.5 + this.impactFlash * 0.15) * fadeMultiplier, 0.8);
-          ctx.fillStyle = `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${coreOpacity})`;
+          // Solid core with gradient for 3D effect
+          const coreOpacity = Math.min((this.opacity + this.impactFlash * 0.2) * fadeMultiplier, 0.95);
+          const coreGradient = ctx.createRadialGradient(
+            this.x - this.radius * 0.3, this.y - this.radius * 0.3, 0,
+            this.x, this.y, this.radius * 1.2
+          );
+          coreGradient.addColorStop(0, `rgba(${Math.min(this.color.r + 60, 255)}, ${Math.min(this.color.g + 60, 255)}, ${Math.min(this.color.b + 60, 255)}, ${coreOpacity})`);
+          coreGradient.addColorStop(0.5, `rgba(${this.color.r}, ${this.color.g}, ${this.color.b}, ${coreOpacity})`);
+          coreGradient.addColorStop(1, `rgba(${Math.max(this.color.r - 40, 0)}, ${Math.max(this.color.g - 40, 0)}, ${Math.max(this.color.b - 40, 0)}, ${coreOpacity})`);
+          
+          ctx.fillStyle = coreGradient;
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
           ctx.fill();
           
-          // Subtle highlight for bigger particles
-          if (this.radius > 2) {
-            ctx.fillStyle = `rgba(255, 255, 255, ${(0.25 * this.opacity + this.impactFlash * 0.1) * fadeMultiplier})`;
-            ctx.beginPath();
-            ctx.arc(this.x - this.radius * 0.3, this.y - this.radius * 0.3, this.radius * 0.35, 0, Math.PI * 2);
-            ctx.fill();
-          }
+          // Crisp border for definition
+          ctx.strokeStyle = `rgba(${Math.max(this.color.r - 30, 0)}, ${Math.max(this.color.g - 30, 0)}, ${Math.max(this.color.b - 30, 0)}, ${coreOpacity * 0.6})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+          
+          // Bright highlight for 3D pop
+          ctx.fillStyle = `rgba(255, 255, 255, ${(0.4 + this.impactFlash * 0.2) * fadeMultiplier})`;
+          ctx.beginPath();
+          ctx.arc(this.x - this.radius * 0.35, this.y - this.radius * 0.35, this.radius * 0.3, 0, Math.PI * 2);
+          ctx.fill();
         }
       }
       
@@ -5263,9 +5855,31 @@
         const deltaTime = Math.min((currentTime - lastTime) / 16.67, 2);
         lastTime = currentTime;
         
+        // Update gate timers
+        if (leftGateOpen) {
+          leftGateTimer -= deltaTime * 16.67;
+          if (leftGateTimer <= 0) {
+            leftGateOpen = false;
+          }
+        }
+        if (rightGateOpen) {
+          rightGateTimer -= deltaTime * 16.67;
+          if (rightGateTimer <= 0) {
+            rightGateOpen = false;
+          }
+        }
+        
         // Smooth mouse movement
         mouseX += (targetMouseX - mouseX) * 0.08;
         mouseY += (targetMouseY - mouseY) * 0.08;
+        
+        // Skip rendering if particles disabled (save CPU)
+        if (!particlesEnabled) {
+          // Clear canvas completely when disabled
+          ctx.clearRect(0, 0, width, height);
+          requestAnimationFrame(animate);
+          return;
+        }
         
         // Clear with more trail for smoother, softer motion
         const isDarkMode = document.body.classList.contains('dark-mode');
