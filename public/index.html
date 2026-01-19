@@ -3350,30 +3350,460 @@
       }
     }
 
-    /* Extra small phones */
-    @media (max-width: 380px) {
-      .hero-section {
-        padding: 70px 20px 50px 20px;
+    /* ============================================
+       PHONE OPTIMIZATION - COMPREHENSIVE
+       ============================================ */
+    @media (max-width: 768px) {
+      /* GLOBAL: All slides use compact padding */
+      .slide > section {
+        padding: 40px 16px !important;
       }
-
-      .hero-title {
-        font-size: 28px;
-        margin-bottom: 12px;
-      }
-
-      .hero-subtitle {
-        font-size: 13px;
-        padding: 0 4px;
-        white-space: normal;
-        text-align: center;
-      }
-
+      
+      /* GLOBAL: Section headings smaller */
       .section-heading {
-        font-size: 24px;
+        font-size: clamp(22px, 6vw, 28px) !important;
+        margin-bottom: 16px !important;
       }
-
+      
+      /* GLOBAL: Question labels smaller */
+      .question-label, .section-label {
+        font-size: 10px !important;
+        margin-bottom: 8px !important;
+      }
+      
+      /* SLIDE 1: Hero - Logo smaller */
+      #polarity-wordmark {
+        width: min(90vw, 320px) !important;
+      }
+      
+      .hero-spatial-container {
+        padding: 20px 8px !important;
+      }
+      
+      .home-projects-grid {
+        gap: 12px !important;
+        max-width: 100% !important;
+      }
+      
+      .home-projects-grid .project-card {
+        padding: 16px !important;
+      }
+      
+      .home-projects-grid .project-thumbnail {
+        height: 80px !important;
+      }
+      
+      .home-projects-grid .project-info h3 {
+        font-size: 14px !important;
+      }
+      
+      .home-projects-grid .project-info p {
+        font-size: 11px !important;
+      }
+      
+      /* SLIDE 2 & 3: Definition boxes compact */
+      [style*="max-width: 700px"][style*="border-radius: 16px"],
+      [style*="max-width: 600px"][style*="border-radius: 16px"] {
+        padding: 16px 20px !important;
+        margin-bottom: 20px !important;
+      }
+      
+      [style*="max-width: 700px"] p,
+      [style*="max-width: 600px"] p {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+      }
+      
+      /* SLIDE 2: 3-card grid → single column */
+      [style*="grid-template-columns: repeat(3, 1fr)"] {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+      
+      [style*="grid-template-columns: repeat(3, 1fr)"] > div {
+        padding: 20px 16px !important;
+      }
+      
+      /* SLIDE 3: Flywheel → stack vertically */
+      [style*="grid-template-columns: 1fr auto 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      
+      [style*="grid-template-columns: 1fr auto 1fr"] > div {
+        padding: 20px !important;
+      }
+      
+      /* Center cycle arrows on mobile */
+      [style*="flex-direction: column"][style*="padding: 0 24px"] {
+        padding: 16px 0 !important;
+        flex-direction: row !important;
+      }
+      
+      /* SLIDE 4: Team cards → single column */
+      [style*="display: flex"][style*="justify-content: center"][style*="gap: 20px"] {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 12px !important;
+      }
+      
+      [style*="width: 280px"] {
+        width: 100% !important;
+        max-width: 320px !important;
+        padding: 20px 16px !important;
+      }
+      
+      [style*="width: 280px"] h4 {
+        font-size: 18px !important;
+      }
+      
+      [style*="width: 280px"] p {
+        font-size: 12px !important;
+        line-height: 1.5 !important;
+      }
+      
+      /* SLIDE 5: Ecosystem 4-grid → 2x2 */
+      [style*="grid-template-columns: repeat(4, 1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
+        max-width: 100% !important;
+      }
+      
+      .ecosystem-arm-card {
+        padding: 20px 12px !important;
+      }
+      
+      .ecosystem-arm-card h4 {
+        font-size: 14px !important;
+      }
+      
+      .ecosystem-arm-card p {
+        font-size: 11px !important;
+      }
+      
+      [style*="width: 72px"][style*="height: 72px"] {
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 12px !important;
+      }
+      
+      [style*="width: 72px"] svg {
+        width: 24px !important;
+        height: 24px !important;
+      }
+      
+      /* Flywheel pill compact */
+      [style*="border-radius: 100px"][style*="margin-top: 48px"] {
+        margin-top: 24px !important;
+        padding: 12px 20px !important;
+      }
+      
+      [style*="border-radius: 100px"] p {
+        font-size: 12px !important;
+      }
+      
+      /* SLIDE 6: CCX constructs → 2 columns */
+      .ccx-constructs-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+      
+      .ccx-construct-card {
+        padding: 16px 12px !important;
+      }
+      
+      .ccx-construct-card h4 {
+        font-size: 13px !important;
+      }
+      
+      .ccx-construct-card p {
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+      }
+      
+      .ccx-construct-icon {
+        width: 40px !important;
+        height: 40px !important;
+      }
+      
+      .construct-code {
+        font-size: 9px !important;
+      }
+      
+      .ccx-header-block {
+        margin-bottom: 24px !important;
+      }
+      
+      /* SLIDE 7: Validation roadmap → stack */
+      .validation-progress {
+        margin: 24px 0 !important;
+      }
+      
+      .validation-markers {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+      }
+      
+      .validation-marker {
+        flex: 0 0 calc(33% - 6px) !important;
+      }
+      
+      .marker-label {
+        font-size: 11px !important;
+      }
+      
+      .marker-name {
+        font-size: 9px !important;
+      }
+      
+      .validation-current {
+        padding: 16px !important;
+      }
+      
+      .validation-current h4 {
+        font-size: 14px !important;
+      }
+      
+      .validation-current p {
+        font-size: 12px !important;
+      }
+      
+      /* Roadmap cards stack */
+      [style*="grid-template-columns: repeat(3, 1fr)"][style*="max-width: 700px"] {
+        grid-template-columns: 1fr !important;
+        gap: 10px !important;
+      }
+      
+      [style*="grid-template-columns: repeat(3, 1fr)"][style*="max-width: 700px"] > div {
+        padding: 12px !important;
+      }
+      
+      /* SLIDE 8: Patents → stack */
+      .patents-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      
+      .patent-card {
+        padding: 20px 16px !important;
+      }
+      
+      .patent-card h4 {
+        font-size: 16px !important;
+      }
+      
+      .patent-card li {
+        font-size: 12px !important;
+        padding: 10px 0 !important;
+      }
+      
+      .patent-inventor {
+        font-size: 11px !important;
+      }
+      
+      /* SLIDE 9: Safety → 2 columns */
+      .safety-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+      }
+      
+      .safety-item {
+        padding: 14px !important;
+      }
+      
+      .safety-item h4 {
+        font-size: 12px !important;
+      }
+      
+      .safety-item p {
+        font-size: 11px !important;
+      }
+      
+      .safety-intro {
+        font-size: 14px !important;
+        margin-bottom: 24px !important;
+      }
+      
+      /* SLIDE 10: Research cards → stack */
+      .research-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+      
+      .research-card {
+        padding: 16px !important;
+      }
+      
+      .research-icon {
+        width: 36px !important;
+        height: 36px !important;
+      }
+      
+      .research-info h3 {
+        font-size: 14px !important;
+      }
+      
+      .research-info p {
+        font-size: 11px !important;
+      }
+      
+      .research-tag {
+        font-size: 9px !important;
+      }
+      
+      /* Five clues box compact */
+      [style*="margin-top: 32px"][style*="padding: 24px"] {
+        margin-top: 20px !important;
+        padding: 16px !important;
+      }
+      
+      [style*="margin-top: 32px"][style*="padding: 24px"] h3 {
+        font-size: 14px !important;
+      }
+      
+      [style*="margin-top: 32px"][style*="padding: 24px"] span {
+        font-size: 10px !important;
+        padding: 4px 8px !important;
+      }
+      
+      /* SLIDE 11: Get Involved → stack */
+      .involve-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+      }
+      
+      .involve-card {
+        padding: 16px !important;
+      }
+      
+      .involve-card h3 {
+        font-size: 14px !important;
+      }
+      
+      .involve-card p {
+        font-size: 11px !important;
+      }
+      
+      .involve-icon {
+        width: 36px !important;
+        height: 36px !important;
+        margin-bottom: 12px !important;
+      }
+      
+      .involve-cta {
+        margin-top: 20px !important;
+        padding: 12px 20px !important;
+      }
+      
+      .involve-cta p {
+        font-size: 13px !important;
+      }
+      
+      /* SLIDE 12: Contact compact */
       .contact-trigger {
-        font-size: 26px;
+        font-size: clamp(24px, 7vw, 32px) !important;
+        margin-bottom: 24px !important;
+      }
+      
+      .footer-links {
+        gap: 12px !important;
+        margin-bottom: 24px !important;
+      }
+      
+      .footer-copyright {
+        font-size: 9px !important;
+        padding-top: 20px !important;
+      }
+      
+      /* SLIDE NAV: Smaller arrows */
+      .slide-nav {
+        width: 40px !important;
+        height: 40px !important;
+      }
+      
+      .slide-nav-prev {
+        left: 8px !important;
+      }
+      
+      .slide-nav-next {
+        right: 8px !important;
+      }
+      
+      /* SLIDE INDICATORS: Smaller */
+      .slide-indicators {
+        padding: 8px 12px !important;
+        gap: 6px !important;
+      }
+      
+      .slide-dot {
+        width: 8px !important;
+        height: 8px !important;
+      }
+      
+      /* SLIDE COUNTER: Smaller */
+      .slide-counter {
+        font-size: 11px !important;
+        right: 16px !important;
+        bottom: 16px !important;
+      }
+      
+      /* PARTICLES TOGGLE: Smaller */
+      .particles-toggle {
+        width: 44px !important;
+        height: 44px !important;
+        right: 70px !important;
+        top: 12px !important;
+      }
+      
+      /* THEME TOGGLE: Position */
+      .theme-toggle {
+        width: 44px !important;
+        height: 44px !important;
+        top: 12px !important;
+        right: 12px !important;
+      }
+    }
+
+    /* Extra small phones (iPhone SE, etc) */
+    @media (max-width: 380px) {
+      .slide > section {
+        padding: 32px 12px !important;
+      }
+      
+      .section-heading {
+        font-size: 20px !important;
+      }
+      
+      #polarity-wordmark {
+        width: min(95vw, 280px) !important;
+      }
+      
+      /* 2-column grids → single column */
+      .ccx-constructs-grid,
+      .safety-grid,
+      [style*="grid-template-columns: repeat(2, 1fr)"] {
+        grid-template-columns: 1fr !important;
+      }
+      
+      /* Team cards full width */
+      [style*="width: 280px"] {
+        max-width: 100% !important;
+      }
+      
+      .ecosystem-arm-card {
+        padding: 16px 10px !important;
+      }
+      
+      .slide-nav {
+        width: 36px !important;
+        height: 36px !important;
+      }
+      
+      .slide-nav-prev { left: 4px !important; }
+      .slide-nav-next { right: 4px !important; }
+      
+      .contact-trigger {
+        font-size: 22px !important;
       }
 
       .scroll-nav-container {
