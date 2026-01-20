@@ -20,31 +20,32 @@
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
     <defs>
-      <!-- SUBTLE, PASTEL holographic gradient - very soft -->
-      <radialGradient id="holoDisc" cx="30%" cy="30%" r="70%">
+      <!-- EXTREMELY SUBTLE pastel holographic - barely visible color shifts -->
+      <radialGradient id="holoDisc" cx="28%" cy="28%" r="72%">
         <stop offset="0%" stop-color="#ffffff"/>
-        <stop offset="20%" stop-color="#ffe8f5"/>
-        <stop offset="35%" stop-color="#ffd9f0"/>
-        <stop offset="50%" stop-color="#d9f5e8"/>
-        <stop offset="65%" stop-color="#dce8ff"/>
-        <stop offset="80%" stop-color="#e8d9ff"/>
-        <stop offset="100%" stop-color="#f0e0ff"/>
+        <stop offset="18%" stop-color="#fff5fb"/>
+        <stop offset="30%" stop-color="#fff0f8"/>
+        <stop offset="45%" stop-color="#f0fff5"/>
+        <stop offset="60%" stop-color="#f0f8ff"/>
+        <stop offset="75%" stop-color="#f8f0ff"/>
+        <stop offset="90%" stop-color="#fff0f8"/>
+        <stop offset="100%" stop-color="#faf5ff"/>
       </radialGradient>
       
-      <!-- Center hub gradient -->
-      <radialGradient id="hub" cx="40%" cy="35%" r="65%">
-        <stop offset="0%" stop-color="#e8e8e8"/>
-        <stop offset="30%" stop-color="#b8b8b8"/>
-        <stop offset="60%" stop-color="#909090"/>
-        <stop offset="100%" stop-color="#707070"/>
+      <!-- Center hub gradient - gray metallic -->
+      <radialGradient id="hub" cx="38%" cy="32%" r="65%">
+        <stop offset="0%" stop-color="#d8d8d8"/>
+        <stop offset="35%" stop-color="#b0b0b0"/>
+        <stop offset="65%" stop-color="#888888"/>
+        <stop offset="100%" stop-color="#606060"/>
       </radialGradient>
       
-      <!-- Soft shadow -->
-      <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-        <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
-        <feOffset dx="0" dy="3" result="offsetblur"/>
+      <!-- Very soft shadow -->
+      <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+        <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+        <feOffset dx="0" dy="2" result="offsetblur"/>
         <feComponentTransfer>
-          <feFuncA type="linear" slope="0.2"/>
+          <feFuncA type="linear" slope="0.15"/>
         </feComponentTransfer>
         <feMerge>
           <feMergeNode/>
@@ -54,54 +55,64 @@
     </defs>
     
     <!-- Light gray container background -->
-    <rect x="0" y="0" width="400" height="400" fill="#e8e8e8" rx="8"/>
+    <rect x="0" y="0" width="400" height="400" fill="#e5e5e5" rx="6"/>
+    
+    <!-- Inner frame -->
+    <rect x="15" y="15" width="370" height="370" fill="#ebebeb" rx="4"/>
     
     <!-- Vinyl Disc -->
     <g transform="translate(200, 200)" filter="url(#shadow)">
-      <!-- Main SOFT holographic disc surface -->
-      <circle cx="0" cy="0" r="165" fill="url(#holoDisc)"/>
+      <!-- Main EXTREMELY SUBTLE holographic disc surface -->
+      <circle cx="0" cy="0" r="162" fill="url(#holoDisc)"/>
       
-      <!-- Very subtle grooves -->
-      <circle cx="0" cy="0" r="158" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
-      <circle cx="0" cy="0" r="145" fill="none" stroke="rgba(0,0,0,0.02)" stroke-width="0.5"/>
-      <circle cx="0" cy="0" r="130" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
-      <circle cx="0" cy="0" r="115" fill="none" stroke="rgba(0,0,0,0.02)" stroke-width="0.5"/>
-      <circle cx="0" cy="0" r="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
-      <circle cx="0" cy="0" r="85" fill="none" stroke="rgba(0,0,0,0.02)" stroke-width="0.5"/>
+      <!-- Barely visible grooves -->
+      <circle cx="0" cy="0" r="155" fill="none" stroke="rgba(0,0,0,0.015)" stroke-width="0.3"/>
+      <circle cx="0" cy="0" r="142" fill="none" stroke="rgba(0,0,0,0.015)" stroke-width="0.3"/>
+      <circle cx="0" cy="0" r="128" fill="none" stroke="rgba(0,0,0,0.015)" stroke-width="0.3"/>
+      <circle cx="0" cy="0" r="114" fill="none" stroke="rgba(0,0,0,0.015)" stroke-width="0.3"/>
+      <circle cx="0" cy="0" r="100" fill="none" stroke="rgba(0,0,0,0.015)" stroke-width="0.3"/>
+      <circle cx="0" cy="0" r="86" fill="none" stroke="rgba(0,0,0,0.015)" stroke-width="0.3"/>
       
       <!-- Center hub -->
-      <circle cx="0" cy="0" r="50" fill="url(#hub)"/>
-      <circle cx="0" cy="0" r="42" fill="#a0a0a0"/>
-      <circle cx="0" cy="0" r="35" fill="#888888"/>
-      <circle cx="0" cy="0" r="18" fill="#484848"/>
-      <circle cx="0" cy="0" r="10" fill="#383838"/>
-      <circle cx="0" cy="0" r="5" fill="#282828"/>
+      <circle cx="0" cy="0" r="48" fill="url(#hub)"/>
+      <circle cx="0" cy="0" r="40" fill="#989898"/>
+      <circle cx="0" cy="0" r="33" fill="#808080"/>
+      <circle cx="0" cy="0" r="17" fill="#505050"/>
+      <circle cx="0" cy="0" r="9" fill="#404040"/>
+      <circle cx="0" cy="0" r="4" fill="#303030"/>
       
-      <!-- Soft highlight on disc -->
-      <ellipse cx="-45" cy="-45" rx="55" ry="35" fill="white" opacity="0.5" transform="rotate(-25 -45 -45)"/>
-      <ellipse cx="-30" cy="-30" rx="30" ry="18" fill="white" opacity="0.7" transform="rotate(-25 -30 -30)"/>
+      <!-- Very soft highlight on disc -->
+      <ellipse cx="-48" cy="-48" rx="50" ry="32" fill="white" opacity="0.35" transform="rotate(-28 -48 -48)"/>
+      <ellipse cx="-32" cy="-32" rx="28" ry="16" fill="white" opacity="0.5" transform="rotate(-28 -32 -32)"/>
       
-      <!-- Bold "88" text -->
-      <text x="95" y="12" 
+      <!-- "88" text - dark gray -->
+      <text x="92" y="10" 
             font-family="Helvetica Neue, Helvetica, Arial, sans-serif" 
-            font-size="48" 
+            font-size="46" 
             font-weight="700" 
-            fill="#3a3a3a" 
+            fill="#404040" 
+            opacity="0.85"
             text-anchor="middle">88</text>
     </g>
     
     <!-- Purple WAXFEED tab -->
-    <rect x="345" y="150" width="55" height="100" rx="6" fill="#9b59b6"/>
+    <rect x="342" y="152" width="52" height="96" rx="5" fill="#9370db"/>
     
     <!-- WAXFEED text (vertical) -->
-    <text x="372.5" y="200" 
+    <text x="368" y="200" 
           font-family="Arial, Helvetica, sans-serif" 
-          font-size="16" 
+          font-size="15" 
           font-weight="700" 
           fill="white" 
           text-anchor="middle" 
-          letter-spacing="2"
-          transform="rotate(90 372.5 200)">WAXFEED</text>
+          letter-spacing="1.8"
+          transform="rotate(90 368 200)">WAXFEED</text>
+    
+    <!-- Corner screws/indicators -->
+    <rect x="22" y="22" width="8" height="8" rx="1" fill="#d0d0d0"/>
+    <rect x="370" y="22" width="8" height="8" rx="1" fill="#d0d0d0"/>
+    <rect x="22" y="370" width="8" height="8" rx="1" fill="#d0d0d0"/>
+    <rect x="370" y="370" width="8" height="8" rx="1" fill="#d0d0d0"/>
   </svg>
 </body>
 </html>
