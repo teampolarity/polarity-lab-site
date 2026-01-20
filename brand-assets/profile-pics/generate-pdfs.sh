@@ -16,6 +16,7 @@ FILES=(
   "polarity-app/polarity-app-icon-400x400.html:polarity-app/polarity-app-icon-400x400.pdf"
   "waxfeed/waxfeed-disc-400x400.html:waxfeed/waxfeed-disc-400x400.pdf"
   "waxfeed/waxfeed-logo-400x400.html:waxfeed/waxfeed-logo-400x400.pdf"
+  "waxfeed/waxfeed-full-logo-400x400.html:waxfeed/waxfeed-full-logo-400x400.pdf"
   "avdp/avdp-logo-400x400.html:avdp/avdp-logo-400x400.pdf"
 )
 
@@ -84,6 +85,7 @@ echo "     - polarity-app-icon-400x400.pdf"
 echo "  🎵 Waxfeed"
 echo "     - waxfeed-disc-400x400.pdf"
 echo "     - waxfeed-logo-400x400.pdf"
+echo "     - waxfeed-full-logo-400x400.pdf (with purple tab)"
 echo "  📹 AVDP"
 echo "     - avdp-logo-400x400.pdf"
 echo ""
