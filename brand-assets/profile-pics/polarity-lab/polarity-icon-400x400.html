@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Polarity Lab Icon - 400x400</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: 400px 400px; margin: 0; }
+    body { 
+      width: 400px; 
+      height: 400px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      background: white;
+      overflow: hidden;
+    }
+    svg { width: 360px; height: 420px; }
+  </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="360" height="420">
+    <defs>
+      <radialGradient id="sphereGradIcon" cx="32%" cy="32%" r="68%">
+        <stop offset="0%" stop-color="#FFFFFF"/>
+        <stop offset="15%" stop-color="#FFE5E8"/>
+        <stop offset="30%" stop-color="#FFB0BB"/>
+        <stop offset="50%" stop-color="#FF4466"/>
+        <stop offset="75%" stop-color="#CC2244"/>
+        <stop offset="90%" stop-color="#991133"/>
+        <stop offset="100%" stop-color="#771122"/>
+      </radialGradient>
+      <linearGradient id="ringGradIcon" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#FF4466" stop-opacity="0.1"/>
+        <stop offset="50%" stop-color="#FFD0DD"/>
+        <stop offset="100%" stop-color="#FF4466" stop-opacity="0.1"/>
+      </linearGradient>
+      <linearGradient id="beamGradIcon" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+        <stop offset="30%" stop-color="#FF8899" stop-opacity="0.6"/>
+        <stop offset="50%" stop-color="#FF4466" stop-opacity="1"/>
+        <stop offset="70%" stop-color="#FF8899" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="glowIcon" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="3" result="b"/>
+        <feMerge>
+          <feMergeNode in="b"/>
+          <feMergeNode in="b"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      <filter id="sphereGlowIcon" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="8" result="b"/>
+        <feMerge>
+          <feMergeNode in="b"/>
+          <feMergeNode in="b"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    <g transform="translate(8, 0)">
+      <rect x="48" y="2" width="8" height="30" rx="4" fill="url(#beamGradIcon)" filter="url(#glowIcon)"/>
+      <rect x="48" y="108" width="8" height="30" rx="4" fill="url(#beamGradIcon)" filter="url(#glowIcon)"/>
+      <ellipse cx="52" cy="70" rx="48" ry="14" transform="rotate(-20 52 70)" stroke="url(#ringGradIcon)" stroke-width="3" fill="none" filter="url(#glowIcon)"/>
+      <ellipse cx="52" cy="70" rx="44" ry="12" transform="rotate(25 52 70)" stroke="url(#ringGradIcon)" stroke-width="1.5" fill="none" opacity="0.5" filter="url(#glowIcon)"/>
+      <circle cx="52" cy="70" r="38" fill="url(#sphereGradIcon)" filter="url(#sphereGlowIcon)"/>
+      <circle cx="38" cy="56" r="12" fill="white" opacity="0.3"/>
+      <circle cx="33" cy="50" r="5" fill="white" opacity="0.5"/>
+    </g>
+  </svg>
+</body>
+</html>
