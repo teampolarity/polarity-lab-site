@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1584 396" width="1584" height="396">
+  <defs>
+    <!-- Deep cosmic background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030305"/>
+      <stop offset="40%" stop-color="#050508"/>
+      <stop offset="100%" stop-color="#0a0a12"/>
+    </linearGradient>
+
+    <!-- Atmospheric glow behind sphere -->
+    <radialGradient id="atmosphereGlow" cx="25%" cy="50%" r="45%">
+      <stop offset="0%" stop-color="#FF4466" stop-opacity="0.15"/>
+      <stop offset="40%" stop-color="#FF4466" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FF4466" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Secondary teal glow -->
+    <radialGradient id="tealGlow" cx="75%" cy="60%" r="35%">
+      <stop offset="0%" stop-color="#20B2AA" stop-opacity="0.08"/>
+      <stop offset="60%" stop-color="#20B2AA" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#20B2AA" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Sphere gradient -->
+    <radialGradient id="sphereGrad" cx="32%" cy="28%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#FF8899"/>
+      <stop offset="55%" stop-color="#FF4466"/>
+      <stop offset="100%" stop-color="#661122"/>
+    </radialGradient>
+
+    <!-- Orbital ring gradient -->
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF4466" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#FF4466" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#FF4466" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#FF4466" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Polar beam gradient -->
+    <linearGradient id="beamGrad" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" stop-color="#FF4466" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#FF4466" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="80%" stop-color="#FF4466" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FF4466" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Grid line gradient -->
+    <linearGradient id="gridGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FF4466" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FF4466" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#FF4466" stop-opacity="0.02"/>
+    </linearGradient>
+
+    <!-- Horizontal grid fade -->
+    <linearGradient id="hGridGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF4466" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#FF4466" stop-opacity="0.08"/>
+      <stop offset="50%" stop-color="#FF4466" stop-opacity="0.12"/>
+      <stop offset="80%" stop-color="#FF4466" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#FF4466" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Text gradient -->
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E8E8EC"/>
+    </linearGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft glow for sphere -->
+    <filter id="sphereGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Star pattern -->
+    <pattern id="stars" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+      <circle cx="15" cy="30" r="0.8" fill="#ffffff" opacity="0.4"/>
+      <circle cx="85" cy="12" r="0.5" fill="#ffffff" opacity="0.3"/>
+      <circle cx="150" cy="55" r="0.6" fill="#ffffff" opacity="0.35"/>
+      <circle cx="45" cy="90" r="0.4" fill="#ffffff" opacity="0.25"/>
+      <circle cx="120" cy="140" r="0.7" fill="#ffffff" opacity="0.4"/>
+      <circle cx="180" cy="95" r="0.5" fill="#ffffff" opacity="0.3"/>
+      <circle cx="30" cy="160" r="0.6" fill="#ffffff" opacity="0.35"/>
+      <circle cx="95" cy="180" r="0.4" fill="#ffffff" opacity="0.25"/>
+      <circle cx="160" cy="170" r="0.8" fill="#ffffff" opacity="0.4"/>
+      <circle cx="70" cy="65" r="0.3" fill="#ffffff" opacity="0.2"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1584" height="396" fill="url(#bgGrad)"/>
+
+  <!-- Stars layer -->
+  <rect width="1584" height="396" fill="url(#stars)" opacity="0.6"/>
+
+  <!-- Atmospheric glows -->
+  <rect width="1584" height="396" fill="url(#atmosphereGlow)"/>
+  <rect width="1584" height="396" fill="url(#tealGlow)"/>
+
+  <!-- Perspective grid floor -->
+  <g opacity="0.4">
+    <!-- Vertical grid lines with perspective -->
+    <line x1="792" y1="200" x2="792" y2="396" stroke="url(#gridGrad)" stroke-width="1"/>
+    <line x1="692" y1="220" x2="592" y2="396" stroke="url(#gridGrad)" stroke-width="0.8"/>
+    <line x1="892" y1="220" x2="992" y2="396" stroke="url(#gridGrad)" stroke-width="0.8"/>
+    <line x1="592" y1="240" x2="392" y2="396" stroke="url(#gridGrad)" stroke-width="0.6"/>
+    <line x1="992" y1="240" x2="1192" y2="396" stroke="url(#gridGrad)" stroke-width="0.6"/>
+    <line x1="492" y1="260" x2="192" y2="396" stroke="url(#gridGrad)" stroke-width="0.4"/>
+    <line x1="1092" y1="260" x2="1392" y2="396" stroke="url(#gridGrad)" stroke-width="0.4"/>
+
+    <!-- Horizontal grid lines -->
+    <line x1="0" y1="300" x2="1584" y2="300" stroke="url(#hGridGrad)" stroke-width="0.5"/>
+    <line x1="0" y1="340" x2="1584" y2="340" stroke="url(#hGridGrad)" stroke-width="0.6"/>
+    <line x1="0" y1="370" x2="1584" y2="370" stroke="url(#hGridGrad)" stroke-width="0.7"/>
+  </g>
+
+  <!-- POLARITY Sphere Logo -->
+  <g transform="translate(200, 198)" filter="url(#sphereGlow)">
+    <!-- Polar beam - vertical light -->
+    <rect x="45" y="-80" width="10" height="260" rx="5" fill="url(#beamGrad)" opacity="0.7"/>
+
+    <!-- Outer orbital ring -->
+    <ellipse cx="50" cy="50" rx="90" ry="22" fill="none" stroke="url(#ringGrad)" stroke-width="2" transform="rotate(-15)" opacity="0.8"/>
+
+    <!-- Inner orbital ring -->
+    <ellipse cx="50" cy="50" rx="70" ry="18" fill="none" stroke="url(#ringGrad)" stroke-width="1.5" transform="rotate(25)" opacity="0.6"/>
+
+    <!-- Main sphere with glow -->
+    <circle cx="50" cy="50" r="50" fill="#FF4466" opacity="0.3" filter="url(#glow)"/>
+    <circle cx="50" cy="50" r="50" fill="url(#sphereGrad)"/>
+
+    <!-- Sphere highlight -->
+    <ellipse cx="35" cy="35" rx="18" ry="12" fill="#ffffff" opacity="0.25" transform="rotate(-30, 35, 35)"/>
+  </g>
+
+  <!-- POLARITY Text -->
+  <g transform="translate(380, 160)">
+    <text x="0" y="50" font-family="'Syne', 'SF Pro Display', -apple-system, sans-serif" font-size="72" font-weight="800" letter-spacing="8" fill="url(#textGrad)">POLARITY</text>
+    <text x="0" y="100" font-family="'DM Sans', 'SF Pro Text', -apple-system, sans-serif" font-size="28" font-weight="400" letter-spacing="12" fill="#888899">LAB</text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="380" y="280" font-family="'Space Mono', 'SF Mono', monospace" font-size="14" letter-spacing="2" fill="#FF4466" opacity="0.9">MAPPING COGNITION · BUILDING CCX</text>
+
+  <!-- Decorative elements -->
+  <!-- Floating particles -->
+  <circle cx="1350" cy="80" r="3" fill="#FF4466" opacity="0.5"/>
+  <circle cx="1420" cy="150" r="2" fill="#20B2AA" opacity="0.4"/>
+  <circle cx="1300" cy="200" r="1.5" fill="#FFFFFF" opacity="0.3"/>
+  <circle cx="1480" cy="100" r="2.5" fill="#FF4466" opacity="0.4"/>
+  <circle cx="1380" cy="250" r="2" fill="#20B2AA" opacity="0.35"/>
+
+  <!-- Accent lines -->
+  <line x1="380" y1="120" x2="520" y2="120" stroke="#FF4466" stroke-width="2" opacity="0.6"/>
+  <line x1="380" y1="300" x2="680" y2="300" stroke="#FF4466" stroke-width="1" opacity="0.3"/>
+
+  <!-- Corner accent -->
+  <path d="M1534 0 L1584 0 L1584 50" fill="none" stroke="#FF4466" stroke-width="2" opacity="0.4"/>
+  <path d="M0 346 L0 396 L50 396" fill="none" stroke="#20B2AA" stroke-width="2" opacity="0.3"/>
+</svg>
