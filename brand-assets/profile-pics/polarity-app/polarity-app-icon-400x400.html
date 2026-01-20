@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Polarity App Icon - 400x400</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    @page { size: 400px 400px; margin: 0; }
+    body { 
+      width: 400px; 
+      height: 400px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+      background: white;
+      overflow: hidden;
+    }
+    svg { width: 360px; height: 420px; }
+  </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="360" height="360">
+    <defs>
+      <!-- Main sphere gradient - 3D metallic teal -->
+      <radialGradient id="sphereGradApp" cx="35%" cy="30%" r="65%">
+        <stop offset="0%" stop-color="#7EEEE6"/>
+        <stop offset="15%" stop-color="#4EDDD4"/>
+        <stop offset="35%" stop-color="#20B2AA"/>
+        <stop offset="55%" stop-color="#009B99"/>
+        <stop offset="75%" stop-color="#007777"/>
+        <stop offset="100%" stop-color="#005555"/>
+      </radialGradient>
+      
+      <!-- Ring gradient - teal -->
+      <linearGradient id="ringGradApp" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#20B2AA" stop-opacity="0.2"/>
+        <stop offset="50%" stop-color="#7EEEE6"/>
+        <stop offset="100%" stop-color="#20B2AA" stop-opacity="0.2"/>
+      </linearGradient>
+      
+      <!-- Beam gradient - teal -->
+      <linearGradient id="beamGradApp" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stop-color="#20B2AA" stop-opacity="0"/>
+        <stop offset="30%" stop-color="#4EDDD4" stop-opacity="0.6"/>
+        <stop offset="50%" stop-color="#20B2AA" stop-opacity="1"/>
+        <stop offset="70%" stop-color="#4EDDD4" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#20B2AA" stop-opacity="0"/>
+      </linearGradient>
+      
+      <filter id="glowApp" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="4" result="b"/>
+        <feMerge>
+          <feMergeNode in="b"/>
+          <feMergeNode in="b"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+      
+      <filter id="sphereGlowApp" x="-50%" y="-50%" width="200%" height="200%">
+        <feGaussianBlur stdDeviation="10" result="b"/>
+        <feMerge>
+          <feMergeNode in="b"/>
+          <feMergeNode in="b"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+    
+    <!-- Polar beam top -->
+    <rect x="94" y="10" width="12" height="40" rx="6" fill="url(#beamGradApp)" filter="url(#glowApp)"/>
+    
+    <!-- Polar beam bottom -->
+    <rect x="94" y="150" width="12" height="40" rx="6" fill="url(#beamGradApp)" filter="url(#glowApp)"/>
+    
+    <!-- Orbital ring 1 -->
+    <ellipse cx="100" cy="100" rx="70" ry="22" transform="rotate(-20 100 100)" stroke="url(#ringGradApp)" stroke-width="4" fill="none" filter="url(#glowApp)"/>
+    
+    <!-- Orbital ring 2 -->
+    <ellipse cx="100" cy="100" rx="65" ry="18" transform="rotate(25 100 100)" stroke="url(#ringGradApp)" stroke-width="2.5" fill="none" opacity="0.6" filter="url(#glowApp)"/>
+    
+    <!-- Main sphere -->
+    <circle cx="100" cy="100" r="55" fill="url(#sphereGradApp)" filter="url(#sphereGlowApp)"/>
+    
+    <!-- Highlight 1 (large) -->
+    <ellipse cx="78" cy="78" rx="18" ry="14" fill="white" opacity="0.35"/>
+    
+    <!-- Highlight 2 (small bright) -->
+    <circle cx="70" cy="70" r="8" fill="white" opacity="0.55"/>
+    
+    <!-- Secondary highlight -->
+    <ellipse cx="115" cy="90" rx="12" ry="8" fill="white" opacity="0.2"/>
+  </svg>
+</body>
+</html>
