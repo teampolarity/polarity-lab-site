@@ -15,7 +15,7 @@
       background: white;
       overflow: hidden;
     }
-    svg { width: 360px; height: 420px; }
+    svg { width: 360px; height: 360px; }
   </style>
 </head>
 <body>
@@ -31,33 +31,43 @@
         <stop offset="100%" stop-color="#005555"/>
       </radialGradient>
       
-      <!-- Ring gradient - orange/coral -->
-      <linearGradient id="ringGradApp" x1="0%" y1="0%" x2="100%" y2="0%">
-        <stop offset="0%" stop-color="#FF9966" stop-opacity="0.2"/>
-        <stop offset="50%" stop-color="#FFB399"/>
-        <stop offset="100%" stop-color="#FF9966" stop-opacity="0.2"/>
+      <!-- Teal ring gradient -->
+      <linearGradient id="ringGradTeal" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#20B2AA" stop-opacity="0.3"/>
+        <stop offset="50%" stop-color="#4EDDD4"/>
+        <stop offset="100%" stop-color="#20B2AA" stop-opacity="0.3"/>
       </linearGradient>
       
-      <!-- Beam gradient - teal -->
-      <linearGradient id="beamGradApp" x1="0%" y1="0%" x2="0%" y2="100%">
-        <stop offset="0%" stop-color="#20B2AA" stop-opacity="0"/>
-        <stop offset="30%" stop-color="#4EDDD4" stop-opacity="0.6"/>
-        <stop offset="50%" stop-color="#20B2AA" stop-opacity="1"/>
-        <stop offset="70%" stop-color="#4EDDD4" stop-opacity="0.6"/>
-        <stop offset="100%" stop-color="#20B2AA" stop-opacity="0"/>
+      <!-- Orange/coral ring gradient -->
+      <linearGradient id="ringGradOrange" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#FF9966" stop-opacity="0.3"/>
+        <stop offset="50%" stop-color="#FFB399"/>
+        <stop offset="100%" stop-color="#FF9966" stop-opacity="0.3"/>
       </linearGradient>
+      
+      <!-- Node gradients -->
+      <radialGradient id="nodeTeal" cx="40%" cy="40%" r="60%">
+        <stop offset="0%" stop-color="#7EEEE6"/>
+        <stop offset="50%" stop-color="#20B2AA"/>
+        <stop offset="100%" stop-color="#009B99"/>
+      </radialGradient>
+      
+      <radialGradient id="nodeOrange" cx="40%" cy="40%" r="60%">
+        <stop offset="0%" stop-color="#FFB399"/>
+        <stop offset="50%" stop-color="#FF9966"/>
+        <stop offset="100%" stop-color="#FF7744"/>
+      </radialGradient>
       
       <filter id="glowApp" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="4" result="b"/>
+        <feGaussianBlur stdDeviation="3" result="b"/>
         <feMerge>
-          <feMergeNode in="b"/>
           <feMergeNode in="b"/>
           <feMergeNode in="SourceGraphic"/>
         </feMerge>
       </filter>
       
       <filter id="sphereGlowApp" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="10" result="b"/>
+        <feGaussianBlur stdDeviation="8" result="b"/>
         <feMerge>
           <feMergeNode in="b"/>
           <feMergeNode in="b"/>
@@ -66,29 +76,32 @@
       </filter>
     </defs>
     
-    <!-- Polar beam top -->
-    <rect x="94" y="10" width="12" height="40" rx="6" fill="url(#beamGradApp)" filter="url(#glowApp)"/>
+    <!-- Orbital ring 1 (Teal) - top-left to bottom-right -->
+    <ellipse cx="100" cy="100" rx="68" ry="20" transform="rotate(-25 100 100)" 
+             stroke="url(#ringGradTeal)" stroke-width="3.5" fill="none" filter="url(#glowApp)"/>
+    <circle cx="148" cy="65" r="5" fill="url(#nodeTeal)" filter="url(#glowApp)"/>
     
-    <!-- Polar beam bottom -->
-    <rect x="94" y="150" width="12" height="40" rx="6" fill="url(#beamGradApp)" filter="url(#glowApp)"/>
+    <!-- Orbital ring 2 (Orange) - top-right to bottom-left -->
+    <ellipse cx="100" cy="100" rx="68" ry="20" transform="rotate(25 100 100)" 
+             stroke="url(#ringGradOrange)" stroke-width="3.5" fill="none" filter="url(#glowApp)"/>
+    <circle cx="52" cy="65" r="5" fill="url(#nodeOrange)" filter="url(#glowApp)"/>
     
-    <!-- Orbital ring 1 -->
-    <ellipse cx="100" cy="100" rx="70" ry="22" transform="rotate(-20 100 100)" stroke="url(#ringGradApp)" stroke-width="4" fill="none" filter="url(#glowApp)"/>
-    
-    <!-- Orbital ring 2 -->
-    <ellipse cx="100" cy="100" rx="65" ry="18" transform="rotate(25 100 100)" stroke="url(#ringGradApp)" stroke-width="2.5" fill="none" opacity="0.6" filter="url(#glowApp)"/>
+    <!-- Orbital ring 3 (Teal) - nearly horizontal -->
+    <ellipse cx="100" cy="100" rx="68" ry="20" transform="rotate(75 100 100)" 
+             stroke="url(#ringGradTeal)" stroke-width="3.5" fill="none" filter="url(#glowApp)"/>
+    <circle cx="100" cy="32" r="5" fill="url(#nodeTeal)" filter="url(#glowApp)"/>
     
     <!-- Main sphere -->
-    <circle cx="100" cy="100" r="55" fill="url(#sphereGradApp)" filter="url(#sphereGlowApp)"/>
+    <circle cx="100" cy="100" r="48" fill="url(#sphereGradApp)" filter="url(#sphereGlowApp)"/>
     
     <!-- Highlight 1 (large) -->
-    <ellipse cx="78" cy="78" rx="18" ry="14" fill="white" opacity="0.35"/>
+    <ellipse cx="80" cy="80" rx="16" ry="12" fill="white" opacity="0.4"/>
     
     <!-- Highlight 2 (small bright) -->
-    <circle cx="70" cy="70" r="8" fill="white" opacity="0.55"/>
+    <circle cx="73" cy="73" r="7" fill="white" opacity="0.6"/>
     
     <!-- Secondary highlight -->
-    <ellipse cx="115" cy="90" rx="12" ry="8" fill="white" opacity="0.2"/>
+    <ellipse cx="112" cy="92" rx="10" ry="7" fill="white" opacity="0.25"/>
   </svg>
 </body>
 </html>
