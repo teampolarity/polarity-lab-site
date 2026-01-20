@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Waxfeed - LinkedIn Banner</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      width: 1584px; 
+      height: 396px; 
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0a1a 50%, #0a0a0a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    /* Vinyl texture overlay */
+    .vinyl-texture {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: 
+        repeating-radial-gradient(circle at center, transparent 0, transparent 2px, rgba(255,255,255,0.02) 2px, rgba(255,255,255,0.02) 4px);
+      opacity: 0.3;
+    }
+    
+    /* Holographic glow particles */
+    .holo-particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: holoFloat 15s infinite;
+    }
+    
+    .holo-particle:nth-child(1) { 
+      left: 15%; top: 25%; 
+      background: radial-gradient(circle, rgba(228, 168, 200, 0.8), transparent);
+      animation-delay: 0s; 
+    }
+    .holo-particle:nth-child(2) { 
+      left: 35%; top: 65%; 
+      background: radial-gradient(circle, rgba(152, 216, 184, 0.8), transparent);
+      animation-delay: 2s; 
+    }
+    .holo-particle:nth-child(3) { 
+      left: 55%; top: 35%; 
+      background: radial-gradient(circle, rgba(184, 152, 216, 0.8), transparent);
+      animation-delay: 4s; 
+    }
+    .holo-particle:nth-child(4) { 
+      left: 75%; top: 70%; 
+      background: radial-gradient(circle, rgba(200, 232, 168, 0.8), transparent);
+      animation-delay: 6s; 
+    }
+    
+    @keyframes holoFloat {
+      0%, 100% { transform: translateY(0px) scale(1); opacity: 0.4; }
+      50% { transform: translateY(-40px) scale(1.2); opacity: 0.9; }
+    }
+    
+    /* Sound wave lines */
+    .wave-line {
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(228, 168, 200, 0.4), transparent);
+      animation: wave 4s infinite;
+    }
+    
+    .wave-line:nth-child(1) { top: 35%; left: 10%; width: 30%; animation-delay: 0s; }
+    .wave-line:nth-child(2) { top: 55%; right: 15%; width: 25%; animation-delay: 1s; background: linear-gradient(90deg, transparent, rgba(152, 216, 184, 0.4), transparent); }
+    .wave-line:nth-child(3) { top: 70%; left: 25%; width: 35%; animation-delay: 2s; background: linear-gradient(90deg, transparent, rgba(184, 152, 216, 0.4), transparent); }
+    
+    @keyframes wave {
+      0%, 100% { opacity: 0.3; transform: scaleX(1); }
+      50% { opacity: 0.7; transform: scaleX(1.1); }
+    }
+    
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+    
+    /* Vinyl Disc */
+    .vinyl-disc {
+      width: 220px;
+      height: 220px;
+      position: relative;
+      animation: spin 20s linear infinite;
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    .disc-surface {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: 
+        radial-gradient(circle at 30% 30%, 
+          rgba(255, 255, 255, 0.9) 0%,
+          rgba(255, 184, 224, 0.8) 15%,
+          rgba(240, 184, 216, 0.7) 30%,
+          rgba(152, 216, 184, 0.6) 48%,
+          rgba(184, 200, 255, 0.5) 60%,
+          rgba(184, 152, 216, 0.6) 72%,
+          rgba(216, 168, 200, 0.7) 84%,
+          rgba(232, 200, 216, 0.8) 100%
+        );
+      box-shadow: 
+        0 0 50px rgba(228, 168, 200, 0.6),
+        inset 0 0 100px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+    
+    /* Vinyl grooves */
+    .groove {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    .groove:nth-child(1) { width: 95%; height: 95%; }
+    .groove:nth-child(2) { width: 85%; height: 85%; }
+    .groove:nth-child(3) { width: 75%; height: 75%; }
+    .groove:nth-child(4) { width: 65%; height: 65%; }
+    .groove:nth-child(5) { width: 55%; height: 55%; }
+    
+    /* Center hub */
+    .hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle at 40% 35%, #f0f0f0, #a0a0a0 50%, #686868);
+      border-radius: 50%;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+    
+    .center-hole {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background: #1a1a1a;
+      border-radius: 50%;
+    }
+    
+    /* 88 text */
+    .disc-text {
+      position: absolute;
+      top: 50%;
+      right: 25%;
+      transform: translateY(-50%);
+      font-size: 32px;
+      font-weight: 700;
+      color: rgba(26, 26, 26, 0.8);
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+    
+    /* Text content */
+    .text-content {
+      text-align: left;
+    }
+    
+    .wordmark {
+      font-size: 90px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, 
+        #e4a8c8 0%, 
+        #98d8b8 25%, 
+        #b898d8 50%, 
+        #d8a8c8 75%,
+        #e4a8c8 100%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+      filter: drop-shadow(0 2px 10px rgba(228, 168, 200, 0.5));
+    }
+    
+    .tagline {
+      font-size: 26px;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="vinyl-texture"></div>
+  
+  <div class="holo-particle"></div>
+  <div class="holo-particle"></div>
+  <div class="holo-particle"></div>
+  <div class="holo-particle"></div>
+  
+  <div class="wave-line"></div>
+  <div class="wave-line"></div>
+  <div class="wave-line"></div>
+  
+  <div class="content">
+    <div class="vinyl-disc">
+      <div class="disc-surface">
+        <div class="groove"></div>
+        <div class="groove"></div>
+        <div class="groove"></div>
+        <div class="groove"></div>
+        <div class="groove"></div>
+        <div class="hub">
+          <div class="center-hole"></div>
+        </div>
+        <div class="disc-text">88</div>
+      </div>
+    </div>
+    
+    <div class="text-content">
+      <div class="wordmark">WAXFEED</div>
+      <div class="tagline">Your AI music companion</div>
+    </div>
+  </div>
+</body>
+</html>
