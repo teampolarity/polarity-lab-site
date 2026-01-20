@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0a0f">
+  <meta name="theme-color" content="#ffffff">
   <meta name="description" content="Polarity Lab - Research laboratory studying Conversational Connectomics (CCX). Extracting cognitive signals from natural language. Providence, RI.">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <title>POLARITY LAB | Conversational Connectomics Research</title>
@@ -14,37 +14,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+    /* ==========================================
+       THEME VARIABLES - Light Mode (Default)
+       ========================================== */
     :root {
-      /* Deep cosmic palette */
-      --bg-void: #050508;
-      --bg-deep: #0a0a0f;
-      --bg-surface: #12121a;
-      --bg-elevated: #1a1a24;
-      --bg-card: #1e1e2a;
+      /* Light mode backgrounds */
+      --bg-void: #ffffff;
+      --bg-deep: #f8f9fa;
+      --bg-surface: #f0f2f5;
+      --bg-elevated: #e8ebef;
+      --bg-card: #ffffff;
 
-      /* Brand colors - coral/pink sphere aesthetic */
-      --coral-light: #FF8899;
-      --coral: #FF4466;
-      --coral-deep: #CC2244;
-      --coral-glow: rgba(255, 68, 102, 0.4);
+      /* POLARITY Brand Colors */
+      --teal: #4ECDC4;
+      --teal-light: #6EE7DF;
+      --teal-deep: #2BA89F;
+      --teal-glow: rgba(78, 205, 196, 0.3);
 
-      /* Teal accent */
-      --teal-light: #66DDCC;
-      --teal: #20B2AA;
-      --teal-deep: #008B8B;
-      --teal-glow: rgba(32, 178, 170, 0.3);
+      --coral: #FFA07A;
+      --coral-light: #FFB899;
+      --coral-deep: #E8865A;
+      --coral-glow: rgba(255, 160, 122, 0.3);
 
-      /* Text hierarchy */
-      --text-pure: #ffffff;
-      --text-primary: #f0f0f5;
-      --text-secondary: rgba(240, 240, 245, 0.7);
-      --text-tertiary: rgba(240, 240, 245, 0.45);
-      --text-ghost: rgba(240, 240, 245, 0.2);
+      --purple: #BB8FCE;
+      --purple-light: #D4B8E0;
+      --purple-deep: #9B6FB8;
+      --purple-glow: rgba(187, 143, 206, 0.3);
 
-      /* Borders */
-      --border-ghost: rgba(255, 255, 255, 0.06);
-      --border-subtle: rgba(255, 255, 255, 0.1);
-      --border-medium: rgba(255, 255, 255, 0.15);
+      /* Text hierarchy - Light mode */
+      --text-pure: #0A0A0A;
+      --text-primary: #1a1a1a;
+      --text-secondary: rgba(26, 26, 26, 0.7);
+      --text-tertiary: rgba(26, 26, 26, 0.5);
+      --text-ghost: rgba(26, 26, 26, 0.25);
+
+      /* Borders - Light mode */
+      --border-ghost: rgba(0, 0, 0, 0.06);
+      --border-subtle: rgba(0, 0, 0, 0.1);
+      --border-medium: rgba(0, 0, 0, 0.15);
+
+      /* Scrollbar */
+      --scrollbar-thumb: var(--teal-deep);
 
       /* Typography */
       --font-display: 'Syne', sans-serif;
@@ -54,6 +64,27 @@
       /* Transitions */
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    /* ==========================================
+       DARK MODE
+       ========================================== */
+    [data-theme="dark"] {
+      --bg-void: #050508;
+      --bg-deep: #0a0a0f;
+      --bg-surface: #12121a;
+      --bg-elevated: #1a1a24;
+      --bg-card: #1e1e2a;
+
+      --text-pure: #ffffff;
+      --text-primary: #f0f0f5;
+      --text-secondary: rgba(240, 240, 245, 0.7);
+      --text-tertiary: rgba(240, 240, 245, 0.45);
+      --text-ghost: rgba(240, 240, 245, 0.2);
+
+      --border-ghost: rgba(255, 255, 255, 0.06);
+      --border-subtle: rgba(255, 255, 255, 0.1);
+      --border-medium: rgba(255, 255, 255, 0.15);
     }
 
     *, *::before, *::after {
@@ -75,12 +106,52 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
+      transition: background 0.4s ease, color 0.4s ease;
     }
 
     /* Scrollbar */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
-    ::-webkit-scrollbar-thumb { background: var(--coral-deep); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+
+    /* ==========================================
+       THEME TOGGLE
+       ========================================== */
+    .theme-toggle {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1001;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+      border-color: var(--teal);
+    }
+
+    .theme-toggle svg {
+      width: 24px;
+      height: 24px;
+      color: var(--text-primary);
+      transition: transform 0.3s ease;
+    }
+
+    .theme-toggle .sun { display: none; }
+    .theme-toggle .moon { display: block; }
+
+    [data-theme="dark"] .theme-toggle .sun { display: block; }
+    [data-theme="dark"] .theme-toggle .moon { display: none; }
 
     /* ==========================================
        NAVIGATION
@@ -99,10 +170,15 @@
     }
 
     .nav.scrolled {
-      background: rgba(5, 5, 8, 0.85);
+      background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       padding: 16px 48px;
+      box-shadow: 0 1px 0 var(--border-ghost);
+    }
+
+    [data-theme="dark"] .nav.scrolled {
+      background: rgba(5, 5, 8, 0.85);
     }
 
     .nav-logo {
@@ -112,7 +188,7 @@
       text-decoration: none;
     }
 
-    .nav-logo-sphere {
+    .nav-logo-atom {
       width: 42px;
       height: 42px;
       position: relative;
@@ -155,7 +231,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--coral);
+      background: var(--teal);
       transition: width 0.4s var(--ease-out-expo);
     }
 
@@ -170,15 +246,15 @@
       letter-spacing: 0.05em;
       padding: 12px 24px;
       background: transparent;
-      border: 1px solid var(--coral);
+      border: 1px solid var(--teal);
       border-radius: 6px;
-      color: var(--coral-light);
+      color: var(--teal);
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
     .nav-cta:hover {
-      background: var(--coral);
+      background: var(--teal);
       color: var(--bg-void);
     }
 
@@ -227,7 +303,7 @@
     }
 
     /* ==========================================
-       HERO SECTION - DRAMATIC SPHERE REVEAL
+       HERO SECTION
        ========================================== */
     .hero {
       min-height: 100vh;
@@ -245,8 +321,9 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 120% 80% at 50% 30%, rgba(255, 68, 102, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse 80% 60% at 80% 80%, rgba(32, 178, 170, 0.05) 0%, transparent 40%);
+        radial-gradient(ellipse 120% 80% at 50% 30%, var(--teal-glow) 0%, transparent 50%),
+        radial-gradient(ellipse 80% 60% at 80% 80%, var(--coral-glow) 0%, transparent 40%);
+      opacity: 0.5;
       pointer-events: none;
     }
 
@@ -258,13 +335,19 @@
       right: 0;
       height: 50%;
       background-image:
-        linear-gradient(rgba(255, 68, 102, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 68, 102, 0.03) 1px, transparent 1px);
+        linear-gradient(rgba(78, 205, 196, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(78, 205, 196, 0.08) 1px, transparent 1px);
       background-size: 80px 80px;
       transform: perspective(500px) rotateX(60deg);
       transform-origin: center bottom;
-      mask-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
-      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+      mask-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+    }
+
+    [data-theme="dark"] .hero-grid {
+      background-image:
+        linear-gradient(rgba(78, 205, 196, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(78, 205, 196, 0.04) 1px, transparent 1px);
     }
 
     .hero-content {
@@ -300,9 +383,9 @@
       font-family: var(--font-mono);
       font-size: 11px;
       letter-spacing: 0.1em;
-      color: var(--teal-light);
-      background: rgba(32, 178, 170, 0.1);
-      border: 1px solid rgba(32, 178, 170, 0.2);
+      color: var(--teal);
+      background: rgba(78, 205, 196, 0.1);
+      border: 1px solid rgba(78, 205, 196, 0.2);
       padding: 8px 16px;
       border-radius: 4px;
       margin-bottom: 32px;
@@ -336,8 +419,8 @@
       display: block;
     }
 
-    .hero-title .coral {
-      background: linear-gradient(135deg, var(--coral-light), var(--coral));
+    .hero-title .teal {
+      background: linear-gradient(135deg, var(--teal-light), var(--teal));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -374,14 +457,14 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--coral), var(--coral-deep));
+      background: linear-gradient(135deg, var(--teal), var(--teal-deep));
       color: white;
-      box-shadow: 0 4px 24px var(--coral-glow);
+      box-shadow: 0 4px 24px var(--teal-glow);
     }
 
     .btn-primary:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px var(--coral-glow);
+      box-shadow: 0 8px 32px var(--teal-glow);
     }
 
     .btn-secondary {
@@ -395,7 +478,7 @@
       border-color: var(--border-subtle);
     }
 
-    /* Hero sphere visual */
+    /* Hero atom visual */
     .hero-visual {
       display: flex;
       align-items: center;
@@ -414,48 +497,22 @@
       }
     }
 
-    .hero-sphere-container {
+    .hero-atom-container {
       position: relative;
       width: 100%;
-      max-width: 500px;
+      max-width: 450px;
     }
 
-    .hero-sphere {
+    .hero-atom {
       width: 100%;
       height: auto;
-      filter: drop-shadow(0 0 60px var(--coral-glow)) drop-shadow(0 0 120px rgba(255, 68, 102, 0.2));
+      filter: drop-shadow(0 0 60px var(--teal-glow)) drop-shadow(0 0 120px rgba(78, 205, 196, 0.15));
       animation: float 6s ease-in-out infinite;
     }
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-20px); }
-    }
-
-    /* Orbital particles around sphere */
-    .hero-particles {
-      position: absolute;
-      inset: -60px;
-      pointer-events: none;
-    }
-
-    .particle {
-      position: absolute;
-      width: 4px;
-      height: 4px;
-      background: var(--coral);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--coral);
-    }
-
-    .particle:nth-child(1) { top: 20%; left: 10%; animation: orbit 8s linear infinite; }
-    .particle:nth-child(2) { top: 80%; right: 15%; animation: orbit 12s linear infinite reverse; }
-    .particle:nth-child(3) { top: 50%; left: -5%; animation: orbit 10s linear infinite; }
-    .particle:nth-child(4) { top: 30%; right: 5%; animation: orbit 9s linear infinite reverse; }
-
-    @keyframes orbit {
-      from { transform: rotate(0deg) translateX(20px) rotate(0deg); }
-      to { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
     }
 
     @media (max-width: 1024px) {
@@ -480,8 +537,8 @@
       .hero-actions {
         justify-content: center;
       }
-      .hero-sphere-container {
-        max-width: 320px;
+      .hero-atom-container {
+        max-width: 300px;
       }
     }
 
@@ -543,7 +600,7 @@
     }
 
     .project-card {
-      background: var(--bg-surface);
+      background: var(--bg-card);
       border: 1px solid var(--border-ghost);
       border-radius: 16px;
       padding: 28px;
@@ -558,15 +615,15 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, var(--coral-glow), transparent);
+      background: linear-gradient(135deg, var(--teal-glow), transparent);
       opacity: 0;
       transition: opacity 0.4s ease;
     }
 
     .project-card:hover {
       transform: translateY(-6px);
-      border-color: var(--coral);
-      box-shadow: 0 20px 60px rgba(255, 68, 102, 0.15);
+      border-color: var(--teal);
+      box-shadow: 0 20px 60px rgba(78, 205, 196, 0.1);
     }
 
     .project-card:hover::before {
@@ -586,13 +643,13 @@
     }
 
     .project-card:nth-child(1) .project-icon {
-      background: linear-gradient(135deg, rgba(255, 68, 102, 0.2), rgba(255, 68, 102, 0.05));
+      background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.05));
     }
     .project-card:nth-child(2) .project-icon {
       background: linear-gradient(135deg, rgba(187, 143, 206, 0.2), rgba(187, 143, 206, 0.05));
     }
     .project-card:nth-child(3) .project-icon {
-      background: linear-gradient(135deg, rgba(32, 178, 170, 0.2), rgba(32, 178, 170, 0.05));
+      background: linear-gradient(135deg, rgba(255, 160, 122, 0.2), rgba(255, 160, 122, 0.05));
     }
 
     .project-icon svg, .project-icon img {
@@ -622,7 +679,7 @@
       position: absolute;
       bottom: 28px;
       right: 28px;
-      color: var(--coral);
+      color: var(--teal);
       opacity: 0;
       transform: translateX(-10px);
       transition: all 0.3s ease;
@@ -679,7 +736,7 @@
       font-family: var(--font-mono);
       font-size: 11px;
       letter-spacing: 0.2em;
-      color: var(--coral);
+      color: var(--teal);
       text-transform: uppercase;
       margin-bottom: 16px;
     }
@@ -695,7 +752,7 @@
 
     .ccx-definition {
       background: var(--bg-elevated);
-      border-left: 3px solid var(--coral);
+      border-left: 3px solid var(--teal);
       padding: 24px;
       margin-bottom: 32px;
       border-radius: 0 12px 12px 0;
@@ -705,7 +762,7 @@
       font-family: var(--font-display);
       font-size: 16px;
       font-weight: 700;
-      color: var(--coral-light);
+      color: var(--teal);
       margin-bottom: 8px;
     }
 
@@ -742,18 +799,18 @@
     }
 
     .ccx-step:nth-child(1) .ccx-step-num {
-      color: var(--coral);
-      border-color: var(--coral);
-      background: rgba(255, 68, 102, 0.1);
-    }
-    .ccx-step:nth-child(2) .ccx-step-num {
       color: var(--teal);
       border-color: var(--teal);
-      background: rgba(32, 178, 170, 0.1);
+      background: rgba(78, 205, 196, 0.1);
+    }
+    .ccx-step:nth-child(2) .ccx-step-num {
+      color: var(--coral);
+      border-color: var(--coral);
+      background: rgba(255, 160, 122, 0.1);
     }
     .ccx-step:nth-child(3) .ccx-step-num {
-      color: #BB8FCE;
-      border-color: #BB8FCE;
+      color: var(--purple);
+      border-color: var(--purple);
       background: rgba(187, 143, 206, 0.1);
     }
 
@@ -796,13 +853,15 @@
       inset: 15%;
       animation-duration: 30s;
       animation-direction: reverse;
-      border-color: rgba(255, 68, 102, 0.15);
+      border-color: var(--teal);
+      opacity: 0.3;
     }
 
     .ccx-ring:nth-child(3) {
       inset: 30%;
       animation-duration: 20s;
-      border-color: rgba(32, 178, 170, 0.15);
+      border-color: var(--coral);
+      opacity: 0.3;
     }
 
     @keyframes ccx-rotate {
@@ -821,29 +880,29 @@
     .ccx-core-inner {
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle, var(--coral) 0%, var(--coral-deep) 70%);
+      background: radial-gradient(circle, var(--teal-light) 0%, var(--teal-deep) 70%);
       border-radius: 50%;
       animation: ccx-pulse 3s ease infinite;
     }
 
     @keyframes ccx-pulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 40px var(--coral-glow); }
-      50% { transform: scale(1.05); box-shadow: 0 0 60px var(--coral-glow); }
+      0%, 100% { transform: scale(1); box-shadow: 0 0 40px var(--teal-glow); }
+      50% { transform: scale(1.05); box-shadow: 0 0 60px var(--teal-glow); }
     }
 
     .ccx-node {
       position: absolute;
       width: 10px;
       height: 10px;
-      background: var(--teal);
+      background: var(--coral);
       border-radius: 50%;
-      box-shadow: 0 0 20px var(--teal);
+      box-shadow: 0 0 20px var(--coral);
     }
 
-    .ccx-node:nth-child(5) { top: 0; left: 50%; transform: translateX(-50%); }
-    .ccx-node:nth-child(6) { top: 50%; right: 0; transform: translateY(-50%); }
-    .ccx-node:nth-child(7) { bottom: 0; left: 50%; transform: translateX(-50%); }
-    .ccx-node:nth-child(8) { top: 50%; left: 0; transform: translateY(-50%); }
+    .ccx-node:nth-child(5) { top: 0; left: 50%; transform: translateX(-50%); background: var(--teal); box-shadow: 0 0 20px var(--teal); }
+    .ccx-node:nth-child(6) { top: 50%; right: 0; transform: translateY(-50%); background: var(--coral); box-shadow: 0 0 20px var(--coral); }
+    .ccx-node:nth-child(7) { bottom: 0; left: 50%; transform: translateX(-50%); background: var(--purple); box-shadow: 0 0 20px var(--purple); }
+    .ccx-node:nth-child(8) { top: 50%; left: 0; transform: translateY(-50%); background: var(--teal); box-shadow: 0 0 20px var(--teal); }
 
     @media (max-width: 1024px) {
       .ccx {
@@ -880,7 +939,7 @@
     }
 
     .about-main {
-      background: var(--bg-surface);
+      background: var(--bg-card);
       border: 1px solid var(--border-ghost);
       border-radius: 20px;
       padding: 40px;
@@ -889,7 +948,7 @@
     .about-main-icon {
       width: 56px;
       height: 56px;
-      background: linear-gradient(135deg, rgba(32, 178, 170, 0.2), rgba(32, 178, 170, 0.05));
+      background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(78, 205, 196, 0.05));
       border-radius: 14px;
       display: flex;
       align-items: center;
@@ -917,7 +976,7 @@
       color: var(--teal);
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      background: rgba(32, 178, 170, 0.15);
+      background: rgba(78, 205, 196, 0.15);
       padding: 4px 10px;
       border-radius: 4px;
       margin-left: 12px;
@@ -937,7 +996,7 @@
     }
 
     .about-card {
-      background: var(--bg-surface);
+      background: var(--bg-card);
       border: 1px solid var(--border-ghost);
       border-radius: 16px;
       padding: 24px;
@@ -959,7 +1018,7 @@
       margin-bottom: 16px;
     }
 
-    .about-card:nth-child(1) .about-card-icon { background: linear-gradient(135deg, rgba(255, 68, 102, 0.15), rgba(255, 68, 102, 0.05)); }
+    .about-card:nth-child(1) .about-card-icon { background: linear-gradient(135deg, rgba(78, 205, 196, 0.15), rgba(78, 205, 196, 0.05)); }
     .about-card:nth-child(2) .about-card-icon { background: linear-gradient(135deg, rgba(187, 143, 206, 0.15), rgba(187, 143, 206, 0.05)); }
     .about-card:nth-child(3) .about-card-icon { background: linear-gradient(135deg, rgba(255, 160, 122, 0.15), rgba(255, 160, 122, 0.05)); }
 
@@ -1031,7 +1090,7 @@
     }
 
     .team-card {
-      background: var(--bg-elevated);
+      background: var(--bg-card);
       border: 1px solid var(--border-ghost);
       border-radius: 20px;
       padding: 32px;
@@ -1042,6 +1101,10 @@
     .team-card:hover {
       transform: translateY(-8px);
       border-color: var(--border-medium);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="dark"] .team-card:hover {
       box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
     }
 
@@ -1054,9 +1117,9 @@
       margin-bottom: 16px;
     }
 
-    .team-card:nth-child(1) .team-card-role { color: var(--coral); }
-    .team-card:nth-child(2) .team-card-role { color: var(--teal); }
-    .team-card:nth-child(3) .team-card-role { color: #BB8FCE; }
+    .team-card:nth-child(1) .team-card-role { color: var(--teal); }
+    .team-card:nth-child(2) .team-card-role { color: var(--coral); }
+    .team-card:nth-child(3) .team-card-role { color: var(--purple); }
 
     .team-card-name {
       font-family: var(--font-display);
@@ -1102,7 +1165,7 @@
       position: absolute;
       width: 500px;
       height: 500px;
-      background: radial-gradient(circle, rgba(255, 68, 102, 0.06) 0%, transparent 60%);
+      background: radial-gradient(circle, rgba(78, 205, 196, 0.08) 0%, transparent 60%);
       top: -200px;
       left: -200px;
     }
@@ -1128,7 +1191,7 @@
     }
 
     .safety-item {
-      background: var(--bg-surface);
+      background: var(--bg-card);
       border: 1px solid var(--border-ghost);
       border-radius: 14px;
       padding: 24px;
@@ -1136,7 +1199,7 @@
     }
 
     .safety-item:hover {
-      border-color: rgba(255, 68, 102, 0.3);
+      border-color: rgba(78, 205, 196, 0.3);
     }
 
     .safety-item h4 {
@@ -1153,7 +1216,7 @@
       content: '';
       width: 6px;
       height: 6px;
-      background: var(--coral);
+      background: var(--teal);
       border-radius: 50%;
     }
 
@@ -1195,7 +1258,7 @@
     }
 
     .research-card {
-      background: var(--bg-elevated);
+      background: var(--bg-card);
       border: 1px solid var(--border-ghost);
       border-radius: 16px;
       padding: 28px;
@@ -1209,7 +1272,7 @@
     .research-card:hover {
       border-color: var(--teal);
       transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(32, 178, 170, 0.1);
+      box-shadow: 0 20px 60px rgba(78, 205, 196, 0.1);
     }
 
     .research-card-tag {
@@ -1249,7 +1312,7 @@
     }
 
     .research-tags {
-      background: var(--bg-elevated);
+      background: var(--bg-card);
       border: 1px solid var(--border-ghost);
       border-radius: 16px;
       padding: 32px;
@@ -1276,10 +1339,10 @@
       font-family: var(--font-mono);
       font-size: 11px;
       color: var(--teal);
-      background: rgba(32, 178, 170, 0.1);
+      background: rgba(78, 205, 196, 0.1);
       padding: 8px 16px;
       border-radius: 20px;
-      border: 1px solid rgba(32, 178, 170, 0.2);
+      border: 1px solid rgba(78, 205, 196, 0.2);
     }
 
     @media (max-width: 1024px) {
@@ -1314,7 +1377,7 @@
     }
 
     .involve-card {
-      background: var(--bg-surface);
+      background: var(--bg-card);
       border: 1px solid var(--border-ghost);
       border-radius: 20px;
       padding: 32px;
@@ -1336,10 +1399,10 @@
       margin-bottom: 20px;
     }
 
-    .involve-card:nth-child(1) .involve-card-icon { background: rgba(32, 178, 170, 0.15); }
+    .involve-card:nth-child(1) .involve-card-icon { background: rgba(78, 205, 196, 0.15); }
     .involve-card:nth-child(2) .involve-card-icon { background: rgba(187, 143, 206, 0.15); }
     .involve-card:nth-child(3) .involve-card-icon { background: rgba(255, 160, 122, 0.15); }
-    .involve-card:nth-child(4) .involve-card-icon { background: rgba(255, 68, 102, 0.15); }
+    .involve-card:nth-child(4) .involve-card-icon { background: rgba(78, 205, 196, 0.15); }
 
     .involve-card-icon svg {
       width: 24px;
@@ -1372,9 +1435,9 @@
     }
 
     .involve-card:nth-child(1) a { color: var(--teal); }
-    .involve-card:nth-child(2) a { color: #BB8FCE; }
-    .involve-card:nth-child(3) a { color: #FFA07A; }
-    .involve-card:nth-child(4) a { color: var(--coral); }
+    .involve-card:nth-child(2) a { color: var(--purple); }
+    .involve-card:nth-child(3) a { color: var(--coral); }
+    .involve-card:nth-child(4) a { color: var(--teal); }
 
     .involve-card a:hover {
       gap: 12px;
@@ -1384,7 +1447,7 @@
       text-align: center;
       margin-top: 48px;
       padding: 32px;
-      background: var(--bg-surface);
+      background: var(--bg-card);
       border: 1px solid var(--border-ghost);
       border-radius: 16px;
       max-width: 500px;
@@ -1398,7 +1461,7 @@
     }
 
     .involve-cta strong {
-      color: var(--coral-light);
+      color: var(--teal);
     }
 
     @media (max-width: 768px) {
@@ -1512,12 +1575,12 @@
     }
 
     .newsletter-form input:focus {
-      border-color: var(--coral);
+      border-color: var(--teal);
     }
 
     .newsletter-form button {
       padding: 14px 24px;
-      background: linear-gradient(135deg, var(--coral), var(--coral-deep));
+      background: linear-gradient(135deg, var(--teal), var(--teal-deep));
       border: none;
       border-radius: 8px;
       color: white;
@@ -1530,7 +1593,7 @@
 
     .newsletter-form button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px var(--coral-glow);
+      box-shadow: 0 8px 24px var(--teal-glow);
     }
 
     .footer {
@@ -1605,42 +1668,47 @@
 </head>
 <body>
 
+  <!-- Theme Toggle -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="5"/>
+      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+    </svg>
+    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+    </svg>
+  </button>
+
   <!-- Navigation -->
   <nav class="nav" id="nav">
     <a href="#" class="nav-logo">
-      <svg class="nav-logo-sphere" viewBox="0 0 120 140">
+      <!-- POLARITY Atom Logo: Teal core with 3 colored orbitals -->
+      <svg class="nav-logo-atom" viewBox="0 0 100 100">
         <defs>
-          <radialGradient id="navSphereGrad" cx="32%" cy="32%" r="68%">
-            <stop offset="0%" stop-color="#FFFFFF"/>
-            <stop offset="15%" stop-color="#FFE5E8"/>
-            <stop offset="30%" stop-color="#FFB0BB"/>
-            <stop offset="50%" stop-color="#FF4466"/>
-            <stop offset="75%" stop-color="#CC2244"/>
-            <stop offset="90%" stop-color="#991133"/>
-            <stop offset="100%" stop-color="#771122"/>
+          <radialGradient id="navCoreGrad" cx="30%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#6EE7DF"/>
+            <stop offset="50%" stop-color="#4ECDC4"/>
+            <stop offset="100%" stop-color="#2BA89F"/>
           </radialGradient>
-          <linearGradient id="navRingGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#FF4466" stop-opacity="0.1"/>
-            <stop offset="50%" stop-color="#FFD0DD"/>
-            <stop offset="100%" stop-color="#FF4466" stop-opacity="0.1"/>
-          </linearGradient>
-          <linearGradient id="navBeamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
-            <stop offset="30%" stop-color="#FF8899" stop-opacity="0.6"/>
-            <stop offset="50%" stop-color="#FF4466" stop-opacity="1"/>
-            <stop offset="70%" stop-color="#FF8899" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-          </linearGradient>
+          <filter id="navGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge>
+              <feMergeNode in="blur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
         </defs>
-        <g transform="translate(8, 0)">
-          <rect x="48" y="2" width="8" height="30" rx="4" fill="url(#navBeamGrad)"/>
-          <rect x="48" y="108" width="8" height="30" rx="4" fill="url(#navBeamGrad)"/>
-          <ellipse cx="52" cy="70" rx="48" ry="14" transform="rotate(-20 52 70)" stroke="url(#navRingGrad)" stroke-width="3" fill="none"/>
-          <ellipse cx="52" cy="70" rx="44" ry="12" transform="rotate(25 52 70)" stroke="url(#navRingGrad)" stroke-width="1.5" fill="none" opacity="0.5"/>
-          <circle cx="52" cy="70" r="38" fill="url(#navSphereGrad)"/>
-          <circle cx="38" cy="56" r="12" fill="white" opacity="0.3"/>
-          <circle cx="33" cy="50" r="5" fill="white" opacity="0.5"/>
-        </g>
+        <!-- Orbitals -->
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#4ECDC4" stroke-width="1.5" transform="rotate(-60 50 50)" filter="url(#navGlow)" opacity="0.9"/>
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" filter="url(#navGlow)" opacity="0.9"/>
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" filter="url(#navGlow)" opacity="0.9"/>
+        <!-- Electrons -->
+        <circle cx="70" cy="15" r="4" fill="#4ECDC4" filter="url(#navGlow)"/>
+        <circle cx="30" cy="15" r="4" fill="#FFA07A" filter="url(#navGlow)"/>
+        <circle cx="90" cy="50" r="4" fill="#BB8FCE" filter="url(#navGlow)"/>
+        <!-- Core -->
+        <circle cx="50" cy="50" r="14" fill="url(#navCoreGrad)" filter="url(#navGlow)"/>
+        <circle cx="45" cy="45" r="5" fill="white" opacity="0.25"/>
       </svg>
       <span class="nav-logo-text">Polarity Lab</span>
     </a>
@@ -1670,7 +1738,7 @@
         <div class="hero-badge">Providence, RI · Est. 2025</div>
         <h1 class="hero-title">
           <span>Mapping the</span>
-          <span class="coral">Cognitive Universe</span>
+          <span class="teal">Cognitive Universe</span>
         </h1>
         <p class="hero-desc">
           We study Conversational Connectomics (CCX) — how your mind organizes ideas, revealed through the way you talk. Turning dialogue into deep insight about human cognition.
@@ -1687,63 +1755,70 @@
       </div>
 
       <div class="hero-visual">
-        <div class="hero-sphere-container">
-          <div class="hero-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-          </div>
-          <!-- The POLARITY sphere logo -->
-          <svg class="hero-sphere" viewBox="0 0 120 140">
+        <div class="hero-atom-container">
+          <!-- POLARITY Atom Logo: Large version -->
+          <svg class="hero-atom" viewBox="0 0 200 200">
             <defs>
-              <radialGradient id="heroSphereGrad" cx="32%" cy="32%" r="68%">
-                <stop offset="0%" stop-color="#FFFFFF"/>
-                <stop offset="15%" stop-color="#FFE5E8"/>
-                <stop offset="30%" stop-color="#FFB0BB"/>
-                <stop offset="50%" stop-color="#FF4466"/>
-                <stop offset="75%" stop-color="#CC2244"/>
-                <stop offset="90%" stop-color="#991133"/>
-                <stop offset="100%" stop-color="#771122"/>
+              <radialGradient id="heroCoreGrad" cx="30%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#6EE7DF"/>
+                <stop offset="50%" stop-color="#4ECDC4"/>
+                <stop offset="100%" stop-color="#2BA89F"/>
               </radialGradient>
-              <linearGradient id="heroRingGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stop-color="#FF4466" stop-opacity="0.1"/>
-                <stop offset="50%" stop-color="#FFD0DD"/>
-                <stop offset="100%" stop-color="#FF4466" stop-opacity="0.1"/>
-              </linearGradient>
-              <linearGradient id="heroBeamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
-                <stop offset="30%" stop-color="#FF8899" stop-opacity="0.6"/>
-                <stop offset="50%" stop-color="#FF4466" stop-opacity="1"/>
-                <stop offset="70%" stop-color="#FF8899" stop-opacity="0.6"/>
-                <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-              </linearGradient>
-              <filter id="heroGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="b"/>
+              <radialGradient id="heroAmbient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#4ECDC4" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#4ECDC4" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="heroOrbitalGlow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
                 <feMerge>
-                  <feMergeNode in="b"/>
-                  <feMergeNode in="b"/>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="blur"/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
               </filter>
-              <filter id="heroSphereGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="8" result="b"/>
+              <filter id="heroCoreGlow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="8" result="blur"/>
                 <feMerge>
-                  <feMergeNode in="b"/>
-                  <feMergeNode in="b"/>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <filter id="heroElectronGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
               </filter>
             </defs>
-            <g transform="translate(8, 0)">
-              <rect x="48" y="2" width="8" height="30" rx="4" fill="url(#heroBeamGrad)" filter="url(#heroGlow)"/>
-              <rect x="48" y="108" width="8" height="30" rx="4" fill="url(#heroBeamGrad)" filter="url(#heroGlow)"/>
-              <ellipse cx="52" cy="70" rx="48" ry="14" transform="rotate(-20 52 70)" stroke="url(#heroRingGrad)" stroke-width="3" fill="none" filter="url(#heroGlow)"/>
-              <ellipse cx="52" cy="70" rx="44" ry="12" transform="rotate(25 52 70)" stroke="url(#heroRingGrad)" stroke-width="1.5" fill="none" opacity="0.5" filter="url(#heroGlow)"/>
-              <circle cx="52" cy="70" r="38" fill="url(#heroSphereGrad)" filter="url(#heroSphereGlow)"/>
-              <circle cx="38" cy="56" r="12" fill="white" opacity="0.3"/>
-              <circle cx="33" cy="50" r="5" fill="white" opacity="0.5"/>
-            </g>
+
+            <!-- Ambient glow -->
+            <circle cx="100" cy="100" r="85" fill="url(#heroAmbient)"/>
+
+            <!-- Orbital 1 - Teal (tilted -60deg) -->
+            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#4ECDC4" stroke-width="2.5" transform="rotate(-60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
+
+            <!-- Orbital 2 - Coral (tilted 60deg) -->
+            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FFA07A" stroke-width="2.5" transform="rotate(60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
+
+            <!-- Orbital 3 - Purple (horizontal) -->
+            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#BB8FCE" stroke-width="2.5" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
+
+            <!-- Electrons on orbitals -->
+            <circle cx="140" cy="30" r="8" fill="#4ECDC4" filter="url(#heroElectronGlow)"/>
+            <circle cx="60" cy="30" r="8" fill="#FFA07A" filter="url(#heroElectronGlow)"/>
+            <circle cx="180" cy="100" r="8" fill="#BB8FCE" filter="url(#heroElectronGlow)"/>
+
+            <!-- Central nucleus / core -->
+            <circle cx="100" cy="100" r="28" fill="url(#heroCoreGrad)" filter="url(#heroCoreGlow)"/>
+
+            <!-- Core highlight -->
+            <circle cx="90" cy="90" r="10" fill="white" opacity="0.25"/>
+
+            <!-- Inner core accent -->
+            <circle cx="100" cy="100" r="12" fill="none" stroke="white" stroke-width="1.5" opacity="0.3"/>
           </svg>
         </div>
       </div>
@@ -1760,7 +1835,7 @@
     <div class="projects-grid stagger">
       <a href="https://app.polarity-lab.com/" target="_blank" class="project-card">
         <div class="project-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#FF4466" stroke-width="2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
             <circle cx="12" cy="12" r="3"/>
             <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
           </svg>
@@ -1867,7 +1942,7 @@
       <div class="about-cards stagger">
         <div class="about-card">
           <div class="about-card-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#FF4466" stroke-width="1.5">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
               <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
             </svg>
           </div>
@@ -2024,7 +2099,7 @@
     <div class="involve-grid stagger">
       <div class="involve-card">
         <div class="involve-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#20B2AA" stroke-width="1.5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
             <circle cx="12" cy="12" r="10"/>
             <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/>
           </svg>
@@ -2060,7 +2135,7 @@
 
       <div class="involve-card">
         <div class="involve-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#FF4466" stroke-width="1.5">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
             <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
           </svg>
         </div>
@@ -2110,6 +2185,21 @@
   </section>
 
   <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Check for saved theme preference, default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+
     // Mobile Nav Toggle
     const navMobile = document.getElementById('nav-mobile');
     const navLinks = document.getElementById('nav-links');
