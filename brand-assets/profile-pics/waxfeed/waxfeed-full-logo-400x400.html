@@ -20,31 +20,31 @@
 <body>
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
     <defs>
-      <!-- Vibrant holographic gradient - pink to green to blue to purple -->
-      <radialGradient id="holoDisc" cx="35%" cy="35%" r="65%">
+      <!-- SUBTLE, PASTEL holographic gradient - very soft -->
+      <radialGradient id="holoDisc" cx="30%" cy="30%" r="70%">
         <stop offset="0%" stop-color="#ffffff"/>
-        <stop offset="20%" stop-color="#ffb3d9"/>
-        <stop offset="35%" stop-color="#ff99cc"/>
-        <stop offset="50%" stop-color="#99ffcc"/>
-        <stop offset="65%" stop-color="#99ccff"/>
-        <stop offset="80%" stop-color="#cc99ff"/>
-        <stop offset="100%" stop-color="#e6b3ff"/>
+        <stop offset="20%" stop-color="#ffe8f5"/>
+        <stop offset="35%" stop-color="#ffd9f0"/>
+        <stop offset="50%" stop-color="#d9f5e8"/>
+        <stop offset="65%" stop-color="#dce8ff"/>
+        <stop offset="80%" stop-color="#e8d9ff"/>
+        <stop offset="100%" stop-color="#f0e0ff"/>
       </radialGradient>
       
       <!-- Center hub gradient -->
       <radialGradient id="hub" cx="40%" cy="35%" r="65%">
-        <stop offset="0%" stop-color="#f0f0f0"/>
-        <stop offset="30%" stop-color="#c0c0c0"/>
+        <stop offset="0%" stop-color="#e8e8e8"/>
+        <stop offset="30%" stop-color="#b8b8b8"/>
         <stop offset="60%" stop-color="#909090"/>
-        <stop offset="100%" stop-color="#606060"/>
+        <stop offset="100%" stop-color="#707070"/>
       </radialGradient>
       
-      <!-- Shadow filter -->
+      <!-- Soft shadow -->
       <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-        <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
-        <feOffset dx="0" dy="4" result="offsetblur"/>
+        <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+        <feOffset dx="0" dy="3" result="offsetblur"/>
         <feComponentTransfer>
-          <feFuncA type="linear" slope="0.3"/>
+          <feFuncA type="linear" slope="0.2"/>
         </feComponentTransfer>
         <feMerge>
           <feMergeNode/>
@@ -58,35 +58,35 @@
     
     <!-- Vinyl Disc -->
     <g transform="translate(200, 200)" filter="url(#shadow)">
-      <!-- Main holographic disc surface -->
+      <!-- Main SOFT holographic disc surface -->
       <circle cx="0" cy="0" r="165" fill="url(#holoDisc)"/>
       
-      <!-- Subtle grooves -->
-      <circle cx="0" cy="0" r="158" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-      <circle cx="0" cy="0" r="145" fill="none" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
-      <circle cx="0" cy="0" r="130" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <circle cx="0" cy="0" r="115" fill="none" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
-      <circle cx="0" cy="0" r="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-      <circle cx="0" cy="0" r="85" fill="none" stroke="rgba(0,0,0,0.04)" stroke-width="1"/>
+      <!-- Very subtle grooves -->
+      <circle cx="0" cy="0" r="158" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="145" fill="none" stroke="rgba(0,0,0,0.02)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="130" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="115" fill="none" stroke="rgba(0,0,0,0.02)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/>
+      <circle cx="0" cy="0" r="85" fill="none" stroke="rgba(0,0,0,0.02)" stroke-width="0.5"/>
       
       <!-- Center hub -->
       <circle cx="0" cy="0" r="50" fill="url(#hub)"/>
       <circle cx="0" cy="0" r="42" fill="#a0a0a0"/>
       <circle cx="0" cy="0" r="35" fill="#888888"/>
-      <circle cx="0" cy="0" r="18" fill="#3c3c3c"/>
-      <circle cx="0" cy="0" r="10" fill="#2a2a2a"/>
-      <circle cx="0" cy="0" r="5" fill="#1a1a1a"/>
+      <circle cx="0" cy="0" r="18" fill="#484848"/>
+      <circle cx="0" cy="0" r="10" fill="#383838"/>
+      <circle cx="0" cy="0" r="5" fill="#282828"/>
       
-      <!-- Bright highlight on disc -->
-      <ellipse cx="-50" cy="-50" rx="50" ry="30" fill="white" opacity="0.6" transform="rotate(-30 -50 -50)"/>
-      <ellipse cx="-35" cy="-35" rx="25" ry="15" fill="white" opacity="0.8" transform="rotate(-30 -35 -35)"/>
+      <!-- Soft highlight on disc -->
+      <ellipse cx="-45" cy="-45" rx="55" ry="35" fill="white" opacity="0.5" transform="rotate(-25 -45 -45)"/>
+      <ellipse cx="-30" cy="-30" rx="30" ry="18" fill="white" opacity="0.7" transform="rotate(-25 -30 -30)"/>
       
       <!-- Bold "88" text -->
       <text x="95" y="12" 
             font-family="Helvetica Neue, Helvetica, Arial, sans-serif" 
             font-size="48" 
             font-weight="700" 
-            fill="#2a2a2a" 
+            fill="#3a3a3a" 
             text-anchor="middle">88</text>
     </g>
     
