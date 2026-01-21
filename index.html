@@ -386,7 +386,7 @@
     }
 
     /* ==========================================
-       NAVIGATION
+       NAVIGATION - Cosmic Theme
        ========================================== */
     .nav {
       position: fixed;
@@ -399,14 +399,37 @@
       align-items: center;
       justify-content: space-between;
       transition: all 0.5s var(--ease-out-expo);
+      background: linear-gradient(180deg, rgba(5, 5, 8, 0.9) 0%, rgba(5, 5, 8, 0) 100%);
+    }
+
+    .nav::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(78, 205, 196, 0.3) 20%,
+        rgba(187, 143, 206, 0.3) 50%,
+        rgba(255, 160, 122, 0.3) 80%,
+        transparent 100%);
+      opacity: 0.6;
     }
 
     .nav.scrolled {
-      background: rgba(5, 5, 8, 0.8);
+      background: rgba(5, 5, 8, 0.85);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       padding: 16px 48px;
-      border-bottom: 1px solid var(--border-void);
+      box-shadow:
+        0 1px 0 rgba(78, 205, 196, 0.1),
+        0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav.scrolled::before {
+      opacity: 1;
     }
 
     [data-theme="light"] .nav.scrolled {
@@ -446,29 +469,42 @@
       font-size: 13px;
       font-weight: 500;
       letter-spacing: 0.02em;
-      color: var(--text-secondary);
+      color: var(--text-tertiary);
       text-decoration: none;
       position: relative;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
+      padding: 8px 0;
     }
 
     .nav-link:hover {
-      color: var(--text-pure);
+      color: var(--teal);
+      text-shadow: 0 0 20px rgba(78, 205, 196, 0.4);
     }
 
-    .nav-link::after {
+    .nav-link::before {
       content: '';
       position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 1px;
+      bottom: 4px;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
       background: var(--teal);
-      transition: width 0.4s var(--ease-out-expo);
+      transform: translateX(-50%) scale(0);
+      transition: transform 0.3s var(--ease-out-expo);
+      box-shadow: 0 0 8px var(--teal-glow);
     }
 
-    .nav-link:hover::after {
-      width: 100%;
+    .nav-link:hover::before {
+      transform: translateX(-50%) scale(1);
+    }
+
+    .nav-link.active {
+      color: var(--teal);
+    }
+
+    .nav-link.active::before {
+      transform: translateX(-50%) scale(1);
     }
 
     .nav-cta {
@@ -478,17 +514,48 @@
       letter-spacing: 0.08em;
       padding: 10px 20px;
       background: transparent;
-      border: 1px solid var(--teal);
+      border: 1px solid rgba(78, 205, 196, 0.5);
       border-radius: 4px;
       color: var(--teal);
       text-decoration: none;
       text-transform: uppercase;
       transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .nav-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--teal), var(--purple));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-cta span {
+      position: relative;
+      z-index: 1;
     }
 
     .nav-cta:hover {
-      background: var(--teal);
+      border-color: var(--teal);
+      box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+    }
+
+    .nav-cta:hover::before {
+      opacity: 1;
+    }
+
+    .nav-cta:hover {
       color: var(--void-deep);
+    }
+
+    .nav-cta.active {
+      background: linear-gradient(135deg, var(--teal), var(--purple));
+      border-color: transparent;
+      color: var(--void-deep);
+      box-shadow: 0 0 25px rgba(78, 205, 196, 0.4);
     }
 
     .nav-mobile {
@@ -2713,6 +2780,84 @@
         navLinks.classList.remove('open');
       });
     });
+
+    // ==========================================
+    // NAV SCROLL MAPPING - Links to choreography zones
+    // ==========================================
+    const navScrollMap = {
+      '#about': 1.0,    // Mission/About zone starts at ~1vh
+      '#team': 5.0,     // Team zone starts at ~5vh
+      '#research': 3.0, // CCX/Research zone at ~2.5vh (process ~3vh)
+      '#involve': 5.8,  // CTA zone starts at ~6vh
+      '#contact': 7.5   // After CTA, scroll to end
+    };
+
+    // Smooth scroll to choreography zone
+    function scrollToZone(targetVh) {
+      const targetY = targetVh * window.innerHeight;
+      window.scrollTo({
+        top: targetY,
+        behavior: 'smooth'
+      });
+    }
+
+    // Handle nav link clicks
+    document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && navScrollMap[href] !== undefined) {
+          e.preventDefault();
+          scrollToZone(navScrollMap[href]);
+        }
+      });
+    });
+
+    // Update active nav state based on scroll position
+    function updateActiveNav() {
+      const scrollY = window.scrollY;
+      const vh = window.innerHeight;
+      const currentVh = scrollY / vh;
+
+      // Define zones for each nav item (start-end in vh)
+      const zones = [
+        { href: '#about', start: 0.8, end: 2.5 },
+        { href: '#research', start: 2.5, end: 4.5 },
+        { href: '#team', start: 4.5, end: 6.0 },
+        { href: '#involve', start: 6.0, end: 7.5 },
+        { href: '#contact', start: 7.5, end: Infinity }
+      ];
+
+      // Remove all active states
+      document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Find current zone and set active
+      for (const zone of zones) {
+        if (currentVh >= zone.start && currentVh < zone.end) {
+          const activeLink = document.querySelector(`[href="${zone.href}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+          break;
+        }
+      }
+    }
+
+    // Throttled scroll listener for active state
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          updateActiveNav();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Initial update
+    updateActiveNav();
 
     // ==========================================
     // SCROLL CHOREOGRAPHY SYSTEM
