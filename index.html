@@ -1132,20 +1132,75 @@
 
     @media (max-width: 768px) {
       .hero-constellation {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 40px;
-        padding: 20px 0;
-        max-width: 400px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 16px;
+        padding: 10px;
+        max-width: 100%;
+        transform: translate(-50%, -50%);
+        top: 28%;
       }
       .hero-product--waxfeed,
-      .hero-product--avdp {
+      .hero-product--avdp,
+      .hero-product--polarity {
         justify-self: center;
       }
-      /* Reorder: Polarity first on mobile */
-      .hero-product--polarity { order: -1; }
-      .hero-product-icon { width: 110px; height: 110px; }
-      .hero-product--polarity .hero-product-icon { width: 150px; height: 150px; }
+      .hero-product-icon { width: 80px; height: 80px; }
+      .hero-product--polarity .hero-product-icon { width: 100px; height: 100px; }
+      .hero-product-label { font-size: 9px; letter-spacing: 0.1em; }
+
+      /* Hero text adjustments for mobile */
+      #text-hero {
+        top: 55%;
+        padding: 0 24px;
+      }
+      #text-hero .hero-title {
+        font-size: 28px;
+      }
+      #text-hero .hero-subtitle {
+        font-size: 15px;
+      }
+
+      /* Scroll text mobile adjustments */
+      .scroll-text--left,
+      .scroll-text--right {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(-50%);
+        text-align: center;
+        max-width: 90%;
+        padding: 0 20px;
+      }
+      .scroll-text--center {
+        padding: 0 20px;
+        max-width: 100%;
+      }
+      .scroll-text__title {
+        font-size: clamp(22px, 6vw, 36px);
+      }
+      .scroll-text__body {
+        font-size: 15px;
+      }
+      .scroll-text__accent {
+        font-size: clamp(50px, 20vw, 120px);
+      }
+      .scroll-text__definition {
+        padding: 16px;
+      }
+
+      /* Hide stats on mobile to prevent overlap */
+      #text-stats {
+        display: none;
+      }
+
+      /* Team section mobile - reduce text size */
+      #text-team h3 {
+        font-size: 1.2rem !important;
+      }
+      #text-team .scroll-text__body {
+        font-size: 13px;
+        margin-bottom: 1rem !important;
+      }
     }
 
     /* Reduced motion preference */
@@ -2394,7 +2449,7 @@
       <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Shadrack Annor <span style="color: var(--coral); font-size: 0.6em;">Cofounder</span></h3>
       <p class="scroll-text__body" style="margin-bottom: 1.5rem;">Brown University. Principal of Waxfeed. Music-tech expertise.</p>
       <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Nathan Amankwah <span style="color: var(--purple); font-size: 0.6em;">Cofounder</span></h3>
-      <p class="scroll-text__body">University of Ottawa. Frontend/UX Lead.</p>
+      <p class="scroll-text__body">University of Ottawa. Frontend/UX Lead. CCX formalization.</p>
     </div>
 
     <!-- Text 7: CTA (center bottom) -->
