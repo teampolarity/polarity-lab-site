@@ -351,16 +351,54 @@
     }
 
     .hero-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       max-width: 1400px;
       width: 100%;
-      align-items: center;
       position: relative;
       z-index: 2;
     }
 
+    /* Three-logo hero layout */
+    .hero-logos {
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      justify-content: center;
+      animation: floatIn 1.2s var(--ease-out-expo) 0.2s both;
+    }
+
+    .hero-logo {
+      width: 200px;
+      height: 200px;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    /* Stagger the float animation for visual interest */
+    /* Atom needs to be larger to visually match since orbitals extend beyond core */
+    .hero-logo:nth-child(1) {
+      width: 240px;
+      height: 240px;
+      filter: drop-shadow(0 0 60px var(--teal-glow)) drop-shadow(0 0 120px rgba(78, 205, 196, 0.15));
+    }
+
+    .hero-logo:nth-child(2) {
+      animation-delay: -2s;
+      filter: drop-shadow(0 0 40px rgba(187, 143, 206, 0.5)) drop-shadow(0 0 80px rgba(187, 143, 206, 0.2));
+    }
+
+    .hero-logo:nth-child(3) {
+      animation-delay: -4s;
+      filter: drop-shadow(0 0 40px rgba(255, 160, 122, 0.5)) drop-shadow(0 0 80px rgba(255, 160, 122, 0.2));
+    }
+
+    .hero-logo.avdp-logo {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    /* Legacy hero text styles (kept for reference, not used) */
     .hero-text {
       animation: slideInLeft 1s var(--ease-out-expo);
     }
@@ -519,9 +557,14 @@
       .hero {
         padding: 120px 32px 60px;
       }
+      .hero-logos {
+        gap: 40px;
+      }
+      .hero-logo {
+        width: 160px;
+        height: 160px;
+      }
       .hero-content {
-        grid-template-columns: 1fr;
-        gap: 48px;
         text-align: center;
       }
       .hero-text {
@@ -542,9 +585,24 @@
       }
     }
 
+    @media (max-width: 768px) {
+      .hero-logos {
+        flex-direction: column;
+        gap: 30px;
+      }
+      .hero-logo {
+        width: 150px;
+        height: 150px;
+      }
+    }
+
     @media (max-width: 600px) {
       .hero {
         padding: 100px 20px 40px;
+      }
+      .hero-logo {
+        width: 130px;
+        height: 130px;
       }
       .hero-title {
         font-size: 36px;
@@ -1734,93 +1792,77 @@
     <div class="hero-grid"></div>
 
     <div class="hero-content">
-      <div class="hero-text">
-        <div class="hero-badge">Providence, RI · Est. 2025</div>
-        <h1 class="hero-title">
-          <span>Mapping the</span>
-          <span class="teal">Cognitive Universe</span>
-        </h1>
-        <p class="hero-desc">
-          We study Conversational Connectomics (CCX) — how your mind organizes ideas, revealed through the way you talk. Turning dialogue into deep insight about human cognition.
-        </p>
-        <div class="hero-actions">
-          <a href="#ccx" class="btn btn-primary">
-            Discover CCX
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M7 17L17 7M17 7H7M17 7V17"/>
-            </svg>
-          </a>
-          <a href="#involve" class="btn btn-secondary">Get Involved</a>
-        </div>
-      </div>
+      <div class="hero-logos">
+        <!-- POLARITY Atom Logo -->
+        <svg class="hero-logo" viewBox="0 0 200 200">
+          <defs>
+            <radialGradient id="heroCoreGrad" cx="30%" cy="30%" r="70%">
+              <stop offset="0%" stop-color="#6EE7DF"/>
+              <stop offset="50%" stop-color="#4ECDC4"/>
+              <stop offset="100%" stop-color="#2BA89F"/>
+            </radialGradient>
+            <radialGradient id="heroAmbient" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#4ECDC4" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#4ECDC4" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="heroOrbitalGlow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <filter id="heroCoreGlow" x="-100%" y="-100%" width="300%" height="300%">
+              <feGaussianBlur stdDeviation="8" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <filter id="heroElectronGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="3" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
 
-      <div class="hero-visual">
-        <div class="hero-atom-container">
-          <!-- POLARITY Atom Logo: Large version -->
-          <svg class="hero-atom" viewBox="0 0 200 200">
-            <defs>
-              <radialGradient id="heroCoreGrad" cx="30%" cy="30%" r="70%">
-                <stop offset="0%" stop-color="#6EE7DF"/>
-                <stop offset="50%" stop-color="#4ECDC4"/>
-                <stop offset="100%" stop-color="#2BA89F"/>
-              </radialGradient>
-              <radialGradient id="heroAmbient" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#4ECDC4" stop-opacity="0.3"/>
-                <stop offset="100%" stop-color="#4ECDC4" stop-opacity="0"/>
-              </radialGradient>
-              <filter id="heroOrbitalGlow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-              <filter id="heroCoreGlow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="8" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-              <filter id="heroElectronGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
+          <!-- Ambient glow -->
+          <circle cx="100" cy="100" r="85" fill="url(#heroAmbient)"/>
 
-            <!-- Ambient glow -->
-            <circle cx="100" cy="100" r="85" fill="url(#heroAmbient)"/>
+          <!-- Orbital 1 - Teal (tilted -60deg) -->
+          <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#4ECDC4" stroke-width="2.5" transform="rotate(-60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
 
-            <!-- Orbital 1 - Teal (tilted -60deg) -->
-            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#4ECDC4" stroke-width="2.5" transform="rotate(-60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
+          <!-- Orbital 2 - Coral (tilted 60deg) -->
+          <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FFA07A" stroke-width="2.5" transform="rotate(60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
 
-            <!-- Orbital 2 - Coral (tilted 60deg) -->
-            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FFA07A" stroke-width="2.5" transform="rotate(60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
+          <!-- Orbital 3 - Purple (horizontal) -->
+          <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#BB8FCE" stroke-width="2.5" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
 
-            <!-- Orbital 3 - Purple (horizontal) -->
-            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#BB8FCE" stroke-width="2.5" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
+          <!-- Electrons on orbitals -->
+          <circle cx="140" cy="30" r="8" fill="#4ECDC4" filter="url(#heroElectronGlow)"/>
+          <circle cx="60" cy="30" r="8" fill="#FFA07A" filter="url(#heroElectronGlow)"/>
+          <circle cx="180" cy="100" r="8" fill="#BB8FCE" filter="url(#heroElectronGlow)"/>
 
-            <!-- Electrons on orbitals -->
-            <circle cx="140" cy="30" r="8" fill="#4ECDC4" filter="url(#heroElectronGlow)"/>
-            <circle cx="60" cy="30" r="8" fill="#FFA07A" filter="url(#heroElectronGlow)"/>
-            <circle cx="180" cy="100" r="8" fill="#BB8FCE" filter="url(#heroElectronGlow)"/>
+          <!-- Central nucleus / core -->
+          <circle cx="100" cy="100" r="28" fill="url(#heroCoreGrad)" filter="url(#heroCoreGlow)"/>
 
-            <!-- Central nucleus / core -->
-            <circle cx="100" cy="100" r="28" fill="url(#heroCoreGrad)" filter="url(#heroCoreGlow)"/>
+          <!-- Core highlight -->
+          <circle cx="90" cy="90" r="10" fill="white" opacity="0.25"/>
 
-            <!-- Core highlight -->
-            <circle cx="90" cy="90" r="10" fill="white" opacity="0.25"/>
+          <!-- Inner core accent -->
+          <circle cx="100" cy="100" r="12" fill="none" stroke="white" stroke-width="1.5" opacity="0.3"/>
+        </svg>
 
-            <!-- Inner core accent -->
-            <circle cx="100" cy="100" r="12" fill="none" stroke="white" stroke-width="1.5" opacity="0.3"/>
-          </svg>
-        </div>
+        <!-- WaxFeed Disc Logo -->
+        <img class="hero-logo" src="waxfeed_disc.svg" alt="WaxFeed">
+
+        <!-- AVDP Logo -->
+        <img class="hero-logo avdp-logo" src="AVDPLOGOREAL.jpg" alt="AVDP">
       </div>
     </div>
   </section>
