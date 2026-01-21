@@ -327,6 +327,39 @@
       pointer-events: none;
     }
 
+    /* Subtle ambient star particles */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 10% 20%, rgba(78, 205, 196, 0.6) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 25% 45%, rgba(187, 143, 206, 0.5) 50%, transparent 100%),
+        radial-gradient(1px 1px at 40% 15%, rgba(255, 160, 122, 0.5) 50%, transparent 100%),
+        radial-gradient(2px 2px at 55% 70%, rgba(78, 205, 196, 0.4) 50%, transparent 100%),
+        radial-gradient(1px 1px at 70% 35%, rgba(187, 143, 206, 0.6) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 85% 60%, rgba(255, 160, 122, 0.4) 50%, transparent 100%),
+        radial-gradient(1px 1px at 15% 75%, rgba(78, 205, 196, 0.5) 50%, transparent 100%),
+        radial-gradient(1px 1px at 90% 10%, rgba(187, 143, 206, 0.5) 50%, transparent 100%),
+        radial-gradient(2px 2px at 35% 85%, rgba(255, 160, 122, 0.3) 50%, transparent 100%),
+        radial-gradient(1px 1px at 65% 5%, rgba(78, 205, 196, 0.4) 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 5% 50%, rgba(187, 143, 206, 0.4) 50%, transparent 100%),
+        radial-gradient(1px 1px at 80% 90%, rgba(255, 160, 122, 0.5) 50%, transparent 100%);
+      opacity: 0.8;
+      pointer-events: none;
+      animation: starTwinkle 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes starTwinkle {
+      0% { opacity: 0.6; }
+      50% { opacity: 0.9; }
+      100% { opacity: 0.7; }
+    }
+
+    [data-theme="dark"] .hero::after {
+      opacity: 1;
+    }
+
     /* Grid floor effect */
     .hero-grid {
       position: absolute;
@@ -360,42 +393,108 @@
       z-index: 2;
     }
 
-    /* Three-logo hero layout */
+    /* Three-logo hero layout - Immersive spatial showcase */
     .hero-logos {
       display: flex;
-      gap: 60px;
+      gap: 80px;
       align-items: center;
       justify-content: center;
       animation: floatIn 1.2s var(--ease-out-expo) 0.2s both;
+      perspective: 1000px;
     }
 
     .hero-logo {
-      width: 200px;
-      height: 200px;
+      width: 220px;
+      height: 220px;
       animation: float 6s ease-in-out infinite;
+      transition: transform 0.5s var(--ease-out-expo), filter 0.5s var(--ease-out-expo);
+      cursor: pointer;
+      will-change: transform, filter;
     }
 
-    /* Stagger the float animation for visual interest */
-    /* Atom needs to be larger to visually match since orbitals extend beyond core */
+    .hero-logo:hover {
+      transform: translateY(-15px) scale(1.08);
+    }
+
+    /* POLARITY Atom - center of gravity */
     .hero-logo:nth-child(1) {
-      width: 240px;
-      height: 240px;
-      filter: drop-shadow(0 0 60px var(--teal-glow)) drop-shadow(0 0 120px rgba(78, 205, 196, 0.15));
+      width: 260px;
+      height: 260px;
+      filter:
+        drop-shadow(0 0 60px var(--teal-glow))
+        drop-shadow(0 0 120px rgba(78, 205, 196, 0.2))
+        drop-shadow(0 0 180px rgba(78, 205, 196, 0.1));
+      animation: floatCenter 7s ease-in-out infinite;
     }
 
+    .hero-logo:nth-child(1):hover {
+      filter:
+        drop-shadow(0 0 80px var(--teal-glow))
+        drop-shadow(0 0 150px rgba(78, 205, 196, 0.35))
+        drop-shadow(0 0 220px rgba(78, 205, 196, 0.15));
+    }
+
+    /* WaxFeed Disc - holographic vinyl magic */
     .hero-logo:nth-child(2) {
+      animation: floatDisc 6s ease-in-out infinite;
       animation-delay: -2s;
-      filter: drop-shadow(0 0 40px rgba(187, 143, 206, 0.5)) drop-shadow(0 0 80px rgba(187, 143, 206, 0.2));
+      filter:
+        drop-shadow(0 0 50px rgba(228, 168, 200, 0.6))
+        drop-shadow(0 0 100px rgba(187, 143, 206, 0.35))
+        drop-shadow(0 0 160px rgba(152, 216, 184, 0.15));
     }
 
+    .hero-logo:nth-child(2):hover {
+      filter:
+        drop-shadow(0 0 70px rgba(228, 168, 200, 0.8))
+        drop-shadow(0 0 130px rgba(187, 143, 206, 0.5))
+        drop-shadow(0 0 200px rgba(152, 216, 184, 0.25));
+      transform: translateY(-15px) scale(1.08) rotate(5deg);
+    }
+
+    /* AVDP Logo - distant perspective vibe */
     .hero-logo:nth-child(3) {
+      animation: floatAVDP 8s ease-in-out infinite;
       animation-delay: -4s;
-      filter: drop-shadow(0 0 40px rgba(255, 160, 122, 0.5)) drop-shadow(0 0 80px rgba(255, 160, 122, 0.2));
+      filter:
+        drop-shadow(0 0 50px rgba(255, 160, 122, 0.55))
+        drop-shadow(0 0 100px rgba(255, 184, 153, 0.3))
+        drop-shadow(0 0 150px rgba(232, 134, 90, 0.15));
+    }
+
+    .hero-logo:nth-child(3):hover {
+      filter:
+        drop-shadow(0 0 70px rgba(255, 160, 122, 0.75))
+        drop-shadow(0 0 130px rgba(255, 184, 153, 0.45))
+        drop-shadow(0 0 200px rgba(232, 134, 90, 0.2));
     }
 
     .hero-logo.avdp-logo {
       border-radius: 50%;
       object-fit: cover;
+      border: 3px solid transparent;
+      background:
+        linear-gradient(var(--bg-void), var(--bg-void)) padding-box,
+        linear-gradient(135deg, rgba(255, 160, 122, 0.6), rgba(255, 184, 153, 0.3), rgba(232, 134, 90, 0.5)) border-box;
+    }
+
+    /* Distinct floating animations for organic movement */
+    @keyframes floatCenter {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      33% { transform: translateY(-18px) rotate(1deg); }
+      66% { transform: translateY(-8px) rotate(-1deg); }
+    }
+
+    @keyframes floatDisc {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      40% { transform: translateY(-22px) rotate(3deg); }
+      70% { transform: translateY(-12px) rotate(-2deg); }
+    }
+
+    @keyframes floatAVDP {
+      0%, 100% { transform: translateY(0) scale(1); }
+      35% { transform: translateY(-16px) scale(1.02); }
+      65% { transform: translateY(-24px) scale(0.98); }
     }
 
     /* Legacy hero text styles (kept for reference, not used) */
@@ -553,16 +652,34 @@
       50% { transform: translateY(-20px); }
     }
 
+    @media (max-width: 1200px) {
+      .hero-logos {
+        gap: 60px;
+      }
+      .hero-logo {
+        width: 180px;
+        height: 180px;
+      }
+      .hero-logo:nth-child(1) {
+        width: 220px;
+        height: 220px;
+      }
+    }
+
     @media (max-width: 1024px) {
       .hero {
         padding: 120px 32px 60px;
       }
       .hero-logos {
-        gap: 40px;
+        gap: 50px;
       }
       .hero-logo {
         width: 160px;
         height: 160px;
+      }
+      .hero-logo:nth-child(1) {
+        width: 190px;
+        height: 190px;
       }
       .hero-content {
         text-align: center;
@@ -588,11 +705,22 @@
     @media (max-width: 768px) {
       .hero-logos {
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
       }
       .hero-logo {
-        width: 150px;
-        height: 150px;
+        width: 160px;
+        height: 160px;
+      }
+      .hero-logo:nth-child(1) {
+        width: 180px;
+        height: 180px;
+      }
+      /* Reset custom hover transforms for mobile */
+      .hero-logo:hover {
+        transform: translateY(-8px) scale(1.05);
+      }
+      .hero-logo:nth-child(2):hover {
+        transform: translateY(-8px) scale(1.05) rotate(2deg);
       }
     }
 
@@ -600,9 +728,16 @@
       .hero {
         padding: 100px 20px 40px;
       }
+      .hero-logos {
+        gap: 35px;
+      }
       .hero-logo {
-        width: 130px;
-        height: 130px;
+        width: 140px;
+        height: 140px;
+      }
+      .hero-logo:nth-child(1) {
+        width: 160px;
+        height: 160px;
       }
       .hero-title {
         font-size: 36px;
