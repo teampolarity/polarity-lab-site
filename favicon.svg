@@ -1,32 +1,67 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <!-- Background -->
-  <rect width="100" height="100" fill="#F5F5F5"/>
-  
-  <!-- Main sphere gradient -->
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140">
   <defs>
-    <radialGradient id="sphereGrad" cx="35%" cy="35%" r="60%">
-      <stop offset="0%" stop-color="#FF8A9B"/>
-      <stop offset="40%" stop-color="#E85A71"/>
-      <stop offset="100%" stop-color="#C94058"/>
+    <!-- Main sphere gradient - ultra realistic -->
+    <radialGradient id="sphereGradIcon" cx="32%" cy="32%" r="68%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="15%" stop-color="#FFE5E8"/>
+      <stop offset="30%" stop-color="#FFB0BB"/>
+      <stop offset="50%" stop-color="#FF4466"/>
+      <stop offset="75%" stop-color="#CC2244"/>
+      <stop offset="90%" stop-color="#991133"/>
+      <stop offset="100%" stop-color="#771122"/>
     </radialGradient>
-    <radialGradient id="highlight" cx="30%" cy="25%" r="40%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8"/>
+    
+    <!-- Orbital ring gradient -->
+    <linearGradient id="ringGradIcon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF4466" stop-opacity="0.1"/>
+      <stop offset="50%" stop-color="#FFD0DD"/>
+      <stop offset="100%" stop-color="#FF4466" stop-opacity="0.1"/>
+    </linearGradient>
+    
+    <!-- Polar beam gradient -->
+    <linearGradient id="beamGradIcon" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="30%" stop-color="#FF8899" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#FF4466" stop-opacity="1"/>
+      <stop offset="70%" stop-color="#FF8899" stop-opacity="0.6"/>
       <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-    </radialGradient>
+    </linearGradient>
+    
+    <filter id="glowIcon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="sphereGlowIcon" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
   </defs>
-  
-  <!-- Orbital ring behind -->
-  <ellipse cx="50" cy="50" rx="42" ry="12" fill="none" stroke="#E8A0A8" stroke-width="2" transform="rotate(-20 50 50)" opacity="0.6"/>
-  
-  <!-- Main sphere -->
-  <circle cx="50" cy="50" r="32" fill="url(#sphereGrad)"/>
-  
-  <!-- Sphere highlight -->
-  <circle cx="50" cy="50" r="32" fill="url(#highlight)"/>
-  
-  <!-- Small highlight dot -->
-  <circle cx="38" cy="38" r="8" fill="#FFFFFF" opacity="0.5"/>
-  
-  <!-- Orbital ring in front -->
-  <ellipse cx="50" cy="50" rx="42" ry="12" fill="none" stroke="#E8A0A8" stroke-width="2" transform="rotate(-20 50 50)" opacity="0.8" stroke-dasharray="70 62"/>
+
+  <!-- O - THE ICONIC SPHERE (centered) -->
+  <g transform="translate(8, 0)">
+    <!-- Polar beam top -->
+    <rect x="48" y="2" width="8" height="30" rx="4" fill="url(#beamGradIcon)" filter="url(#glowIcon)"/>
+    <!-- Polar beam bottom -->
+    <rect x="48" y="108" width="8" height="30" rx="4" fill="url(#beamGradIcon)" filter="url(#glowIcon)"/>
+    <!-- Orbital ring 1 -->
+    <ellipse cx="52" cy="70" rx="48" ry="14" transform="rotate(-20 52 70)" stroke="url(#ringGradIcon)" stroke-width="3" fill="none" filter="url(#glowIcon)"/>
+    <!-- Orbital ring 2 -->
+    <ellipse cx="52" cy="70" rx="44" ry="12" transform="rotate(25 52 70)" stroke="url(#ringGradIcon)" stroke-width="1.5" fill="none" opacity="0.5" filter="url(#glowIcon)"/>
+    <!-- Main sphere -->
+    <circle cx="52" cy="70" r="38" fill="url(#sphereGradIcon)" filter="url(#sphereGlowIcon)"/>
+    <!-- Highlight 1 -->
+    <circle cx="38" cy="56" r="12" fill="white" opacity="0.3"/>
+    <!-- Highlight 2 -->
+    <circle cx="33" cy="50" r="5" fill="white" opacity="0.5"/>
+  </g>
 </svg>
