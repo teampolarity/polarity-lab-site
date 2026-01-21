@@ -386,7 +386,7 @@
     }
 
     /* ==========================================
-       NAVIGATION - Cosmic Theme
+       NAVIGATION - Blends with spatial background
        ========================================== */
     .nav {
       position: fixed;
@@ -399,9 +399,10 @@
       align-items: center;
       justify-content: space-between;
       transition: all 0.5s var(--ease-out-expo);
-      background: linear-gradient(180deg, rgba(5, 5, 8, 0.9) 0%, rgba(5, 5, 8, 0) 100%);
+      background: transparent;
     }
 
+    /* Rainbow line - only visible on hover */
     .nav::before {
       content: '';
       position: absolute;
@@ -411,15 +412,25 @@
       height: 1px;
       background: linear-gradient(90deg,
         transparent 0%,
-        rgba(78, 205, 196, 0.3) 20%,
-        rgba(187, 143, 206, 0.3) 50%,
-        rgba(255, 160, 122, 0.3) 80%,
+        rgba(78, 205, 196, 0.4) 20%,
+        rgba(187, 143, 206, 0.4) 50%,
+        rgba(255, 160, 122, 0.4) 80%,
         transparent 100%);
-      opacity: 0.6;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .nav:hover::before {
+      opacity: 1;
+    }
+
+    /* Nav becomes visible on hover */
+    .nav:hover {
+      background: linear-gradient(180deg, rgba(5, 5, 8, 0.7) 0%, rgba(5, 5, 8, 0) 100%);
     }
 
     .nav.scrolled {
-      background: rgba(5, 5, 8, 0.85);
+      background: rgba(5, 5, 8, 0.75);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       padding: 16px 48px;
@@ -429,6 +440,10 @@
     }
 
     .nav.scrolled::before {
+      opacity: 0.8;
+    }
+
+    .nav.scrolled:hover::before {
       opacity: 1;
     }
 
@@ -556,6 +571,17 @@
       border-color: transparent;
       color: var(--void-deep);
       box-shadow: 0 0 25px rgba(78, 205, 196, 0.4);
+    }
+
+    /* Light mode nav-cta adjustments */
+    [data-theme="light"] .nav-cta {
+      border-color: var(--teal-deep);
+      color: var(--teal-deep);
+    }
+
+    [data-theme="light"] .nav-cta:hover {
+      color: var(--void-deep);
+      border-color: var(--teal);
     }
 
     .nav-mobile {
@@ -988,6 +1014,20 @@
       font-size: 15px;
       color: var(--text-secondary);
       line-height: 1.7;
+    }
+
+    /* Light mode scroll text fixes */
+    [data-theme="light"] .scroll-text__definition {
+      background: rgba(240, 240, 248, 0.9);
+      border-left-color: var(--teal-deep);
+    }
+
+    [data-theme="light"] .scroll-text__title {
+      color: var(--text-pure);
+    }
+
+    [data-theme="light"] .scroll-text__accent {
+      color: rgba(0, 0, 0, 0.06);
     }
 
     /* Hero tagline - part of choreography */
@@ -2349,8 +2389,12 @@
     <!-- Text 6: Team intro (left) -->
     <div class="scroll-text scroll-text--left" id="text-team" style="top: 40%;">
       <span class="scroll-text__label">The Team</span>
-      <h2 class="scroll-text__title">Providence, RI<br>Est. 2025</h2>
-      <p class="scroll-text__body">Three founders. MIT + Brown + Ottawa. Medical, technical, and creative expertise combined.</p>
+      <h2 class="scroll-text__title">Theodore Addo<br><span style="color: var(--teal); font-size: 0.5em;">Founder & PI</span></h2>
+      <p class="scroll-text__body" style="margin-bottom: 1.5rem;">MD Candidate, Brown Alpert Medical School '26. MIT Boyden Lab alum.</p>
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Shadrack Annor <span style="color: var(--coral); font-size: 0.6em;">Cofounder</span></h3>
+      <p class="scroll-text__body" style="margin-bottom: 1.5rem;">Brown University. Principal of Waxfeed. Music-tech expertise.</p>
+      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Nathan Amankwah <span style="color: var(--purple); font-size: 0.6em;">Cofounder</span></h3>
+      <p class="scroll-text__body">University of Ottawa. Frontend/UX Lead.</p>
     </div>
 
     <!-- Text 7: CTA (center bottom) -->
@@ -2792,12 +2836,12 @@
       '#contact': 7.5   // After CTA, scroll to end
     };
 
-    // Smooth scroll to choreography zone
+    // Jump instantly to scroll zone (no animation)
     function scrollToZone(targetVh) {
       const targetY = targetVh * window.innerHeight;
       window.scrollTo({
         top: targetY,
-        behavior: 'smooth'
+        behavior: 'instant'
       });
     }
 
