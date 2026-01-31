@@ -1,5 +1,14 @@
 [
   {
+    "id": "c647b0d",
+    "date": "2026-01-31",
+    "title": "Fix hero layout issues",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "d97823c",
     "date": "2026-01-31",
     "title": "Convert to normal scrolling page - restore all content",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "4a79625",
-    "date": "2026-01-31",
-    "title": "Add Painpoints branding and icon",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]

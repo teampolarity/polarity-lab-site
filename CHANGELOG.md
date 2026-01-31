@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix hero layout issues (`c647b0d`)
+
+### Jan 31, 2026
+
 - Convert to normal scrolling page - restore all content (`d97823c`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Update Painpoints logo to use LinkedIn PNG asset (`d5e7187`)
-
-### Jan 31, 2026
-
-- Add Painpoints branding and icon (`4a79625`)
 
 
 ---
