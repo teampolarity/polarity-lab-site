@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Center Our Ecosystem content properly when navigating to section (`623c30b`)
+
+### Jan 31, 2026
+
 - Add more shooting stars and transparent space background (`0488108`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Add Launch Pad nav tab + center everything (`8cdf6c5`)
-
-### Jan 31, 2026
-
-- Fix hero layout issues (`c647b0d`)
 
 
 ---
