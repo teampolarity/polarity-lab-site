@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Restore full tagline with comma (`53e4bb5`)
+
+### Jan 31, 2026
+
 - More icon spacing + shorter tagline (`a327702`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Recreate Painpoints logo as transparent SVG matching LinkedIn design (`2c88e97`)
-
-### Jan 31, 2026
-
-- Switch Painpoints to transparent SVG icon (`fb2ddef`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "53e4bb5",
+    "date": "2026-01-31",
+    "title": "Restore full tagline with comma",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "a327702",
     "date": "2026-01-31",
     "title": "More icon spacing + shorter tagline",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Design",
       "color": "purple"
-    }
-  },
-  {
-    "id": "fb2ddef",
-    "date": "2026-01-31",
-    "title": "Switch Painpoints to transparent SVG icon",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
