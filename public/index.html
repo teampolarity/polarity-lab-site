@@ -3137,37 +3137,6 @@
       });
     });
 
-    // ==========================================
-    // NAV SCROLL MAPPING - Links to choreography zones
-    // ==========================================
-    const navScrollMap = {
-      '#about': 1.0,    // Mission/About zone starts at ~1vh
-      '#research': 3.2, // CCX/Research zone at ~3vh
-      '#team': 7.2,     // Team zone starts at ~7vh
-      '#involve': 9.7,  // CTA zone starts at ~9.5vh
-      '#contact': 11.0  // After CTA, scroll to end
-    };
-
-    // Jump instantly to scroll zone (no animation)
-    function scrollToZone(targetVh) {
-      const targetY = targetVh * window.innerHeight;
-      window.scrollTo({
-        top: targetY,
-        behavior: 'instant'
-      });
-    }
-
-    // Handle nav link clicks
-    document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-        if (href && navScrollMap[href] !== undefined) {
-          e.preventDefault();
-          scrollToZone(navScrollMap[href]);
-        }
-      });
-    });
-
     // Update active nav state based on which section is visible
     function updateActiveNav() {
       const sections = document.querySelectorAll('section[id]');
