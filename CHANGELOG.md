@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Move Our Ecosystem content higher on the page (`c618da8`)
+
+### Jan 31, 2026
+
 - Improve Our Ecosystem section centering and spacing (`21b2469`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Convert to normal scrolling page - restore all content (`d97823c`)
-
-### Jan 31, 2026
-
-- Smoother, more controlled scroll animations (`3cb7a8d`)
 
 
 ---
