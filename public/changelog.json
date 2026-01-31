@@ -1,5 +1,14 @@
 [
   {
+    "id": "76ce5b0",
+    "date": "2026-01-31",
+    "title": "Fix mobile hero - use CSS class instead of inline styles",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "b8e2c39",
     "date": "2026-01-31",
     "title": "Fix mobile hero - stack product icons vertically",
@@ -165,15 +174,6 @@
     "id": "426331a",
     "date": "2026-01-31",
     "title": "Change 5 products to 4",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "8c303dc",
-    "date": "2026-01-31",
-    "title": "Center Launch Pad completely",
     "category": {
       "label": "Update",
       "color": "text-secondary"

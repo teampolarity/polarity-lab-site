@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix mobile hero - use CSS class instead of inline styles (`76ce5b0`)
+
+### Jan 31, 2026
+
 - Fix mobile hero - stack product icons vertically (`b8e2c39`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Change 5 products to 4 (`426331a`)
-
-### Jan 31, 2026
-
-- Center Launch Pad completely (`8c303dc`)
 
 
 ---
