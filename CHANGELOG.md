@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Add Launch Pad nav tab + center everything (`8cdf6c5`)
+
+### Jan 31, 2026
+
 - Fix hero layout issues (`c647b0d`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Update index and add changelog, GitHub workflows (`5a19273`)
-
-### Jan 31, 2026
-
-- Update Painpoints logo to use LinkedIn PNG asset (`d5e7187`)
 
 
 ---

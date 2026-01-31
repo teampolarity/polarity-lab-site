@@ -1,5 +1,14 @@
 [
   {
+    "id": "8cdf6c5",
+    "date": "2026-01-31",
+    "title": "Add Launch Pad nav tab + center everything",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "c647b0d",
     "date": "2026-01-31",
     "title": "Fix hero layout issues",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "d5e7187",
-    "date": "2026-01-31",
-    "title": "Update Painpoints logo to use LinkedIn PNG asset",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]
