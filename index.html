@@ -1165,15 +1165,16 @@
       .hero-constellation {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto auto;
-        gap: 12px;
-        padding: 16px;
-        max-width: 320px;
-        width: 90%;
-        transform: translate(-50%, -50%);
-        top: 26%;
+        gap: 8px;
+        padding: 10px;
+        max-width: 280px !important;
+        width: 80% !important;
+        transform: translate(-50%, -50%) !important;
+        top: 22% !important;
+        left: 50% !important;
       }
       .hero-product {
-        gap: 8px;
+        gap: 6px;
       }
       .hero-product--waxfeed,
       .hero-product--avdp,
@@ -1181,9 +1182,9 @@
       .hero-product--painpoints {
         justify-self: center;
       }
-      .hero-product-icon { width: 70px; height: 70px; }
-      .hero-product--polarity .hero-product-icon { width: 85px; height: 85px; }
-      .hero-product-label { font-size: 8px; letter-spacing: 0.08em; }
+      .hero-product-icon { width: 55px !important; height: 55px !important; }
+      .hero-product--polarity .hero-product-icon { width: 65px !important; height: 65px !important; }
+      .hero-product-label { font-size: 7px; letter-spacing: 0.06em; }
 
       /* Hero text adjustments for mobile */
       #text-hero {
@@ -1242,26 +1243,26 @@
     /* Extra small phones (iPhone SE, etc.) */
     @media (max-width: 380px) {
       .hero-constellation {
-        max-width: 280px;
-        gap: 10px;
-        padding: 12px;
-        top: 24%;
+        max-width: 240px !important;
+        gap: 6px;
+        padding: 8px;
+        top: 20% !important;
       }
       .hero-product {
-        gap: 6px;
+        gap: 4px;
       }
-      .hero-product-icon { width: 60px; height: 60px; }
-      .hero-product--polarity .hero-product-icon { width: 72px; height: 72px; }
-      .hero-product-label { font-size: 7px; letter-spacing: 0.06em; }
+      .hero-product-icon { width: 48px !important; height: 48px !important; }
+      .hero-product--polarity .hero-product-icon { width: 56px !important; height: 56px !important; }
+      .hero-product-label { font-size: 6px; letter-spacing: 0.05em; }
 
       #text-hero {
-        top: 52%;
+        top: 50% !important;
       }
       #text-hero .hero-title {
-        font-size: 24px;
+        font-size: 22px;
       }
       #text-hero .hero-subtitle {
-        font-size: 14px;
+        font-size: 13px;
       }
     }
 
