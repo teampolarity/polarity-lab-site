@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Convert to normal scrolling page - restore all content (`d97823c`)
+
+### Jan 31, 2026
+
 - Smoother, more controlled scroll animations (`3cb7a8d`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Add Painpoints branding and icon (`4a79625`)
-
-### Jan 23, 2026
-
-- Add team LinkedIn links, mobile optimization, fix contact button (`48add24`)
 
 
 ---

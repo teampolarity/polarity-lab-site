@@ -1,5 +1,14 @@
 [
   {
+    "id": "d97823c",
+    "date": "2026-01-31",
+    "title": "Convert to normal scrolling page - restore all content",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "3cb7a8d",
     "date": "2026-01-31",
     "title": "Smoother, more controlled scroll animations",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "48add24",
-    "date": "2026-01-23",
-    "title": "Add team LinkedIn links, mobile optimization, fix contact button",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
