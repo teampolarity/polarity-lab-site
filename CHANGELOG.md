@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Recreate Painpoints logo as transparent SVG matching LinkedIn design (`2c88e97`)
+
+### Jan 31, 2026
+
 - Switch Painpoints to transparent SVG icon (`fb2ddef`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 21, 2026
 
 - Trigger Vercel deployment - 3-logo hero (`297ce5b`)
-
-### Jan 21, 2026
-
-- Hero: 3-logo showcase with POLARITY, WaxFeed, and AVDP (`3793e99`)
 
 
 ---

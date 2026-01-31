@@ -1,5 +1,14 @@
 [
   {
+    "id": "2c88e97",
+    "date": "2026-01-31",
+    "title": "Recreate Painpoints logo as transparent SVG matching LinkedIn design",
+    "category": {
+      "label": "Design",
+      "color": "purple"
+    }
+  },
+  {
     "id": "fb2ddef",
     "date": "2026-01-31",
     "title": "Switch Painpoints to transparent SVG icon",
@@ -165,15 +174,6 @@
     "id": "297ce5b",
     "date": "2026-01-21",
     "title": "Trigger Vercel deployment - 3-logo hero",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "3793e99",
-    "date": "2026-01-21",
-    "title": "Hero: 3-logo showcase with POLARITY, WaxFeed, and AVDP",
     "category": {
       "label": "Update",
       "color": "text-secondary"
