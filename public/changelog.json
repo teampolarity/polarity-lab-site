@@ -1,5 +1,14 @@
 [
   {
+    "id": "9cd1c44",
+    "date": "2026-01-31",
+    "title": "Add dynamic colored starfield for light mode",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "d15f704",
     "date": "2026-01-31",
     "title": "Fix navigation scroll behavior (remove broken navScrollMap)",
@@ -165,15 +174,6 @@
     "id": "53e4bb5",
     "date": "2026-01-31",
     "title": "Restore full tagline with comma",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "a327702",
-    "date": "2026-01-31",
-    "title": "More icon spacing + shorter tagline",
     "category": {
       "label": "Update",
       "color": "text-secondary"
