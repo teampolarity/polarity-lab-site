@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Rename Products to Our Ecosystem with CCX use case explanations (`660c51b`)
+
+### Jan 31, 2026
+
 - Rename 'The Science' to 'The Research' and fix section overflow (`0453081`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Fix desktop scroll and nav behavior (`6f90e09`)
-
-### Jan 31, 2026
-
-- Make hero icons slightly bigger on mobile (`0a7badf`)
 
 
 ---
