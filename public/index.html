@@ -717,7 +717,8 @@
     .section-inner {
       width: 100%;
       max-width: 1400px;
-      padding: 120px 48px;
+      margin: 0 auto;
+      padding: 60px 48px;
       position: relative;
       z-index: 1;
     }
@@ -1287,12 +1288,14 @@
     .ccx-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      gap: 60px;
       align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .ccx-text {
-      max-width: 520px;
+      max-width: 480px;
     }
 
     .section-label {
@@ -1307,11 +1310,11 @@
 
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(28px, 4vw, 42px);
+      font-size: clamp(24px, 3.5vw, 36px);
       font-weight: 600;
       line-height: 1.2;
       letter-spacing: -0.02em;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       color: var(--text-pure);
     }
 
@@ -1333,30 +1336,30 @@
     }
 
     .ccx-definition-desc {
-      font-size: 15px;
+      font-size: 13px;
       color: var(--text-secondary);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     .ccx-steps {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 14px;
     }
 
     .ccx-step {
       display: flex;
-      gap: 16px;
+      gap: 12px;
       align-items: flex-start;
     }
 
     .ccx-step-num {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
+      width: 24px;
+      height: 24px;
+      border-radius: 5px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1370,16 +1373,16 @@
 
     .ccx-step h4 {
       font-family: var(--font-display);
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 600;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
       color: var(--text-primary);
     }
 
     .ccx-step p {
-      font-size: 14px;
+      font-size: 12px;
       color: var(--text-tertiary);
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     /* CCX Visual - Neural diagram */
@@ -1392,7 +1395,7 @@
     .ccx-diagram {
       position: relative;
       width: 100%;
-      max-width: 380px;
+      max-width: 300px;
       aspect-ratio: 1;
     }
 
