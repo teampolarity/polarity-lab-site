@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Change 5 products to 4 (`426331a`)
+
+### Jan 31, 2026
+
 - Center Launch Pad completely (`8c303dc`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Fix hero icons - move DOWN to center of screen (`ccc4f3c`)
-
-### Jan 31, 2026
-
-- Fix hero icons mobile - more aggressive sizing (`399c6de`)
 
 
 ---
