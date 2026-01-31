@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Comprehensive mobile optimization (`a8fedb0`)
+
+### Jan 31, 2026
+
 - Increase Painpoints icon size to match other logos (`bc7dc62`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 21, 2026
 
 - Update product links and team roles (`7b00b9f`)
-
-### Jan 21, 2026
-
-- Update favicon to Polarity sphere icon, title to POLARITY (`c179dd2`)
 
 
 ---
