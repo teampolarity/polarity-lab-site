@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Sync public/index.html with mobile fixes (`45c7359`)
+
+### Jan 31, 2026
+
 - Move hero icons DOWN - fix navbar overlap (`fb82a5f`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 21, 2026
 
 - Fix light mode, team section, nav behavior (`2f27331`)
-
-### Jan 21, 2026
-
-- Add cosmic nav styling and scroll zone mapping (`0416461`)
 
 
 ---

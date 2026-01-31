@@ -1,5 +1,14 @@
 [
   {
+    "id": "45c7359",
+    "date": "2026-01-31",
+    "title": "Sync public/index.html with mobile fixes",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "fb82a5f",
     "date": "2026-01-31",
     "title": "Move hero icons DOWN - fix navbar overlap",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "0416461",
-    "date": "2026-01-21",
-    "title": "Add cosmic nav styling and scroll zone mapping",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
