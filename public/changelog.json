@@ -1,5 +1,23 @@
 [
   {
+    "id": "06a95a6",
+    "date": "2026-01-31",
+    "title": "Shrink hero section to fit on screen",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
+    "id": "0840cf5",
+    "date": "2026-01-31",
+    "title": "Logo click navigates to Launch Pad",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "53e4bb5",
     "date": "2026-01-31",
     "title": "Restore full tagline with comma",
@@ -159,24 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "4f53347",
-    "date": "2026-01-31",
-    "title": "Update Painpoints icon with curved orbital ray design",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "2c88e97",
-    "date": "2026-01-31",
-    "title": "Recreate Painpoints logo as transparent SVG matching LinkedIn design",
-    "category": {
-      "label": "Design",
-      "color": "purple"
     }
   }
 ]
