@@ -111,8 +111,6 @@
     }
 
     html {
-      scroll-behavior: smooth;
-      scroll-snap-type: y proximity;
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -3337,7 +3335,7 @@
       constructor() {
         this.scrollY = 0;
         this.targetScrollY = 0;
-        this.ease = 0.05; // Smooth interpolation
+        this.ease = 0.08; // Smooth interpolation - higher = more responsive
         this.vh = window.innerHeight;
         this.totalScroll = document.body.scrollHeight - this.vh;
 
@@ -3414,7 +3412,7 @@
 
         // Nav scroll effect
         if (this.nav) {
-          this.nav.classList.toggle('scrolled', this.scrollY > 50);
+          this.nav.classList.toggle('scrolled', this.scrollY > 120);
         }
 
         // === SCROLL ZONES (in vh units) ===
