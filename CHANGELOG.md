@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix Painpoints logo path and add PNG to public folder (`50dac80`)
+
+### Jan 31, 2026
+
 - Update index and add changelog, GitHub workflows (`5a19273`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 21, 2026
 
 - Trigger Vercel deployment (`be4ae80`)
-
-### Jan 20, 2026
-
-- Fix branding: correct POLARITY atom logo + light/dark mode (`013e991`)
 
 
 ---

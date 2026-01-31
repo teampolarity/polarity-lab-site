@@ -1,5 +1,14 @@
 [
   {
+    "id": "50dac80",
+    "date": "2026-01-31",
+    "title": "Fix Painpoints logo path and add PNG to public folder",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "5a19273",
     "date": "2026-01-31",
     "title": "Update index and add changelog, GitHub workflows",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "013e991",
-    "date": "2026-01-20",
-    "title": "Fix branding: correct POLARITY atom logo + light/dark mode",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
