@@ -1,5 +1,14 @@
 [
   {
+    "id": "fb82a5f",
+    "date": "2026-01-31",
+    "title": "Move hero icons DOWN - fix navbar overlap",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "ccc4f3c",
     "date": "2026-01-31",
     "title": "Fix hero icons - move DOWN to center of screen",
@@ -165,15 +174,6 @@
     "id": "0416461",
     "date": "2026-01-21",
     "title": "Add cosmic nav styling and scroll zone mapping",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "7de51ed",
-    "date": "2026-01-21",
-    "title": "Add scroll choreography with floating icons and text reveals",
     "category": {
       "label": "New Feature",
       "color": "teal"
