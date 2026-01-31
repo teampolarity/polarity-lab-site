@@ -1,5 +1,14 @@
 [
   {
+    "id": "3b2a803",
+    "date": "2026-01-31",
+    "title": "Fix Polarity icon in Ecosystem section",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "76ce5b0",
     "date": "2026-01-31",
     "title": "Fix mobile hero - use CSS class instead of inline styles",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "426331a",
-    "date": "2026-01-31",
-    "title": "Change 5 products to 4",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
