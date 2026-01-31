@@ -1,5 +1,14 @@
 [
   {
+    "id": "7b43f11",
+    "date": "2026-01-31",
+    "title": "Update navigation with all sections + scroll snap",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "6f90e09",
     "date": "2026-01-31",
     "title": "Fix desktop scroll and nav behavior",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "c4bf4f0",
-    "date": "2026-01-21",
-    "title": "Update Nathan's role to full stack",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]
