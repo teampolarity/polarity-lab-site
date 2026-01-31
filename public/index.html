@@ -3040,10 +3040,26 @@
         </a>
 
         <a href="https://app.polarity-lab.com/" target="_blank" class="product-card">
-          <div class="product-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
+          <div class="product-icon" style="background: transparent;">
+            <svg viewBox="0 0 200 200" style="width: 100%; height: 100%;">
+              <defs>
+                <radialGradient id="prodCoreGrad" cx="30%" cy="30%" r="70%">
+                  <stop offset="0%" stop-color="#6EE7DF"/>
+                  <stop offset="50%" stop-color="#4ECDC4"/>
+                  <stop offset="100%" stop-color="#2BA89F"/>
+                </radialGradient>
+                <filter id="prodOrbitalGlow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="2" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <ellipse cx="100" cy="100" rx="70" ry="22" fill="none" stroke="#4ECDC4" stroke-width="2.5" transform="rotate(-60 100 100)" filter="url(#prodOrbitalGlow)" opacity="0.9"/>
+              <ellipse cx="100" cy="100" rx="70" ry="22" fill="none" stroke="#FFA07A" stroke-width="2.5" transform="rotate(60 100 100)" filter="url(#prodOrbitalGlow)" opacity="0.9"/>
+              <ellipse cx="100" cy="100" rx="70" ry="22" fill="none" stroke="#BB8FCE" stroke-width="2.5" filter="url(#prodOrbitalGlow)" opacity="0.9"/>
+              <circle cx="135" cy="40" r="7" fill="#4ECDC4" filter="url(#prodOrbitalGlow)"/>
+              <circle cx="65" cy="40" r="7" fill="#FFA07A" filter="url(#prodOrbitalGlow)"/>
+              <circle cx="165" cy="100" r="7" fill="#BB8FCE" filter="url(#prodOrbitalGlow)"/>
+              <circle cx="100" cy="100" r="24" fill="url(#prodCoreGrad)" filter="url(#prodOrbitalGlow)"/>
             </svg>
           </div>
           <div class="product-name">Polarity</div>
