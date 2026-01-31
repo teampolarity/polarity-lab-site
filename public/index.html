@@ -1282,7 +1282,7 @@
        CCX SECTION - Research reveal
        ========================================== */
     .ccx {
-      background: linear-gradient(180deg, transparent 0%, var(--void-space) 30%, var(--void-space) 70%, transparent 100%);
+      background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 16, 0.7) 30%, rgba(10, 10, 16, 0.7) 70%, transparent 100%);
       padding-bottom: 80px;
     }
 
@@ -1648,7 +1648,7 @@
        TEAM SECTION
        ========================================== */
     .team {
-      background: linear-gradient(180deg, transparent 0%, var(--void-space) 30%, var(--void-space) 70%, transparent 100%);
+      background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 16, 0.7) 30%, rgba(10, 10, 16, 0.7) 70%, transparent 100%);
       margin-top: 60px;
       padding-top: 80px;
     }
@@ -1792,7 +1792,7 @@
        PRODUCTS SECTION - Enhanced cards
        ========================================== */
     .products {
-      background: linear-gradient(180deg, transparent 0%, var(--void-nebula) 30%, var(--void-nebula) 70%, transparent 100%);
+      background: linear-gradient(180deg, transparent 0%, rgba(15, 15, 24, 0.7) 30%, rgba(15, 15, 24, 0.7) 70%, transparent 100%);
       padding: 60px 0 100px 0;
       min-height: 100vh;
       display: flex;
@@ -2260,7 +2260,7 @@
        CONTACT / FOOTER
        ========================================== */
     .contact {
-      background: linear-gradient(180deg, transparent 0%, var(--void-nebula) 50%);
+      background: linear-gradient(180deg, transparent 0%, rgba(15, 15, 24, 0.8) 50%);
       text-align: center;
     }
 
@@ -3602,7 +3602,7 @@
       }
 
       scheduleNext() {
-        const delay = 6000 + Math.random() * 12000; // 6-18 seconds
+        const delay = 2000 + Math.random() * 4000; // 2-6 seconds (more frequent)
         setTimeout(() => this.createStar(), delay);
       }
 
@@ -3610,11 +3610,11 @@
         const star = document.createElement('div');
         star.className = 'shooting-star';
 
-        // Random position and angle
-        const startX = 10 + Math.random() * 60; // 10-70% from left
-        const startY = Math.random() * 40; // Top 40%
-        const angle = 20 + Math.random() * 25; // 20-45 degrees
-        const duration = 0.7 + Math.random() * 0.5; // 0.7-1.2s
+        // Random position and angle - across entire viewport
+        const startX = 5 + Math.random() * 80; // 5-85% from left
+        const startY = Math.random() * 70; // Top 70% of screen
+        const angle = 15 + Math.random() * 35; // 15-50 degrees
+        const duration = 0.6 + Math.random() * 0.6; // 0.6-1.2s
 
         star.style.cssText = `
           left: ${startX}%;
@@ -3634,6 +3634,9 @@
     }
 
     const shootingStarsContainer = document.getElementById('shooting-stars');
+    // Create multiple shooting star spawners for more activity
+    new ShootingStars(shootingStarsContainer);
+    new ShootingStars(shootingStarsContainer);
     new ShootingStars(shootingStarsContainer);
 
     // ==========================================
