@@ -1,5 +1,14 @@
 [
   {
+    "id": "399c6de",
+    "date": "2026-01-31",
+    "title": "Fix hero icons mobile - more aggressive sizing",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "a8fedb0",
     "date": "2026-01-31",
     "title": "Comprehensive mobile optimization",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "7b00b9f",
-    "date": "2026-01-21",
-    "title": "Update product links and team roles",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

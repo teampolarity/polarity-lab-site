@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix hero icons mobile - more aggressive sizing (`399c6de`)
+
+### Jan 31, 2026
+
 - Comprehensive mobile optimization (`a8fedb0`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 21, 2026
 
 - Use OG Polarity sphere PNG favicon from icon.iconset (`4d1cca4`)
-
-### Jan 21, 2026
-
-- Update product links and team roles (`7b00b9f`)
 
 
 ---
