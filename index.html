@@ -3370,37 +3370,31 @@
       });
     });
 
-    // Update active nav state based on scroll position
+    // Update active nav state based on which section is visible
     function updateActiveNav() {
-      const scrollY = window.scrollY;
-      const vh = window.innerHeight;
-      const currentVh = scrollY / vh;
+      const sections = document.querySelectorAll('section[id]');
+      const scrollY = window.scrollY + 100; // Offset for navbar height
 
-      // Define zones for each nav item (start-end in vh)
-      const zones = [
-        { href: '#home', start: 0, end: 0.8 },
-        { href: '#ccx', start: 0.8, end: 1.8 },
-        { href: '#about', start: 1.8, end: 3.0 },
-        { href: '#products', start: 3.0, end: 5.0 },
-        { href: '#research', start: 5.0, end: 7.0 },
-        { href: '#team', start: 7.0, end: 9.0 },
-        { href: '#contact', start: 9.0, end: Infinity }
-      ];
+      let currentSection = 'home';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute('id');
+        }
+      });
 
       // Remove all active states
       document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
         link.classList.remove('active');
       });
 
-      // Find current zone and set active
-      for (const zone of zones) {
-        if (currentVh >= zone.start && currentVh < zone.end) {
-          const activeLink = document.querySelector(`[href="${zone.href}"]`);
-          if (activeLink) {
-            activeLink.classList.add('active');
-          }
-          break;
-        }
+      // Set active on current section's nav link
+      const activeLink = document.querySelector(`.nav-link[href="#${currentSection}"], .nav-cta[href="#${currentSection}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
       }
     }
 
