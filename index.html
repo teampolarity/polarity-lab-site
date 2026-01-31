@@ -3335,7 +3335,7 @@
       constructor() {
         this.scrollY = 0;
         this.targetScrollY = 0;
-        this.ease = 0.08; // Smooth interpolation - higher = more responsive
+        this.ease = 0.04; // Smoother interpolation - lower = more controlled
         this.vh = window.innerHeight;
         this.totalScroll = document.body.scrollHeight - this.vh;
 
@@ -3427,14 +3427,14 @@
 
         const vh = this.vh;
 
-        // === ZONE: Hero & Icons (0-1.5vh) ===
-        const iconExitProgress = this.easeOutCubic(this.zoneProgress(0, vh * 1.2));
+        // === ZONE: Hero & Icons (0-2vh) - SLOWER exit ===
+        const iconExitProgress = this.easeOutCubic(this.zoneProgress(0, vh * 2.0));
 
-        // Hero text (visible at start, fades out)
+        // Hero text (visible at start, fades out slowly)
         if (this.textHero) {
-          const heroProgress = this.zoneProgress(0, vh * 0.8);
+          const heroProgress = this.zoneProgress(0, vh * 1.5);
           const heroOpacity = 1 - this.easeOutCubic(heroProgress);
-          const heroY = heroProgress * -30;
+          const heroY = heroProgress * -20;
           this.textHero.style.opacity = heroOpacity;
           this.textHero.style.transform = `translate(-50%, -50%) translateY(${heroY}px)`;
           this.textHero.classList.toggle('visible', heroOpacity > 0.1);
@@ -3442,109 +3442,105 @@
 
         // Scroll indicator
         if (this.scrollIndicator) {
-          const indicatorOpacity = 1 - this.easeOutCubic(this.zoneProgress(0, vh * 0.5));
+          const indicatorOpacity = 1 - this.easeOutCubic(this.zoneProgress(0, vh * 0.8));
           this.scrollIndicator.style.opacity = indicatorOpacity;
         }
 
-        // Icons drift off elegantly
+        // Icons drift off elegantly - SLOWER
         if (this.iconWaxfeed) {
-          // WaxFeed exits left
-          const waxX = iconExitProgress * -150;
-          const waxY = iconExitProgress * -50;
+          const waxX = iconExitProgress * -100;
+          const waxY = iconExitProgress * -30;
           const waxOpacity = 1 - iconExitProgress;
-          const waxScale = 1 - iconExitProgress * 0.3;
+          const waxScale = 1 - iconExitProgress * 0.2;
           this.iconWaxfeed.style.transform = `translate(${waxX}px, ${waxY}px) scale(${waxScale})`;
           this.iconWaxfeed.style.opacity = waxOpacity;
         }
 
         if (this.iconPolarity) {
-          // Polarity exits up
-          const polY = iconExitProgress * -120;
+          const polY = iconExitProgress * -80;
           const polOpacity = 1 - iconExitProgress;
-          const polScale = 1 - iconExitProgress * 0.2;
+          const polScale = 1 - iconExitProgress * 0.15;
           this.iconPolarity.style.transform = `translateY(${polY}px) scale(${polScale})`;
           this.iconPolarity.style.opacity = polOpacity;
         }
 
         if (this.iconPainpoints) {
-          // Painpoints exits down
-          const ppX = iconExitProgress * 80;
-          const ppY = iconExitProgress * 120;
+          const ppX = iconExitProgress * 50;
+          const ppY = iconExitProgress * 80;
           const ppOpacity = 1 - iconExitProgress;
-          const ppScale = 1 - iconExitProgress * 0.3;
+          const ppScale = 1 - iconExitProgress * 0.2;
           this.iconPainpoints.style.transform = `translate(${ppX}px, ${ppY}px) scale(${ppScale})`;
           this.iconPainpoints.style.opacity = ppOpacity;
         }
 
         if (this.iconAvdp) {
-          // AVDP exits right
-          const avdpX = iconExitProgress * 150;
-          const avdpY = iconExitProgress * -50;
+          const avdpX = iconExitProgress * 100;
+          const avdpY = iconExitProgress * -30;
           const avdpOpacity = 1 - iconExitProgress;
-          const avdpScale = 1 - iconExitProgress * 0.3;
+          const avdpScale = 1 - iconExitProgress * 0.2;
           this.iconAvdp.style.transform = `translate(${avdpX}px, ${avdpY}px) scale(${avdpScale})`;
           this.iconAvdp.style.opacity = avdpOpacity;
         }
 
-        // Constellation container - preserve base positioning
+        // Constellation container
         if (this.constellation) {
-          const constY = -85 + (iconExitProgress * -15); // Start at -85% (CSS), drift up more
+          const constY = -85 + (iconExitProgress * -10);
           this.constellation.style.transform = `translate(-50%, ${constY}%)`;
         }
 
         const isMobile = window.innerWidth <= 768;
 
-        // === ZONE: Mission Text (1-2.5vh) ===
+        // === ZONE: Mission Text (2-5vh) - LONGER visibility ===
         if (this.textMission) {
-          const missionEnter = this.easeOutCubic(this.zoneProgress(vh * 0.8, vh * 1.5));
-          const missionExit = this.easeOutCubic(this.zoneProgress(vh * 2.5, vh * 3.0));
+          const missionEnter = this.easeOutCubic(this.zoneProgress(vh * 1.5, vh * 2.5));
+          const missionExit = this.easeOutCubic(this.zoneProgress(vh * 4.5, vh * 5.5));
           const missionOpacity = missionEnter * (1 - missionExit);
-          const missionX = isMobile ? 0 : ((1 - missionEnter) * -80 + missionExit * -60);
-          const missionBlur = missionExit * 8;
+          const missionX = isMobile ? 0 : ((1 - missionEnter) * -60 + missionExit * -40);
+          const missionBlur = missionExit * 6;
           this.textMission.style.opacity = missionOpacity;
           this.textMission.style.transform = isMobile
-            ? `translate(-50%, -50%) translateY(${missionExit * -30}px)`
+            ? `translate(-50%, -50%) translateY(${missionExit * -20}px)`
             : `translateY(-50%) translateX(${missionX}px)`;
           this.textMission.style.filter = missionBlur > 0.5 ? `blur(${missionBlur}px)` : 'none';
           this.textMission.classList.toggle('visible', missionOpacity > 0.1);
         }
 
-        // === ZONE: CCX Text (3-4.5vh) - Starts after Mission exits ===
+        // === ZONE: CCX Text (5.5-9vh) - LONGER visibility ===
         if (this.textCcx) {
-          const ccxEnter = this.easeOutCubic(this.zoneProgress(vh * 3.0, vh * 3.5));
-          const ccxExit = this.easeOutCubic(this.zoneProgress(vh * 4.5, vh * 5.0));
+          const ccxEnter = this.easeOutCubic(this.zoneProgress(vh * 5.5, vh * 6.5));
+          const ccxExit = this.easeOutCubic(this.zoneProgress(vh * 8.5, vh * 9.5));
           const ccxOpacity = ccxEnter * (1 - ccxExit);
-          const ccxX = isMobile ? 0 : ((1 - ccxEnter) * 80 + ccxExit * 60);
-          const ccxBlur = ccxExit * 8;
+          const ccxX = isMobile ? 0 : ((1 - ccxEnter) * 60 + ccxExit * 40);
+          const ccxBlur = ccxExit * 6;
           this.textCcx.style.opacity = ccxOpacity;
           this.textCcx.style.transform = isMobile
-            ? `translate(-50%, -50%) translateY(${ccxExit * -30}px)`
+            ? `translate(-50%, -50%) translateY(${ccxExit * -20}px)`
             : `translateY(-50%) translateX(${ccxX}px)`;
           this.textCcx.style.filter = ccxBlur > 0.5 ? `blur(${ccxBlur}px)` : 'none';
           this.textCcx.classList.toggle('visible', ccxOpacity > 0.1);
         }
 
-        // === ZONE: Process Text (5-6.5vh) - Starts after CCX exits ===
+        // === ZONE: Process Text (9.5-13vh) - LONGER visibility ===
         if (this.textProcess) {
-          const processEnter = this.easeOutCubic(this.zoneProgress(vh * 5.0, vh * 5.5));
-          const processExit = this.easeOutCubic(this.zoneProgress(vh * 6.5, vh * 7.0));
+          const processEnter = this.easeOutCubic(this.zoneProgress(vh * 9.5, vh * 10.5));
+          const processExit = this.easeOutCubic(this.zoneProgress(vh * 12.5, vh * 13.5));
           const processOpacity = processEnter * (1 - processExit);
-          const processY = (1 - processEnter) * 60 + processExit * -40;
-          const processScale = 0.9 + processEnter * 0.1 - processExit * 0.1;
-          const processBlur = processExit * 8;
+          const processY = (1 - processEnter) * 40 + processExit * -30;
+          const processScale = 0.95 + processEnter * 0.05 - processExit * 0.05;
+          const processBlur = processExit * 6;
           this.textProcess.style.opacity = processOpacity;
           this.textProcess.style.transform = `translate(-50%, -50%) translateY(${processY}px) scale(${processScale})`;
           this.textProcess.style.filter = processBlur > 0.5 ? `blur(${processBlur}px)` : 'none';
           this.textProcess.classList.toggle('visible', processOpacity > 0.1);
         }
 
-        // === ZONE: Stats (Desktop only, 6.5-8vh) ===
+        // === ZONE: Stats (Desktop only, 13.5-17vh) ===
         if (this.textStats && !isMobile) {
-          const statsEnter = this.easeOutCubic(this.zoneProgress(vh * 6.5, vh * 7.0));
-          const statsExit = this.easeOutCubic(this.zoneProgress(vh * 8.0, vh * 8.5));
+          const statsEnter = this.easeOutCubic(this.zoneProgress(vh * 13.5, vh * 14.5));
+          const statsExit = this.easeOutCubic(this.zoneProgress(vh * 16.5, vh * 17.5));
           const statsOpacity = statsEnter * (1 - statsExit);
-          const statsY = (1 - statsEnter) * 50;
-          const statsBlur = statsExit * 8;
+          const statsY = (1 - statsEnter) * 30;
+          const statsBlur = statsExit * 6;
           this.textStats.style.opacity = statsOpacity;
           this.textStats.style.transform = `translateY(${statsY}px)`;
           this.textStats.style.filter = statsBlur > 0.5 ? `blur(${statsBlur}px)` : 'none';
@@ -3553,27 +3549,27 @@
           this.textStats.style.opacity = 0;
         }
 
-        // === ZONE: Team Text (7-9vh) - After Process/Stats ===
+        // === ZONE: Team Text (14-18vh) ===
         if (this.textTeam) {
-          const teamEnter = this.easeOutCubic(this.zoneProgress(vh * 7.0, vh * 7.5));
-          const teamExit = this.easeOutCubic(this.zoneProgress(vh * 9.0, vh * 9.5));
+          const teamEnter = this.easeOutCubic(this.zoneProgress(vh * 14, vh * 15));
+          const teamExit = this.easeOutCubic(this.zoneProgress(vh * 17.5, vh * 18.5));
           const teamOpacity = teamEnter * (1 - teamExit);
-          const teamX = isMobile ? 0 : ((1 - teamEnter) * -80 + teamExit * -60);
-          const teamBlur = teamExit * 8;
+          const teamX = isMobile ? 0 : ((1 - teamEnter) * -60 + teamExit * -40);
+          const teamBlur = teamExit * 6;
           this.textTeam.style.opacity = teamOpacity;
           this.textTeam.style.transform = isMobile
-            ? `translate(-50%, -50%) translateY(${teamExit * -30}px)`
+            ? `translate(-50%, -50%) translateY(${teamExit * -20}px)`
             : `translateY(-50%) translateX(${teamX}px)`;
           this.textTeam.style.filter = teamBlur > 0.5 ? `blur(${teamBlur}px)` : 'none';
           this.textTeam.classList.toggle('visible', teamOpacity > 0.1);
         }
 
-        // === ZONE: CTA Text (9.5-11vh) - Starts after Team fully exits ===
+        // === ZONE: CTA Text (18.5+vh) ===
         if (this.textCta) {
-          const ctaEnter = this.easeOutCubic(this.zoneProgress(vh * 9.5, vh * 10.2));
+          const ctaEnter = this.easeOutCubic(this.zoneProgress(vh * 18.5, vh * 19.5));
           const ctaOpacity = ctaEnter;
-          const ctaY = (1 - ctaEnter) * 60;
-          const ctaScale = 0.9 + ctaEnter * 0.1;
+          const ctaY = (1 - ctaEnter) * 40;
+          const ctaScale = 0.95 + ctaEnter * 0.05;
           this.textCta.style.opacity = ctaOpacity;
           this.textCta.style.transform = `translate(-50%, -50%) translateY(${ctaY}px) scale(${ctaScale})`;
           this.textCta.classList.toggle('visible', ctaOpacity > 0.1);
