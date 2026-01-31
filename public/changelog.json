@@ -1,5 +1,14 @@
 [
   {
+    "id": "9a2955d",
+    "date": "2026-01-31",
+    "title": "Update hero tagline - clearer value proposition for general audience",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "8cdf6c5",
     "date": "2026-01-31",
     "title": "Add Launch Pad nav tab + center everything",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "5a19273",
-    "date": "2026-01-31",
-    "title": "Update index and add changelog, GitHub workflows",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
