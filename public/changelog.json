@@ -1,5 +1,14 @@
 [
   {
+    "id": "8c303dc",
+    "date": "2026-01-31",
+    "title": "Center Launch Pad completely",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "835de7c",
     "date": "2026-01-31",
     "title": "Shrink The Science section to fit on screen",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "a8fedb0",
-    "date": "2026-01-31",
-    "title": "Comprehensive mobile optimization",
-    "category": {
-      "label": "Mobile",
-      "color": "teal"
     }
   }
 ]
