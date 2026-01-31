@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Update Painpoints icon with curved orbital ray design (`4f53347`)
+
+### Jan 31, 2026
+
 - Recreate Painpoints logo as transparent SVG matching LinkedIn design (`2c88e97`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 21, 2026
 
 - Enhanced hero: immersive floating logos with glow effects (`c4bc6c3`)
-
-### Jan 21, 2026
-
-- Trigger Vercel deployment - 3-logo hero (`297ce5b`)
 
 
 ---
