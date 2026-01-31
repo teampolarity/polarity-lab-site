@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Make hero icons slightly bigger on mobile (`0a7badf`)
+
+### Jan 31, 2026
+
 - Sync public/index.html with mobile fixes (`45c7359`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 21, 2026
 
 - Mobile optimization (`debab49`)
-
-### Jan 21, 2026
-
-- Fix light mode, team section, nav behavior (`2f27331`)
 
 
 ---
