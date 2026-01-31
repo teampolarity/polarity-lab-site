@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix nav active dot - now properly tracks current section (`f2bad27`)
+
+### Jan 31, 2026
+
 - Change 5 products to 4 (`426331a`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Move hero icons DOWN - fix navbar overlap (`fb82a5f`)
-
-### Jan 31, 2026
-
-- Fix hero icons - move DOWN to center of screen (`ccc4f3c`)
 
 
 ---
