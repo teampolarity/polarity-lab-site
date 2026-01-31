@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Add more shooting stars and transparent space background (`0488108`)
+
+### Jan 31, 2026
+
 - Move Our Ecosystem content higher on the page (`c618da8`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Fix hero layout issues (`c647b0d`)
-
-### Jan 31, 2026
-
-- Convert to normal scrolling page - restore all content (`d97823c`)
 
 
 ---

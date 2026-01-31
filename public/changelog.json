@@ -1,5 +1,14 @@
 [
   {
+    "id": "0488108",
+    "date": "2026-01-31",
+    "title": "Add more shooting stars and transparent space background",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "c618da8",
     "date": "2026-01-31",
     "title": "Move Our Ecosystem content higher on the page",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "d97823c",
-    "date": "2026-01-31",
-    "title": "Convert to normal scrolling page - restore all content",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
