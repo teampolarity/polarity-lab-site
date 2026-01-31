@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix all dark backgrounds in light mode (`fba4f60`)
+
+### Jan 31, 2026
+
 - Fix dark shading in light mode (`143d8fe`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Add The Science nav link + fix active states for all sections (`0fdf0ed`)
-
-### Jan 31, 2026
-
-- Shrink hero section to fit on screen (`06a95a6`)
 
 
 ---
