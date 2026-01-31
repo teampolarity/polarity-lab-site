@@ -4,6 +4,18 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Jan 31, 2026
+
+- Update index and add changelog, GitHub workflows (`5a19273`)
+
+### Jan 31, 2026
+
+- Update Painpoints logo to use LinkedIn PNG asset (`d5e7187`)
+
+### Jan 31, 2026
+
+- Add Painpoints branding and icon (`4a79625`)
+
 ### Jan 23, 2026
 
 - Add team LinkedIn links, mobile optimization, fix contact button (`48add24`)
@@ -36,53 +48,41 @@ Recent updates to the Polarity Lab website.
 
 - Add scroll choreography with floating icons and text reveals (`7de51ed`)
 
-### Jan 20, 2026
+### Jan 21, 2026
 
 - Use OG Polarity sphere PNG favicon from icon.iconset (`4d1cca4`)
 
-### Jan 20, 2026
+### Jan 21, 2026
 
 - Update product links and team roles (`7b00b9f`)
 
-### Jan 20, 2026
+### Jan 21, 2026
 
 - Update favicon to Polarity sphere icon, title to POLARITY (`c179dd2`)
 
-### Jan 20, 2026
+### Jan 21, 2026
 
 - Sync index.html to public directory for Vercel (`7ff1a80`)
 
-### Jan 20, 2026
+### Jan 21, 2026
 
 - Enhanced hero: immersive floating logos with glow effects (`c4bc6c3`)
 
-### Jan 20, 2026
+### Jan 21, 2026
 
 - Trigger Vercel deployment - 3-logo hero (`297ce5b`)
 
-### Jan 20, 2026
+### Jan 21, 2026
 
 - Hero: 3-logo showcase with POLARITY, WaxFeed, and AVDP (`3793e99`)
 
-### Jan 20, 2026
+### Jan 21, 2026
 
 - Trigger Vercel deployment (`be4ae80`)
 
 ### Jan 20, 2026
 
 - Fix branding: correct POLARITY atom logo + light/dark mode (`013e991`)
-
-### Jan 20, 2026
-
-- Add LinkedIn banner with POLARITY sphere logo and spatial atmosphere (`90b74f1`)
-
-### Jan 20, 2026
-
-- Complete site redesign: sleek vertical scroll with POLARITY sphere logo (`85d1b7a`)
-
-### Jan 20, 2026
-
-- PERFECT: Waxfeed logo now matches original EXACTLY (`fdd299b`)
 
 
 ---

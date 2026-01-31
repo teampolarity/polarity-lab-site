@@ -1,5 +1,32 @@
 [
   {
+    "id": "5a19273",
+    "date": "2026-01-31",
+    "title": "Update index and add changelog, GitHub workflows",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "d5e7187",
+    "date": "2026-01-31",
+    "title": "Update Painpoints logo to use LinkedIn PNG asset",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
+    "id": "4a79625",
+    "date": "2026-01-31",
+    "title": "Add Painpoints branding and icon",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "48add24",
     "date": "2026-01-23",
     "title": "Add team LinkedIn links, mobile optimization, fix contact button",
@@ -150,33 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "90b74f1",
-    "date": "2026-01-20",
-    "title": "Add LinkedIn banner with POLARITY sphere logo and spatial atmosphere",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "85d1b7a",
-    "date": "2026-01-20",
-    "title": "Complete site redesign: sleek vertical scroll with POLARITY sphere logo",
-    "category": {
-      "label": "Design",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "fdd299b",
-    "date": "2026-01-20",
-    "title": "PERFECT: Waxfeed logo now matches original EXACTLY",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
