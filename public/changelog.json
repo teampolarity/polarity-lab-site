@@ -1,5 +1,14 @@
 [
   {
+    "id": "d15f704",
+    "date": "2026-01-31",
+    "title": "Fix navigation scroll behavior (remove broken navScrollMap)",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "a9d101a",
     "date": "2026-01-31",
     "title": "Fix Our Ecosystem & Team centering to match Launch Pad & Research",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "9a2955d",
-    "date": "2026-01-31",
-    "title": "Update hero tagline - clearer value proposition for general audience",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

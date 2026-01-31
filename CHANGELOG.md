@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix navigation scroll behavior (remove broken navScrollMap) (`d15f704`)
+
+### Jan 31, 2026
+
 - Fix Our Ecosystem & Team centering to match Launch Pad & Research (`a9d101a`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - More icon spacing + shorter tagline (`a327702`)
-
-### Jan 31, 2026
-
-- Update hero tagline - clearer value proposition for general audience (`9a2955d`)
 
 
 ---
