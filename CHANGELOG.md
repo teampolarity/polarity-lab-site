@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Revert nav changes - keep original page with icons (`45d9495`)
+
+### Jan 31, 2026
+
 - Update navigation with all sections + scroll snap (`7b43f11`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 21, 2026
 
 - Fix mobile scroll choreography overlap (`38fe992`)
-
-### Jan 21, 2026
-
-- Add CCX formalization to Nathan's bio (`997fb7f`)
 
 
 ---

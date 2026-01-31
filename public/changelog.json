@@ -1,5 +1,14 @@
 [
   {
+    "id": "45d9495",
+    "date": "2026-01-31",
+    "title": "Revert nav changes - keep original page with icons",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "7b43f11",
     "date": "2026-01-31",
     "title": "Update navigation with all sections + scroll snap",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "997fb7f",
-    "date": "2026-01-21",
-    "title": "Add CCX formalization to Nathan's bio",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
