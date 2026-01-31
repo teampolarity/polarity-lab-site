@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix dark shading in light mode (`143d8fe`)
+
+### Jan 31, 2026
+
 - Clean up light mode: remove colored stars, use plain white background (`22e9f75`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Shrink hero section to fit on screen (`06a95a6`)
-
-### Jan 31, 2026
-
-- Logo click navigates to Launch Pad (`0840cf5`)
 
 
 ---
