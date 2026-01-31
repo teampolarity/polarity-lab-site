@@ -1,5 +1,14 @@
 [
   {
+    "id": "c596f09",
+    "date": "2026-01-31",
+    "title": "Optimize mobile for portrait vertical scrolling",
+    "category": {
+      "label": "Mobile",
+      "color": "teal"
+    }
+  },
+  {
     "id": "fba4f60",
     "date": "2026-01-31",
     "title": "Fix all dark backgrounds in light mode",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "0fdf0ed",
-    "date": "2026-01-31",
-    "title": "Add The Science nav link + fix active states for all sections",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
