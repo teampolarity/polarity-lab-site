@@ -1,5 +1,14 @@
 [
   {
+    "id": "7ceddd9",
+    "date": "2026-01-31",
+    "title": "Change Research headline to \"What is CCX?\"",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "01d8d0d",
     "date": "2026-01-31",
     "title": "Update Research page content - simpler public framing",
@@ -167,15 +176,6 @@
     "title": "Rename 'The Science' to 'The Research' and fix section overflow",
     "category": {
       "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "1ecef7e",
-    "date": "2026-01-31",
-    "title": "Remove About/Who We Are section",
-    "category": {
-      "label": "Removed",
       "color": "coral"
     }
   }

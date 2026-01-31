@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Change Research headline to "What is CCX?" (`7ceddd9`)
+
+### Jan 31, 2026
+
 - Update Research page content - simpler public framing (`01d8d0d`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Rename 'The Science' to 'The Research' and fix section overflow (`0453081`)
-
-### Jan 31, 2026
-
-- Remove About/Who We Are section (`1ecef7e`)
 
 
 ---
