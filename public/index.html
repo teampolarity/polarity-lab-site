@@ -757,6 +757,34 @@
       min-height: 100vh;
     }
 
+    /* Hero products grid - the actual visible one */
+    .hero-products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 50px;
+      width: 100%;
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 0;
+      justify-items: center;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .hero-products-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        max-width: 200px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero-products-grid {
+        gap: 24px;
+        max-width: 180px;
+      }
+    }
+
     .hero-content {
       display: flex;
       flex-direction: column;
@@ -2830,7 +2858,7 @@
       <div class="section-inner" style="visibility: visible; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 80px 40px 40px 40px; width: 100%; max-width: 1000px; margin: 0 auto; box-sizing: border-box;">
 
         <!-- Product Icons Grid -->
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 50px; width: 100%; max-width: 750px; margin: 0 auto; padding: 0; justify-items: center; align-items: center;">
+        <div class="hero-products-grid">
 
           <!-- WaxFeed -->
           <a href="https://wax-feed.com" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none;">
