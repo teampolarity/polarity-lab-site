@@ -1,5 +1,14 @@
 [
   {
+    "id": "835de7c",
+    "date": "2026-01-31",
+    "title": "Shrink The Science section to fit on screen",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "0fdf0ed",
     "date": "2026-01-31",
     "title": "Add The Science nav link + fix active states for all sections",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Mobile",
       "color": "teal"
-    }
-  },
-  {
-    "id": "bc7dc62",
-    "date": "2026-01-31",
-    "title": "Increase Painpoints icon size to match other logos",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

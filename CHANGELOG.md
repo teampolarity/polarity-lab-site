@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Shrink The Science section to fit on screen (`835de7c`)
+
+### Jan 31, 2026
+
 - Add The Science nav link + fix active states for all sections (`0fdf0ed`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Comprehensive mobile optimization (`a8fedb0`)
-
-### Jan 31, 2026
-
-- Increase Painpoints icon size to match other logos (`bc7dc62`)
 
 
 ---
