@@ -2519,13 +2519,6 @@
 
     section[id] {
       scroll-margin-top: 80px;
-      scroll-snap-align: start;
-    }
-
-    /* Smooth scroll for anchor links */
-    html {
-      scroll-behavior: smooth;
-      scroll-snap-type: y proximity;
     }
 
     /* ==========================================
@@ -2636,13 +2629,12 @@
 
     <ul class="nav-links" id="nav-links">
       <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#products" class="nav-link">Products</a></li>
-      <li><a href="#research" class="nav-link">Research</a></li>
       <li><a href="#team" class="nav-link">Team</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="#research" class="nav-link">Research</a></li>
+      <li><a href="#involve" class="nav-link">Get Involved</a></li>
     </ul>
 
-    <a href="#involve" class="nav-cta">Get Involved</a>
+    <a href="mailto:polarity@polarity-lab.com" class="nav-cta">Contact</a>
 
     <button class="nav-mobile" id="nav-mobile" aria-label="Toggle menu">
       <span></span>
@@ -3297,11 +3289,11 @@
 
       // Define zones for each nav item (start-end in vh)
       const zones = [
-        { href: '#about', start: 0.5, end: 2.5 },
-        { href: '#products', start: 2.5, end: 5.0 },
-        { href: '#research', start: 5.0, end: 7.5 },
-        { href: '#team', start: 7.5, end: 9.5 },
-        { href: '#contact', start: 9.5, end: Infinity }
+        { href: '#about', start: 0.8, end: 3.0 },
+        { href: '#research', start: 3.0, end: 7.0 },
+        { href: '#team', start: 7.0, end: 9.5 },
+        { href: '#involve', start: 9.5, end: 11.0 },
+        { href: '#contact', start: 11.0, end: Infinity }
       ];
 
       // Remove all active states
