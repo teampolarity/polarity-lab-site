@@ -1,5 +1,14 @@
 [
   {
+    "id": "6f90e09",
+    "date": "2026-01-31",
+    "title": "Fix desktop scroll and nav behavior",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "0a7badf",
     "date": "2026-01-31",
     "title": "Make hero icons slightly bigger on mobile",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "debab49",
-    "date": "2026-01-21",
-    "title": "Mobile optimization",
-    "category": {
-      "label": "Mobile",
-      "color": "teal"
     }
   }
 ]

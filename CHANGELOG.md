@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix desktop scroll and nav behavior (`6f90e09`)
+
+### Jan 31, 2026
+
 - Make hero icons slightly bigger on mobile (`0a7badf`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 21, 2026
 
 - Update Nathan's role to full stack (`c4bf4f0`)
-
-### Jan 21, 2026
-
-- Mobile optimization (`debab49`)
 
 
 ---
