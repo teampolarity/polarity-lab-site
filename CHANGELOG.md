@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Boost red glow intensity on Painpoints icon to match other logos (`97216c4`)
+
+### Jan 31, 2026
+
 - Update Painpoints icon with curved orbital ray design (`4f53347`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 21, 2026
 
 - Sync index.html to public directory for Vercel (`7ff1a80`)
-
-### Jan 21, 2026
-
-- Enhanced hero: immersive floating logos with glow effects (`c4bc6c3`)
 
 
 ---

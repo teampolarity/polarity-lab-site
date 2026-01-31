@@ -1,5 +1,14 @@
 [
   {
+    "id": "97216c4",
+    "date": "2026-01-31",
+    "title": "Boost red glow intensity on Painpoints icon to match other logos",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "4f53347",
     "date": "2026-01-31",
     "title": "Update Painpoints icon with curved orbital ray design",
@@ -165,15 +174,6 @@
     "id": "7ff1a80",
     "date": "2026-01-21",
     "title": "Sync index.html to public directory for Vercel",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "c4bc6c3",
-    "date": "2026-01-21",
-    "title": "Enhanced hero: immersive floating logos with glow effects",
     "category": {
       "label": "Update",
       "color": "text-secondary"
