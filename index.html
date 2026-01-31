@@ -399,6 +399,9 @@
       right: 0;
       z-index: 1000;
       padding: 24px 48px;
+      padding-top: calc(24px + env(safe-area-inset-top, 0px));
+      padding-left: calc(48px + env(safe-area-inset-left, 0px));
+      padding-right: calc(48px + env(safe-area-inset-right, 0px));
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -593,7 +596,11 @@
       background: none;
       border: none;
       cursor: pointer;
-      padding: 8px;
+      padding: 12px;
+      min-width: 48px;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
     }
 
     .nav-mobile span {
@@ -609,7 +616,7 @@
       .nav { padding: 16px 24px; }
       .nav.scrolled { padding: 12px 24px; }
       .nav-links, .nav-cta { display: none; }
-      .nav-mobile { display: block; }
+      .nav-mobile { display: flex; }
       .nav-links.open {
         display: flex;
         position: absolute;
@@ -629,8 +636,8 @@
        ========================================== */
     .theme-toggle {
       position: fixed;
-      bottom: 24px;
-      right: 24px;
+      bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+      right: calc(24px + env(safe-area-inset-right, 0px));
       z-index: 1001;
       width: 44px;
       height: 44px;
@@ -719,7 +726,11 @@
     }
 
     @media (max-width: 768px) {
-      .section-inner { padding: 100px 24px; }
+      .section-inner { padding: 80px 20px; }
+    }
+
+    @media (max-width: 380px) {
+      .section-inner { padding: 60px 16px; }
     }
 
     /* ==========================================
@@ -1154,11 +1165,15 @@
       .hero-constellation {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto auto;
-        gap: 16px;
-        padding: 10px;
-        max-width: 100%;
+        gap: 12px;
+        padding: 16px;
+        max-width: 320px;
+        width: 90%;
         transform: translate(-50%, -50%);
-        top: 28%;
+        top: 26%;
+      }
+      .hero-product {
+        gap: 8px;
       }
       .hero-product--waxfeed,
       .hero-product--avdp,
@@ -1166,9 +1181,9 @@
       .hero-product--painpoints {
         justify-self: center;
       }
-      .hero-product-icon { width: 80px; height: 80px; }
-      .hero-product--polarity .hero-product-icon { width: 100px; height: 100px; }
-      .hero-product-label { font-size: 9px; letter-spacing: 0.1em; }
+      .hero-product-icon { width: 70px; height: 70px; }
+      .hero-product--polarity .hero-product-icon { width: 85px; height: 85px; }
+      .hero-product-label { font-size: 8px; letter-spacing: 0.08em; }
 
       /* Hero text adjustments for mobile */
       #text-hero {
@@ -1221,6 +1236,32 @@
       #text-team .scroll-text__body {
         font-size: 13px;
         margin-bottom: 1rem !important;
+      }
+    }
+
+    /* Extra small phones (iPhone SE, etc.) */
+    @media (max-width: 380px) {
+      .hero-constellation {
+        max-width: 280px;
+        gap: 10px;
+        padding: 12px;
+        top: 24%;
+      }
+      .hero-product {
+        gap: 6px;
+      }
+      .hero-product-icon { width: 60px; height: 60px; }
+      .hero-product--polarity .hero-product-icon { width: 72px; height: 72px; }
+      .hero-product-label { font-size: 7px; letter-spacing: 0.06em; }
+
+      #text-hero {
+        top: 52%;
+      }
+      #text-hero .hero-title {
+        font-size: 24px;
+      }
+      #text-hero .hero-subtitle {
+        font-size: 14px;
       }
     }
 
@@ -1431,6 +1472,28 @@
       }
     }
 
+    @media (max-width: 600px) {
+      .ccx-diagram {
+        max-width: 220px;
+      }
+      .ccx-core {
+        width: 60px;
+        height: 60px;
+      }
+      .ccx-node {
+        width: 8px;
+        height: 8px;
+      }
+      .ccx-step {
+        padding: 16px;
+      }
+      .ccx-step-num {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+      }
+    }
+
     /* ==========================================
        ABOUT SECTION
        ========================================== */
@@ -1555,6 +1618,27 @@
 
     @media (max-width: 1024px) {
       .about-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .about-header {
+        margin-bottom: 40px;
+      }
+      .about-main {
+        padding: 24px;
+      }
+      .about-main h3 {
+        font-size: 18px;
+      }
+      .about-main p {
+        font-size: 14px;
+      }
+      .about-aside h4 {
+        font-size: 14px;
+      }
+      .about-feature p {
+        font-size: 13px;
+      }
     }
 
     /* ==========================================
@@ -1686,6 +1770,19 @@
       }
     }
 
+    @media (max-width: 768px) {
+      .team-card-name {
+        font-size: 18px;
+      }
+      .team-card-bio {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .team-card-title {
+        font-size: 13px;
+      }
+    }
+
     /* ==========================================
        PRODUCTS SECTION - Enhanced cards
        ========================================== */
@@ -1813,6 +1910,30 @@
       .products-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
+      }
+      .product-card {
+        padding: 24px;
+      }
+      .product-icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        margin-bottom: 16px;
+      }
+      .product-icon svg,
+      .product-icon img {
+        width: 32px;
+        height: 32px;
+      }
+      .product-name {
+        font-size: 16px;
+      }
+      .product-desc {
+        font-size: 14px;
+      }
+      .product-arrow {
+        opacity: 1;
+        transform: translateX(0);
       }
     }
 
@@ -2348,8 +2469,14 @@
       .newsletter-form {
         flex-direction: column;
       }
+      .newsletter-form input {
+        font-size: 16px;
+        padding: 16px 18px;
+      }
       .newsletter-form button {
         width: 100%;
+        padding: 16px 24px;
+        font-size: 14px;
       }
     }
 
@@ -2392,6 +2519,48 @@
 
     section[id] {
       scroll-margin-top: 80px;
+    }
+
+    /* ==========================================
+       TOUCH DEVICE OPTIMIZATIONS
+       ========================================== */
+    @media (hover: none) and (pointer: coarse) {
+      /* Remove hover-dependent effects on touch devices */
+      .product-card:hover {
+        transform: none;
+      }
+      .product-arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .team-card:hover {
+        transform: none;
+      }
+      .team-card-linkedin {
+        opacity: 0.7;
+      }
+      .contact-btn:hover {
+        transform: none;
+      }
+      .nav-link:hover::after {
+        width: 0;
+      }
+
+      /* Add active states for touch feedback */
+      .product-card:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+      }
+      .team-card:active {
+        transform: scale(0.98);
+      }
+      .contact-btn:active {
+        transform: scale(0.97);
+        opacity: 0.9;
+      }
+      .newsletter-form button:active {
+        transform: scale(0.97);
+      }
     }
   </style>
 </head>
