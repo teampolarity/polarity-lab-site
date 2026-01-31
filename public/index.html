@@ -2626,6 +2626,7 @@
 
     <ul class="nav-links" id="nav-links">
       <li><a href="#home" class="nav-link active">Launch Pad</a></li>
+      <li><a href="#ccx" class="nav-link">The Science</a></li>
       <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="#products" class="nav-link">Products</a></li>
       <li><a href="#research" class="nav-link">Research</a></li>
@@ -3374,11 +3375,13 @@
 
       // Define zones for each nav item (start-end in vh)
       const zones = [
-        { href: '#about', start: 0.8, end: 3.0 },
-        { href: '#research', start: 3.0, end: 7.0 },
-        { href: '#team', start: 7.0, end: 9.5 },
-        { href: '#involve', start: 9.5, end: 11.0 },
-        { href: '#contact', start: 11.0, end: Infinity }
+        { href: '#home', start: 0, end: 0.8 },
+        { href: '#ccx', start: 0.8, end: 1.8 },
+        { href: '#about', start: 1.8, end: 3.0 },
+        { href: '#products', start: 3.0, end: 5.0 },
+        { href: '#research', start: 5.0, end: 7.0 },
+        { href: '#team', start: 7.0, end: 9.0 },
+        { href: '#contact', start: 9.0, end: Infinity }
       ];
 
       // Remove all active states
