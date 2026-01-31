@@ -1,5 +1,14 @@
 [
   {
+    "id": "bc7dc62",
+    "date": "2026-01-31",
+    "title": "Increase Painpoints icon size to match other logos",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "97216c4",
     "date": "2026-01-31",
     "title": "Boost red glow intensity on Painpoints icon to match other logos",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "7ff1a80",
-    "date": "2026-01-21",
-    "title": "Sync index.html to public directory for Vercel",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
