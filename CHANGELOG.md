@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Clean up light mode: remove colored stars, use plain white background (`22e9f75`)
+
+### Jan 31, 2026
+
 - Add dynamic colored starfield for light mode (`9cd1c44`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Logo click navigates to Launch Pad (`0840cf5`)
-
-### Jan 31, 2026
-
-- Restore full tagline with comma (`53e4bb5`)
 
 
 ---
