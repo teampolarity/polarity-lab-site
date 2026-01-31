@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Update Research page content - simpler public framing (`01d8d0d`)
+
+### Jan 31, 2026
+
 - Fix Polarity icon in Ecosystem section (`3b2a803`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Remove About/Who We Are section (`1ecef7e`)
-
-### Jan 31, 2026
-
-- Fix nav active dot - now properly tracks current section (`f2bad27`)
 
 
 ---

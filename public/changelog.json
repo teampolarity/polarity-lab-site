@@ -1,5 +1,14 @@
 [
   {
+    "id": "01d8d0d",
+    "date": "2026-01-31",
+    "title": "Update Research page content - simpler public framing",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "3b2a803",
     "date": "2026-01-31",
     "title": "Fix Polarity icon in Ecosystem section",
@@ -167,15 +176,6 @@
     "title": "Remove About/Who We Are section",
     "category": {
       "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "f2bad27",
-    "date": "2026-01-31",
-    "title": "Fix nav active dot - now properly tracks current section",
-    "category": {
-      "label": "Bug Fix",
       "color": "coral"
     }
   }
