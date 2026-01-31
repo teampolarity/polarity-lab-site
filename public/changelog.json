@@ -1,5 +1,14 @@
 [
   {
+    "id": "0fdf0ed",
+    "date": "2026-01-31",
+    "title": "Add The Science nav link + fix active states for all sections",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "06a95a6",
     "date": "2026-01-31",
     "title": "Shrink hero section to fit on screen",
@@ -165,15 +174,6 @@
     "id": "bc7dc62",
     "date": "2026-01-31",
     "title": "Increase Painpoints icon size to match other logos",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "97216c4",
-    "date": "2026-01-31",
-    "title": "Boost red glow intensity on Painpoints icon to match other logos",
     "category": {
       "label": "Update",
       "color": "text-secondary"

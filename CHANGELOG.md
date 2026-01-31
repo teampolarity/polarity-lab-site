@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Add The Science nav link + fix active states for all sections (`0fdf0ed`)
+
+### Jan 31, 2026
+
 - Shrink hero section to fit on screen (`06a95a6`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Increase Painpoints icon size to match other logos (`bc7dc62`)
-
-### Jan 31, 2026
-
-- Boost red glow intensity on Painpoints icon to match other logos (`97216c4`)
 
 
 ---
