@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Remove About/Who We Are section (`1ecef7e`)
+
+### Jan 31, 2026
+
 - Fix nav active dot - now properly tracks current section (`f2bad27`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Sync public/index.html with mobile fixes (`45c7359`)
-
-### Jan 31, 2026
-
-- Move hero icons DOWN - fix navbar overlap (`fb82a5f`)
 
 
 ---
