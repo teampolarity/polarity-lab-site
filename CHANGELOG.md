@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Rename 'The Science' to 'The Research' and fix section overflow (`0453081`)
+
+### Jan 31, 2026
+
 - Remove About/Who We Are section (`1ecef7e`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Make hero icons slightly bigger on mobile (`0a7badf`)
-
-### Jan 31, 2026
-
-- Sync public/index.html with mobile fixes (`45c7359`)
 
 
 ---

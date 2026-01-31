@@ -1,5 +1,14 @@
 [
   {
+    "id": "0453081",
+    "date": "2026-01-31",
+    "title": "Rename 'The Science' to 'The Research' and fix section overflow",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "1ecef7e",
     "date": "2026-01-31",
     "title": "Remove About/Who We Are section",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Mobile",
       "color": "teal"
-    }
-  },
-  {
-    "id": "45c7359",
-    "date": "2026-01-31",
-    "title": "Sync public/index.html with mobile fixes",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
