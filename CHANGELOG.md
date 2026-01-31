@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Remove Safety, Research, and Involve sections (`64192c6`)
+
+### Jan 31, 2026
+
 - Center Our Ecosystem section and improve product descriptions (`f1b9bea`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Revert nav changes - keep original page with icons (`45d9495`)
-
-### Jan 31, 2026
-
-- Update navigation with all sections + scroll snap (`7b43f11`)
 
 
 ---

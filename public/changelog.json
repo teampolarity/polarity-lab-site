@@ -1,5 +1,14 @@
 [
   {
+    "id": "64192c6",
+    "date": "2026-01-31",
+    "title": "Remove Safety, Research, and Involve sections",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "f1b9bea",
     "date": "2026-01-31",
     "title": "Center Our Ecosystem section and improve product descriptions",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "7b43f11",
-    "date": "2026-01-31",
-    "title": "Update navigation with all sections + scroll snap",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]
