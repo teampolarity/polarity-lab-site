@@ -1,5 +1,14 @@
 [
   {
+    "id": "b8e2c39",
+    "date": "2026-01-31",
+    "title": "Fix mobile hero - stack product icons vertically",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "c596f09",
     "date": "2026-01-31",
     "title": "Optimize mobile for portrait vertical scrolling",
@@ -165,15 +174,6 @@
     "id": "8c303dc",
     "date": "2026-01-31",
     "title": "Center Launch Pad completely",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "835de7c",
-    "date": "2026-01-31",
-    "title": "Shrink The Science section to fit on screen",
     "category": {
       "label": "Update",
       "color": "text-secondary"

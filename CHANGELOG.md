@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix mobile hero - stack product icons vertically (`b8e2c39`)
+
+### Jan 31, 2026
+
 - Optimize mobile for portrait vertical scrolling (`c596f09`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Center Launch Pad completely (`8c303dc`)
-
-### Jan 31, 2026
-
-- Shrink The Science section to fit on screen (`835de7c`)
 
 
 ---
