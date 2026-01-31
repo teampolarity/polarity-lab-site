@@ -1,5 +1,14 @@
 [
   {
+    "id": "ccc4f3c",
+    "date": "2026-01-31",
+    "title": "Fix hero icons - move DOWN to center of screen",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "399c6de",
     "date": "2026-01-31",
     "title": "Fix hero icons mobile - more aggressive sizing",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "4d1cca4",
-    "date": "2026-01-21",
-    "title": "Use OG Polarity sphere PNG favicon from icon.iconset",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

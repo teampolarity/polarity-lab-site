@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix hero icons - move DOWN to center of screen (`ccc4f3c`)
+
+### Jan 31, 2026
+
 - Fix hero icons mobile - more aggressive sizing (`399c6de`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 21, 2026
 
 - Add scroll choreography with floating icons and text reveals (`7de51ed`)
-
-### Jan 21, 2026
-
-- Use OG Polarity sphere PNG favicon from icon.iconset (`4d1cca4`)
 
 
 ---
