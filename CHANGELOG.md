@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Center Our Ecosystem section and improve product descriptions (`f1b9bea`)
+
+### Jan 31, 2026
+
 - Rename Products to Our Ecosystem with CCX use case explanations (`660c51b`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Update navigation with all sections + scroll snap (`7b43f11`)
-
-### Jan 31, 2026
-
-- Fix desktop scroll and nav behavior (`6f90e09`)
 
 
 ---
