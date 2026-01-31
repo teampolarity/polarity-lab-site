@@ -676,9 +676,15 @@
       scroll-snap-type: none;
     }
 
-    /* The stage - DISABLED for normal scrolling */
+    /* The stage - COMPLETELY HIDDEN */
     .stage {
-      display: none;
+      display: none !important;
+      visibility: hidden !important;
+      position: absolute !important;
+      left: -9999px !important;
+      width: 0 !important;
+      height: 0 !important;
+      overflow: hidden !important;
     }
 
     /* Scroll container */
@@ -1095,7 +1101,8 @@
       margin-bottom: 16px;
     }
 
-    .hero-title .gradient {
+    .hero-title .gradient,
+    .gradient {
       background: linear-gradient(135deg, var(--teal-light), var(--teal), var(--purple));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -2803,47 +2810,60 @@
     <section class="spatial-section hero" id="home">
       <div class="section-inner" style="visibility: visible; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding-top: 100px;">
 
-        <!-- Product Icons Grid -->
-        <div class="hero-constellation" style="position: relative; transform: none; top: auto; left: auto;">
-          <a href="https://wax-feed.com" target="_blank" class="hero-product hero-product--waxfeed">
-            <div class="hero-product-icon">
-              <svg viewBox="0 0 100 100" fill="none">
-                <circle cx="50" cy="50" r="45" stroke="url(#waxGrad)" stroke-width="2" fill="none"/>
-                <circle cx="50" cy="50" r="8" fill="var(--teal)"/>
-                <ellipse cx="50" cy="50" rx="25" ry="10" stroke="var(--teal)" stroke-width="1.5" fill="none" transform="rotate(-30 50 50)"/>
-                <ellipse cx="50" cy="50" rx="25" ry="10" stroke="var(--teal)" stroke-width="1.5" fill="none" transform="rotate(30 50 50)"/>
-                <ellipse cx="50" cy="50" rx="25" ry="10" stroke="var(--teal)" stroke-width="1.5" fill="none" transform="rotate(90 50 50)"/>
-                <defs><linearGradient id="waxGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="var(--teal)"/><stop offset="100%" stop-color="var(--teal-deep)"/></linearGradient></defs>
+        <!-- Product Icons Grid - Properly Centered -->
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; max-width: 1000px; width: 100%; padding: 20px; justify-items: center; align-items: start;">
+
+          <!-- WaxFeed -->
+          <a href="https://wax-feed.com" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 16px; text-decoration: none;">
+            <div style="width: 140px; height: 140px; display: flex; align-items: center; justify-content: center;">
+              <img src="waxfeed_disc.svg" alt="WaxFeed" style="width: 100%; height: 100%; object-fit: contain;">
+            </div>
+            <span style="font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);">WaxFeed</span>
+          </a>
+
+          <!-- Polarity -->
+          <a href="https://app.polarity-lab.com/" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 16px; text-decoration: none;">
+            <div style="width: 160px; height: 160px; display: flex; align-items: center; justify-content: center;">
+              <svg viewBox="0 0 200 200" style="width: 100%; height: 100%;">
+                <defs>
+                  <radialGradient id="coreGrad" cx="30%" cy="30%" r="70%">
+                    <stop offset="0%" stop-color="#6EE7DF"/>
+                    <stop offset="50%" stop-color="#4ECDC4"/>
+                    <stop offset="100%" stop-color="#2BA89F"/>
+                  </radialGradient>
+                  <filter id="orbitalGlow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="3" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#4ECDC4" stroke-width="2.5" transform="rotate(-60 100 100)" filter="url(#orbitalGlow)" opacity="0.9"/>
+                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FFA07A" stroke-width="2.5" transform="rotate(60 100 100)" filter="url(#orbitalGlow)" opacity="0.9"/>
+                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#BB8FCE" stroke-width="2.5" filter="url(#orbitalGlow)" opacity="0.9"/>
+                <circle cx="140" cy="30" r="8" fill="#4ECDC4" filter="url(#orbitalGlow)"/>
+                <circle cx="60" cy="30" r="8" fill="#FFA07A" filter="url(#orbitalGlow)"/>
+                <circle cx="180" cy="100" r="8" fill="#BB8FCE" filter="url(#orbitalGlow)"/>
+                <circle cx="100" cy="100" r="28" fill="url(#coreGrad)" filter="url(#orbitalGlow)"/>
               </svg>
             </div>
-            <span class="hero-product-label">WaxFeed</span>
+            <span style="font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);">Polarity</span>
           </a>
 
-          <a href="https://app.polarity-lab.com/" target="_blank" class="hero-product hero-product--polarity">
-            <div class="hero-product-icon">
-              <svg viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="45" cy="45" rx="40" ry="15" stroke="var(--teal)" stroke-width="1.5" fill="none" opacity="0.6"/>
-                <ellipse cx="45" cy="45" rx="40" ry="15" stroke="var(--coral)" stroke-width="1.5" fill="none" opacity="0.6" transform="rotate(60 45 45)"/>
-                <ellipse cx="45" cy="45" rx="40" ry="15" stroke="var(--purple)" stroke-width="1.5" fill="none" opacity="0.6" transform="rotate(120 45 45)"/>
-                <circle cx="45" cy="45" r="8" fill="var(--teal)"/>
-              </svg>
+          <!-- Painpoints -->
+          <a href="https://painpoints.site" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 16px; text-decoration: none;">
+            <div style="width: 140px; height: 140px; display: flex; align-items: center; justify-content: center;">
+              <img src="painpoints-icon.svg" alt="Painpoints" style="width: 100%; height: 100%; object-fit: contain;">
             </div>
-            <span class="hero-product-label">Polarity</span>
+            <span style="font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);">Painpoints</span>
           </a>
 
-          <a href="https://painpoints.site" target="_blank" class="hero-product hero-product--painpoints">
-            <div class="hero-product-icon">
-              <img src="painpoints-icon.svg" alt="Painpoints">
+          <!-- AVDP -->
+          <a href="https://linktr.ee/averydistantperspective" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 16px; text-decoration: none;">
+            <div style="width: 140px; height: 140px; display: flex; align-items: center; justify-content: center;">
+              <img src="AVDPLOGOREAL.jpg" alt="AVDP" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%; border: 2px solid var(--coral);">
             </div>
-            <span class="hero-product-label">Painpoints</span>
+            <span style="font-family: var(--font-display); font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);">AVDP</span>
           </a>
 
-          <a href="https://linktr.ee/averydistantperspective" target="_blank" class="hero-product hero-product--avdp">
-            <div class="hero-product-icon avdp-icon">
-              <img src="AVDPLOGOREAL.jpg" alt="AVDP">
-            </div>
-            <span class="hero-product-label">AVDP</span>
-          </a>
         </div>
 
         <!-- Hero Text -->
