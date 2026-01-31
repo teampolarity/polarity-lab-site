@@ -1,0 +1,41 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle (world/globe) - hollow, brutal -->
+  <circle cx="280" cy="280" r="180" stroke="#0A0A0A" stroke-width="8" fill="none"/>
+
+  <!-- Globe latitude lines -->
+  <ellipse cx="280" cy="280" rx="180" ry="60" stroke="#0A0A0A" stroke-width="3" fill="none"/>
+  <ellipse cx="280" cy="280" rx="180" ry="120" stroke="#0A0A0A" stroke-width="3" fill="none"/>
+
+  <!-- Globe longitude line -->
+  <ellipse cx="280" cy="280" rx="60" ry="180" stroke="#0A0A0A" stroke-width="3" fill="none"/>
+
+  <!-- NEEDLE - brutal, piercing through the globe -->
+  <!-- Needle shaft - thick, aggressive -->
+  <line x1="40" y1="472" x2="380" y2="132" stroke="#E63329" stroke-width="24" stroke-linecap="round"/>
+
+  <!-- Needle tip - sharp, deadly point -->
+  <polygon points="380,132 420,92 460,52 395,117" fill="#E63329"/>
+
+  <!-- Needle point highlight -->
+  <line x1="420" y1="92" x2="475" y2="37" stroke="#E63329" stroke-width="12" stroke-linecap="round"/>
+
+  <!-- Entry wound effect - where needle pierces globe -->
+  <circle cx="190" cy="370" r="20" fill="#E63329"/>
+
+  <!-- Exit wound effect -->
+  <circle cx="370" cy="190" r="15" fill="#E63329"/>
+
+  <!-- Blood/pain splatter marks around wounds -->
+  <circle cx="170" cy="390" r="6" fill="#E63329"/>
+  <circle cx="205" cy="385" r="4" fill="#E63329"/>
+  <circle cx="175" cy="355" r="5" fill="#E63329"/>
+
+  <circle cx="385" cy="175" r="5" fill="#E63329"/>
+  <circle cx="355" cy="195" r="4" fill="#E63329"/>
+  <circle cx="380" cy="210" r="3" fill="#E63329"/>
+
+  <!-- Needle grip texture lines -->
+  <line x1="60" y1="445" x2="75" y2="460" stroke="#0A0A0A" stroke-width="4" stroke-linecap="round"/>
+  <line x1="80" y1="425" x2="95" y2="440" stroke="#0A0A0A" stroke-width="4" stroke-linecap="round"/>
+  <line x1="100" y1="405" x2="115" y2="420" stroke="#0A0A0A" stroke-width="4" stroke-linecap="round"/>
+</svg>

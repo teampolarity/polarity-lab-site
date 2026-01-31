@@ -45,6 +45,10 @@
       --purple-light: #E8C5F5;
       --purple-glow: rgba(187, 143, 206, 0.4);
 
+      --red: #E63329;
+      --red-glow: rgba(230, 51, 41, 0.4);
+      --red-subtle: rgba(230, 51, 41, 0.15);
+
       /* Text hierarchy */
       --text-pure: #ffffff;
       --text-primary: #f0f0f8;
@@ -741,12 +745,12 @@
       left: 50%;
       transform: translate(-50%, -85%);
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      grid-template-columns: 1fr auto auto 1fr;
       align-items: center;
       justify-items: center;
-      gap: 60px;
+      gap: 40px;
       width: 100%;
-      max-width: 950px;
+      max-width: 1100px;
       padding: 40px 20px;
       perspective: 1200px;
     }
@@ -845,6 +849,22 @@
       filter:
         drop-shadow(0 0 40px var(--coral-glow))
         drop-shadow(0 0 80px rgba(255, 184, 153, 0.15));
+    }
+
+    /* Painpoints - Exits down */
+    .hero-product--painpoints {
+      z-index: 2;
+    }
+
+    .hero-product--painpoints .hero-product-icon {
+      filter:
+        drop-shadow(0 0 40px var(--red-glow))
+        drop-shadow(0 0 80px rgba(230, 51, 41, 0.15));
+    }
+
+    .hero-product--painpoints .hero-product-icon img {
+      width: 85%;
+      height: 85%;
     }
 
     /* Dragging state */
@@ -1132,8 +1152,8 @@
 
     @media (max-width: 768px) {
       .hero-constellation {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
         gap: 16px;
         padding: 10px;
         max-width: 100%;
@@ -1142,7 +1162,8 @@
       }
       .hero-product--waxfeed,
       .hero-product--avdp,
-      .hero-product--polarity {
+      .hero-product--polarity,
+      .hero-product--painpoints {
         justify-self: center;
       }
       .hero-product-icon { width: 80px; height: 80px; }
@@ -1679,9 +1700,9 @@
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -1707,7 +1728,8 @@
 
     .product-card:nth-child(1)::before { background: linear-gradient(135deg, var(--teal-glow), transparent); }
     .product-card:nth-child(2)::before { background: linear-gradient(135deg, var(--purple-glow), transparent); }
-    .product-card:nth-child(3)::before { background: linear-gradient(135deg, var(--coral-glow), transparent); }
+    .product-card:nth-child(3)::before { background: linear-gradient(135deg, var(--red-glow), transparent); }
+    .product-card:nth-child(4)::before { background: linear-gradient(135deg, var(--coral-glow), transparent); }
 
     .product-card:hover {
       transform: translateY(-8px);
@@ -1732,7 +1754,8 @@
 
     .product-card:nth-child(1) .product-icon { background: var(--teal-subtle); }
     .product-card:nth-child(2) .product-icon { background: rgba(187, 143, 206, 0.15); }
-    .product-card:nth-child(3) .product-icon { background: rgba(255, 138, 101, 0.15); }
+    .product-card:nth-child(3) .product-icon { background: var(--red-subtle); }
+    .product-card:nth-child(4) .product-icon { background: rgba(255, 138, 101, 0.15); }
 
     .product-icon svg,
     .product-icon img {
@@ -1779,7 +1802,14 @@
       transform: translateX(0);
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 700px;
+      }
+    }
+
+    @media (max-width: 600px) {
       .products-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
@@ -2207,6 +2237,104 @@
       letter-spacing: 0.05em;
     }
 
+    /* ==========================================
+       CHANGELOG SECTION
+       ========================================== */
+    .changelog-section {
+      padding: 48px 0;
+      border-top: 1px solid var(--border-ghost);
+      margin-top: 48px;
+    }
+
+    .changelog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    .changelog-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+    }
+
+    .changelog-link {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--teal);
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .changelog-link:hover {
+      opacity: 0.7;
+    }
+
+    .changelog-entries {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .changelog-entry {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 12px 16px;
+      background: var(--void-nebula);
+      border-radius: 8px;
+      border: 1px solid var(--border-void);
+    }
+
+    .changelog-meta {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 80px;
+    }
+
+    .changelog-date {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+    }
+
+    .changelog-tag {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .changelog-tag.teal { color: var(--teal); }
+    .changelog-tag.coral { color: var(--coral); }
+    .changelog-tag.purple { color: var(--purple); }
+
+    .changelog-message {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .changelog-entry {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .changelog-meta {
+        flex-direction: row;
+        gap: 12px;
+        align-items: center;
+      }
+    }
+
     @media (max-width: 768px) {
       .contact-links {
         flex-direction: column;
@@ -2414,6 +2542,14 @@
         <span class="hero-product-label">Polarity</span>
       </a>
 
+      <!-- Painpoints - Exits down -->
+      <a href="https://painpoints.site" target="_blank" class="hero-product hero-product--painpoints" id="icon-painpoints">
+        <div class="hero-product-icon">
+          <img src="painpoints-icon.svg" alt="Painpoints">
+        </div>
+        <span class="hero-product-label">Painpoints</span>
+      </a>
+
       <!-- AVDP - Exits right -->
       <a href="https://linktr.ee/averydistantperspective" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
         <div class="hero-product-icon avdp-icon">
@@ -2439,7 +2575,7 @@
     <div class="scroll-text scroll-text--left" id="text-mission">
       <span class="scroll-text__accent" style="top: -40px; left: -20px;">01</span>
       <span class="scroll-text__label">The Mission</span>
-      <h2 class="scroll-text__title">Two patents.<br>Four products.<br>One question.</h2>
+      <h2 class="scroll-text__title">Two patents.<br>Five products.<br>One question.</h2>
       <p class="scroll-text__body">Can we measure cognition through conversation?</p>
     </div>
 
@@ -2468,7 +2604,7 @@
         <span class="scroll-text__stat-label">Provisional Patents</span>
       </div>
       <div class="scroll-text__stat">
-        <span class="scroll-text__stat-num">4</span>
+        <span class="scroll-text__stat-num">5</span>
         <span class="scroll-text__stat-label">Products Built</span>
       </div>
       <div class="scroll-text__stat">
@@ -2700,6 +2836,15 @@
           <span class="product-arrow">Explore →</span>
         </a>
 
+        <a href="https://painpoints.site" target="_blank" class="product-card">
+          <div class="product-icon">
+            <img src="painpoints-icon.svg" alt="Painpoints">
+          </div>
+          <div class="product-name">Painpoints</div>
+          <div class="product-desc">Fund problems, not promises. Crowdfunding platform for real-world solutions.</div>
+          <span class="product-arrow">Explore →</span>
+        </a>
+
         <a href="https://linktr.ee/averydistantperspective" target="_blank" class="product-card">
           <div class="product-icon">
             <img src="AVDPLOGOREAL.jpg" alt="AVDP">
@@ -2887,6 +3032,17 @@
         </form>
       </div>
 
+      <!-- Changelog Section -->
+      <div class="changelog-section">
+        <div class="changelog-header">
+          <span class="changelog-title">Recent Updates</span>
+          <a href="https://github.com/polarityai/polarity-landing/blob/main/CHANGELOG.md" target="_blank" class="changelog-link">View all →</a>
+        </div>
+        <div class="changelog-entries" id="changelog-entries">
+          <!-- Loaded dynamically -->
+        </div>
+      </div>
+
       <footer class="footer">
         <p class="footer-copyright">© 2025 POLARITY LAB LLC · Providence, RI · 2 Provisional Patents Filed</p>
       </footer>
@@ -3019,6 +3175,7 @@
         this.constellation = document.getElementById('hero-constellation');
         this.iconWaxfeed = document.getElementById('icon-waxfeed');
         this.iconPolarity = document.getElementById('icon-polarity');
+        this.iconPainpoints = document.getElementById('icon-painpoints');
         this.iconAvdp = document.getElementById('icon-avdp');
         this.scrollIndicator = document.getElementById('scroll-indicator');
 
@@ -3138,6 +3295,16 @@
           const polScale = 1 - iconExitProgress * 0.2;
           this.iconPolarity.style.transform = `translateY(${polY}px) scale(${polScale})`;
           this.iconPolarity.style.opacity = polOpacity;
+        }
+
+        if (this.iconPainpoints) {
+          // Painpoints exits down
+          const ppX = iconExitProgress * 80;
+          const ppY = iconExitProgress * 120;
+          const ppOpacity = 1 - iconExitProgress;
+          const ppScale = 1 - iconExitProgress * 0.3;
+          this.iconPainpoints.style.transform = `translate(${ppX}px, ${ppY}px) scale(${ppScale})`;
+          this.iconPainpoints.style.opacity = ppOpacity;
         }
 
         if (this.iconAvdp) {
@@ -3633,6 +3800,43 @@
         }, 2000);
       }, 1000);
     });
+
+    // ==========================================
+    // CHANGELOG LOADER
+    // ==========================================
+    async function loadChangelog() {
+      try {
+        const res = await fetch('/changelog.json');
+        if (!res.ok) return;
+
+        const entries = await res.json();
+        const container = document.getElementById('changelog-entries');
+        if (!container || !entries.length) return;
+
+        // Show only the 5 most recent entries
+        container.innerHTML = entries.slice(0, 5).map(entry => {
+          const date = new Date(entry.date).toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric'
+          });
+          const colorClass = entry.category.color === 'text-secondary' ? '' : entry.category.color;
+
+          return `
+            <div class="changelog-entry">
+              <div class="changelog-meta">
+                <span class="changelog-date">${date}</span>
+                <span class="changelog-tag ${colorClass}">${entry.category.label}</span>
+              </div>
+              <p class="changelog-message">${entry.title}</p>
+            </div>
+          `;
+        }).join('');
+      } catch (e) {
+        console.warn('Changelog not available:', e);
+      }
+    }
+
+    loadChangelog();
   </script>
 </body>
 </html>

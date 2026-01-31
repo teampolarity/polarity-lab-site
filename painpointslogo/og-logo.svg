@@ -1,0 +1,29 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Open Graph / Social Media banner -->
+  <rect width="1200" height="630" fill="#FAFAFA"/>
+
+  <!-- Globe - centered and scaled -->
+  <g transform="translate(240, 40)">
+    <circle cx="280" cy="280" r="180" stroke="#0A0A0A" stroke-width="6" fill="none"/>
+    <ellipse cx="280" cy="280" rx="180" ry="60" stroke="#0A0A0A" stroke-width="2" fill="none" opacity="0.5"/>
+    <ellipse cx="280" cy="280" rx="180" ry="120" stroke="#0A0A0A" stroke-width="2" fill="none" opacity="0.5"/>
+    <ellipse cx="280" cy="280" rx="60" ry="180" stroke="#0A0A0A" stroke-width="2" fill="none" opacity="0.5"/>
+
+    <!-- Needle -->
+    <line x1="40" y1="472" x2="380" y2="132" stroke="#E63329" stroke-width="20" stroke-linecap="round"/>
+    <polygon points="380,132 420,92 460,52 395,117" fill="#E63329"/>
+    <line x1="420" y1="92" x2="465" y2="47" stroke="#E63329" stroke-width="10" stroke-linecap="round"/>
+
+    <!-- Wounds -->
+    <circle cx="190" cy="370" r="18" fill="#E63329"/>
+    <circle cx="370" cy="190" r="14" fill="#E63329"/>
+    <circle cx="170" cy="390" r="5" fill="#E63329"/>
+    <circle cx="205" cy="385" r="3" fill="#E63329"/>
+    <circle cx="385" cy="175" r="4" fill="#E63329"/>
+  </g>
+
+  <!-- Text -->
+  <text x="800" y="280" font-family="Helvetica Neue, Arial, sans-serif" font-size="72" font-weight="700" fill="#0A0A0A" letter-spacing="-2">PAIN</text>
+  <text x="800" y="370" font-family="Helvetica Neue, Arial, sans-serif" font-size="72" font-weight="700" fill="#0A0A0A" letter-spacing="-2">POINTS</text>
+  <text x="800" y="420" font-family="Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="500" fill="#737373" letter-spacing="3">FUND THE FIX</text>
+</svg>
