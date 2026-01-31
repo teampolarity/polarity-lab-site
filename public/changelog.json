@@ -1,5 +1,14 @@
 [
   {
+    "id": "a327702",
+    "date": "2026-01-31",
+    "title": "More icon spacing + shorter tagline",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "9a2955d",
     "date": "2026-01-31",
     "title": "Update hero tagline - clearer value proposition for general audience",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "50dac80",
-    "date": "2026-01-31",
-    "title": "Fix Painpoints logo path and add PNG to public folder",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
