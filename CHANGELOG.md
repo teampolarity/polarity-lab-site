@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Jan 31, 2026
 
+- Fix Our Ecosystem & Team centering to match Launch Pad & Research (`a9d101a`)
+
+### Jan 31, 2026
+
 - Center Our Ecosystem content properly when navigating to section (`623c30b`)
 
 ### Jan 31, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Update hero tagline - clearer value proposition for general audience (`9a2955d`)
-
-### Jan 31, 2026
-
-- Add Launch Pad nav tab + center everything (`8cdf6c5`)
 
 
 ---
