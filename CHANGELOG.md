@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Feb 5, 2026
+
+- Upgrade to cinematic design experience with WebGL (`bf0452a`)
+
 ### Jan 31, 2026
 
 - Fix mobile layout - 2x2 grid and hamburger menu (`5627fb9`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Center Our Ecosystem section and improve product descriptions (`f1b9bea`)
-
-### Jan 31, 2026
-
-- Rename Products to Our Ecosystem with CCX use case explanations (`660c51b`)
 
 
 ---
