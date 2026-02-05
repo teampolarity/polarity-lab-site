@@ -3,80 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="screen-orientation" content="portrait">
   <meta name="theme-color" content="#050508">
-  <meta name="description" content="Polarity Lab - Understanding why we think differently. We study how information organizes across minds, turning conversation into insights about cognition and connection. Providence, RI.">
+  <meta name="description" content="Polarity Lab - Research laboratory studying Conversational Connectomics (CCX). Extracting cognitive signals from natural language. Providence, RI.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <title>POLARITY</title>
 
-  <!-- Fonts: Helvetica Neue for spatial feel, Space Grotesk for display -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Three.js for WebGL background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
     /* ==========================================
-       SPATIAL DESIGN SYSTEM
+       POLARITY LAB - Cinematic Experience
        ========================================== */
     :root {
-      /* Void palette - Deep space colors */
+      /* Void palette */
       --void-pure: #000000;
-      --void-deep: #050508;
-      --void-space: #0a0a10;
-      --void-nebula: #0f0f18;
-      --void-surface: #151520;
-      --void-elevated: #1a1a28;
+      --void-deep: #020204;
+      --void-space: #050508;
+      --void-nebula: #080810;
+      --void-surface: #0c0c14;
+      --void-elevated: #12121c;
 
-      /* POLARITY Brand Colors - Enhanced for dark */
+      /* Brand Colors */
       --teal: #4ECDC4;
       --teal-bright: #5EEEE4;
       --teal-light: #7EFFF5;
       --teal-deep: #2BA89F;
-      --teal-glow: rgba(78, 205, 196, 0.4);
-      --teal-subtle: rgba(78, 205, 196, 0.15);
+      --teal-glow: rgba(78, 205, 196, 0.5);
+      --teal-subtle: rgba(78, 205, 196, 0.12);
 
       --coral: #FF8A65;
       --coral-bright: #FFA07A;
       --coral-light: #FFB899;
-      --coral-glow: rgba(255, 138, 101, 0.4);
+      --coral-glow: rgba(255, 138, 101, 0.5);
 
       --purple: #BB8FCE;
       --purple-bright: #D4A5E8;
       --purple-light: #E8C5F5;
-      --purple-glow: rgba(187, 143, 206, 0.4);
+      --purple-glow: rgba(187, 143, 206, 0.5);
 
       --red: #E63329;
-      --red-glow: rgba(230, 51, 41, 0.4);
-      --red-subtle: rgba(230, 51, 41, 0.15);
+      --red-glow: rgba(230, 51, 41, 0.5);
+      --red-subtle: rgba(230, 51, 41, 0.12);
 
       /* Text hierarchy */
       --text-pure: #ffffff;
-      --text-primary: #f0f0f8;
-      --text-secondary: rgba(240, 240, 248, 0.7);
-      --text-tertiary: rgba(240, 240, 248, 0.45);
-      --text-ghost: rgba(240, 240, 248, 0.2);
-      --text-void: rgba(240, 240, 248, 0.08);
+      --text-primary: rgba(255, 255, 255, 0.95);
+      --text-secondary: rgba(255, 255, 255, 0.65);
+      --text-tertiary: rgba(255, 255, 255, 0.4);
+      --text-ghost: rgba(255, 255, 255, 0.2);
+      --text-void: rgba(255, 255, 255, 0.08);
 
       /* Borders */
       --border-void: rgba(255, 255, 255, 0.03);
       --border-ghost: rgba(255, 255, 255, 0.06);
       --border-subtle: rgba(255, 255, 255, 0.1);
-      --border-medium: rgba(255, 255, 255, 0.15);
+      --border-medium: rgba(255, 255, 255, 0.18);
 
-      /* Typography - Spatial Swiss */
-      --font-display: 'Space Grotesk', -apple-system, 'Helvetica Neue', sans-serif;
-      --font-body: 'IBM Plex Sans', 'Helvetica Neue', -apple-system, sans-serif;
+      /* Typography */
+      --font-display: 'Space Grotesk', -apple-system, sans-serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
 
-      /* Motion */
+      /* Motion - Cinematic easing */
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
       --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-
-      /* Spatial dimensions */
-      --section-height: 100vh;
-      --section-height-min: 100svh;
+      --ease-dramatic: cubic-bezier(0.87, 0, 0.13, 1);
+      --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
     /* Light mode overrides */
@@ -85,24 +85,24 @@
       --void-deep: #fafafa;
       --void-space: #f5f5f7;
       --void-nebula: #f0f0f5;
-      --void-surface: #eaeaef;
-      --void-elevated: #e5e5ea;
+      --void-surface: #eaeaf0;
+      --void-elevated: #e5e5eb;
 
       --text-pure: #0a0a0f;
-      --text-primary: #1a1a20;
-      --text-secondary: rgba(26, 26, 32, 0.7);
-      --text-tertiary: rgba(26, 26, 32, 0.5);
-      --text-ghost: rgba(26, 26, 32, 0.25);
-      --text-void: rgba(26, 26, 32, 0.08);
+      --text-primary: rgba(10, 10, 15, 0.95);
+      --text-secondary: rgba(10, 10, 15, 0.65);
+      --text-tertiary: rgba(10, 10, 15, 0.45);
+      --text-ghost: rgba(10, 10, 15, 0.25);
+      --text-void: rgba(10, 10, 15, 0.08);
 
       --border-void: rgba(0, 0, 0, 0.03);
       --border-ghost: rgba(0, 0, 0, 0.06);
       --border-subtle: rgba(0, 0, 0, 0.1);
       --border-medium: rgba(0, 0, 0, 0.15);
 
-      --teal-glow: rgba(78, 205, 196, 0.25);
-      --coral-glow: rgba(255, 138, 101, 0.25);
-      --purple-glow: rgba(187, 143, 206, 0.25);
+      --teal-glow: rgba(78, 205, 196, 0.3);
+      --coral-glow: rgba(255, 138, 101, 0.3);
+      --purple-glow: rgba(187, 143, 206, 0.3);
     }
 
     *, *::before, *::after {
@@ -112,9 +112,8 @@
     }
 
     html {
-      -webkit-tap-highlight-color: transparent;
       scroll-behavior: smooth;
-      -webkit-overflow-scrolling: touch;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
@@ -123,291 +122,108 @@
       color: var(--text-primary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      overscroll-behavior-y: contain;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
       transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
     }
 
     /* Custom scrollbar */
-    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar { width: 3px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb {
-      background: var(--teal-deep);
+      background: linear-gradient(180deg, var(--teal), var(--purple));
       border-radius: 2px;
     }
 
     /* ==========================================
-       COSMIC BACKGROUND - Multi-layer parallax atmosphere
+       WEBGL BACKGROUND CANVAS
        ========================================== */
-    .cosmos {
+    #webgl-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ==========================================
+       ATMOSPHERIC OVERLAY LAYERS
+       ========================================== */
+    .atmosphere {
       position: fixed;
       inset: 0;
       pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-      perspective: 1000px;
-      transform-style: preserve-3d;
+      z-index: 1;
     }
 
-    .cosmos-layer {
+    .vignette {
       position: absolute;
       inset: 0;
-      will-change: transform;
+      background: 
+        radial-gradient(ellipse 80% 50% at 50% 0%, transparent 40%, var(--void-deep) 100%),
+        radial-gradient(ellipse 60% 40% at 50% 100%, transparent 30%, var(--void-deep) 100%);
     }
 
-    /* Far stars - tiny, dim, slowest parallax (0.1x) */
-    .cosmos-stars-far {
-      inset: -100%;
-      width: 300%;
-      height: 300%;
-      background-image:
-        radial-gradient(0.5px 0.5px at 8% 12%, rgba(255,255,255,0.15) 50%, transparent 100%),
-        radial-gradient(0.5px 0.5px at 18% 35%, rgba(200,220,255,0.12) 50%, transparent 100%),
-        radial-gradient(0.5px 0.5px at 32% 8%, rgba(255,200,200,0.1) 50%, transparent 100%),
-        radial-gradient(0.5px 0.5px at 45% 55%, rgba(220,220,255,0.12) 50%, transparent 100%),
-        radial-gradient(0.5px 0.5px at 58% 22%, rgba(255,255,255,0.1) 50%, transparent 100%),
-        radial-gradient(0.5px 0.5px at 72% 68%, rgba(200,220,255,0.15) 50%, transparent 100%),
-        radial-gradient(0.5px 0.5px at 85% 15%, rgba(255,200,200,0.1) 50%, transparent 100%),
-        radial-gradient(0.5px 0.5px at 92% 78%, rgba(255,255,255,0.12) 50%, transparent 100%),
-        radial-gradient(0.5px 0.5px at 5% 88%, rgba(220,220,255,0.1) 50%, transparent 100%),
-        radial-gradient(0.5px 0.5px at 28% 92%, rgba(255,255,255,0.15) 50%, transparent 100%),
-        radial-gradient(0.5px 0.5px at 62% 5%, rgba(200,220,255,0.12) 50%, transparent 100%),
-        radial-gradient(0.5px 0.5px at 78% 42%, rgba(255,200,200,0.1) 50%, transparent 100%);
-      animation: starDriftFar 180s linear infinite;
-    }
-
-    @keyframes starDriftFar {
-      from { transform: translateY(0) translateX(0); }
-      to { transform: translateY(-5%) translateX(-2%); }
-    }
-
-    /* Nebula clouds - blurred color masses (0.15x) */
-    .cosmos-nebula {
-      opacity: 0.5;
-    }
-
-    .cosmos-nebula::before {
-      content: '';
-      position: absolute;
-      width: 250%;
-      height: 250%;
-      top: -75%;
-      left: -75%;
-      background:
-        radial-gradient(ellipse 70% 50% at 15% 25%,
-          rgba(78, 205, 196, 0.12) 0%,
-          rgba(78, 205, 196, 0.04) 40%,
-          transparent 70%),
-        radial-gradient(ellipse 60% 70% at 75% 55%,
-          rgba(187, 143, 206, 0.1) 0%,
-          rgba(187, 143, 206, 0.03) 50%,
-          transparent 80%),
-        radial-gradient(ellipse 50% 40% at 45% 85%,
-          rgba(255, 138, 101, 0.08) 0%,
-          rgba(255, 138, 101, 0.02) 45%,
-          transparent 75%),
-        radial-gradient(ellipse 40% 35% at 85% 15%,
-          rgba(78, 205, 196, 0.06) 0%,
-          rgba(78, 205, 196, 0.02) 50%,
-          transparent 70%);
-      filter: blur(80px);
-      animation: nebulaShift 90s ease-in-out infinite alternate;
-    }
-
-    @keyframes nebulaShift {
-      0% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-        opacity: 0.5;
-      }
-      33% {
-        transform: translate(3%, -3%) scale(1.05) rotate(2deg);
-        opacity: 0.6;
-      }
-      66% {
-        transform: translate(-2%, 2%) scale(0.98) rotate(-1deg);
-        opacity: 0.45;
-      }
-      100% {
-        transform: translate(1%, -1%) scale(1.02) rotate(1deg);
-        opacity: 0.55;
-      }
-    }
-
-    /* Light mode - clean white background, hide all cosmos elements */
-    [data-theme="light"] .cosmos {
-      display: none;
-    }
-
-    [data-theme="light"] .ccx,
-    [data-theme="light"] .products,
-    [data-theme="light"] .team,
-    [data-theme="light"] .contact {
-      background: transparent;
-    }
-
-    /* Mobile landscape warning - encourage portrait mode */
-    @media (max-width: 900px) and (orientation: landscape) {
-      body::before {
-        content: "Please rotate your device to portrait mode";
-        position: fixed;
-        inset: 0;
-        background: var(--void-pure);
-        color: var(--text-primary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 99999;
-        font-size: 18px;
-        font-family: var(--font-body);
-        text-align: center;
-        padding: 40px;
-      }
-      [data-theme="light"] body::before {
-        background: #ffffff;
-        color: #1a1a28;
-      }
-    }
-
-    /* Mid stars - medium size, colored hints (0.35x) */
-    .cosmos-stars-mid {
-      inset: -50%;
-      width: 200%;
-      height: 200%;
-      background-image:
-        radial-gradient(1px 1px at 12% 28%, rgba(78, 205, 196, 0.6) 50%, transparent 100%),
-        radial-gradient(1.2px 1.2px at 28% 52%, rgba(187, 143, 206, 0.5) 50%, transparent 100%),
-        radial-gradient(1px 1px at 42% 18%, rgba(255, 160, 122, 0.5) 50%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 58% 72%, rgba(78, 205, 196, 0.45) 50%, transparent 100%),
-        radial-gradient(1px 1px at 72% 38%, rgba(187, 143, 206, 0.55) 50%, transparent 100%),
-        radial-gradient(1.2px 1.2px at 88% 62%, rgba(255, 160, 122, 0.4) 50%, transparent 100%),
-        radial-gradient(1px 1px at 15% 78%, rgba(78, 205, 196, 0.5) 50%, transparent 100%),
-        radial-gradient(1px 1px at 35% 5%, rgba(187, 143, 206, 0.45) 50%, transparent 100%),
-        radial-gradient(1.2px 1.2px at 65% 88%, rgba(255, 160, 122, 0.5) 50%, transparent 100%),
-        radial-gradient(1px 1px at 82% 12%, rgba(78, 205, 196, 0.4) 50%, transparent 100%),
-        radial-gradient(1.5px 1.5px at 5% 45%, rgba(187, 143, 206, 0.5) 50%, transparent 100%),
-        radial-gradient(1px 1px at 95% 85%, rgba(255, 160, 122, 0.45) 50%, transparent 100%);
-      animation: starTwinkleMid 12s ease-in-out infinite alternate;
-    }
-
-    @keyframes starTwinkleMid {
-      0% { opacity: 0.6; }
-      33% { opacity: 0.85; }
-      66% { opacity: 0.7; }
-      100% { opacity: 0.8; }
-    }
-
-    /* Dust particles canvas (0.5x) */
-    #cosmos-dust {
+    .grain {
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      animation: grainShift 8s steps(10) infinite;
     }
 
-    /* Near stars - larger, brighter, fastest twinkle (0.7x) */
-    .cosmos-stars-near {
-      background-image:
-        radial-gradient(2px 2px at 18% 22%, rgba(78, 205, 196, 0.9) 30%, transparent 100%),
-        radial-gradient(2.5px 2.5px at 42% 58%, rgba(255, 255, 255, 0.95) 30%, transparent 100%),
-        radial-gradient(2px 2px at 68% 28%, rgba(187, 143, 206, 0.85) 30%, transparent 100%),
-        radial-gradient(3px 3px at 88% 72%, rgba(255, 160, 122, 0.8) 30%, transparent 100%),
-        radial-gradient(2px 2px at 8% 65%, rgba(78, 205, 196, 0.75) 30%, transparent 100%),
-        radial-gradient(2.5px 2.5px at 55% 12%, rgba(255, 255, 255, 0.85) 30%, transparent 100%),
-        radial-gradient(2px 2px at 78% 85%, rgba(187, 143, 206, 0.8) 30%, transparent 100%),
-        radial-gradient(2.5px 2.5px at 32% 92%, rgba(255, 160, 122, 0.75) 30%, transparent 100%);
-      animation: starTwinkleNear 6s ease-in-out infinite alternate;
+    @keyframes grainShift {
+      0%, 100% { transform: translate(0, 0); }
+      10% { transform: translate(-1%, -1%); }
+      20% { transform: translate(1%, 1%); }
+      30% { transform: translate(-1%, 1%); }
+      40% { transform: translate(1%, -1%); }
+      50% { transform: translate(-1%, 0%); }
+      60% { transform: translate(1%, 0%); }
+      70% { transform: translate(0%, 1%); }
+      80% { transform: translate(0%, -1%); }
+      90% { transform: translate(1%, 1%); }
     }
-
-    @keyframes starTwinkleNear {
-      0% { opacity: 0.7; }
-      25% { opacity: 1; }
-      50% { opacity: 0.65; }
-      75% { opacity: 0.9; }
-      100% { opacity: 0.8; }
-    }
-
-    /* Grid floor (0.9x parallax) */
-    .cosmos-grid {
-      position: absolute;
-      bottom: 0;
-      left: -50%;
-      right: -50%;
-      width: 200%;
-      height: 80%;
-      background-image:
-        linear-gradient(rgba(78, 205, 196, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(78, 205, 196, 0.04) 1px, transparent 1px);
-      background-size: 80px 80px;
-      transform: perspective(800px) rotateX(65deg);
-      transform-origin: center bottom;
-      mask-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent 70%);
-      -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5), transparent 70%);
-      animation: gridPulse 15s ease-in-out infinite;
-    }
-
-    @keyframes gridPulse {
-      0%, 100% { opacity: 1; background-position: 0 0; }
-      50% { opacity: 0.7; background-position: 40px 0; }
-    }
-
-    /* Depth fog / vignette overlay */
-    .cosmos-fog {
-      background:
-        linear-gradient(to bottom,
-          rgba(5, 5, 8, 0.6) 0%,
-          transparent 20%),
-        linear-gradient(to top,
-          rgba(5, 5, 8, 0.7) 0%,
-          transparent 25%),
-        radial-gradient(ellipse 130% 100% at center,
-          transparent 35%,
-          rgba(5, 5, 8, 0.4) 100%);
-      z-index: 5;
-    }
-
-    /* Shooting stars container */
-    .cosmos-shooting-stars {
-      z-index: 4;
-    }
-
-    .shooting-star {
-      position: absolute;
-      width: 120px;
-      height: 2px;
-      background: linear-gradient(
-        to right,
-        transparent,
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.6),
-        rgba(78, 205, 196, 0.8),
-        white
-      );
-      border-radius: 2px;
-      filter: blur(0.5px);
-      transform-origin: right center;
-      animation: shootingStar var(--duration, 1s) ease-out forwards;
-      opacity: 0;
-    }
-
-    @keyframes shootingStar {
-      0% {
-        transform: rotate(var(--angle, 25deg)) translateX(0) scaleX(0.3);
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-        transform: rotate(var(--angle, 25deg)) translateX(50px) scaleX(1);
-      }
-      100% {
-        transform: rotate(var(--angle, 25deg)) translateX(400px) scaleX(0.5);
-        opacity: 0;
-      }
-    }
-
 
     /* ==========================================
-       NAVIGATION - Blends with spatial background
+       CUSTOM CURSOR
+       ========================================== */
+    .cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--teal);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), border-color 0.3s ease;
+      mix-blend-mode: difference;
+    }
+
+    .cursor.hover {
+      width: 60px;
+      height: 60px;
+      border-color: var(--coral);
+    }
+
+    .cursor-dot {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      background: var(--teal);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+    }
+
+    @media (pointer: coarse) {
+      .cursor, .cursor-dot { display: none; }
+    }
+
+    /* ==========================================
+       NAVIGATION - Glass morphism
        ========================================== */
     .nav {
       position: fixed;
@@ -416,63 +232,23 @@
       right: 0;
       z-index: 1000;
       padding: 24px 48px;
-      padding-top: calc(24px + env(safe-area-inset-top, 0px));
-      padding-left: calc(48px + env(safe-area-inset-left, 0px));
-      padding-right: calc(48px + env(safe-area-inset-right, 0px));
       display: flex;
       align-items: center;
       justify-content: space-between;
-      transition: all 0.5s var(--ease-out-expo);
+      transition: all 0.6s var(--ease-out-expo);
       background: transparent;
     }
 
-    /* Rainbow line - only visible on hover */
-    .nav::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg,
-        transparent 0%,
-        rgba(78, 205, 196, 0.4) 20%,
-        rgba(187, 143, 206, 0.4) 50%,
-        rgba(255, 160, 122, 0.4) 80%,
-        transparent 100%);
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    .nav:hover::before {
-      opacity: 1;
-    }
-
-    /* Nav becomes visible on hover */
-    .nav:hover {
-      background: linear-gradient(180deg, rgba(5, 5, 8, 0.7) 0%, rgba(5, 5, 8, 0) 100%);
-    }
-
     .nav.scrolled {
-      background: rgba(5, 5, 8, 0.75);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(2, 2, 4, 0.7);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       padding: 16px 48px;
-      box-shadow:
-        0 1px 0 rgba(78, 205, 196, 0.1),
-        0 4px 30px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav.scrolled::before {
-      opacity: 0.8;
-    }
-
-    .nav.scrolled:hover::before {
-      opacity: 1;
+      border-bottom: 1px solid var(--border-ghost);
     }
 
     [data-theme="light"] .nav.scrolled {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(250, 250, 250, 0.8);
     }
 
     .nav-logo {
@@ -480,18 +256,25 @@
       align-items: center;
       gap: 14px;
       text-decoration: none;
+      position: relative;
     }
 
     .nav-logo-atom {
       width: 40px;
       height: 40px;
+      filter: drop-shadow(0 0 20px var(--teal-glow));
+      transition: transform 0.6s var(--ease-out-expo);
+    }
+
+    .nav-logo:hover .nav-logo-atom {
+      transform: rotate(180deg);
     }
 
     .nav-logo-text {
       font-family: var(--font-display);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.15em;
       color: var(--text-pure);
       text-transform: uppercase;
     }
@@ -499,7 +282,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 48px;
+      gap: 40px;
       list-style: none;
     }
 
@@ -511,39 +294,32 @@
       color: var(--text-tertiary);
       text-decoration: none;
       position: relative;
-      transition: all 0.3s ease;
+      transition: all 0.4s var(--ease-out-expo);
       padding: 8px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--teal), transparent);
+      transition: all 0.4s var(--ease-out-expo);
+      transform: translateX(-50%);
     }
 
     .nav-link:hover {
       color: var(--teal);
-      text-shadow: 0 0 20px rgba(78, 205, 196, 0.4);
     }
 
-    .nav-link::before {
-      content: '';
-      position: absolute;
-      bottom: 4px;
-      left: 50%;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--teal);
-      transform: translateX(-50%) scale(0);
-      transition: transform 0.3s var(--ease-out-expo);
-      box-shadow: 0 0 8px var(--teal-glow);
-    }
-
-    .nav-link:hover::before {
-      transform: translateX(-50%) scale(1);
+    .nav-link:hover::after {
+      width: 100%;
     }
 
     .nav-link.active {
       color: var(--teal);
-    }
-
-    .nav-link.active::before {
-      transform: translateX(-50%) scale(1);
     }
 
     .nav-cta {
@@ -551,14 +327,14 @@
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.08em;
-      padding: 10px 20px;
+      padding: 12px 24px;
       background: transparent;
-      border: 1px solid rgba(78, 205, 196, 0.5);
-      border-radius: 4px;
-      color: var(--teal);
+      border: 1px solid var(--border-subtle);
+      border-radius: 100px;
+      color: var(--text-primary);
       text-decoration: none;
       text-transform: uppercase;
-      transition: all 0.3s ease;
+      transition: all 0.4s var(--ease-out-expo);
       position: relative;
       overflow: hidden;
     }
@@ -569,7 +345,7 @@
       inset: 0;
       background: linear-gradient(135deg, var(--teal), var(--purple));
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
     }
 
     .nav-cta span {
@@ -578,76 +354,38 @@
     }
 
     .nav-cta:hover {
-      border-color: var(--teal);
-      box-shadow: 0 0 20px rgba(78, 205, 196, 0.3);
+      border-color: transparent;
+      color: var(--void-deep);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(78, 205, 196, 0.3);
     }
 
     .nav-cta:hover::before {
       opacity: 1;
     }
 
-    .nav-cta:hover {
-      color: var(--void-deep);
-    }
-
-    .nav-cta.active {
-      background: linear-gradient(135deg, var(--teal), var(--purple));
-      border-color: transparent;
-      color: var(--void-deep);
-      box-shadow: 0 0 25px rgba(78, 205, 196, 0.4);
-    }
-
-    /* Light mode nav-cta adjustments */
-    [data-theme="light"] .nav-cta {
-      border-color: var(--teal-deep);
-      color: var(--teal-deep);
-    }
-
-    [data-theme="light"] .nav-cta:hover {
-      color: var(--void-deep);
-      border-color: var(--teal);
-    }
-
     .nav-mobile {
       display: none;
-      flex-direction: column;
       background: none;
       border: none;
       cursor: pointer;
-      padding: 12px;
-      min-width: 48px;
-      min-height: 48px;
-      align-items: center;
-      justify-content: center;
+      padding: 8px;
     }
 
     .nav-mobile span {
       display: block;
-      width: 22px;
-      height: 2px;
+      width: 24px;
+      height: 1.5px;
       background: var(--text-primary);
-      margin: 5px 0;
+      margin: 6px 0;
       transition: all 0.3s ease;
-      border-radius: 1px;
     }
 
     @media (max-width: 900px) {
       .nav { padding: 16px 24px; }
       .nav.scrolled { padding: 12px 24px; }
       .nav-links, .nav-cta { display: none; }
-      .nav-mobile { display: flex; flex-direction: column; }
-      .nav-links.open {
-        display: flex;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        background: var(--void-surface);
-        padding: 24px;
-        gap: 20px;
-        border-bottom: 1px solid var(--border-subtle);
-      }
+      .nav-mobile { display: block; }
     }
 
     /* ==========================================
@@ -655,31 +393,33 @@
        ========================================== */
     .theme-toggle {
       position: fixed;
-      bottom: calc(24px + env(safe-area-inset-bottom, 0px));
-      right: calc(24px + env(safe-area-inset-right, 0px));
+      bottom: 24px;
+      right: 24px;
       z-index: 1001;
-      width: 44px;
-      height: 44px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       background: var(--void-surface);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--border-ghost);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s var(--ease-out-expo);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
     }
 
     .theme-toggle:hover {
-      transform: scale(1.1);
+      transform: scale(1.1) rotate(15deg);
       border-color: var(--teal);
+      box-shadow: 0 0 30px var(--teal-glow);
     }
 
     .theme-toggle svg {
       width: 20px;
       height: 20px;
       color: var(--text-primary);
+      transition: transform 0.4s var(--ease-out-expo);
     }
 
     .theme-toggle .sun { display: block; }
@@ -688,166 +428,96 @@
     [data-theme="light"] .theme-toggle .moon { display: block; }
 
     /* ==========================================
-       INFINITE CANVAS - Scroll choreography system
+       STAGE - Fixed viewport canvas
        ========================================== */
-
-    /* Remove scroll snap for fluid movement */
-    html {
-      scroll-snap-type: none;
-    }
-
-    /* The stage - COMPLETELY HIDDEN */
     .stage {
-      display: none !important;
-      visibility: hidden !important;
-      position: absolute !important;
-      left: -9999px !important;
-      width: 0 !important;
-      height: 0 !important;
-      overflow: hidden !important;
+      position: fixed;
+      inset: 0;
+      z-index: 10;
+      pointer-events: none;
+      overflow: hidden;
     }
 
-    /* Scroll container */
+    .stage > * {
+      pointer-events: auto;
+    }
+
+    /* Scroll container provides the scroll height */
     .scroll-container {
       position: relative;
       z-index: 1;
     }
 
-    /* Normal scrolling sections */
     .spatial-section {
-      min-height: auto;
+      min-height: 100vh;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
+      scroll-margin-top: 100px;
     }
 
-    /* Show all content - normal page layout */
-    .spatial-section .section-inner,
-    .spatial-section .ccx-content,
-    .spatial-section .about-content,
-    .spatial-section .team-content,
-    .spatial-section .products-content,
-    .spatial-section .safety-content,
-    .spatial-section .research-content,
-    .spatial-section .involve-content,
-    .spatial-section .contact-content {
-      visibility: visible;
-      pointer-events: auto;
+    .spatial-section:first-child {
+      min-height: 100vh;
     }
+
+    /* Content sections are now visible by default */
 
     .section-inner {
       width: 100%;
       max-width: 1400px;
-      margin: 0 auto;
-      padding: 60px 48px;
+      padding: 120px 48px;
       position: relative;
       z-index: 1;
     }
 
     @media (max-width: 768px) {
-      .section-inner { padding: 80px 20px; }
-    }
-
-    @media (max-width: 380px) {
-      .section-inner { padding: 60px 16px; }
+      .section-inner { padding: 100px 24px; }
     }
 
     /* ==========================================
-       CHOREOGRAPHED HERO - Icons drift off screen
+       HERO CONSTELLATION - 3D Product Icons
        ========================================== */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-    }
-
-    /* Hero products grid - the actual visible one */
-    .hero-products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 50px;
-      width: 100%;
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 0;
-      justify-items: center;
-      align-items: center;
-    }
-
-    @media (max-width: 768px) {
-      .hero-products-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px 40px;
-        max-width: 320px;
-      }
-      .hero-products-grid a > div:first-child {
-        width: 80px !important;
-        height: 80px !important;
-      }
-      .hero-products-grid span {
-        font-size: 9px !important;
-      }
-    }
-
-    @media (max-width: 380px) {
-      .hero-products-grid {
-        gap: 20px 30px;
-        max-width: 280px;
-      }
-      .hero-products-grid a > div:first-child {
-        width: 70px !important;
-        height: 70px !important;
-      }
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 48px;
-    }
-
-    /* Hero constellation - centered in hero section */
     .hero-constellation {
-      position: relative;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 1fr auto auto 1fr;
       align-items: center;
       justify-items: center;
-      gap: 40px;
+      gap: 60px;
       width: 100%;
-      max-width: 900px;
-      padding: 60px 20px;
-      margin: 0 auto;
+      max-width: 1200px;
+      padding: 40px 20px;
+      perspective: 1500px;
     }
 
-    /* Each product icon can move independently */
     .hero-product {
       position: relative;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
       text-decoration: none;
-      cursor: grab;
+      cursor: pointer;
       user-select: none;
-      -webkit-user-select: none;
       will-change: transform, opacity;
-      transition: filter 0.3s ease;
-    }
-
-    .hero-product.dragging {
-      cursor: grabbing;
-      z-index: 100;
+      transition: filter 0.4s ease;
     }
 
     .hero-product-icon {
-      width: 160px;
-      height: 160px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      will-change: transform, filter;
+      will-change: transform;
+      transition: transform 0.6s var(--ease-out-expo);
+    }
+
+    .hero-product:hover .hero-product-icon {
+      transform: scale(1.1);
     }
 
     .hero-product-icon img,
@@ -865,82 +535,72 @@
 
     .hero-product-label {
       font-family: var(--font-display);
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--text-tertiary);
-      opacity: 1;
-      transition: all 0.4s var(--ease-out-expo);
-      pointer-events: none;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.5s var(--ease-out-expo);
     }
 
-    .hero-product:hover .hero-product-label {
+    .hero-product:hover .hero-product-label,
+    .hero-product.visible .hero-product-label {
+      opacity: 1;
+      transform: translateY(0);
       color: var(--text-pure);
     }
 
-    /* WaxFeed - Left (exits left) */
+    /* Product specific styling */
     .hero-product--waxfeed {
       justify-self: end;
       z-index: 2;
     }
 
     .hero-product--waxfeed .hero-product-icon {
-      filter:
-        drop-shadow(0 0 40px rgba(187, 143, 206, 0.4))
-        drop-shadow(0 0 80px rgba(152, 216, 184, 0.15));
+      filter: drop-shadow(0 0 50px rgba(187, 143, 206, 0.5));
     }
 
-    /* Polarity - Center (exits up) */
     .hero-product--polarity {
       z-index: 3;
     }
 
     .hero-product--polarity .hero-product-icon {
-      width: 200px;
-      height: 200px;
-      filter:
-        drop-shadow(0 0 50px var(--teal-glow))
-        drop-shadow(0 0 100px rgba(78, 205, 196, 0.2));
+      width: 180px;
+      height: 180px;
+      filter: drop-shadow(0 0 60px var(--teal-glow));
+      animation: polarityFloat 6s ease-in-out infinite;
     }
 
-    /* AVDP - Right (exits right) */
+    @keyframes polarityFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .hero-product--polarity:hover .hero-product-icon {
+      animation: none;
+    }
+
     .hero-product--avdp {
       justify-self: start;
       z-index: 2;
     }
 
     .hero-product--avdp .hero-product-icon {
-      filter:
-        drop-shadow(0 0 40px var(--coral-glow))
-        drop-shadow(0 0 80px rgba(255, 184, 153, 0.15));
+      filter: drop-shadow(0 0 50px var(--coral-glow));
     }
 
-    /* Painpoints - Exits down */
     .hero-product--painpoints {
       z-index: 2;
     }
 
     .hero-product--painpoints .hero-product-icon {
-      filter:
-        drop-shadow(0 0 40px var(--red-glow))
-        drop-shadow(0 0 80px rgba(230, 51, 41, 0.15));
-    }
-
-    .hero-product--painpoints .hero-product-icon img {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Dragging state */
-    .hero-product.dragging .hero-product-icon {
-      filter:
-        drop-shadow(0 0 80px var(--teal-glow))
-        drop-shadow(0 0 160px rgba(78, 205, 196, 0.4)) !important;
+      filter: drop-shadow(0 0 50px var(--red-glow));
     }
 
     /* ==========================================
-       SCROLL TEXT REVEALS - Flow in from edges
+       KINETIC TYPOGRAPHY - Text Scramble Effects
        ========================================== */
     .scroll-text {
       position: fixed;
@@ -955,21 +615,12 @@
       pointer-events: auto;
     }
 
-    /* Hero text starts visible - positioned below icons */
-    #text-hero {
-      opacity: 1;
-      top: 62%;
-      bottom: auto;
-      transform: translateX(-50%);
-    }
-
-    /* Text positioning variants */
     .scroll-text--center {
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      max-width: 800px;
+      max-width: 900px;
       padding: 0 48px;
     }
 
@@ -978,7 +629,7 @@
       top: 50%;
       transform: translateY(-50%);
       text-align: left;
-      max-width: 500px;
+      max-width: 480px;
     }
 
     .scroll-text--right {
@@ -986,46 +637,42 @@
       top: 50%;
       transform: translateY(-50%);
       text-align: right;
-      max-width: 500px;
-    }
-
-    .scroll-text--top-left {
-      left: 8%;
-      top: 15%;
-      text-align: left;
-      max-width: 450px;
+      max-width: 480px;
     }
 
     .scroll-text--bottom-right {
       right: 8%;
-      bottom: 15%;
+      bottom: 12%;
       text-align: right;
-      max-width: 450px;
+      max-width: 400px;
     }
 
-    .scroll-text--scattered {
-      max-width: 350px;
-    }
-
-    /* Text styling */
     .scroll-text__label {
       font-family: var(--font-mono);
       font-size: 11px;
       font-weight: 500;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       color: var(--teal);
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
       display: block;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s var(--ease-out-expo);
+    }
+
+    .scroll-text.visible .scroll-text__label {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .scroll-text__title {
       font-family: var(--font-display);
-      font-size: clamp(28px, 5vw, 52px);
+      font-size: clamp(36px, 5vw, 64px);
       font-weight: 600;
-      line-height: 1.15;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
       color: var(--text-pure);
     }
 
@@ -1036,17 +683,30 @@
       background-clip: text;
     }
 
+    .scroll-text__title .outline {
+      -webkit-text-stroke: 1px var(--text-ghost);
+      -webkit-text-fill-color: transparent;
+    }
+
     .scroll-text__body {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 400;
       color: var(--text-secondary);
-      line-height: 1.7;
+      line-height: 1.8;
       max-width: 500px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s var(--ease-out-expo) 0.2s;
+    }
+
+    .scroll-text.visible .scroll-text__body {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .scroll-text__accent {
       font-family: var(--font-display);
-      font-size: clamp(80px, 15vw, 200px);
+      font-size: clamp(100px, 15vw, 240px);
       font-weight: 700;
       line-height: 0.85;
       letter-spacing: -0.04em;
@@ -1054,71 +714,80 @@
       position: absolute;
       z-index: -1;
       user-select: none;
+      opacity: 0.5;
     }
 
     .scroll-text__stat {
       display: flex;
       align-items: baseline;
-      gap: 8px;
-      margin-top: 24px;
+      gap: 12px;
+      margin-top: 32px;
+      opacity: 0;
+      transform: translateX(30px);
+      transition: all 0.8s var(--ease-out-expo);
     }
+
+    .scroll-text.visible .scroll-text__stat {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .scroll-text__stat:nth-child(2) { transition-delay: 0.1s; }
+    .scroll-text__stat:nth-child(3) { transition-delay: 0.2s; }
 
     .scroll-text__stat-num {
       font-family: var(--font-display);
-      font-size: 48px;
+      font-size: 56px;
       font-weight: 600;
       color: var(--teal);
+      line-height: 1;
     }
 
     .scroll-text__stat-label {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
-    /* Definition box */
+    /* Definition box with glass effect */
     .scroll-text__definition {
-      background: rgba(21, 21, 32, 0.8);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: rgba(12, 12, 20, 0.6);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid var(--border-ghost);
       border-left: 2px solid var(--teal);
-      padding: 24px;
-      border-radius: 0 8px 8px 0;
-      margin-top: 24px;
+      padding: 28px;
+      border-radius: 0 12px 12px 0;
+      margin-top: 28px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s var(--ease-out-expo) 0.3s;
+    }
+
+    .scroll-text.visible .scroll-text__definition {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .scroll-text__definition-term {
       font-family: var(--font-display);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--teal);
       margin-bottom: 8px;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.05em;
     }
 
     .scroll-text__definition-desc {
-      font-size: 15px;
+      font-size: 14px;
       color: var(--text-secondary);
       line-height: 1.7;
     }
 
-    /* Light mode scroll text fixes */
-    [data-theme="light"] .scroll-text__definition {
-      background: rgba(240, 240, 248, 0.9);
-      border-left-color: var(--teal-deep);
-    }
-
-    [data-theme="light"] .scroll-text__title {
-      color: var(--text-pure);
-    }
-
-    [data-theme="light"] .scroll-text__accent {
-      color: rgba(0, 0, 0, 0.06);
-    }
-
-    /* Hero tagline - part of choreography */
+    /* Hero tagline */
     .hero-tagline {
-      margin-top: 24px;
-      will-change: transform, opacity;
+      margin-top: 32px;
     }
 
     .hero-badge {
@@ -1126,15 +795,23 @@
       align-items: center;
       gap: 10px;
       font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
+      font-size: 10px;
+      letter-spacing: 0.15em;
       color: var(--teal);
       background: var(--teal-subtle);
       border: 1px solid rgba(78, 205, 196, 0.2);
-      padding: 10px 20px;
-      border-radius: 4px;
+      padding: 12px 24px;
+      border-radius: 100px;
       text-transform: uppercase;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: all 0.8s var(--ease-out-expo);
+    }
+
+    .scroll-text.visible .hero-badge {
+      opacity: 1;
+      transform: scale(1);
     }
 
     .hero-badge::before {
@@ -1147,22 +824,21 @@
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
+      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 10px var(--teal); }
+      50% { opacity: 0.5; transform: scale(0.8); box-shadow: 0 0 20px var(--teal); }
     }
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(32px, 5vw, 56px);
+      font-size: clamp(40px, 6vw, 72px);
       font-weight: 600;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
       color: var(--text-pure);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
-    .hero-title .gradient,
-    .gradient {
+    .hero-title .gradient {
       background: linear-gradient(135deg, var(--teal-light), var(--teal), var(--purple));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -1170,67 +846,78 @@
     }
 
     .hero-subtitle {
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 400;
       color: var(--text-secondary);
-      max-width: 500px;
+      max-width: 520px;
       line-height: 1.7;
     }
 
     /* Scroll indicator */
     .hero-scroll {
       position: absolute;
-      bottom: 48px;
+      bottom: 60px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
       color: var(--text-ghost);
       font-family: var(--font-mono);
       font-size: 10px;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
-      animation: scrollBounce 2s ease-in-out infinite;
+      animation: scrollBounce 3s ease-in-out infinite;
     }
 
     .hero-scroll-line {
       width: 1px;
-      height: 48px;
+      height: 60px;
       background: linear-gradient(to bottom, var(--teal), transparent);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-scroll-line::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 30%;
+      background: var(--teal);
+      animation: scrollLineMove 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollLineMove {
+      0% { transform: translateY(-100%); }
+      100% { transform: translateY(400%); }
     }
 
     @keyframes scrollBounce {
       0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
-      50% { transform: translateX(-50%) translateY(8px); opacity: 0.5; }
+      50% { transform: translateX(-50%) translateY(10px); opacity: 0.5; }
     }
 
     /* Responsive hero */
     @media (max-width: 1024px) {
       .hero-constellation {
         gap: 40px;
-        max-width: 800px;
+        max-width: 900px;
       }
-      .hero-product-icon { width: 130px; height: 130px; }
-      .hero-product--polarity .hero-product-icon { width: 170px; height: 170px; }
+      .hero-product-icon { width: 120px; height: 120px; }
+      .hero-product--polarity .hero-product-icon { width: 150px; height: 150px; }
     }
 
     @media (max-width: 768px) {
       .hero-constellation {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto;
         gap: 24px;
         padding: 20px;
-        max-width: 200px !important;
-        width: auto !important;
-        position: relative !important;
-        transform: none !important;
-        top: auto !important;
-        left: auto !important;
-        margin: 0 auto;
-      }
-      .hero-product {
-        gap: 8px;
+        max-width: 100%;
+        top: 35%;
       }
       .hero-product--waxfeed,
       .hero-product--avdp,
@@ -1238,23 +925,10 @@
       .hero-product--painpoints {
         justify-self: center;
       }
-      .hero-product-icon { width: 80px !important; height: 80px !important; }
-      .hero-product--polarity .hero-product-icon { width: 100px !important; height: 100px !important; }
-      .hero-product-label { font-size: 10px; letter-spacing: 0.1em; }
+      .hero-product-icon { width: 90px; height: 90px; }
+      .hero-product--polarity .hero-product-icon { width: 110px; height: 110px; }
+      .hero-product-label { font-size: 9px; letter-spacing: 0.1em; }
 
-      /* Hero text adjustments for mobile */
-      #text-hero {
-        top: 75% !important;
-        padding: 0 24px;
-      }
-      #text-hero .hero-title {
-        font-size: 26px;
-      }
-      #text-hero .hero-subtitle {
-        font-size: 14px;
-      }
-
-      /* Scroll text mobile adjustments */
       .scroll-text--left,
       .scroll-text--right {
         left: 50%;
@@ -1262,99 +936,26 @@
         transform: translateX(-50%) translateY(-50%);
         text-align: center;
         max-width: 90%;
-        padding: 0 20px;
+        padding: 0 24px;
       }
       .scroll-text--center {
-        padding: 0 20px;
+        padding: 0 24px;
         max-width: 100%;
       }
       .scroll-text__title {
-        font-size: clamp(22px, 6vw, 36px);
+        font-size: clamp(28px, 7vw, 44px);
       }
       .scroll-text__body {
         font-size: 15px;
       }
-      .scroll-text__accent {
-        font-size: clamp(50px, 20vw, 120px);
-      }
-      .scroll-text__definition {
-        padding: 16px;
-      }
-
-      /* Hide stats on mobile to prevent overlap */
-      #text-stats {
-        display: none;
-      }
-
-      /* Team section mobile - reduce text size */
-      #text-team h3 {
-        font-size: 1.2rem !important;
-      }
-      #text-team .scroll-text__body {
-        font-size: 13px;
-        margin-bottom: 1rem !important;
-      }
-    }
-
-    /* Extra small phones (iPhone SE, etc.) */
-    @media (max-width: 380px) {
-      .hero-constellation {
-        max-width: 180px !important;
-        gap: 20px;
-        padding: 16px;
-      }
-      .hero-product {
-        gap: 6px;
-      }
-      .hero-product-icon { width: 70px !important; height: 70px !important; }
-      .hero-product--polarity .hero-product-icon { width: 85px !important; height: 85px !important; }
-      .hero-product-label { font-size: 9px; letter-spacing: 0.08em; }
-
-      #text-hero {
-        top: 73% !important;
-      }
-      #text-hero .hero-title {
-        font-size: 22px;
-      }
-      #text-hero .hero-subtitle {
-        font-size: 13px;
-      }
-    }
-
-    /* Reduced motion preference */
-    @media (prefers-reduced-motion: reduce) {
-      .cosmos-stars-far,
-      .cosmos-nebula::before,
-      .cosmos-stars-mid,
-      .cosmos-stars-near,
-      .cosmos-grid,
-      .shooting-star {
-        animation: none !important;
-      }
-      .hero-product-icon {
-        transition: filter 0.3s ease !important;
-      }
+      #text-stats { display: none; }
     }
 
     /* ==========================================
-       CCX SECTION - Research reveal
+       CONTENT SECTIONS (Visible when scrolled)
        ========================================== */
-    .ccx {
-      background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 16, 0.7) 30%, rgba(10, 10, 16, 0.7) 70%, transparent 100%);
-      padding-bottom: 80px;
-    }
-
-    .ccx-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .ccx-text {
-      max-width: 480px;
+    .ccx, .about, .team, .products, .safety, .research, .involve, .contact {
+      background: linear-gradient(180deg, var(--void-deep) 0%, var(--void-space) 20%, var(--void-space) 80%, var(--void-deep) 100%);
     }
 
     .section-label {
@@ -1365,60 +966,123 @@
       color: var(--teal);
       text-transform: uppercase;
       margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 24px;
+      height: 1px;
+      background: var(--teal);
     }
 
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(24px, 3.5vw, 36px);
+      font-size: clamp(32px, 4vw, 48px);
       font-weight: 600;
-      line-height: 1.2;
+      line-height: 1.15;
       letter-spacing: -0.02em;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       color: var(--text-pure);
     }
 
+    /* Reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stagger > * {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo);
+    }
+
+    .stagger.visible > *:nth-child(1) { transition-delay: 0.1s; }
+    .stagger.visible > *:nth-child(2) { transition-delay: 0.18s; }
+    .stagger.visible > *:nth-child(3) { transition-delay: 0.26s; }
+    .stagger.visible > *:nth-child(4) { transition-delay: 0.34s; }
+    .stagger.visible > *:nth-child(5) { transition-delay: 0.42s; }
+    .stagger.visible > *:nth-child(6) { transition-delay: 0.5s; }
+
+    .stagger.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* CCX Section */
+    .ccx-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+      align-items: center;
+    }
+
+    .ccx-text {
+      max-width: 520px;
+    }
+
     .ccx-definition {
-      background: var(--void-elevated);
+      background: var(--void-surface);
+      border: 1px solid var(--border-ghost);
       border-left: 2px solid var(--teal);
-      padding: 24px;
-      margin-bottom: 32px;
-      border-radius: 0 8px 8px 0;
+      padding: 28px;
+      margin-bottom: 40px;
+      border-radius: 0 12px 12px 0;
     }
 
     .ccx-definition-term {
       font-family: var(--font-display);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 600;
       color: var(--teal);
-      margin-bottom: 8px;
-      letter-spacing: 0.02em;
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
     }
 
     .ccx-definition-desc {
-      font-size: 13px;
+      font-size: 15px;
       color: var(--text-secondary);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .ccx-steps {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 24px;
     }
 
     .ccx-step {
       display: flex;
-      gap: 12px;
+      gap: 20px;
       align-items: flex-start;
+      padding: 20px;
+      background: var(--void-surface);
+      border: 1px solid var(--border-void);
+      border-radius: 12px;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+
+    .ccx-step:hover {
+      border-color: var(--border-subtle);
+      transform: translateX(8px);
     }
 
     .ccx-step-num {
       font-family: var(--font-mono);
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 600;
-      width: 24px;
-      height: 24px;
-      border-radius: 5px;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1432,31 +1096,28 @@
 
     .ccx-step h4 {
       font-family: var(--font-display);
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
-      margin-bottom: 2px;
-      color: var(--text-primary);
+      margin-bottom: 6px;
+      color: var(--text-pure);
     }
 
     .ccx-step p {
-      font-size: 12px;
+      font-size: 14px;
       color: var(--text-tertiary);
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
-    /* CCX Visual - Neural diagram */
     .ccx-visual {
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      padding: 20px;
     }
 
     .ccx-diagram {
       position: relative;
       width: 100%;
-      max-width: 300px;
+      max-width: 400px;
       aspect-ratio: 1;
     }
 
@@ -1465,22 +1126,22 @@
       inset: 0;
       border: 1px solid var(--border-ghost);
       border-radius: 50%;
-      animation: ccxRotate 50s linear infinite;
+      animation: ccxRotate 60s linear infinite;
     }
 
     .ccx-ring:nth-child(2) {
       inset: 15%;
-      animation-duration: 35s;
+      animation-duration: 45s;
       animation-direction: reverse;
       border-color: var(--teal);
-      opacity: 0.4;
+      opacity: 0.5;
     }
 
     .ccx-ring:nth-child(3) {
       inset: 30%;
-      animation-duration: 25s;
+      animation-duration: 30s;
       border-color: var(--coral);
-      opacity: 0.4;
+      opacity: 0.5;
     }
 
     @keyframes ccxRotate {
@@ -1492,8 +1153,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
     }
 
     .ccx-core-inner {
@@ -1502,125 +1163,97 @@
       background: radial-gradient(circle, var(--teal-light) 0%, var(--teal-deep) 70%);
       border-radius: 50%;
       animation: ccxPulse 4s ease infinite;
+      box-shadow: 0 0 60px var(--teal-glow);
     }
 
     @keyframes ccxPulse {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 40px var(--teal-glow); }
-      50% { transform: scale(1.08); box-shadow: 0 0 70px var(--teal-glow); }
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
-
-    .ccx-node {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      box-shadow: 0 0 20px currentColor;
-    }
-
-    .ccx-node:nth-child(5) { top: 0; left: 50%; transform: translateX(-50%); background: var(--teal); color: var(--teal); }
-    .ccx-node:nth-child(6) { top: 50%; right: 0; transform: translateY(-50%); background: var(--coral); color: var(--coral); }
-    .ccx-node:nth-child(7) { bottom: 0; left: 50%; transform: translateX(-50%); background: var(--purple); color: var(--purple); }
-    .ccx-node:nth-child(8) { top: 50%; left: 0; transform: translateY(-50%); background: var(--teal); color: var(--teal); }
 
     @media (max-width: 1024px) {
       .ccx-content {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 60px;
       }
       .ccx-diagram {
-        max-width: 280px;
+        max-width: 300px;
         margin: 0 auto;
       }
     }
 
-    @media (max-width: 600px) {
-      .ccx-diagram {
-        max-width: 220px;
-      }
-      .ccx-core {
-        width: 60px;
-        height: 60px;
-      }
-      .ccx-node {
-        width: 8px;
-        height: 8px;
-      }
-      .ccx-step {
-        padding: 16px;
-      }
-      .ccx-step-num {
-        width: 32px;
-        height: 32px;
-        font-size: 12px;
-      }
-    }
-
-    /* ==========================================
-       ABOUT SECTION
-       ========================================== */
-    .about {
-      background: linear-gradient(180deg, transparent 0%, var(--void-nebula) 20%, var(--void-nebula) 80%, transparent 100%);
-    }
-
+    /* About Section */
     .about-header {
-      max-width: 600px;
-      margin-bottom: 64px;
+      max-width: 700px;
+      margin-bottom: 80px;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 32px;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 40px;
     }
 
     .about-main {
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      border-radius: 16px;
-      padding: 40px;
+      border-radius: 20px;
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-main::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--teal), transparent);
     }
 
     .about-main-icon {
-      width: 52px;
-      height: 52px;
+      width: 60px;
+      height: 60px;
       background: var(--teal-subtle);
-      border-radius: 12px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .about-main-icon svg {
-      width: 26px;
-      height: 26px;
+      width: 28px;
+      height: 28px;
       color: var(--teal);
     }
 
     .about-main h3 {
       font-family: var(--font-display);
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       color: var(--text-pure);
     }
 
     .about-main-badge {
       font-family: var(--font-mono);
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 600;
       color: var(--teal);
       text-transform: uppercase;
       letter-spacing: 0.1em;
       background: var(--teal-subtle);
-      padding: 4px 10px;
-      border-radius: 4px;
+      padding: 6px 12px;
+      border-radius: 6px;
       margin-left: 12px;
       vertical-align: middle;
     }
 
     .about-main p {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--text-secondary);
       line-height: 1.8;
     }
@@ -1628,30 +1261,31 @@
     .about-cards {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 20px;
     }
 
     .about-card {
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      border-radius: 12px;
-      padding: 24px;
-      transition: all 0.4s var(--ease-out-expo);
+      border-radius: 16px;
+      padding: 28px;
+      transition: all 0.5s var(--ease-out-expo);
     }
 
     .about-card:hover {
       border-color: var(--border-medium);
-      transform: translateX(6px);
+      transform: translateX(10px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     }
 
     .about-card-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .about-card:nth-child(1) .about-card-icon { background: var(--teal-subtle); }
@@ -1659,20 +1293,20 @@
     .about-card:nth-child(3) .about-card-icon { background: rgba(255, 138, 101, 0.15); }
 
     .about-card-icon svg {
-      width: 18px;
-      height: 18px;
+      width: 22px;
+      height: 22px;
     }
 
     .about-card h4 {
       font-family: var(--font-display);
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
-      margin-bottom: 6px;
-      color: var(--text-primary);
+      margin-bottom: 8px;
+      color: var(--text-pure);
     }
 
     .about-card p {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-tertiary);
       line-height: 1.6;
     }
@@ -1681,88 +1315,62 @@
       .about-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 768px) {
-      .about-header {
-        margin-bottom: 40px;
-      }
-      .about-main {
-        padding: 24px;
-      }
-      .about-main h3 {
-        font-size: 18px;
-      }
-      .about-main p {
-        font-size: 14px;
-      }
-      .about-aside h4 {
-        font-size: 14px;
-      }
-      .about-feature p {
-        font-size: 13px;
-      }
-    }
-
-    /* ==========================================
-       TEAM SECTION
-       ========================================== */
-    .team {
-      background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 16, 0.7) 30%, rgba(10, 10, 16, 0.7) 70%, transparent 100%);
-      padding-bottom: 80px;
-    }
-
+    /* Team Section */
     .team-header {
       text-align: center;
-      margin-bottom: 64px;
+      margin-bottom: 80px;
     }
 
     .team-location {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 13px;
+      gap: 10px;
+      font-size: 14px;
       color: var(--text-tertiary);
-      background: var(--void-elevated);
+      background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      padding: 10px 20px;
-      border-radius: 24px;
-      margin-top: 20px;
+      padding: 12px 24px;
+      border-radius: 100px;
+      margin-top: 24px;
     }
 
     .team-location svg {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       color: var(--teal);
     }
 
     .team-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      max-width: 1100px;
+      gap: 30px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
     .team-card {
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      border-radius: 16px;
-      padding: 32px;
-      transition: all 0.5s var(--ease-out-expo);
+      border-radius: 20px;
+      padding: 36px;
+      transition: all 0.6s var(--ease-out-expo);
+      text-decoration: none;
+      color: inherit;
     }
 
     .team-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-12px);
       border-color: var(--border-medium);
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
     }
 
     .team-card-role {
       font-family: var(--font-mono);
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .team-card:nth-child(1) .team-card-role { color: var(--teal); }
@@ -1771,110 +1379,73 @@
 
     .team-card-name {
       font-family: var(--font-display);
-      font-size: 20px;
+      font-size: 22px;
       font-weight: 600;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       color: var(--text-pure);
     }
 
     .team-card-title {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--text-tertiary);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .team-card-bio {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-secondary);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .team-card-linkedin {
-      margin-top: 16px;
-      padding-top: 16px;
+      margin-top: 20px;
+      padding-top: 20px;
       border-top: 1px solid var(--border-ghost);
       display: flex;
       align-items: center;
       gap: 8px;
-      opacity: 0.4;
-      transition: opacity 0.3s ease;
+      opacity: 0.5;
+      transition: opacity 0.4s ease;
     }
 
     .team-card-linkedin svg {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
     }
 
     .team-card:hover .team-card-linkedin {
       opacity: 1;
     }
 
-    .team-card:nth-child(1) .team-card-linkedin { color: var(--teal); }
-    .team-card:nth-child(2) .team-card-linkedin { color: var(--coral); }
-    .team-card:nth-child(3) .team-card-linkedin { color: var(--purple); }
-
-    a.team-card {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
     @media (max-width: 900px) {
       .team-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
-      }
-      .team-card {
-        padding: 24px;
-      }
-      .team-card-linkedin {
-        opacity: 0.6;
+        max-width: 450px;
       }
     }
 
-    @media (max-width: 768px) {
-      .team-card-name {
-        font-size: 18px;
-      }
-      .team-card-bio {
-        font-size: 14px;
-        line-height: 1.7;
-      }
-      .team-card-title {
-        font-size: 13px;
-      }
-    }
-
-    /* ==========================================
-       PRODUCTS SECTION - Enhanced cards
-       ========================================== */
-    .products {
-      background: linear-gradient(180deg, transparent 0%, rgba(15, 15, 24, 0.7) 30%, rgba(15, 15, 24, 0.7) 70%, transparent 100%);
-      padding-bottom: 80px;
-    }
-
+    /* Products Section */
     .products-header {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 80px;
     }
 
     .products-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 32px;
-      max-width: 1100px;
+      gap: 24px;
+      max-width: 1300px;
       margin: 0 auto;
-      width: 100%;
     }
 
     .product-card {
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      border-radius: 16px;
-      padding: 32px;
+      border-radius: 20px;
+      padding: 36px;
       text-decoration: none;
       color: var(--text-primary);
-      transition: all 0.5s var(--ease-out-expo);
+      transition: all 0.6s var(--ease-out-expo);
       position: relative;
       overflow: hidden;
     }
@@ -1883,32 +1454,32 @@
       content: '';
       position: absolute;
       inset: 0;
+      background: linear-gradient(135deg, var(--teal-glow), transparent);
       opacity: 0;
-      transition: opacity 0.5s ease;
+      transition: opacity 0.6s ease;
     }
 
-    .product-card:nth-child(1)::before { background: linear-gradient(135deg, var(--teal-glow), transparent); }
     .product-card:nth-child(2)::before { background: linear-gradient(135deg, var(--purple-glow), transparent); }
     .product-card:nth-child(3)::before { background: linear-gradient(135deg, var(--red-glow), transparent); }
     .product-card:nth-child(4)::before { background: linear-gradient(135deg, var(--coral-glow), transparent); }
 
     .product-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-12px) scale(1.02);
       border-color: var(--border-medium);
     }
 
     .product-card:hover::before {
-      opacity: 0.15;
+      opacity: 0.2;
     }
 
     .product-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       position: relative;
       z-index: 1;
     }
@@ -1920,8 +1491,8 @@
 
     .product-icon svg,
     .product-icon img {
-      width: 36px;
-      height: 36px;
+      width: 40px;
+      height: 40px;
       object-fit: contain;
     }
 
@@ -1931,31 +1502,33 @@
 
     .product-name {
       font-family: var(--font-display);
-      font-size: 18px;
+      font-size: 20px;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       position: relative;
       z-index: 1;
       color: var(--text-pure);
     }
 
     .product-desc {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-tertiary);
       position: relative;
       z-index: 1;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      line-height: 1.6;
     }
 
     .product-arrow {
       font-family: var(--font-display);
       font-size: 14px;
+      font-weight: 600;
       color: var(--teal);
       position: relative;
       z-index: 1;
       opacity: 0;
       transform: translateX(-10px);
-      transition: all 0.3s ease;
+      transition: all 0.4s var(--ease-out-expo);
     }
 
     .product-card:hover .product-arrow {
@@ -1966,100 +1539,80 @@
     @media (max-width: 1100px) {
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 700px;
+        max-width: 800px;
       }
     }
 
     @media (max-width: 600px) {
       .products-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
-      }
-      .product-card {
-        padding: 24px;
-      }
-      .product-icon {
-        width: 56px;
-        height: 56px;
-        border-radius: 14px;
-        margin-bottom: 16px;
-      }
-      .product-icon svg,
-      .product-icon img {
-        width: 32px;
-        height: 32px;
-      }
-      .product-name {
-        font-size: 16px;
-      }
-      .product-desc {
-        font-size: 14px;
-      }
-      .product-arrow {
-        opacity: 1;
-        transform: translateX(0);
+        max-width: 450px;
       }
     }
 
-    /* ==========================================
-       SAFETY SECTION
-       ========================================== */
-    .safety {
-      background: linear-gradient(180deg, transparent 0%, var(--void-space) 30%, var(--void-space) 70%, transparent 100%);
-    }
-
+    /* Safety Section */
     .safety-header {
-      max-width: 550px;
-      margin-bottom: 48px;
+      max-width: 700px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    .safety-header .section-label {
+      justify-content: center;
     }
 
     .safety-intro {
-      font-size: 15px;
+      font-size: 16px;
       color: var(--text-secondary);
-      line-height: 1.7;
-      margin-top: 16px;
+      line-height: 1.8;
+      margin-top: 20px;
     }
 
     .safety-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      max-width: 1000px;
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .safety-item {
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      border-radius: 12px;
-      padding: 24px;
-      transition: all 0.3s var(--ease-out-expo);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      transition: all 0.4s var(--ease-out-expo);
     }
 
     .safety-item:hover {
-      border-color: rgba(78, 205, 196, 0.3);
+      border-color: rgba(78, 205, 196, 0.4);
+      transform: translateY(-4px);
     }
 
     .safety-item h4 {
       font-family: var(--font-display);
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      color: var(--text-primary);
+      justify-content: center;
+      gap: 10px;
+      color: var(--text-pure);
     }
 
     .safety-item h4::before {
       content: '';
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       background: var(--teal);
       border-radius: 50%;
+      box-shadow: 0 0 10px var(--teal);
     }
 
     .safety-item p {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-tertiary);
       line-height: 1.6;
     }
@@ -2067,45 +1620,41 @@
     @media (max-width: 900px) {
       .safety-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
+        max-width: 450px;
+        margin: 0 auto;
       }
     }
 
-    /* ==========================================
-       RESEARCH SECTION
-       ========================================== */
-    .research {
-      background: linear-gradient(180deg, transparent 0%, var(--void-nebula) 30%, var(--void-nebula) 70%, transparent 100%);
-    }
-
+    /* Research Section */
     .research-header {
       text-align: center;
-      margin-bottom: 64px;
+      margin-bottom: 80px;
     }
 
     .research-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto 40px;
+      max-width: 1200px;
+      margin: 0 auto 48px;
     }
 
     .research-card {
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      border-radius: 12px;
-      padding: 28px;
+      border-radius: 16px;
+      padding: 32px;
       text-decoration: none;
       color: var(--text-primary);
-      transition: all 0.4s var(--ease-out-expo);
+      transition: all 0.5s var(--ease-out-expo);
       display: flex;
       flex-direction: column;
     }
 
     .research-card:hover {
       border-color: var(--teal);
-      transform: translateY(-6px);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     }
 
     .research-card-tag {
@@ -2114,59 +1663,59 @@
       font-weight: 600;
       color: var(--teal);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 16px;
+      letter-spacing: 0.1em;
+      margin-bottom: 20px;
     }
 
     .research-card h3 {
       font-family: var(--font-display);
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       line-height: 1.4;
       color: var(--text-pure);
     }
 
     .research-card p {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-tertiary);
       line-height: 1.6;
       flex: 1;
     }
 
     .research-card-arrow {
-      margin-top: 16px;
+      margin-top: 20px;
       color: var(--teal);
-      font-size: 18px;
-      transition: transform 0.3s ease;
+      font-size: 20px;
+      transition: transform 0.4s var(--ease-out-expo);
     }
 
     .research-card:hover .research-card-arrow {
-      transform: translateX(6px);
+      transform: translateX(8px);
     }
 
     .research-tags {
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      border-radius: 12px;
-      padding: 32px;
+      border-radius: 16px;
+      padding: 36px;
       text-align: center;
-      max-width: 700px;
+      max-width: 800px;
       margin: 0 auto;
     }
 
     .research-tags h4 {
       font-family: var(--font-display);
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 600;
-      margin-bottom: 20px;
-      color: var(--text-primary);
+      margin-bottom: 24px;
+      color: var(--text-pure);
     }
 
     .research-tags-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       justify-content: center;
     }
 
@@ -2175,59 +1724,60 @@
       font-size: 11px;
       color: var(--teal);
       background: var(--teal-subtle);
-      padding: 8px 16px;
-      border-radius: 20px;
+      padding: 10px 20px;
+      border-radius: 100px;
       border: 1px solid rgba(78, 205, 196, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .research-tag:hover {
+      background: rgba(78, 205, 196, 0.2);
+      transform: translateY(-2px);
     }
 
     @media (max-width: 900px) {
       .research-grid {
         grid-template-columns: 1fr;
-        max-width: 400px;
+        max-width: 450px;
       }
     }
 
-    /* ==========================================
-       INVOLVE SECTION
-       ========================================== */
-    .involve {
-      background: linear-gradient(180deg, transparent 0%, var(--void-space) 30%, var(--void-space) 70%, transparent 100%);
-    }
-
+    /* Involve Section */
     .involve-header {
       text-align: center;
-      margin-bottom: 64px;
+      margin-bottom: 80px;
     }
 
     .involve-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      max-width: 900px;
+      gap: 24px;
+      max-width: 1000px;
       margin: 0 auto;
     }
 
     .involve-card {
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      border-radius: 16px;
-      padding: 28px;
-      transition: all 0.4s var(--ease-out-expo);
+      border-radius: 20px;
+      padding: 32px;
+      transition: all 0.5s var(--ease-out-expo);
     }
 
     .involve-card:hover {
-      transform: translateY(-6px);
+      transform: translateY(-8px);
       border-color: var(--border-medium);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     }
 
     .involve-card-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .involve-card:nth-child(1) .involve-card-icon { background: var(--teal-subtle); }
@@ -2236,23 +1786,23 @@
     .involve-card:nth-child(4) .involve-card-icon { background: var(--teal-subtle); }
 
     .involve-card-icon svg {
-      width: 22px;
-      height: 22px;
+      width: 26px;
+      height: 26px;
     }
 
     .involve-card h3 {
       font-family: var(--font-display);
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 600;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       color: var(--text-pure);
     }
 
     .involve-card p {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-tertiary);
       line-height: 1.6;
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
 
     .involve-card a {
@@ -2263,7 +1813,7 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: gap 0.3s ease;
+      transition: gap 0.4s var(--ease-out-expo);
     }
 
     .involve-card:nth-child(1) a { color: var(--teal); }
@@ -2275,18 +1825,18 @@
 
     .involve-cta {
       text-align: center;
-      margin-top: 48px;
-      padding: 28px;
+      margin-top: 60px;
+      padding: 36px;
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      border-radius: 12px;
-      max-width: 480px;
+      border-radius: 20px;
+      max-width: 600px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .involve-cta p {
-      font-size: 14px;
+      font-size: 15px;
       color: var(--text-secondary);
     }
 
@@ -2298,72 +1848,71 @@
       .involve-grid { grid-template-columns: 1fr; }
     }
 
-    /* ==========================================
-       CONTACT / FOOTER
-       ========================================== */
+    /* Contact Section */
     .contact {
-      background: linear-gradient(180deg, transparent 0%, rgba(15, 15, 24, 0.8) 50%);
       text-align: center;
+      padding-bottom: 60px;
     }
 
     .contact-title {
       font-family: var(--font-display);
-      font-size: clamp(32px, 5vw, 48px);
+      font-size: clamp(40px, 5vw, 56px);
       font-weight: 600;
       letter-spacing: -0.02em;
-      margin-bottom: 40px;
+      margin-bottom: 48px;
       color: var(--text-pure);
     }
 
     .contact-links {
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 20px;
       flex-wrap: wrap;
-      margin-bottom: 48px;
+      margin-bottom: 60px;
     }
 
     .contact-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 14px 24px;
+      gap: 12px;
+      padding: 16px 28px;
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      border-radius: 8px;
+      border-radius: 12px;
       color: var(--text-primary);
       text-decoration: none;
       font-family: var(--font-body);
       font-size: 14px;
       font-weight: 500;
-      transition: all 0.3s ease;
+      transition: all 0.4s var(--ease-out-expo);
     }
 
     .contact-btn:hover {
       background: var(--void-elevated);
       border-color: var(--border-medium);
-      transform: translateY(-3px);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
     }
 
     .contact-btn svg {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       opacity: 0.7;
     }
 
     .newsletter {
-      max-width: 400px;
-      margin: 0 auto 64px;
+      max-width: 450px;
+      margin: 0 auto 80px;
     }
 
     .newsletter-label {
       font-family: var(--font-mono);
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.15em;
       color: var(--text-tertiary);
       text-transform: uppercase;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .newsletter-form {
@@ -2373,15 +1922,15 @@
 
     .newsletter-form input {
       flex: 1;
-      padding: 14px 18px;
+      padding: 16px 20px;
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
-      border-radius: 6px;
+      border-radius: 12px;
       color: var(--text-primary);
       font-family: var(--font-body);
       font-size: 14px;
       outline: none;
-      transition: border-color 0.3s ease;
+      transition: all 0.4s ease;
     }
 
     .newsletter-form input::placeholder {
@@ -2390,52 +1939,51 @@
 
     .newsletter-form input:focus {
       border-color: var(--teal);
+      box-shadow: 0 0 20px var(--teal-glow);
     }
 
     .newsletter-form button {
-      padding: 14px 24px;
-      background: var(--teal);
+      padding: 16px 28px;
+      background: linear-gradient(135deg, var(--teal), var(--purple));
       border: none;
-      border-radius: 6px;
+      border-radius: 12px;
       color: var(--void-deep);
       font-family: var(--font-display);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.4s var(--ease-out-expo);
     }
 
     .newsletter-form button:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px var(--teal-glow);
+      box-shadow: 0 10px 30px var(--teal-glow);
     }
 
     .footer {
-      padding-top: 40px;
+      padding-top: 48px;
       border-top: 1px solid var(--border-ghost);
     }
 
     .footer-copyright {
       font-family: var(--font-mono);
-      font-size: 10px;
+      font-size: 11px;
       color: var(--text-ghost);
       letter-spacing: 0.05em;
     }
 
-    /* ==========================================
-       CHANGELOG SECTION
-       ========================================== */
+    /* Changelog Section */
     .changelog-section {
-      padding: 48px 0;
+      padding: 60px 0;
       border-top: 1px solid var(--border-ghost);
-      margin-top: 48px;
+      margin-top: 60px;
     }
 
     .changelog-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .changelog-title {
@@ -2452,7 +2000,7 @@
       font-size: 11px;
       color: var(--teal);
       text-decoration: none;
-      transition: opacity 0.2s ease;
+      transition: opacity 0.3s ease;
     }
 
     .changelog-link:hover {
@@ -2467,12 +2015,17 @@
 
     .changelog-entry {
       display: flex;
-      gap: 16px;
+      gap: 20px;
       align-items: flex-start;
-      padding: 12px 16px;
-      background: var(--void-nebula);
-      border-radius: 8px;
+      padding: 16px 20px;
+      background: var(--void-surface);
+      border-radius: 12px;
       border: 1px solid var(--border-void);
+      transition: all 0.4s ease;
+    }
+
+    .changelog-entry:hover {
+      border-color: var(--border-ghost);
     }
 
     .changelog-meta {
@@ -2480,7 +2033,7 @@
       display: flex;
       flex-direction: column;
       gap: 4px;
-      min-width: 80px;
+      min-width: 90px;
     }
 
     .changelog-date {
@@ -2502,153 +2055,34 @@
     .changelog-tag.purple { color: var(--purple); }
 
     .changelog-message {
-      font-size: 13px;
+      font-size: 14px;
       color: var(--text-secondary);
       line-height: 1.5;
     }
 
-    @media (max-width: 600px) {
-      .changelog-entry {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .changelog-meta {
-        flex-direction: row;
-        gap: 12px;
-        align-items: center;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .contact-links {
-        flex-direction: column;
-        align-items: center;
-      }
-      .contact-btn {
-        width: 100%;
-        max-width: 280px;
-        justify-content: center;
-      }
-      .newsletter-form {
-        flex-direction: column;
-      }
-      .newsletter-form input {
-        font-size: 16px;
-        padding: 16px 18px;
-      }
-      .newsletter-form button {
-        width: 100%;
-        padding: 16px 24px;
-        font-size: 14px;
-      }
-    }
-
-    /* ==========================================
-       SCROLL-TRIGGERED ANIMATIONS
-       ========================================== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.9s var(--ease-out-expo), transform 0.9s var(--ease-out-expo);
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .stagger > * {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
-    }
-
-    .stagger.visible > *:nth-child(1) { transition-delay: 0.1s; }
-    .stagger.visible > *:nth-child(2) { transition-delay: 0.18s; }
-    .stagger.visible > *:nth-child(3) { transition-delay: 0.26s; }
-    .stagger.visible > *:nth-child(4) { transition-delay: 0.34s; }
-    .stagger.visible > *:nth-child(5) { transition-delay: 0.42s; }
-    .stagger.visible > *:nth-child(6) { transition-delay: 0.5s; }
-
-    .stagger.visible > * {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Scroll-based parallax for hero icons */
-    .hero-constellation {
-      transition: transform 0.1s linear;
-    }
-
-    section[id] {
-      scroll-margin-top: 80px;
-    }
-
-    /* ==========================================
-       TOUCH DEVICE OPTIMIZATIONS
-       ========================================== */
-    @media (hover: none) and (pointer: coarse) {
-      /* Remove hover-dependent effects on touch devices */
-      .product-card:hover {
-        transform: none;
-      }
-      .product-arrow {
-        opacity: 1;
-        transform: translateX(0);
-      }
-      .team-card:hover {
-        transform: none;
-      }
-      .team-card-linkedin {
-        opacity: 0.7;
-      }
-      .contact-btn:hover {
-        transform: none;
-      }
-      .nav-link:hover::after {
-        width: 0;
-      }
-
-      /* Add active states for touch feedback */
-      .product-card:active {
-        transform: scale(0.98);
-        opacity: 0.9;
-      }
-      .team-card:active {
-        transform: scale(0.98);
-      }
-      .contact-btn:active {
-        transform: scale(0.97);
-        opacity: 0.9;
-      }
-      .newsletter-form button:active {
-        transform: scale(0.97);
+    /* Reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 <body>
+  <!-- WebGL Background -->
+  <canvas id="webgl-bg"></canvas>
 
-  <!-- Persistent Cosmic Background - Multi-layer parallax -->
-  <div class="cosmos">
-    <!-- Farthest layer - distant stars (0.1x parallax) -->
-    <div class="cosmos-layer cosmos-stars-far"></div>
-    <!-- Nebula clouds (0.15x parallax) -->
-    <div class="cosmos-layer cosmos-nebula"></div>
-    <!-- Mid-distance stars (0.35x parallax) -->
-    <div class="cosmos-layer cosmos-stars-mid"></div>
-    <!-- Floating dust particles (0.5x parallax) -->
-    <canvas class="cosmos-layer" id="cosmos-dust"></canvas>
-    <!-- Near stars (0.7x parallax) -->
-    <div class="cosmos-layer cosmos-stars-near"></div>
-    <!-- Grid floor (0.9x parallax) -->
-    <div class="cosmos-layer cosmos-grid"></div>
-    <!-- Shooting stars container -->
-    <div class="cosmos-layer cosmos-shooting-stars" id="shooting-stars"></div>
-    <!-- Depth fog overlay -->
-    <div class="cosmos-layer cosmos-fog"></div>
+  <!-- Atmospheric Overlays -->
+  <div class="atmosphere">
+    <div class="vignette"></div>
+    <div class="grain"></div>
   </div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
 
   <!-- Theme Toggle -->
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
@@ -2663,7 +2097,7 @@
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
-    <a href="#home" class="nav-logo">
+    <a href="#" class="nav-logo" id="nav-logo">
       <svg class="nav-logo-atom" viewBox="0 0 100 100">
         <defs>
           <radialGradient id="navCoreGrad" cx="30%" cy="30%" r="70%">
@@ -2692,13 +2126,15 @@
     </a>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="#home" class="nav-link active">Launch Pad</a></li>
-      <li><a href="#ccx" class="nav-link">The Research</a></li>
-      <li><a href="#products" class="nav-link">Our Ecosystem</a></li>
+      <li><a href="#ccx" class="nav-link">Science</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="#team" class="nav-link">Team</a></li>
+      <li><a href="#products" class="nav-link">Products</a></li>
+      <li><a href="#research" class="nav-link">Research</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
 
-    <a href="#contact" class="nav-cta">Contact</a>
+    <a href="mailto:polarity@polarity-lab.com" class="nav-cta"><span>Contact</span></a>
 
     <button class="nav-mobile" id="nav-mobile" aria-label="Toggle menu">
       <span></span>
@@ -2708,12 +2144,12 @@
   </nav>
 
   <!-- ==========================================
-       SCROLL STAGE - Fixed viewport canvas for choreography
+       STAGE - Fixed viewport canvas
        ========================================== -->
   <div class="stage" id="stage">
-    <!-- Floating Product Icons - Will animate based on scroll -->
+    <!-- Hero Constellation -->
     <div class="hero-constellation" id="hero-constellation">
-      <!-- WaxFeed - Exits left -->
+      <!-- WaxFeed -->
       <a href="https://wax-feed.com" target="_blank" class="hero-product hero-product--waxfeed" id="icon-waxfeed">
         <div class="hero-product-icon">
           <img src="waxfeed_disc.svg" alt="WaxFeed">
@@ -2721,7 +2157,7 @@
         <span class="hero-product-label">WaxFeed</span>
       </a>
 
-      <!-- Polarity - Exits up -->
+      <!-- Polarity -->
       <a href="https://app.polarity-lab.com/" target="_blank" class="hero-product hero-product--polarity" id="icon-polarity">
         <div class="hero-product-icon">
           <svg viewBox="0 0 200 200">
@@ -2732,11 +2168,11 @@
                 <stop offset="100%" stop-color="#2BA89F"/>
               </radialGradient>
               <radialGradient id="heroAmbient" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#4ECDC4" stop-opacity="0.3"/>
+                <stop offset="0%" stop-color="#4ECDC4" stop-opacity="0.4"/>
                 <stop offset="100%" stop-color="#4ECDC4" stop-opacity="0"/>
               </radialGradient>
               <filter id="heroOrbitalGlow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feGaussianBlur stdDeviation="4" result="blur"/>
                 <feMerge>
                   <feMergeNode in="blur"/>
                   <feMergeNode in="blur"/>
@@ -2744,46 +2180,38 @@
                 </feMerge>
               </filter>
               <filter id="heroCoreGlow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="8" result="blur"/>
+                <feGaussianBlur stdDeviation="10" result="blur"/>
                 <feMerge>
                   <feMergeNode in="blur"/>
                   <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-              <filter id="heroElectronGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge>
                   <feMergeNode in="blur"/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
               </filter>
             </defs>
-            <circle cx="100" cy="100" r="85" fill="url(#heroAmbient)"/>
-            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#4ECDC4" stroke-width="2.5" transform="rotate(-60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
-            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FFA07A" stroke-width="2.5" transform="rotate(60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
-            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#BB8FCE" stroke-width="2.5" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
-            <circle cx="140" cy="30" r="8" fill="#4ECDC4" filter="url(#heroElectronGlow)"/>
-            <circle cx="60" cy="30" r="8" fill="#FFA07A" filter="url(#heroElectronGlow)"/>
-            <circle cx="180" cy="100" r="8" fill="#BB8FCE" filter="url(#heroElectronGlow)"/>
-            <circle cx="100" cy="100" r="28" fill="url(#heroCoreGrad)" filter="url(#heroCoreGlow)"/>
-            <circle cx="90" cy="90" r="10" fill="white" opacity="0.25"/>
-            <circle cx="100" cy="100" r="12" fill="none" stroke="white" stroke-width="1.5" opacity="0.3"/>
+            <circle cx="100" cy="100" r="90" fill="url(#heroAmbient)"/>
+            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#4ECDC4" stroke-width="3" transform="rotate(-60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
+            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FFA07A" stroke-width="3" transform="rotate(60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
+            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#BB8FCE" stroke-width="3" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
+            <circle cx="140" cy="30" r="10" fill="#4ECDC4" filter="url(#heroOrbitalGlow)"/>
+            <circle cx="60" cy="30" r="10" fill="#FFA07A" filter="url(#heroOrbitalGlow)"/>
+            <circle cx="180" cy="100" r="10" fill="#BB8FCE" filter="url(#heroOrbitalGlow)"/>
+            <circle cx="100" cy="100" r="32" fill="url(#heroCoreGrad)" filter="url(#heroCoreGlow)"/>
+            <circle cx="88" cy="88" r="12" fill="white" opacity="0.3"/>
           </svg>
         </div>
         <span class="hero-product-label">Polarity</span>
       </a>
 
-      <!-- Painpoints - Exits down -->
+      <!-- Painpoints -->
       <a href="https://painpoints.site" target="_blank" class="hero-product hero-product--painpoints" id="icon-painpoints">
         <div class="hero-product-icon">
-          <img src="painpoints-icon.svg" alt="Painpoints">
+          <img src="public/painpoints-icon.svg" alt="Painpoints">
         </div>
         <span class="hero-product-label">Painpoints</span>
       </a>
 
-      <!-- AVDP - Exits right -->
+      <!-- AVDP -->
       <a href="https://linktr.ee/averydistantperspective" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
         <div class="hero-product-icon avdp-icon">
           <img src="AVDPLOGOREAL.jpg" alt="AVDP">
@@ -2792,70 +2220,20 @@
       </a>
     </div>
 
-    <!-- SCROLL TEXT REVEALS - Appear as icons exit -->
+    <!-- SCROLL TEXT REVEALS -->
 
-    <!-- Text 1: Hero headline (appears early, fades with icons) -->
-    <div class="scroll-text scroll-text--center" id="text-hero">
-      <h1 class="scroll-text__title">
+    <!-- Text 1: Hero -->
+    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 62%;">
+      <div class="hero-badge">Research Laboratory</div>
+      <h1 class="hero-title">
         Measure <span class="gradient">the Mind</span>
       </h1>
-      <p class="scroll-text__body">
+      <p class="hero-subtitle">
         Studying how conversation reveals how your brain organizes information.
       </p>
     </div>
 
-    <!-- Text 2: The Mission (left side) -->
-    <div class="scroll-text scroll-text--left" id="text-mission">
-      <span class="scroll-text__accent" style="top: -40px; left: -20px;">01</span>
-      <span class="scroll-text__label">The Mission</span>
-      <h2 class="scroll-text__title">Two patents.<br>Five products.<br>One question.</h2>
-      <p class="scroll-text__body">Can we measure cognition through conversation?</p>
-    </div>
-
-    <!-- Text 3: CCX Definition (right side) -->
-    <div class="scroll-text scroll-text--right" id="text-ccx">
-      <span class="scroll-text__accent" style="top: -60px; right: -20px;">CCX</span>
-      <span class="scroll-text__label">The Research</span>
-      <h2 class="scroll-text__title">What is<br>CCX?</h2>
-      <div class="scroll-text__definition">
-        <div class="scroll-text__definition-term">The Question</div>
-        <p class="scroll-text__definition-desc">When two people hear "cat," they think of completely different things. We study why - and how information organizes across minds.</p>
-      </div>
-    </div>
-
-    <!-- Text 4: The Process (center, scattered stats) -->
-    <div class="scroll-text scroll-text--center" id="text-process" style="top: 45%;">
-      <span class="scroll-text__label">How It Works</span>
-      <h2 class="scroll-text__title" style="font-size: clamp(24px, 4vw, 40px);">Listen → Map → Understand</h2>
-      <p class="scroll-text__body" style="margin: 0 auto;">Analyze conversation. Reveal hidden patterns. See how ideas connect.</p>
-    </div>
-
-    <!-- Text 5: Stats (bottom right) -->
-    <div class="scroll-text scroll-text--bottom-right" id="text-stats">
-      <div class="scroll-text__stat">
-        <span class="scroll-text__stat-num">2</span>
-        <span class="scroll-text__stat-label">Provisional Patents</span>
-      </div>
-      <div class="scroll-text__stat">
-        <span class="scroll-text__stat-num">5</span>
-        <span class="scroll-text__stat-label">Products Built</span>
-      </div>
-      <div class="scroll-text__stat">
-        <span class="scroll-text__stat-num">11</span>
-        <span class="scroll-text__stat-label">Years of Research</span>
-      </div>
-    </div>
-
-    <!-- Text 6: Team intro (left) -->
-    <div class="scroll-text scroll-text--left" id="text-team" style="top: 40%;">
-      <span class="scroll-text__label">The Team</span>
-      <h2 class="scroll-text__title">Theodore Addo<br><span style="color: var(--teal); font-size: 0.5em;">Founder & PI</span></h2>
-      <p class="scroll-text__body" style="margin-bottom: 1.5rem;">MD Candidate, Brown Alpert Medical School '26. MIT Boyden Lab alum.</p>
-      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Shadrack Annor <span style="color: var(--coral); font-size: 0.6em;">Cofounder</span></h3>
-      <p class="scroll-text__body" style="margin-bottom: 1.5rem;">Brown University. Principal of Waxfeed. Music-tech expertise.</p>
-      <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Nathan Amankwah <span style="color: var(--purple); font-size: 0.6em;">Cofounder</span></h3>
-      <p class="scroll-text__body">University of Ottawa. Full stack. CCX formalization.</p>
-    </div>
+    <!-- Scroll choreography text removed - now using actual content sections -->
 
     <!-- Scroll indicator -->
     <div class="hero-scroll" id="scroll-indicator">
@@ -2864,322 +2242,623 @@
     </div>
   </div>
 
-  <!-- SCROLL CONTAINER - Normal scrolling page -->
+  <!-- SCROLL CONTAINER - Content sections -->
   <div class="scroll-container">
-    <!-- HERO / LAUNCH PAD SECTION -->
-    <section class="spatial-section hero" id="home" style="width: 100%; display: flex; justify-content: center; align-items: center;">
-      <div class="section-inner" style="visibility: visible; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; text-align: center; padding: 80px 40px 40px 40px; width: 100%; max-width: 1000px; margin: 0 auto; box-sizing: border-box;">
+    <section class="spatial-section hero" id="home" data-scroll-zone="hero">
+      <div class="section-inner"></div>
+    </section>
 
-        <!-- Product Icons Grid -->
-        <div class="hero-products-grid">
+    <!-- CCX SECTION -->
+    <section class="spatial-section ccx" id="ccx">
+      <div class="section-inner">
+        <div class="ccx-content">
+          <div class="ccx-text reveal">
+            <p class="section-label">The Science</p>
+            <h2 class="section-title">Conversational Connectomics</h2>
 
-          <!-- WaxFeed -->
-          <a href="https://wax-feed.com" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none;">
-            <div style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
-              <img src="waxfeed_disc.svg" alt="WaxFeed" style="width: 100%; height: 100%; object-fit: contain;">
+            <div class="ccx-definition">
+              <div class="ccx-definition-term">CCX / Conversational Connectomics</div>
+              <p class="ccx-definition-desc">A computational framework for inferring how concepts are connected in someone's mind, using their natural language. Like a stethoscope for cognition.</p>
             </div>
-            <span style="font-family: var(--font-display); font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);">WaxFeed</span>
-          </a>
 
-          <!-- Polarity -->
-          <a href="https://app.polarity-lab.com/" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none;">
-            <div style="width: 110px; height: 110px; display: flex; align-items: center; justify-content: center;">
-              <svg viewBox="0 0 200 200" style="width: 100%; height: 100%;">
-                <defs>
-                  <radialGradient id="coreGrad" cx="30%" cy="30%" r="70%">
-                    <stop offset="0%" stop-color="#6EE7DF"/>
-                    <stop offset="50%" stop-color="#4ECDC4"/>
-                    <stop offset="100%" stop-color="#2BA89F"/>
-                  </radialGradient>
-                  <filter id="orbitalGlow" x="-50%" y="-50%" width="200%" height="200%">
-                    <feGaussianBlur stdDeviation="3" result="blur"/>
-                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                  </filter>
-                </defs>
-                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#4ECDC4" stroke-width="2.5" transform="rotate(-60 100 100)" filter="url(#orbitalGlow)" opacity="0.9"/>
-                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FFA07A" stroke-width="2.5" transform="rotate(60 100 100)" filter="url(#orbitalGlow)" opacity="0.9"/>
-                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#BB8FCE" stroke-width="2.5" filter="url(#orbitalGlow)" opacity="0.9"/>
-                <circle cx="140" cy="30" r="8" fill="#4ECDC4" filter="url(#orbitalGlow)"/>
-                <circle cx="60" cy="30" r="8" fill="#FFA07A" filter="url(#orbitalGlow)"/>
-                <circle cx="180" cy="100" r="8" fill="#BB8FCE" filter="url(#orbitalGlow)"/>
-                <circle cx="100" cy="100" r="28" fill="url(#coreGrad)" filter="url(#orbitalGlow)"/>
-              </svg>
+            <div class="ccx-steps stagger">
+              <div class="ccx-step">
+                <div class="ccx-step-num">1</div>
+                <div>
+                  <h4>Parse</h4>
+                  <p>Break conversation into atomic cognitive events. 12 types of thinking we detect in speech.</p>
+                </div>
+              </div>
+              <div class="ccx-step">
+                <div class="ccx-step-num">2</div>
+                <div>
+                  <h4>Graph</h4>
+                  <p>Build a network of connected concepts. Polarity Points weight how strongly ideas link.</p>
+                </div>
+              </div>
+              <div class="ccx-step">
+                <div class="ccx-step-num">3</div>
+                <div>
+                  <h4>Fingerprint</h4>
+                  <p>Generate BrainID — your unique cognitive signature from how you think.</p>
+                </div>
+              </div>
             </div>
-            <span style="font-family: var(--font-display); font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);">Polarity</span>
-          </a>
-
-          <!-- Painpoints -->
-          <a href="https://painpoints.site" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none;">
-            <div style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
-              <img src="painpoints-icon.svg" alt="Painpoints" style="width: 100%; height: 100%; object-fit: contain;">
-            </div>
-            <span style="font-family: var(--font-display); font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);">Painpoints</span>
-          </a>
-
-          <!-- AVDP -->
-          <a href="https://linktr.ee/averydistantperspective" target="_blank" style="display: flex; flex-direction: column; align-items: center; gap: 12px; text-decoration: none;">
-            <div style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;">
-              <img src="AVDPLOGOREAL.jpg" alt="AVDP" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%; border: 2px solid var(--coral);">
-            </div>
-            <span style="font-family: var(--font-display); font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-tertiary);">AVDP</span>
-          </a>
-
-        </div>
-
-        <!-- Hero Text -->
-        <div style="margin-top: 40px;">
-          <h1 style="font-family: var(--font-display); font-size: clamp(28px, 5vw, 48px); font-weight: 600; margin-bottom: 16px;">
-            Measure <span class="gradient">the Mind</span>
-          </h1>
-          <p style="font-size: clamp(14px, 1.8vw, 18px); color: var(--text-secondary); max-width: 500px; margin: 0 auto;">
-            We build tools that understand how you think, turning everyday conversations into insights about memory, cognition, and connection.
-          </p>
-        </div>
-
-        <!-- Stats -->
-        <div style="display: flex; gap: 40px; margin-top: 40px; flex-wrap: wrap; justify-content: center;">
-          <div style="text-align: center;">
-            <span style="font-size: 36px; font-weight: 700; color: var(--teal);">2</span>
-            <span style="display: block; font-size: 10px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em;">Patents</span>
           </div>
-          <div style="text-align: center;">
-            <span style="font-size: 36px; font-weight: 700; color: var(--coral);">4</span>
-            <span style="display: block; font-size: 10px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em;">Products</span>
-          </div>
-          <div style="text-align: center;">
-            <span style="font-size: 36px; font-weight: 700; color: var(--purple);">11</span>
-            <span style="display: block; font-size: 10px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.1em;">Years Research</span>
-          </div>
-        </div>
 
-        <!-- Scroll indicator -->
-        <div style="margin-top: 30px; opacity: 0.5;">
-          <span style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em;">Scroll</span>
-          <div style="width: 1px; height: 30px; background: var(--text-tertiary); margin: 8px auto;"></div>
+          <div class="ccx-visual">
+            <div class="ccx-diagram">
+              <div class="ccx-ring"></div>
+              <div class="ccx-ring"></div>
+              <div class="ccx-ring"></div>
+              <div class="ccx-core">
+                <div class="ccx-core-inner"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-  <!-- CCX SECTION -->
-  <section class="spatial-section ccx" id="ccx">
-    <div class="section-inner">
-      <div class="ccx-content">
-        <div class="ccx-text reveal">
-          <p class="section-label">The Research</p>
-          <h2 class="section-title">What is CCX?</h2>
+    <!-- ABOUT SECTION -->
+    <section class="spatial-section about" id="about">
+      <div class="section-inner">
+        <div class="about-header reveal">
+          <p class="section-label">Who We Are</p>
+          <h2 class="section-title">A research lab that builds products</h2>
+        </div>
 
-          <div class="ccx-definition">
-            <div class="ccx-definition-term">The Question</div>
-            <p class="ccx-definition-desc">When two people hear the word "cat," they think of completely different things. One imagines a childhood pet, another thinks of allergies, another sees a lion. Why? What shapes how each of us organizes information?</p>
+        <div class="about-grid">
+          <div class="about-main reveal">
+            <div class="about-main-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+              </svg>
+            </div>
+            <h3>The Flywheel<span class="about-main-badge">Core Model</span></h3>
+            <p>Products generate data. Data enables research. Research produces papers and patents. Papers bring credibility. Credibility brings users and funding. Funding enables more products. Repeat.</p>
           </div>
 
-          <div class="ccx-steps stagger">
-            <div class="ccx-step">
-              <div class="ccx-step-num">1</div>
-              <div>
-                <h4>The Problem</h4>
-                <p>Every mind organizes concepts differently. These patterns are invisible - until now.</p>
+          <div class="about-cards stagger">
+            <div class="about-card">
+              <div class="about-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                  <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+                </svg>
               </div>
+              <h4>Open Platform</h4>
+              <p>A venue for others to build on our intelligence and contribute as collaborators.</p>
             </div>
-            <div class="ccx-step">
-              <div class="ccx-step-num">2</div>
-              <div>
-                <h4>Our Approach</h4>
-                <p>CCX maps how ideas connect in your mind by analyzing natural conversation - no scanners, no tests.</p>
+
+            <div class="about-card">
+              <div class="about-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
+                  <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582"/>
+                </svg>
               </div>
+              <h4>The Purpose</h4>
+              <p>Understanding the human condition to bring the world closer together.</p>
             </div>
-            <div class="ccx-step">
-              <div class="ccx-step-num">3</div>
-              <div>
-                <h4>The Vision</h4>
-                <p>Understand how information flows not just within brains, but across people, teams, and systems.</p>
+
+            <div class="about-card">
+              <div class="about-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
+                  <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
+                </svg>
               </div>
+              <h4>The Studio</h4>
+              <p>AVDP captures authentic conversation for entertainment and research.</p>
             </div>
           </div>
         </div>
-
-        <div class="ccx-visual">
-          <div class="ccx-diagram">
-            <div class="ccx-ring"></div>
-            <div class="ccx-ring"></div>
-            <div class="ccx-ring"></div>
-            <div class="ccx-core">
-              <div class="ccx-core-inner"></div>
-            </div>
-            <div class="ccx-node"></div>
-            <div class="ccx-node"></div>
-            <div class="ccx-node"></div>
-            <div class="ccx-node"></div>
-          </div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- OUR ECOSYSTEM SECTION -->
-  <section class="spatial-section products" id="products">
-    <div class="section-inner">
-      <div class="products-header reveal">
-        <p class="section-label">Our Ecosystem</p>
-        <h2 class="section-title">How we use CCX</h2>
-      </div>
-
-      <div class="products-grid stagger">
-        <a href="https://wax-feed.com" target="_blank" class="product-card">
-          <div class="product-icon">
-            <img src="waxfeed_disc.svg" alt="WaxFeed">
-          </div>
-          <div class="product-name">WaxFeed</div>
-          <div class="product-desc">WaxFeed uses CCX to create your TasteID — a unique map of your musical preferences that connects you with others who hear the world the way you do.</div>
-          <span class="product-arrow">Explore →</span>
-        </a>
-
-        <a href="https://linktr.ee/averydistantperspective" target="_blank" class="product-card">
-          <div class="product-icon">
-            <img src="AVDPLOGOREAL.jpg" alt="AVDP">
-          </div>
-          <div class="product-name">AVDP</div>
-          <div class="product-desc">A Very Distant Perspective uses CCX to uncover what makes each person unique, turning deep conversations into compelling stories about human connection.</div>
-          <span class="product-arrow">Listen →</span>
-        </a>
-
-        <a href="https://painpoints.site" target="_blank" class="product-card">
-          <div class="product-icon">
-            <img src="painpoints-icon.svg" alt="Painpoints">
-          </div>
-          <div class="product-name">Painpoints</div>
-          <div class="product-desc">Painpoints uses CCX to match real-world problems with the right builders, finding collaborators whose thinking styles complement each other.</div>
-          <span class="product-arrow">Explore →</span>
-        </a>
-
-        <a href="https://app.polarity-lab.com/" target="_blank" class="product-card">
-          <div class="product-icon" style="background: transparent;">
-            <svg viewBox="0 0 200 200" style="width: 100%; height: 100%;">
-              <defs>
-                <radialGradient id="prodCoreGrad" cx="30%" cy="30%" r="70%">
-                  <stop offset="0%" stop-color="#6EE7DF"/>
-                  <stop offset="50%" stop-color="#4ECDC4"/>
-                  <stop offset="100%" stop-color="#2BA89F"/>
-                </radialGradient>
-                <filter id="prodOrbitalGlow" x="-50%" y="-50%" width="200%" height="200%">
-                  <feGaussianBlur stdDeviation="2" result="blur"/>
-                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                </filter>
-              </defs>
-              <ellipse cx="100" cy="100" rx="70" ry="22" fill="none" stroke="#4ECDC4" stroke-width="2.5" transform="rotate(-60 100 100)" filter="url(#prodOrbitalGlow)" opacity="0.9"/>
-              <ellipse cx="100" cy="100" rx="70" ry="22" fill="none" stroke="#FFA07A" stroke-width="2.5" transform="rotate(60 100 100)" filter="url(#prodOrbitalGlow)" opacity="0.9"/>
-              <ellipse cx="100" cy="100" rx="70" ry="22" fill="none" stroke="#BB8FCE" stroke-width="2.5" filter="url(#prodOrbitalGlow)" opacity="0.9"/>
-              <circle cx="135" cy="40" r="7" fill="#4ECDC4" filter="url(#prodOrbitalGlow)"/>
-              <circle cx="65" cy="40" r="7" fill="#FFA07A" filter="url(#prodOrbitalGlow)"/>
-              <circle cx="165" cy="100" r="7" fill="#BB8FCE" filter="url(#prodOrbitalGlow)"/>
-              <circle cx="100" cy="100" r="24" fill="url(#prodCoreGrad)" filter="url(#prodOrbitalGlow)"/>
+    <!-- TEAM SECTION -->
+    <section class="spatial-section team" id="team">
+      <div class="section-inner">
+        <div class="team-header reveal">
+          <p class="section-label">The Team</p>
+          <h2 class="section-title">Meet the founders</h2>
+          <div class="team-location">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
             </svg>
+            Providence, RI · Est. 2025
           </div>
-          <div class="product-name">Polarity</div>
-          <div class="product-desc">Polarity is the heart of CCX. It maps how your ideas connect, creating a cognitive memory that understands and remembers the way you think.</div>
-          <span class="product-arrow">Explore →</span>
-        </a>
-      </div>
-    </div>
-  </section>
+        </div>
 
-  <!-- TEAM SECTION -->
-  <section class="spatial-section team" id="team">
-    <div class="section-inner">
-      <div class="team-header reveal">
-        <p class="section-label">The Team</p>
-        <h2 class="section-title">Meet the founders</h2>
-        <div class="team-location">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
-            <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
-          </svg>
-          Providence, RI · Est. 2025
+        <div class="team-grid stagger">
+          <a href="https://www.linkedin.com/in/theo-addo/" target="_blank" class="team-card">
+            <div class="team-card-role">Founder & PI</div>
+            <h3 class="team-card-name">Theodore Addo</h3>
+            <p class="team-card-title">MD Candidate, Brown Alpert '26</p>
+            <p class="team-card-bio">MIT Boyden Lab. 11 years on this question. Radiology-bound.</p>
+            <div class="team-card-linkedin">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/shadrack-annor-38a627235/" target="_blank" class="team-card">
+            <div class="team-card-role">Cofounder</div>
+            <h3 class="team-card-name">Shadrack Annor</h3>
+            <p class="team-card-title">Brown CS & Religious Studies '27</p>
+            <p class="team-card-bio">Built Waxfeed. Originated Patent #1. Music-tech expertise.</p>
+            <div class="team-card-linkedin">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+          </a>
+
+          <a href="https://www.linkedin.com/in/nathan-amankwah/" target="_blank" class="team-card">
+            <div class="team-card-role">Cofounder</div>
+            <h3 class="team-card-name">Nathan Amankwah</h3>
+            <p class="team-card-title">UOttawa Telfer '27</p>
+            <p class="team-card-bio">Full stack. Helped formalize CCX. Patent #2.</p>
+            <div class="team-card-linkedin">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+          </a>
         </div>
       </div>
+    </section>
 
-      <div class="team-grid stagger">
-        <a href="https://www.linkedin.com/in/theo-addo/" target="_blank" class="team-card">
-          <div class="team-card-role">Founder & PI</div>
-          <h3 class="team-card-name">Theodore Addo</h3>
-          <p class="team-card-title">MD Candidate, Brown Alpert '26</p>
-          <p class="team-card-bio">MIT Boyden Lab. 11 years on this question. Radiology-bound.</p>
-          <div class="team-card-linkedin">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </div>
-        </a>
-
-        <a href="https://www.linkedin.com/in/shadrack-annor-38a627235/" target="_blank" class="team-card">
-          <div class="team-card-role">Cofounder</div>
-          <h3 class="team-card-name">Shadrack Annor</h3>
-          <p class="team-card-title">Brown CS & Religious Studies '27</p>
-          <p class="team-card-bio">Built Waxfeed. Originated Patent #1. Music-tech expertise.</p>
-          <div class="team-card-linkedin">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </div>
-        </a>
-
-        <a href="https://www.linkedin.com/in/nathan-amankwah/" target="_blank" class="team-card">
-          <div class="team-card-role">Cofounder</div>
-          <h3 class="team-card-name">Nathan Amankwah</h3>
-          <p class="team-card-title">UOttawa Telfer '27</p>
-          <p class="team-card-bio">Full stack. Helped formalize CCX. Patent #2.</p>
-          <div class="team-card-linkedin">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT SECTION -->
-  <section class="spatial-section contact" id="contact">
-    <div class="section-inner">
-      <h2 class="contact-title">Let's connect</h2>
-
-      <div class="contact-links">
-        <a href="mailto:polarity@polarity-lab.com" class="contact-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-          polarity@polarity-lab.com
-        </a>
-
-        <a href="https://www.linkedin.com/company/polarity-lab/" target="_blank" class="contact-btn">
-          <svg viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-          </svg>
-          LinkedIn
-        </a>
-      </div>
-
-      <div class="newsletter">
-        <p class="newsletter-label">Stay Updated</p>
-        <form class="newsletter-form" id="newsletter-form">
-          <input type="email" name="email" placeholder="Enter your email" required>
-          <button type="submit">Subscribe</button>
-        </form>
-      </div>
-
-      <!-- Changelog Section -->
-      <div class="changelog-section">
-        <div class="changelog-header">
-          <span class="changelog-title">Recent Updates</span>
-          <a href="https://github.com/polarityai/polarity-landing/blob/main/CHANGELOG.md" target="_blank" class="changelog-link">View all →</a>
+    <!-- PRODUCTS SECTION -->
+    <section class="spatial-section products" id="products">
+      <div class="section-inner">
+        <div class="products-header reveal">
+          <p class="section-label">Our Products</p>
+          <h2 class="section-title">Building the CCX ecosystem</h2>
         </div>
-        <div class="changelog-entries" id="changelog-entries">
-          <!-- Loaded dynamically -->
+
+        <div class="products-grid stagger">
+          <a href="https://app.polarity-lab.com/" target="_blank" class="product-card">
+            <div class="product-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
+              </svg>
+            </div>
+            <div class="product-name">Polarity</div>
+            <div class="product-desc">Cognitive memory service. A friend who never forgets.</div>
+            <span class="product-arrow">Explore →</span>
+          </a>
+
+          <a href="https://wax-feed.com" target="_blank" class="product-card">
+            <div class="product-icon">
+              <img src="waxfeed_disc.svg" alt="WaxFeed">
+            </div>
+            <div class="product-name">WaxFeed</div>
+            <div class="product-desc">Social platform for music enthusiasts. DJs, mixes, taste graphs.</div>
+            <span class="product-arrow">Explore →</span>
+          </a>
+
+          <a href="https://painpoints.site" target="_blank" class="product-card">
+            <div class="product-icon">
+              <img src="public/painpoints-icon.svg" alt="Painpoints">
+            </div>
+            <div class="product-name">Painpoints</div>
+            <div class="product-desc">Fund problems, not promises. Crowdfunding platform for real-world solutions.</div>
+            <span class="product-arrow">Explore →</span>
+          </a>
+
+          <a href="https://linktr.ee/averydistantperspective" target="_blank" class="product-card">
+            <div class="product-icon">
+              <img src="AVDPLOGOREAL.jpg" alt="AVDP">
+            </div>
+            <div class="product-name">AVDP</div>
+            <div class="product-desc">A Very Distant Perspective. Deep dive podcast using CCX.</div>
+            <span class="product-arrow">Listen →</span>
+          </a>
         </div>
       </div>
+    </section>
 
-      <footer class="footer">
-        <p class="footer-copyright">© 2025 POLARITY LAB LLC · Providence, RI · 2 Provisional Patents Filed</p>
-      </footer>
-    </div>
-  </section>
+    <!-- SAFETY SECTION -->
+    <section class="spatial-section safety" id="safety">
+      <div class="section-inner">
+        <div class="safety-header reveal">
+          <p class="section-label">Non-Negotiable</p>
+          <h2 class="section-title">Safety & Ethics</h2>
+          <p class="safety-intro">Cognitive monitoring could enable surveillance and abuse. We are not naive. These principles are foundational.</p>
+        </div>
+
+        <div class="safety-grid stagger">
+          <div class="safety-item">
+            <h4>User-Only Access</h4>
+            <p>Your cognitive data is yours alone. No one else sees it.</p>
+          </div>
+          <div class="safety-item">
+            <h4>No Default Sharing</h4>
+            <p>Caregiver access requires explicit, revocable consent.</p>
+          </div>
+          <div class="safety-item">
+            <h4>Coercion Detection</h4>
+            <p>Patterns suggesting forced access trigger protective protocols.</p>
+          </div>
+          <div class="safety-item">
+            <h4>Right to Deletion</h4>
+            <p>Full data purge on request. No exceptions.</p>
+          </div>
+          <div class="safety-item">
+            <h4>No Predictive Policing</h4>
+            <p>Never used for risk scoring or preemptive judgment.</p>
+          </div>
+          <div class="safety-item">
+            <h4>IRB Required</h4>
+            <p>Clinical validation proceeds only with ethics board approval.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESEARCH SECTION -->
+    <section class="spatial-section research" id="research">
+      <div class="section-inner">
+        <div class="research-header reveal">
+          <p class="section-label">Reading Room</p>
+          <h2 class="section-title">Standing on giants</h2>
+        </div>
+
+        <div class="research-grid stagger">
+          <a href="https://www.pnas.org/doi/pdf/10.1073/pnas.1008662107" target="_blank" class="research-card">
+            <span class="research-card-tag">PNAS 2010</span>
+            <h3>Brains Sync During Conversation</h3>
+            <p>Stephens, Silbert & Hasson show that brains literally synchronize during dialogue.</p>
+            <span class="research-card-arrow">→</span>
+          </a>
+
+          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5558154/pdf/nihms886298.pdf" target="_blank" class="research-card">
+            <span class="research-card-tag">Neuron 2017</span>
+            <h3>Brain Chunks Life Into Episodes</h3>
+            <p>Baldassano et al. reveal the brain segments experience into discrete events.</p>
+            <span class="research-card-arrow">→</span>
+          </a>
+
+          <a href="https://doi.org/10.1038/nrn2575" target="_blank" class="research-card">
+            <span class="research-card-tag">Nature 2009</span>
+            <h3>Your Mind Is a Network</h3>
+            <p>Bullmore & Sporns establish the brain is organized with clusters and hubs.</p>
+            <span class="research-card-arrow">→</span>
+          </a>
+        </div>
+
+        <div class="research-tags reveal">
+          <h4>The Five Clues We Look For</h4>
+          <div class="research-tags-list">
+            <span class="research-tag">Units of Cognition</span>
+            <span class="research-tag">MEG-Proxy States</span>
+            <span class="research-tag">Polarity Points</span>
+            <span class="research-tag">BrainID</span>
+            <span class="research-tag">Consolidation Gate</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INVOLVE SECTION -->
+    <section class="spatial-section involve" id="involve">
+      <div class="section-inner">
+        <div class="involve-header reveal">
+          <p class="section-label">Join the Research</p>
+          <h2 class="section-title">Get Involved</h2>
+        </div>
+
+        <div class="involve-grid stagger">
+          <div class="involve-card">
+            <div class="involve-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/>
+              </svg>
+            </div>
+            <h3>Research Collaborators</h3>
+            <p>Domain experts for L3/L4 validation. Psychology, neuroscience, AI, linguistics. Co-authorship available.</p>
+            <a href="mailto:polarity@polarity-lab.com?subject=Research%20Collaboration">Discuss Collaboration →</a>
+          </div>
+
+          <div class="involve-card">
+            <div class="involve-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+              </svg>
+            </div>
+            <h3>Advisors</h3>
+            <p>Occasional feedback on direction, ethics, clinical pathway. Cognitive science, neurology, AI safety.</p>
+            <a href="mailto:polarity@polarity-lab.com?subject=Advisory%20Interest">Express Interest →</a>
+          </div>
+
+          <div class="involve-card">
+            <div class="involve-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>Contributors</h3>
+            <p>Pain Points model: build an MVP, become Principal, earn the highest share. We reward builders.</p>
+            <a href="https://painpoints.site" target="_blank">Pitch a Project →</a>
+          </div>
+
+          <div class="involve-card">
+            <div class="involve-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3>AVDP Podcast</h3>
+            <p>Exploring ideas at the edge of cognition, technology, and human experience.</p>
+            <a href="https://www.instagram.com/averydistantperspective" target="_blank">Follow on Instagram →</a>
+          </div>
+        </div>
+
+        <div class="involve-cta reveal">
+          <p>The immediate ask: <strong>30 minutes</strong> to discuss whether there's alignment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="spatial-section contact" id="contact">
+      <div class="section-inner">
+        <h2 class="contact-title reveal">Let's connect</h2>
+
+        <div class="contact-links reveal">
+          <a href="mailto:polarity@polarity-lab.com" class="contact-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            polarity@polarity-lab.com
+          </a>
+
+          <a href="https://www.linkedin.com/company/polarity-lab/" target="_blank" class="contact-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+            LinkedIn
+          </a>
+        </div>
+
+        <div class="newsletter reveal">
+          <p class="newsletter-label">Stay Updated</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" name="email" placeholder="Enter your email" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
+
+        <!-- Changelog Section -->
+        <div class="changelog-section">
+          <div class="changelog-header">
+            <span class="changelog-title">Recent Updates</span>
+            <a href="https://github.com/polarityai/polarity-landing/blob/main/CHANGELOG.md" target="_blank" class="changelog-link">View all →</a>
+          </div>
+          <div class="changelog-entries" id="changelog-entries"></div>
+        </div>
+
+        <footer class="footer">
+          <p class="footer-copyright">© 2025 POLARITY LAB LLC · Providence, RI · 2 Provisional Patents Filed</p>
+        </footer>
+      </div>
+    </section>
+  </div>
 
   <script>
+
+    // ==========================================
+    // WEBGL LIQUID NEBULA BACKGROUND
+    // ==========================================
+    class WebGLBackground {
+      constructor() {
+        this.canvas = document.getElementById('webgl-bg');
+        if (!this.canvas) return;
+        
+        this.renderer = new THREE.WebGLRenderer({ 
+          canvas: this.canvas, 
+          alpha: true,
+          antialias: true 
+        });
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        this.scene = new THREE.Scene();
+        this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
+        this.camera.position.z = 1;
+
+        this.mouse = { x: 0.5, y: 0.5 };
+        this.targetMouse = { x: 0.5, y: 0.5 };
+        this.time = 0;
+
+        this.createMaterial();
+        this.createMesh();
+        this.addEventListeners();
+        this.animate();
+      }
+
+      createMaterial() {
+        this.material = new THREE.ShaderMaterial({
+          uniforms: {
+            uTime: { value: 0 },
+            uMouse: { value: new THREE.Vector2(0.5, 0.5) },
+            uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+            uColor1: { value: new THREE.Color('#4ECDC4') },
+            uColor2: { value: new THREE.Color('#BB8FCE') },
+            uColor3: { value: new THREE.Color('#FF8A65') },
+            uDarkColor: { value: new THREE.Color('#020204') }
+          },
+          vertexShader: `
+            varying vec2 vUv;
+            void main() {
+              vUv = uv;
+              gl_Position = vec4(position, 1.0);
+            }
+          `,
+          fragmentShader: `
+            uniform float uTime;
+            uniform vec2 uMouse;
+            uniform vec2 uResolution;
+            uniform vec3 uColor1;
+            uniform vec3 uColor2;
+            uniform vec3 uColor3;
+            uniform vec3 uDarkColor;
+            varying vec2 vUv;
+
+            // Simplex noise functions
+            vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+            vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+            vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+            float snoise(vec2 v) {
+              const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+                                 -0.577350269189626, 0.024390243902439);
+              vec2 i  = floor(v + dot(v, C.yy));
+              vec2 x0 = v - i + dot(i, C.xx);
+              vec2 i1;
+              i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+              vec4 x12 = x0.xyxy + C.xxzz;
+              x12.xy -= i1;
+              i = mod289(i);
+              vec3 p = permute(permute(i.y + vec3(0.0, i1.y, 1.0))
+                                     + i.x + vec3(0.0, i1.x, 1.0));
+              vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+                                     dot(x12.zw,x12.zw)), 0.0);
+              m = m*m;
+              m = m*m;
+              vec3 x = 2.0 * fract(p * C.www) - 1.0;
+              vec3 h = abs(x) - 0.5;
+              vec3 ox = floor(x + 0.5);
+              vec3 a0 = x - ox;
+              m *= 1.79284291400159 - 0.85373472095314 * (a0*a0 + h*h);
+              vec3 g;
+              g.x = a0.x * x0.x + h.x * x0.y;
+              g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+              return 130.0 * dot(m, g);
+            }
+
+            float fbm(vec2 p) {
+              float value = 0.0;
+              float amplitude = 0.5;
+              float frequency = 1.0;
+              for (int i = 0; i < 5; i++) {
+                value += amplitude * snoise(p * frequency);
+                amplitude *= 0.5;
+                frequency *= 2.0;
+              }
+              return value;
+            }
+
+            void main() {
+              vec2 uv = vUv;
+              vec2 aspect = vec2(uResolution.x / uResolution.y, 1.0);
+              
+              // Mouse influence
+              vec2 mouseInfluence = (uMouse - 0.5) * 0.1;
+              
+              // Create flowing noise
+              float time = uTime * 0.15;
+              vec2 q = vec2(0.0);
+              q.x = fbm(uv * 2.0 + vec2(0.0, time));
+              q.y = fbm(uv * 2.0 + vec2(1.0, time));
+              
+              vec2 r = vec2(0.0);
+              r.x = fbm(uv * 2.0 + q + vec2(1.7, 9.2) + 0.15 * time + mouseInfluence);
+              r.y = fbm(uv * 2.0 + q + vec2(8.3, 2.8) + 0.126 * time - mouseInfluence);
+              
+              float f = fbm(uv * 2.0 + r * 2.0);
+              
+              // Color mixing
+              vec3 color = uDarkColor;
+              color = mix(color, uColor1 * 0.3, clamp(f * f * 2.0, 0.0, 0.4));
+              color = mix(color, uColor2 * 0.25, clamp(length(q) * 0.5, 0.0, 0.3));
+              color = mix(color, uColor3 * 0.2, clamp(length(r.x) * 0.3, 0.0, 0.25));
+              
+              // Vignette
+              float vignette = 1.0 - smoothstep(0.3, 1.2, length((uv - 0.5) * 1.5));
+              color *= vignette * 0.7 + 0.3;
+              
+              // Grain
+              float grain = fract(sin(dot(uv * uTime, vec2(12.9898, 78.233))) * 43758.5453);
+              color += grain * 0.02;
+              
+              gl_FragColor = vec4(color, 1.0);
+            }
+          `
+        });
+      }
+
+      createMesh() {
+        const geometry = new THREE.PlaneGeometry(2, 2);
+        this.mesh = new THREE.Mesh(geometry, this.material);
+        this.scene.add(this.mesh);
+      }
+
+      addEventListeners() {
+        window.addEventListener('resize', () => {
+          this.renderer.setSize(window.innerWidth, window.innerHeight);
+          this.material.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
+        });
+
+        window.addEventListener('mousemove', (e) => {
+          this.targetMouse.x = e.clientX / window.innerWidth;
+          this.targetMouse.y = 1.0 - e.clientY / window.innerHeight;
+        });
+      }
+
+      animate() {
+        requestAnimationFrame(() => this.animate());
+        
+        this.time += 0.016;
+        this.material.uniforms.uTime.value = this.time;
+        
+        // Smooth mouse follow
+        this.mouse.x += (this.targetMouse.x - this.mouse.x) * 0.05;
+        this.mouse.y += (this.targetMouse.y - this.mouse.y) * 0.05;
+        this.material.uniforms.uMouse.value.set(this.mouse.x, this.mouse.y);
+        
+        this.renderer.render(this.scene, this.camera);
+      }
+    }
+
+    // Initialize WebGL background
+    const webglBg = new WebGLBackground();
+
+    // ==========================================
+    // CUSTOM CURSOR
+    // ==========================================
+    const cursor = document.getElementById('cursor');
+    const cursorDot = document.getElementById('cursor-dot');
+    let cursorX = 0, cursorY = 0;
+    let dotX = 0, dotY = 0;
+
+    if (cursor && cursorDot && !window.matchMedia('(pointer: coarse)').matches) {
+      document.addEventListener('mousemove', (e) => {
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+      });
+
+      // Hover states
+      const hoverElements = document.querySelectorAll('a, button, .product-card, .team-card, .research-card');
+      hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+      });
+
+      function animateCursor() {
+        dotX += (cursorX - dotX) * 0.2;
+        dotY += (cursorY - dotY) * 0.2;
+        
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top = dotY + 'px';
+        
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+    }
+
     // ==========================================
     // THEME TOGGLE
     // ==========================================
@@ -3206,53 +2885,68 @@
     });
 
     navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+      link.addEventListener('click', (e) => {
         navLinks.classList.remove('open');
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          const target = document.querySelector(href);
+          if (target) {
+            const navHeight = nav.offsetHeight || 80;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight - 20;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+        }
       });
     });
 
-    // Update active nav state based on which section is visible
+    // Logo click scroll to top
+    document.getElementById('nav-logo').addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ==========================================
+    // NAV SCROLL EFFECTS & ACTIVE STATE
+    // ==========================================
+    const nav = document.getElementById('nav');
+    let lastScrollY = 0;
+
+    // Sections for scroll spy
+    const sections = ['ccx', 'about', 'products', 'team', 'research', 'safety', 'contact'];
+    
     function updateActiveNav() {
-      const sections = document.querySelectorAll('section[id]');
-      const scrollY = window.scrollY + 100; // Offset for navbar height
-
-      let currentSection = 'home';
-
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-          currentSection = section.getAttribute('id');
+      const scrollY = window.scrollY + 150; // Offset for nav height
+      
+      // Find current section
+      let current = '';
+      for (const id of sections) {
+        const section = document.getElementById(id);
+        if (section) {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          if (scrollY >= top && scrollY < top + height) {
+            current = id;
+            break;
+          }
+        }
+      }
+      
+      // Update active class on nav links
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        const href = link.getAttribute('href');
+        if (href === '#' + current) {
+          link.classList.add('active');
         }
       });
-
-      // Remove all active states
-      document.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
-        link.classList.remove('active');
-      });
-
-      // Set active on current section's nav link
-      const activeLink = document.querySelector(`.nav-link[href="#${currentSection}"], .nav-cta[href="#${currentSection}"]`);
-      if (activeLink) {
-        activeLink.classList.add('active');
-      }
+      
+      // Nav background
+      nav.classList.toggle('scrolled', window.scrollY > 50);
     }
 
-    // Throttled scroll listener for active state
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          updateActiveNav();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-
-    // Initial update
-    updateActiveNav();
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav(); // Initial call
 
     // ==========================================
     // SCROLL CHOREOGRAPHY SYSTEM
@@ -3261,11 +2955,10 @@
       constructor() {
         this.scrollY = 0;
         this.targetScrollY = 0;
-        this.ease = 0.04; // Smoother interpolation - lower = more controlled
+        this.ease = 0.08;
         this.vh = window.innerHeight;
-        this.totalScroll = document.body.scrollHeight - this.vh;
 
-        // Element references
+        // Elements
         this.nav = document.getElementById('nav');
         this.constellation = document.getElementById('hero-constellation');
         this.iconWaxfeed = document.getElementById('icon-waxfeed');
@@ -3274,23 +2967,11 @@
         this.iconAvdp = document.getElementById('icon-avdp');
         this.scrollIndicator = document.getElementById('scroll-indicator');
 
-        // Text elements
+        // Hero text only
         this.textHero = document.getElementById('text-hero');
-        this.textMission = document.getElementById('text-mission');
-        this.textCcx = document.getElementById('text-ccx');
-        this.textProcess = document.getElementById('text-process');
-        this.textStats = document.getElementById('text-stats');
-        this.textTeam = document.getElementById('text-team');
-        this.textCta = document.getElementById('text-cta');
 
-        // Parallax layers
-        this.layers = [
-          { el: document.querySelector('.cosmos-stars-far'), speed: 0.08 },
-          { el: document.querySelector('.cosmos-nebula'), speed: 0.12 },
-          { el: document.querySelector('.cosmos-stars-mid'), speed: 0.25 },
-          { el: document.querySelector('.cosmos-stars-near'), speed: 0.55 },
-          { el: document.querySelector('.cosmos-grid'), speed: 0.75 },
-        ];
+        // Make product labels visible initially
+        document.querySelectorAll('.hero-product').forEach(el => el.classList.add('visible'));
 
         this.init();
         this.animate();
@@ -3303,20 +2984,13 @@
 
         window.addEventListener('resize', () => {
           this.vh = window.innerHeight;
-          this.totalScroll = document.body.scrollHeight - this.vh;
         });
       }
 
-      // Easing functions
       easeOutCubic(t) {
         return 1 - Math.pow(1 - t, 3);
       }
 
-      easeInOutCubic(t) {
-        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-      }
-
-      // Map scroll position to progress (0-1) within a zone
       zoneProgress(scrollStart, scrollEnd) {
         const current = this.scrollY;
         if (current < scrollStart) return 0;
@@ -3328,62 +3002,41 @@
         // Smooth scroll interpolation
         this.scrollY += (this.targetScrollY - this.scrollY) * this.ease;
 
-        // Apply parallax to background layers
-        this.layers.forEach(layer => {
-          if (layer.el) {
-            const y = this.scrollY * layer.speed;
-            layer.el.style.transform = `translate3d(0, ${-y}px, 0)`;
-          }
-        });
-
-        // Nav scroll effect
-        if (this.nav) {
-          this.nav.classList.toggle('scrolled', this.scrollY > 120);
-        }
-
-        // === SCROLL ZONES (in vh units) ===
-        // Zone 1 (0-1vh): Hero text visible, icons centered
-        // Zone 2 (0.5-1.5vh): Icons start drifting, hero text fades
-        // Zone 3 (1-2vh): Mission text enters from left
-        // Zone 4 (2-3vh): CCX text enters from right
-        // Zone 5 (3-4vh): Process text appears center
-        // Zone 6 (4-5vh): Stats appear bottom right
-        // Zone 7 (5-6vh): Team text enters left
-        // Zone 8 (6-7vh): CTA text centers
-
         const vh = this.vh;
+        const isMobile = window.innerWidth <= 768;
 
-        // === ZONE: Hero & Icons (0-2vh) - SLOWER exit ===
-        const iconExitProgress = this.easeOutCubic(this.zoneProgress(0, vh * 2.0));
+        // === ZONE: Hero & Icons (0-1.5vh) ===
+        const iconExitProgress = this.easeOutCubic(this.zoneProgress(0, vh * 1.0));
 
-        // Hero text (visible at start, fades out slowly)
+        // Hero text - positioned at 68% from top
         if (this.textHero) {
-          const heroProgress = this.zoneProgress(0, vh * 1.5);
+          const heroProgress = this.zoneProgress(0, vh * 0.6);
           const heroOpacity = 1 - this.easeOutCubic(heroProgress);
-          const heroY = heroProgress * -20;
+          const heroY = heroProgress * -30;
           this.textHero.style.opacity = heroOpacity;
-          this.textHero.style.transform = `translate(-50%, -50%) translateY(${heroY}px)`;
+          this.textHero.style.transform = `translateX(-50%) translateY(${heroY}px)`;
           this.textHero.classList.toggle('visible', heroOpacity > 0.1);
         }
 
         // Scroll indicator
         if (this.scrollIndicator) {
-          const indicatorOpacity = 1 - this.easeOutCubic(this.zoneProgress(0, vh * 0.8));
+          const indicatorOpacity = 1 - this.easeOutCubic(this.zoneProgress(0, vh * 0.4));
           this.scrollIndicator.style.opacity = indicatorOpacity;
         }
 
-        // Icons drift off elegantly - SLOWER
+        // Icon animations
         if (this.iconWaxfeed) {
-          const waxX = iconExitProgress * -100;
-          const waxY = iconExitProgress * -30;
+          const waxX = iconExitProgress * -200;
+          const waxY = iconExitProgress * -80;
           const waxOpacity = 1 - iconExitProgress;
           const waxScale = 1 - iconExitProgress * 0.2;
-          this.iconWaxfeed.style.transform = `translate(${waxX}px, ${waxY}px) scale(${waxScale})`;
+          const waxRotate = iconExitProgress * -15;
+          this.iconWaxfeed.style.transform = `translate(${waxX}px, ${waxY}px) scale(${waxScale}) rotate(${waxRotate}deg)`;
           this.iconWaxfeed.style.opacity = waxOpacity;
         }
 
         if (this.iconPolarity) {
-          const polY = iconExitProgress * -80;
+          const polY = iconExitProgress * -180;
           const polOpacity = 1 - iconExitProgress;
           const polScale = 1 - iconExitProgress * 0.15;
           this.iconPolarity.style.transform = `translateY(${polY}px) scale(${polScale})`;
@@ -3391,457 +3044,46 @@
         }
 
         if (this.iconPainpoints) {
-          const ppX = iconExitProgress * 50;
-          const ppY = iconExitProgress * 80;
+          const ppX = iconExitProgress * 120;
+          const ppY = iconExitProgress * 180;
           const ppOpacity = 1 - iconExitProgress;
           const ppScale = 1 - iconExitProgress * 0.2;
-          this.iconPainpoints.style.transform = `translate(${ppX}px, ${ppY}px) scale(${ppScale})`;
+          const ppRotate = iconExitProgress * 15;
+          this.iconPainpoints.style.transform = `translate(${ppX}px, ${ppY}px) scale(${ppScale}) rotate(${ppRotate}deg)`;
           this.iconPainpoints.style.opacity = ppOpacity;
         }
 
         if (this.iconAvdp) {
-          const avdpX = iconExitProgress * 100;
-          const avdpY = iconExitProgress * -30;
+          const avdpX = iconExitProgress * 200;
+          const avdpY = iconExitProgress * -80;
           const avdpOpacity = 1 - iconExitProgress;
           const avdpScale = 1 - iconExitProgress * 0.2;
-          this.iconAvdp.style.transform = `translate(${avdpX}px, ${avdpY}px) scale(${avdpScale})`;
+          const avdpRotate = iconExitProgress * 15;
+          this.iconAvdp.style.transform = `translate(${avdpX}px, ${avdpY}px) scale(${avdpScale}) rotate(${avdpRotate}deg)`;
           this.iconAvdp.style.opacity = avdpOpacity;
         }
 
-        // Constellation container
+        // Constellation drift
         if (this.constellation) {
-          const constY = -85 + (iconExitProgress * -10);
-          this.constellation.style.transform = `translate(-50%, ${constY}%)`;
+          const constY = iconExitProgress * -100;
+          this.constellation.style.transform = `translate(-50%, calc(-50% + ${constY}px))`;
         }
 
-        const isMobile = window.innerWidth <= 768;
-
-        // === ZONE: Mission Text (2-5vh) - LONGER visibility ===
-        if (this.textMission) {
-          const missionEnter = this.easeOutCubic(this.zoneProgress(vh * 1.5, vh * 2.5));
-          const missionExit = this.easeOutCubic(this.zoneProgress(vh * 4.5, vh * 5.5));
-          const missionOpacity = missionEnter * (1 - missionExit);
-          const missionX = isMobile ? 0 : ((1 - missionEnter) * -60 + missionExit * -40);
-          const missionBlur = missionExit * 6;
-          this.textMission.style.opacity = missionOpacity;
-          this.textMission.style.transform = isMobile
-            ? `translate(-50%, -50%) translateY(${missionExit * -20}px)`
-            : `translateY(-50%) translateX(${missionX}px)`;
-          this.textMission.style.filter = missionBlur > 0.5 ? `blur(${missionBlur}px)` : 'none';
-          this.textMission.classList.toggle('visible', missionOpacity > 0.1);
-        }
-
-        // === ZONE: CCX Text (5.5-9vh) - LONGER visibility ===
-        if (this.textCcx) {
-          const ccxEnter = this.easeOutCubic(this.zoneProgress(vh * 5.5, vh * 6.5));
-          const ccxExit = this.easeOutCubic(this.zoneProgress(vh * 8.5, vh * 9.5));
-          const ccxOpacity = ccxEnter * (1 - ccxExit);
-          const ccxX = isMobile ? 0 : ((1 - ccxEnter) * 60 + ccxExit * 40);
-          const ccxBlur = ccxExit * 6;
-          this.textCcx.style.opacity = ccxOpacity;
-          this.textCcx.style.transform = isMobile
-            ? `translate(-50%, -50%) translateY(${ccxExit * -20}px)`
-            : `translateY(-50%) translateX(${ccxX}px)`;
-          this.textCcx.style.filter = ccxBlur > 0.5 ? `blur(${ccxBlur}px)` : 'none';
-          this.textCcx.classList.toggle('visible', ccxOpacity > 0.1);
-        }
-
-        // === ZONE: Process Text (9.5-13vh) - LONGER visibility ===
-        if (this.textProcess) {
-          const processEnter = this.easeOutCubic(this.zoneProgress(vh * 9.5, vh * 10.5));
-          const processExit = this.easeOutCubic(this.zoneProgress(vh * 12.5, vh * 13.5));
-          const processOpacity = processEnter * (1 - processExit);
-          const processY = (1 - processEnter) * 40 + processExit * -30;
-          const processScale = 0.95 + processEnter * 0.05 - processExit * 0.05;
-          const processBlur = processExit * 6;
-          this.textProcess.style.opacity = processOpacity;
-          this.textProcess.style.transform = `translate(-50%, -50%) translateY(${processY}px) scale(${processScale})`;
-          this.textProcess.style.filter = processBlur > 0.5 ? `blur(${processBlur}px)` : 'none';
-          this.textProcess.classList.toggle('visible', processOpacity > 0.1);
-        }
-
-        // === ZONE: Stats (Desktop only, 13.5-17vh) ===
-        if (this.textStats && !isMobile) {
-          const statsEnter = this.easeOutCubic(this.zoneProgress(vh * 13.5, vh * 14.5));
-          const statsExit = this.easeOutCubic(this.zoneProgress(vh * 16.5, vh * 17.5));
-          const statsOpacity = statsEnter * (1 - statsExit);
-          const statsY = (1 - statsEnter) * 30;
-          const statsBlur = statsExit * 6;
-          this.textStats.style.opacity = statsOpacity;
-          this.textStats.style.transform = `translateY(${statsY}px)`;
-          this.textStats.style.filter = statsBlur > 0.5 ? `blur(${statsBlur}px)` : 'none';
-          this.textStats.classList.toggle('visible', statsOpacity > 0.1);
-        } else if (this.textStats && isMobile) {
-          this.textStats.style.opacity = 0;
-        }
-
-        // === ZONE: Team Text (14-18vh) ===
-        if (this.textTeam) {
-          const teamEnter = this.easeOutCubic(this.zoneProgress(vh * 14, vh * 15));
-          const teamExit = this.easeOutCubic(this.zoneProgress(vh * 17.5, vh * 18.5));
-          const teamOpacity = teamEnter * (1 - teamExit);
-          const teamX = isMobile ? 0 : ((1 - teamEnter) * -60 + teamExit * -40);
-          const teamBlur = teamExit * 6;
-          this.textTeam.style.opacity = teamOpacity;
-          this.textTeam.style.transform = isMobile
-            ? `translate(-50%, -50%) translateY(${teamExit * -20}px)`
-            : `translateY(-50%) translateX(${teamX}px)`;
-          this.textTeam.style.filter = teamBlur > 0.5 ? `blur(${teamBlur}px)` : 'none';
-          this.textTeam.classList.toggle('visible', teamOpacity > 0.1);
-        }
-
-        // === ZONE: CTA Text (18.5+vh) ===
-        if (this.textCta) {
-          const ctaEnter = this.easeOutCubic(this.zoneProgress(vh * 18.5, vh * 19.5));
-          const ctaOpacity = ctaEnter;
-          const ctaY = (1 - ctaEnter) * 40;
-          const ctaScale = 0.95 + ctaEnter * 0.05;
-          this.textCta.style.opacity = ctaOpacity;
-          this.textCta.style.transform = `translate(-50%, -50%) translateY(${ctaY}px) scale(${ctaScale})`;
-          this.textCta.classList.toggle('visible', ctaOpacity > 0.1);
-        }
+        // Content sections now visible directly - no scroll text choreography
 
         requestAnimationFrame(() => this.animate());
-      }
-
-      getScrollY() {
-        return this.scrollY;
       }
     }
 
     const spaceScroll = new ScrollChoreographer();
 
     // ==========================================
-    // COSMIC DUST PARTICLES (Canvas)
-    // ==========================================
-    class CosmicDust {
-      constructor(canvas) {
-        this.canvas = canvas;
-        this.ctx = canvas.getContext('2d');
-        this.particles = [];
-        this.resize();
-        this.init();
-        this.animate();
-
-        window.addEventListener('resize', () => this.resize());
-      }
-
-      resize() {
-        this.width = this.canvas.width = window.innerWidth;
-        this.height = this.canvas.height = window.innerHeight;
-      }
-
-      init() {
-        const particleCount = Math.min(80, Math.floor((this.width * this.height) / 25000));
-
-        for (let i = 0; i < particleCount; i++) {
-          this.particles.push({
-            x: Math.random() * this.width,
-            y: Math.random() * this.height * 3, // Extended height for parallax
-            z: Math.random(), // 0 = far, 1 = near
-            size: Math.random() * 2 + 0.5,
-            speedX: (Math.random() - 0.5) * 0.15,
-            speedY: (Math.random() - 0.5) * 0.15,
-            opacity: Math.random() * 0.4 + 0.1,
-            color: this.getRandomColor(),
-            twinkleSpeed: Math.random() * 0.015 + 0.005,
-            twinklePhase: Math.random() * Math.PI * 2
-          });
-        }
-      }
-
-      getRandomColor() {
-        const colors = [
-          { r: 78, g: 205, b: 196 },   // Teal
-          { r: 187, g: 143, b: 206 },  // Purple
-          { r: 255, g: 160, b: 122 },  // Coral
-          { r: 200, g: 220, b: 255 },  // Blue-white
-          { r: 255, g: 255, b: 255 },  // White
-        ];
-        return colors[Math.floor(Math.random() * colors.length)];
-      }
-
-      animate() {
-        this.ctx.clearRect(0, 0, this.width, this.height);
-
-        const scrollY = spaceScroll.getScrollY();
-        const parallaxSpeed = 0.4;
-
-        this.particles.forEach(p => {
-          // Parallax based on depth
-          const parallaxY = scrollY * parallaxSpeed * (0.5 + p.z * 0.5);
-          let screenY = p.y - parallaxY;
-
-          // Wrap around
-          const totalHeight = this.height * 3;
-          screenY = ((screenY % totalHeight) + totalHeight) % totalHeight;
-          if (screenY > this.height) return; // Don't render off-screen
-
-          // Subtle drift movement
-          p.x += p.speedX;
-          p.y += p.speedY;
-
-          // Wrap x position
-          if (p.x < 0) p.x = this.width;
-          if (p.x > this.width) p.x = 0;
-
-          // Twinkle effect
-          p.twinklePhase += p.twinkleSpeed;
-          const twinkle = 0.5 + Math.sin(p.twinklePhase) * 0.5;
-          const opacity = p.opacity * twinkle;
-
-          // Size based on depth
-          const size = p.size * (0.5 + p.z * 0.5);
-
-          // Draw with glow
-          const gradient = this.ctx.createRadialGradient(
-            p.x, screenY, 0,
-            p.x, screenY, size * 4
-          );
-          gradient.addColorStop(0, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${opacity})`);
-          gradient.addColorStop(0.4, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, ${opacity * 0.3})`);
-          gradient.addColorStop(1, `rgba(${p.color.r}, ${p.color.g}, ${p.color.b}, 0)`);
-
-          this.ctx.fillStyle = gradient;
-          this.ctx.beginPath();
-          this.ctx.arc(p.x, screenY, size * 4, 0, Math.PI * 2);
-          this.ctx.fill();
-        });
-
-        requestAnimationFrame(() => this.animate());
-      }
-    }
-
-    const dustCanvas = document.getElementById('cosmos-dust');
-    if (dustCanvas) {
-      new CosmicDust(dustCanvas);
-    }
-
-    // ==========================================
-    // SHOOTING STARS
-    // ==========================================
-    class ShootingStars {
-      constructor(container) {
-        this.container = container;
-        if (this.container) {
-          this.scheduleNext();
-        }
-      }
-
-      scheduleNext() {
-        const delay = 2000 + Math.random() * 4000; // 2-6 seconds (more frequent)
-        setTimeout(() => this.createStar(), delay);
-      }
-
-      createStar() {
-        const star = document.createElement('div');
-        star.className = 'shooting-star';
-
-        // Random position and angle - across entire viewport
-        const startX = 5 + Math.random() * 80; // 5-85% from left
-        const startY = Math.random() * 70; // Top 70% of screen
-        const angle = 15 + Math.random() * 35; // 15-50 degrees
-        const duration = 0.6 + Math.random() * 0.6; // 0.6-1.2s
-
-        star.style.cssText = `
-          left: ${startX}%;
-          top: ${startY}%;
-          --angle: ${angle}deg;
-          --duration: ${duration}s;
-        `;
-
-        this.container.appendChild(star);
-
-        // Remove after animation
-        setTimeout(() => star.remove(), duration * 1000 + 500);
-
-        // Schedule next
-        this.scheduleNext();
-      }
-    }
-
-    const shootingStarsContainer = document.getElementById('shooting-stars');
-    // Create multiple shooting star spawners for more activity
-    new ShootingStars(shootingStarsContainer);
-    new ShootingStars(shootingStarsContainer);
-    new ShootingStars(shootingStarsContainer);
-
-    // ==========================================
-    // LOGO CURSOR INTERACTION (Easter Egg)
-    // ==========================================
-    class LogoInteraction {
-      constructor(element) {
-        this.element = element;
-        this.icon = element.querySelector('.hero-product-icon');
-        this.currentX = 0;
-        this.currentY = 0;
-        this.velocityX = 0;
-        this.velocityY = 0;
-        this.isDragging = false;
-        this.dragOffsetX = 0;
-        this.dragOffsetY = 0;
-        this.clickPrevented = false;
-
-        // Physics constants
-        this.MAGNETIC_RADIUS = 120;
-        this.MAGNETIC_FORCE = 0.06;
-        this.SPRING_STIFFNESS = 0.1;
-        this.DAMPING = 0.88;
-        this.MAX_DISPLACEMENT = 80;
-
-        this.setupDrag();
-      }
-
-      setupDrag() {
-        this.element.addEventListener('mousedown', (e) => {
-          // Only left click
-          if (e.button !== 0) return;
-
-          this.isDragging = true;
-          this.clickPrevented = false;
-          this.element.classList.add('dragging');
-
-          const rect = this.icon.getBoundingClientRect();
-          this.dragOffsetX = e.clientX - (rect.left + rect.width / 2 + this.currentX);
-          this.dragOffsetY = e.clientY - (rect.top + rect.height / 2 + this.currentY);
-        });
-
-        // Prevent link navigation if dragged significantly
-        this.element.addEventListener('click', (e) => {
-          if (this.clickPrevented) {
-            e.preventDefault();
-          }
-        });
-
-        document.addEventListener('mouseup', () => {
-          if (this.isDragging) {
-            this.isDragging = false;
-            this.element.classList.remove('dragging');
-            // Add momentum on release
-            this.velocityX *= 1.3;
-            this.velocityY *= 1.3;
-          }
-        });
-
-        document.addEventListener('mousemove', (e) => {
-          if (this.isDragging) {
-            const rect = this.icon.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2 - this.currentX;
-            const centerY = rect.top + rect.height / 2 - this.currentY;
-
-            let targetX = e.clientX - this.dragOffsetX - centerX;
-            let targetY = e.clientY - this.dragOffsetY - centerY;
-
-            // Check if significant drag (prevent link click)
-            const dragDist = Math.sqrt(targetX * targetX + targetY * targetY);
-            if (dragDist > 10) {
-              this.clickPrevented = true;
-            }
-
-            // Clamp to max displacement with resistance at edges
-            const dist = Math.sqrt(targetX * targetX + targetY * targetY);
-            if (dist > this.MAX_DISPLACEMENT) {
-              const resistance = 1 - ((dist - this.MAX_DISPLACEMENT) / dist) * 0.7;
-              targetX *= resistance;
-              targetY *= resistance;
-            }
-
-            this.currentX = targetX;
-            this.currentY = targetY;
-          }
-        });
-      }
-
-      update(mouseX, mouseY) {
-        if (this.isDragging) {
-          this.applyTransform();
-          return;
-        }
-
-        const rect = this.icon.getBoundingClientRect();
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-
-        const dx = mouseX - centerX;
-        const dy = mouseY - centerY;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < this.MAGNETIC_RADIUS && distance > 0) {
-          // Magnetic pull toward cursor (subtle)
-          const normalizedDist = distance / this.MAGNETIC_RADIUS;
-          const force = (1 - normalizedDist * normalizedDist) * this.MAGNETIC_FORCE;
-
-          const pullStrength = Math.min(distance * 0.2, 20);
-          this.velocityX += (dx / distance) * force * pullStrength;
-          this.velocityY += (dy / distance) * force * pullStrength;
-        }
-
-        // Always spring back to origin
-        this.velocityX += (0 - this.currentX) * this.SPRING_STIFFNESS;
-        this.velocityY += (0 - this.currentY) * this.SPRING_STIFFNESS;
-
-        // Damping
-        this.velocityX *= this.DAMPING;
-        this.velocityY *= this.DAMPING;
-
-        // Update position
-        this.currentX += this.velocityX;
-        this.currentY += this.velocityY;
-
-        // Stop tiny movements
-        if (Math.abs(this.velocityX) < 0.01 && Math.abs(this.velocityY) < 0.01 &&
-            Math.abs(this.currentX) < 0.5 && Math.abs(this.currentY) < 0.5) {
-          this.currentX = 0;
-          this.currentY = 0;
-          this.velocityX = 0;
-          this.velocityY = 0;
-        }
-
-        this.applyTransform();
-      }
-
-      applyTransform() {
-        // Scale slightly when displaced for depth feel
-        const displacement = Math.sqrt(this.currentX * this.currentX + this.currentY * this.currentY);
-        const scale = 1 + (displacement / this.MAX_DISPLACEMENT) * 0.08;
-
-        this.icon.style.transform = `translate(${this.currentX}px, ${this.currentY}px) scale(${scale})`;
-      }
-    }
-
-    // Initialize logo interactions (desktop only)
-    const logoElements = document.querySelectorAll('.hero-product');
-    const logoInteractions = [];
-    let mouseX = 0, mouseY = 0;
-
-    // Only enable on non-touch devices
-    if (!('ontouchstart' in window)) {
-      logoElements.forEach(el => {
-        logoInteractions.push(new LogoInteraction(el));
-      });
-
-      document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      });
-
-      function animateLogos() {
-        logoInteractions.forEach(interaction => {
-          interaction.update(mouseX, mouseY);
-        });
-        requestAnimationFrame(animateLogos);
-      }
-
-      animateLogos();
-    }
-
-    // ==========================================
     // INTERSECTION OBSERVER (Reveal animations)
     // ==========================================
     const observerOptions = {
       root: null,
-      rootMargin: '-50px',
-      threshold: 0.15
+      rootMargin: '-100px',
+      threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -3854,25 +3096,6 @@
 
     document.querySelectorAll('.reveal, .stagger').forEach(el => {
       observer.observe(el);
-    });
-
-    // ==========================================
-    // SMOOTH SCROLL FOR ANCHOR LINKS
-    // ==========================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        // Skip if this is a product logo (handled by LogoInteraction)
-        if (this.classList.contains('hero-product')) return;
-
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
     });
 
     // ==========================================
@@ -3907,7 +3130,6 @@
         const container = document.getElementById('changelog-entries');
         if (!container || !entries.length) return;
 
-        // Show only the 5 most recent entries
         container.innerHTML = entries.slice(0, 5).map(entry => {
           const date = new Date(entry.date).toLocaleDateString('en-US', {
             month: 'short',
