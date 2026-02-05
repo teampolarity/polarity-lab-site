@@ -1,5 +1,14 @@
 [
   {
+    "id": "a184546",
+    "date": "2026-02-05",
+    "title": "Remove Recent Updates section",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "9a28c0e",
     "date": "2026-02-05",
     "title": "Update public/index.html with latest changes",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "21b2469",
-    "date": "2026-01-31",
-    "title": "Improve Our Ecosystem section centering and spacing",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

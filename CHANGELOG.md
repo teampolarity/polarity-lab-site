@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 5, 2026
 
+- Remove Recent Updates section (`a184546`)
+
+### Feb 5, 2026
+
 - Update public/index.html with latest changes (`9a28c0e`)
 
 ### Feb 5, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Move Our Ecosystem content higher on the page (`c618da8`)
-
-### Jan 31, 2026
-
-- Improve Our Ecosystem section centering and spacing (`21b2469`)
 
 
 ---
