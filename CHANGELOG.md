@@ -6,6 +6,14 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 5, 2026
 
+- Update public/index.html with latest changes (`9a28c0e`)
+
+### Feb 5, 2026
+
+- Trigger deployment (`e2f771f`)
+
+### Feb 5, 2026
+
 - Upgrade to cinematic design experience with WebGL (`bf0452a`)
 
 ### Jan 31, 2026
@@ -75,14 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Improve Our Ecosystem section centering and spacing (`21b2469`)
-
-### Jan 31, 2026
-
-- Remove Safety, Research, and Involve sections (`64192c6`)
-
-### Jan 31, 2026
-
-- Center Our Ecosystem section and improve product descriptions (`f1b9bea`)
 
 
 ---

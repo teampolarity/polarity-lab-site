@@ -1,5 +1,23 @@
 [
   {
+    "id": "9a28c0e",
+    "date": "2026-02-05",
+    "title": "Update public/index.html with latest changes",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
+    "id": "e2f771f",
+    "date": "2026-02-05",
+    "title": "Trigger deployment",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "bf0452a",
     "date": "2026-02-05",
     "title": "Upgrade to cinematic design experience with WebGL",
@@ -156,24 +174,6 @@
     "id": "21b2469",
     "date": "2026-01-31",
     "title": "Improve Our Ecosystem section centering and spacing",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "64192c6",
-    "date": "2026-01-31",
-    "title": "Remove Safety, Research, and Involve sections",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "f1b9bea",
-    "date": "2026-01-31",
-    "title": "Center Our Ecosystem section and improve product descriptions",
     "category": {
       "label": "Enhancement",
       "color": "purple"
