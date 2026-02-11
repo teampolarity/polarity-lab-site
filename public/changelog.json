@@ -1,5 +1,14 @@
 [
   {
+    "id": "ab2267e",
+    "date": "2026-02-11",
+    "title": "Hardcode public-facing changelog, remove dynamic loader",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "4af0d3b",
     "date": "2026-02-11",
     "title": "Center hero subtitle text",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "d15f704",
-    "date": "2026-01-31",
-    "title": "Fix navigation scroll behavior (remove broken navScrollMap)",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
