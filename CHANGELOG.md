@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 11, 2026
 
+- Fix alignment across all sections, update content, mobile optimization (`593ca3f`)
+
+### Feb 11, 2026
+
 - Shorten hero title to fit single line (`c0f0b89`)
 
 ### Feb 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Fix Our Ecosystem & Team centering to match Launch Pad & Research (`a9d101a`)
-
-### Jan 31, 2026
-
-- Center Our Ecosystem content properly when navigating to section (`623c30b`)
 
 
 ---
