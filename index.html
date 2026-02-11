@@ -1881,6 +1881,87 @@
       .involve-grid { grid-template-columns: 1fr; }
     }
 
+    /* Algorithm CTA Section */
+    .algorithm-cta {
+      text-align: center;
+      padding: 0;
+    }
+
+    .algorithm-cta .section-inner {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .algorithm-cta-box {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 60px 48px;
+      background: var(--void-surface);
+      border: 1px solid var(--border-ghost);
+      border-radius: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .algorithm-cta-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--teal), var(--purple), transparent);
+    }
+
+    .algorithm-cta-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .algorithm-cta-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3.5vw, 36px);
+      font-weight: 600;
+      color: var(--text-pure);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .algorithm-cta-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+
+    .algorithm-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: linear-gradient(135deg, var(--teal), var(--purple));
+      border: none;
+      border-radius: 12px;
+      color: var(--void-deep);
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+
+    .algorithm-cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px var(--teal-glow);
+    }
+
     /* Contact Section */
     .contact {
       text-align: center;
@@ -2347,7 +2428,7 @@
         We measure <span class="gradient">what matters</span>
       </h1>
       <p class="hero-subtitle">
-        Technology that understands you. Not just what you said, but the weight it carries.
+        We built an algorithm that teaches systems what to hold onto. Not just what you said — the weight it carries.
       </p>
     </div>
 
@@ -2376,7 +2457,7 @@
 
             <div class="ccx-definition">
               <div class="ccx-definition-term">CCX / Conversational Connectomics</div>
-              <p class="ccx-definition-desc">The study of how the things you say reveal the things that matter. A framework for measuring the weight that ideas, people, and experiences carry in your life.</p>
+              <p class="ccx-definition-desc">The science behind the algorithm. The study of how the things you say reveal the things that matter — and how to measure the weight that ideas, people, and experiences carry in your life.</p>
             </div>
 
             <div class="ccx-steps stagger">
@@ -2402,6 +2483,8 @@
                 </div>
               </div>
             </div>
+
+            <a href="https://algorithm.polarity-lab.com" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 28px; font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; transition: gap 0.4s var(--ease-out-expo);" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='6px'">See the algorithm →</a>
           </div>
 
           <div class="ccx-visual">
@@ -2433,8 +2516,8 @@
                 <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
               </svg>
             </div>
-            <h3>The Flywheel<span class="about-main-badge">Core Model</span></h3>
-            <p>Every product we ship generates real conversations. Those conversations become research data. That research makes the algorithm better. A better algorithm makes better products. The thing people use and the thing we study are the same thing.</p>
+            <h3>The Algorithm<span class="about-main-badge">Core</span></h3>
+            <p>We built an algorithm that measures what matters to people. Every product we ship generates real conversations. Those conversations train the algorithm. A better algorithm makes better products. The thing people use and the thing we study are the same thing.</p>
             <a href="https://algorithm.polarity-lab.com" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; transition: gap 0.4s var(--ease-out-expo);" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='6px'">Read the full pitch →</a>
           </div>
 
@@ -2700,6 +2783,20 @@
 
         <div class="involve-cta reveal">
           <p>The immediate ask: <strong>30 minutes</strong> to see if there is alignment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALGORITHM CTA SECTION -->
+    <section class="spatial-section algorithm-cta">
+      <div class="section-inner">
+        <div class="algorithm-cta-box reveal">
+          <p class="algorithm-cta-label">The Algorithm</p>
+          <h2 class="algorithm-cta-title">This is what we built</h2>
+          <p class="algorithm-cta-desc">One algorithm. The science, the architecture, and why it matters. Everything on one page.</p>
+          <a href="https://algorithm.polarity-lab.com" target="_blank" class="algorithm-cta-btn">
+            algorithm.polarity-lab.com →
+          </a>
         </div>
       </div>
     </section>
