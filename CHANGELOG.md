@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 11, 2026
 
+- Push the algorithm hard across the entire site (`5edff38`)
+
+### Feb 11, 2026
+
 - Link algorithm.polarity-lab.com in About section and changelog (`60755db`)
 
 ### Feb 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Fix all dark backgrounds in light mode (`fba4f60`)
-
-### Jan 31, 2026
-
-- Fix dark shading in light mode (`143d8fe`)
 
 
 ---
