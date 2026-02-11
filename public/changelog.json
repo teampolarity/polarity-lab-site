@@ -1,5 +1,14 @@
 [
   {
+    "id": "4af0d3b",
+    "date": "2026-02-11",
+    "title": "Center hero subtitle text",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "593ca3f",
     "date": "2026-02-11",
     "title": "Fix alignment across all sections, update content, mobile optimization",
@@ -165,15 +174,6 @@
     "id": "d15f704",
     "date": "2026-01-31",
     "title": "Fix navigation scroll behavior (remove broken navScrollMap)",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "a9d101a",
-    "date": "2026-01-31",
-    "title": "Fix Our Ecosystem & Team centering to match Launch Pad & Research",
     "category": {
       "label": "Bug Fix",
       "color": "coral"

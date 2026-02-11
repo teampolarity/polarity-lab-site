@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 11, 2026
 
+- Center hero subtitle text (`4af0d3b`)
+
+### Feb 11, 2026
+
 - Fix alignment across all sections, update content, mobile optimization (`593ca3f`)
 
 ### Feb 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Fix navigation scroll behavior (remove broken navScrollMap) (`d15f704`)
-
-### Jan 31, 2026
-
-- Fix Our Ecosystem & Team centering to match Launch Pad & Research (`a9d101a`)
 
 
 ---
