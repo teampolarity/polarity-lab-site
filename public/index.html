@@ -2738,7 +2738,43 @@
           <div class="changelog-header">
             <span class="changelog-title">What We've Shipped</span>
           </div>
-          <div class="changelog-entries" id="changelog-entries"></div>
+          <div class="changelog-entries">
+            <div class="changelog-entry">
+              <div class="changelog-meta">
+                <span class="changelog-date">Feb 11</span>
+                <span class="changelog-tag teal">Launch</span>
+              </div>
+              <p class="changelog-message">algorithm.polarity-lab.com — enterprise pitch site for the Polarity algorithm</p>
+            </div>
+            <div class="changelog-entry">
+              <div class="changelog-meta">
+                <span class="changelog-date">Feb 5</span>
+                <span class="changelog-tag purple">Design</span>
+              </div>
+              <p class="changelog-message">polarity-lab.com redesign — WebGL background, cinematic scroll, new copy</p>
+            </div>
+            <div class="changelog-entry">
+              <div class="changelog-meta">
+                <span class="changelog-date">Jan 31</span>
+                <span class="changelog-tag teal">Product</span>
+              </div>
+              <p class="changelog-message">WaxFeed reaches beta — first live deployment of the algorithm on music</p>
+            </div>
+            <div class="changelog-entry">
+              <div class="changelog-meta">
+                <span class="changelog-date">Jan 15</span>
+                <span class="changelog-tag coral">Product</span>
+              </div>
+              <p class="changelog-message">Painpoints.site goes live — fund problems, not promises</p>
+            </div>
+            <div class="changelog-entry">
+              <div class="changelog-meta">
+                <span class="changelog-date">Dec 1</span>
+                <span class="changelog-tag purple">Feature</span>
+              </div>
+              <p class="changelog-message">Polarity cognitive engine ships agentic tools — search, workspace, documents</p>
+            </div>
+          </div>
         </div>
 
         <footer class="footer">
@@ -3221,41 +3257,7 @@
       }, 1000);
     });
 
-    // ==========================================
-    // CHANGELOG LOADER
-    // ==========================================
-    async function loadChangelog() {
-      try {
-        const res = await fetch('/changelog.json');
-        if (!res.ok) return;
-
-        const entries = await res.json();
-        const container = document.getElementById('changelog-entries');
-        if (!container || !entries.length) return;
-
-        container.innerHTML = entries.slice(0, 5).map(entry => {
-          const date = new Date(entry.date).toLocaleDateString('en-US', {
-            month: 'short',
-            day: 'numeric'
-          });
-          const colorClass = entry.category.color === 'text-secondary' ? '' : entry.category.color;
-
-          return `
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">${date}</span>
-                <span class="changelog-tag ${colorClass}">${entry.category.label}</span>
-              </div>
-              <p class="changelog-message">${entry.title}</p>
-            </div>
-          `;
-        }).join('');
-      } catch (e) {
-        console.warn('Changelog not available:', e);
-      }
-    }
-
-    loadChangelog();
+    // Changelog is now hardcoded in HTML — no longer fetched from changelog.json
   </script>
 </body>
 </html>
