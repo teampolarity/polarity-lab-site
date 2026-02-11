@@ -384,7 +384,26 @@
     @media (max-width: 900px) {
       .nav { padding: 16px 24px; }
       .nav.scrolled { padding: 12px 24px; }
-      .nav-links, .nav-cta { display: none; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--void-deep);
+        border-bottom: 1px solid var(--border-ghost);
+        flex-direction: column;
+        padding: 16px 24px;
+        gap: 4px;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-links .nav-link {
+        padding: 12px 0;
+        font-size: 14px;
+      }
+      .nav-cta { display: none; }
       .nav-mobile { display: block; }
     }
 
@@ -446,6 +465,7 @@
     .scroll-container {
       position: relative;
       z-index: 1;
+      -webkit-overflow-scrolling: touch;
     }
 
     .spatial-section {
@@ -917,10 +937,10 @@
       .hero-constellation {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto auto;
-        gap: 24px;
-        padding: 20px;
+        gap: 16px;
+        padding: 16px;
         max-width: 100%;
-        top: 35%;
+        top: 26%;
       }
       .hero-product--waxfeed,
       .hero-product--avdp,
@@ -928,9 +948,9 @@
       .hero-product--painpoints {
         justify-self: center;
       }
-      .hero-product-icon { width: 90px; height: 90px; }
-      .hero-product--polarity .hero-product-icon { width: 110px; height: 110px; }
-      .hero-product-label { font-size: 9px; letter-spacing: 0.1em; }
+      .hero-product-icon { width: 70px; height: 70px; }
+      .hero-product--polarity .hero-product-icon { width: 90px; height: 90px; }
+      .hero-product-label { font-size: 8px; letter-spacing: 0.1em; }
 
       .scroll-text--left,
       .scroll-text--right {
@@ -2178,10 +2198,14 @@
        COMPREHENSIVE MOBILE OVERRIDES
        ========================================== */
     @media (max-width: 768px) {
-      /* CRITICAL: Let the stage hide properly so scroll isn't blocked */
+      /* CRITICAL: Stage must not block touch scroll on mobile */
       .stage {
         pointer-events: none !important;
         z-index: 5;
+        /* On mobile, only cover the hero area, don't overlay entire page */
+        height: 100vh;
+        height: 100dvh;
+        overflow: hidden;
       }
       .stage > * {
         pointer-events: none !important;
@@ -2193,6 +2217,7 @@
       }
       .spatial-section.hero {
         min-height: 100vh;
+        min-height: 100dvh;
       }
 
       .section-inner {
@@ -2207,19 +2232,30 @@
         font-size: 10px;
       }
 
-      /* Hero text adjustments */
+      /* Hero text — move up so title + subtitle don't clip */
+      .scroll-text--center {
+        top: 52% !important;
+        padding: 0 20px;
+        max-width: 100%;
+      }
       .hero-title {
-        font-size: clamp(32px, 8vw, 48px);
+        font-size: clamp(28px, 7vw, 42px);
+        line-height: 1.15;
+        margin-bottom: 16px;
       }
       .hero-subtitle {
-        font-size: 15px;
+        font-size: 14px;
         max-width: 100%;
-        padding: 0 8px;
+        padding: 0;
+        line-height: 1.6;
       }
       .hero-badge {
         font-size: 9px;
-        padding: 8px 16px;
-        margin-bottom: 24px;
+        padding: 6px 14px;
+        margin-bottom: 16px;
+      }
+      .hero-scroll {
+        bottom: 24px;
       }
 
       /* CCX */
@@ -3423,12 +3459,14 @@
         // Hide the stage layer once scrolled past hero so it doesn't block touch/scroll
         const stage = document.getElementById('stage');
         if (stage) {
-          if (iconExitProgress > 0.95) {
+          if (iconExitProgress > 0.8) {
             stage.style.pointerEvents = 'none';
             stage.style.visibility = 'hidden';
+            if (isMobile) stage.style.display = 'none';
           } else {
             stage.style.pointerEvents = 'none';
             stage.style.visibility = 'visible';
+            if (isMobile) stage.style.display = '';
           }
         }
 
