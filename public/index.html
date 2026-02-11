@@ -2178,12 +2178,48 @@
        COMPREHENSIVE MOBILE OVERRIDES
        ========================================== */
     @media (max-width: 768px) {
+      /* CRITICAL: Let the stage hide properly so scroll isn't blocked */
+      .stage {
+        pointer-events: none !important;
+        z-index: 5;
+      }
+      .stage > * {
+        pointer-events: none !important;
+      }
+
+      /* Sections don't need to be full viewport on mobile */
+      .spatial-section {
+        min-height: auto;
+      }
+      .spatial-section.hero {
+        min-height: 100vh;
+      }
+
       .section-inner {
-        padding: 80px 20px;
+        padding: 60px 20px;
       }
 
       .section-title {
-        font-size: clamp(26px, 6vw, 36px);
+        font-size: clamp(24px, 6vw, 34px);
+      }
+
+      .section-label {
+        font-size: 10px;
+      }
+
+      /* Hero text adjustments */
+      .hero-title {
+        font-size: clamp(32px, 8vw, 48px);
+      }
+      .hero-subtitle {
+        font-size: 15px;
+        max-width: 100%;
+        padding: 0 8px;
+      }
+      .hero-badge {
+        font-size: 9px;
+        padding: 8px 16px;
+        margin-bottom: 24px;
       }
 
       /* CCX */
@@ -2192,25 +2228,46 @@
         gap: 40px;
       }
       .ccx-text { max-width: 100%; }
+      .ccx-definition {
+        padding: 20px;
+      }
+      .ccx-step {
+        padding: 16px;
+      }
 
       /* About */
+      .about-header {
+        margin: 0 auto 40px;
+      }
       .about-grid {
         grid-template-columns: 1fr;
       }
       .about-main {
-        padding: 28px;
+        padding: 24px;
       }
 
       /* Team */
+      .team-header {
+        margin: 0 auto 40px;
+      }
       .team-grid {
         grid-template-columns: 1fr;
         max-width: 100%;
       }
+      .team-card {
+        padding: 24px;
+      }
 
       /* Products */
+      .products-header {
+        margin: 0 auto 40px;
+      }
       .products-grid {
         grid-template-columns: 1fr;
         max-width: 100%;
+      }
+      .product-card {
+        padding: 24px;
       }
 
       /* Safety */
@@ -2221,24 +2278,69 @@
       .safety-header {
         margin: 0 auto 40px;
       }
+      .safety-item {
+        padding: 24px;
+      }
 
       /* Research */
+      .research-header {
+        margin: 0 auto 40px;
+      }
       .research-grid {
         grid-template-columns: 1fr !important;
         max-width: 100% !important;
       }
       .research-tags {
-        padding: 24px;
+        padding: 20px;
+      }
+      .research-tags-list {
+        gap: 8px;
+      }
+      .research-tag {
+        font-size: 10px;
+        padding: 8px 14px;
       }
 
       /* Involve */
+      .involve-header {
+        margin: 0 auto 40px;
+      }
       .involve-grid {
         grid-template-columns: 1fr;
+      }
+      .involve-card {
+        padding: 24px;
+      }
+      .involve-cta {
+        padding: 24px;
+        margin-top: 40px;
+      }
+
+      /* Algorithm CTA */
+      .algorithm-cta-box {
+        padding: 36px 24px;
+      }
+      .algorithm-cta-title {
+        font-size: clamp(20px, 5vw, 28px);
+      }
+      .algorithm-cta-desc {
+        font-size: 14px;
+      }
+      .algorithm-cta-btn {
+        font-size: 12px;
+        padding: 14px 24px;
       }
 
       /* Contact */
       .contact-title {
         font-size: clamp(28px, 6vw, 40px);
+      }
+      .contact-links {
+        flex-direction: column;
+        align-items: center;
+      }
+      .newsletter {
+        margin: 0 auto 40px;
       }
       .newsletter-form {
         flex-direction: column;
@@ -2248,9 +2350,14 @@
       }
 
       /* Changelog */
+      .changelog-section {
+        padding: 40px 0;
+        margin-top: 40px;
+      }
       .changelog-entry {
         flex-direction: column;
         gap: 8px;
+        padding: 12px 16px;
       }
       .changelog-meta {
         flex-direction: row;
@@ -2428,7 +2535,7 @@
         We measure <span class="gradient">what matters</span>
       </h1>
       <p class="hero-subtitle">
-        An algorithm that listens to how you talk, measures what carries weight, and builds a living profile of who you are — one that evolves as you do.
+        We built an algorithm that teaches systems what to hold onto. Not just what you said. The weight it carries.
       </p>
     </div>
 
@@ -2457,7 +2564,7 @@
 
             <div class="ccx-definition">
               <div class="ccx-definition-term">CCX / Conversational Connectomics</div>
-              <p class="ccx-definition-desc">The science behind our algorithm. A framework for extracting cognitive weight from natural conversation — measuring how much the people, ideas, and experiences in your life actually matter to you, based on how you talk about them.</p>
+              <p class="ccx-definition-desc">How the things you say reveal the things that matter. The science behind measuring what carries weight in someone's life — based on how they talk about it.</p>
             </div>
 
             <div class="ccx-steps stagger">
@@ -2465,21 +2572,21 @@
                 <div class="ccx-step-num">1</div>
                 <div>
                   <h4>Listen</h4>
-                  <p>Every conversation carries signal — repetition, emphasis, avoidance, protection. The algorithm reads the patterns beneath your words.</p>
+                  <p>Every conversation carries signal. What repeats. What gets emphasis. What you avoid. What you protect. The algorithm picks up all of it.</p>
                 </div>
               </div>
               <div class="ccx-step">
                 <div class="ccx-step-num">2</div>
                 <div>
                   <h4>Measure</h4>
-                  <p>Each concept gets a weight score — how much it matters to you relative to everything else. Not what you said once, but what you keep coming back to.</p>
+                  <p>Things that repeat carry weight. Change carries weight. The algorithm measures how much something matters to you relative to everything else in your life.</p>
                 </div>
               </div>
               <div class="ccx-step">
                 <div class="ccx-step-num">3</div>
                 <div>
                   <h4>Understand</h4>
-                  <p>The output is a cognitive profile — a structured map of who you are that updates with every conversation. It knows the difference between a passing thought and a core belief.</p>
+                  <p>The output is a living profile of who you are. Not a chat log. Comprehension. It knows what was heavy enough to keep and lets the rest go.</p>
                 </div>
               </div>
             </div>
@@ -2506,7 +2613,7 @@
       <div class="section-inner">
         <div class="about-header reveal">
           <p class="section-label">Who We Are</p>
-          <h2 class="section-title">A research lab that builds things people use</h2>
+          <h2 class="section-title">A research lab that ships</h2>
         </div>
 
         <div class="about-grid">
@@ -2517,7 +2624,7 @@
               </svg>
             </div>
             <h3>The Algorithm<span class="about-main-badge">Core</span></h3>
-            <p>We built an algorithm that extracts what matters from how people talk. It tracks what carries weight — the people, ideas, and experiences you keep returning to — and builds a cognitive profile that any system can use to actually understand its users. Every product we ship generates the conversations that make it smarter.</p>
+            <p>We built an algorithm that measures what things weigh in someone's life. It does not care about the domain. It cares about what matters to the person talking. Every product we ship generates real conversations. Those conversations make the algorithm smarter. The thing people use and the thing we study are the same thing.</p>
             <a href="https://algorithm.polarity-lab.com" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; transition: gap 0.4s var(--ease-out-expo);" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='6px'">Read the full pitch →</a>
           </div>
 
@@ -2529,7 +2636,7 @@
                 </svg>
               </div>
               <h4>Open Platform</h4>
-              <p>The algorithm is domain-agnostic. Plug it into any system where users communicate — healthcare, education, finance — and it learns what matters to each person individually.</p>
+              <p>The algorithm does not know what music is. Or finance. Or healthcare. It knows what things weigh and how that weight changes over time. You bring the domain.</p>
             </div>
 
             <div class="about-card">
@@ -2539,7 +2646,7 @@
                 </svg>
               </div>
               <h4>The Purpose</h4>
-              <p>Build technology that treats people the way people deserve to be treated. Clearly, not just efficiently.</p>
+              <p>Build technology that knows you the way a friend who has known you for 20 years would. Not efficiently. Clearly.</p>
             </div>
 
             <div class="about-card">
@@ -2549,7 +2656,7 @@
                 </svg>
               </div>
               <h4>The Studio</h4>
-              <p>AVDP captures real conversation between real people. Every episode is training data — the algorithm learns from how people actually talk when they care about something.</p>
+              <p>AVDP is long-form conversation between real people. Entertainment that doubles as research data. The algorithm learns from how people actually talk when they care.</p>
             </div>
           </div>
         </div>
@@ -2610,7 +2717,7 @@
       <div class="section-inner">
         <div class="products-header reveal">
           <p class="section-label">Our Products</p>
-          <h2 class="section-title">Every product trains the algorithm</h2>
+          <h2 class="section-title">Everything we ship feeds the algorithm</h2>
         </div>
 
         <div class="products-grid stagger">
@@ -2622,7 +2729,7 @@
               </svg>
             </div>
             <div class="product-name">Polarity</div>
-            <div class="product-desc">The core product. Talk to it, and it builds a cognitive profile of who you are — what you care about, how you think, what you keep coming back to.</div>
+            <div class="product-desc">The core product. Talk to it and it learns what matters to you. Not a chat log. A living profile that knows what was heavy enough to keep.</div>
             <span class="product-arrow">Explore →</span>
           </a>
 
@@ -2631,7 +2738,7 @@
               <img src="waxfeed_disc.svg" alt="WaxFeed">
             </div>
             <div class="product-name">WaxFeed</div>
-            <div class="product-desc">The algorithm applied to music. It measures what your taste actually is — not your recent plays, but the sonic patterns you keep gravitating toward.</div>
+            <div class="product-desc">We pointed the algorithm at music. Did not change the math. Out came a social platform that knows your taste — not your recent plays.</div>
             <span class="product-arrow">Explore →</span>
           </a>
 
@@ -2640,7 +2747,7 @@
               <img src="painpoints-icon.svg" alt="Painpoints">
             </div>
             <div class="product-name">Painpoints</div>
-            <div class="product-desc">Fund problems, not promises. The algorithm measures which problems carry the most weight across communities and matches them with builders.</div>
+            <div class="product-desc">Fund problems, not promises. Real problems find real builders. The algorithm surfaces what actually matters to people, not what gets the most clicks.</div>
             <span class="product-arrow">Explore →</span>
           </a>
 
@@ -2649,7 +2756,7 @@
               <img src="AVDPLOGOREAL.jpg" alt="AVDP">
             </div>
             <div class="product-name">AVDP</div>
-            <div class="product-desc">A Very Distant Perspective. Long-form conversation between real people — every episode is training data for how the algorithm learns to read what matters.</div>
+            <div class="product-desc">A Very Distant Perspective. Long-form conversation that goes somewhere real. Every episode is research data the algorithm trains on.</div>
             <span class="product-arrow">Listen →</span>
           </a>
         </div>
@@ -2662,33 +2769,33 @@
         <div class="safety-header reveal">
           <p class="section-label">Non-Negotiable</p>
           <h2 class="section-title">Safety & Ethics</h2>
-          <p class="safety-intro">An algorithm that knows what you care about, what you protect, and how you think is powerful. That kind of understanding can be weaponized. We know that. These are not aspirations — they are hard constraints we will not relax.</p>
+          <p class="safety-intro">An algorithm that knows what matters to you could be misused. We know that. These are not aspirations. They are constraints we will not relax.</p>
         </div>
 
         <div class="safety-grid stagger">
           <div class="safety-item">
             <h4>Your Data, Only Yours</h4>
-            <p>Cognitive data belongs to the person who generated it. No third party sees it without your explicit consent.</p>
+            <p>You generated it. You own it. No one sees it unless you say so.</p>
           </div>
           <div class="safety-item">
             <h4>No Sharing By Default</h4>
-            <p>Every access grant is opt-in and revocable. Caregiver or research access requires your active, informed consent.</p>
+            <p>Every access grant is opt-in and revocable. You say yes before anyone gets in. You can say no whenever.</p>
           </div>
           <div class="safety-item">
             <h4>Coercion Detection</h4>
-            <p>If access patterns suggest someone else is controlling your account, protective protocols activate automatically.</p>
+            <p>If someone else is using your account, the system knows. Protective protocols kick in automatically.</p>
           </div>
           <div class="safety-item">
             <h4>Right to Deletion</h4>
-            <p>Request a full data purge at any time. Every trace removed, no retention period, no exceptions.</p>
+            <p>Ask and it is gone. Every trace. No retention period. No exceptions.</p>
           </div>
           <div class="safety-item">
             <h4>No Predictive Policing</h4>
-            <p>This technology will never be used for risk scoring, preemptive judgment, or behavioral prediction at scale.</p>
+            <p>We will never use this for risk scoring, preemptive judgment, or behavioral prediction. Full stop.</p>
           </div>
           <div class="safety-item">
             <h4>Ethics Board Required</h4>
-            <p>Clinical validation and any research involving human subjects proceeds only with full IRB approval.</p>
+            <p>Anything involving human subjects goes through IRB. No shortcuts. No exceptions.</p>
           </div>
         </div>
       </div>
@@ -2705,8 +2812,8 @@
         <div class="research-grid stagger" style="grid-template-columns: 1fr; max-width: 800px;">
           <a href="https://percent2agi.com" target="_blank" class="research-card" style="text-align: center; padding: 48px;">
             <span class="research-card-tag">percent2agi.com</span>
-            <h3 style="font-size: 22px; margin-bottom: 16px;">Our Research Lives Here</h3>
-            <p style="max-width: 500px; margin: 0 auto 24px; font-size: 15px;">The neuroscience, the architecture, the reasoning behind every design decision. Open research on what it takes to build systems that actually understand people.</p>
+            <h3 style="font-size: 22px; margin-bottom: 16px;">All the research. Open.</h3>
+            <p style="max-width: 500px; margin: 0 auto 24px; font-size: 15px;">The neuroscience behind the algorithm. The architecture. Why we made every decision we made. If you want to know how it works, start here.</p>
             <span class="research-card-arrow" style="font-size: 14px; font-weight: 600;">Visit percent2agi.com →</span>
           </a>
         </div>
@@ -2741,7 +2848,7 @@
               </svg>
             </div>
             <h3>Research Collaborators</h3>
-            <p>If you study how people think, remember, or communicate, we should talk. Co-authorship available.</p>
+            <p>You study how people think, remember, or communicate. We built an algorithm that measures it. We should talk.</p>
             <a href="mailto:polarity@polarity-lab.com?subject=Research%20Collaboration">Discuss Collaboration →</a>
           </div>
 
@@ -2754,7 +2861,7 @@
               </svg>
             </div>
             <h3>Advisors</h3>
-            <p>Occasional feedback on direction, ethics, and clinical pathway. We value clarity over credentials.</p>
+            <p>Direction, ethics, clinical pathway. We want people who are honest, not people who are impressive.</p>
             <a href="mailto:polarity@polarity-lab.com?subject=Advisory%20Interest">Express Interest →</a>
           </div>
 
@@ -2765,7 +2872,7 @@
               </svg>
             </div>
             <h3>Contributors</h3>
-            <p>Pain Points model: identify a real problem, build the solution, own the outcome. We reward builders.</p>
+            <p>Find a real problem. Build the solution. Own the outcome. That is the Painpoints model.</p>
             <a href="https://painpoints.site" target="_blank">Pitch a Project →</a>
           </div>
 
@@ -2776,13 +2883,13 @@
               </svg>
             </div>
             <h3>AVDP Podcast</h3>
-            <p>Long form conversations about what it means to be a person right now. The kind of conversation the algorithm was built to understand.</p>
+            <p>Long conversations about what it means to be a person right now. Every episode is data the algorithm learns from.</p>
             <a href="https://www.instagram.com/averydistantperspective" target="_blank">Follow on Instagram →</a>
           </div>
         </div>
 
         <div class="involve-cta reveal">
-          <p>The immediate ask: <strong>30 minutes</strong> to see if there is alignment.</p>
+          <p>The ask: <strong>30 minutes</strong>. See if there is alignment.</p>
         </div>
       </div>
     </section>
@@ -2792,8 +2899,8 @@
       <div class="section-inner">
         <div class="algorithm-cta-box reveal">
           <p class="algorithm-cta-label">The Algorithm</p>
-          <h2 class="algorithm-cta-title">How it works, why it matters</h2>
-          <p class="algorithm-cta-desc">How we extract cognitive weight from conversation. How we build profiles that evolve. How any system can plug in. The full technical pitch, on one page.</p>
+          <h2 class="algorithm-cta-title">The full pitch. One page.</h2>
+          <p class="algorithm-cta-desc">What the algorithm measures. How it builds a profile. Why it works across domains. How you plug in. Everything is on one page.</p>
           <a href="https://algorithm.polarity-lab.com" target="_blank" class="algorithm-cta-btn">
             algorithm.polarity-lab.com →
           </a>
@@ -2824,7 +2931,7 @@
         </div>
 
         <div class="newsletter reveal">
-          <p class="newsletter-label">Stay Updated</p>
+          <p class="newsletter-label">Get updates</p>
           <form class="newsletter-form" id="newsletter-form">
             <input type="email" name="email" placeholder="Enter your email" required>
             <button type="submit">Subscribe</button>
@@ -3313,7 +3420,17 @@
           this.constellation.style.transform = `translate(-50%, calc(-50% + ${constY}px))`;
         }
 
-        // Content sections now visible directly - no scroll text choreography
+        // Hide the stage layer once scrolled past hero so it doesn't block touch/scroll
+        const stage = document.getElementById('stage');
+        if (stage) {
+          if (iconExitProgress > 0.95) {
+            stage.style.pointerEvents = 'none';
+            stage.style.visibility = 'hidden';
+          } else {
+            stage.style.pointerEvents = 'none';
+            stage.style.visibility = 'visible';
+          }
+        }
 
         requestAnimationFrame(() => this.animate());
       }
