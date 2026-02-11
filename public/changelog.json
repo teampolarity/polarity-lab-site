@@ -1,5 +1,14 @@
 [
   {
+    "id": "45bfada",
+    "date": "2026-02-11",
+    "title": "Rewrite all copy to describe what the algorithm actually does",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "4a86893",
     "date": "2026-02-11",
     "title": "Weave 'the algorithm' into actual copy across every section",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "c596f09",
-    "date": "2026-01-31",
-    "title": "Optimize mobile for portrait vertical scrolling",
-    "category": {
-      "label": "Mobile",
-      "color": "teal"
     }
   }
 ]

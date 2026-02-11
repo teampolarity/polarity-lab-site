@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 11, 2026
 
+- Rewrite all copy to describe what the algorithm actually does (`45bfada`)
+
+### Feb 11, 2026
+
 - Weave 'the algorithm' into actual copy across every section (`4a86893`)
 
 ### Feb 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Fix mobile hero - stack product icons vertically (`b8e2c39`)
-
-### Jan 31, 2026
-
-- Optimize mobile for portrait vertical scrolling (`c596f09`)
 
 
 ---
