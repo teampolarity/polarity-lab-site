@@ -1,5 +1,14 @@
 [
   {
+    "id": "0a5e2dc",
+    "date": "2026-02-11",
+    "title": "Fix mobile scroll and hero text visibility",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "e5e9178",
     "date": "2026-02-11",
     "title": "Rewrite all copy to match founder voice, fix mobile scroll",
@@ -165,15 +174,6 @@
     "id": "3b2a803",
     "date": "2026-01-31",
     "title": "Fix Polarity icon in Ecosystem section",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "76ce5b0",
-    "date": "2026-01-31",
-    "title": "Fix mobile hero - use CSS class instead of inline styles",
     "category": {
       "label": "Bug Fix",
       "color": "coral"

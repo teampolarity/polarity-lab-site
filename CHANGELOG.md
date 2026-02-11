@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 11, 2026
 
+- Fix mobile scroll and hero text visibility (`0a5e2dc`)
+
+### Feb 11, 2026
+
 - Rewrite all copy to match founder voice, fix mobile scroll (`e5e9178`)
 
 ### Feb 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Fix Polarity icon in Ecosystem section (`3b2a803`)
-
-### Jan 31, 2026
-
-- Fix mobile hero - use CSS class instead of inline styles (`76ce5b0`)
 
 
 ---
