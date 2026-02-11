@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Feb 11, 2026
+
+- Rewrite all copy to align with weight/importance thesis (`aeef1f2`)
+
 ### Feb 5, 2026
 
 - Remove Recent Updates section (`a184546`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Add more shooting stars and transparent space background (`0488108`)
-
-### Jan 31, 2026
-
-- Move Our Ecosystem content higher on the page (`c618da8`)
 
 
 ---

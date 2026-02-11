@@ -1,5 +1,14 @@
 [
   {
+    "id": "aeef1f2",
+    "date": "2026-02-11",
+    "title": "Rewrite all copy to align with weight/importance thesis",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "a184546",
     "date": "2026-02-05",
     "title": "Remove Recent Updates section",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "c618da8",
-    "date": "2026-01-31",
-    "title": "Move Our Ecosystem content higher on the page",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
