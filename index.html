@@ -464,6 +464,7 @@
     .section-inner {
       width: 100%;
       max-width: 1400px;
+      margin: 0 auto;
       padding: 120px 48px;
       position: relative;
       z-index: 1;
@@ -1185,13 +1186,20 @@
     /* About Section */
     .about-header {
       max-width: 700px;
-      margin-bottom: 80px;
+      margin: 0 auto 80px;
+      text-align: center;
+    }
+
+    .about-header .section-label {
+      justify-content: center;
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1.3fr 1fr;
       gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .about-main {
@@ -1318,7 +1326,11 @@
     /* Team Section */
     .team-header {
       text-align: center;
-      margin-bottom: 80px;
+      margin: 0 auto 80px;
+    }
+
+    .team-header .section-label {
+      justify-content: center;
     }
 
     .team-location {
@@ -1427,7 +1439,12 @@
     /* Products Section */
     .products-header {
       text-align: center;
-      margin-bottom: 80px;
+      margin: 0 auto 80px;
+      max-width: 700px;
+    }
+
+    .products-header .section-label {
+      justify-content: center;
     }
 
     .products-grid {
@@ -1448,6 +1465,8 @@
       transition: all 0.6s var(--ease-out-expo);
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .product-card::before {
@@ -1517,6 +1536,7 @@
       z-index: 1;
       margin-bottom: 20px;
       line-height: 1.6;
+      flex: 1;
     }
 
     .product-arrow {
@@ -1583,6 +1603,9 @@
       padding: 32px;
       text-align: center;
       transition: all 0.4s var(--ease-out-expo);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .safety-item:hover {
@@ -1628,7 +1651,11 @@
     /* Research Section */
     .research-header {
       text-align: center;
-      margin-bottom: 80px;
+      margin: 0 auto 80px;
+    }
+
+    .research-header .section-label {
+      justify-content: center;
     }
 
     .research-grid {
@@ -1745,7 +1772,11 @@
     /* Involve Section */
     .involve-header {
       text-align: center;
-      margin-bottom: 80px;
+      margin: 0 auto 80px;
+    }
+
+    .involve-header .section-label {
+      justify-content: center;
     }
 
     .involve-grid {
@@ -2060,6 +2091,91 @@
       line-height: 1.5;
     }
 
+    /* ==========================================
+       COMPREHENSIVE MOBILE OVERRIDES
+       ========================================== */
+    @media (max-width: 768px) {
+      .section-inner {
+        padding: 80px 20px;
+      }
+
+      .section-title {
+        font-size: clamp(26px, 6vw, 36px);
+      }
+
+      /* CCX */
+      .ccx-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .ccx-text { max-width: 100%; }
+
+      /* About */
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-main {
+        padding: 28px;
+      }
+
+      /* Team */
+      .team-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+
+      /* Products */
+      .products-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+
+      /* Safety */
+      .safety-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+      .safety-header {
+        margin: 0 auto 40px;
+      }
+
+      /* Research */
+      .research-grid {
+        grid-template-columns: 1fr !important;
+        max-width: 100% !important;
+      }
+      .research-tags {
+        padding: 24px;
+      }
+
+      /* Involve */
+      .involve-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Contact */
+      .contact-title {
+        font-size: clamp(28px, 6vw, 40px);
+      }
+      .newsletter-form {
+        flex-direction: column;
+      }
+      .newsletter-form button {
+        width: 100%;
+      }
+
+      /* Changelog */
+      .changelog-entry {
+        flex-direction: column;
+        gap: 8px;
+      }
+      .changelog-meta {
+        flex-direction: row;
+        gap: 12px;
+        min-width: auto;
+      }
+    }
+
     /* Reduced motion preference */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
@@ -2206,7 +2322,7 @@
       <!-- Painpoints -->
       <a href="https://painpoints.site" target="_blank" class="hero-product hero-product--painpoints" id="icon-painpoints">
         <div class="hero-product-icon">
-          <img src="public/painpoints-icon.svg" alt="Painpoints">
+          <img src="painpoints-icon.svg" alt="Painpoints">
         </div>
         <span class="hero-product-label">Painpoints</span>
       </a>
@@ -2420,7 +2536,7 @@
               </svg>
             </div>
             <div class="product-name">Polarity</div>
-            <div class="product-desc">A system that learns what matters to you and carries that understanding forward.</div>
+            <div class="product-desc">The core system. Learns what matters to you across every conversation and carries that understanding forward.</div>
             <span class="product-arrow">Explore →</span>
           </a>
 
@@ -2429,16 +2545,16 @@
               <img src="waxfeed_disc.svg" alt="WaxFeed">
             </div>
             <div class="product-name">WaxFeed</div>
-            <div class="product-desc">The algorithm pointed at music. A social platform that understands your taste, not just your clicks.</div>
+            <div class="product-desc">The algorithm pointed at music. Understands your taste as a living thing, not a playlist of recent clicks.</div>
             <span class="product-arrow">Explore →</span>
           </a>
 
           <a href="https://painpoints.site" target="_blank" class="product-card">
             <div class="product-icon">
-              <img src="public/painpoints-icon.svg" alt="Painpoints">
+              <img src="painpoints-icon.svg" alt="Painpoints">
             </div>
             <div class="product-name">Painpoints</div>
-            <div class="product-desc">Fund problems, not promises. A platform where real problems find real builders.</div>
+            <div class="product-desc">Fund problems, not promises. A platform where real problems get matched with real builders who ship.</div>
             <span class="product-arrow">Explore →</span>
           </a>
 
@@ -2447,7 +2563,7 @@
               <img src="AVDPLOGOREAL.jpg" alt="AVDP">
             </div>
             <div class="product-name">AVDP</div>
-            <div class="product-desc">A Very Distant Perspective. Long form conversation that goes somewhere real.</div>
+            <div class="product-desc">A Very Distant Perspective. Long-form conversation between real people about what actually matters.</div>
             <span class="product-arrow">Listen →</span>
           </a>
         </div>
@@ -2460,33 +2576,33 @@
         <div class="safety-header reveal">
           <p class="section-label">Non-Negotiable</p>
           <h2 class="section-title">Safety & Ethics</h2>
-          <p class="safety-intro">Technology that understands what matters to you could be misused. We know that. These are not aspirations. They are constraints we will not relax.</p>
+          <p class="safety-intro">Technology that understands what matters to you can be misused. We know that. These are not aspirations. They are hard constraints we will not relax.</p>
         </div>
 
         <div class="safety-grid stagger">
           <div class="safety-item">
-            <h4>User-Only Access</h4>
-            <p>Your cognitive data is yours alone. No one else sees it.</p>
+            <h4>Your Data, Only Yours</h4>
+            <p>Cognitive data belongs to the person who generated it. No third party sees it without your explicit consent.</p>
           </div>
           <div class="safety-item">
-            <h4>No Default Sharing</h4>
-            <p>Caregiver access requires explicit, revocable consent.</p>
+            <h4>No Sharing By Default</h4>
+            <p>Every access grant is opt-in and revocable. Caregiver or research access requires your active, informed consent.</p>
           </div>
           <div class="safety-item">
             <h4>Coercion Detection</h4>
-            <p>Patterns suggesting forced access trigger protective protocols.</p>
+            <p>If access patterns suggest someone else is controlling your account, protective protocols activate automatically.</p>
           </div>
           <div class="safety-item">
             <h4>Right to Deletion</h4>
-            <p>Full data purge on request. No exceptions.</p>
+            <p>Request a full data purge at any time. Every trace removed, no retention period, no exceptions.</p>
           </div>
           <div class="safety-item">
             <h4>No Predictive Policing</h4>
-            <p>Never used for risk scoring or preemptive judgment.</p>
+            <p>This technology will never be used for risk scoring, preemptive judgment, or behavioral prediction at scale.</p>
           </div>
           <div class="safety-item">
-            <h4>IRB Required</h4>
-            <p>Clinical validation proceeds only with ethics board approval.</p>
+            <h4>Ethics Board Required</h4>
+            <p>Clinical validation and any research involving human subjects proceeds only with full IRB approval.</p>
           </div>
         </div>
       </div>
@@ -2496,30 +2612,16 @@
     <section class="spatial-section research" id="research">
       <div class="section-inner">
         <div class="research-header reveal">
-          <p class="section-label">Reading Room</p>
-          <h2 class="section-title">Standing on giants</h2>
+          <p class="section-label">Research</p>
+          <h2 class="section-title">The science behind the algorithm</h2>
         </div>
 
-        <div class="research-grid stagger">
-          <a href="https://www.pnas.org/doi/pdf/10.1073/pnas.1008662107" target="_blank" class="research-card">
-            <span class="research-card-tag">PNAS 2010</span>
-            <h3>Brains Sync During Conversation</h3>
-            <p>Stephens, Silbert & Hasson show that brains literally synchronize during dialogue.</p>
-            <span class="research-card-arrow">→</span>
-          </a>
-
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5558154/pdf/nihms886298.pdf" target="_blank" class="research-card">
-            <span class="research-card-tag">Neuron 2017</span>
-            <h3>Brain Chunks Life Into Episodes</h3>
-            <p>Baldassano et al. reveal the brain segments experience into discrete events.</p>
-            <span class="research-card-arrow">→</span>
-          </a>
-
-          <a href="https://doi.org/10.1038/nrn2575" target="_blank" class="research-card">
-            <span class="research-card-tag">Nature 2009</span>
-            <h3>Your Mind Is a Network</h3>
-            <p>Bullmore & Sporns establish the brain is organized with clusters and hubs.</p>
-            <span class="research-card-arrow">→</span>
+        <div class="research-grid stagger" style="grid-template-columns: 1fr; max-width: 800px;">
+          <a href="https://percent2agi.com" target="_blank" class="research-card" style="text-align: center; padding: 48px;">
+            <span class="research-card-tag">percent2agi.com</span>
+            <h3 style="font-size: 22px; margin-bottom: 16px;">Our Research Lives Here</h3>
+            <p style="max-width: 500px; margin: 0 auto 24px; font-size: 15px;">The neuroscience, the architecture, the reasoning behind every design decision. Open research on what it takes to build systems that actually understand people.</p>
+            <span class="research-card-arrow" style="font-size: 14px; font-weight: 600;">Visit percent2agi.com →</span>
           </a>
         </div>
 
@@ -2632,8 +2734,7 @@
         <!-- Changelog Section -->
         <div class="changelog-section">
           <div class="changelog-header">
-            <span class="changelog-title">Recent Updates</span>
-            <a href="https://github.com/polarityai/polarity-landing/blob/main/CHANGELOG.md" target="_blank" class="changelog-link">View all →</a>
+            <span class="changelog-title">What We've Shipped</span>
           </div>
           <div class="changelog-entries" id="changelog-entries"></div>
         </div>
