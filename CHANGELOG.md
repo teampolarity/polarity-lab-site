@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 11, 2026
 
+- Shorten hero title to fit single line (`c0f0b89`)
+
+### Feb 11, 2026
+
 - Rewrite all copy to align with weight/importance thesis (`aeef1f2`)
 
 ### Feb 5, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Center Our Ecosystem content properly when navigating to section (`623c30b`)
-
-### Jan 31, 2026
-
-- Add more shooting stars and transparent space background (`0488108`)
 
 
 ---

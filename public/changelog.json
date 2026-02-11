@@ -1,5 +1,14 @@
 [
   {
+    "id": "c0f0b89",
+    "date": "2026-02-11",
+    "title": "Shorten hero title to fit single line",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "aeef1f2",
     "date": "2026-02-11",
     "title": "Rewrite all copy to align with weight/importance thesis",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "0488108",
-    "date": "2026-01-31",
-    "title": "Add more shooting stars and transparent space background",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
