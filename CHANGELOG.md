@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 11, 2026
 
+- Link algorithm.polarity-lab.com in About section and changelog (`60755db`)
+
+### Feb 11, 2026
+
 - Changelog shows lab + subsidiary milestones, nav CTA links to algorithm site (`cc0e038`)
 
 ### Feb 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Fix dark shading in light mode (`143d8fe`)
-
-### Jan 31, 2026
-
-- Clean up light mode: remove colored stars, use plain white background (`22e9f75`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "60755db",
+    "date": "2026-02-11",
+    "title": "Link algorithm.polarity-lab.com in About section and changelog",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "cc0e038",
     "date": "2026-02-11",
     "title": "Changelog shows lab + subsidiary milestones, nav CTA links to algorithm site",
@@ -167,15 +176,6 @@
     "title": "Fix dark shading in light mode",
     "category": {
       "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "22e9f75",
-    "date": "2026-01-31",
-    "title": "Clean up light mode: remove colored stars, use plain white background",
-    "category": {
-      "label": "Removed",
       "color": "coral"
     }
   }
