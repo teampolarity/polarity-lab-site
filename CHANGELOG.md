@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 11, 2026
 
+- Weave 'the algorithm' into actual copy across every section (`4a86893`)
+
+### Feb 11, 2026
+
 - Push the algorithm hard across the entire site (`5edff38`)
 
 ### Feb 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Optimize mobile for portrait vertical scrolling (`c596f09`)
-
-### Jan 31, 2026
-
-- Fix all dark backgrounds in light mode (`fba4f60`)
 
 
 ---
