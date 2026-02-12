@@ -1,5 +1,14 @@
 [
   {
+    "id": "a94cc32",
+    "date": "2026-02-12",
+    "title": "Reframe Painpoints as Q2 2026 launch on landing page",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "0a5e2dc",
     "date": "2026-02-11",
     "title": "Fix mobile scroll and hero text visibility",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "3b2a803",
-    "date": "2026-01-31",
-    "title": "Fix Polarity icon in Ecosystem section",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Feb 12, 2026
+
+- Reframe Painpoints as Q2 2026 launch on landing page (`a94cc32`)
+
 ### Feb 11, 2026
 
 - Fix mobile scroll and hero text visibility (`0a5e2dc`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Update Research page content - simpler public framing (`01d8d0d`)
-
-### Jan 31, 2026
-
-- Fix Polarity icon in Ecosystem section (`3b2a803`)
 
 
 ---
