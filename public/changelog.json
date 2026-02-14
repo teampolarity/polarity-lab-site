@@ -1,5 +1,14 @@
 [
   {
+    "id": "fd17744",
+    "date": "2026-02-14",
+    "title": "Update Nathan's title: Telfer '26 · Finance & BTM",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "40c6446",
     "date": "2026-02-14",
     "title": "Move hero icons + text up to fit full viewport: constellation 35%→28%, text 62%→56%",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "593ca3f",
-    "date": "2026-02-11",
-    "title": "Fix alignment across all sections, update content, mobile optimization",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

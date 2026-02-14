@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 14, 2026
 
+- Update Nathan's title: Telfer '26 · Finance & BTM (`fd17744`)
+
+### Feb 14, 2026
+
 - Move hero icons + text up to fit full viewport: constellation 35%→28%, text 62%→56% (`40c6446`)
 
 ### Feb 14, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Feb 11, 2026
 
 - Center hero subtitle text (`4af0d3b`)
-
-### Feb 11, 2026
-
-- Fix alignment across all sections, update content, mobile optimization (`593ca3f`)
 
 
 ---
