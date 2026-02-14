@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 14, 2026
 
+- Move hero icons + text up to fit full viewport: constellation 35%→28%, text 62%→56% (`40c6446`)
+
+### Feb 14, 2026
+
 - Polish cursor + scroll feel: weighted ring/dot lerp, smooth hover offset, tighter scroll ease, no antialias waste (`97aca44`)
 
 ### Feb 14, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Feb 11, 2026
 
 - Fix alignment across all sections, update content, mobile optimization (`593ca3f`)
-
-### Feb 11, 2026
-
-- Shorten hero title to fit single line (`c0f0b89`)
 
 
 ---
