@@ -189,13 +189,15 @@
        ========================================== */
     .cursor {
       position: fixed;
+      top: 0;
+      left: 0;
       width: 20px;
       height: 20px;
       border: 1px solid var(--teal);
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
-      transform: translate(-50%, -50%);
+      will-change: transform;
       transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), border-color 0.3s ease;
       mix-blend-mode: difference;
     }
@@ -208,13 +210,15 @@
 
     .cursor-dot {
       position: fixed;
+      top: 0;
+      left: 0;
       width: 4px;
       height: 4px;
       background: var(--teal);
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
-      transform: translate(-50%, -50%);
+      will-change: transform;
       mix-blend-mode: difference;
     }
 
@@ -522,7 +526,6 @@
       text-decoration: none;
       cursor: pointer;
       user-select: none;
-      will-change: transform, opacity;
       transition: filter 0.4s ease;
     }
 
@@ -533,7 +536,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      will-change: transform;
       transition: transform 0.6s var(--ease-out-expo);
     }
 
@@ -626,7 +628,6 @@
     .scroll-text {
       position: fixed;
       opacity: 0;
-      will-change: transform, opacity, filter;
       pointer-events: none;
       z-index: 15;
       transition: filter 0.4s ease-out;
@@ -3048,7 +3049,7 @@
           antialias: true 
         });
         this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
@@ -3128,7 +3129,7 @@
               float value = 0.0;
               float amplitude = 0.5;
               float frequency = 1.0;
-              for (int i = 0; i < 5; i++) {
+              for (int i = 0; i < 3; i++) {
                 value += amplitude * snoise(p * frequency);
                 amplitude *= 0.5;
                 frequency *= 2.0;
@@ -3182,15 +3183,19 @@
       }
 
       addEventListeners() {
+        let resizeTimeout;
         window.addEventListener('resize', () => {
-          this.renderer.setSize(window.innerWidth, window.innerHeight);
-          this.material.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
+          clearTimeout(resizeTimeout);
+          resizeTimeout = setTimeout(() => {
+            this.renderer.setSize(window.innerWidth, window.innerHeight);
+            this.material.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
+          }, 150);
         });
 
         window.addEventListener('mousemove', (e) => {
           this.targetMouse.x = e.clientX / window.innerWidth;
           this.targetMouse.y = 1.0 - e.clientY / window.innerHeight;
-        });
+        }, { passive: true });
       }
 
       animate() {
@@ -3223,7 +3228,7 @@
       document.addEventListener('mousemove', (e) => {
         cursorX = e.clientX;
         cursorY = e.clientY;
-      });
+      }, { passive: true });
 
       // Hover states
       const hoverElements = document.querySelectorAll('a, button, .product-card, .team-card, .research-card');
@@ -3235,12 +3240,10 @@
       function animateCursor() {
         dotX += (cursorX - dotX) * 0.2;
         dotY += (cursorY - dotY) * 0.2;
-        
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-        cursorDot.style.left = dotX + 'px';
-        cursorDot.style.top = dotY + 'px';
-        
+
+        cursor.style.transform = `translate3d(${cursorX - 10}px, ${cursorY - 10}px, 0)`;
+        cursorDot.style.transform = `translate3d(${dotX - 2}px, ${dotY - 2}px, 0)`;
+
         requestAnimationFrame(animateCursor);
       }
       animateCursor();
@@ -3357,6 +3360,8 @@
         // Hero text only
         this.textHero = document.getElementById('text-hero');
 
+        this.stage = document.getElementById('stage');
+
         // Make product labels visible initially
         document.querySelectorAll('.hero-product').forEach(el => el.classList.add('visible'));
 
@@ -3457,16 +3462,15 @@
         }
 
         // Hide the stage layer once scrolled past hero so it doesn't block touch/scroll
-        const stage = document.getElementById('stage');
-        if (stage) {
+        if (this.stage) {
           if (iconExitProgress > 0.8) {
-            stage.style.pointerEvents = 'none';
-            stage.style.visibility = 'hidden';
-            if (isMobile) stage.style.display = 'none';
+            this.stage.style.pointerEvents = 'none';
+            this.stage.style.visibility = 'hidden';
+            if (isMobile) this.stage.style.display = 'none';
           } else {
-            stage.style.pointerEvents = 'none';
-            stage.style.visibility = 'visible';
-            if (isMobile) stage.style.display = '';
+            this.stage.style.pointerEvents = 'none';
+            this.stage.style.visibility = 'visible';
+            if (isMobile) this.stage.style.display = '';
           }
         }
 
