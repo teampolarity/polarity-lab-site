@@ -3129,7 +3129,7 @@
               float value = 0.0;
               float amplitude = 0.5;
               float frequency = 1.0;
-              for (int i = 0; i < 3; i++) {
+              for (int i = 0; i < 4; i++) {
                 value += amplitude * snoise(p * frequency);
                 amplitude *= 0.5;
                 frequency *= 2.0;
@@ -3221,13 +3221,14 @@
     // ==========================================
     const cursor = document.getElementById('cursor');
     const cursorDot = document.getElementById('cursor-dot');
-    let cursorX = 0, cursorY = 0;
+    let mouseX = 0, mouseY = 0;
+    let ringX = 0, ringY = 0;
     let dotX = 0, dotY = 0;
 
     if (cursor && cursorDot && !window.matchMedia('(pointer: coarse)').matches) {
       document.addEventListener('mousemove', (e) => {
-        cursorX = e.clientX;
-        cursorY = e.clientY;
+        mouseX = e.clientX;
+        mouseY = e.clientY;
       }, { passive: true });
 
       // Hover states
@@ -3238,10 +3239,16 @@
       });
 
       function animateCursor() {
-        dotX += (cursorX - dotX) * 0.2;
-        dotY += (cursorY - dotY) * 0.2;
+        // Ring follows mouse with smooth lag
+        ringX += (mouseX - ringX) * 0.15;
+        ringY += (mouseY - ringY) * 0.15;
+        // Dot trails behind with softer lag
+        dotX += (mouseX - dotX) * 0.08;
+        dotY += (mouseY - dotY) * 0.08;
 
-        cursor.style.transform = `translate3d(${cursorX - 10}px, ${cursorY - 10}px, 0)`;
+        // Offset by half the element size to center on cursor
+        const ringOffset = cursor.classList.contains('hover') ? 30 : 10;
+        cursor.style.transform = `translate3d(${ringX - ringOffset}px, ${ringY - ringOffset}px, 0)`;
         cursorDot.style.transform = `translate3d(${dotX - 2}px, ${dotY - 2}px, 0)`;
 
         requestAnimationFrame(animateCursor);
