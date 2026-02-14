@@ -1,5 +1,14 @@
 [
   {
+    "id": "2c83999",
+    "date": "2026-02-14",
+    "title": "Fix mobile: hero product icons now tappable — override pointer-events on .hero-product links",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "021c690",
     "date": "2026-02-14",
     "title": "Massive perf overhaul: remove custom cursor, kill grain anim, drop-shadows, pulse anims, throttle WebGL to 30fps",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "bf0452a",
-    "date": "2026-02-05",
-    "title": "Upgrade to cinematic design experience with WebGL",
-    "category": {
-      "label": "Design",
-      "color": "purple"
     }
   }
 ]

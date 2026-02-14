@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 14, 2026
 
+- Fix mobile: hero product icons now tappable — override pointer-events on .hero-product links (`2c83999`)
+
+### Feb 14, 2026
+
 - Massive perf overhaul: remove custom cursor, kill grain anim, drop-shadows, pulse anims, throttle WebGL to 30fps (`021c690`)
 
 ### Feb 14, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Feb 5, 2026
 
 - Trigger deployment (`e2f771f`)
-
-### Feb 5, 2026
-
-- Upgrade to cinematic design experience with WebGL (`bf0452a`)
 
 
 ---
