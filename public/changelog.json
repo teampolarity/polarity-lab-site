@@ -1,5 +1,14 @@
 [
   {
+    "id": "0ad3672",
+    "date": "2026-02-14",
+    "title": "Fix mobile icon taps: add in-flow hero links for mobile instead of relying on fixed stage",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "2c83999",
     "date": "2026-02-14",
     "title": "Fix mobile: hero product icons now tappable — override pointer-events on .hero-product links",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "e2f771f",
-    "date": "2026-02-05",
-    "title": "Trigger deployment",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

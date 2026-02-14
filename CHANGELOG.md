@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 14, 2026
 
+- Fix mobile icon taps: add in-flow hero links for mobile instead of relying on fixed stage (`0ad3672`)
+
+### Feb 14, 2026
+
 - Fix mobile: hero product icons now tappable — override pointer-events on .hero-product links (`2c83999`)
 
 ### Feb 14, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Feb 5, 2026
 
 - Update public/index.html with latest changes (`9a28c0e`)
-
-### Feb 5, 2026
-
-- Trigger deployment (`e2f771f`)
 
 
 ---
