@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 14, 2026
 
+- Revert to full original design + 3 surgical fixes: GPU cursor, passive listeners, mobile icon taps (`10019cc`)
+
+### Feb 14, 2026
+
 - Sync public/index.html with root — ALL previous fixes were only in root, Vercel serves from public/ (`9d2fd81`)
 
 ### Feb 14, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Feb 11, 2026
 
 - Rewrite all copy to align with weight/importance thesis (`aeef1f2`)
-
-### Feb 5, 2026
-
-- Remove Recent Updates section (`a184546`)
 
 
 ---

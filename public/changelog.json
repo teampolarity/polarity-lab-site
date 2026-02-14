@@ -1,5 +1,14 @@
 [
   {
+    "id": "10019cc",
+    "date": "2026-02-14",
+    "title": "Revert to full original design + 3 surgical fixes: GPU cursor, passive listeners, mobile icon taps",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "9d2fd81",
     "date": "2026-02-14",
     "title": "Sync public/index.html with root — ALL previous fixes were only in root, Vercel serves from public/",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "a184546",
-    "date": "2026-02-05",
-    "title": "Remove Recent Updates section",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]
