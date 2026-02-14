@@ -1,5 +1,14 @@
 [
   {
+    "id": "97aca44",
+    "date": "2026-02-14",
+    "title": "Polish cursor + scroll feel: weighted ring/dot lerp, smooth hover offset, tighter scroll ease, no antialias waste",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "10019cc",
     "date": "2026-02-14",
     "title": "Revert to full original design + 3 surgical fixes: GPU cursor, passive listeners, mobile icon taps",
@@ -165,15 +174,6 @@
     "id": "c0f0b89",
     "date": "2026-02-11",
     "title": "Shorten hero title to fit single line",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "aeef1f2",
-    "date": "2026-02-11",
-    "title": "Rewrite all copy to align with weight/importance thesis",
     "category": {
       "label": "Update",
       "color": "text-secondary"

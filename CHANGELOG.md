@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 14, 2026
 
+- Polish cursor + scroll feel: weighted ring/dot lerp, smooth hover offset, tighter scroll ease, no antialias waste (`97aca44`)
+
+### Feb 14, 2026
+
 - Revert to full original design + 3 surgical fixes: GPU cursor, passive listeners, mobile icon taps (`10019cc`)
 
 ### Feb 14, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Feb 11, 2026
 
 - Shorten hero title to fit single line (`c0f0b89`)
-
-### Feb 11, 2026
-
-- Rewrite all copy to align with weight/importance thesis (`aeef1f2`)
 
 
 ---
