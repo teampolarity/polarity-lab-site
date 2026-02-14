@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 14, 2026
 
+- Restore smooth cursor feel: add lerp to ring + dot trail, restore shader to 4 FBM iterations (`8a61c81`)
+
+### Feb 14, 2026
+
 - Fix click/drag lag: GPU-accelerate cursor, optimize WebGL shader and reduce compositing overhead (`a56453c`)
 
 ### Feb 12, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Fix mobile layout - 2x2 grid and hamburger menu (`5627fb9`)
-
-### Jan 31, 2026
-
-- Change Research headline to "What is CCX?" (`7ceddd9`)
 
 
 ---

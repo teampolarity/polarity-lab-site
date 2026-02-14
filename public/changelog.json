@@ -1,5 +1,14 @@
 [
   {
+    "id": "8a61c81",
+    "date": "2026-02-14",
+    "title": "Restore smooth cursor feel: add lerp to ring + dot trail, restore shader to 4 FBM iterations",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "a56453c",
     "date": "2026-02-14",
     "title": "Fix click/drag lag: GPU-accelerate cursor, optimize WebGL shader and reduce compositing overhead",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "7ceddd9",
-    "date": "2026-01-31",
-    "title": "Change Research headline to \"What is CCX?\"",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
