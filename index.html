@@ -163,15 +163,68 @@
         radial-gradient(ellipse 60% 40% at 50% 100%, transparent 30%, var(--void-deep) 100%);
     }
 
-    /* Grain: static only, no animation — SVG filter animation was killing perf */
     .grain {
       position: absolute;
       inset: 0;
       opacity: 0.03;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      animation: grainShift 8s steps(10) infinite;
     }
 
-    /* Custom cursor removed for performance */
+    @keyframes grainShift {
+      0%, 100% { transform: translate(0, 0); }
+      10% { transform: translate(-1%, -1%); }
+      20% { transform: translate(1%, 1%); }
+      30% { transform: translate(-1%, 1%); }
+      40% { transform: translate(1%, -1%); }
+      50% { transform: translate(-1%, 0%); }
+      60% { transform: translate(1%, 0%); }
+      70% { transform: translate(0%, 1%); }
+      80% { transform: translate(0%, -1%); }
+      90% { transform: translate(1%, 1%); }
+    }
+
+    /* ==========================================
+       CUSTOM CURSOR
+       ========================================== */
+    .cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid var(--teal);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      will-change: transform;
+      transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), border-color 0.3s ease;
+      mix-blend-mode: difference;
+    }
+
+    .cursor.hover {
+      width: 60px;
+      height: 60px;
+      border-color: var(--coral);
+    }
+
+    .cursor-dot {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      background: var(--teal);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      will-change: transform;
+      mix-blend-mode: difference;
+    }
+
+    @media (pointer: coarse) {
+      .cursor, .cursor-dot { display: none; }
+    }
 
     /* ==========================================
        NAVIGATION - Glass morphism
@@ -192,8 +245,8 @@
 
     .nav.scrolled {
       background: rgba(2, 2, 4, 0.7);
-      backdrop-filter: blur(10px) saturate(150%);
-      -webkit-backdrop-filter: blur(10px) saturate(150%);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       padding: 16px 48px;
       border-bottom: 1px solid var(--border-ghost);
     }
@@ -213,6 +266,7 @@
     .nav-logo-atom {
       width: 40px;
       height: 40px;
+      filter: drop-shadow(0 0 20px var(--teal-glow));
       transition: transform 0.6s var(--ease-out-expo);
     }
 
@@ -472,6 +526,7 @@
       text-decoration: none;
       cursor: pointer;
       user-select: none;
+      will-change: transform, opacity;
       transition: filter 0.4s ease;
     }
 
@@ -482,6 +537,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      will-change: transform;
       transition: transform 0.6s var(--ease-out-expo);
     }
 
@@ -528,7 +584,7 @@
     }
 
     .hero-product--waxfeed .hero-product-icon {
-      box-shadow: 0 0 40px rgba(187, 143, 206, 0.35);
+      filter: drop-shadow(0 0 50px rgba(187, 143, 206, 0.5));
     }
 
     .hero-product--polarity {
@@ -538,7 +594,17 @@
     .hero-product--polarity .hero-product-icon {
       width: 180px;
       height: 180px;
-      box-shadow: 0 0 45px var(--teal-glow);
+      filter: drop-shadow(0 0 60px var(--teal-glow));
+      animation: polarityFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes polarityFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .hero-product--polarity:hover .hero-product-icon {
+      animation: none;
     }
 
     .hero-product--avdp {
@@ -547,7 +613,7 @@
     }
 
     .hero-product--avdp .hero-product-icon {
-      box-shadow: 0 0 40px var(--coral-glow);
+      filter: drop-shadow(0 0 50px var(--coral-glow));
     }
 
     .hero-product--painpoints {
@@ -555,7 +621,7 @@
     }
 
     .hero-product--painpoints .hero-product-icon {
-      box-shadow: 0 0 40px var(--red-glow);
+      filter: drop-shadow(0 0 50px var(--red-glow));
     }
 
     /* ==========================================
@@ -564,6 +630,7 @@
     .scroll-text {
       position: fixed;
       opacity: 0;
+      will-change: transform, opacity, filter;
       pointer-events: none;
       z-index: 15;
       transition: filter 0.4s ease-out;
@@ -711,8 +778,8 @@
     /* Definition box with glass effect */
     .scroll-text__definition {
       background: rgba(12, 12, 20, 0.6);
-      backdrop-filter: blur(10px) saturate(150%);
-      -webkit-backdrop-filter: blur(10px) saturate(150%);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
       border: 1px solid var(--border-ghost);
       border-left: 2px solid var(--teal);
       padding: 28px;
@@ -778,7 +845,12 @@
       height: 6px;
       background: var(--teal);
       border-radius: 50%;
-      box-shadow: 0 0 10px var(--teal);
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 10px var(--teal); }
+      50% { opacity: 0.5; transform: scale(0.8); box-shadow: 0 0 20px var(--teal); }
     }
 
     .hero-title {
@@ -883,40 +955,7 @@
       .hero-product-icon { width: 70px; height: 70px; }
       .hero-product--polarity .hero-product-icon { width: 90px; height: 90px; }
       .hero-product-label { font-size: 8px; letter-spacing: 0.1em; }
-    }
 
-    /* Mobile hero links — in normal document flow, always tappable */
-    .mobile-hero-links {
-      display: none;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      padding: 0 16px;
-      justify-items: center;
-      padding-top: 10vh;
-    }
-
-    .mobile-hero-links .hero-product {
-      pointer-events: auto;
-      touch-action: manipulation;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .mobile-hero-links .hero-product-icon {
-      width: 70px;
-      height: 70px;
-    }
-
-    .mobile-hero-links .hero-product--polarity .hero-product-icon {
-      width: 90px;
-      height: 90px;
-    }
-
-    .mobile-hero-links .hero-product-label {
-      font-size: 9px;
-      letter-spacing: 0.1em;
-    }
-
-    @media (max-width: 768px) {
       .scroll-text--left,
       .scroll-text--right {
         left: 50%;
@@ -1150,7 +1189,13 @@
       height: 100%;
       background: radial-gradient(circle, var(--teal-light) 0%, var(--teal-deep) 70%);
       border-radius: 50%;
-      box-shadow: 0 0 40px var(--teal-glow);
+      animation: ccxPulse 4s ease infinite;
+      box-shadow: 0 0 60px var(--teal-glow);
+    }
+
+    @keyframes ccxPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
 
     @media (max-width: 1024px) {
@@ -2169,12 +2214,10 @@
       .stage > * {
         pointer-events: none !important;
       }
-      /* Hide stage icons on mobile — use the in-flow mobile hero links instead */
-      .stage .hero-constellation {
-        display: none !important;
-      }
-      .mobile-hero-links {
-        display: grid !important;
+      /* Hero product links must be tappable on mobile */
+      .stage .hero-product {
+        pointer-events: auto !important;
+        touch-action: manipulation;
       }
 
       /* Sections don't need to be full viewport on mobile */
@@ -2388,6 +2431,10 @@
     <div class="grain"></div>
   </div>
 
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursor-dot"></div>
+
   <!-- Theme Toggle -->
   <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
     <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -2549,47 +2596,7 @@
   <!-- SCROLL CONTAINER - Content sections -->
   <div class="scroll-container">
     <section class="spatial-section hero" id="home" data-scroll-zone="hero">
-      <div class="section-inner">
-        <!-- Mobile-only tappable hero links (in normal flow, not inside fixed stage) -->
-        <div class="mobile-hero-links">
-          <a href="https://wax-feed.com" target="_blank" class="hero-product hero-product--waxfeed">
-            <div class="hero-product-icon">
-              <img src="waxfeed_disc.svg" alt="WaxFeed">
-            </div>
-            <span class="hero-product-label">WaxFeed</span>
-          </a>
-          <a href="https://app.polarity-lab.com/" target="_blank" class="hero-product hero-product--polarity">
-            <div class="hero-product-icon">
-              <svg viewBox="0 0 200 200">
-                <defs>
-                  <radialGradient id="mCoreGrad" cx="30%" cy="30%" r="70%">
-                    <stop offset="0%" stop-color="#6EE7DF"/>
-                    <stop offset="50%" stop-color="#4ECDC4"/>
-                    <stop offset="100%" stop-color="#2BA89F"/>
-                  </radialGradient>
-                </defs>
-                <circle cx="100" cy="100" r="32" fill="url(#mCoreGrad)"/>
-                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#4ECDC4" stroke-width="3" transform="rotate(-60 100 100)" opacity="0.9"/>
-                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FFA07A" stroke-width="3" transform="rotate(60 100 100)" opacity="0.9"/>
-                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#BB8FCE" stroke-width="3" opacity="0.9"/>
-              </svg>
-            </div>
-            <span class="hero-product-label">Polarity</span>
-          </a>
-          <a href="https://painpoints.site" target="_blank" class="hero-product hero-product--painpoints">
-            <div class="hero-product-icon">
-              <img src="painpoints-icon.svg" alt="Painpoints">
-            </div>
-            <span class="hero-product-label">Painpoints</span>
-          </a>
-          <a href="https://linktr.ee/averydistantperspective" target="_blank" class="hero-product hero-product--avdp">
-            <div class="hero-product-icon avdp-icon">
-              <img src="AVDPLOGOREAL.jpg" alt="AVDP">
-            </div>
-            <span class="hero-product-label">AVDP</span>
-          </a>
-        </div>
-      </div>
+      <div class="section-inner"></div>
     </section>
 
     <!-- CCX SECTION -->
@@ -3050,7 +3057,7 @@
           antialias: true 
         });
         this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
@@ -3130,7 +3137,7 @@
               float value = 0.0;
               float amplitude = 0.5;
               float frequency = 1.0;
-              for (int i = 0; i < 4; i++) {
+              for (int i = 0; i < 5; i++) {
                 value += amplitude * snoise(p * frequency);
                 amplitude *= 0.5;
                 frequency *= 2.0;
@@ -3184,13 +3191,9 @@
       }
 
       addEventListeners() {
-        let resizeTimeout;
         window.addEventListener('resize', () => {
-          clearTimeout(resizeTimeout);
-          resizeTimeout = setTimeout(() => {
-            this.renderer.setSize(window.innerWidth, window.innerHeight);
-            this.material.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
-          }, 150);
+          this.renderer.setSize(window.innerWidth, window.innerHeight);
+          this.material.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
         });
 
         window.addEventListener('mousemove', (e) => {
@@ -3199,28 +3202,57 @@
         }, { passive: true });
       }
 
-      animate(timestamp) {
-        requestAnimationFrame((t) => this.animate(t));
-
-        // Throttle to ~30fps — nebula is slow-moving, doesn't need 60fps
-        if (!this.lastFrame) this.lastFrame = 0;
-        if (timestamp - this.lastFrame < 33) return;
-        this.lastFrame = timestamp;
-
+      animate() {
+        requestAnimationFrame(() => this.animate());
+        
         this.time += 0.016;
         this.material.uniforms.uTime.value = this.time;
-
+        
         // Smooth mouse follow
         this.mouse.x += (this.targetMouse.x - this.mouse.x) * 0.05;
         this.mouse.y += (this.targetMouse.y - this.mouse.y) * 0.05;
         this.material.uniforms.uMouse.value.set(this.mouse.x, this.mouse.y);
-
+        
         this.renderer.render(this.scene, this.camera);
       }
     }
 
     // Initialize WebGL background
     const webglBg = new WebGLBackground();
+
+    // ==========================================
+    // CUSTOM CURSOR
+    // ==========================================
+    const cursor = document.getElementById('cursor');
+    const cursorDot = document.getElementById('cursor-dot');
+    let cursorX = 0, cursorY = 0;
+    let dotX = 0, dotY = 0;
+
+    if (cursor && cursorDot && !window.matchMedia('(pointer: coarse)').matches) {
+      document.addEventListener('mousemove', (e) => {
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+      }, { passive: true });
+
+      // Hover states
+      const hoverElements = document.querySelectorAll('a, button, .product-card, .team-card, .research-card');
+      hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+      });
+
+      function animateCursor() {
+        dotX += (cursorX - dotX) * 0.2;
+        dotY += (cursorY - dotY) * 0.2;
+
+        const ringOffset = cursor.classList.contains('hover') ? 30 : 10;
+        cursor.style.transform = `translate3d(${cursorX - ringOffset}px, ${cursorY - ringOffset}px, 0)`;
+        cursorDot.style.transform = `translate3d(${dotX - 2}px, ${dotY - 2}px, 0)`;
+
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+    }
 
     // ==========================================
     // THEME TOGGLE
