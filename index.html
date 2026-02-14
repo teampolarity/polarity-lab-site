@@ -883,7 +883,40 @@
       .hero-product-icon { width: 70px; height: 70px; }
       .hero-product--polarity .hero-product-icon { width: 90px; height: 90px; }
       .hero-product-label { font-size: 8px; letter-spacing: 0.1em; }
+    }
 
+    /* Mobile hero links — in normal document flow, always tappable */
+    .mobile-hero-links {
+      display: none;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      padding: 0 16px;
+      justify-items: center;
+      padding-top: 10vh;
+    }
+
+    .mobile-hero-links .hero-product {
+      pointer-events: auto;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .mobile-hero-links .hero-product-icon {
+      width: 70px;
+      height: 70px;
+    }
+
+    .mobile-hero-links .hero-product--polarity .hero-product-icon {
+      width: 90px;
+      height: 90px;
+    }
+
+    .mobile-hero-links .hero-product-label {
+      font-size: 9px;
+      letter-spacing: 0.1em;
+    }
+
+    @media (max-width: 768px) {
       .scroll-text--left,
       .scroll-text--right {
         left: 50%;
@@ -2136,9 +2169,12 @@
       .stage > * {
         pointer-events: none !important;
       }
-      /* But hero product links MUST be tappable */
-      .stage .hero-product {
-        pointer-events: auto !important;
+      /* Hide stage icons on mobile — use the in-flow mobile hero links instead */
+      .stage .hero-constellation {
+        display: none !important;
+      }
+      .mobile-hero-links {
+        display: grid !important;
       }
 
       /* Sections don't need to be full viewport on mobile */
@@ -2513,7 +2549,47 @@
   <!-- SCROLL CONTAINER - Content sections -->
   <div class="scroll-container">
     <section class="spatial-section hero" id="home" data-scroll-zone="hero">
-      <div class="section-inner"></div>
+      <div class="section-inner">
+        <!-- Mobile-only tappable hero links (in normal flow, not inside fixed stage) -->
+        <div class="mobile-hero-links">
+          <a href="https://wax-feed.com" target="_blank" class="hero-product hero-product--waxfeed">
+            <div class="hero-product-icon">
+              <img src="waxfeed_disc.svg" alt="WaxFeed">
+            </div>
+            <span class="hero-product-label">WaxFeed</span>
+          </a>
+          <a href="https://app.polarity-lab.com/" target="_blank" class="hero-product hero-product--polarity">
+            <div class="hero-product-icon">
+              <svg viewBox="0 0 200 200">
+                <defs>
+                  <radialGradient id="mCoreGrad" cx="30%" cy="30%" r="70%">
+                    <stop offset="0%" stop-color="#6EE7DF"/>
+                    <stop offset="50%" stop-color="#4ECDC4"/>
+                    <stop offset="100%" stop-color="#2BA89F"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="100" cy="100" r="32" fill="url(#mCoreGrad)"/>
+                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#4ECDC4" stroke-width="3" transform="rotate(-60 100 100)" opacity="0.9"/>
+                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FFA07A" stroke-width="3" transform="rotate(60 100 100)" opacity="0.9"/>
+                <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#BB8FCE" stroke-width="3" opacity="0.9"/>
+              </svg>
+            </div>
+            <span class="hero-product-label">Polarity</span>
+          </a>
+          <a href="https://painpoints.site" target="_blank" class="hero-product hero-product--painpoints">
+            <div class="hero-product-icon">
+              <img src="painpoints-icon.svg" alt="Painpoints">
+            </div>
+            <span class="hero-product-label">Painpoints</span>
+          </a>
+          <a href="https://linktr.ee/averydistantperspective" target="_blank" class="hero-product hero-product--avdp">
+            <div class="hero-product-icon avdp-icon">
+              <img src="AVDPLOGOREAL.jpg" alt="AVDP">
+            </div>
+            <span class="hero-product-label">AVDP</span>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- CCX SECTION -->
