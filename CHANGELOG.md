@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Feb 14, 2026
+
+- Fix click/drag lag: GPU-accelerate cursor, optimize WebGL shader and reduce compositing overhead (`a56453c`)
+
 ### Feb 12, 2026
 
 - Reframe Painpoints as Q2 2026 launch on landing page (`a94cc32`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Jan 31, 2026
 
 - Change Research headline to "What is CCX?" (`7ceddd9`)
-
-### Jan 31, 2026
-
-- Update Research page content - simpler public framing (`01d8d0d`)
 
 
 ---
