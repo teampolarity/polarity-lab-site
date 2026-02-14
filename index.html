@@ -2136,6 +2136,10 @@
       .stage > * {
         pointer-events: none !important;
       }
+      /* But hero product links MUST be tappable */
+      .stage .hero-product {
+        pointer-events: auto !important;
+      }
 
       /* Sections don't need to be full viewport on mobile */
       .spatial-section {
