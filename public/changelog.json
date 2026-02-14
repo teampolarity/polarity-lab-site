@@ -1,5 +1,14 @@
 [
   {
+    "id": "9d2fd81",
+    "date": "2026-02-14",
+    "title": "Sync public/index.html with root — ALL previous fixes were only in root, Vercel serves from public/",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "0ad3672",
     "date": "2026-02-14",
     "title": "Fix mobile icon taps: add in-flow hero links for mobile instead of relying on fixed stage",
@@ -165,15 +174,6 @@
     "id": "a184546",
     "date": "2026-02-05",
     "title": "Remove Recent Updates section",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "9a28c0e",
-    "date": "2026-02-05",
-    "title": "Update public/index.html with latest changes",
     "category": {
       "label": "Enhancement",
       "color": "purple"
