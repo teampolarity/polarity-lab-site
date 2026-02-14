@@ -1,5 +1,14 @@
 [
   {
+    "id": "021c690",
+    "date": "2026-02-14",
+    "title": "Massive perf overhaul: remove custom cursor, kill grain anim, drop-shadows, pulse anims, throttle WebGL to 30fps",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "8a61c81",
     "date": "2026-02-14",
     "title": "Restore smooth cursor feel: add lerp to ring + dot trail, restore shader to 4 FBM iterations",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Design",
       "color": "purple"
-    }
-  },
-  {
-    "id": "5627fb9",
-    "date": "2026-01-31",
-    "title": "Fix mobile layout - 2x2 grid and hamburger menu",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

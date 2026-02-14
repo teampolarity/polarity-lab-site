@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 14, 2026
 
+- Massive perf overhaul: remove custom cursor, kill grain anim, drop-shadows, pulse anims, throttle WebGL to 30fps (`021c690`)
+
+### Feb 14, 2026
+
 - Restore smooth cursor feel: add lerp to ring + dot trail, restore shader to 4 FBM iterations (`8a61c81`)
 
 ### Feb 14, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Feb 5, 2026
 
 - Upgrade to cinematic design experience with WebGL (`bf0452a`)
-
-### Jan 31, 2026
-
-- Fix mobile layout - 2x2 grid and hamburger menu (`5627fb9`)
 
 
 ---
