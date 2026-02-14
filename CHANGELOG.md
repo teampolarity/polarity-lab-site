@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Feb 14, 2026
 
+- Fix Nathan's title: uOttawa Telfer Finance & BTM '26 (`22fce28`)
+
+### Feb 14, 2026
+
 - Update Nathan's title: Telfer '26 · Finance & BTM (`fd17744`)
 
 ### Feb 14, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Feb 11, 2026
 
 - Hardcode public-facing changelog, remove dynamic loader (`ab2267e`)
-
-### Feb 11, 2026
-
-- Center hero subtitle text (`4af0d3b`)
 
 
 ---

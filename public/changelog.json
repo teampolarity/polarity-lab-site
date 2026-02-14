@@ -1,5 +1,14 @@
 [
   {
+    "id": "22fce28",
+    "date": "2026-02-14",
+    "title": "Fix Nathan's title: uOttawa Telfer Finance & BTM '26",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "fd17744",
     "date": "2026-02-14",
     "title": "Update Nathan's title: Telfer '26 · Finance & BTM",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Removed",
       "color": "coral"
-    }
-  },
-  {
-    "id": "4af0d3b",
-    "date": "2026-02-11",
-    "title": "Center hero subtitle text",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
