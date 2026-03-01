@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
+  }
+  .card {
+    width: 1200px;
+    height: 630px;
+    background: #050508;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Subtle radial glow behind content */
+  .card::before {
+    content: '';
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(78, 205, 196, 0.06) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  /* Subtle grid pattern */
+  .card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(78, 205, 196, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(78, 205, 196, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .logo-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  .logo-text {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .title {
+    font-size: 64px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    text-align: center;
+  }
+  .title .gradient {
+    background: linear-gradient(135deg, #6EE7DF, #4ECDC4, #BB8FCE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .subtitle {
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    max-width: 700px;
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border: 1px solid rgba(78, 205, 196, 0.25);
+    border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(78, 205, 196, 0.7);
+    margin-top: 12px;
+  }
+  .url {
+    position: absolute;
+    bottom: 36px;
+    right: 48px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.25);
+    letter-spacing: 0.05em;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="card">
+  <div class="content">
+    <div class="logo-row">
+      <svg viewBox="0 0 100 100" width="44" height="44">
+        <defs>
+          <radialGradient id="coreGrad" cx="30%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#6EE7DF"/>
+            <stop offset="50%" stop-color="#4ECDC4"/>
+            <stop offset="100%" stop-color="#2BA89F"/>
+          </radialGradient>
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#4ECDC4" stroke-width="1.5" transform="rotate(-60 50 50)" filter="url(#glow)" opacity="0.9"/>
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" filter="url(#glow)" opacity="0.9"/>
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" filter="url(#glow)" opacity="0.9"/>
+        <circle cx="70" cy="15" r="4" fill="#4ECDC4" filter="url(#glow)"/>
+        <circle cx="30" cy="15" r="4" fill="#FFA07A" filter="url(#glow)"/>
+        <circle cx="90" cy="50" r="4" fill="#BB8FCE" filter="url(#glow)"/>
+        <circle cx="50" cy="50" r="14" fill="url(#coreGrad)" filter="url(#glow)"/>
+        <circle cx="45" cy="45" r="5" fill="white" opacity="0.25"/>
+      </svg>
+      <span class="logo-text">POLARITY LAB</span>
+    </div>
+    <h1 class="title">We measure <span class="gradient">what matters</span></h1>
+    <p class="subtitle">Tools that help you think more clearly, powered by an algorithm that learns what carries weight.</p>
+    <div class="badge">Interdisciplinary Research Laboratory</div>
+  </div>
+  <span class="url">polarity-lab.com</span>
+</div>
+</body>
+</html>
