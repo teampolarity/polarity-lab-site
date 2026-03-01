@@ -66,6 +66,12 @@ CTA: Visit onpulse.tv
 ### Hero
 Keep current "Measure the Mind" or "We measure what matters" per existing copy. Subtitle should be centered and readable on mobile.
 
+### Polarity product framing
+Key positioning: "Not a form, not a chatbot. A thinking partner that helps you figure out what you're actually trying to say."
+- Other AI chatbots tell you what to think. Polarity helps you think more clearly.
+- Use this framing in the Polarity product card and About section.
+- This separates Polarity from every other AI product on the market.
+
 ### About section updates
 Informed by the lab aims document:
 - Studying consciousness through conversation at an individual level through a multi angle lens

@@ -338,6 +338,10 @@ git commit -m "Add Studio section for Pulse broadcasting network"
 **Files:**
 - Modify: `index.html:2799-2806` (AVDP product card)
 
+**Step 0: Update Polarity product card description**
+
+Find the Polarity product card and update the description to: "Not a chatbot. A thinking partner that helps you figure out what you're actually trying to say. Talk to it and it learns what matters to you."
+
 **Step 1: Replace AVDP product card with Pulse**
 
 Find the AVDP product card (around line 2799) and replace with:
@@ -415,7 +419,7 @@ Update the about section header, main card, and sub cards to reflect the interdi
 **Step 2: Update the three sub cards**
 
 Card 1 (Open Platform): Keep but replace en dash with period.
-Card 2 (The Purpose): Keep but replace en dash with period.
+Card 2 (The Purpose): Update to use new Polarity framing: "Not a form, not a chatbot. A thinking partner that helps you figure out what you're actually trying to say. Other AI tells you what to think. Polarity helps you think more clearly."
 Card 3 (The Studio): Rename to reflect the three research environments:
 
 ```html
