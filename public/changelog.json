@@ -1,5 +1,23 @@
 [
   {
+    "id": "4cd2d2d",
+    "date": "2026-03-01",
+    "title": "Fix Get Involved icons and colors, wire up Formspree",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "94b6e3f",
+    "date": "2026-03-01",
+    "title": "Add Get on Pulse card to Get Involved section",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "98220af",
     "date": "2026-03-01",
     "title": "Standardize product cards to Explore, update Contributors link",
@@ -159,24 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "b1b1c41",
-    "date": "2026-03-01",
-    "title": "Reorder HTML sections to match new navigation flow",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "1f4fa47",
-    "date": "2026-03-01",
-    "title": "Restructure navigation order and change CTA to Contact",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

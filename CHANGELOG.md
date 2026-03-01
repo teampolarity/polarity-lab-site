@@ -6,6 +6,14 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 1, 2026
 
+- Fix Get Involved icons and colors, wire up Formspree (`4cd2d2d`)
+
+### Mar 1, 2026
+
+- Add Get on Pulse card to Get Involved section (`94b6e3f`)
+
+### Mar 1, 2026
+
 - Standardize product cards to Explore, update Contributors link (`98220af`)
 
 ### Mar 1, 2026
@@ -75,14 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Add Studio section for Pulse broadcasting network (`3c3ab2c`)
-
-### Mar 1, 2026
-
-- Reorder HTML sections to match new navigation flow (`b1b1c41`)
-
-### Mar 1, 2026
-
-- Restructure navigation order and change CTA to Contact (`1f4fa47`)
 
 
 ---
