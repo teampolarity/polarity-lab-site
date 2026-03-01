@@ -982,7 +982,7 @@
     /* ==========================================
        CONTENT SECTIONS (Visible when scrolled)
        ========================================== */
-    .ccx, .about, .team, .products, .safety, .research, .involve, .contact {
+    .ccx, .about, .team, .products, .studio, .safety, .research, .involve, .contact {
       background: linear-gradient(180deg, var(--void-deep) 0%, var(--void-space) 20%, var(--void-space) 80%, var(--void-deep) 100%);
     }
 
@@ -2478,15 +2478,16 @@
     </a>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="#ccx" class="nav-link">Science</a></li>
       <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#team" class="nav-link">Team</a></li>
+      <li><a href="#ccx" class="nav-link">Science</a></li>
       <li><a href="#products" class="nav-link">Products</a></li>
+      <li><a href="#studio" class="nav-link">Studio</a></li>
+      <li><a href="#team" class="nav-link">Team</a></li>
       <li><a href="#research" class="nav-link">Research</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
 
-    <a href="https://algorithm.polarity-lab.com" target="_blank" class="nav-cta"><span>The Algorithm</span></a>
+    <a href="#contact" class="nav-cta"><span>Contact</span></a>
 
     <button class="nav-mobile" id="nav-mobile" aria-label="Toggle menu">
       <span></span>
@@ -3333,7 +3334,7 @@
     let lastScrollY = 0;
 
     // Sections for scroll spy
-    const sections = ['ccx', 'about', 'products', 'team', 'research', 'safety', 'contact'];
+    const sections = ['about', 'ccx', 'products', 'studio', 'team', 'research', 'safety', 'contact'];
     
     function updateActiveNav() {
       const scrollY = window.scrollY + 150; // Offset for nav height
