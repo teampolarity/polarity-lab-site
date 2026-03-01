@@ -1,5 +1,14 @@
 [
   {
+    "id": "98220af",
+    "date": "2026-03-01",
+    "title": "Standardize product cards to Explore, update Contributors link",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "b190105",
     "date": "2026-03-01",
     "title": "Add Get on Pulse card to Get Involved section",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "a4d6c9f",
-    "date": "2026-03-01",
-    "title": "Fix hero subtitle centering and mobile text cutoff",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

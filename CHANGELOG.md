@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 1, 2026
 
+- Standardize product cards to Explore, update Contributors link (`98220af`)
+
+### Mar 1, 2026
+
 - Add Get on Pulse card to Get Involved section (`b190105`)
 
 ### Mar 1, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Restructure navigation order and change CTA to Contact (`1f4fa47`)
-
-### Mar 1, 2026
-
-- Fix hero subtitle centering and mobile text cutoff (`a4d6c9f`)
 
 
 ---
