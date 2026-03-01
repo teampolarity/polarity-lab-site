@@ -1,5 +1,50 @@
 [
   {
+    "id": "857be3e",
+    "date": "2026-03-01",
+    "title": "Add hero CTA links and fix card link colors",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "fbdd46a",
+    "date": "2026-03-01",
+    "title": "Wire newsletter form to Formspree project endpoint",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
+    "id": "d22c7b1",
+    "date": "2026-03-01",
+    "title": "Fix Get Involved icons and colors, wire up Formspree",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "e1cc440",
+    "date": "2026-03-01",
+    "title": "Standardize product cards to Explore, update Contributors link",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
+    "id": "742874f",
+    "date": "2026-03-01",
+    "title": "Add Get on Pulse card to Get Involved section",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "af14430",
     "date": "2026-03-01",
     "title": "Add hero CTA links and fix card link colors",
@@ -132,51 +177,6 @@
     "category": {
       "label": "Removed",
       "color": "coral"
-    }
-  },
-  {
-    "id": "d5c308c",
-    "date": "2026-03-01",
-    "title": "Update badge to Interdisciplinary Research Laboratory, fix Pulse icon square",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "e33e832",
-    "date": "2026-03-01",
-    "title": "Revert Pain Points icon to original design",
-    "category": {
-      "label": "Design",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "ce9a6f1",
-    "date": "2026-03-01",
-    "title": "Upgrade Pain Points and Pulse icons to 3D quality, add TV static to Pulse",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "528cb5b",
-    "date": "2026-03-01",
-    "title": "Fix Pain Points naming, Pulse branding, and light mode icon contrast",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "21f6c63",
-    "date": "2026-03-01",
-    "title": "Sync public/index.html with updated index.html",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

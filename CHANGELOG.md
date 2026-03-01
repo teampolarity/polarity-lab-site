@@ -6,6 +6,26 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 1, 2026
 
+- Add hero CTA links and fix card link colors (`857be3e`)
+
+### Mar 1, 2026
+
+- Wire newsletter form to Formspree project endpoint (`fbdd46a`)
+
+### Mar 1, 2026
+
+- Fix Get Involved icons and colors, wire up Formspree (`d22c7b1`)
+
+### Mar 1, 2026
+
+- Standardize product cards to Explore, update Contributors link (`e1cc440`)
+
+### Mar 1, 2026
+
+- Add Get on Pulse card to Get Involved section (`742874f`)
+
+### Mar 1, 2026
+
 - Add hero CTA links and fix card link colors (`af14430`)
 
 ### Mar 1, 2026
@@ -63,26 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Use live site Pain Points icon, remove badge dot for centering (`e2de17d`)
-
-### Mar 1, 2026
-
-- Update badge to Interdisciplinary Research Laboratory, fix Pulse icon square (`d5c308c`)
-
-### Mar 1, 2026
-
-- Revert Pain Points icon to original design (`e33e832`)
-
-### Mar 1, 2026
-
-- Upgrade Pain Points and Pulse icons to 3D quality, add TV static to Pulse (`ce9a6f1`)
-
-### Mar 1, 2026
-
-- Fix Pain Points naming, Pulse branding, and light mode icon contrast (`528cb5b`)
-
-### Mar 1, 2026
-
-- Sync public/index.html with updated index.html (`21f6c63`)
 
 
 ---
