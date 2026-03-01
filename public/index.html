@@ -614,6 +614,7 @@
 
     .hero-product--avdp .hero-product-icon {
       filter: drop-shadow(0 0 50px var(--coral-glow));
+      overflow: hidden;
     }
 
     .hero-product--painpoints {
@@ -2742,10 +2743,11 @@
             <circle cx="100" cy="100" r="88" fill="none" stroke="#FF6B00" stroke-width="1.5" opacity="0.3" filter="url(#pulseRingGlow)"/>
             <!-- Main disc -->
             <circle cx="100" cy="100" r="82" fill="url(#pulseBaseGrad)"/>
-            <!-- TV static overlay -->
-            <circle cx="100" cy="100" r="82" filter="url(#pulseStatic)" fill="transparent"/>
-            <!-- Scanlines -->
-            <circle cx="100" cy="100" r="82" fill="url(#pulseScanlines)"/>
+            <!-- TV static overlay + scanlines (clipped to disc) -->
+            <g clip-path="url(#pulseClip)">
+              <circle cx="100" cy="100" r="82" filter="url(#pulseStatic)" fill="transparent"/>
+              <circle cx="100" cy="100" r="82" fill="url(#pulseScanlines)"/>
+            </g>
             <!-- Inner subtle ring -->
             <circle cx="100" cy="100" r="82" fill="none" stroke="#FF6B00" stroke-width="0.5" opacity="0.2"/>
             <!-- Pulse line (clipped to circle) -->
@@ -2779,7 +2781,7 @@
 
     <!-- Text 1: Hero -->
     <div class="scroll-text scroll-text--center" id="text-hero" style="top: 56%;">
-      <div class="hero-badge">Research Laboratory</div>
+      <div class="hero-badge">Interdisciplinary Research Laboratory</div>
       <h1 class="hero-title">
         We measure <span class="gradient">what matters</span>
       </h1>
