@@ -891,6 +891,32 @@
       padding: 0 24px;
     }
 
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .hero-cta a {
+      color: var(--teal);
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .hero-cta a:hover {
+      opacity: 0.7;
+    }
+
+    .hero-cta-dot {
+      color: var(--text-secondary);
+      opacity: 0.4;
+    }
+
     /* Scroll indicator */
     .hero-scroll {
       position: absolute;
@@ -1886,7 +1912,8 @@
 
     .involve-card:nth-child(1) a { color: var(--teal); }
     .involve-card:nth-child(2) a { color: var(--purple); }
-    .involve-card:nth-child(3) a { color: var(--coral); }
+    .involve-card:nth-child(3) a { color: #E63329; }
+    .involve-card:nth-child(4) a { color: #FF6B00; }
 
     .involve-card a:hover { gap: 12px; }
 
@@ -2802,8 +2829,15 @@
         We measure <span class="gradient">what matters</span>
       </h1>
       <p class="hero-subtitle">
-        We built an algorithm that teaches systems what to hold onto. Not just what you said. The weight it carries.
+        Tools that help you think more clearly, powered by an algorithm that learns what carries weight.
       </p>
+      <div class="hero-cta">
+        <a href="https://app.polarity-lab.com/" target="_blank">Try Polarity</a>
+        <span class="hero-cta-dot">·</span>
+        <a href="#products">Explore our products</a>
+        <span class="hero-cta-dot">·</span>
+        <a href="#ccx">Read the research</a>
+      </div>
     </div>
 
     <!-- Scroll choreography text removed - now using actual content sections -->
