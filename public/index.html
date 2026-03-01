@@ -2689,10 +2689,87 @@
         <span class="hero-product-label">Pain Points</span>
       </a>
 
-      <!-- AVDP -->
+      <!-- Pulse -->
       <a href="https://onpulse.tv" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
-        <div class="hero-product-icon avdp-icon">
-          <img src="AVDPLOGOREAL.jpg" alt="Pulse">
+        <div class="hero-product-icon">
+          <svg viewBox="0 0 200 200">
+            <defs>
+              <radialGradient id="pulseBaseGrad" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#2a1a0a"/>
+                <stop offset="60%" stop-color="#1a0f05"/>
+                <stop offset="100%" stop-color="#0d0804"/>
+              </radialGradient>
+              <radialGradient id="pulseAmbient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#FF6B00" stop-opacity="0.15"/>
+                <stop offset="100%" stop-color="#FF6B00" stop-opacity="0"/>
+              </radialGradient>
+              <filter id="pulseLineGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <filter id="pulseRingGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="4" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <clipPath id="pulseClip">
+                <circle cx="100" cy="100" r="82"/>
+              </clipPath>
+              <!-- TV static noise filter -->
+              <filter id="pulseStatic" x="0%" y="0%" width="100%" height="100%">
+                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="2" result="noise"/>
+                <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+                <feComponentTransfer in="grayNoise" result="staticNoise">
+                  <feFuncA type="linear" slope="0.12" intercept="0"/>
+                </feComponentTransfer>
+                <feBlend in="SourceGraphic" in2="staticNoise" mode="screen"/>
+              </filter>
+              <!-- Scanline pattern -->
+              <pattern id="pulseScanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+                <rect width="4" height="2" fill="white" opacity="0.015"/>
+                <rect y="2" width="4" height="2" fill="black" opacity="0.03"/>
+              </pattern>
+            </defs>
+            <!-- Ambient glow -->
+            <circle cx="100" cy="100" r="95" fill="url(#pulseAmbient)"/>
+            <!-- Outer ring -->
+            <circle cx="100" cy="100" r="88" fill="none" stroke="#FF6B00" stroke-width="1.5" opacity="0.3" filter="url(#pulseRingGlow)"/>
+            <!-- Main disc -->
+            <circle cx="100" cy="100" r="82" fill="url(#pulseBaseGrad)"/>
+            <!-- TV static overlay -->
+            <circle cx="100" cy="100" r="82" filter="url(#pulseStatic)" fill="transparent"/>
+            <!-- Scanlines -->
+            <circle cx="100" cy="100" r="82" fill="url(#pulseScanlines)"/>
+            <!-- Inner subtle ring -->
+            <circle cx="100" cy="100" r="82" fill="none" stroke="#FF6B00" stroke-width="0.5" opacity="0.2"/>
+            <!-- Pulse line (clipped to circle) -->
+            <g clip-path="url(#pulseClip)">
+              <!-- Faint horizontal scanline bands -->
+              <line x1="20" y1="65" x2="180" y2="65" stroke="#FF6B00" stroke-width="0.2" opacity="0.06"/>
+              <line x1="20" y1="80" x2="180" y2="80" stroke="#FF6B00" stroke-width="0.3" opacity="0.08"/>
+              <line x1="20" y1="100" x2="180" y2="100" stroke="#FF6B00" stroke-width="0.15" opacity="0.04"/>
+              <line x1="20" y1="120" x2="180" y2="120" stroke="#FF6B00" stroke-width="0.3" opacity="0.08"/>
+              <line x1="20" y1="135" x2="180" y2="135" stroke="#FF6B00" stroke-width="0.2" opacity="0.06"/>
+              <!-- Main pulse line -->
+              <polyline
+                points="20,100 55,100 68,60 82,140 96,75 110,125 124,100 180,100"
+                stroke="#FF6B00"
+                stroke-width="4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                fill="none"
+                filter="url(#pulseLineGlow)"
+              />
+            </g>
+            <!-- Glossy highlight -->
+            <ellipse cx="80" cy="72" rx="40" ry="25" fill="white" opacity="0.04"/>
+          </svg>
         </div>
         <span class="hero-product-label">Pulse</span>
       </a>
@@ -2876,11 +2953,12 @@
 
           <a href="https://onpulse.tv" target="_blank" class="product-card">
             <div class="product-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
-                <path d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="24" cy="24" r="22" fill="#1a0f05" stroke="#FF6B00" stroke-width="0.5" opacity="0.9"/>
+                <polyline points="4,24 12,24 16,14 20,34 24,18 28,30 32,24 44,24" stroke="#FF6B00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
               </svg>
             </div>
-            <div class="product-name" style="letter-spacing: 0.1em; text-transform: uppercase;">Pulse</div>
+            <div class="product-name" style="text-transform: uppercase;">Pulse</div>
             <div class="product-desc">A digital broadcasting network. Live content, long form conversation, and the research engine behind how we study real dialogue.</div>
             <span class="product-arrow">Explore</span>
           </a>
@@ -2893,7 +2971,7 @@
       <div class="section-inner">
         <div class="studio-header reveal">
           <p class="section-label">The Studio</p>
-          <h2 class="section-title" style="letter-spacing: 0.15em; text-transform: uppercase;">Pulse</h2>
+          <h2 class="section-title" style="text-transform: uppercase;">Pulse</h2>
           <p class="studio-subtitle">Keep your hand on the pulse. A digital broadcasting network by Polarity Lab.</p>
         </div>
 
