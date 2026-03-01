@@ -1,5 +1,14 @@
 [
   {
+    "id": "6a8a46a",
+    "date": "2026-03-01",
+    "title": "Fix OG title to complement card image instead of repeating it",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "58081c3",
     "date": "2026-03-01",
     "title": "Add OG card for social media sharing",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "cd59ad2",
-    "date": "2026-03-01",
-    "title": "Add badge glow, Pulse globe wireframe, fix card icons, WaxFeed caps",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

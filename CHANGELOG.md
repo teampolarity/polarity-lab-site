@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 1, 2026
 
+- Fix OG title to complement card image instead of repeating it (`6a8a46a`)
+
+### Mar 1, 2026
+
 - Add OG card for social media sharing (`58081c3`)
 
 ### Mar 1, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Add Get on Pulse card to Get Involved section (`b190105`)
-
-### Mar 1, 2026
-
-- Add badge glow, Pulse globe wireframe, fix card icons, WaxFeed caps (`cd59ad2`)
 
 
 ---
