@@ -1906,6 +1906,124 @@
       .involve-grid { grid-template-columns: 1fr; }
     }
 
+    /* Studio Section */
+    .studio-header {
+      text-align: center;
+      margin: 0 auto 80px;
+    }
+
+    .studio-header .section-label {
+      justify-content: center;
+    }
+
+    .studio-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 16px auto 0;
+      line-height: 1.6;
+    }
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 48px;
+    }
+
+    .studio-card {
+      background: var(--void-surface);
+      border: 1px solid var(--border-ghost);
+      border-radius: 20px;
+      padding: 36px;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: all 0.5s var(--ease-out-expo);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .studio-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-medium);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .studio-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .studio-card:nth-child(1) .studio-card-icon { background: rgba(255, 138, 101, 0.15); }
+    .studio-card:nth-child(2) .studio-card-icon { background: var(--teal-subtle); }
+
+    .studio-card-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .studio-card h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-pure);
+    }
+
+    .studio-card p {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .studio-card a, .studio-card span.studio-link {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.4s var(--ease-out-expo);
+    }
+
+    .studio-card:nth-child(1) a, .studio-card:nth-child(1) span.studio-link { color: var(--coral); }
+    .studio-card:nth-child(2) a, .studio-card:nth-child(2) span.studio-link { color: var(--teal); }
+
+    .studio-card a:hover, .studio-card span.studio-link:hover { gap: 12px; }
+
+    .studio-cta {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .studio-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      transition: gap 0.4s var(--ease-out-expo);
+    }
+
+    .studio-cta a:hover { gap: 14px; }
+
+    @media (max-width: 768px) {
+      .studio-grid { grid-template-columns: 1fr; }
+    }
+
     /* Algorithm CTA Section */
     .algorithm-cta {
       text-align: center;
@@ -2757,6 +2875,45 @@
             <div class="product-desc">A Very Distant Perspective. Long-form conversation that goes somewhere real. Every episode is research data the algorithm trains on.</div>
             <span class="product-arrow">Listen →</span>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STUDIO SECTION -->
+    <section class="spatial-section studio" id="studio">
+      <div class="section-inner">
+        <div class="studio-header reveal">
+          <p class="section-label">The Studio</p>
+          <h2 class="section-title">Pulse</h2>
+          <p class="studio-subtitle">A digital broadcasting network by Polarity Lab.</p>
+        </div>
+
+        <div class="studio-grid stagger">
+          <div class="studio-card">
+            <div class="studio-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
+                <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
+              </svg>
+            </div>
+            <h3>A Very Distant Perspective</h3>
+            <p>Real conversations between real people about what it means to be a person right now. The kind of dialogue that helps us understand how people actually communicate when they care.</p>
+            <a href="https://www.instagram.com/averydistantperspective" target="_blank">Watch on Instagram</a>
+          </div>
+
+          <a href="https://onpulse.tv" target="_blank" class="studio-card">
+            <div class="studio-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                <path d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+              </svg>
+            </div>
+            <h3>Broadcast</h3>
+            <p>Live content delivery across WBRU and partner channels. Music, conversation, and culture.</p>
+            <span class="studio-link">Visit onpulse.tv</span>
+          </a>
+        </div>
+
+        <div class="studio-cta reveal">
+          <a href="https://onpulse.tv" target="_blank">Explore Pulse</a>
         </div>
       </div>
     </section>
