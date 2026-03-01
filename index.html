@@ -654,8 +654,8 @@
       top: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      max-width: 900px;
-      padding: 0 48px;
+      width: min(900px, 90vw);
+      box-sizing: border-box;
     }
 
     .scroll-text--left {
@@ -865,7 +865,7 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(40px, 6vw, 72px);
+      font-size: clamp(32px, 5vw, 72px);
       font-weight: 600;
       letter-spacing: -0.03em;
       line-height: 1.1;
@@ -889,6 +889,33 @@
       line-height: 1.7;
       text-align: center;
       padding: 0 24px;
+    }
+
+    .hero-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 500;
+      flex-wrap: wrap;
+    }
+
+    .hero-cta a {
+      color: var(--teal);
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .hero-cta a:hover {
+      opacity: 0.7;
+    }
+
+    .hero-cta-dot {
+      color: var(--text-secondary);
+      opacity: 0.4;
     }
 
     /* Scroll indicator */
@@ -1886,7 +1913,8 @@
 
     .involve-card:nth-child(1) a { color: var(--teal); }
     .involve-card:nth-child(2) a { color: var(--purple); }
-    .involve-card:nth-child(3) a { color: var(--coral); }
+    .involve-card:nth-child(3) a { color: #E63329; }
+    .involve-card:nth-child(4) a { color: #FF6B00; }
 
     .involve-card a:hover { gap: 12px; }
 
@@ -2387,6 +2415,12 @@
         padding: 0 8px;
         line-height: 1.5;
       }
+      .hero-cta {
+        gap: 8px;
+        font-size: 12px;
+        margin-top: 14px;
+        flex-wrap: wrap;
+      }
       .hero-badge {
         font-size: 9px;
         padding: 6px 14px;
@@ -2796,14 +2830,21 @@
     <!-- SCROLL TEXT REVEALS -->
 
     <!-- Text 1: Hero -->
-    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 56%;">
+    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 50%;">
       <div class="hero-badge">Interdisciplinary Research Laboratory</div>
       <h1 class="hero-title">
         We measure <span class="gradient">what matters</span>
       </h1>
       <p class="hero-subtitle">
-        We built an algorithm that teaches systems what to hold onto. Not just what you said. The weight it carries.
+        Tools that help you think more clearly, powered by an algorithm that learns what carries weight.
       </p>
+      <div class="hero-cta">
+        <a href="https://app.polarity-lab.com/" target="_blank">Try Polarity</a>
+        <span class="hero-cta-dot">·</span>
+        <a href="#products">Explore our products</a>
+        <span class="hero-cta-dot">·</span>
+        <a href="#ccx">Read the research</a>
+      </div>
     </div>
 
     <!-- Scroll choreography text removed - now using actual content sections -->
