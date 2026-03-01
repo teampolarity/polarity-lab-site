@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050508">
-  <meta name="description" content="Polarity Lab - We build technology that understands what matters to you. Not just what you said, but the weight it carries.">
+  <meta name="description" content="Polarity Lab. We build technology that understands what matters to you. Not just what you said, but the weight it carries.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <title>POLARITY</title>
@@ -878,6 +878,7 @@
       margin: 0 auto;
       line-height: 1.7;
       text-align: center;
+      padding: 0 24px;
     }
 
     /* Scroll indicator */
@@ -981,7 +982,7 @@
     /* ==========================================
        CONTENT SECTIONS (Visible when scrolled)
        ========================================== */
-    .ccx, .about, .team, .products, .safety, .research, .involve, .contact {
+    .ccx, .about, .team, .products, .studio, .safety, .research, .involve, .contact {
       background: linear-gradient(180deg, var(--void-deep) 0%, var(--void-space) 20%, var(--void-space) 80%, var(--void-deep) 100%);
     }
 
@@ -1840,7 +1841,6 @@
     .involve-card:nth-child(1) .involve-card-icon { background: var(--teal-subtle); }
     .involve-card:nth-child(2) .involve-card-icon { background: rgba(187, 143, 206, 0.15); }
     .involve-card:nth-child(3) .involve-card-icon { background: rgba(255, 138, 101, 0.15); }
-    .involve-card:nth-child(4) .involve-card-icon { background: var(--teal-subtle); }
 
     .involve-card-icon svg {
       width: 26px;
@@ -1876,7 +1876,6 @@
     .involve-card:nth-child(1) a { color: var(--teal); }
     .involve-card:nth-child(2) a { color: var(--purple); }
     .involve-card:nth-child(3) a { color: var(--coral); }
-    .involve-card:nth-child(4) a { color: var(--teal); }
 
     .involve-card a:hover { gap: 12px; }
 
@@ -1903,6 +1902,125 @@
 
     @media (max-width: 768px) {
       .involve-grid { grid-template-columns: 1fr; }
+      .safety-privacy-grid { grid-template-columns: 1fr !important; }
+    }
+
+    /* Studio Section */
+    .studio-header {
+      text-align: center;
+      margin: 0 auto 80px;
+    }
+
+    .studio-header .section-label {
+      justify-content: center;
+    }
+
+    .studio-subtitle {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 16px auto 0;
+      line-height: 1.6;
+    }
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto 48px;
+    }
+
+    .studio-card {
+      background: var(--void-surface);
+      border: 1px solid var(--border-ghost);
+      border-radius: 20px;
+      padding: 36px;
+      text-decoration: none;
+      color: var(--text-primary);
+      transition: all 0.5s var(--ease-out-expo);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .studio-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-medium);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .studio-card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .studio-card:nth-child(1) .studio-card-icon { background: rgba(255, 138, 101, 0.15); }
+    .studio-card:nth-child(2) .studio-card-icon { background: var(--teal-subtle); }
+
+    .studio-card-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .studio-card h3 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--text-pure);
+    }
+
+    .studio-card p {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .studio-card a, .studio-card span.studio-link {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.4s var(--ease-out-expo);
+    }
+
+    .studio-card:nth-child(1) a, .studio-card:nth-child(1) span.studio-link { color: var(--coral); }
+    .studio-card:nth-child(2) a, .studio-card:nth-child(2) span.studio-link { color: var(--teal); }
+
+    .studio-card a:hover, .studio-card span.studio-link:hover { gap: 12px; }
+
+    .studio-cta {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .studio-cta a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      transition: gap 0.4s var(--ease-out-expo);
+    }
+
+    .studio-cta a:hover { gap: 14px; }
+
+    @media (max-width: 768px) {
+      .studio-grid { grid-template-columns: 1fr; }
     }
 
     /* Algorithm CTA Section */
@@ -2243,7 +2361,7 @@
 
       /* Hero text — move up so title + subtitle don't clip */
       .scroll-text--center {
-        top: 52% !important;
+        top: 48% !important;
         padding: 0 20px;
         max-width: 100%;
       }
@@ -2253,10 +2371,10 @@
         margin-bottom: 16px;
       }
       .hero-subtitle {
-        font-size: 14px;
+        font-size: 13px;
         max-width: 100%;
-        padding: 0;
-        line-height: 1.6;
+        padding: 0 8px;
+        line-height: 1.5;
       }
       .hero-badge {
         font-size: 9px;
@@ -2477,15 +2595,16 @@
     </a>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="#ccx" class="nav-link">Science</a></li>
       <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#team" class="nav-link">Team</a></li>
+      <li><a href="#ccx" class="nav-link">Science</a></li>
       <li><a href="#products" class="nav-link">Products</a></li>
+      <li><a href="#studio" class="nav-link">Studio</a></li>
+      <li><a href="#team" class="nav-link">Team</a></li>
       <li><a href="#research" class="nav-link">Research</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
 
-    <a href="https://algorithm.polarity-lab.com" target="_blank" class="nav-cta"><span>The Algorithm</span></a>
+    <a href="#contact" class="nav-cta"><span>Contact</span></a>
 
     <button class="nav-mobile" id="nav-mobile" aria-label="Toggle menu">
       <span></span>
@@ -2563,11 +2682,11 @@
       </a>
 
       <!-- AVDP -->
-      <a href="https://linktr.ee/averydistantperspective" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
+      <a href="https://onpulse.tv" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
         <div class="hero-product-icon avdp-icon">
-          <img src="AVDPLOGOREAL.jpg" alt="AVDP">
+          <img src="AVDPLOGOREAL.jpg" alt="Pulse">
         </div>
-        <span class="hero-product-label">AVDP</span>
+        <span class="hero-product-label">Pulse</span>
       </a>
     </div>
 
@@ -2599,6 +2718,61 @@
       <div class="section-inner"></div>
     </section>
 
+    <!-- ABOUT SECTION -->
+    <section class="spatial-section about" id="about">
+      <div class="section-inner">
+        <div class="about-header reveal">
+          <p class="section-label">Who We Are</p>
+          <h2 class="section-title">A research lab that studies how conversation reveals how the mind works</h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-main reveal">
+            <div class="about-main-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+              </svg>
+            </div>
+            <h3>The Algorithm<span class="about-main-badge">Core</span></h3>
+            <p>We built an algorithm that measures what things weigh in someone's life. It does not care about the domain. It cares about what matters to the person talking. Every product we ship generates real conversations. Those conversations feed the algorithm. The algorithm gets smarter. The thing people use and the thing we study are the same thing.</p>
+            <a href="https://algorithm.polarity-lab.com" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; transition: gap 0.4s var(--ease-out-expo);" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='6px'">Read the full pitch →</a>
+          </div>
+
+          <div class="about-cards stagger">
+            <div class="about-card">
+              <div class="about-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                  <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+                </svg>
+              </div>
+              <h4>Open Platform</h4>
+              <p>The algorithm does not know what music is. Or finance. Or healthcare. It knows what things weigh and how that weight changes over time. You bring the domain.</p>
+            </div>
+
+            <div class="about-card">
+              <div class="about-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
+                  <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582"/>
+                </svg>
+              </div>
+              <h4>The Purpose</h4>
+              <p>Not a form, not a chatbot. A thinking partner that helps you figure out what you're actually trying to say. Other AI tells you what to think. Polarity helps you think more clearly.</p>
+            </div>
+
+            <div class="about-card">
+              <div class="about-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
+                  <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
+                </svg>
+              </div>
+              <h4>Three Environments</h4>
+              <p>Human to human. Human to computer to human. Human to computer. Every product we build creates one of these environments. Every conversation inside them feeds the science.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CCX SECTION -->
     <section class="spatial-section ccx" id="ccx">
       <div class="section-inner">
@@ -2609,7 +2783,7 @@
 
             <div class="ccx-definition">
               <div class="ccx-definition-term">CCX / Conversational Connectomics</div>
-              <p class="ccx-definition-desc">How the things you say reveal the things that matter. The science behind measuring what carries weight in someone's life — based on how they talk about it.</p>
+              <p class="ccx-definition-desc">How the things you say reveal the things that matter. The science behind measuring what carries weight in someone's life, based on how they talk about it.</p>
             </div>
 
             <div class="ccx-steps stagger">
@@ -2653,57 +2827,94 @@
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="spatial-section about" id="about">
+    <!-- PRODUCTS SECTION -->
+    <section class="spatial-section products" id="products">
       <div class="section-inner">
-        <div class="about-header reveal">
-          <p class="section-label">Who We Are</p>
-          <h2 class="section-title">A research lab that ships</h2>
+        <div class="products-header reveal">
+          <p class="section-label">Our Products</p>
+          <h2 class="section-title">Everything we ship feeds the algorithm</h2>
         </div>
 
-        <div class="about-grid">
-          <div class="about-main reveal">
-            <div class="about-main-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
+        <div class="products-grid stagger">
+          <a href="https://app.polarity-lab.com/" target="_blank" class="product-card">
+            <div class="product-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
               </svg>
             </div>
-            <h3>The Algorithm<span class="about-main-badge">Core</span></h3>
-            <p>We built an algorithm that measures what things weigh in someone's life. It does not care about the domain. It cares about what matters to the person talking. Every product we ship generates real conversations. Those conversations make the algorithm smarter. The thing people use and the thing we study are the same thing.</p>
-            <a href="https://algorithm.polarity-lab.com" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; transition: gap 0.4s var(--ease-out-expo);" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='6px'">Read the full pitch →</a>
+            <div class="product-name">Polarity</div>
+            <div class="product-desc">Not a chatbot. A thinking partner that helps you figure out what you're actually trying to say. Talk to it and it learns what matters to you.</div>
+            <span class="product-arrow">Explore →</span>
+          </a>
+
+          <a href="https://wax-feed.com" target="_blank" class="product-card">
+            <div class="product-icon">
+              <img src="waxfeed_disc.svg" alt="WaxFeed">
+            </div>
+            <div class="product-name">WaxFeed</div>
+            <div class="product-desc">We pointed the algorithm at music. Did not change the math. Out came a social platform that knows your taste, not your recent plays.</div>
+            <span class="product-arrow">Explore →</span>
+          </a>
+
+          <div class="product-card" style="cursor: default;">
+            <div class="product-icon">
+              <img src="painpoints-icon.svg" alt="Painpoints">
+            </div>
+            <div class="product-name">Painpoints</div>
+            <div class="product-desc">Fund problems, not promises. The algorithm surfaces what actually matters to people, then matches real builders to real problems. Same math, different domain.</div>
+            <span class="product-arrow" style="color: #FFA07A;">Q2 2026 →</span>
           </div>
 
-          <div class="about-cards stagger">
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                  <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
-                </svg>
-              </div>
-              <h4>Open Platform</h4>
-              <p>The algorithm does not know what music is. Or finance. Or healthcare. It knows what things weigh and how that weight changes over time. You bring the domain.</p>
+          <a href="https://onpulse.tv" target="_blank" class="product-card">
+            <div class="product-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
+                <path d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+              </svg>
             </div>
+            <div class="product-name">Pulse</div>
+            <div class="product-desc">A digital broadcasting network. Live content, long form conversation, and the research engine behind how we study real dialogue.</div>
+            <span class="product-arrow">Explore</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
-                  <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582"/>
-                </svg>
-              </div>
-              <h4>The Purpose</h4>
-              <p>Build technology that knows you the way a friend who has known you for 20 years would. Not efficiently. Clearly.</p>
-            </div>
+    <!-- STUDIO SECTION -->
+    <section class="spatial-section studio" id="studio">
+      <div class="section-inner">
+        <div class="studio-header reveal">
+          <p class="section-label">The Studio</p>
+          <h2 class="section-title">Pulse</h2>
+          <p class="studio-subtitle">A digital broadcasting network by Polarity Lab.</p>
+        </div>
 
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
-                  <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
-                </svg>
-              </div>
-              <h4>The Studio</h4>
-              <p>AVDP is long-form conversation between real people. Entertainment that doubles as research data. The algorithm learns from how people actually talk when they care.</p>
+        <div class="studio-grid stagger">
+          <div class="studio-card">
+            <div class="studio-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
+                <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
+              </svg>
             </div>
+            <h3>A Very Distant Perspective</h3>
+            <p>Real conversations between real people about what it means to be a person right now. The kind of dialogue that helps us understand how people actually communicate when they care.</p>
+            <a href="https://www.instagram.com/averydistantperspective" target="_blank">Watch on Instagram</a>
           </div>
+
+          <a href="https://onpulse.tv" target="_blank" class="studio-card">
+            <div class="studio-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                <path d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+              </svg>
+            </div>
+            <h3>Broadcast</h3>
+            <p>Live content delivery across WBRU and partner channels. Music, conversation, and culture.</p>
+            <span class="studio-link">Visit onpulse.tv</span>
+          </a>
+        </div>
+
+        <div class="studio-cta reveal">
+          <a href="https://onpulse.tv" target="_blank">Explore Pulse</a>
         </div>
       </div>
     </section>
@@ -2757,53 +2968,44 @@
       </div>
     </section>
 
-    <!-- PRODUCTS SECTION -->
-    <section class="spatial-section products" id="products">
+    <!-- RESEARCH SECTION -->
+    <section class="spatial-section research" id="research">
       <div class="section-inner">
-        <div class="products-header reveal">
-          <p class="section-label">Our Products</p>
-          <h2 class="section-title">Everything we ship feeds the algorithm</h2>
+        <div class="research-header reveal">
+          <p class="section-label">Research</p>
+          <h2 class="section-title">The science behind the algorithm</h2>
         </div>
 
-        <div class="products-grid stagger">
-          <a href="https://app.polarity-lab.com/" target="_blank" class="product-card">
-            <div class="product-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
-              </svg>
-            </div>
-            <div class="product-name">Polarity</div>
-            <div class="product-desc">The core product. Talk to it and it learns what matters to you. Not a chat log. A living profile that knows what was heavy enough to keep.</div>
-            <span class="product-arrow">Explore →</span>
+        <div class="research-grid stagger" style="grid-template-columns: 1fr; max-width: 800px;">
+          <a href="https://percent2agi.com" target="_blank" class="research-card" style="text-align: center; padding: 48px;">
+            <span class="research-card-tag">percent2agi.com</span>
+            <h3 style="font-size: 22px; margin-bottom: 16px;">All the research. Open.</h3>
+            <p style="max-width: 500px; margin: 0 auto 24px; font-size: 15px;">The neuroscience behind the algorithm. The architecture. Why we made every decision we made. If you want to know how it works, start here.</p>
+            <span class="research-card-arrow" style="font-size: 14px; font-weight: 600;">Visit percent2agi.com →</span>
           </a>
+        </div>
 
-          <a href="https://wax-feed.com" target="_blank" class="product-card">
-            <div class="product-icon">
-              <img src="waxfeed_disc.svg" alt="WaxFeed">
-            </div>
-            <div class="product-name">WaxFeed</div>
-            <div class="product-desc">We pointed the algorithm at music. Did not change the math. Out came a social platform that knows your taste — not your recent plays.</div>
-            <span class="product-arrow">Explore →</span>
-          </a>
-
-          <div class="product-card" style="cursor: default;">
-            <div class="product-icon">
-              <img src="painpoints-icon.svg" alt="Painpoints">
-            </div>
-            <div class="product-name">Painpoints</div>
-            <div class="product-desc">Fund problems, not promises. The algorithm surfaces what actually matters to people, then matches real builders to real problems. Same math, different domain.</div>
-            <span class="product-arrow" style="color: #FFA07A;">Q2 2026 →</span>
+        <div class="research-tags reveal">
+          <h4>What We Measure</h4>
+          <div class="research-tags-list">
+            <span class="research-tag">What Repeats</span>
+            <span class="research-tag">What Changes</span>
+            <span class="research-tag">What Carries Weight</span>
+            <span class="research-tag">What Defines You</span>
+            <span class="research-tag">What You Hold Onto</span>
           </div>
+        </div>
 
-          <a href="https://linktr.ee/averydistantperspective" target="_blank" class="product-card">
-            <div class="product-icon">
-              <img src="AVDPLOGOREAL.jpg" alt="AVDP">
-            </div>
-            <div class="product-name">AVDP</div>
-            <div class="product-desc">A Very Distant Perspective. Long-form conversation that goes somewhere real. Every episode is research data the algorithm trains on.</div>
-            <span class="product-arrow">Listen →</span>
-          </a>
+        <div class="research-patents reveal" style="margin-top: 48px; display: flex; gap: 24px; max-width: 800px; margin-left: auto; margin-right: auto; justify-content: center; flex-wrap: wrap;">
+          <div style="background: var(--void-surface); border: 1px solid var(--border-ghost); border-radius: 16px; padding: 28px 36px; text-align: center;">
+            <div style="font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--teal); margin-bottom: 8px;">2</div>
+            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">Patents Filed</div>
+          </div>
+          <div style="background: var(--void-surface); border: 1px solid var(--border-ghost); border-radius: 16px; padding: 28px 36px; flex: 1; min-width: 300px;">
+            <p style="font-family: var(--font-mono); font-size: 10px; color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">USPTO Patent Center</p>
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px;">Conversational Connectomics: Methods for Bayesian Associative Strength Estimation, Cognitive State Classification, and Integrated Cognitive Fingerprinting</p>
+            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">System and Method for Neuroanatomically Grounded Knowledge Graph Construction and Cognitive Biometric Authentication</p>
+          </div>
         </div>
       </div>
     </section>
@@ -2843,34 +3045,18 @@
             <p>Anything involving human subjects goes through IRB. No shortcuts. No exceptions.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- RESEARCH SECTION -->
-    <section class="spatial-section research" id="research">
-      <div class="section-inner">
-        <div class="research-header reveal">
-          <p class="section-label">Research</p>
-          <h2 class="section-title">The science behind the algorithm</h2>
-        </div>
-
-        <div class="research-grid stagger" style="grid-template-columns: 1fr; max-width: 800px;">
-          <a href="https://percent2agi.com" target="_blank" class="research-card" style="text-align: center; padding: 48px;">
-            <span class="research-card-tag">percent2agi.com</span>
-            <h3 style="font-size: 22px; margin-bottom: 16px;">All the research. Open.</h3>
-            <p style="max-width: 500px; margin: 0 auto 24px; font-size: 15px;">The neuroscience behind the algorithm. The architecture. Why we made every decision we made. If you want to know how it works, start here.</p>
-            <span class="research-card-arrow" style="font-size: 14px; font-weight: 600;">Visit percent2agi.com →</span>
-          </a>
-        </div>
-
-        <div class="research-tags reveal">
-          <h4>What We Measure</h4>
-          <div class="research-tags-list">
-            <span class="research-tag">What Repeats</span>
-            <span class="research-tag">What Changes</span>
-            <span class="research-tag">What Carries Weight</span>
-            <span class="research-tag">What Defines You</span>
-            <span class="research-tag">What You Hold Onto</span>
+        <div class="safety-privacy reveal" style="margin-top: 64px; background: var(--void-surface); border: 1px solid var(--border-ghost); border-radius: 20px; padding: 48px; max-width: 900px; margin-left: auto; margin-right: auto;">
+          <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text-pure); margin-bottom: 24px; text-align: center;">What You See vs What We See</h3>
+          <div class="safety-privacy-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
+            <div>
+              <h4 style="font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--teal); margin-bottom: 12px;">What You See</h4>
+              <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Your full profile. What matters to you. How your thinking has shifted over time. A living record of who you are. All of it stays between you and Polarity.</p>
+            </div>
+            <div>
+              <h4 style="font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--purple); margin-bottom: 12px;">What We See</h4>
+              <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Anonymized patterns across thousands of people. We might learn that people going through career changes tend to talk more about their close relationships. That kind of insight. Never yours specifically.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -2894,7 +3080,7 @@
             </div>
             <h3>Research Collaborators</h3>
             <p>You study how people think, remember, or communicate. We built an algorithm that measures it. We should talk.</p>
-            <a href="mailto:polarity@polarity-lab.com?subject=Research%20Collaboration">Discuss Collaboration →</a>
+            <a href="mailto:team@polarity-lab.com?subject=Research%20Collaboration">Discuss Collaboration →</a>
           </div>
 
           <div class="involve-card">
@@ -2907,7 +3093,7 @@
             </div>
             <h3>Advisors</h3>
             <p>Direction, ethics, clinical pathway. We want people who are honest, not people who are impressive.</p>
-            <a href="mailto:polarity@polarity-lab.com?subject=Advisory%20Interest">Express Interest →</a>
+            <a href="mailto:team@polarity-lab.com?subject=Advisory%20Interest">Express Interest →</a>
           </div>
 
           <div class="involve-card">
@@ -2917,20 +3103,10 @@
               </svg>
             </div>
             <h3>Contributors</h3>
-            <p>Find a real problem. Build the solution. Own the outcome. That is the Painpoints model — launching Q2 2026.</p>
-            <a href="mailto:polarity@polarity-lab.com?subject=Painpoints%20Contributor%20Interest">Get Notified →</a>
+            <p>Find a real problem. Build the solution. Own the outcome. That is the Painpoints model. Launching Q2 2026.</p>
+            <a href="mailto:team@polarity-lab.com?subject=Painpoints%20Contributor%20Interest">Get Notified →</a>
           </div>
 
-          <div class="involve-card">
-            <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-              </svg>
-            </div>
-            <h3>AVDP Podcast</h3>
-            <p>Long conversations about what it means to be a person right now. Every episode is data the algorithm learns from.</p>
-            <a href="https://www.instagram.com/averydistantperspective" target="_blank">Follow on Instagram →</a>
-          </div>
         </div>
 
         <div class="involve-cta reveal">
@@ -2959,12 +3135,12 @@
         <h2 class="contact-title reveal">Reach us</h2>
 
         <div class="contact-links reveal">
-          <a href="mailto:polarity@polarity-lab.com" class="contact-btn">
+          <a href="mailto:team@polarity-lab.com" class="contact-btn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
-            polarity@polarity-lab.com
+            team@polarity-lab.com
           </a>
 
           <a href="https://www.linkedin.com/company/polarity-lab/" target="_blank" class="contact-btn">
@@ -2994,42 +3170,42 @@
                 <span class="changelog-date">Feb '26</span>
                 <span class="changelog-tag teal">Lab</span>
               </div>
-              <p class="changelog-message">Open-sourced the algorithm pitch — <a href="https://algorithm.polarity-lab.com" target="_blank" style="color: var(--teal); text-decoration: none;">algorithm.polarity-lab.com</a> goes live</p>
+              <p class="changelog-message">Open-sourced the algorithm pitch. <a href="https://algorithm.polarity-lab.com" target="_blank" style="color: var(--teal); text-decoration: none;">algorithm.polarity-lab.com</a> goes live</p>
             </div>
             <div class="changelog-entry">
               <div class="changelog-meta">
                 <span class="changelog-date">Jan '26</span>
                 <span class="changelog-tag purple">WaxFeed</span>
               </div>
-              <p class="changelog-message">WaxFeed beta — first live deployment of the algorithm, pointed at music</p>
+              <p class="changelog-message">WaxFeed beta. First live deployment of the algorithm, pointed at music</p>
             </div>
             <div class="changelog-entry">
               <div class="changelog-meta">
                 <span class="changelog-date">Jan '26</span>
                 <span class="changelog-tag coral">Painpoints</span>
               </div>
-              <p class="changelog-message">Painpoints architecture finalized — fund problems, not promises. Public launch Q2 2026</p>
+              <p class="changelog-message">Painpoints architecture finalized. Fund problems, not promises. Public launch Q2 2026</p>
             </div>
             <div class="changelog-entry">
               <div class="changelog-meta">
                 <span class="changelog-date">Dec '25</span>
                 <span class="changelog-tag purple">Polarity</span>
               </div>
-              <p class="changelog-message">Polarity ships agentic tools — web search, workspace, live documents</p>
+              <p class="changelog-message">Polarity ships agentic tools. Web search, workspace, live documents</p>
             </div>
             <div class="changelog-entry">
               <div class="changelog-meta">
                 <span class="changelog-date">Oct '25</span>
                 <span class="changelog-tag teal">AVDP</span>
               </div>
-              <p class="changelog-message">A Very Distant Perspective launches — long-form conversation as research data</p>
+              <p class="changelog-message">A Very Distant Perspective launches. Long-form conversation as research data</p>
             </div>
             <div class="changelog-entry">
               <div class="changelog-meta">
                 <span class="changelog-date">Sep '25</span>
                 <span class="changelog-tag teal">Lab</span>
               </div>
-              <p class="changelog-message">Polarity Lab LLC incorporated — Providence, RI</p>
+              <p class="changelog-message">Polarity Lab LLC incorporated. Providence, RI</p>
             </div>
           </div>
         </div>
@@ -3332,7 +3508,7 @@
     let lastScrollY = 0;
 
     // Sections for scroll spy
-    const sections = ['ccx', 'about', 'products', 'team', 'research', 'safety', 'contact'];
+    const sections = ['about', 'ccx', 'products', 'studio', 'team', 'research', 'safety', 'contact'];
     
     function updateActiveNav() {
       const scrollY = window.scrollY + 150; // Offset for nav height
