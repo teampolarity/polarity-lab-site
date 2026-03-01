@@ -4,85 +4,85 @@ Recent updates to the Polarity Lab website.
 
 ---
 
-### Feb 14, 2026
+### Mar 1, 2026
 
-- Fix Nathan's title: uOttawa Telfer Finance & BTM '26 (`22fce28`)
+- Add badge glow, Pulse globe wireframe, fix card icons, WaxFeed caps (`cd59ad2`)
 
-### Feb 14, 2026
+### Mar 1, 2026
 
-- Update Nathan's title: Telfer '26 · Finance & BTM (`fd17744`)
+- Use live site Pain Points icon, remove badge dot for centering (`e2de17d`)
 
-### Feb 14, 2026
+### Mar 1, 2026
 
-- Move hero icons + text up to fit full viewport: constellation 35%→28%, text 62%→56% (`40c6446`)
+- Update badge to Interdisciplinary Research Laboratory, fix Pulse icon square (`d5c308c`)
 
-### Feb 14, 2026
+### Mar 1, 2026
 
-- Polish cursor + scroll feel: weighted ring/dot lerp, smooth hover offset, tighter scroll ease, no antialias waste (`97aca44`)
+- Revert Pain Points icon to original design (`e33e832`)
 
-### Feb 14, 2026
+### Mar 1, 2026
 
-- Revert to full original design + 3 surgical fixes: GPU cursor, passive listeners, mobile icon taps (`10019cc`)
+- Upgrade Pain Points and Pulse icons to 3D quality, add TV static to Pulse (`ce9a6f1`)
 
-### Feb 14, 2026
+### Mar 1, 2026
 
-- Sync public/index.html with root — ALL previous fixes were only in root, Vercel serves from public/ (`9d2fd81`)
+- Fix Pain Points naming, Pulse branding, and light mode icon contrast (`528cb5b`)
 
-### Feb 14, 2026
+### Mar 1, 2026
 
-- Fix mobile icon taps: add in-flow hero links for mobile instead of relying on fixed stage (`0ad3672`)
+- Sync public/index.html with updated index.html (`21f6c63`)
 
-### Feb 14, 2026
+### Mar 1, 2026
 
-- Fix mobile: hero product icons now tappable — override pointer-events on .hero-product links (`2c83999`)
+- Remove en dashes and hyphens as punctuation from all copy (`7bd2cd0`)
 
-### Feb 14, 2026
+### Mar 1, 2026
 
-- Massive perf overhaul: remove custom cursor, kill grain anim, drop-shadows, pulse anims, throttle WebGL to 30fps (`021c690`)
+- Update contact email to team@polarity-lab.com (`9ddddfe`)
 
-### Feb 14, 2026
+### Mar 1, 2026
 
-- Restore smooth cursor feel: add lerp to ring + dot trail, restore shader to 4 FBM iterations (`8a61c81`)
+- Remove AVDP card from Get Involved section (now in Studio) (`b9e0180`)
 
-### Feb 14, 2026
+### Mar 1, 2026
 
-- Fix click/drag lag: GPU-accelerate cursor, optimize WebGL shader and reduce compositing overhead (`a56453c`)
+- Add patent credibility to Research section (`d510ea0`)
 
-### Feb 12, 2026
+### Mar 1, 2026
 
-- Reframe Painpoints as Q2 2026 launch on landing page (`a94cc32`)
+- Add privacy narrative to Safety section (`19a75d8`)
 
-### Feb 11, 2026
+### Mar 1, 2026
 
-- Fix mobile scroll and hero text visibility (`0a5e2dc`)
+- Update About section with interdisciplinary research lab positioning (`7927fe1`)
 
-### Feb 11, 2026
+### Mar 1, 2026
 
-- Rewrite all copy to match founder voice, fix mobile scroll (`e5e9178`)
+- Update hero constellation label from AVDP to Pulse (`e7bffac`)
 
-### Feb 11, 2026
+### Mar 1, 2026
 
-- Rewrite all copy to describe what the algorithm actually does (`45bfada`)
+- Replace AVDP with Pulse in products grid and update Polarity description (`488a85d`)
 
-### Feb 11, 2026
+### Mar 1, 2026
 
-- Weave 'the algorithm' into actual copy across every section (`4a86893`)
+- Add Studio section for Pulse broadcasting network (`3c3ab2c`)
 
-### Feb 11, 2026
+### Mar 1, 2026
 
-- Push the algorithm hard across the entire site (`5edff38`)
+- Reorder HTML sections to match new navigation flow (`b1b1c41`)
 
-### Feb 11, 2026
+### Mar 1, 2026
 
-- Link algorithm.polarity-lab.com in About section and changelog (`60755db`)
+- Restructure navigation order and change CTA to Contact (`1f4fa47`)
 
-### Feb 11, 2026
+### Mar 1, 2026
 
-- Changelog shows lab + subsidiary milestones, nav CTA links to algorithm site (`cc0e038`)
+- Fix hero subtitle centering and mobile text cutoff (`a4d6c9f`)
 
-### Feb 11, 2026
+### Mar 1, 2026
 
-- Hardcode public-facing changelog, remove dynamic loader (`ab2267e`)
+- Update plans with Polarity thinking partner framing (`9f4a1c5`)
 
 
 ---

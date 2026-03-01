@@ -1,182 +1,182 @@
 [
   {
-    "id": "22fce28",
-    "date": "2026-02-14",
-    "title": "Fix Nathan's title: uOttawa Telfer Finance & BTM '26",
+    "id": "cd59ad2",
+    "date": "2026-03-01",
+    "title": "Add badge glow, Pulse globe wireframe, fix card icons, WaxFeed caps",
     "category": {
       "label": "Bug Fix",
       "color": "coral"
     }
   },
   {
-    "id": "fd17744",
-    "date": "2026-02-14",
-    "title": "Update Nathan's title: Telfer '26 · Finance & BTM",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "40c6446",
-    "date": "2026-02-14",
-    "title": "Move hero icons + text up to fit full viewport: constellation 35%→28%, text 62%→56%",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "97aca44",
-    "date": "2026-02-14",
-    "title": "Polish cursor + scroll feel: weighted ring/dot lerp, smooth hover offset, tighter scroll ease, no antialias waste",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "10019cc",
-    "date": "2026-02-14",
-    "title": "Revert to full original design + 3 surgical fixes: GPU cursor, passive listeners, mobile icon taps",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "9d2fd81",
-    "date": "2026-02-14",
-    "title": "Sync public/index.html with root — ALL previous fixes were only in root, Vercel serves from public/",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "0ad3672",
-    "date": "2026-02-14",
-    "title": "Fix mobile icon taps: add in-flow hero links for mobile instead of relying on fixed stage",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "2c83999",
-    "date": "2026-02-14",
-    "title": "Fix mobile: hero product icons now tappable — override pointer-events on .hero-product links",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "021c690",
-    "date": "2026-02-14",
-    "title": "Massive perf overhaul: remove custom cursor, kill grain anim, drop-shadows, pulse anims, throttle WebGL to 30fps",
+    "id": "e2de17d",
+    "date": "2026-03-01",
+    "title": "Use live site Pain Points icon, remove badge dot for centering",
     "category": {
       "label": "Removed",
       "color": "coral"
     }
   },
   {
-    "id": "8a61c81",
-    "date": "2026-02-14",
-    "title": "Restore smooth cursor feel: add lerp to ring + dot trail, restore shader to 4 FBM iterations",
+    "id": "d5c308c",
+    "date": "2026-03-01",
+    "title": "Update badge to Interdisciplinary Research Laboratory, fix Pulse icon square",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "e33e832",
+    "date": "2026-03-01",
+    "title": "Revert Pain Points icon to original design",
+    "category": {
+      "label": "Design",
+      "color": "purple"
+    }
+  },
+  {
+    "id": "ce9a6f1",
+    "date": "2026-03-01",
+    "title": "Upgrade Pain Points and Pulse icons to 3D quality, add TV static to Pulse",
     "category": {
       "label": "New Feature",
       "color": "teal"
     }
   },
   {
-    "id": "a56453c",
-    "date": "2026-02-14",
-    "title": "Fix click/drag lag: GPU-accelerate cursor, optimize WebGL shader and reduce compositing overhead",
+    "id": "528cb5b",
+    "date": "2026-03-01",
+    "title": "Fix Pain Points naming, Pulse branding, and light mode icon contrast",
     "category": {
       "label": "Bug Fix",
       "color": "coral"
     }
   },
   {
-    "id": "a94cc32",
-    "date": "2026-02-12",
-    "title": "Reframe Painpoints as Q2 2026 launch on landing page",
+    "id": "21f6c63",
+    "date": "2026-03-01",
+    "title": "Sync public/index.html with updated index.html",
     "category": {
-      "label": "Update",
-      "color": "text-secondary"
+      "label": "Enhancement",
+      "color": "purple"
     }
   },
   {
-    "id": "0a5e2dc",
-    "date": "2026-02-11",
-    "title": "Fix mobile scroll and hero text visibility",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "e5e9178",
-    "date": "2026-02-11",
-    "title": "Rewrite all copy to match founder voice, fix mobile scroll",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "45bfada",
-    "date": "2026-02-11",
-    "title": "Rewrite all copy to describe what the algorithm actually does",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "4a86893",
-    "date": "2026-02-11",
-    "title": "Weave 'the algorithm' into actual copy across every section",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "5edff38",
-    "date": "2026-02-11",
-    "title": "Push the algorithm hard across the entire site",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "60755db",
-    "date": "2026-02-11",
-    "title": "Link algorithm.polarity-lab.com in About section and changelog",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "cc0e038",
-    "date": "2026-02-11",
-    "title": "Changelog shows lab + subsidiary milestones, nav CTA links to algorithm site",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "ab2267e",
-    "date": "2026-02-11",
-    "title": "Hardcode public-facing changelog, remove dynamic loader",
+    "id": "7bd2cd0",
+    "date": "2026-03-01",
+    "title": "Remove en dashes and hyphens as punctuation from all copy",
     "category": {
       "label": "Removed",
       "color": "coral"
+    }
+  },
+  {
+    "id": "9ddddfe",
+    "date": "2026-03-01",
+    "title": "Update contact email to team@polarity-lab.com",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
+    "id": "b9e0180",
+    "date": "2026-03-01",
+    "title": "Remove AVDP card from Get Involved section (now in Studio)",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "d510ea0",
+    "date": "2026-03-01",
+    "title": "Add patent credibility to Research section",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "19a75d8",
+    "date": "2026-03-01",
+    "title": "Add privacy narrative to Safety section",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "7927fe1",
+    "date": "2026-03-01",
+    "title": "Update About section with interdisciplinary research lab positioning",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
+    "id": "e7bffac",
+    "date": "2026-03-01",
+    "title": "Update hero constellation label from AVDP to Pulse",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
+    "id": "488a85d",
+    "date": "2026-03-01",
+    "title": "Replace AVDP with Pulse in products grid and update Polarity description",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
+    "id": "3c3ab2c",
+    "date": "2026-03-01",
+    "title": "Add Studio section for Pulse broadcasting network",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "b1b1c41",
+    "date": "2026-03-01",
+    "title": "Reorder HTML sections to match new navigation flow",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
+    "id": "1f4fa47",
+    "date": "2026-03-01",
+    "title": "Restructure navigation order and change CTA to Contact",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
+    "id": "a4d6c9f",
+    "date": "2026-03-01",
+    "title": "Fix hero subtitle centering and mobile text cutoff",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "9f4a1c5",
+    "date": "2026-03-01",
+    "title": "Update plans with Polarity thinking partner framing",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
     }
   }
 ]
