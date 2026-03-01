@@ -6,6 +6,22 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 1, 2026
 
+- Wire newsletter form to Formspree project endpoint (`7129741`)
+
+### Mar 1, 2026
+
+- Fix Get Involved icons and colors, wire up Formspree (`4fdbc1d`)
+
+### Mar 1, 2026
+
+- Standardize product cards to Explore, update Contributors link (`5a84b14`)
+
+### Mar 1, 2026
+
+- Add Get on Pulse card to Get Involved section (`291134e`)
+
+### Mar 1, 2026
+
 - Fix Get Involved icons and colors, wire up Formspree (`4cd2d2d`)
 
 ### Mar 1, 2026
@@ -67,22 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Add privacy narrative to Safety section (`19a75d8`)
-
-### Mar 1, 2026
-
-- Update About section with interdisciplinary research lab positioning (`7927fe1`)
-
-### Mar 1, 2026
-
-- Update hero constellation label from AVDP to Pulse (`e7bffac`)
-
-### Mar 1, 2026
-
-- Replace AVDP with Pulse in products grid and update Polarity description (`488a85d`)
-
-### Mar 1, 2026
-
-- Add Studio section for Pulse broadcasting network (`3c3ab2c`)
 
 
 ---

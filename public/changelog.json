@@ -1,5 +1,41 @@
 [
   {
+    "id": "7129741",
+    "date": "2026-03-01",
+    "title": "Wire newsletter form to Formspree project endpoint",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
+    "id": "4fdbc1d",
+    "date": "2026-03-01",
+    "title": "Fix Get Involved icons and colors, wire up Formspree",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "5a84b14",
+    "date": "2026-03-01",
+    "title": "Standardize product cards to Explore, update Contributors link",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
+    "id": "291134e",
+    "date": "2026-03-01",
+    "title": "Add Get on Pulse card to Get Involved section",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "4cd2d2d",
     "date": "2026-03-01",
     "title": "Fix Get Involved icons and colors, wire up Formspree",
@@ -138,42 +174,6 @@
     "id": "19a75d8",
     "date": "2026-03-01",
     "title": "Add privacy narrative to Safety section",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "7927fe1",
-    "date": "2026-03-01",
-    "title": "Update About section with interdisciplinary research lab positioning",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "e7bffac",
-    "date": "2026-03-01",
-    "title": "Update hero constellation label from AVDP to Pulse",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "488a85d",
-    "date": "2026-03-01",
-    "title": "Replace AVDP with Pulse in products grid and update Polarity description",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "3c3ab2c",
-    "date": "2026-03-01",
-    "title": "Add Studio section for Pulse broadcasting network",
     "category": {
       "label": "New Feature",
       "color": "teal"
