@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 1, 2026
 
+- Add OG card for social media sharing (`58081c3`)
+
+### Mar 1, 2026
+
 - Add hero CTA links and fix card link colors (`857be3e`)
 
 ### Mar 1, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Add badge glow, Pulse globe wireframe, fix card icons, WaxFeed caps (`cd59ad2`)
-
-### Mar 1, 2026
-
-- Use live site Pain Points icon, remove badge dot for centering (`e2de17d`)
 
 
 ---
