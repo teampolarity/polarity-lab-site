@@ -846,6 +846,12 @@
     .scroll-text.visible .hero-badge {
       opacity: 1;
       transform: scale(1);
+      animation: badgeGlow 4s ease-in-out 1.5s infinite;
+    }
+
+    @keyframes badgeGlow {
+      0%, 100% { box-shadow: 0 0 0px transparent, inset 0 0 0px transparent; }
+      50% { box-shadow: 0 0 12px rgba(78, 205, 196, 0.2), 0 0 25px rgba(78, 205, 196, 0.08), inset 0 0 8px rgba(78, 205, 196, 0.05); }
     }
 
     .hero-badge::before {
@@ -2628,7 +2634,7 @@
         <div class="hero-product-icon">
           <img src="waxfeed_disc.svg" alt="WaxFeed">
         </div>
-        <span class="hero-product-label">WaxFeed</span>
+        <span class="hero-product-label" style="text-transform: uppercase;">WaxFeed</span>
       </a>
 
       <!-- Polarity -->
@@ -2745,6 +2751,20 @@
             </g>
             <!-- Inner subtle ring -->
             <circle cx="100" cy="100" r="82" fill="none" stroke="#FF6B00" stroke-width="0.5" opacity="0.2"/>
+            <!-- Broadcast globe wireframe (clipped to disc) -->
+            <g clip-path="url(#pulseClip)" stroke="#FF6B00" fill="none" opacity="0.1">
+              <!-- Concentric broadcast arcs -->
+              <circle cx="100" cy="100" r="30" stroke-width="0.6"/>
+              <circle cx="100" cy="100" r="50" stroke-width="0.5"/>
+              <circle cx="100" cy="100" r="70" stroke-width="0.4"/>
+              <!-- Meridian lines (vertical curves) -->
+              <ellipse cx="100" cy="100" rx="20" ry="75" stroke-width="0.4"/>
+              <ellipse cx="100" cy="100" rx="50" ry="75" stroke-width="0.3"/>
+              <!-- Equator + latitude lines -->
+              <ellipse cx="100" cy="100" rx="75" ry="12" stroke-width="0.4"/>
+              <ellipse cx="100" cy="80" rx="65" ry="8" stroke-width="0.3"/>
+              <ellipse cx="100" cy="120" rx="65" ry="8" stroke-width="0.3"/>
+            </g>
             <!-- Pulse line (clipped to circle) -->
             <g clip-path="url(#pulseClip)">
               <!-- Faint horizontal scanline bands -->
@@ -2834,7 +2854,7 @@
             <div class="about-card">
               <div class="about-card-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
-                  <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582"/>
+                  <path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
                 </svg>
               </div>
               <h4>The Purpose</h4>
@@ -2844,7 +2864,9 @@
             <div class="about-card">
               <div class="about-card-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
-                  <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
+                  <circle cx="8" cy="10" r="5"/>
+                  <circle cx="16" cy="10" r="5"/>
+                  <circle cx="12" cy="16" r="5"/>
                 </svg>
               </div>
               <h4>Three Environments</h4>
@@ -2934,7 +2956,7 @@
             <div class="product-icon">
               <img src="waxfeed_disc.svg" alt="WaxFeed">
             </div>
-            <div class="product-name">WaxFeed</div>
+            <div class="product-name" style="text-transform: uppercase;">WaxFeed</div>
             <div class="product-desc">We pointed the algorithm at music. Did not change the math. Out came a social platform that knows your taste, not your recent plays.</div>
             <span class="product-arrow">Explore →</span>
           </a>
