@@ -1,0 +1,13 @@
+{
+  "forms": {
+    "newsletter": {
+      "name": "Newsletter Signup",
+      "actions": [
+        {
+          "type": "email",
+          "to": "team@polarity-lab.com"
+        }
+      ]
+    }
+  }
+}
