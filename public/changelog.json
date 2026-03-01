@@ -1,5 +1,14 @@
 [
   {
+    "id": "b190105",
+    "date": "2026-03-01",
+    "title": "Add Get on Pulse card to Get Involved section",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "cd59ad2",
     "date": "2026-03-01",
     "title": "Add badge glow, Pulse globe wireframe, fix card icons, WaxFeed caps",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "9f4a1c5",
-    "date": "2026-03-01",
-    "title": "Update plans with Polarity thinking partner framing",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

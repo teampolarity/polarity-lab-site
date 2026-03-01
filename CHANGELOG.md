@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 1, 2026
 
+- Add Get on Pulse card to Get Involved section (`b190105`)
+
+### Mar 1, 2026
+
 - Add badge glow, Pulse globe wireframe, fix card icons, WaxFeed caps (`cd59ad2`)
 
 ### Mar 1, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Fix hero subtitle centering and mobile text cutoff (`a4d6c9f`)
-
-### Mar 1, 2026
-
-- Update plans with Polarity thinking partner framing (`9f4a1c5`)
 
 
 ---
