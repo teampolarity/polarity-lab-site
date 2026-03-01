@@ -6,6 +6,26 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 1, 2026
 
+- Add hero CTA links and fix card link colors (`af14430`)
+
+### Mar 1, 2026
+
+- Wire newsletter form to Formspree project endpoint (`43d20b4`)
+
+### Mar 1, 2026
+
+- Fix Get Involved icons and colors, wire up Formspree (`7597053`)
+
+### Mar 1, 2026
+
+- Standardize product cards to Explore, update Contributors link (`9472f73`)
+
+### Mar 1, 2026
+
+- Add Get on Pulse card to Get Involved section (`7cb5219`)
+
+### Mar 1, 2026
+
 - Wire newsletter form to Formspree project endpoint (`7129741`)
 
 ### Mar 1, 2026
@@ -63,26 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Sync public/index.html with updated index.html (`21f6c63`)
-
-### Mar 1, 2026
-
-- Remove en dashes and hyphens as punctuation from all copy (`7bd2cd0`)
-
-### Mar 1, 2026
-
-- Update contact email to team@polarity-lab.com (`9ddddfe`)
-
-### Mar 1, 2026
-
-- Remove AVDP card from Get Involved section (now in Studio) (`b9e0180`)
-
-### Mar 1, 2026
-
-- Add patent credibility to Research section (`d510ea0`)
-
-### Mar 1, 2026
-
-- Add privacy narrative to Safety section (`19a75d8`)
 
 
 ---

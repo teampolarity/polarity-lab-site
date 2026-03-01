@@ -1,5 +1,50 @@
 [
   {
+    "id": "af14430",
+    "date": "2026-03-01",
+    "title": "Add hero CTA links and fix card link colors",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "43d20b4",
+    "date": "2026-03-01",
+    "title": "Wire newsletter form to Formspree project endpoint",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
+    "id": "7597053",
+    "date": "2026-03-01",
+    "title": "Fix Get Involved icons and colors, wire up Formspree",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "9472f73",
+    "date": "2026-03-01",
+    "title": "Standardize product cards to Explore, update Contributors link",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
+    "id": "7cb5219",
+    "date": "2026-03-01",
+    "title": "Add Get on Pulse card to Get Involved section",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "7129741",
     "date": "2026-03-01",
     "title": "Wire newsletter form to Formspree project endpoint",
@@ -132,51 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "7bd2cd0",
-    "date": "2026-03-01",
-    "title": "Remove en dashes and hyphens as punctuation from all copy",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "9ddddfe",
-    "date": "2026-03-01",
-    "title": "Update contact email to team@polarity-lab.com",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "b9e0180",
-    "date": "2026-03-01",
-    "title": "Remove AVDP card from Get Involved section (now in Studio)",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "d510ea0",
-    "date": "2026-03-01",
-    "title": "Add patent credibility to Research section",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "19a75d8",
-    "date": "2026-03-01",
-    "title": "Add privacy narrative to Safety section",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
