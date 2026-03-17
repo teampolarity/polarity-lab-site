@@ -921,21 +921,21 @@
     /* Responsive hero */
     @media (max-width: 1024px) {
       .hero-constellation {
-        gap: 40px;
+        gap: 30px;
         max-width: 900px;
       }
-      .hero-product-icon { width: 120px; height: 120px; }
-      .hero-product--polarity .hero-product-icon { width: 150px; height: 150px; }
+      .hero-product-icon { width: 100px; height: 100px; }
+      .hero-product--polarity .hero-product-icon { width: 130px; height: 130px; }
     }
 
     @media (max-width: 768px) {
       .hero-constellation {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto auto auto;
-        gap: 24px;
-        padding: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto;
+        gap: 16px 12px;
+        padding: 16px 24px;
         max-width: 100%;
-        top: 30%;
+        top: 28%;
       }
       .hero-product--waxfeed,
       .hero-product--avdp,
@@ -944,13 +944,29 @@
       .hero-product--fonmydj {
         justify-self: center;
       }
-      .hero-product--avdp {
-        grid-column: 1 / -1;
-        justify-self: center !important;
-      }
-      .hero-product-icon { width: 90px; height: 90px; }
-      .hero-product--polarity .hero-product-icon { width: 110px; height: 110px; }
+      /* Row 1: WaxFeed | Polarity (center) | Pain Points */
+      .hero-product--waxfeed { order: 1; }
+      .hero-product--polarity { order: 2; }
+      .hero-product--painpoints { order: 3; }
+      /* Row 2: FONMYDJ | gap | AVDP */
+      .hero-product--fonmydj { order: 4; }
+      .hero-product--avdp { order: 5; grid-column: 3; }
+      .hero-product-icon { width: 80px; height: 80px; }
+      .hero-product--polarity .hero-product-icon { width: 100px; height: 100px; }
       .hero-product-label { font-size: 9px; letter-spacing: 0.1em; }
+      .hero-product { gap: 10px; }
+    }
+
+    @media (max-width: 480px) {
+      .hero-constellation {
+        gap: 10px 6px;
+        padding: 10px 16px;
+        top: 24%;
+      }
+      .hero-product-icon { width: 58px; height: 58px; }
+      .hero-product--polarity .hero-product-icon { width: 74px; height: 74px; }
+      .hero-product-label { font-size: 7px; letter-spacing: 0.06em; }
+      .hero-product { gap: 6px; }
 
       .scroll-text--left,
       .scroll-text--right {
