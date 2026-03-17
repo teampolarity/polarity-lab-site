@@ -523,10 +523,10 @@
       left: 50%;
       transform: translate(-50%, -50%);
       display: grid;
-      grid-template-columns: 1fr auto auto 1fr;
+      grid-template-columns: 1fr auto auto auto 1fr;
       align-items: center;
       justify-items: center;
-      gap: 60px;
+      gap: 50px;
       width: 100%;
       max-width: 1200px;
       padding: 40px 20px;
@@ -593,8 +593,9 @@
       color: var(--text-pure);
     }
 
-    /* Product specific styling */
+    /* Product specific styling - order for 5-col centering Polarity */
     .hero-product--waxfeed {
+      order: 1;
       justify-self: end;
       z-index: 2;
     }
@@ -604,6 +605,7 @@
     }
 
     .hero-product--polarity {
+      order: 3;
       z-index: 3;
     }
 
@@ -624,6 +626,7 @@
     }
 
     .hero-product--avdp {
+      order: 5;
       justify-self: start;
       z-index: 2;
     }
@@ -634,6 +637,7 @@
     }
 
     .hero-product--painpoints {
+      order: 2;
       z-index: 2;
     }
 
@@ -647,6 +651,16 @@
 
     [data-theme="light"] .product-card img[alt="Pain Points"] {
       filter: brightness(0.7) contrast(1.4) saturate(1.3);
+    }
+
+    .hero-product--fonmydj {
+      order: 4;
+      justify-self: center;
+      z-index: 2;
+    }
+
+    .hero-product--fonmydj .hero-product-icon {
+      filter: drop-shadow(0 0 50px rgba(245, 158, 11, 0.5));
     }
 
     /* ==========================================
@@ -984,17 +998,17 @@
     /* Responsive hero */
     @media (max-width: 1024px) {
       .hero-constellation {
-        gap: 40px;
+        gap: 30px;
         max-width: 900px;
       }
-      .hero-product-icon { width: 120px; height: 120px; }
-      .hero-product--polarity .hero-product-icon { width: 150px; height: 150px; }
+      .hero-product-icon { width: 100px; height: 100px; }
+      .hero-product--polarity .hero-product-icon { width: 130px; height: 130px; }
     }
 
     @media (max-width: 768px) {
       .hero-constellation {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto auto;
+        grid-template-rows: auto auto auto;
         gap: 16px;
         padding: 16px;
         max-width: 100%;
@@ -1003,8 +1017,12 @@
       .hero-product--waxfeed,
       .hero-product--avdp,
       .hero-product--polarity,
-      .hero-product--painpoints {
+      .hero-product--painpoints,
+      .hero-product--fonmydj {
         justify-self: center;
+      }
+      .hero-product--fonmydj {
+        grid-column: 1 / -1;
       }
       .hero-product-icon { width: 70px; height: 70px; }
       .hero-product--polarity .hero-product-icon { width: 90px; height: 90px; }
@@ -1529,9 +1547,9 @@
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 24px;
-      max-width: 1300px;
+      max-width: 1400px;
       margin: 0 auto;
     }
 
@@ -1560,7 +1578,8 @@
 
     .product-card:nth-child(2)::before { background: linear-gradient(135deg, var(--purple-glow), transparent); }
     .product-card:nth-child(3)::before { background: linear-gradient(135deg, var(--red-glow), transparent); }
-    .product-card:nth-child(4)::before { background: linear-gradient(135deg, var(--coral-glow), transparent); }
+    .product-card:nth-child(4)::before { background: linear-gradient(135deg, rgba(245, 158, 11, 0.5), transparent); }
+    .product-card:nth-child(5)::before { background: linear-gradient(135deg, var(--coral-glow), transparent); }
 
     .product-card:hover {
       transform: translateY(-12px) scale(1.02);
@@ -1586,7 +1605,8 @@
     .product-card:nth-child(1) .product-icon { background: var(--teal-subtle); }
     .product-card:nth-child(2) .product-icon { background: rgba(187, 143, 206, 0.15); }
     .product-card:nth-child(3) .product-icon { background: var(--red-subtle); }
-    .product-card:nth-child(4) .product-icon { background: rgba(255, 138, 101, 0.15); }
+    .product-card:nth-child(4) .product-icon { background: rgba(245, 158, 11, 0.15); }
+    .product-card:nth-child(5) .product-icon { background: rgba(255, 138, 101, 0.15); }
 
     .product-icon svg,
     .product-icon img {
@@ -1636,10 +1656,17 @@
       transform: translateX(0);
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1200px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        max-width: 900px;
+      }
+    }
+
+    @media (max-width: 900px) {
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 800px;
+        max-width: 600px;
       }
     }
 
@@ -2742,6 +2769,59 @@
         <span class="hero-product-label">Pain Points</span>
       </a>
 
+      <!-- FONMYDJ -->
+      <a href="https://fonmydj.com" target="_blank" class="hero-product hero-product--fonmydj" id="icon-fonmydj">
+        <div class="hero-product-icon">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="fmAmbient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="fmCoreGrad" cx="35%" cy="35%" r="65%">
+                <stop offset="0%" stop-color="#FCD34D"/>
+                <stop offset="60%" stop-color="#F59E0B"/>
+                <stop offset="100%" stop-color="#B45309"/>
+              </radialGradient>
+              <filter id="fmGlow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="4" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+              <filter id="fmCoreGlow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="6" result="blur"/>
+                <feMerge>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="blur"/>
+                  <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+              </filter>
+            </defs>
+            <!-- Ambient glow -->
+            <circle cx="100" cy="100" r="90" fill="url(#fmAmbient)"/>
+            <!-- Orbital sound rings -->
+            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#F59E0B" stroke-width="2" transform="rotate(-30 100 100)" filter="url(#fmGlow)" opacity="0.4"/>
+            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FBBF24" stroke-width="2" transform="rotate(30 100 100)" filter="url(#fmGlow)" opacity="0.4"/>
+            <!-- Sound source core -->
+            <circle cx="78" cy="100" r="18" fill="url(#fmCoreGrad)" filter="url(#fmCoreGlow)"/>
+            <circle cx="73" cy="94" r="6" fill="white" opacity="0.25"/>
+            <!-- Sound wave arcs -->
+            <path d="M102 74C117 82 124 90 124 100C124 110 117 118 102 126" fill="none" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.9"/>
+            <path d="M110 58C134 70 144 84 144 100C144 116 134 130 110 142" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.6"/>
+            <path d="M118 44C150 60 164 78 164 100C164 122 150 140 118 156" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.35"/>
+            <!-- Orbital particles -->
+            <circle cx="168" cy="78" r="6" fill="#FBBF24" filter="url(#fmGlow)" opacity="0.9"/>
+            <circle cx="38" cy="118" r="5" fill="#F59E0B" filter="url(#fmGlow)" opacity="0.7"/>
+            <circle cx="156" cy="132" r="4" fill="#FCD34D" filter="url(#fmGlow)" opacity="0.8"/>
+          </svg>
+        </div>
+        <span class="hero-product-label">FONMYDJ</span>
+      </a>
+
       <!-- Pulse -->
       <a href="https://onpulse.tv" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
         <div class="hero-product-icon">
@@ -3027,6 +3107,20 @@
             <div class="product-desc">Fund problems, not promises. The algorithm surfaces what actually matters to people, then matches real builders to real problems. Same math, different domain.</div>
             <span class="product-arrow">Explore →</span>
           </div>
+
+          <a href="https://fonmydj.com" target="_blank" class="product-card">
+            <div class="product-icon">
+              <svg viewBox="0 0 48 48" fill="none">
+                <circle cx="18" cy="24" r="7" fill="#F59E0B" opacity="0.9"/>
+                <circle cx="16" cy="22" r="2.5" fill="white" opacity="0.2"/>
+                <path d="M27 16C33 18 37 21 37 24C37 27 33 30 27 32" fill="none" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M30 10C39 14 44 19 44 24C44 29 39 34 30 38" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="product-name" style="text-transform: uppercase;">FONMYDJ</div>
+            <div class="product-desc">Request songs from your DJ in real time. The algorithm meets nightlife, turning crowd energy into a live feedback loop between the floor and the booth.</div>
+            <span class="product-arrow">Explore →</span>
+          </a>
 
           <a href="https://onpulse.tv" target="_blank" class="product-card">
             <div class="product-icon">
@@ -3735,6 +3829,7 @@
         this.iconWaxfeed = document.getElementById('icon-waxfeed');
         this.iconPolarity = document.getElementById('icon-polarity');
         this.iconPainpoints = document.getElementById('icon-painpoints');
+        this.iconFonmydj = document.getElementById('icon-fonmydj');
         this.iconAvdp = document.getElementById('icon-avdp');
         this.scrollIndicator = document.getElementById('scroll-indicator');
 
@@ -3824,6 +3919,16 @@
           const ppRotate = iconExitProgress * 15;
           this.iconPainpoints.style.transform = `translate(${ppX}px, ${ppY}px) scale(${ppScale}) rotate(${ppRotate}deg)`;
           this.iconPainpoints.style.opacity = ppOpacity;
+        }
+
+        if (this.iconFonmydj) {
+          const fmX = iconExitProgress * 160;
+          const fmY = iconExitProgress * 120;
+          const fmOpacity = 1 - iconExitProgress;
+          const fmScale = 1 - iconExitProgress * 0.2;
+          const fmRotate = iconExitProgress * 10;
+          this.iconFonmydj.style.transform = `translate(${fmX}px, ${fmY}px) scale(${fmScale}) rotate(${fmRotate}deg)`;
+          this.iconFonmydj.style.opacity = fmOpacity;
         }
 
         if (this.iconAvdp) {
