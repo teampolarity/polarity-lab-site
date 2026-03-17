@@ -1,5 +1,14 @@
 [
   {
+    "id": "d402d78",
+    "date": "2026-03-17",
+    "title": "Fix Pain Points icon path and label broken by merge",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "7f5ad12",
     "date": "2026-03-17",
     "title": "Fix FONMYDJ product description to match actual product",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "4cd2d2d",
-    "date": "2026-03-01",
-    "title": "Fix Get Involved icons and colors, wire up Formspree",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

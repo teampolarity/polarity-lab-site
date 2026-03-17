@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 17, 2026
 
+- Fix Pain Points icon path and label broken by merge (`d402d78`)
+
+### Mar 17, 2026
+
 - Fix FONMYDJ product description to match actual product (`7f5ad12`)
 
 ### Mar 17, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Add Get on Pulse card to Get Involved section (`291134e`)
-
-### Mar 1, 2026
-
-- Fix Get Involved icons and colors, wire up Formspree (`4cd2d2d`)
 
 
 ---
