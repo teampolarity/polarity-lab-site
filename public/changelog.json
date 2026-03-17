@@ -1,5 +1,23 @@
 [
   {
+    "id": "7f5ad12",
+    "date": "2026-03-17",
+    "title": "Fix FONMYDJ product description to match actual product",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "99231c5",
+    "date": "2026-03-17",
+    "title": "Fix FONMYDJ product description to match actual product",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "66b7294",
     "date": "2026-03-17",
     "title": "Add FONMYDJ to hero constellation and products grid",
@@ -159,24 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "94b6e3f",
-    "date": "2026-03-01",
-    "title": "Add Get on Pulse card to Get Involved section",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "98220af",
-    "date": "2026-03-01",
-    "title": "Standardize product cards to Explore, update Contributors link",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

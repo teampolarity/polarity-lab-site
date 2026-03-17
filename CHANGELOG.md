@@ -6,6 +6,14 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 17, 2026
 
+- Fix FONMYDJ product description to match actual product (`7f5ad12`)
+
+### Mar 17, 2026
+
+- Fix FONMYDJ product description to match actual product (`99231c5`)
+
+### Mar 17, 2026
+
 - Add FONMYDJ to hero constellation and products grid (`66b7294`)
 
 ### Mar 1, 2026
@@ -75,14 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Fix Get Involved icons and colors, wire up Formspree (`4cd2d2d`)
-
-### Mar 1, 2026
-
-- Add Get on Pulse card to Get Involved section (`94b6e3f`)
-
-### Mar 1, 2026
-
-- Standardize product cards to Explore, update Contributors link (`98220af`)
 
 
 ---
