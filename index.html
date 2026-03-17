@@ -4,23 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050508">
-  <meta name="description" content="Polarity Lab. We build technology that understands what matters to you. Not just what you said, but the weight it carries.">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://polarity-lab.com/">
-  <meta property="og:title" content="Polarity Lab — Try the tools, explore the research">
-  <meta property="og:description" content="Tools that help you think more clearly, powered by an algorithm that learns what carries weight.">
-  <meta property="og:image" content="https://polarity-lab.com/og-image.png">
-  <meta property="og:image:width" content="2400">
-  <meta property="og:image:height" content="1260">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Polarity Lab — Try the tools, explore the research">
-  <meta name="twitter:description" content="Tools that help you think more clearly, powered by an algorithm that learns what carries weight.">
-  <meta name="twitter:image" content="https://polarity-lab.com/og-image.png">
-
+  <meta name="description" content="Polarity Lab - Research laboratory studying Conversational Connectomics (CCX). Extracting cognitive signals from natural language. Providence, RI.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <title>POLARITY</title>
@@ -67,6 +51,11 @@
       --red: #E63329;
       --red-glow: rgba(230, 51, 41, 0.5);
       --red-subtle: rgba(230, 51, 41, 0.12);
+
+      --amber: #F59E0B;
+      --amber-bright: #FBBF24;
+      --amber-glow: rgba(245, 158, 11, 0.5);
+      --amber-subtle: rgba(245, 158, 11, 0.12);
 
       /* Text hierarchy */
       --text-pure: #ffffff;
@@ -205,15 +194,13 @@
        ========================================== */
     .cursor {
       position: fixed;
-      top: 0;
-      left: 0;
       width: 20px;
       height: 20px;
       border: 1px solid var(--teal);
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
-      will-change: transform;
+      transform: translate(-50%, -50%);
       transition: width 0.3s var(--ease-out-expo), height 0.3s var(--ease-out-expo), border-color 0.3s ease;
       mix-blend-mode: difference;
     }
@@ -226,15 +213,13 @@
 
     .cursor-dot {
       position: fixed;
-      top: 0;
-      left: 0;
       width: 4px;
       height: 4px;
       background: var(--teal);
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
-      will-change: transform;
+      transform: translate(-50%, -50%);
       mix-blend-mode: difference;
     }
 
@@ -404,26 +389,7 @@
     @media (max-width: 900px) {
       .nav { padding: 16px 24px; }
       .nav.scrolled { padding: 12px 24px; }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--void-deep);
-        border-bottom: 1px solid var(--border-ghost);
-        flex-direction: column;
-        padding: 16px 24px;
-        gap: 4px;
-      }
-      .nav-links.open {
-        display: flex;
-      }
-      .nav-links .nav-link {
-        padding: 12px 0;
-        font-size: 14px;
-      }
-      .nav-cta { display: none; }
+      .nav-links, .nav-cta { display: none; }
       .nav-mobile { display: block; }
     }
 
@@ -485,7 +451,6 @@
     .scroll-container {
       position: relative;
       z-index: 1;
-      -webkit-overflow-scrolling: touch;
     }
 
     .spatial-section {
@@ -504,7 +469,6 @@
     .section-inner {
       width: 100%;
       max-width: 1400px;
-      margin: 0 auto;
       padding: 120px 48px;
       position: relative;
       z-index: 1;
@@ -519,14 +483,14 @@
        ========================================== */
     .hero-constellation {
       position: absolute;
-      top: 28%;
+      top: 35%;
       left: 50%;
       transform: translate(-50%, -50%);
       display: grid;
       grid-template-columns: 1fr auto auto auto 1fr;
       align-items: center;
       justify-items: center;
-      gap: 50px;
+      gap: 60px;
       width: 100%;
       max-width: 1200px;
       padding: 40px 20px;
@@ -593,9 +557,8 @@
       color: var(--text-pure);
     }
 
-    /* Product specific styling - order for 5-col centering Polarity */
+    /* Product specific styling */
     .hero-product--waxfeed {
-      order: 1;
       justify-self: end;
       z-index: 2;
     }
@@ -605,7 +568,6 @@
     }
 
     .hero-product--polarity {
-      order: 3;
       z-index: 3;
     }
 
@@ -626,18 +588,15 @@
     }
 
     .hero-product--avdp {
-      order: 5;
       justify-self: start;
       z-index: 2;
     }
 
     .hero-product--avdp .hero-product-icon {
       filter: drop-shadow(0 0 50px var(--coral-glow));
-      overflow: hidden;
     }
 
     .hero-product--painpoints {
-      order: 2;
       z-index: 2;
     }
 
@@ -645,22 +604,12 @@
       filter: drop-shadow(0 0 50px var(--red-glow));
     }
 
-    [data-theme="light"] .hero-product--painpoints .hero-product-icon img {
-      filter: brightness(0.7) contrast(1.4) saturate(1.3);
-    }
-
-    [data-theme="light"] .product-card img[alt="Pain Points"] {
-      filter: brightness(0.7) contrast(1.4) saturate(1.3);
-    }
-
     .hero-product--fonmydj {
-      order: 4;
-      justify-self: center;
       z-index: 2;
     }
 
     .hero-product--fonmydj .hero-product-icon {
-      filter: drop-shadow(0 0 50px rgba(245, 158, 11, 0.5));
+      filter: drop-shadow(0 0 50px var(--amber-glow));
     }
 
     /* ==========================================
@@ -684,8 +633,8 @@
       top: 50%;
       transform: translate(-50%, -50%);
       text-align: center;
-      width: min(900px, 90vw);
-      box-sizing: border-box;
+      max-width: 900px;
+      padding: 0 48px;
     }
 
     .scroll-text--left {
@@ -876,16 +825,15 @@
     .scroll-text.visible .hero-badge {
       opacity: 1;
       transform: scale(1);
-      animation: badgeGlow 4s ease-in-out 1.5s infinite;
-    }
-
-    @keyframes badgeGlow {
-      0%, 100% { box-shadow: 0 0 0px transparent, inset 0 0 0px transparent; }
-      50% { box-shadow: 0 0 12px rgba(78, 205, 196, 0.2), 0 0 25px rgba(78, 205, 196, 0.08), inset 0 0 8px rgba(78, 205, 196, 0.05); }
     }
 
     .hero-badge::before {
-      content: none;
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
     }
 
     @keyframes pulse {
@@ -895,7 +843,7 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(32px, 5vw, 72px);
+      font-size: clamp(40px, 6vw, 72px);
       font-weight: 600;
       letter-spacing: -0.03em;
       line-height: 1.1;
@@ -915,37 +863,7 @@
       font-weight: 400;
       color: var(--text-secondary);
       max-width: 520px;
-      margin: 0 auto;
       line-height: 1.7;
-      text-align: center;
-      padding: 0 24px;
-    }
-
-    .hero-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin-top: 20px;
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 500;
-      flex-wrap: wrap;
-    }
-
-    .hero-cta a {
-      color: var(--teal);
-      text-decoration: none;
-      transition: opacity 0.3s ease;
-    }
-
-    .hero-cta a:hover {
-      opacity: 0.7;
-    }
-
-    .hero-cta-dot {
-      color: var(--text-secondary);
-      opacity: 0.4;
     }
 
     /* Scroll indicator */
@@ -998,21 +916,21 @@
     /* Responsive hero */
     @media (max-width: 1024px) {
       .hero-constellation {
-        gap: 30px;
+        gap: 40px;
         max-width: 900px;
       }
-      .hero-product-icon { width: 100px; height: 100px; }
-      .hero-product--polarity .hero-product-icon { width: 130px; height: 130px; }
+      .hero-product-icon { width: 120px; height: 120px; }
+      .hero-product--polarity .hero-product-icon { width: 150px; height: 150px; }
     }
 
     @media (max-width: 768px) {
       .hero-constellation {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto auto auto;
-        gap: 16px;
-        padding: 16px;
+        gap: 24px;
+        padding: 20px;
         max-width: 100%;
-        top: 26%;
+        top: 30%;
       }
       .hero-product--waxfeed,
       .hero-product--avdp,
@@ -1021,12 +939,13 @@
       .hero-product--fonmydj {
         justify-self: center;
       }
-      .hero-product--fonmydj {
+      .hero-product--avdp {
         grid-column: 1 / -1;
+        justify-self: center !important;
       }
-      .hero-product-icon { width: 70px; height: 70px; }
-      .hero-product--polarity .hero-product-icon { width: 90px; height: 90px; }
-      .hero-product-label { font-size: 8px; letter-spacing: 0.1em; }
+      .hero-product-icon { width: 90px; height: 90px; }
+      .hero-product--polarity .hero-product-icon { width: 110px; height: 110px; }
+      .hero-product-label { font-size: 9px; letter-spacing: 0.1em; }
 
       .scroll-text--left,
       .scroll-text--right {
@@ -1053,7 +972,7 @@
     /* ==========================================
        CONTENT SECTIONS (Visible when scrolled)
        ========================================== */
-    .ccx, .about, .team, .products, .studio, .safety, .research, .involve, .contact {
+    .ccx, .about, .team, .products, .safety, .research, .involve, .contact {
       background: linear-gradient(180deg, var(--void-deep) 0%, var(--void-space) 20%, var(--void-space) 80%, var(--void-deep) 100%);
     }
 
@@ -1284,20 +1203,13 @@
     /* About Section */
     .about-header {
       max-width: 700px;
-      margin: 0 auto 80px;
-      text-align: center;
-    }
-
-    .about-header .section-label {
-      justify-content: center;
+      margin-bottom: 80px;
     }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1.3fr 1fr;
       gap: 40px;
-      max-width: 1200px;
-      margin: 0 auto;
     }
 
     .about-main {
@@ -1424,11 +1336,7 @@
     /* Team Section */
     .team-header {
       text-align: center;
-      margin: 0 auto 80px;
-    }
-
-    .team-header .section-label {
-      justify-content: center;
+      margin-bottom: 80px;
     }
 
     .team-location {
@@ -1537,19 +1445,14 @@
     /* Products Section */
     .products-header {
       text-align: center;
-      margin: 0 auto 80px;
-      max-width: 700px;
-    }
-
-    .products-header .section-label {
-      justify-content: center;
+      margin-bottom: 80px;
     }
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
-      max-width: 1400px;
+      max-width: 1300px;
       margin: 0 auto;
     }
 
@@ -1563,8 +1466,6 @@
       transition: all 0.6s var(--ease-out-expo);
       position: relative;
       overflow: hidden;
-      display: flex;
-      flex-direction: column;
     }
 
     .product-card::before {
@@ -1578,8 +1479,8 @@
 
     .product-card:nth-child(2)::before { background: linear-gradient(135deg, var(--purple-glow), transparent); }
     .product-card:nth-child(3)::before { background: linear-gradient(135deg, var(--red-glow), transparent); }
-    .product-card:nth-child(4)::before { background: linear-gradient(135deg, rgba(245, 158, 11, 0.5), transparent); }
-    .product-card:nth-child(5)::before { background: linear-gradient(135deg, var(--coral-glow), transparent); }
+    .product-card:nth-child(4)::before { background: linear-gradient(135deg, var(--coral-glow), transparent); }
+    .product-card:nth-child(5)::before { background: linear-gradient(135deg, var(--amber-glow), transparent); }
 
     .product-card:hover {
       transform: translateY(-12px) scale(1.02);
@@ -1605,8 +1506,8 @@
     .product-card:nth-child(1) .product-icon { background: var(--teal-subtle); }
     .product-card:nth-child(2) .product-icon { background: rgba(187, 143, 206, 0.15); }
     .product-card:nth-child(3) .product-icon { background: var(--red-subtle); }
-    .product-card:nth-child(4) .product-icon { background: rgba(245, 158, 11, 0.15); }
-    .product-card:nth-child(5) .product-icon { background: rgba(255, 138, 101, 0.15); }
+    .product-card:nth-child(4) .product-icon { background: rgba(255, 138, 101, 0.15); }
+    .product-card:nth-child(5) .product-icon { background: var(--amber-subtle); }
 
     .product-icon svg,
     .product-icon img {
@@ -1636,7 +1537,6 @@
       z-index: 1;
       margin-bottom: 20px;
       line-height: 1.6;
-      flex: 1;
     }
 
     .product-arrow {
@@ -1656,17 +1556,10 @@
       transform: translateX(0);
     }
 
-    @media (max-width: 1200px) {
-      .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-        max-width: 900px;
-      }
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: 1100px) {
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 600px;
+        max-width: 800px;
       }
     }
 
@@ -1710,9 +1603,6 @@
       padding: 32px;
       text-align: center;
       transition: all 0.4s var(--ease-out-expo);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
     }
 
     .safety-item:hover {
@@ -1758,11 +1648,7 @@
     /* Research Section */
     .research-header {
       text-align: center;
-      margin: 0 auto 80px;
-    }
-
-    .research-header .section-label {
-      justify-content: center;
+      margin-bottom: 80px;
     }
 
     .research-grid {
@@ -1879,11 +1765,7 @@
     /* Involve Section */
     .involve-header {
       text-align: center;
-      margin: 0 auto 80px;
-    }
-
-    .involve-header .section-label {
-      justify-content: center;
+      margin-bottom: 80px;
     }
 
     .involve-grid {
@@ -1920,8 +1802,8 @@
 
     .involve-card:nth-child(1) .involve-card-icon { background: var(--teal-subtle); }
     .involve-card:nth-child(2) .involve-card-icon { background: rgba(187, 143, 206, 0.15); }
-    .involve-card:nth-child(3) .involve-card-icon { background: var(--red-subtle); }
-    .involve-card:nth-child(4) .involve-card-icon { background: rgba(255, 107, 0, 0.15); }
+    .involve-card:nth-child(3) .involve-card-icon { background: rgba(255, 138, 101, 0.15); }
+    .involve-card:nth-child(4) .involve-card-icon { background: var(--teal-subtle); }
 
     .involve-card-icon svg {
       width: 26px;
@@ -1956,8 +1838,8 @@
 
     .involve-card:nth-child(1) a { color: var(--teal); }
     .involve-card:nth-child(2) a { color: var(--purple); }
-    .involve-card:nth-child(3) a { color: #E63329; }
-    .involve-card:nth-child(4) a { color: #FF6B00; }
+    .involve-card:nth-child(3) a { color: var(--coral); }
+    .involve-card:nth-child(4) a { color: var(--teal); }
 
     .involve-card a:hover { gap: 12px; }
 
@@ -1984,206 +1866,6 @@
 
     @media (max-width: 768px) {
       .involve-grid { grid-template-columns: 1fr; }
-      .safety-privacy-grid { grid-template-columns: 1fr !important; }
-    }
-
-    /* Studio Section */
-    .studio-header {
-      text-align: center;
-      margin: 0 auto 80px;
-    }
-
-    .studio-header .section-label {
-      justify-content: center;
-    }
-
-    .studio-subtitle {
-      font-size: 16px;
-      color: var(--text-secondary);
-      max-width: 600px;
-      margin: 16px auto 0;
-      line-height: 1.6;
-    }
-
-    .studio-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-      max-width: 900px;
-      margin: 0 auto 48px;
-    }
-
-    .studio-card {
-      background: var(--void-surface);
-      border: 1px solid var(--border-ghost);
-      border-radius: 20px;
-      padding: 36px;
-      text-decoration: none;
-      color: var(--text-primary);
-      transition: all 0.5s var(--ease-out-expo);
-      display: flex;
-      flex-direction: column;
-    }
-
-    .studio-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--border-medium);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    }
-
-    .studio-card-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .studio-card:nth-child(1) .studio-card-icon { background: rgba(255, 138, 101, 0.15); }
-    .studio-card:nth-child(2) .studio-card-icon { background: var(--teal-subtle); }
-
-    .studio-card-icon svg {
-      width: 26px;
-      height: 26px;
-    }
-
-    .studio-card h3 {
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      color: var(--text-pure);
-    }
-
-    .studio-card p {
-      font-size: 14px;
-      color: var(--text-tertiary);
-      line-height: 1.6;
-      margin-bottom: 16px;
-      flex: 1;
-    }
-
-    .studio-card a, .studio-card span.studio-link {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: gap 0.4s var(--ease-out-expo);
-    }
-
-    .studio-card:nth-child(1) a, .studio-card:nth-child(1) span.studio-link { color: var(--coral); }
-    .studio-card:nth-child(2) a, .studio-card:nth-child(2) span.studio-link { color: var(--teal); }
-
-    .studio-card a:hover, .studio-card span.studio-link:hover { gap: 12px; }
-
-    .studio-cta {
-      text-align: center;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .studio-cta a {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--teal);
-      text-decoration: none;
-      transition: gap 0.4s var(--ease-out-expo);
-    }
-
-    .studio-cta a:hover { gap: 14px; }
-
-    @media (max-width: 768px) {
-      .studio-grid { grid-template-columns: 1fr; }
-    }
-
-    /* Algorithm CTA Section */
-    .algorithm-cta {
-      text-align: center;
-      padding: 0;
-    }
-
-    .algorithm-cta .section-inner {
-      padding-top: 80px;
-      padding-bottom: 80px;
-    }
-
-    .algorithm-cta-box {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 60px 48px;
-      background: var(--void-surface);
-      border: 1px solid var(--border-ghost);
-      border-radius: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .algorithm-cta-box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--teal), var(--purple), transparent);
-    }
-
-    .algorithm-cta-label {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      color: var(--teal);
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .algorithm-cta-title {
-      font-family: var(--font-display);
-      font-size: clamp(24px, 3.5vw, 36px);
-      font-weight: 600;
-      color: var(--text-pure);
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-
-    .algorithm-cta-desc {
-      font-size: 16px;
-      color: var(--text-secondary);
-      line-height: 1.7;
-      max-width: 500px;
-      margin: 0 auto 32px;
-    }
-
-    .algorithm-cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 16px 32px;
-      background: linear-gradient(135deg, var(--teal), var(--purple));
-      border: none;
-      border-radius: 12px;
-      color: var(--void-deep);
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      letter-spacing: 0.02em;
-      transition: all 0.4s var(--ease-out-expo);
-    }
-
-    .algorithm-cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px var(--teal-glow);
     }
 
     /* Contact Section */
@@ -2398,225 +2080,6 @@
       line-height: 1.5;
     }
 
-    /* ==========================================
-       COMPREHENSIVE MOBILE OVERRIDES
-       ========================================== */
-    @media (max-width: 768px) {
-      /* CRITICAL: Stage must not block touch scroll on mobile */
-      .stage {
-        pointer-events: none !important;
-        z-index: 5;
-        /* On mobile, only cover the hero area, don't overlay entire page */
-        height: 100vh;
-        height: 100dvh;
-        overflow: hidden;
-      }
-      .stage > * {
-        pointer-events: none !important;
-      }
-      /* Hero product links must be tappable on mobile */
-      .stage .hero-product {
-        pointer-events: auto !important;
-        touch-action: manipulation;
-      }
-
-      /* Sections don't need to be full viewport on mobile */
-      .spatial-section {
-        min-height: auto;
-      }
-      .spatial-section.hero {
-        min-height: 100vh;
-        min-height: 100dvh;
-      }
-
-      .section-inner {
-        padding: 60px 20px;
-      }
-
-      .section-title {
-        font-size: clamp(24px, 6vw, 34px);
-      }
-
-      .section-label {
-        font-size: 10px;
-      }
-
-      /* Hero text — move up so title + subtitle don't clip */
-      .scroll-text--center {
-        top: 48% !important;
-        padding: 0 20px;
-        max-width: 100%;
-      }
-      .hero-title {
-        font-size: clamp(28px, 7vw, 42px);
-        line-height: 1.15;
-        margin-bottom: 16px;
-      }
-      .hero-subtitle {
-        font-size: 13px;
-        max-width: 100%;
-        padding: 0 8px;
-        line-height: 1.5;
-      }
-      .hero-cta {
-        gap: 8px;
-        font-size: 12px;
-        margin-top: 14px;
-        flex-wrap: wrap;
-      }
-      .hero-badge {
-        font-size: 9px;
-        padding: 6px 14px;
-        margin-bottom: 16px;
-      }
-      .hero-scroll {
-        bottom: 24px;
-      }
-
-      /* CCX */
-      .ccx-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .ccx-text { max-width: 100%; }
-      .ccx-definition {
-        padding: 20px;
-      }
-      .ccx-step {
-        padding: 16px;
-      }
-
-      /* About */
-      .about-header {
-        margin: 0 auto 40px;
-      }
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-      .about-main {
-        padding: 24px;
-      }
-
-      /* Team */
-      .team-header {
-        margin: 0 auto 40px;
-      }
-      .team-grid {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-      }
-      .team-card {
-        padding: 24px;
-      }
-
-      /* Products */
-      .products-header {
-        margin: 0 auto 40px;
-      }
-      .products-grid {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-      }
-      .product-card {
-        padding: 24px;
-      }
-
-      /* Safety */
-      .safety-grid {
-        grid-template-columns: 1fr;
-        max-width: 100%;
-      }
-      .safety-header {
-        margin: 0 auto 40px;
-      }
-      .safety-item {
-        padding: 24px;
-      }
-
-      /* Research */
-      .research-header {
-        margin: 0 auto 40px;
-      }
-      .research-grid {
-        grid-template-columns: 1fr !important;
-        max-width: 100% !important;
-      }
-      .research-tags {
-        padding: 20px;
-      }
-      .research-tags-list {
-        gap: 8px;
-      }
-      .research-tag {
-        font-size: 10px;
-        padding: 8px 14px;
-      }
-
-      /* Involve */
-      .involve-header {
-        margin: 0 auto 40px;
-      }
-      .involve-grid {
-        grid-template-columns: 1fr;
-      }
-      .involve-card {
-        padding: 24px;
-      }
-      .involve-cta {
-        padding: 24px;
-        margin-top: 40px;
-      }
-
-      /* Algorithm CTA */
-      .algorithm-cta-box {
-        padding: 36px 24px;
-      }
-      .algorithm-cta-title {
-        font-size: clamp(20px, 5vw, 28px);
-      }
-      .algorithm-cta-desc {
-        font-size: 14px;
-      }
-      .algorithm-cta-btn {
-        font-size: 12px;
-        padding: 14px 24px;
-      }
-
-      /* Contact */
-      .contact-title {
-        font-size: clamp(28px, 6vw, 40px);
-      }
-      .contact-links {
-        flex-direction: column;
-        align-items: center;
-      }
-      .newsletter {
-        margin: 0 auto 40px;
-      }
-      .newsletter-form {
-        flex-direction: column;
-      }
-      .newsletter-form button {
-        width: 100%;
-      }
-
-      /* Changelog */
-      .changelog-section {
-        padding: 40px 0;
-        margin-top: 40px;
-      }
-      .changelog-entry {
-        flex-direction: column;
-        gap: 8px;
-        padding: 12px 16px;
-      }
-      .changelog-meta {
-        flex-direction: row;
-        gap: 12px;
-        min-width: auto;
-      }
-    }
-
     /* Reduced motion preference */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
@@ -2683,16 +2146,15 @@
     </a>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="#ccx" class="nav-link">Science</a></li>
-      <li><a href="#products" class="nav-link">Products</a></li>
-      <li><a href="#studio" class="nav-link">Studio</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="#team" class="nav-link">Team</a></li>
+      <li><a href="#products" class="nav-link">Products</a></li>
       <li><a href="#research" class="nav-link">Research</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
 
-    <a href="#contact" class="nav-cta"><span>Contact</span></a>
+    <a href="mailto:polarity@polarity-lab.com" class="nav-cta"><span>Contact</span></a>
 
     <button class="nav-mobile" id="nav-mobile" aria-label="Toggle menu">
       <span></span>
@@ -2712,7 +2174,7 @@
         <div class="hero-product-icon">
           <img src="waxfeed_disc.svg" alt="WaxFeed">
         </div>
-        <span class="hero-product-label" style="text-transform: uppercase;">WaxFeed</span>
+        <span class="hero-product-label">WaxFeed</span>
       </a>
 
       <!-- Polarity -->
@@ -2761,12 +2223,12 @@
         <span class="hero-product-label">Polarity</span>
       </a>
 
-      <!-- Pain Points -->
+      <!-- Painpoints -->
       <a href="https://painpoints.site" target="_blank" class="hero-product hero-product--painpoints" id="icon-painpoints">
         <div class="hero-product-icon">
-          <img src="painpoints-icon.svg" alt="Pain Points">
+          <img src="public/painpoints-icon.svg" alt="Painpoints">
         </div>
-        <span class="hero-product-label">Pain Points</span>
+        <span class="hero-product-label">Painpoints</span>
       </a>
 
       <!-- FONMYDJ -->
@@ -2775,13 +2237,13 @@
           <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <radialGradient id="fmAmbient" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.2"/>
+                <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.3"/>
                 <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
               </radialGradient>
-              <radialGradient id="fmCoreGrad" cx="35%" cy="35%" r="65%">
-                <stop offset="0%" stop-color="#FCD34D"/>
-                <stop offset="60%" stop-color="#F59E0B"/>
-                <stop offset="100%" stop-color="#B45309"/>
+              <radialGradient id="fmCoreGrad" cx="30%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#FBBF24"/>
+                <stop offset="50%" stop-color="#F59E0B"/>
+                <stop offset="100%" stop-color="#D97706"/>
               </radialGradient>
               <filter id="fmGlow" x="-100%" y="-100%" width="300%" height="300%">
                 <feGaussianBlur stdDeviation="4" result="blur"/>
@@ -2792,7 +2254,7 @@
                 </feMerge>
               </filter>
               <filter id="fmCoreGlow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="6" result="blur"/>
+                <feGaussianBlur stdDeviation="8" result="blur"/>
                 <feMerge>
                   <feMergeNode in="blur"/>
                   <feMergeNode in="blur"/>
@@ -2804,143 +2266,49 @@
             <!-- Ambient glow -->
             <circle cx="100" cy="100" r="90" fill="url(#fmAmbient)"/>
             <!-- Orbital sound rings -->
-            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#F59E0B" stroke-width="2" transform="rotate(-30 100 100)" filter="url(#fmGlow)" opacity="0.4"/>
-            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FBBF24" stroke-width="2" transform="rotate(30 100 100)" filter="url(#fmGlow)" opacity="0.4"/>
-            <!-- Sound source core -->
-            <circle cx="78" cy="100" r="18" fill="url(#fmCoreGrad)" filter="url(#fmCoreGlow)"/>
-            <circle cx="73" cy="94" r="6" fill="white" opacity="0.25"/>
+            <ellipse cx="100" cy="100" rx="85" ry="30" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="rotate(-20 100 100)" filter="url(#fmGlow)" opacity="0.3"/>
+            <ellipse cx="100" cy="100" rx="70" ry="22" fill="none" stroke="#FBBF24" stroke-width="2" transform="rotate(10 100 100)" filter="url(#fmGlow)" opacity="0.5"/>
+            <ellipse cx="100" cy="100" rx="55" ry="16" fill="none" stroke="#FBBF24" stroke-width="2.5" transform="rotate(-5 100 100)" filter="url(#fmGlow)" opacity="0.7"/>
+            <!-- Particles on orbits -->
+            <circle cx="168" cy="88" r="4" fill="#FBBF24" filter="url(#fmGlow)" opacity="0.9"/>
+            <circle cx="38" cy="108" r="3" fill="#F59E0B" filter="url(#fmGlow)" opacity="0.7"/>
+            <circle cx="155" cy="118" r="3.5" fill="#FCD34D" filter="url(#fmGlow)" opacity="0.8"/>
+            <circle cx="52" cy="82" r="2.5" fill="#FBBF24" filter="url(#fmGlow)" opacity="0.6"/>
+            <!-- Core speaker shape -->
+            <g filter="url(#fmCoreGlow)">
+              <path d="M90 72L78 80V120L90 128V72Z" fill="url(#fmCoreGrad)"/>
+              <path d="M90 72L108 62V138L90 128V72Z" fill="url(#fmCoreGrad)" opacity="0.85"/>
+              <path d="M90 76L80 82V96L90 90V76Z" fill="white" opacity="0.2"/>
+            </g>
             <!-- Sound wave arcs -->
-            <path d="M102 74C117 82 124 90 124 100C124 110 117 118 102 126" fill="none" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.9"/>
-            <path d="M110 58C134 70 144 84 144 100C144 116 134 130 110 142" fill="none" stroke="#F59E0B" stroke-width="3" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.6"/>
-            <path d="M118 44C150 60 164 78 164 100C164 122 150 140 118 156" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.35"/>
-            <!-- Orbital particles -->
-            <circle cx="168" cy="78" r="6" fill="#FBBF24" filter="url(#fmGlow)" opacity="0.9"/>
-            <circle cx="38" cy="118" r="5" fill="#F59E0B" filter="url(#fmGlow)" opacity="0.7"/>
-            <circle cx="156" cy="132" r="4" fill="#FCD34D" filter="url(#fmGlow)" opacity="0.8"/>
+            <path d="M115 82C122 88 126 94 126 100C126 106 122 112 115 118" fill="none" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.9"/>
+            <path d="M122 72C132 80 138 90 138 100C138 110 132 120 122 128" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.6"/>
+            <path d="M130 62C142 73 150 86 150 100C150 114 142 127 130 138" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.35"/>
           </svg>
         </div>
         <span class="hero-product-label">FONMYDJ</span>
       </a>
 
-      <!-- Pulse -->
-      <a href="https://onpulse.tv" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
-        <div class="hero-product-icon">
-          <svg viewBox="0 0 200 200">
-            <defs>
-              <radialGradient id="pulseBaseGrad" cx="35%" cy="30%" r="70%">
-                <stop offset="0%" stop-color="#2a1a0a"/>
-                <stop offset="60%" stop-color="#1a0f05"/>
-                <stop offset="100%" stop-color="#0d0804"/>
-              </radialGradient>
-              <radialGradient id="pulseAmbient" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#FF6B00" stop-opacity="0.15"/>
-                <stop offset="100%" stop-color="#FF6B00" stop-opacity="0"/>
-              </radialGradient>
-              <filter id="pulseLineGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-              <filter id="pulseRingGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="4" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-              <clipPath id="pulseClip">
-                <circle cx="100" cy="100" r="82"/>
-              </clipPath>
-              <!-- TV static noise filter -->
-              <filter id="pulseStatic" x="0%" y="0%" width="100%" height="100%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="2" result="noise"/>
-                <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
-                <feComponentTransfer in="grayNoise" result="staticNoise">
-                  <feFuncA type="linear" slope="0.12" intercept="0"/>
-                </feComponentTransfer>
-                <feBlend in="SourceGraphic" in2="staticNoise" mode="screen"/>
-              </filter>
-              <!-- Scanline pattern -->
-              <pattern id="pulseScanlines" width="4" height="4" patternUnits="userSpaceOnUse">
-                <rect width="4" height="2" fill="white" opacity="0.015"/>
-                <rect y="2" width="4" height="2" fill="black" opacity="0.03"/>
-              </pattern>
-            </defs>
-            <!-- Ambient glow -->
-            <circle cx="100" cy="100" r="95" fill="url(#pulseAmbient)"/>
-            <!-- Outer ring -->
-            <circle cx="100" cy="100" r="88" fill="none" stroke="#FF6B00" stroke-width="1.5" opacity="0.3" filter="url(#pulseRingGlow)"/>
-            <!-- Main disc -->
-            <circle cx="100" cy="100" r="82" fill="url(#pulseBaseGrad)"/>
-            <!-- TV static overlay + scanlines (clipped to disc) -->
-            <g clip-path="url(#pulseClip)">
-              <circle cx="100" cy="100" r="82" filter="url(#pulseStatic)" fill="transparent"/>
-              <circle cx="100" cy="100" r="82" fill="url(#pulseScanlines)"/>
-            </g>
-            <!-- Inner subtle ring -->
-            <circle cx="100" cy="100" r="82" fill="none" stroke="#FF6B00" stroke-width="0.5" opacity="0.2"/>
-            <!-- Broadcast globe wireframe (clipped to disc) -->
-            <g clip-path="url(#pulseClip)" stroke="#FF6B00" fill="none" opacity="0.1">
-              <!-- Concentric broadcast arcs -->
-              <circle cx="100" cy="100" r="30" stroke-width="0.6"/>
-              <circle cx="100" cy="100" r="50" stroke-width="0.5"/>
-              <circle cx="100" cy="100" r="70" stroke-width="0.4"/>
-              <!-- Meridian lines (vertical curves) -->
-              <ellipse cx="100" cy="100" rx="20" ry="75" stroke-width="0.4"/>
-              <ellipse cx="100" cy="100" rx="50" ry="75" stroke-width="0.3"/>
-              <!-- Equator + latitude lines -->
-              <ellipse cx="100" cy="100" rx="75" ry="12" stroke-width="0.4"/>
-              <ellipse cx="100" cy="80" rx="65" ry="8" stroke-width="0.3"/>
-              <ellipse cx="100" cy="120" rx="65" ry="8" stroke-width="0.3"/>
-            </g>
-            <!-- Pulse line (clipped to circle) -->
-            <g clip-path="url(#pulseClip)">
-              <!-- Faint horizontal scanline bands -->
-              <line x1="20" y1="65" x2="180" y2="65" stroke="#FF6B00" stroke-width="0.2" opacity="0.06"/>
-              <line x1="20" y1="80" x2="180" y2="80" stroke="#FF6B00" stroke-width="0.3" opacity="0.08"/>
-              <line x1="20" y1="100" x2="180" y2="100" stroke="#FF6B00" stroke-width="0.15" opacity="0.04"/>
-              <line x1="20" y1="120" x2="180" y2="120" stroke="#FF6B00" stroke-width="0.3" opacity="0.08"/>
-              <line x1="20" y1="135" x2="180" y2="135" stroke="#FF6B00" stroke-width="0.2" opacity="0.06"/>
-              <!-- Main pulse line -->
-              <polyline
-                points="20,100 55,100 68,60 82,140 96,75 110,125 124,100 180,100"
-                stroke="#FF6B00"
-                stroke-width="4"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                fill="none"
-                filter="url(#pulseLineGlow)"
-              />
-            </g>
-            <!-- Glossy highlight -->
-            <ellipse cx="80" cy="72" rx="40" ry="25" fill="white" opacity="0.04"/>
-          </svg>
+      <!-- AVDP -->
+      <a href="https://linktr.ee/averydistantperspective" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
+        <div class="hero-product-icon avdp-icon">
+          <img src="AVDPLOGOREAL.jpg" alt="AVDP">
         </div>
-        <span class="hero-product-label">Pulse</span>
+        <span class="hero-product-label">AVDP</span>
       </a>
     </div>
 
     <!-- SCROLL TEXT REVEALS -->
 
     <!-- Text 1: Hero -->
-    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 50%;">
-      <div class="hero-badge">Interdisciplinary Research Laboratory</div>
+    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 62%;">
+      <div class="hero-badge">Research Laboratory</div>
       <h1 class="hero-title">
-        We measure <span class="gradient">what matters</span>
+        Measure <span class="gradient">the Mind</span>
       </h1>
       <p class="hero-subtitle">
-        Tools that help you think more clearly, powered by an algorithm that learns what carries weight.
+        Studying how conversation reveals how your brain organizes information.
       </p>
-      <div class="hero-cta">
-        <a href="https://app.polarity-lab.com/" target="_blank">Try Polarity</a>
-        <span class="hero-cta-dot">·</span>
-        <a href="#products">Explore our products</a>
-        <span class="hero-cta-dot">·</span>
-        <a href="#ccx">Read the research</a>
-      </div>
     </div>
 
     <!-- Scroll choreography text removed - now using actual content sections -->
@@ -2958,63 +2326,6 @@
       <div class="section-inner"></div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="spatial-section about" id="about">
-      <div class="section-inner">
-        <div class="about-header reveal">
-          <p class="section-label">Who We Are</p>
-          <h2 class="section-title">A research lab that studies how conversation reveals how the mind works</h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-main reveal">
-            <div class="about-main-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
-              </svg>
-            </div>
-            <h3>The Algorithm<span class="about-main-badge">Core</span></h3>
-            <p>We built an algorithm that measures what things weigh in someone's life. It does not care about the domain. It cares about what matters to the person talking. Every product we ship generates real conversations. Those conversations feed the algorithm. The algorithm gets smarter. The thing people use and the thing we study are the same thing.</p>
-            <a href="https://algorithm.polarity-lab.com" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; transition: gap 0.4s var(--ease-out-expo);" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='6px'">Read the full pitch →</a>
-          </div>
-
-          <div class="about-cards stagger">
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                  <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
-                </svg>
-              </div>
-              <h4>Open Platform</h4>
-              <p>The algorithm does not know what music is. Or finance. Or healthcare. It knows what things weigh and how that weight changes over time. You bring the domain.</p>
-            </div>
-
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
-                  <path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
-                </svg>
-              </div>
-              <h4>The Purpose</h4>
-              <p>Not a form, not a chatbot. A thinking partner that helps you figure out what you're actually trying to say. Other AI tells you what to think. Polarity helps you think more clearly.</p>
-            </div>
-
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
-                  <circle cx="8" cy="10" r="5"/>
-                  <circle cx="16" cy="10" r="5"/>
-                  <circle cx="12" cy="16" r="5"/>
-                </svg>
-              </div>
-              <h4>Three Environments</h4>
-              <p>Human to human. Human to computer to human. Human to computer. Every product we build creates one of these environments. Every conversation inside them feeds the science.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CCX SECTION -->
     <section class="spatial-section ccx" id="ccx">
       <div class="section-inner">
@@ -3025,34 +2336,32 @@
 
             <div class="ccx-definition">
               <div class="ccx-definition-term">CCX / Conversational Connectomics</div>
-              <p class="ccx-definition-desc">How the things you say reveal the things that matter. The science behind measuring what carries weight in someone's life, based on how they talk about it.</p>
+              <p class="ccx-definition-desc">A computational framework for inferring how concepts are connected in someone's mind, using their natural language. Like a stethoscope for cognition.</p>
             </div>
 
             <div class="ccx-steps stagger">
               <div class="ccx-step">
                 <div class="ccx-step-num">1</div>
                 <div>
-                  <h4>Listen</h4>
-                  <p>Every conversation carries signal. What repeats. What gets emphasis. What you avoid. What you protect. The algorithm picks up all of it.</p>
+                  <h4>Parse</h4>
+                  <p>Break conversation into atomic cognitive events. 12 types of thinking we detect in speech.</p>
                 </div>
               </div>
               <div class="ccx-step">
                 <div class="ccx-step-num">2</div>
                 <div>
-                  <h4>Measure</h4>
-                  <p>Things that repeat carry weight. Change carries weight. The algorithm measures how much something matters to you relative to everything else in your life.</p>
+                  <h4>Graph</h4>
+                  <p>Build a network of connected concepts. Polarity Points weight how strongly ideas link.</p>
                 </div>
               </div>
               <div class="ccx-step">
                 <div class="ccx-step-num">3</div>
                 <div>
-                  <h4>Understand</h4>
-                  <p>The output is a living profile of who you are. Not a chat log. Comprehension. It knows what was heavy enough to keep and lets the rest go.</p>
+                  <h4>Fingerprint</h4>
+                  <p>Generate BrainID — your unique cognitive signature from how you think.</p>
                 </div>
               </div>
             </div>
-
-            <a href="https://algorithm.polarity-lab.com" target="_blank" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 28px; font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; transition: gap 0.4s var(--ease-out-expo);" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='6px'">See the algorithm →</a>
           </div>
 
           <div class="ccx-visual">
@@ -3069,109 +2378,56 @@
       </div>
     </section>
 
-    <!-- PRODUCTS SECTION -->
-    <section class="spatial-section products" id="products">
+    <!-- ABOUT SECTION -->
+    <section class="spatial-section about" id="about">
       <div class="section-inner">
-        <div class="products-header reveal">
-          <p class="section-label">Our Products</p>
-          <h2 class="section-title">Everything we ship feeds the algorithm</h2>
+        <div class="about-header reveal">
+          <p class="section-label">Who We Are</p>
+          <h2 class="section-title">A research lab that builds products</h2>
         </div>
 
-        <div class="products-grid stagger">
-          <a href="https://app.polarity-lab.com/" target="_blank" class="product-card">
-            <div class="product-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
+        <div class="about-grid">
+          <div class="about-main reveal">
+            <div class="about-main-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
               </svg>
             </div>
-            <div class="product-name">Polarity</div>
-            <div class="product-desc">Not a chatbot. A thinking partner that helps you figure out what you're actually trying to say. Talk to it and it learns what matters to you.</div>
-            <span class="product-arrow">Explore →</span>
-          </a>
-
-          <a href="https://wax-feed.com" target="_blank" class="product-card">
-            <div class="product-icon">
-              <img src="waxfeed_disc.svg" alt="WaxFeed">
-            </div>
-            <div class="product-name" style="text-transform: uppercase;">WaxFeed</div>
-            <div class="product-desc">We pointed the algorithm at music. Did not change the math. Out came a social platform that knows your taste, not your recent plays.</div>
-            <span class="product-arrow">Explore →</span>
-          </a>
-
-          <div class="product-card" style="cursor: default;">
-            <div class="product-icon">
-              <img src="painpoints-icon.svg" alt="Pain Points">
-            </div>
-            <div class="product-name">Pain Points</div>
-            <div class="product-desc">Fund problems, not promises. The algorithm surfaces what actually matters to people, then matches real builders to real problems. Same math, different domain.</div>
-            <span class="product-arrow">Explore →</span>
+            <h3>The Flywheel<span class="about-main-badge">Core Model</span></h3>
+            <p>Products generate data. Data enables research. Research produces papers and patents. Papers bring credibility. Credibility brings users and funding. Funding enables more products. Repeat.</p>
           </div>
 
-          <a href="https://fonmydj.com" target="_blank" class="product-card">
-            <div class="product-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <circle cx="18" cy="24" r="7" fill="#F59E0B" opacity="0.9"/>
-                <circle cx="16" cy="22" r="2.5" fill="white" opacity="0.2"/>
-                <path d="M27 16C33 18 37 21 37 24C37 27 33 30 27 32" fill="none" stroke="#FBBF24" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M30 10C39 14 44 19 44 24C44 29 39 34 30 38" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
-              </svg>
+          <div class="about-cards stagger">
+            <div class="about-card">
+              <div class="about-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                  <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
+                </svg>
+              </div>
+              <h4>Open Platform</h4>
+              <p>A venue for others to build on our intelligence and contribute as collaborators.</p>
             </div>
-            <div class="product-name" style="text-transform: uppercase;">FONMYDJ</div>
-            <div class="product-desc">A DJ booking marketplace powered by the algorithm. Find your sound, book the right DJ for your event, and let CCX match vibe to venue.</div>
-            <span class="product-arrow">Explore →</span>
-          </a>
 
-          <a href="https://onpulse.tv" target="_blank" class="product-card">
-            <div class="product-icon">
-              <svg viewBox="0 0 48 48" fill="none">
-                <circle cx="24" cy="24" r="22" fill="#1a0f05" stroke="#FF6B00" stroke-width="0.5" opacity="0.9"/>
-                <polyline points="4,24 12,24 16,14 20,34 24,18 28,30 32,24 44,24" stroke="#FF6B00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-              </svg>
+            <div class="about-card">
+              <div class="about-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
+                  <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582"/>
+                </svg>
+              </div>
+              <h4>The Purpose</h4>
+              <p>Understanding the human condition to bring the world closer together.</p>
             </div>
-            <div class="product-name" style="text-transform: uppercase;">Pulse</div>
-            <div class="product-desc">A digital broadcasting network. Live content, long form conversation, and the research engine behind how we study real dialogue.</div>
-            <span class="product-arrow">Explore →</span>
-          </a>
-        </div>
-      </div>
-    </section>
 
-    <!-- STUDIO SECTION -->
-    <section class="spatial-section studio" id="studio">
-      <div class="section-inner">
-        <div class="studio-header reveal">
-          <p class="section-label">The Studio</p>
-          <h2 class="section-title" style="text-transform: uppercase;">Pulse</h2>
-          <p class="studio-subtitle">Keep your hand on the pulse. A digital broadcasting network by Polarity Lab.</p>
-        </div>
-
-        <div class="studio-grid stagger">
-          <div class="studio-card">
-            <div class="studio-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
-                <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
-              </svg>
+            <div class="about-card">
+              <div class="about-card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
+                  <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
+                </svg>
+              </div>
+              <h4>The Studio</h4>
+              <p>AVDP captures authentic conversation for entertainment and research.</p>
             </div>
-            <h3>A Very Distant Perspective</h3>
-            <p>Real conversations between real people about what it means to be a person right now. The kind of dialogue that helps us understand how people actually communicate when they care.</p>
-            <a href="https://www.instagram.com/averydistantperspective" target="_blank">Watch on Instagram</a>
           </div>
-
-          <a href="https://onpulse.tv" target="_blank" class="studio-card">
-            <div class="studio-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                <path d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
-              </svg>
-            </div>
-            <h3>Broadcast</h3>
-            <p>Live content delivery across WBRU and partner channels. Music, conversation, and culture.</p>
-            <span class="studio-link">Visit onpulse.tv</span>
-          </a>
-        </div>
-
-        <div class="studio-cta reveal">
-          <a href="https://onpulse.tv" target="_blank">Explore Pulse</a>
         </div>
       </div>
     </section>
@@ -3215,7 +2471,7 @@
           <a href="https://www.linkedin.com/in/nathan-amankwah/" target="_blank" class="team-card">
             <div class="team-card-role">Cofounder</div>
             <h3 class="team-card-name">Nathan Amankwah</h3>
-            <p class="team-card-title">uOttawa Telfer Finance & BTM '26</p>
+            <p class="team-card-title">UOttawa Telfer '27</p>
             <p class="team-card-bio">Full stack. Helped formalize CCX. Patent #2.</p>
             <div class="team-card-linkedin">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
@@ -3225,44 +2481,77 @@
       </div>
     </section>
 
-    <!-- RESEARCH SECTION -->
-    <section class="spatial-section research" id="research">
+    <!-- PRODUCTS SECTION -->
+    <section class="spatial-section products" id="products">
       <div class="section-inner">
-        <div class="research-header reveal">
-          <p class="section-label">Research</p>
-          <h2 class="section-title">The science behind the algorithm</h2>
+        <div class="products-header reveal">
+          <p class="section-label">Our Products</p>
+          <h2 class="section-title">Building the CCX ecosystem</h2>
         </div>
 
-        <div class="research-grid stagger" style="grid-template-columns: 1fr; max-width: 800px;">
-          <a href="https://percent2agi.com" target="_blank" class="research-card" style="text-align: center; padding: 48px;">
-            <span class="research-card-tag">percent2agi.com</span>
-            <h3 style="font-size: 22px; margin-bottom: 16px;">All the research. Open.</h3>
-            <p style="max-width: 500px; margin: 0 auto 24px; font-size: 15px;">The neuroscience behind the algorithm. The architecture. Why we made every decision we made. If you want to know how it works, start here.</p>
-            <span class="research-card-arrow" style="font-size: 14px; font-weight: 600;">Visit percent2agi.com →</span>
+        <div class="products-grid stagger">
+          <a href="https://app.polarity-lab.com/" target="_blank" class="product-card">
+            <div class="product-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
+              </svg>
+            </div>
+            <div class="product-name">Polarity</div>
+            <div class="product-desc">Cognitive memory service. A friend who never forgets.</div>
+            <span class="product-arrow">Explore →</span>
           </a>
-        </div>
 
-        <div class="research-tags reveal">
-          <h4>What We Measure</h4>
-          <div class="research-tags-list">
-            <span class="research-tag">What Repeats</span>
-            <span class="research-tag">What Changes</span>
-            <span class="research-tag">What Carries Weight</span>
-            <span class="research-tag">What Defines You</span>
-            <span class="research-tag">What You Hold Onto</span>
-          </div>
-        </div>
+          <a href="https://wax-feed.com" target="_blank" class="product-card">
+            <div class="product-icon">
+              <img src="waxfeed_disc.svg" alt="WaxFeed">
+            </div>
+            <div class="product-name">WaxFeed</div>
+            <div class="product-desc">Social platform for music enthusiasts. DJs, mixes, taste graphs.</div>
+            <span class="product-arrow">Explore →</span>
+          </a>
 
-        <div class="research-patents reveal" style="margin-top: 48px; display: flex; gap: 24px; max-width: 800px; margin-left: auto; margin-right: auto; justify-content: center; flex-wrap: wrap;">
-          <div style="background: var(--void-surface); border: 1px solid var(--border-ghost); border-radius: 16px; padding: 28px 36px; text-align: center;">
-            <div style="font-family: var(--font-display); font-size: 36px; font-weight: 700; color: var(--teal); margin-bottom: 8px;">2</div>
-            <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.1em;">Patents Filed</div>
-          </div>
-          <div style="background: var(--void-surface); border: 1px solid var(--border-ghost); border-radius: 16px; padding: 28px 36px; flex: 1; min-width: 300px;">
-            <p style="font-family: var(--font-mono); font-size: 10px; color: var(--teal); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">USPTO Patent Center</p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 8px;">Conversational Connectomics: Methods for Bayesian Associative Strength Estimation, Cognitive State Classification, and Integrated Cognitive Fingerprinting</p>
-            <p style="font-size: 13px; color: var(--text-secondary); line-height: 1.6;">System and Method for Neuroanatomically Grounded Knowledge Graph Construction and Cognitive Biometric Authentication</p>
-          </div>
+          <a href="https://painpoints.site" target="_blank" class="product-card">
+            <div class="product-icon">
+              <img src="public/painpoints-icon.svg" alt="Painpoints">
+            </div>
+            <div class="product-name">Painpoints</div>
+            <div class="product-desc">Fund problems, not promises. Crowdfunding platform for real-world solutions.</div>
+            <span class="product-arrow">Explore →</span>
+          </a>
+
+          <a href="https://linktr.ee/averydistantperspective" target="_blank" class="product-card">
+            <div class="product-icon">
+              <img src="AVDPLOGOREAL.jpg" alt="AVDP">
+            </div>
+            <div class="product-name">AVDP</div>
+            <div class="product-desc">A Very Distant Perspective. Deep dive podcast using CCX.</div>
+            <span class="product-arrow">Listen →</span>
+          </a>
+
+          <a href="https://fonmydj.com" target="_blank" class="product-card">
+            <div class="product-icon">
+              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="fmCardGrad" cx="30%" cy="30%" r="70%">
+                    <stop offset="0%" stop-color="#FBBF24"/>
+                    <stop offset="100%" stop-color="#D97706"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="20" cy="20" rx="18" ry="7" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.3" transform="rotate(-15 20 20)"/>
+                <ellipse cx="20" cy="20" rx="14" ry="5" fill="none" stroke="#FBBF24" stroke-width="1" opacity="0.5" transform="rotate(10 20 20)"/>
+                <circle cx="32" cy="17" r="1.5" fill="#FBBF24" opacity="0.8"/>
+                <circle cx="9" cy="22" r="1" fill="#F59E0B" opacity="0.6"/>
+                <path d="M17 14L13 17V23L17 26V14Z" fill="url(#fmCardGrad)"/>
+                <path d="M17 14L22 11V29L17 26V14Z" fill="url(#fmCardGrad)" opacity="0.8"/>
+                <path d="M24 16C26 17.5 27 19 27 20C27 21 26 22.5 24 24" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/>
+                <path d="M27 13C29.5 15 31 17.5 31 20C31 22.5 29.5 25 27 27" stroke="#F59E0B" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+              </svg>
+            </div>
+            <div class="product-name">FONMYDJ</div>
+            <div class="product-desc">A DJ booking marketplace powered by the algorithm. Find your sound, book the right DJ for your event, and let CCX match vibe to venue.</div>
+            <span class="product-arrow">Explore →</span>
+          </a>
         </div>
       </div>
     </section>
@@ -3273,47 +2562,77 @@
         <div class="safety-header reveal">
           <p class="section-label">Non-Negotiable</p>
           <h2 class="section-title">Safety & Ethics</h2>
-          <p class="safety-intro">An algorithm that knows what matters to you could be misused. We know that. These are not aspirations. They are constraints we will not relax.</p>
+          <p class="safety-intro">Cognitive monitoring could enable surveillance and abuse. We are not naive. These principles are foundational.</p>
         </div>
 
         <div class="safety-grid stagger">
           <div class="safety-item">
-            <h4>Your Data, Only Yours</h4>
-            <p>You generated it. You own it. No one sees it unless you say so.</p>
+            <h4>User-Only Access</h4>
+            <p>Your cognitive data is yours alone. No one else sees it.</p>
           </div>
           <div class="safety-item">
-            <h4>No Sharing By Default</h4>
-            <p>Every access grant is opt-in and revocable. You say yes before anyone gets in. You can say no whenever.</p>
+            <h4>No Default Sharing</h4>
+            <p>Caregiver access requires explicit, revocable consent.</p>
           </div>
           <div class="safety-item">
             <h4>Coercion Detection</h4>
-            <p>If someone else is using your account, the system knows. Protective protocols kick in automatically.</p>
+            <p>Patterns suggesting forced access trigger protective protocols.</p>
           </div>
           <div class="safety-item">
             <h4>Right to Deletion</h4>
-            <p>Ask and it is gone. Every trace. No retention period. No exceptions.</p>
+            <p>Full data purge on request. No exceptions.</p>
           </div>
           <div class="safety-item">
             <h4>No Predictive Policing</h4>
-            <p>We will never use this for risk scoring, preemptive judgment, or behavioral prediction. Full stop.</p>
+            <p>Never used for risk scoring or preemptive judgment.</p>
           </div>
           <div class="safety-item">
-            <h4>Ethics Board Required</h4>
-            <p>Anything involving human subjects goes through IRB. No shortcuts. No exceptions.</p>
+            <h4>IRB Required</h4>
+            <p>Clinical validation proceeds only with ethics board approval.</p>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="safety-privacy reveal" style="margin-top: 64px; background: var(--void-surface); border: 1px solid var(--border-ghost); border-radius: 20px; padding: 48px; max-width: 900px; margin-left: auto; margin-right: auto;">
-          <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text-pure); margin-bottom: 24px; text-align: center;">What You See vs What We See</h3>
-          <div class="safety-privacy-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
-            <div>
-              <h4 style="font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--teal); margin-bottom: 12px;">What You See</h4>
-              <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Your full profile. What matters to you. How your thinking has shifted over time. A living record of who you are. All of it stays between you and Polarity.</p>
-            </div>
-            <div>
-              <h4 style="font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--purple); margin-bottom: 12px;">What We See</h4>
-              <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Anonymized patterns across thousands of people. We might learn that people going through career changes tend to talk more about their close relationships. That kind of insight. Never yours specifically.</p>
-            </div>
+    <!-- RESEARCH SECTION -->
+    <section class="spatial-section research" id="research">
+      <div class="section-inner">
+        <div class="research-header reveal">
+          <p class="section-label">Reading Room</p>
+          <h2 class="section-title">Standing on giants</h2>
+        </div>
+
+        <div class="research-grid stagger">
+          <a href="https://www.pnas.org/doi/pdf/10.1073/pnas.1008662107" target="_blank" class="research-card">
+            <span class="research-card-tag">PNAS 2010</span>
+            <h3>Brains Sync During Conversation</h3>
+            <p>Stephens, Silbert & Hasson show that brains literally synchronize during dialogue.</p>
+            <span class="research-card-arrow">→</span>
+          </a>
+
+          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5558154/pdf/nihms886298.pdf" target="_blank" class="research-card">
+            <span class="research-card-tag">Neuron 2017</span>
+            <h3>Brain Chunks Life Into Episodes</h3>
+            <p>Baldassano et al. reveal the brain segments experience into discrete events.</p>
+            <span class="research-card-arrow">→</span>
+          </a>
+
+          <a href="https://doi.org/10.1038/nrn2575" target="_blank" class="research-card">
+            <span class="research-card-tag">Nature 2009</span>
+            <h3>Your Mind Is a Network</h3>
+            <p>Bullmore & Sporns establish the brain is organized with clusters and hubs.</p>
+            <span class="research-card-arrow">→</span>
+          </a>
+        </div>
+
+        <div class="research-tags reveal">
+          <h4>The Five Clues We Look For</h4>
+          <div class="research-tags-list">
+            <span class="research-tag">Units of Cognition</span>
+            <span class="research-tag">MEG-Proxy States</span>
+            <span class="research-tag">Polarity Points</span>
+            <span class="research-tag">BrainID</span>
+            <span class="research-tag">Consolidation Gate</span>
           </div>
         </div>
       </div>
@@ -3330,16 +2649,14 @@
         <div class="involve-grid stagger">
           <div class="involve-card">
             <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 3h6M10 3v6l-4 8h12l-4-8V3"/>
-                <line x1="7" y1="17" x2="17" y2="17"/>
-                <circle cx="10" cy="14" r="0.5" fill="#4ECDC4"/>
-                <circle cx="13" cy="12.5" r="0.5" fill="#4ECDC4"/>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/>
               </svg>
             </div>
             <h3>Research Collaborators</h3>
-            <p>You study how people think, remember, or communicate. We built an algorithm that measures it. We should talk.</p>
-            <a href="mailto:team@polarity-lab.com?subject=Research%20Collaboration">Discuss Collaboration →</a>
+            <p>Domain experts for L3/L4 validation. Psychology, neuroscience, AI, linguistics. Co-authorship available.</p>
+            <a href="mailto:polarity@polarity-lab.com?subject=Research%20Collaboration">Discuss Collaboration →</a>
           </div>
 
           <div class="involve-card">
@@ -3351,50 +2668,35 @@
               </svg>
             </div>
             <h3>Advisors</h3>
-            <p>Direction, ethics, clinical pathway. We want people who are honest, not people who are impressive.</p>
-            <a href="mailto:team@polarity-lab.com?subject=Advisory%20Interest">Express Interest →</a>
+            <p>Occasional feedback on direction, ethics, clinical pathway. Cognitive science, neurology, AI safety.</p>
+            <a href="mailto:polarity@polarity-lab.com?subject=Advisory%20Interest">Express Interest →</a>
           </div>
 
           <div class="involve-card">
             <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#E63329" stroke-width="1.5">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
               </svg>
             </div>
             <h3>Contributors</h3>
-            <p>Find a real problem. Build the solution. Own the outcome. That is the Pain Points model.</p>
-            <a href="https://painpoints.site" target="_blank">Explore →</a>
+            <p>Pain Points model: build an MVP, become Principal, earn the highest share. We reward builders.</p>
+            <a href="https://painpoints.site" target="_blank">Pitch a Project →</a>
           </div>
 
           <div class="involve-card">
             <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="1.5">
-                <polyline points="2,12 6,12 8,6 10,18 12,9 14,15 16,12 22,12"/>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
+                <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
               </svg>
             </div>
-            <h3>Get on Pulse</h3>
-            <p>A digital broadcasting network by Polarity Lab. If you have something worth saying, we want to hear it. Early access open now.</p>
-            <a href="https://onpulse.tv" target="_blank">Join Pulse →</a>
+            <h3>AVDP Podcast</h3>
+            <p>Exploring ideas at the edge of cognition, technology, and human experience.</p>
+            <a href="https://www.instagram.com/averydistantperspective" target="_blank">Follow on Instagram →</a>
           </div>
-
         </div>
 
         <div class="involve-cta reveal">
-          <p>The ask: <strong>30 minutes</strong>. See if there is alignment.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ALGORITHM CTA SECTION -->
-    <section class="spatial-section algorithm-cta">
-      <div class="section-inner">
-        <div class="algorithm-cta-box reveal">
-          <p class="algorithm-cta-label">The Algorithm</p>
-          <h2 class="algorithm-cta-title">The full pitch. One page.</h2>
-          <p class="algorithm-cta-desc">What the algorithm measures. How it builds a profile. Why it works across domains. How you plug in. Everything is on one page.</p>
-          <a href="https://algorithm.polarity-lab.com" target="_blank" class="algorithm-cta-btn">
-            algorithm.polarity-lab.com →
-          </a>
+          <p>The immediate ask: <strong>30 minutes</strong> to discuss whether there's alignment.</p>
         </div>
       </div>
     </section>
@@ -3402,15 +2704,15 @@
     <!-- CONTACT SECTION -->
     <section class="spatial-section contact" id="contact">
       <div class="section-inner">
-        <h2 class="contact-title reveal">Reach us</h2>
+        <h2 class="contact-title reveal">Let's connect</h2>
 
         <div class="contact-links reveal">
-          <a href="mailto:team@polarity-lab.com" class="contact-btn">
+          <a href="mailto:polarity@polarity-lab.com" class="contact-btn">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
-            team@polarity-lab.com
+            polarity@polarity-lab.com
           </a>
 
           <a href="https://www.linkedin.com/company/polarity-lab/" target="_blank" class="contact-btn">
@@ -3422,7 +2724,7 @@
         </div>
 
         <div class="newsletter reveal">
-          <p class="newsletter-label">Get updates</p>
+          <p class="newsletter-label">Stay Updated</p>
           <form class="newsletter-form" id="newsletter-form">
             <input type="email" name="email" placeholder="Enter your email" required>
             <button type="submit">Subscribe</button>
@@ -3432,56 +2734,14 @@
         <!-- Changelog Section -->
         <div class="changelog-section">
           <div class="changelog-header">
-            <span class="changelog-title">What We've Shipped</span>
+            <span class="changelog-title">Recent Updates</span>
+            <a href="https://github.com/polarityai/polarity-landing/blob/main/CHANGELOG.md" target="_blank" class="changelog-link">View all →</a>
           </div>
-          <div class="changelog-entries">
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">Feb '26</span>
-                <span class="changelog-tag teal">Lab</span>
-              </div>
-              <p class="changelog-message">Open-sourced the algorithm pitch. <a href="https://algorithm.polarity-lab.com" target="_blank" style="color: var(--teal); text-decoration: none;">algorithm.polarity-lab.com</a> goes live</p>
-            </div>
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">Jan '26</span>
-                <span class="changelog-tag purple">WaxFeed</span>
-              </div>
-              <p class="changelog-message">WaxFeed beta. First live deployment of the algorithm, pointed at music</p>
-            </div>
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">Jan '26</span>
-                <span class="changelog-tag coral">Pain Points</span>
-              </div>
-              <p class="changelog-message">Pain Points architecture finalized. Fund problems, not promises. Public launch Q2 2026</p>
-            </div>
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">Dec '25</span>
-                <span class="changelog-tag purple">Polarity</span>
-              </div>
-              <p class="changelog-message">Polarity ships agentic tools. Web search, workspace, live documents</p>
-            </div>
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">Oct '25</span>
-                <span class="changelog-tag teal">AVDP</span>
-              </div>
-              <p class="changelog-message">A Very Distant Perspective launches. Long-form conversation as research data</p>
-            </div>
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">Sep '25</span>
-                <span class="changelog-tag teal">Lab</span>
-              </div>
-              <p class="changelog-message">Polarity Lab LLC incorporated. Providence, RI</p>
-            </div>
-          </div>
+          <div class="changelog-entries" id="changelog-entries"></div>
         </div>
 
         <footer class="footer">
-          <p class="footer-copyright">© 2025–2026 POLARITY LAB LLC · Providence, RI</p>
+          <p class="footer-copyright">© 2025 POLARITY LAB LLC · Providence, RI · 2 Provisional Patents Filed</p>
         </footer>
       </div>
     </section>
@@ -3497,11 +2757,10 @@
         this.canvas = document.getElementById('webgl-bg');
         if (!this.canvas) return;
         
-        this.renderer = new THREE.WebGLRenderer({
-          canvas: this.canvas,
+        this.renderer = new THREE.WebGLRenderer({ 
+          canvas: this.canvas, 
           alpha: true,
-          antialias: false,
-          powerPreference: 'high-performance'
+          antialias: true 
         });
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
@@ -3638,19 +2897,15 @@
       }
 
       addEventListeners() {
-        let resizeTimer;
         window.addEventListener('resize', () => {
-          clearTimeout(resizeTimer);
-          resizeTimer = setTimeout(() => {
-            this.renderer.setSize(window.innerWidth, window.innerHeight);
-            this.material.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
-          }, 100);
+          this.renderer.setSize(window.innerWidth, window.innerHeight);
+          this.material.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
         });
 
         window.addEventListener('mousemove', (e) => {
           this.targetMouse.x = e.clientX / window.innerWidth;
           this.targetMouse.y = 1.0 - e.clientY / window.innerHeight;
-        }, { passive: true });
+        });
       }
 
       animate() {
@@ -3659,9 +2914,9 @@
         this.time += 0.016;
         this.material.uniforms.uTime.value = this.time;
         
-        // Smooth mouse follow — slightly faster for subtle responsiveness
-        this.mouse.x += (this.targetMouse.x - this.mouse.x) * 0.065;
-        this.mouse.y += (this.targetMouse.y - this.mouse.y) * 0.065;
+        // Smooth mouse follow
+        this.mouse.x += (this.targetMouse.x - this.mouse.x) * 0.05;
+        this.mouse.y += (this.targetMouse.y - this.mouse.y) * 0.05;
         this.material.uniforms.uMouse.value.set(this.mouse.x, this.mouse.y);
         
         this.renderer.render(this.scene, this.camera);
@@ -3676,49 +2931,31 @@
     // ==========================================
     const cursor = document.getElementById('cursor');
     const cursorDot = document.getElementById('cursor-dot');
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
+    let cursorX = 0, cursorY = 0;
     let dotX = 0, dotY = 0;
-    let currentOffset = 10;
-    let targetOffset = 10;
-    let isHovering = false;
 
     if (cursor && cursorDot && !window.matchMedia('(pointer: coarse)').matches) {
       document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      }, { passive: true });
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+      });
 
       // Hover states
       const hoverElements = document.querySelectorAll('a, button, .product-card, .team-card, .research-card');
       hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-          cursor.classList.add('hover');
-          isHovering = true;
-          targetOffset = 30;
-        });
-        el.addEventListener('mouseleave', () => {
-          cursor.classList.remove('hover');
-          isHovering = false;
-          targetOffset = 10;
-        });
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
       });
 
       function animateCursor() {
-        // Ring: fast follow with slight spring — feels responsive but weighted
-        ringX += (mouseX - ringX) * 0.18;
-        ringY += (mouseY - ringY) * 0.18;
-
-        // Dot: softer trail — creates depth between ring and dot
-        dotX += (mouseX - dotX) * 0.09;
-        dotY += (mouseY - dotY) * 0.09;
-
-        // Smooth the offset change so hover expand doesn't jerk the position
-        currentOffset += (targetOffset - currentOffset) * 0.12;
-
-        cursor.style.transform = `translate3d(${ringX - currentOffset}px, ${ringY - currentOffset}px, 0)`;
-        cursorDot.style.transform = `translate3d(${dotX - 2}px, ${dotY - 2}px, 0)`;
-
+        dotX += (cursorX - dotX) * 0.2;
+        dotY += (cursorY - dotY) * 0.2;
+        
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top = dotY + 'px';
+        
         requestAnimationFrame(animateCursor);
       }
       animateCursor();
@@ -3778,7 +3015,7 @@
     let lastScrollY = 0;
 
     // Sections for scroll spy
-    const sections = ['about', 'ccx', 'products', 'studio', 'team', 'research', 'safety', 'contact'];
+    const sections = ['ccx', 'about', 'products', 'team', 'research', 'safety', 'contact'];
     
     function updateActiveNav() {
       const scrollY = window.scrollY + 150; // Offset for nav height
@@ -3820,7 +3057,7 @@
       constructor() {
         this.scrollY = 0;
         this.targetScrollY = 0;
-        this.ease = 0.1;
+        this.ease = 0.08;
         this.vh = window.innerHeight;
 
         // Elements
@@ -3829,14 +3066,12 @@
         this.iconWaxfeed = document.getElementById('icon-waxfeed');
         this.iconPolarity = document.getElementById('icon-polarity');
         this.iconPainpoints = document.getElementById('icon-painpoints');
-        this.iconFonmydj = document.getElementById('icon-fonmydj');
         this.iconAvdp = document.getElementById('icon-avdp');
+        this.iconFonmydj = document.getElementById('icon-fonmydj');
         this.scrollIndicator = document.getElementById('scroll-indicator');
 
         // Hero text only
         this.textHero = document.getElementById('text-hero');
-
-        this.stage = document.getElementById('stage');
 
         // Make product labels visible initially
         document.querySelectorAll('.hero-product').forEach(el => el.classList.add('visible'));
@@ -3922,7 +3157,7 @@
         }
 
         if (this.iconFonmydj) {
-          const fmX = iconExitProgress * 160;
+          const fmX = iconExitProgress * 150;
           const fmY = iconExitProgress * 120;
           const fmOpacity = 1 - iconExitProgress;
           const fmScale = 1 - iconExitProgress * 0.2;
@@ -3947,18 +3182,7 @@
           this.constellation.style.transform = `translate(-50%, calc(-50% + ${constY}px))`;
         }
 
-        // Hide the stage layer once scrolled past hero so it doesn't block touch/scroll
-        if (this.stage) {
-          if (iconExitProgress > 0.8) {
-            this.stage.style.pointerEvents = 'none';
-            this.stage.style.visibility = 'hidden';
-            if (isMobile) this.stage.style.display = 'none';
-          } else {
-            this.stage.style.pointerEvents = 'none';
-            this.stage.style.visibility = 'visible';
-            if (isMobile) this.stage.style.display = '';
-          }
-        }
+        // Content sections now visible directly - no scroll text choreography
 
         requestAnimationFrame(() => this.animate());
       }
@@ -3988,38 +3212,60 @@
     });
 
     // ==========================================
-    // NEWSLETTER FORM (Formspree)
+    // NEWSLETTER FORM
     // ==========================================
     const newsletterForm = document.getElementById('newsletter-form');
     newsletterForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const button = newsletterForm.querySelector('button');
-      const emailInput = newsletterForm.querySelector('input[name="email"]');
       button.textContent = 'Subscribing...';
       button.disabled = true;
 
-      try {
-        const response = await fetch('https://formspree.io/p/2947789609385328255/f/newsletter', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: emailInput.value })
-        });
-        if (response.ok) {
-          button.textContent = 'Subscribed!';
-          newsletterForm.reset();
-        } else {
-          button.textContent = 'Error. Try again.';
-        }
-      } catch (err) {
-        button.textContent = 'Error. Try again.';
-      }
       setTimeout(() => {
-        button.textContent = 'Subscribe';
-        button.disabled = false;
-      }, 2000);
+        button.textContent = 'Subscribed!';
+        setTimeout(() => {
+          button.textContent = 'Subscribe';
+          button.disabled = false;
+          newsletterForm.reset();
+        }, 2000);
+      }, 1000);
     });
 
-    // Changelog is now hardcoded in HTML — no longer fetched from changelog.json
+    // ==========================================
+    // CHANGELOG LOADER
+    // ==========================================
+    async function loadChangelog() {
+      try {
+        const res = await fetch('/changelog.json');
+        if (!res.ok) return;
+
+        const entries = await res.json();
+        const container = document.getElementById('changelog-entries');
+        if (!container || !entries.length) return;
+
+        container.innerHTML = entries.slice(0, 5).map(entry => {
+          const date = new Date(entry.date).toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric'
+          });
+          const colorClass = entry.category.color === 'text-secondary' ? '' : entry.category.color;
+
+          return `
+            <div class="changelog-entry">
+              <div class="changelog-meta">
+                <span class="changelog-date">${date}</span>
+                <span class="changelog-tag ${colorClass}">${entry.category.label}</span>
+              </div>
+              <p class="changelog-message">${entry.title}</p>
+            </div>
+          `;
+        }).join('');
+      } catch (e) {
+        console.warn('Changelog not available:', e);
+      }
+    }
+
+    loadChangelog();
   </script>
 </body>
 </html>
