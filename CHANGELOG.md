@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 17, 2026
 
+- Fix responsive hero layout for mobile and tablet (`f15012e`)
+
+### Mar 17, 2026
+
 - Center Polarity in hero constellation with CSS order (`f77f1af`)
 
 ### Mar 17, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Fix Get Involved icons and colors, wire up Formspree (`4fdbc1d`)
-
-### Mar 1, 2026
-
-- Standardize product cards to Explore, update Contributors link (`5a84b14`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "f15012e",
+    "date": "2026-03-17",
+    "title": "Fix responsive hero layout for mobile and tablet",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "f77f1af",
     "date": "2026-03-17",
     "title": "Center Polarity in hero constellation with CSS order",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "5a84b14",
-    "date": "2026-03-01",
-    "title": "Standardize product cards to Explore, update Contributors link",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]
