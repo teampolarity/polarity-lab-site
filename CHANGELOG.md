@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Mar 17, 2026
+
+- Add FONMYDJ to hero constellation and products grid (`66b7294`)
+
 ### Mar 1, 2026
 
 - Fix OG title to complement card image instead of repeating it (`6a8a46a`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Standardize product cards to Explore, update Contributors link (`98220af`)
-
-### Mar 1, 2026
-
-- Add Get on Pulse card to Get Involved section (`b190105`)
 
 
 ---
