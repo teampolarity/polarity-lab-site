@@ -1,5 +1,14 @@
 [
   {
+    "id": "f77f1af",
+    "date": "2026-03-17",
+    "title": "Center Polarity in hero constellation with CSS order",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "d402d78",
     "date": "2026-03-17",
     "title": "Fix Pain Points icon path and label broken by merge",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "291134e",
-    "date": "2026-03-01",
-    "title": "Add Get on Pulse card to Get Involved section",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]

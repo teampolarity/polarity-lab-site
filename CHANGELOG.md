@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 17, 2026
 
+- Center Polarity in hero constellation with CSS order (`f77f1af`)
+
+### Mar 17, 2026
+
 - Fix Pain Points icon path and label broken by merge (`d402d78`)
 
 ### Mar 17, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Standardize product cards to Explore, update Contributors link (`5a84b14`)
-
-### Mar 1, 2026
-
-- Add Get on Pulse card to Get Involved section (`291134e`)
 
 
 ---
