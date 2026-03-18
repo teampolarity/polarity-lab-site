@@ -1,5 +1,14 @@
 [
   {
+    "id": "65fe0fb",
+    "date": "2026-03-18",
+    "title": "Fix section content centering with margin auto",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "f15012e",
     "date": "2026-03-17",
     "title": "Fix responsive hero layout for mobile and tablet",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "4fdbc1d",
-    "date": "2026-03-01",
-    "title": "Fix Get Involved icons and colors, wire up Formspree",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

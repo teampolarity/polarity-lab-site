@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Mar 18, 2026
+
+- Fix section content centering with margin auto (`65fe0fb`)
+
 ### Mar 17, 2026
 
 - Fix responsive hero layout for mobile and tablet (`f15012e`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Wire newsletter form to Formspree project endpoint (`7129741`)
-
-### Mar 1, 2026
-
-- Fix Get Involved icons and colors, wire up Formspree (`4fdbc1d`)
 
 
 ---
