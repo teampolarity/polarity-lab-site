@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 18, 2026
 
+- Fix section centering in public/index.html (deployed file) (`5a89637`)
+
+### Mar 18, 2026
+
 - Fix section content centering with margin auto (`65fe0fb`)
 
 ### Mar 17, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Add Get on Pulse card to Get Involved section (`7cb5219`)
-
-### Mar 1, 2026
-
-- Wire newsletter form to Formspree project endpoint (`7129741`)
 
 
 ---

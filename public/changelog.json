@@ -1,5 +1,14 @@
 [
   {
+    "id": "5a89637",
+    "date": "2026-03-18",
+    "title": "Fix section centering in public/index.html (deployed file)",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "65fe0fb",
     "date": "2026-03-18",
     "title": "Fix section content centering with margin auto",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "7129741",
-    "date": "2026-03-01",
-    "title": "Wire newsletter form to Formspree project endpoint",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
