@@ -498,6 +498,12 @@
       perspective: 1500px;
     }
 
+    .hero-constellation--three {
+      grid-template-columns: 1fr 1fr 1fr;
+      max-width: 900px;
+      gap: 40px;
+    }
+
     .hero-product {
       position: relative;
       display: flex;
@@ -601,21 +607,20 @@
     }
 
     .hero-product--painpoints {
-      order: 2;
+      order: 1;
       z-index: 2;
     }
 
     .hero-product--painpoints .hero-product-icon {
-      filter: drop-shadow(0 0 50px var(--red-glow));
+      filter: drop-shadow(0 0 50px rgba(34, 197, 94, 0.5));
     }
 
-    .hero-product--fonmydj {
-      order: 4;
-      z-index: 2;
+    .hero-constellation--three .hero-product--polarity {
+      order: 2;
     }
 
-    .hero-product--fonmydj .hero-product-icon {
-      filter: drop-shadow(0 0 50px var(--amber-glow));
+    .hero-constellation--three .hero-product--waxfeed {
+      order: 3;
     }
 
     /* ==========================================
@@ -932,26 +937,19 @@
     @media (max-width: 768px) {
       .hero-constellation {
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto;
         gap: 16px 12px;
         padding: 16px 24px;
         max-width: 100%;
         top: 28%;
       }
       .hero-product--waxfeed,
-      .hero-product--avdp,
       .hero-product--polarity,
-      .hero-product--painpoints,
-      .hero-product--fonmydj {
+      .hero-product--painpoints {
         justify-self: center;
       }
-      /* Row 1: WaxFeed | Polarity (center) | Pain Points */
-      .hero-product--waxfeed { order: 1; }
+      .hero-product--painpoints { order: 1; }
       .hero-product--polarity { order: 2; }
-      .hero-product--painpoints { order: 3; }
-      /* Row 2: FONMYDJ | gap | AVDP */
-      .hero-product--fonmydj { order: 4; }
-      .hero-product--avdp { order: 5; grid-column: 3; }
+      .hero-product--waxfeed { order: 3; }
       .hero-product-icon { width: 80px; height: 80px; }
       .hero-product--polarity .hero-product-icon { width: 100px; height: 100px; }
       .hero-product-label { font-size: 9px; letter-spacing: 0.1em; }
@@ -1502,13 +1500,34 @@
     .product-card:nth-child(2)::before { background: linear-gradient(135deg, var(--purple-glow), transparent); }
     .product-card:nth-child(3)::before { background: linear-gradient(135deg, var(--coral-glow), transparent); }
 
+    .product-card {
+      cursor: pointer;
+      transition: all 0.5s var(--ease-elastic);
+    }
+
     .product-card:hover {
-      transform: translateY(-12px) scale(1.02);
+      transform: translateY(-12px) scale(1.05);
       border-color: var(--border-medium);
+    }
+
+    .product-card:active {
+      transform: translateY(-4px) scale(0.97);
+      transition: all 0.15s ease;
     }
 
     .product-card:hover::before {
       opacity: 0.2;
+    }
+
+    .product-card:hover .product-icon--hero {
+      animation: cardBounce 0.6s var(--ease-elastic);
+    }
+
+    @keyframes cardBounce {
+      0% { transform: scale(1); }
+      40% { transform: scale(1.15); }
+      70% { transform: scale(0.95); }
+      100% { transform: scale(1.05); }
     }
 
     .product-icon {
@@ -2247,13 +2266,37 @@
        ========================================== -->
   <div class="stage" id="stage">
     <!-- Hero Constellation -->
-    <div class="hero-constellation" id="hero-constellation">
-      <!-- WaxFeed -->
-      <a href="https://wax-feed.com" target="_blank" class="hero-product hero-product--waxfeed" id="icon-waxfeed">
+    <div class="hero-constellation hero-constellation--three" id="hero-constellation">
+      <!-- PHRESH -->
+      <a href="https://phresh.fit" target="_blank" class="hero-product hero-product--painpoints" id="icon-painpoints">
         <div class="hero-product-icon">
-          <img src="waxfeed_disc.svg" alt="WaxFeed">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="heroLeafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#16a34a"/>
+                <stop offset="50%" stop-color="#22c55e"/>
+                <stop offset="100%" stop-color="#4ade80"/>
+              </linearGradient>
+              <filter id="heroLeafGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="6" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <circle cx="100" cy="100" r="70" fill="#22c55e" opacity="0.08" filter="url(#heroLeafGlow)"/>
+            <g filter="url(#heroLeafGlow)">
+              <path d="M100 30 C50 55, 35 100, 58 140 Q72 165, 100 172 Q128 165, 142 140 C165 100, 150 55, 100 30Z" fill="url(#heroLeafGrad)" opacity="0.9"/>
+            </g>
+            <path d="M100 45 L100 158" stroke="#166534" stroke-width="2.5" stroke-linecap="round" opacity="0.45"/>
+            <path d="M100 70 L72 55" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M100 70 L128 55" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M100 92 L65 78" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M100 92 L135 78" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M100 114 L68 102" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M100 114 L132 102" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M82 50 Q74 72, 78 95" stroke="white" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.2"/>
+          </svg>
         </div>
-        <span class="hero-product-label">WaxFeed</span>
+        <span class="hero-product-label">PHRESH</span>
       </a>
 
       <!-- PolarityGPS -->
@@ -2272,20 +2315,11 @@
               </radialGradient>
               <filter id="heroOrbitalGlow" x="-100%" y="-100%" width="300%" height="300%">
                 <feGaussianBlur stdDeviation="4" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
               <filter id="heroCoreGlow" x="-100%" y="-100%" width="300%" height="300%">
                 <feGaussianBlur stdDeviation="10" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
             </defs>
             <circle cx="100" cy="100" r="90" fill="url(#heroAmbient)"/>
@@ -2302,78 +2336,12 @@
         <span class="hero-product-label">PolarityGPS</span>
       </a>
 
-      <!-- PHRESH -->
-      <a href="https://phresh.fit" target="_blank" class="hero-product hero-product--painpoints" id="icon-painpoints">
+      <!-- WaxFeed -->
+      <a href="https://wax-feed.com" target="_blank" class="hero-product hero-product--waxfeed" id="icon-waxfeed">
         <div class="hero-product-icon">
-          <img src="painpoints-icon.svg" alt="PHRESH">
+          <img src="waxfeed_disc.svg" alt="WaxFeed">
         </div>
-        <span class="hero-product-label">PHRESH</span>
-      </a>
-
-      <!-- FOMDJ -->
-      <a href="https://fonmydj.com" target="_blank" class="hero-product hero-product--fonmydj" id="icon-fonmydj">
-        <div class="hero-product-icon">
-          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <radialGradient id="fmAmbient" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.3"/>
-                <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
-              </radialGradient>
-              <radialGradient id="fmCoreGrad" cx="30%" cy="30%" r="70%">
-                <stop offset="0%" stop-color="#FBBF24"/>
-                <stop offset="50%" stop-color="#F59E0B"/>
-                <stop offset="100%" stop-color="#D97706"/>
-              </radialGradient>
-              <filter id="fmGlow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="4" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-              <filter id="fmCoreGlow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="8" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            <!-- Ambient glow -->
-            <circle cx="100" cy="100" r="90" fill="url(#fmAmbient)"/>
-            <!-- Orbital sound rings -->
-            <ellipse cx="100" cy="100" rx="85" ry="30" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="rotate(-20 100 100)" filter="url(#fmGlow)" opacity="0.3"/>
-            <ellipse cx="100" cy="100" rx="70" ry="22" fill="none" stroke="#FBBF24" stroke-width="2" transform="rotate(10 100 100)" filter="url(#fmGlow)" opacity="0.5"/>
-            <ellipse cx="100" cy="100" rx="55" ry="16" fill="none" stroke="#FBBF24" stroke-width="2.5" transform="rotate(-5 100 100)" filter="url(#fmGlow)" opacity="0.7"/>
-            <!-- Particles on orbits -->
-            <circle cx="168" cy="88" r="4" fill="#FBBF24" filter="url(#fmGlow)" opacity="0.9"/>
-            <circle cx="38" cy="108" r="3" fill="#F59E0B" filter="url(#fmGlow)" opacity="0.7"/>
-            <circle cx="155" cy="118" r="3.5" fill="#FCD34D" filter="url(#fmGlow)" opacity="0.8"/>
-            <circle cx="52" cy="82" r="2.5" fill="#FBBF24" filter="url(#fmGlow)" opacity="0.6"/>
-            <!-- Core speaker shape -->
-            <g filter="url(#fmCoreGlow)">
-              <path d="M90 72L78 80V120L90 128V72Z" fill="url(#fmCoreGrad)"/>
-              <path d="M90 72L108 62V138L90 128V72Z" fill="url(#fmCoreGrad)" opacity="0.85"/>
-              <path d="M90 76L80 82V96L90 90V76Z" fill="white" opacity="0.2"/>
-            </g>
-            <!-- Sound wave arcs -->
-            <path d="M115 82C122 88 126 94 126 100C126 106 122 112 115 118" fill="none" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.9"/>
-            <path d="M122 72C132 80 138 90 138 100C138 110 132 120 122 128" fill="none" stroke="#F59E0B" stroke-width="2.5" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.6"/>
-            <path d="M130 62C142 73 150 86 150 100C150 114 142 127 130 138" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.35"/>
-          </svg>
-        </div>
-        <span class="hero-product-label">FOMDJ</span>
-      </a>
-
-      <!-- AVDP -->
-      <a href="https://linktr.ee/averydistantperspective" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
-        <div class="hero-product-icon avdp-icon">
-          <img src="AVDPLOGOREAL.jpg" alt="AVDP">
-        </div>
-        <span class="hero-product-label">AVDP</span>
+        <span class="hero-product-label">WaxFeed</span>
       </a>
     </div>
 
@@ -3030,8 +2998,6 @@
         this.iconWaxfeed = document.getElementById('icon-waxfeed');
         this.iconPolarity = document.getElementById('icon-polarity');
         this.iconPainpoints = document.getElementById('icon-painpoints');
-        this.iconAvdp = document.getElementById('icon-avdp');
-        this.iconFonmydj = document.getElementById('icon-fonmydj');
         this.scrollIndicator = document.getElementById('scroll-indicator');
 
         // Hero text only
@@ -3118,26 +3084,6 @@
           const ppRotate = iconExitProgress * 15;
           this.iconPainpoints.style.transform = `translate(${ppX}px, ${ppY}px) scale(${ppScale}) rotate(${ppRotate}deg)`;
           this.iconPainpoints.style.opacity = ppOpacity;
-        }
-
-        if (this.iconFonmydj) {
-          const fmX = iconExitProgress * 150;
-          const fmY = iconExitProgress * 120;
-          const fmOpacity = 1 - iconExitProgress;
-          const fmScale = 1 - iconExitProgress * 0.2;
-          const fmRotate = iconExitProgress * 10;
-          this.iconFonmydj.style.transform = `translate(${fmX}px, ${fmY}px) scale(${fmScale}) rotate(${fmRotate}deg)`;
-          this.iconFonmydj.style.opacity = fmOpacity;
-        }
-
-        if (this.iconAvdp) {
-          const avdpX = iconExitProgress * 200;
-          const avdpY = iconExitProgress * -80;
-          const avdpOpacity = 1 - iconExitProgress;
-          const avdpScale = 1 - iconExitProgress * 0.2;
-          const avdpRotate = iconExitProgress * 15;
-          this.iconAvdp.style.transform = `translate(${avdpX}px, ${avdpY}px) scale(${avdpScale}) rotate(${avdpRotate}deg)`;
-          this.iconAvdp.style.opacity = avdpOpacity;
         }
 
         // Constellation drift
