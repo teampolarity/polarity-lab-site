@@ -1,5 +1,14 @@
 [
   {
+    "id": "ccc2b97",
+    "date": "2026-03-21",
+    "title": "Fix hero badge: visible, reads 'Interdisciplinary Research Laboratory'",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "f60e459",
     "date": "2026-03-21",
     "title": "Hero fills viewport: icons centered, Learn More at bottom",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "8f6d89d",
-    "date": "2026-03-21",
-    "title": "Major content overhaul: Reflective AI rebrand + product restructure",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
