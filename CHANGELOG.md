@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Remove pop-in animations — everything visible on scroll (`3687722`)
+
+### Mar 21, 2026
+
 - Move hero into normal scroll flow — no more fixed stage (`2df29ac`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 17, 2026
 
 - Center Polarity in hero constellation with CSS order (`f77f1af`)
-
-### Mar 17, 2026
-
-- Fix Pain Points icon path and label broken by merge (`d402d78`)
 
 
 ---

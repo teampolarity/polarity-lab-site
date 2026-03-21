@@ -1,5 +1,14 @@
 [
   {
+    "id": "3687722",
+    "date": "2026-03-21",
+    "title": "Remove pop-in animations — everything visible on scroll",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "2df29ac",
     "date": "2026-03-21",
     "title": "Move hero into normal scroll flow — no more fixed stage",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "d402d78",
-    "date": "2026-03-17",
-    "title": "Fix Pain Points icon path and label broken by merge",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
