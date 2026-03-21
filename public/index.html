@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050508">
-  <meta name="description" content="Polarity Lab - Research laboratory studying Conversational Connectomics (CCX). Extracting cognitive signals from natural language. Providence, RI.">
+  <meta name="description" content="Polarity Lab - Research laboratory building Reflective AI. Technology that understands you and gives you the power. Providence, RI.">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <title>POLARITY</title>
@@ -1472,9 +1472,9 @@
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      max-width: 1300px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -1500,9 +1500,7 @@
     }
 
     .product-card:nth-child(2)::before { background: linear-gradient(135deg, var(--purple-glow), transparent); }
-    .product-card:nth-child(3)::before { background: linear-gradient(135deg, var(--red-glow), transparent); }
-    .product-card:nth-child(4)::before { background: linear-gradient(135deg, var(--coral-glow), transparent); }
-    .product-card:nth-child(5)::before { background: linear-gradient(135deg, var(--amber-glow), transparent); }
+    .product-card:nth-child(3)::before { background: linear-gradient(135deg, var(--coral-glow), transparent); }
 
     .product-card:hover {
       transform: translateY(-12px) scale(1.02);
@@ -1527,9 +1525,7 @@
 
     .product-card:nth-child(1) .product-icon { background: var(--teal-subtle); }
     .product-card:nth-child(2) .product-icon { background: rgba(187, 143, 206, 0.15); }
-    .product-card:nth-child(3) .product-icon { background: var(--red-subtle); }
-    .product-card:nth-child(4) .product-icon { background: rgba(255, 138, 101, 0.15); }
-    .product-card:nth-child(5) .product-icon { background: var(--amber-subtle); }
+    .product-card:nth-child(3) .product-icon { background: rgba(255, 138, 101, 0.15); }
 
     .product-icon svg,
     .product-icon img {
@@ -1587,6 +1583,57 @@
 
     @media (max-width: 600px) {
       .products-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+      }
+    }
+
+    /* Products Integration Section */
+    .products-integration {
+      max-width: 1100px;
+      margin: 60px auto 0;
+      text-align: center;
+    }
+
+    .products-integration-label {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .products-integration-desc {
+      font-size: 15px;
+      color: var(--text-tertiary);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .products-integration-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 750px;
+      margin: 0 auto;
+    }
+
+    .product-card--secondary {
+      opacity: 0.85;
+    }
+
+    .product-card--secondary .product-icon {
+      background: rgba(255, 138, 101, 0.12);
+    }
+
+    .product-card--secondary:nth-child(2) .product-icon {
+      background: var(--amber-subtle);
+    }
+
+    @media (max-width: 600px) {
+      .products-integration-grid {
         grid-template-columns: 1fr;
         max-width: 450px;
       }
@@ -2169,10 +2216,8 @@
 
     <ul class="nav-links" id="nav-links">
       <li><a href="#ccx" class="nav-link">Science</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#team" class="nav-link">Team</a></li>
       <li><a href="#products" class="nav-link">Products</a></li>
-      <li><a href="#research" class="nav-link">Research</a></li>
+      <li><a href="#team" class="nav-link">Team</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
 
@@ -2199,8 +2244,8 @@
         <span class="hero-product-label">WaxFeed</span>
       </a>
 
-      <!-- Polarity -->
-      <a href="https://app.polarity-lab.com/" target="_blank" class="hero-product hero-product--polarity" id="icon-polarity">
+      <!-- PolarityGPS -->
+      <a href="https://polaritygps.com/" target="_blank" class="hero-product hero-product--polarity" id="icon-polarity">
         <div class="hero-product-icon">
           <svg viewBox="0 0 200 200">
             <defs>
@@ -2242,18 +2287,18 @@
             <circle cx="88" cy="88" r="12" fill="white" opacity="0.3"/>
           </svg>
         </div>
-        <span class="hero-product-label">Polarity</span>
+        <span class="hero-product-label">PolarityGPS</span>
       </a>
 
-      <!-- Painpoints -->
-      <a href="https://painpoints.site" target="_blank" class="hero-product hero-product--painpoints" id="icon-painpoints">
+      <!-- PHRESH -->
+      <a href="https://phresh.fit" target="_blank" class="hero-product hero-product--painpoints" id="icon-painpoints">
         <div class="hero-product-icon">
-          <img src="painpoints-icon.svg" alt="Pain Points">
+          <img src="painpoints-icon.svg" alt="PHRESH">
         </div>
-        <span class="hero-product-label">Pain Points</span>
+        <span class="hero-product-label">PHRESH</span>
       </a>
 
-      <!-- FONMYDJ -->
+      <!-- FOMDJ -->
       <a href="https://fonmydj.com" target="_blank" class="hero-product hero-product--fonmydj" id="icon-fonmydj">
         <div class="hero-product-icon">
           <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
@@ -2308,7 +2353,7 @@
             <path d="M130 62C142 73 150 86 150 100C150 114 142 127 130 138" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" filter="url(#fmGlow)" opacity="0.35"/>
           </svg>
         </div>
-        <span class="hero-product-label">FONMYDJ</span>
+        <span class="hero-product-label">FOMDJ</span>
       </a>
 
       <!-- AVDP -->
@@ -2326,10 +2371,10 @@
     <div class="scroll-text scroll-text--center" id="text-hero" style="top: 62%;">
       <div class="hero-badge">Research Laboratory</div>
       <h1 class="hero-title">
-        Measure <span class="gradient">the Mind</span>
+        AI That <span class="gradient">Reflects You</span>
       </h1>
       <p class="hero-subtitle">
-        Studying how conversation reveals how your brain organizes information.
+        Technology that understands how you think — and gives you the power.
       </p>
     </div>
 
@@ -2354,32 +2399,32 @@
         <div class="ccx-content">
           <div class="ccx-text reveal">
             <p class="section-label">The Science</p>
-            <h2 class="section-title">Conversational Connectomics</h2>
+            <h2 class="section-title">Reflective AI</h2>
 
             <div class="ccx-definition">
-              <p class="ccx-definition-desc">A computational framework for inferring how concepts are connected in someone's mind, using their natural language. Like a stethoscope for cognition.</p>
+              <p class="ccx-definition-desc">Most AI tells you what to think. Ours reflects how you already think — then gives you the power to use it. A mirror for your mind, not a replacement.</p>
             </div>
 
             <div class="ccx-steps stagger">
               <div class="ccx-step">
                 <div class="ccx-step-num">1</div>
                 <div>
-                  <h4>Parse</h4>
-                  <p>Break conversation into atomic cognitive events. 12 types of thinking we detect in speech.</p>
+                  <h4>Listen</h4>
+                  <p>The algorithm observes your natural language — how you speak, what you emphasize, and what you connect — without imposing external models.</p>
                 </div>
               </div>
               <div class="ccx-step">
                 <div class="ccx-step-num">2</div>
                 <div>
-                  <h4>Graph</h4>
-                  <p>Build a network of connected concepts. Polarity Points weight how strongly ideas link.</p>
+                  <h4>Reflect</h4>
+                  <p>It builds a map of your thinking — your ideas, your patterns, your connections. Not someone else's framework. Yours.</p>
                 </div>
               </div>
               <div class="ccx-step">
                 <div class="ccx-step-num">3</div>
                 <div>
-                  <h4>Fingerprint</h4>
-                  <p>Generate BrainID — your unique cognitive signature from how you think.</p>
+                  <h4>Empower</h4>
+                  <p>Your cognitive fingerprint becomes a tool you own. Use it to learn, create, and navigate the world on your terms.</p>
                 </div>
               </div>
             </div>
@@ -2393,60 +2438,6 @@
               <div class="ccx-core">
                 <div class="ccx-core-inner"></div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section class="spatial-section about" id="about">
-      <div class="section-inner">
-        <div class="about-header reveal">
-          <p class="section-label">Who We Are</p>
-          <h2 class="section-title">A research lab that builds products</h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-main reveal">
-            <div class="about-main-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
-              </svg>
-            </div>
-            <h3>The Flywheel<span class="about-main-badge">Core Model</span></h3>
-            <p>Products generate data. Data enables research. Research produces papers and patents. Papers bring credibility. Credibility brings users and funding. Funding enables more products. Repeat.</p>
-          </div>
-
-          <div class="about-cards stagger">
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                  <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
-                </svg>
-              </div>
-              <h4>Open Platform</h4>
-              <p>A venue for others to build on our intelligence and contribute as collaborators.</p>
-            </div>
-
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
-                  <path d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582"/>
-                </svg>
-              </div>
-              <h4>The Purpose</h4>
-              <p>Understanding the human condition to bring the world closer together.</p>
-            </div>
-
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
-                  <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
-                </svg>
-              </div>
-              <h4>The Studio</h4>
-              <p>AVDP captures authentic conversation for entertainment and research.</p>
             </div>
           </div>
         </div>
@@ -2493,7 +2484,7 @@
             <div class="team-card-role">Cofounder</div>
             <h3 class="team-card-name">Nathan Amankwah</h3>
             <p class="team-card-title">UOttawa Telfer '27</p>
-            <p class="team-card-bio">Full stack. Helped formalize CCX. Patent #2.</p>
+            <p class="team-card-bio">Full stack. Helped formalize Reflective AI. Patent #2.</p>
             <div class="team-card-linkedin">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             </div>
@@ -2507,19 +2498,30 @@
       <div class="section-inner">
         <div class="products-header reveal">
           <p class="section-label">Our Products</p>
-          <h2 class="section-title">Building the CCX ecosystem</h2>
+          <h2 class="section-title">The PolarityGPS Ecosystem</h2>
         </div>
 
         <div class="products-grid stagger">
-          <a href="https://app.polarity-lab.com/" target="_blank" class="product-card">
+          <a href="https://polaritygps.com/" target="_blank" class="product-card">
             <div class="product-icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
                 <circle cx="12" cy="12" r="3"/>
                 <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
               </svg>
             </div>
-            <div class="product-name">Polarity</div>
-            <div class="product-desc">Cognitive memory service. A friend who never forgets.</div>
+            <div class="product-name">PolarityGPS</div>
+            <div class="product-desc">The first educational and fully integrated free world in the real world. Your GPS for life.</div>
+            <span class="product-arrow">Explore →</span>
+          </a>
+
+          <a href="https://phresh.fit" target="_blank" class="product-card">
+            <div class="product-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="2">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <div class="product-name">PHRESH</div>
+            <div class="product-desc">Your first digital personal stylist. Discovers your StyleID, builds outfits from your colour palette and price point, then links you to buy the drip.</div>
             <span class="product-arrow">Explore →</span>
           </a>
 
@@ -2531,193 +2533,46 @@
             <div class="product-desc">Social platform for music enthusiasts. DJs, mixes, taste graphs.</div>
             <span class="product-arrow">Explore →</span>
           </a>
-
-          <a href="https://painpoints.site" target="_blank" class="product-card">
-            <div class="product-icon">
-              <img src="painpoints-icon.svg" alt="Pain Points">
-            </div>
-            <div class="product-name">Painpoints</div>
-            <div class="product-desc">Fund problems, not promises. Crowdfunding platform for real-world solutions.</div>
-            <span class="product-arrow">Explore →</span>
-          </a>
-
-          <a href="https://linktr.ee/averydistantperspective" target="_blank" class="product-card">
-            <div class="product-icon">
-              <img src="AVDPLOGOREAL.jpg" alt="AVDP">
-            </div>
-            <div class="product-name">AVDP</div>
-            <div class="product-desc">A Very Distant Perspective. Deep dive podcast using CCX.</div>
-            <span class="product-arrow">Listen →</span>
-          </a>
-
-          <a href="https://fonmydj.com" target="_blank" class="product-card">
-            <div class="product-icon">
-              <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <radialGradient id="fmCardGrad" cx="30%" cy="30%" r="70%">
-                    <stop offset="0%" stop-color="#FBBF24"/>
-                    <stop offset="100%" stop-color="#D97706"/>
-                  </radialGradient>
-                </defs>
-                <ellipse cx="20" cy="20" rx="18" ry="7" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.3" transform="rotate(-15 20 20)"/>
-                <ellipse cx="20" cy="20" rx="14" ry="5" fill="none" stroke="#FBBF24" stroke-width="1" opacity="0.5" transform="rotate(10 20 20)"/>
-                <circle cx="32" cy="17" r="1.5" fill="#FBBF24" opacity="0.8"/>
-                <circle cx="9" cy="22" r="1" fill="#F59E0B" opacity="0.6"/>
-                <path d="M17 14L13 17V23L17 26V14Z" fill="url(#fmCardGrad)"/>
-                <path d="M17 14L22 11V29L17 26V14Z" fill="url(#fmCardGrad)" opacity="0.8"/>
-                <path d="M24 16C26 17.5 27 19 27 20C27 21 26 22.5 24 24" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/>
-                <path d="M27 13C29.5 15 31 17.5 31 20C31 22.5 29.5 25 27 27" stroke="#F59E0B" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
-              </svg>
-            </div>
-            <div class="product-name">FONMYDJ</div>
-            <div class="product-desc">A DJ booking marketplace powered by the algorithm. Find your sound, book the right DJ for your event, and let CCX match vibe to venue.</div>
-            <span class="product-arrow">Explore →</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SAFETY SECTION -->
-    <section class="spatial-section safety" id="safety">
-      <div class="section-inner">
-        <div class="safety-header reveal">
-          <p class="section-label">Non-Negotiable</p>
-          <h2 class="section-title">Safety & Ethics</h2>
-          <p class="safety-intro">Cognitive monitoring could enable surveillance and abuse. We are not naive. These principles are foundational.</p>
         </div>
 
-        <div class="safety-grid stagger">
-          <div class="safety-item">
-            <h4>User-Only Access</h4>
-            <p>Your cognitive data is yours alone. No one else sees it.</p>
-          </div>
-          <div class="safety-item">
-            <h4>No Default Sharing</h4>
-            <p>Caregiver access requires explicit, revocable consent.</p>
-          </div>
-          <div class="safety-item">
-            <h4>Coercion Detection</h4>
-            <p>Patterns suggesting forced access trigger protective protocols.</p>
-          </div>
-          <div class="safety-item">
-            <h4>Right to Deletion</h4>
-            <p>Full data purge on request. No exceptions.</p>
-          </div>
-          <div class="safety-item">
-            <h4>No Predictive Policing</h4>
-            <p>Never used for risk scoring or preemptive judgment.</p>
-          </div>
-          <div class="safety-item">
-            <h4>IRB Required</h4>
-            <p>Clinical validation proceeds only with ethics board approval.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Integration Products -->
+        <div class="products-integration reveal">
+          <p class="products-integration-label">Integrated into PolarityGPS</p>
+          <p class="products-integration-desc">Every product feeds into PolarityGPS — the first educational and fully integrated free world in the real world. Here's how it all connects.</p>
+          <div class="products-integration-grid">
+            <a href="https://linktr.ee/averydistantperspective" target="_blank" class="product-card product-card--secondary">
+              <div class="product-icon">
+                <img src="AVDPLOGOREAL.jpg" alt="AVDP">
+              </div>
+              <div class="product-name">AVDP</div>
+              <div class="product-desc">A Very Distant Perspective. Deep dive podcast exploring ideas at the edge of cognition and culture — fuelling the Reflective AI engine.</div>
+              <span class="product-arrow">Listen →</span>
+            </a>
 
-    <!-- RESEARCH SECTION -->
-    <section class="spatial-section research" id="research">
-      <div class="section-inner">
-        <div class="research-header reveal">
-          <p class="section-label">Reading Room</p>
-          <h2 class="section-title">Standing on giants</h2>
-        </div>
-
-        <div class="research-grid stagger">
-          <a href="https://www.pnas.org/doi/pdf/10.1073/pnas.1008662107" target="_blank" class="research-card">
-            <span class="research-card-tag">PNAS 2010</span>
-            <h3>Brains Sync During Conversation</h3>
-            <p>Stephens, Silbert & Hasson show that brains literally synchronize during dialogue.</p>
-            <span class="research-card-arrow">→</span>
-          </a>
-
-          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5558154/pdf/nihms886298.pdf" target="_blank" class="research-card">
-            <span class="research-card-tag">Neuron 2017</span>
-            <h3>Brain Chunks Life Into Episodes</h3>
-            <p>Baldassano et al. reveal the brain segments experience into discrete events.</p>
-            <span class="research-card-arrow">→</span>
-          </a>
-
-          <a href="https://doi.org/10.1038/nrn2575" target="_blank" class="research-card">
-            <span class="research-card-tag">Nature 2009</span>
-            <h3>Your Mind Is a Network</h3>
-            <p>Bullmore & Sporns establish the brain is organized with clusters and hubs.</p>
-            <span class="research-card-arrow">→</span>
-          </a>
-        </div>
-
-        <div class="research-tags reveal">
-          <h4>The Five Clues We Look For</h4>
-          <div class="research-tags-list">
-            <span class="research-tag">Units of Cognition</span>
-            <span class="research-tag">MEG-Proxy States</span>
-            <span class="research-tag">Polarity Points</span>
-            <span class="research-tag">BrainID</span>
-            <span class="research-tag">Consolidation Gate</span>
+            <a href="https://fonmydj.com" target="_blank" class="product-card product-card--secondary">
+              <div class="product-icon">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <radialGradient id="fmCardGrad" cx="30%" cy="30%" r="70%">
+                      <stop offset="0%" stop-color="#FBBF24"/>
+                      <stop offset="100%" stop-color="#D97706"/>
+                    </radialGradient>
+                  </defs>
+                  <ellipse cx="20" cy="20" rx="18" ry="7" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.3" transform="rotate(-15 20 20)"/>
+                  <ellipse cx="20" cy="20" rx="14" ry="5" fill="none" stroke="#FBBF24" stroke-width="1" opacity="0.5" transform="rotate(10 20 20)"/>
+                  <circle cx="32" cy="17" r="1.5" fill="#FBBF24" opacity="0.8"/>
+                  <circle cx="9" cy="22" r="1" fill="#F59E0B" opacity="0.6"/>
+                  <path d="M17 14L13 17V23L17 26V14Z" fill="url(#fmCardGrad)"/>
+                  <path d="M17 14L22 11V29L17 26V14Z" fill="url(#fmCardGrad)" opacity="0.8"/>
+                  <path d="M24 16C26 17.5 27 19 27 20C27 21 26 22.5 24 24" stroke="#FBBF24" stroke-width="1.5" stroke-linecap="round" opacity="0.9"/>
+                  <path d="M27 13C29.5 15 31 17.5 31 20C31 22.5 29.5 25 27 27" stroke="#F59E0B" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
+                </svg>
+              </div>
+              <div class="product-name">FOMDJ</div>
+              <div class="product-desc">A DJ booking marketplace powered by the algorithm. Find your sound, book the right DJ, and let Reflective AI match vibe to venue.</div>
+              <span class="product-arrow">Explore →</span>
+            </a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INVOLVE SECTION -->
-    <section class="spatial-section involve" id="involve">
-      <div class="section-inner">
-        <div class="involve-header reveal">
-          <p class="section-label">Join the Research</p>
-          <h2 class="section-title">Get Involved</h2>
-        </div>
-
-        <div class="involve-grid stagger">
-          <div class="involve-card">
-            <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3M12 17h.01"/>
-              </svg>
-            </div>
-            <h3>Research Collaborators</h3>
-            <p>Domain experts for L3/L4 validation. Psychology, neuroscience, AI, linguistics. Co-authorship available.</p>
-            <a href="mailto:polarity@polarity-lab.com?subject=Research%20Collaboration">Discuss Collaboration →</a>
-          </div>
-
-          <div class="involve-card">
-            <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-              </svg>
-            </div>
-            <h3>Advisors</h3>
-            <p>Occasional feedback on direction, ethics, clinical pathway. Cognitive science, neurology, AI safety.</p>
-            <a href="mailto:polarity@polarity-lab.com?subject=Advisory%20Interest">Express Interest →</a>
-          </div>
-
-          <div class="involve-card">
-            <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <h3>Contributors</h3>
-            <p>Pain Points model: build an MVP, become Principal, earn the highest share. We reward builders.</p>
-            <a href="https://painpoints.site" target="_blank">Pitch a Project →</a>
-          </div>
-
-          <div class="involve-card">
-            <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
-              </svg>
-            </div>
-            <h3>AVDP Podcast</h3>
-            <p>Exploring ideas at the edge of cognition, technology, and human experience.</p>
-            <a href="https://www.instagram.com/averydistantperspective" target="_blank">Follow on Instagram →</a>
-          </div>
-        </div>
-
-        <div class="involve-cta reveal">
-          <p>The immediate ask: <strong>30 minutes</strong> to discuss whether there's alignment.</p>
         </div>
       </div>
     </section>
@@ -3036,7 +2891,7 @@
     let lastScrollY = 0;
 
     // Sections for scroll spy
-    const sections = ['ccx', 'about', 'products', 'team', 'research', 'safety', 'contact'];
+    const sections = ['ccx', 'products', 'team', 'contact'];
     
     function updateActiveNav() {
       const scrollY = window.scrollY + 150; // Offset for nav height
