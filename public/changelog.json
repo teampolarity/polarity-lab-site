@@ -1,5 +1,23 @@
 [
   {
+    "id": "07fa934",
+    "date": "2026-03-21",
+    "title": "Performance: throttle WebGL to 30fps, faster scroll, less padding",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "5351e97",
+    "date": "2026-03-21",
+    "title": "Revert \"Major performance fix: remove WebGL, cursor, constant rAF loops\"",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "fc95474",
     "date": "2026-03-21",
     "title": "Major performance fix: remove WebGL, cursor, constant rAF loops",
@@ -159,24 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "99231c5",
-    "date": "2026-03-17",
-    "title": "Fix FONMYDJ product description to match actual product",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "66b7294",
-    "date": "2026-03-17",
-    "title": "Add FONMYDJ to hero constellation and products grid",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]

@@ -6,6 +6,14 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Performance: throttle WebGL to 30fps, faster scroll, less padding (`07fa934`)
+
+### Mar 21, 2026
+
+- Revert "Major performance fix: remove WebGL, cursor, constant rAF loops" (`5351e97`)
+
+### Mar 21, 2026
+
 - Major performance fix: remove WebGL, cursor, constant rAF loops (`fc95474`)
 
 ### Mar 21, 2026
@@ -75,14 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 17, 2026
 
 - Fix FONMYDJ product description to match actual product (`7f5ad12`)
-
-### Mar 17, 2026
-
-- Fix FONMYDJ product description to match actual product (`99231c5`)
-
-### Mar 17, 2026
-
-- Add FONMYDJ to hero constellation and products grid (`66b7294`)
 
 
 ---
