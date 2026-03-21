@@ -1,5 +1,14 @@
 [
   {
+    "id": "954845b",
+    "date": "2026-03-21",
+    "title": "Polish hero: single-line title, clean spacing, remove scroll indicator",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "bb5fae5",
     "date": "2026-03-21",
     "title": "Update hero: 'The First Ever AI That Reflects You.' + Learn More button",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "857be3e",
-    "date": "2026-03-01",
-    "title": "Add hero CTA links and fix card link colors",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

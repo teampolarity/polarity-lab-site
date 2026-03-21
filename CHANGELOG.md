@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Polish hero: single-line title, clean spacing, remove scroll indicator (`954845b`)
+
+### Mar 21, 2026
+
 - Update hero: 'The First Ever AI That Reflects You.' + Learn More button (`bb5fae5`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Add OG card for social media sharing (`58081c3`)
-
-### Mar 1, 2026
-
-- Add hero CTA links and fix card link colors (`857be3e`)
 
 
 ---
