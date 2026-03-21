@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Major performance fix: remove WebGL, cursor, constant rAF loops (`fc95474`)
+
+### Mar 21, 2026
+
 - Move hero text higher (58%) for better visual balance (`7c6e7b9`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 17, 2026
 
 - Add FONMYDJ to hero constellation and products grid (`66b7294`)
-
-### Mar 1, 2026
-
-- Fix OG title to complement card image instead of repeating it (`6a8a46a`)
 
 
 ---

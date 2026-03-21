@@ -1,5 +1,14 @@
 [
   {
+    "id": "fc95474",
+    "date": "2026-03-21",
+    "title": "Major performance fix: remove WebGL, cursor, constant rAF loops",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "7c6e7b9",
     "date": "2026-03-21",
     "title": "Move hero text higher (58%) for better visual balance",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "6a8a46a",
-    "date": "2026-03-01",
-    "title": "Fix OG title to complement card image instead of repeating it",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
