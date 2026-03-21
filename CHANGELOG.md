@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Fix nav: solid background, always visible at top (`aa4099c`)
+
+### Mar 21, 2026
+
 - Fix layout: sticky nav, tighter hero spacing (`0005579`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 18, 2026
 
 - Fix section centering in public/index.html (deployed file) (`5a89637`)
-
-### Mar 18, 2026
-
-- Fix section content centering with margin auto (`65fe0fb`)
 
 
 ---
