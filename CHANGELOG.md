@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Nav is now static header — scrolls with page, not fixed (`3ca675e`)
+
+### Mar 21, 2026
+
 - Nav: transparent background, fixed at top, content scrolls behind (`3380b54`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Remove CCX title from public/index.html (`4627cc5`)
-
-### Mar 21, 2026
-
-- Remove CCX title from Conversational Connectomics section (`2f7126e`)
 
 
 ---
