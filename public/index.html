@@ -14,8 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Three.js for WebGL background -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Three.js removed — not needed -->
 
   <style>
     /* ==========================================
@@ -117,7 +116,6 @@
     }
 
     html {
-      scroll-behavior: smooth;
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -173,7 +171,7 @@
       inset: 0;
       opacity: 0.03;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-      animation: grainShift 8s steps(10) infinite;
+      /* grain animation disabled for performance */
     }
 
     @keyframes grainShift {
@@ -246,8 +244,6 @@
 
     .nav.scrolled {
       background: rgba(2, 2, 4, 0.7);
-      backdrop-filter: blur(20px) saturate(180%);
-      -webkit-backdrop-filter: blur(20px) saturate(180%);
       padding: 16px 48px;
       border-bottom: 1px solid var(--border-ghost);
     }
@@ -267,7 +263,6 @@
     .nav-logo-atom {
       width: 40px;
       height: 40px;
-      filter: drop-shadow(0 0 20px var(--teal-glow));
       transition: transform 0.6s var(--ease-out-expo);
     }
 
@@ -493,7 +488,6 @@
       text-decoration: none;
       cursor: pointer;
       user-select: none;
-      will-change: transform, opacity;
       transition: filter 0.4s ease;
     }
 
@@ -504,7 +498,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      will-change: transform;
       transition: transform 0.6s var(--ease-out-expo);
     }
 
@@ -551,7 +544,6 @@
     }
 
     .hero-product--waxfeed .hero-product-icon {
-      filter: drop-shadow(0 0 50px rgba(187, 143, 206, 0.5));
     }
 
     .hero-product--polarity {
@@ -562,8 +554,6 @@
     .hero-product--polarity .hero-product-icon {
       width: 180px;
       height: 180px;
-      filter: drop-shadow(0 0 60px var(--teal-glow));
-      animation: polarityFloat 6s ease-in-out infinite;
     }
 
     @keyframes polarityFloat {
@@ -591,7 +581,6 @@
     }
 
     .hero-product--painpoints .hero-product-icon {
-      filter: drop-shadow(0 0 50px rgba(34, 197, 94, 0.5));
     }
 
 
@@ -1122,7 +1111,7 @@
       inset: 0;
       border: 1px solid var(--border-ghost);
       border-radius: 50%;
-      animation: ccxRotate 60s linear infinite;
+      /* rotation disabled for performance */
     }
 
     .ccx-ring:nth-child(2) {
@@ -1158,8 +1147,7 @@
       height: 100%;
       background: radial-gradient(circle, var(--teal-light) 0%, var(--teal-deep) 70%);
       border-radius: 50%;
-      animation: ccxPulse 4s ease infinite;
-      box-shadow: 0 0 60px var(--teal-glow);
+      /* pulse disabled for performance */
     }
 
     @keyframes ccxPulse {
@@ -2883,43 +2871,10 @@
       }
     }
 
-    // Initialize WebGL background
-    const webglBg = new WebGLBackground();
+    // WebGL disabled for performance — site uses CSS background instead
+    // const webglBg = new WebGLBackground();
 
-    // ==========================================
-    // CUSTOM CURSOR
-    // ==========================================
-    const cursor = document.getElementById('cursor');
-    const cursorDot = document.getElementById('cursor-dot');
-    let cursorX = 0, cursorY = 0;
-    let dotX = 0, dotY = 0;
-
-    if (cursor && cursorDot && !window.matchMedia('(pointer: coarse)').matches) {
-      document.addEventListener('mousemove', (e) => {
-        cursorX = e.clientX;
-        cursorY = e.clientY;
-      });
-
-      // Hover states
-      const hoverElements = document.querySelectorAll('a, button, .product-card, .team-card, .research-card');
-      hoverElements.forEach(el => {
-        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-      });
-
-      function animateCursor() {
-        dotX += (cursorX - dotX) * 0.2;
-        dotY += (cursorY - dotY) * 0.2;
-        
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-        cursorDot.style.left = dotX + 'px';
-        cursorDot.style.top = dotY + 'px';
-        
-        requestAnimationFrame(animateCursor);
-      }
-      animateCursor();
-    }
+    // Custom cursor disabled for performance
 
     // ==========================================
     // THEME TOGGLE
