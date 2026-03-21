@@ -1,5 +1,14 @@
 [
   {
+    "id": "8f6d89d",
+    "date": "2026-03-21",
+    "title": "Major content overhaul: Reflective AI rebrand + product restructure",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "4627cc5",
     "date": "2026-03-21",
     "title": "Remove CCX title from public/index.html",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "7597053",
-    "date": "2026-03-01",
-    "title": "Fix Get Involved icons and colors, wire up Formspree",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
