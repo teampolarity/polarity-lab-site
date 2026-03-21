@@ -1,5 +1,14 @@
 [
   {
+    "id": "6519954",
+    "date": "2026-03-21",
+    "title": "Add Pulse and Polarity App to integration section",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "899258a",
     "date": "2026-03-21",
     "title": "Hero: 3 icons only (PHRESH, PolarityGPS, WaxFeed) + bouncy product cards",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "e1cc440",
-    "date": "2026-03-01",
-    "title": "Standardize product cards to Explore, update Contributors link",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

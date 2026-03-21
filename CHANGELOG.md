@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Add Pulse and Polarity App to integration section (`6519954`)
+
+### Mar 21, 2026
+
 - Hero: 3 icons only (PHRESH, PolarityGPS, WaxFeed) + bouncy product cards (`899258a`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Fix Get Involved icons and colors, wire up Formspree (`d22c7b1`)
-
-### Mar 1, 2026
-
-- Standardize product cards to Explore, update Contributors link (`e1cc440`)
 
 
 ---
