@@ -1,5 +1,14 @@
 [
   {
+    "id": "3380b54",
+    "date": "2026-03-21",
+    "title": "Nav: transparent background, fixed at top, content scrolls behind",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "aa4099c",
     "date": "2026-03-21",
     "title": "Fix nav: solid background, always visible at top",
@@ -167,15 +176,6 @@
     "title": "Remove CCX title from Conversational Connectomics section",
     "category": {
       "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "5a89637",
-    "date": "2026-03-18",
-    "title": "Fix section centering in public/index.html (deployed file)",
-    "category": {
-      "label": "Bug Fix",
       "color": "coral"
     }
   }

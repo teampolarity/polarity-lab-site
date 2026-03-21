@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Nav: transparent background, fixed at top, content scrolls behind (`3380b54`)
+
+### Mar 21, 2026
+
 - Fix nav: solid background, always visible at top (`aa4099c`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Remove CCX title from Conversational Connectomics section (`2f7126e`)
-
-### Mar 18, 2026
-
-- Fix section centering in public/index.html (deployed file) (`5a89637`)
 
 
 ---
