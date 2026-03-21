@@ -1,5 +1,14 @@
 [
   {
+    "id": "899258a",
+    "date": "2026-03-21",
+    "title": "Hero: 3 icons only (PHRESH, PolarityGPS, WaxFeed) + bouncy product cards",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "fa3781d",
     "date": "2026-03-21",
     "title": "Fix PHRESH logo (green leaf SVG) and Painpoints logo (correct icon)",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "742874f",
-    "date": "2026-03-01",
-    "title": "Add Get on Pulse card to Get Involved section",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]

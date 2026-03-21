@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Hero: 3 icons only (PHRESH, PolarityGPS, WaxFeed) + bouncy product cards (`899258a`)
+
+### Mar 21, 2026
+
 - Fix PHRESH logo (green leaf SVG) and Painpoints logo (correct icon) (`fa3781d`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Standardize product cards to Explore, update Contributors link (`e1cc440`)
-
-### Mar 1, 2026
-
-- Add Get on Pulse card to Get Involved section (`742874f`)
 
 
 ---
