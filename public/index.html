@@ -854,12 +854,13 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(40px, 6vw, 72px);
+      font-size: clamp(28px, 4vw, 52px);
       font-weight: 600;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
       color: var(--text-pure);
-      margin-bottom: 20px;
+      margin-bottom: 0;
+      white-space: nowrap;
     }
 
     .hero-title .gradient {
@@ -879,15 +880,15 @@
 
     .hero-learn-more {
       display: inline-block;
-      margin-top: 28px;
-      padding: 14px 36px;
+      margin-top: 20px;
+      padding: 12px 32px;
       font-family: var(--font-display);
-      font-size: 15px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 500;
       letter-spacing: 0.05em;
-      color: var(--text-pure);
-      background: rgba(78, 205, 196, 0.12);
-      border: 1px solid rgba(78, 205, 196, 0.3);
+      color: var(--text-secondary);
+      background: rgba(78, 205, 196, 0.08);
+      border: 1px solid rgba(78, 205, 196, 0.2);
       border-radius: 50px;
       text-decoration: none;
       transition: all 0.4s var(--ease-out-expo);
@@ -895,10 +896,11 @@
     }
 
     .hero-learn-more:hover {
-      background: rgba(78, 205, 196, 0.25);
+      color: var(--text-pure);
+      background: rgba(78, 205, 196, 0.18);
       border-color: var(--teal);
       transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(78, 205, 196, 0.2);
+      box-shadow: 0 8px 30px rgba(78, 205, 196, 0.15);
     }
 
     /* Scroll indicator */
@@ -1003,6 +1005,10 @@
       .scroll-text--center {
         padding: 0 24px;
         max-width: 100%;
+      }
+      .hero-title {
+        white-space: normal;
+        font-size: clamp(24px, 5.5vw, 36px);
       }
       .scroll-text__title {
         font-size: clamp(28px, 7vw, 44px);
@@ -2377,7 +2383,7 @@
     <!-- SCROLL TEXT REVEALS -->
 
     <!-- Text 1: Hero -->
-    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 62%;">
+    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 66%;">
       <div class="hero-badge">Research Laboratory</div>
       <h1 class="hero-title">
         The First Ever AI That <span class="gradient">Reflects You.</span>
@@ -2387,11 +2393,7 @@
 
     <!-- Scroll choreography text removed - now using actual content sections -->
 
-    <!-- Scroll indicator -->
-    <div class="hero-scroll" id="scroll-indicator">
-      <span>Scroll</span>
-      <div class="hero-scroll-line"></div>
-    </div>
+    <!-- Scroll indicator removed - Learn More button replaces it -->
   </div>
 
   <!-- SCROLL CONTAINER - Content sections -->
