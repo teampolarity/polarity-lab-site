@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Fix PHRESH logo (green leaf SVG) and Painpoints logo (correct icon) (`fa3781d`)
+
+### Mar 21, 2026
+
 - Use hero 3D logos in product cards + add Painpoints to integration tier (`d7b7844`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Add Get on Pulse card to Get Involved section (`742874f`)
-
-### Mar 1, 2026
-
-- Add hero CTA links and fix card link colors (`af14430`)
 
 
 ---

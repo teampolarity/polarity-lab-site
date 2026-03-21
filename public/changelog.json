@@ -1,5 +1,14 @@
 [
   {
+    "id": "fa3781d",
+    "date": "2026-03-21",
+    "title": "Fix PHRESH logo (green leaf SVG) and Painpoints logo (correct icon)",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "d7b7844",
     "date": "2026-03-21",
     "title": "Use hero 3D logos in product cards + add Painpoints to integration tier",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "af14430",
-    "date": "2026-03-01",
-    "title": "Add hero CTA links and fix card link colors",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
