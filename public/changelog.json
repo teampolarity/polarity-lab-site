@@ -1,5 +1,14 @@
 [
   {
+    "id": "2df29ac",
+    "date": "2026-03-21",
+    "title": "Move hero into normal scroll flow — no more fixed stage",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "07fa934",
     "date": "2026-03-21",
     "title": "Performance: throttle WebGL to 30fps, faster scroll, less padding",
@@ -165,15 +174,6 @@
     "id": "d402d78",
     "date": "2026-03-17",
     "title": "Fix Pain Points icon path and label broken by merge",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "7f5ad12",
-    "date": "2026-03-17",
-    "title": "Fix FONMYDJ product description to match actual product",
     "category": {
       "label": "Bug Fix",
       "color": "coral"

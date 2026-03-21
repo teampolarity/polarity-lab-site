@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Move hero into normal scroll flow — no more fixed stage (`2df29ac`)
+
+### Mar 21, 2026
+
 - Performance: throttle WebGL to 30fps, faster scroll, less padding (`07fa934`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 17, 2026
 
 - Fix Pain Points icon path and label broken by merge (`d402d78`)
-
-### Mar 17, 2026
-
-- Fix FONMYDJ product description to match actual product (`7f5ad12`)
 
 
 ---
