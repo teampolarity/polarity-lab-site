@@ -1,5 +1,14 @@
 [
   {
+    "id": "bb5fae5",
+    "date": "2026-03-21",
+    "title": "Update hero: 'The First Ever AI That Reflects You.' + Learn More button",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "bdf7870",
     "date": "2026-03-21",
     "title": "Add WaxFeed to integration section (keep in all other positions)",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "fbdd46a",
-    "date": "2026-03-01",
-    "title": "Wire newsletter form to Formspree project endpoint",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

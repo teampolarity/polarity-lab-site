@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Update hero: 'The First Ever AI That Reflects You.' + Learn More button (`bb5fae5`)
+
+### Mar 21, 2026
+
 - Add WaxFeed to integration section (keep in all other positions) (`bdf7870`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Add hero CTA links and fix card link colors (`857be3e`)
-
-### Mar 1, 2026
-
-- Wire newsletter form to Formspree project endpoint (`fbdd46a`)
 
 
 ---
