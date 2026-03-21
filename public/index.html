@@ -14,7 +14,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Three.js removed for performance -->
+  <!-- Three.js for WebGL background -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
     /* ==========================================
@@ -453,10 +454,10 @@
     }
 
     .spatial-section {
-      min-height: auto;
+      min-height: 100vh;
       position: relative;
       overflow: visible;
-      scroll-margin-top: 80px;
+      scroll-margin-top: 100px;
     }
 
     .spatial-section:first-child {
@@ -469,13 +470,13 @@
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 80px 48px;
+      padding: 120px 48px;
       position: relative;
       z-index: 1;
     }
 
     @media (max-width: 768px) {
-      .section-inner { padding: 60px 24px; }
+      .section-inner { padding: 100px 24px; }
     }
 
     /* ==========================================
@@ -2953,8 +2954,8 @@
       }
     }
 
-    // WebGL background disabled for performance
-    // const webglBg = new WebGLBackground();
+    // Initialize WebGL background
+    const webglBg = new WebGLBackground();
 
     // ==========================================
     // CUSTOM CURSOR
@@ -2964,7 +2965,32 @@
     let cursorX = 0, cursorY = 0;
     let dotX = 0, dotY = 0;
 
-    // Custom cursor disabled for performance
+    if (cursor && cursorDot && !window.matchMedia('(pointer: coarse)').matches) {
+      document.addEventListener('mousemove', (e) => {
+        cursorX = e.clientX;
+        cursorY = e.clientY;
+      });
+
+      // Hover states
+      const hoverElements = document.querySelectorAll('a, button, .product-card, .team-card, .research-card');
+      hoverElements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+      });
+
+      function animateCursor() {
+        dotX += (cursorX - dotX) * 0.2;
+        dotY += (cursorY - dotY) * 0.2;
+        
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top = dotY + 'px';
+        
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
+    }
 
     // ==========================================
     // THEME TOGGLE
@@ -3061,8 +3087,9 @@
     class ScrollChoreographer {
       constructor() {
         this.scrollY = 0;
+        this.targetScrollY = 0;
+        this.ease = 0.08;
         this.vh = window.innerHeight;
-        this.ticking = false;
 
         // Elements
         this.nav = document.getElementById('nav');
@@ -3070,6 +3097,7 @@
         this.iconWaxfeed = document.getElementById('icon-waxfeed');
         this.iconPolarity = document.getElementById('icon-polarity');
         this.iconPainpoints = document.getElementById('icon-painpoints');
+        this.scrollIndicator = document.getElementById('scroll-indicator');
 
         // Hero text only
         this.textHero = document.getElementById('text-hero');
@@ -3078,25 +3106,17 @@
         document.querySelectorAll('.hero-product').forEach(el => el.classList.add('visible'));
 
         this.init();
+        this.animate();
       }
 
       init() {
         window.addEventListener('scroll', () => {
-          this.scrollY = window.scrollY;
-          if (!this.ticking) {
-            requestAnimationFrame(() => {
-              this.update();
-              this.ticking = false;
-            });
-            this.ticking = true;
-          }
+          this.targetScrollY = window.scrollY;
         }, { passive: true });
 
         window.addEventListener('resize', () => {
           this.vh = window.innerHeight;
         });
-
-        this.update();
       }
 
       easeOutCubic(t) {
@@ -3110,7 +3130,10 @@
         return (current - scrollStart) / (scrollEnd - scrollStart);
       }
 
-      update() {
+      animate() {
+        // Smooth scroll interpolation
+        this.scrollY += (this.targetScrollY - this.scrollY) * this.ease;
+
         const vh = this.vh;
         const isMobile = window.innerWidth <= 768;
 
@@ -3125,6 +3148,12 @@
           this.textHero.style.opacity = heroOpacity;
           this.textHero.style.transform = `translateX(-50%) translateY(${heroY}px)`;
           this.textHero.classList.toggle('visible', heroOpacity > 0.1);
+        }
+
+        // Scroll indicator
+        if (this.scrollIndicator) {
+          const indicatorOpacity = 1 - this.easeOutCubic(this.zoneProgress(0, vh * 0.4));
+          this.scrollIndicator.style.opacity = indicatorOpacity;
         }
 
         // Icon animations
@@ -3163,6 +3192,8 @@
         }
 
         // Content sections now visible directly - no scroll text choreography
+
+        requestAnimationFrame(() => this.animate());
       }
     }
 
