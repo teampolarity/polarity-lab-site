@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Hero fills viewport: icons centered, Learn More at bottom (`f60e459`)
+
+### Mar 21, 2026
+
 - Nav is now static header — scrolls with page, not fixed (`3ca675e`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Major content overhaul: Reflective AI rebrand + product restructure (`8f6d89d`)
-
-### Mar 21, 2026
-
-- Remove CCX title from public/index.html (`4627cc5`)
 
 
 ---

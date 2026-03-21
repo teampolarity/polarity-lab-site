@@ -1,5 +1,14 @@
 [
   {
+    "id": "f60e459",
+    "date": "2026-03-21",
+    "title": "Hero fills viewport: icons centered, Learn More at bottom",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "3ca675e",
     "date": "2026-03-21",
     "title": "Nav is now static header — scrolls with page, not fixed",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "4627cc5",
-    "date": "2026-03-21",
-    "title": "Remove CCX title from public/index.html",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]
