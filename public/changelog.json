@@ -1,5 +1,14 @@
 [
   {
+    "id": "0005579",
+    "date": "2026-03-21",
+    "title": "Fix layout: sticky nav, tighter hero spacing",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "028fa18",
     "date": "2026-03-21",
     "title": "Full performance audit fix — remove all lag sources",
@@ -165,15 +174,6 @@
     "id": "65fe0fb",
     "date": "2026-03-18",
     "title": "Fix section content centering with margin auto",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "f15012e",
-    "date": "2026-03-17",
-    "title": "Fix responsive hero layout for mobile and tablet",
     "category": {
       "label": "Bug Fix",
       "color": "coral"

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Fix layout: sticky nav, tighter hero spacing (`0005579`)
+
+### Mar 21, 2026
+
 - Full performance audit fix — remove all lag sources (`028fa18`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 18, 2026
 
 - Fix section content centering with margin auto (`65fe0fb`)
-
-### Mar 17, 2026
-
-- Fix responsive hero layout for mobile and tablet (`f15012e`)
 
 
 ---
