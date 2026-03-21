@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Add WaxFeed to integration section (keep in all other positions) (`bdf7870`)
+
+### Mar 21, 2026
+
 - Add Pulse and Polarity App to integration section (`6519954`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Wire newsletter form to Formspree project endpoint (`fbdd46a`)
-
-### Mar 1, 2026
-
-- Fix Get Involved icons and colors, wire up Formspree (`d22c7b1`)
 
 
 ---

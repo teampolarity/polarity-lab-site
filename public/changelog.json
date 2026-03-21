@@ -1,5 +1,14 @@
 [
   {
+    "id": "bdf7870",
+    "date": "2026-03-21",
+    "title": "Add WaxFeed to integration section (keep in all other positions)",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "6519954",
     "date": "2026-03-21",
     "title": "Add Pulse and Polarity App to integration section",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "d22c7b1",
-    "date": "2026-03-01",
-    "title": "Fix Get Involved icons and colors, wire up Formspree",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
