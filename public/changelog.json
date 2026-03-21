@@ -1,5 +1,14 @@
 [
   {
+    "id": "028fa18",
+    "date": "2026-03-21",
+    "title": "Full performance audit fix — remove all lag sources",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "3687722",
     "date": "2026-03-21",
     "title": "Remove pop-in animations — everything visible on scroll",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "f77f1af",
-    "date": "2026-03-17",
-    "title": "Center Polarity in hero constellation with CSS order",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
