@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Remove CCX title from public/index.html (`4627cc5`)
+
+### Mar 21, 2026
+
 - Remove CCX title from Conversational Connectomics section (`2f7126e`)
 
 ### Mar 18, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Fix Get Involved icons and colors, wire up Formspree (`7597053`)
-
-### Mar 1, 2026
-
-- Standardize product cards to Explore, update Contributors link (`9472f73`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "4627cc5",
+    "date": "2026-03-21",
+    "title": "Remove CCX title from public/index.html",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "2f7126e",
     "date": "2026-03-21",
     "title": "Remove CCX title from Conversational Connectomics section",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "9472f73",
-    "date": "2026-03-01",
-    "title": "Standardize product cards to Explore, update Contributors link",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]
