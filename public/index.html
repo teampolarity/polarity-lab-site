@@ -436,15 +436,10 @@
        STAGE - Fixed viewport canvas
        ========================================== */
     .stage {
-      position: fixed;
-      inset: 0;
-      z-index: 10;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .stage > * {
+      position: relative;
+      z-index: 1;
       pointer-events: auto;
+      overflow: hidden;
     }
 
     /* Scroll container provides the scroll height */
@@ -454,14 +449,9 @@
     }
 
     .spatial-section {
-      min-height: 100vh;
       position: relative;
       overflow: visible;
-      scroll-margin-top: 100px;
-    }
-
-    .spatial-section:first-child {
-      min-height: 100vh;
+      scroll-margin-top: 80px;
     }
 
     /* Content sections are now visible by default */
@@ -483,25 +473,15 @@
        HERO CONSTELLATION - 3D Product Icons
        ========================================== */
     .hero-constellation {
-      position: absolute;
-      top: 35%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       display: grid;
-      grid-template-columns: 1fr auto auto auto 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
       justify-items: center;
-      gap: 60px;
-      width: 100%;
-      max-width: 1200px;
-      padding: 40px 20px;
-      perspective: 1500px;
-    }
-
-    .hero-constellation--three {
-      grid-template-columns: 1fr 1fr 1fr;
-      max-width: 900px;
       gap: 40px;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px 20px;
     }
 
     .hero-product {
@@ -566,8 +546,7 @@
 
     /* Product specific styling */
     .hero-product--waxfeed {
-      order: 1;
-      justify-self: end;
+      order: 3;
       z-index: 2;
     }
 
@@ -576,7 +555,7 @@
     }
 
     .hero-product--polarity {
-      order: 3;
+      order: 2;
       z-index: 3;
     }
 
@@ -615,37 +594,22 @@
       filter: drop-shadow(0 0 50px rgba(34, 197, 94, 0.5));
     }
 
-    .hero-constellation--three .hero-product--polarity {
-      order: 2;
-    }
-
-    .hero-constellation--three .hero-product--waxfeed {
-      order: 3;
-    }
 
     /* ==========================================
        KINETIC TYPOGRAPHY - Text Scramble Effects
        ========================================== */
     .scroll-text {
-      position: fixed;
-      opacity: 0;
-      will-change: transform, opacity, filter;
-      pointer-events: none;
-      z-index: 15;
-      transition: filter 0.4s ease-out;
-    }
-
-    .scroll-text.visible {
+      position: relative;
+      opacity: 1;
       pointer-events: auto;
+      z-index: 15;
     }
 
     .scroll-text--center {
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
       text-align: center;
       max-width: 900px;
-      padding: 0 48px;
+      margin: 0 auto;
+      padding: 30px 48px 60px;
     }
 
     .scroll-text--left {
@@ -962,20 +926,9 @@
 
     @media (max-width: 768px) {
       .hero-constellation {
-        grid-template-columns: repeat(3, 1fr);
         gap: 16px 12px;
-        padding: 16px 24px;
-        max-width: 100%;
-        top: 28%;
+        padding: 40px 24px 10px;
       }
-      .hero-product--waxfeed,
-      .hero-product--polarity,
-      .hero-product--painpoints {
-        justify-self: center;
-      }
-      .hero-product--painpoints { order: 1; }
-      .hero-product--polarity { order: 2; }
-      .hero-product--waxfeed { order: 3; }
       .hero-product-icon { width: 80px; height: 80px; }
       .hero-product--polarity .hero-product-icon { width: 100px; height: 100px; }
       .hero-product-label { font-size: 9px; letter-spacing: 0.1em; }
@@ -985,8 +938,7 @@
     @media (max-width: 480px) {
       .hero-constellation {
         gap: 10px 6px;
-        padding: 10px 16px;
-        top: 24%;
+        padding: 30px 16px 10px;
       }
       .hero-product-icon { width: 58px; height: 58px; }
       .hero-product--polarity .hero-product-icon { width: 74px; height: 74px; }
@@ -2383,7 +2335,7 @@
     <!-- SCROLL TEXT REVEALS -->
 
     <!-- Text 1: Hero -->
-    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 58%;">
+    <div class="scroll-text scroll-text--center" id="text-hero">
       <div class="hero-badge">Research Laboratory</div>
       <h1 class="hero-title">
         The First Ever AI That <span class="gradient">Reflects You.</span>
@@ -2398,9 +2350,6 @@
 
   <!-- SCROLL CONTAINER - Content sections -->
   <div class="scroll-container">
-    <section class="spatial-section hero" id="home" data-scroll-zone="hero">
-      <div class="section-inner"></div>
-    </section>
 
     <!-- CCX SECTION -->
     <section class="spatial-section ccx" id="ccx">
@@ -3085,123 +3034,8 @@
     window.addEventListener('scroll', updateActiveNav, { passive: true });
     updateActiveNav(); // Initial call
 
-    // ==========================================
-    // SCROLL CHOREOGRAPHY SYSTEM
-    // ==========================================
-    class ScrollChoreographer {
-      constructor() {
-        this.scrollY = 0;
-        this.targetScrollY = 0;
-        this.ease = 0.2;
-        this.vh = window.innerHeight;
-
-        // Elements
-        this.nav = document.getElementById('nav');
-        this.constellation = document.getElementById('hero-constellation');
-        this.iconWaxfeed = document.getElementById('icon-waxfeed');
-        this.iconPolarity = document.getElementById('icon-polarity');
-        this.iconPainpoints = document.getElementById('icon-painpoints');
-        this.scrollIndicator = document.getElementById('scroll-indicator');
-
-        // Hero text only
-        this.textHero = document.getElementById('text-hero');
-
-        // Make product labels visible initially
-        document.querySelectorAll('.hero-product').forEach(el => el.classList.add('visible'));
-
-        this.init();
-        this.animate();
-      }
-
-      init() {
-        window.addEventListener('scroll', () => {
-          this.targetScrollY = window.scrollY;
-        }, { passive: true });
-
-        window.addEventListener('resize', () => {
-          this.vh = window.innerHeight;
-        });
-      }
-
-      easeOutCubic(t) {
-        return 1 - Math.pow(1 - t, 3);
-      }
-
-      zoneProgress(scrollStart, scrollEnd) {
-        const current = this.scrollY;
-        if (current < scrollStart) return 0;
-        if (current > scrollEnd) return 1;
-        return (current - scrollStart) / (scrollEnd - scrollStart);
-      }
-
-      animate() {
-        // Smooth scroll interpolation
-        this.scrollY += (this.targetScrollY - this.scrollY) * this.ease;
-
-        const vh = this.vh;
-        const isMobile = window.innerWidth <= 768;
-
-        // === ZONE: Hero & Icons (0-1.5vh) ===
-        const iconExitProgress = this.easeOutCubic(this.zoneProgress(0, vh * 1.0));
-
-        // Hero text - positioned at 68% from top
-        if (this.textHero) {
-          const heroProgress = this.zoneProgress(0, vh * 0.6);
-          const heroOpacity = 1 - this.easeOutCubic(heroProgress);
-          const heroY = heroProgress * -30;
-          this.textHero.style.opacity = heroOpacity;
-          this.textHero.style.transform = `translateX(-50%) translateY(${heroY}px)`;
-          this.textHero.classList.toggle('visible', heroOpacity > 0.1);
-        }
-
-        // Scroll indicator
-        if (this.scrollIndicator) {
-          const indicatorOpacity = 1 - this.easeOutCubic(this.zoneProgress(0, vh * 0.4));
-          this.scrollIndicator.style.opacity = indicatorOpacity;
-        }
-
-        // Icon animations
-        if (this.iconWaxfeed) {
-          const waxX = iconExitProgress * -200;
-          const waxY = iconExitProgress * -80;
-          const waxOpacity = 1 - iconExitProgress;
-          const waxScale = 1 - iconExitProgress * 0.2;
-          const waxRotate = iconExitProgress * -15;
-          this.iconWaxfeed.style.transform = `translate(${waxX}px, ${waxY}px) scale(${waxScale}) rotate(${waxRotate}deg)`;
-          this.iconWaxfeed.style.opacity = waxOpacity;
-        }
-
-        if (this.iconPolarity) {
-          const polY = iconExitProgress * -180;
-          const polOpacity = 1 - iconExitProgress;
-          const polScale = 1 - iconExitProgress * 0.15;
-          this.iconPolarity.style.transform = `translateY(${polY}px) scale(${polScale})`;
-          this.iconPolarity.style.opacity = polOpacity;
-        }
-
-        if (this.iconPainpoints) {
-          const ppX = iconExitProgress * 120;
-          const ppY = iconExitProgress * 180;
-          const ppOpacity = 1 - iconExitProgress;
-          const ppScale = 1 - iconExitProgress * 0.2;
-          const ppRotate = iconExitProgress * 15;
-          this.iconPainpoints.style.transform = `translate(${ppX}px, ${ppY}px) scale(${ppScale}) rotate(${ppRotate}deg)`;
-          this.iconPainpoints.style.opacity = ppOpacity;
-        }
-
-        // Constellation drift
-        if (this.constellation) {
-          const constY = iconExitProgress * -100;
-          this.constellation.style.transform = `translate(-50%, calc(-50% + ${constY}px))`;
-        }
-
-        // Content sections now visible directly - no scroll text choreography
-
-        requestAnimationFrame(() => this.animate());
-      }
-    }
-
-    const spaceScroll = new ScrollChoreographer();
+    // Make hero product labels visible
+    document.querySelectorAll('.hero-product').forEach(el => el.classList.add('visible'));
 
     // ==========================================
     // INTERSECTION OBSERVER (Reveal animations)
