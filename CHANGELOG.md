@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Mar 21, 2026
+
+- Remove CCX title from Conversational Connectomics section (`2f7126e`)
+
 ### Mar 18, 2026
 
 - Fix section centering in public/index.html (deployed file) (`5a89637`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Standardize product cards to Explore, update Contributors link (`9472f73`)
-
-### Mar 1, 2026
-
-- Add Get on Pulse card to Get Involved section (`7cb5219`)
 
 
 ---
