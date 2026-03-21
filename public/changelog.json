@@ -1,5 +1,14 @@
 [
   {
+    "id": "d7b7844",
+    "date": "2026-03-21",
+    "title": "Use hero 3D logos in product cards + add Painpoints to integration tier",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "8f6d89d",
     "date": "2026-03-21",
     "title": "Major content overhaul: Reflective AI rebrand + product restructure",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "43d20b4",
-    "date": "2026-03-01",
-    "title": "Wire newsletter form to Formspree project endpoint",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

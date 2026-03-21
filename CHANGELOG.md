@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Use hero 3D logos in product cards + add Painpoints to integration tier (`d7b7844`)
+
+### Mar 21, 2026
+
 - Major content overhaul: Reflective AI rebrand + product restructure (`8f6d89d`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 1, 2026
 
 - Add hero CTA links and fix card link colors (`af14430`)
-
-### Mar 1, 2026
-
-- Wire newsletter form to Formspree project endpoint (`43d20b4`)
 
 
 ---
