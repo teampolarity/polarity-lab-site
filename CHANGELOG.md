@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Badge under title, adaptive vh-based spacing throughout hero (`07c4476`)
+
+### Mar 21, 2026
+
 - Fix hero badge: visible, reads 'Interdisciplinary Research Laboratory' (`ccc2b97`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Fix PHRESH logo (green leaf SVG) and Painpoints logo (correct icon) (`fa3781d`)
-
-### Mar 21, 2026
-
-- Use hero 3D logos in product cards + add Painpoints to integration tier (`d7b7844`)
 
 
 ---

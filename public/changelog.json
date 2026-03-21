@@ -1,5 +1,14 @@
 [
   {
+    "id": "07c4476",
+    "date": "2026-03-21",
+    "title": "Badge under title, adaptive vh-based spacing throughout hero",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "ccc2b97",
     "date": "2026-03-21",
     "title": "Fix hero badge: visible, reads 'Interdisciplinary Research Laboratory'",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "d7b7844",
-    "date": "2026-03-21",
-    "title": "Use hero 3D logos in product cards + add Painpoints to integration tier",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
