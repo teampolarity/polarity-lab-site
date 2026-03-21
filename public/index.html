@@ -2554,7 +2554,37 @@
 
           <a href="https://phresh.fit" target="_blank" class="product-card">
             <div class="product-icon product-icon--hero">
-              <img src="painpoints-icon.svg" alt="PHRESH">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="leafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#16a34a"/>
+                    <stop offset="50%" stop-color="#22c55e"/>
+                    <stop offset="100%" stop-color="#4ade80"/>
+                  </linearGradient>
+                  <filter id="leafGlow" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur stdDeviation="6" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                  <filter id="leafBigGlow" x="-100%" y="-100%" width="300%" height="300%">
+                    <feGaussianBlur stdDeviation="12" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  </filter>
+                </defs>
+                <circle cx="100" cy="100" r="70" fill="#22c55e" opacity="0.08" filter="url(#leafBigGlow)"/>
+                <g filter="url(#leafGlow)">
+                  <path d="M100 30 C50 55, 35 100, 58 140 Q72 165, 100 172 Q128 165, 142 140 C165 100, 150 55, 100 30Z" fill="url(#leafGrad)" opacity="0.9"/>
+                </g>
+                <path d="M100 45 L100 158" stroke="#166534" stroke-width="2.5" stroke-linecap="round" opacity="0.45"/>
+                <path d="M100 70 L72 55" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+                <path d="M100 70 L128 55" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+                <path d="M100 92 L65 78" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+                <path d="M100 92 L135 78" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+                <path d="M100 114 L68 102" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+                <path d="M100 114 L132 102" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+                <path d="M100 136 L78 128" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+                <path d="M100 136 L122 128" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+                <path d="M82 50 Q74 72, 78 95" stroke="white" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.2"/>
+              </svg>
             </div>
             <div class="product-name">PHRESH</div>
             <div class="product-desc">Your first digital personal stylist. Discovers your StyleID, builds outfits from your colour palette and price point, then links you to buy the drip.</div>
@@ -2624,24 +2654,7 @@
 
             <a href="https://painpoints.site" target="_blank" class="product-card product-card--secondary">
               <div class="product-icon product-icon--hero">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <radialGradient id="ppCardGrad" cx="30%" cy="30%" r="70%">
-                      <stop offset="0%" stop-color="#FF8A65"/>
-                      <stop offset="100%" stop-color="#E63329"/>
-                    </radialGradient>
-                    <filter id="ppCardGlow" x="-100%" y="-100%" width="300%" height="300%">
-                      <feGaussianBlur stdDeviation="4" result="blur"/>
-                      <feMerge><feMergeNode in="blur"/><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
-                  </defs>
-                  <circle cx="100" cy="100" r="60" fill="none" stroke="#E63329" stroke-width="2" filter="url(#ppCardGlow)" opacity="0.3"/>
-                  <circle cx="100" cy="100" r="40" fill="none" stroke="#FF8A65" stroke-width="2.5" filter="url(#ppCardGlow)" opacity="0.5"/>
-                  <circle cx="100" cy="100" r="22" fill="url(#ppCardGrad)" filter="url(#ppCardGlow)"/>
-                  <circle cx="93" cy="93" r="7" fill="white" opacity="0.25"/>
-                  <circle cx="140" cy="70" r="5" fill="#FF8A65" filter="url(#ppCardGlow)" opacity="0.7"/>
-                  <circle cx="65" cy="135" r="4" fill="#E63329" filter="url(#ppCardGlow)" opacity="0.5"/>
-                </svg>
+                <img src="painpoints-icon.svg" alt="Painpoints">
               </div>
               <div class="product-name">Painpoints</div>
               <div class="product-desc">Fund problems, not promises. Crowdfunding for real-world solutions — now integrated into the PolarityGPS ecosystem.</div>
