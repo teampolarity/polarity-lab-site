@@ -1085,27 +1085,25 @@
     .ccx-claim-lines {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 4px;
     }
 
     .ccx-claim-line {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-tertiary);
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     .ccx-claim-line--highlight {
       color: var(--teal);
       font-weight: 600;
-      font-size: 15px;
     }
 
-    .ccx-claim-line--bold {
-      color: var(--text-pure);
+    .ccx-claim-line--red {
+      color: var(--red, #E63329);
       font-family: var(--font-display);
       font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 0.02em;
+      font-size: 15px;
       margin-top: 4px;
     }
 
@@ -2385,8 +2383,9 @@
                 <div class="ccx-claim-lines">
                   <p class="ccx-claim-line">Generative AI is trained on the internet.</p>
                   <p class="ccx-claim-line ccx-claim-line--highlight">Your data goes in. Generic answers come out.</p>
-                  <p class="ccx-claim-line">You have no power over it. It doesn't learn you. It doesn't work for you.</p>
-                  <p class="ccx-claim-line ccx-claim-line--bold">It STEALS your DATA.</p>
+                  <p class="ccx-claim-line">You have no power over it. It doesn't learn you.</p>
+                  <p class="ccx-claim-line">It doesn't work for you.</p>
+                  <p class="ccx-claim-line ccx-claim-line--red">It STEALS your DATA.</p>
                 </div>
               </div>
 
