@@ -1,5 +1,14 @@
 [
   {
+    "id": "4ac988e",
+    "date": "2026-03-21",
+    "title": "Icons pushed up, text at bottom — space-between layout",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "07c4476",
     "date": "2026-03-21",
     "title": "Badge under title, adaptive vh-based spacing throughout hero",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "fa3781d",
-    "date": "2026-03-21",
-    "title": "Fix PHRESH logo (green leaf SVG) and Painpoints logo (correct icon)",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

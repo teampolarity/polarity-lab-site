@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 21, 2026
 
+- Icons pushed up, text at bottom — space-between layout (`4ac988e`)
+
+### Mar 21, 2026
+
 - Badge under title, adaptive vh-based spacing throughout hero (`07c4476`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Hero: 3 icons only (PHRESH, PolarityGPS, WaxFeed) + bouncy product cards (`899258a`)
-
-### Mar 21, 2026
-
-- Fix PHRESH logo (green leaf SVG) and Painpoints logo (correct icon) (`fa3781d`)
 
 
 ---
