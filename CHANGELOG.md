@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Update Theo's title to Brown Medical School (`59f1f65`)
+
+### Mar 22, 2026
+
 - Fix OG image URLs to use www subdomain (`677ad2a`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Nathan: uOttawa Telfer, Finance & BTM (`54aa7fc`)
-
-### Mar 22, 2026
-
-- Team cards: center all text and LinkedIn icon (`03af920`)
 
 
 ---

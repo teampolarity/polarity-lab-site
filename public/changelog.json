@@ -1,5 +1,14 @@
 [
   {
+    "id": "59f1f65",
+    "date": "2026-03-22",
+    "title": "Update Theo's title to Brown Medical School",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "677ad2a",
     "date": "2026-03-22",
     "title": "Fix OG image URLs to use www subdomain",
@@ -165,15 +174,6 @@
     "id": "54aa7fc",
     "date": "2026-03-22",
     "title": "Nathan: uOttawa Telfer, Finance & BTM",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "03af920",
-    "date": "2026-03-22",
-    "title": "Team cards: center all text and LinkedIn icon",
     "category": {
       "label": "Update",
       "color": "text-secondary"
