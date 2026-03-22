@@ -1,5 +1,14 @@
 [
   {
+    "id": "0d60116",
+    "date": "2026-03-22",
+    "title": "Science cards: centered text, rewritten copy, empowering tone",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "2a79dda",
     "date": "2026-03-22",
     "title": "Update Theo: MD, Radiology Resident @ St. Vincent's",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "89fb34b",
-    "date": "2026-03-22",
-    "title": "Fix: icons + text as one centered group, 4vh gap between them",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

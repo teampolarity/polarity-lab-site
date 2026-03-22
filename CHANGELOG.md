@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Science cards: centered text, rewritten copy, empowering tone (`0d60116`)
+
+### Mar 22, 2026
+
 - Update Theo: MD, Radiology Resident @ St. Vincent's (`2a79dda`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Add smooth scroll animation for Learn More and all anchor links (`8216724`)
-
-### Mar 22, 2026
-
-- Fix: icons + text as one centered group, 4vh gap between them (`89fb34b`)
 
 
 ---
