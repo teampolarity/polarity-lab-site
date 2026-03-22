@@ -1014,12 +1014,7 @@
     }
 
     .ccx-definition {
-      background: var(--void-surface);
-      border: 1px solid var(--border-ghost);
-      border-left: 2px solid var(--teal);
-      padding: 28px;
       margin-bottom: 40px;
-      border-radius: 0 12px 12px 0;
     }
 
     .ccx-definition-term {
@@ -1032,31 +1027,37 @@
     }
 
     .ccx-definition-desc {
-      font-size: 15px;
+      font-size: 17px;
       color: var(--text-secondary);
-      line-height: 1.7;
+      line-height: 1.8;
+      text-align: center;
     }
 
-    .ccx-steps {
+    .ccx-claims {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 40px;
+      margin-top: 10px;
     }
 
-    .ccx-step {
-      display: flex;
-      gap: 20px;
-      align-items: flex-start;
-      padding: 20px;
-      background: var(--void-surface);
-      border: 1px solid var(--border-void);
-      border-radius: 12px;
-      transition: all 0.4s var(--ease-out-expo);
+    .ccx-claim {
+      border-top: 1px solid var(--border-ghost);
+      padding-top: 30px;
     }
 
-    .ccx-step:hover {
-      border-color: var(--border-subtle);
-      transform: translateX(8px);
+    .ccx-claim-title {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 28px);
+      font-weight: 600;
+      color: var(--text-pure);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .ccx-claim-desc {
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.8;
     }
 
     .ccx-step-num {
@@ -2319,35 +2320,28 @@
       <div class="section-inner">
         <div class="ccx-content">
           <div class="ccx-text">
-            <p class="section-label">The Science</p>
+            <p class="section-label" style="text-align:center;">The Science</p>
             <h2 class="section-title" style="text-align:center;">Reflective AI</h2>
 
             <div class="ccx-definition">
-              <p class="ccx-definition-desc">Most AI is <strong>generative</strong> — it predicts the next word, generates content, and tells you what to think. ChatGPT, Gemini, and Copilot all work this way. They impose external models trained on the internet's data.</p>
-              <p class="ccx-definition-desc" style="margin-top: 16px;">Our algorithm is fundamentally different. It's <strong>reflective</strong> — it observes how <em>you</em> think, maps your cognitive patterns, and mirrors them back to you. It doesn't generate answers. It gives you the power to understand yourself.</p>
+              <p class="ccx-definition-desc">Most AI is <span style="color:var(--teal); font-weight:600;">generative</span> — it predicts the next word, generates content, and tells you what to think. ChatGPT, Gemini, Copilot. They impose external models trained on the internet's data.</p>
+              <p class="ccx-definition-desc" style="margin-top: 20px;">We built something fundamentally different. Our AI is <span style="color:var(--teal); font-weight:600;">reflective</span> — it observes how <em>you</em> think, maps your cognitive patterns, and mirrors them back to you. It doesn't generate answers. <strong>It gives you the power to understand yourself.</strong></p>
             </div>
 
-            <div class="ccx-steps stagger">
-              <div class="ccx-step">
-                <div class="ccx-step-num">1</div>
-                <div>
-                  <h4>Rooted in Radiology & Brain Mapping</h4>
-                  <p>Our algorithm is built on principles from radiology and cognitive neuroscience. Led by Theodore Addo (MD Candidate, Brown/MIT Boyden Lab), we apply brain mapping techniques to natural language — treating conversation like a scan of the mind.</p>
-                </div>
+            <div class="ccx-claims">
+              <div class="ccx-claim">
+                <h3 class="ccx-claim-title">Built on brain science, not internet data.</h3>
+                <p class="ccx-claim-desc">Our algorithm applies principles from <span style="color:var(--teal);">radiology and cognitive neuroscience</span> to natural language. Led by <strong>Theodore Addo</strong> — MD Candidate at Brown, researcher at MIT Boyden Lab — we treat conversation like a scan of the mind. 11 years of research. 2 provisional patents.</p>
               </div>
-              <div class="ccx-step">
-                <div class="ccx-step-num">2</div>
-                <div>
-                  <h4>Your Cognitive Fingerprint</h4>
-                  <p>The algorithm listens to how you speak — what you emphasize, how you connect ideas, what patterns emerge. From this, it builds a unique map of your thinking. Not someone else's framework. Yours.</p>
-                </div>
+
+              <div class="ccx-claim">
+                <h3 class="ccx-claim-title">Your mind has a fingerprint. We can map it.</h3>
+                <p class="ccx-claim-desc">The algorithm listens to how you speak — what you emphasize, how you connect ideas, what patterns emerge. From this, it builds a <span style="color:var(--teal);">unique cognitive map</span> of your thinking. Not someone else's framework. Not a statistical average. <strong>Yours.</strong></p>
               </div>
-              <div class="ccx-step">
-                <div class="ccx-step-num">3</div>
-                <div>
-                  <h4>One Algorithm, Every Product</h4>
-                  <p>This reflective engine powers everything we build — from PolarityGPS to PHRESH to WaxFeed. Every product in our ecosystem uses the same core algorithm to understand you and give you the power.</p>
-                </div>
+
+              <div class="ccx-claim">
+                <h3 class="ccx-claim-title">One algorithm. Every product.</h3>
+                <p class="ccx-claim-desc">This reflective engine is the foundation of everything we build — <span style="color:var(--teal);">PolarityGPS, PHRESH, WaxFeed</span>, and every product in the ecosystem. The same core intelligence, applied to education, style, music, and beyond.</p>
               </div>
             </div>
           </div>
