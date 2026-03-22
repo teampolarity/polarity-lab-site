@@ -1,5 +1,14 @@
 [
   {
+    "id": "ec32734",
+    "date": "2026-03-22",
+    "title": "Fix nav scroll spy: correct offset, proper section detection",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "134e040",
     "date": "2026-03-22",
     "title": "Tighten spacing on all pages to match Science layout",
@@ -165,15 +174,6 @@
     "id": "3380b54",
     "date": "2026-03-21",
     "title": "Nav: transparent background, fixed at top, content scrolls behind",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "aa4099c",
-    "date": "2026-03-21",
-    "title": "Fix nav: solid background, always visible at top",
     "category": {
       "label": "Bug Fix",
       "color": "coral"

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Fix nav scroll spy: correct offset, proper section detection (`ec32734`)
+
+### Mar 22, 2026
+
 - Tighten spacing on all pages to match Science layout (`134e040`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Nav: transparent background, fixed at top, content scrolls behind (`3380b54`)
-
-### Mar 21, 2026
-
-- Fix nav: solid background, always visible at top (`aa4099c`)
 
 
 ---
