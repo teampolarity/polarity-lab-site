@@ -1,5 +1,14 @@
 [
   {
+    "id": "0a88918",
+    "date": "2026-03-22",
+    "title": "Sticky nav: stays at top as you scroll, proper section spacing",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "dbff1b0",
     "date": "2026-03-22",
     "title": "Rename Products to Ecosystem in nav",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "5351e97",
-    "date": "2026-03-21",
-    "title": "Revert \"Major performance fix: remove WebGL, cursor, constant rAF loops\"",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

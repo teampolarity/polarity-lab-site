@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Sticky nav: stays at top as you scroll, proper section spacing (`0a88918`)
+
+### Mar 22, 2026
+
 - Rename Products to Ecosystem in nav (`dbff1b0`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Performance: throttle WebGL to 30fps, faster scroll, less padding (`07fa934`)
-
-### Mar 21, 2026
-
-- Revert "Major performance fix: remove WebGL, cursor, constant rAF loops" (`5351e97`)
 
 
 ---
