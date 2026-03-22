@@ -1,5 +1,14 @@
 [
   {
+    "id": "d927711",
+    "date": "2026-03-22",
+    "title": "Problem: combined 'knows everything except you' + 'gives nothing back'",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "0c0bb0e",
     "date": "2026-03-22",
     "title": "Problem: AI takes your data, gives you nothing back",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "0a88918",
-    "date": "2026-03-22",
-    "title": "Sticky nav: stays at top as you scroll, proper section spacing",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
