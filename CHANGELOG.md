@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Problem card: tighter lines, 'It doesn't work for you' own line, STEALS in red (`4825990`)
+
+### Mar 22, 2026
+
 - Problem card: stacked lines with visual hierarchy (`fef2949`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Tighter top padding — content right under nav (10px) (`c26b6df`)
-
-### Mar 22, 2026
-
-- Reduce top padding on sections — content sits right under nav (`1f557f9`)
 
 
 ---

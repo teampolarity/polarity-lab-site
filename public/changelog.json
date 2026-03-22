@@ -1,5 +1,14 @@
 [
   {
+    "id": "4825990",
+    "date": "2026-03-22",
+    "title": "Problem card: tighter lines, 'It doesn't work for you' own line, STEALS in red",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "fef2949",
     "date": "2026-03-22",
     "title": "Problem card: stacked lines with visual hierarchy",
@@ -165,15 +174,6 @@
     "id": "c26b6df",
     "date": "2026-03-22",
     "title": "Tighter top padding — content right under nav (10px)",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "1f557f9",
-    "date": "2026-03-22",
-    "title": "Reduce top padding on sections — content sits right under nav",
     "category": {
       "label": "New Feature",
       "color": "teal"
