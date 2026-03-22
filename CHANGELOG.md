@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Theo line merged, DATA BACK in mustard yellow (`1fd3a1d`)
+
+### Mar 22, 2026
+
 - Approach card: line-by-line style, 'We give your DATA BACK' in green (`a391fb1`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fix nav scroll spy: correct offset, proper section detection (`ec32734`)
-
-### Mar 22, 2026
-
-- Tighten spacing on all pages to match Science layout (`134e040`)
 
 
 ---
