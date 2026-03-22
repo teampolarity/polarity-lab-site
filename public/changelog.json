@@ -1,5 +1,14 @@
 [
   {
+    "id": "aefb271",
+    "date": "2026-03-22",
+    "title": "Rename to 'The Polarity Ecosystem'",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "fc62c05",
     "date": "2026-03-22",
     "title": "Add Learn More button at bottom of Science page linking to Ecosystem",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Design",
       "color": "purple"
-    }
-  },
-  {
-    "id": "7b6bb97",
-    "date": "2026-03-22",
-    "title": "Rewrite Science page: centered, no ring, Reflective AI vs Generative AI",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
