@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Rename Products to Ecosystem in nav (`dbff1b0`)
+
+### Mar 22, 2026
+
 - Add 'Launch Pad' to nav with green dot active indicator (`fe615f2`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Revert "Major performance fix: remove WebGL, cursor, constant rAF loops" (`5351e97`)
-
-### Mar 21, 2026
-
-- Major performance fix: remove WebGL, cursor, constant rAF loops (`fc95474`)
 
 
 ---

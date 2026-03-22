@@ -1,5 +1,14 @@
 [
   {
+    "id": "dbff1b0",
+    "date": "2026-03-22",
+    "title": "Rename Products to Ecosystem in nav",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "fe615f2",
     "date": "2026-03-22",
     "title": "Add 'Launch Pad' to nav with green dot active indicator",
@@ -165,15 +174,6 @@
     "id": "5351e97",
     "date": "2026-03-21",
     "title": "Revert \"Major performance fix: remove WebGL, cursor, constant rAF loops\"",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "fc95474",
-    "date": "2026-03-21",
-    "title": "Major performance fix: remove WebGL, cursor, constant rAF loops",
     "category": {
       "label": "Bug Fix",
       "color": "coral"
