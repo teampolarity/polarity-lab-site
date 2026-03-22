@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Tighten spacing on all pages to match Science layout (`134e040`)
+
+### Mar 22, 2026
+
 - Tighter top padding — content right under nav (10px) (`c26b6df`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Fix nav: solid background, always visible at top (`aa4099c`)
-
-### Mar 21, 2026
-
-- Fix layout: sticky nav, tighter hero spacing (`0005579`)
 
 
 ---
