@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Problem card: concise, professional, names the competitors (`5db31fa`)
+
+### Mar 22, 2026
+
 - Science cards: centered text, rewritten copy, empowering tone (`0d60116`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Add 'Launch Pad' to nav with green dot active indicator (`fe615f2`)
-
-### Mar 22, 2026
-
-- Add smooth scroll animation for Learn More and all anchor links (`8216724`)
 
 
 ---

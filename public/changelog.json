@@ -1,5 +1,14 @@
 [
   {
+    "id": "5db31fa",
+    "date": "2026-03-22",
+    "title": "Problem card: concise, professional, names the competitors",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "0d60116",
     "date": "2026-03-22",
     "title": "Science cards: centered text, rewritten copy, empowering tone",
@@ -165,15 +174,6 @@
     "id": "fe615f2",
     "date": "2026-03-22",
     "title": "Add 'Launch Pad' to nav with green dot active indicator",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "8216724",
-    "date": "2026-03-22",
-    "title": "Add smooth scroll animation for Learn More and all anchor links",
     "category": {
       "label": "New Feature",
       "color": "teal"
