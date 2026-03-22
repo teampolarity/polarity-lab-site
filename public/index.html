@@ -2951,15 +2951,17 @@
     
     function updateActiveNav() {
       const navHeight = nav.offsetHeight || 56;
+      const checkPoint = navHeight + 50;
 
-      // Find the last section whose top has scrolled past the nav
+      // Find which section contains the checkpoint (just below nav)
       let current = 'stage';
       for (const id of sections) {
         const section = document.getElementById(id);
         if (section) {
           const rect = section.getBoundingClientRect();
-          if (rect.top <= navHeight + 20) {
+          if (rect.top < checkPoint && rect.bottom > checkPoint) {
             current = id;
+            break;
           }
         }
       }
