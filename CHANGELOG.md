@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Science page: clean claim-style layout, no boxes, highlighted keywords (`cc616fc`)
+
+### Mar 22, 2026
+
 - Rewrite Science page: centered, no ring, Reflective AI vs Generative AI (`7b6bb97`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fix hero: center everything as group with 3vh gap (`bbd2adc`)
-
-### Mar 21, 2026
-
-- Icons pushed up, text at bottom — space-between layout (`4ac988e`)
 
 
 ---

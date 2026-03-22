@@ -1,5 +1,14 @@
 [
   {
+    "id": "cc616fc",
+    "date": "2026-03-22",
+    "title": "Science page: clean claim-style layout, no boxes, highlighted keywords",
+    "category": {
+      "label": "Design",
+      "color": "purple"
+    }
+  },
+  {
     "id": "7b6bb97",
     "date": "2026-03-22",
     "title": "Rewrite Science page: centered, no ring, Reflective AI vs Generative AI",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "4ac988e",
-    "date": "2026-03-21",
-    "title": "Icons pushed up, text at bottom — space-between layout",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
