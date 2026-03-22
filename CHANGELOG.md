@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Science page: punchy, less words, labeled cards (`852776f`)
+
+### Mar 22, 2026
+
 - Science: 3-column card layout, remove em-dashes, human copy (`d85ff36`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fix: icons centered between nav and text properly (`b948e94`)
-
-### Mar 22, 2026
-
-- Icons sit between nav and text — flex:1 fills upper space (`5bd379c`)
 
 
 ---
