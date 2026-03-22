@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- PolarityGPS globe: orbits wrap around with depth effect (`cc0480c`)
+
+### Mar 22, 2026
+
 - Make colored claim lines all caps for consistency (`212eed7`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Theo: Founder & PI & CEO, removed bio text (`51bebcb`)
-
-### Mar 22, 2026
-
-- Nathan: Co-Founder & COO & CXO, removed bio text (`eefde79`)
 
 
 ---
