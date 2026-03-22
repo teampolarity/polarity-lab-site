@@ -1,5 +1,14 @@
 [
   {
+    "id": "c26b6df",
+    "date": "2026-03-22",
+    "title": "Tighter top padding — content right under nav (10px)",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "1f557f9",
     "date": "2026-03-22",
     "title": "Reduce top padding on sections — content sits right under nav",
@@ -165,15 +174,6 @@
     "id": "0005579",
     "date": "2026-03-21",
     "title": "Fix layout: sticky nav, tighter hero spacing",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "028fa18",
-    "date": "2026-03-21",
-    "title": "Full performance audit fix — remove all lag sources",
     "category": {
       "label": "Bug Fix",
       "color": "coral"

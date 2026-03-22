@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Tighter top padding — content right under nav (10px) (`c26b6df`)
+
+### Mar 22, 2026
+
 - Reduce top padding on sections — content sits right under nav (`1f557f9`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Fix layout: sticky nav, tighter hero spacing (`0005579`)
-
-### Mar 21, 2026
-
-- Full performance audit fix — remove all lag sources (`028fa18`)
 
 
 ---
