@@ -1,5 +1,14 @@
 [
   {
+    "id": "dc45555",
+    "date": "2026-03-22",
+    "title": "Result card: 'Your DATA WORKS for You.' in green",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "471706a",
     "date": "2026-03-22",
     "title": "Result card: 'Your data, finally working for you.'",
@@ -165,15 +174,6 @@
     "id": "7df6702",
     "date": "2026-03-22",
     "title": "Fix scroll spy: check which section CONTAINS the checkpoint below nav",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "f30bc1b",
-    "date": "2026-03-22",
-    "title": "Fix scroll spy: iterate forward, last section past nav wins",
     "category": {
       "label": "Bug Fix",
       "color": "coral"

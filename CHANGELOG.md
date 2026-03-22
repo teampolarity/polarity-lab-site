@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Result card: 'Your DATA WORKS for You.' in green (`dc45555`)
+
+### Mar 22, 2026
+
 - Result card: 'Your data, finally working for you.' (`471706a`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fix scroll spy: check which section CONTAINS the checkpoint below nav (`7df6702`)
-
-### Mar 22, 2026
-
-- Fix scroll spy: iterate forward, last section past nav wins (`f30bc1b`)
 
 
 ---
