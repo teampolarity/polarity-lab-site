@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Update Theo: MD, Radiology Resident @ St. Vincent's (`2a79dda`)
+
+### Mar 22, 2026
+
 - Science page: punchy, less words, labeled cards (`852776f`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fix: icons + text as one centered group, 4vh gap between them (`89fb34b`)
-
-### Mar 22, 2026
-
-- Fix: icons centered between nav and text properly (`b948e94`)
 
 
 ---
