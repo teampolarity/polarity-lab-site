@@ -1,5 +1,14 @@
 [
   {
+    "id": "8216724",
+    "date": "2026-03-22",
+    "title": "Add smooth scroll animation for Learn More and all anchor links",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "89fb34b",
     "date": "2026-03-22",
     "title": "Fix: icons + text as one centered group, 4vh gap between them",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "954845b",
-    "date": "2026-03-21",
-    "title": "Polish hero: single-line title, clean spacing, remove scroll indicator",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]
