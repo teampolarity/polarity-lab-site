@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Problem: AI takes your data, gives you nothing back (`0c0bb0e`)
+
+### Mar 22, 2026
+
 - Problem card: 'AI knows everything except you.' (`f6ab6cc`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Sticky nav: stays at top as you scroll, proper section spacing (`0a88918`)
-
-### Mar 22, 2026
-
-- Rename Products to Ecosystem in nav (`dbff1b0`)
 
 
 ---
