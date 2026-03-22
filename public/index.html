@@ -915,24 +915,32 @@
 
     @media (max-width: 768px) {
       .hero-constellation {
-        gap: 16px 12px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 20px;
         padding: 10px 24px 0;
+        max-width: 300px;
       }
-      .hero-product-icon { width: 80px; height: 80px; }
-      .hero-product--polarity .hero-product-icon { width: 100px; height: 100px; }
-      .hero-product-label { font-size: 9px; letter-spacing: 0.1em; }
+      /* Pyramid: PolarityGPS on top, then PHRESH, then WaxFeed */
+      .hero-product--polarity { order: 1 !important; }
+      .hero-product--painpoints { order: 2 !important; }
+      .hero-product--waxfeed { order: 3 !important; }
+      .hero-product-icon { width: 120px; height: 120px; }
+      .hero-product--polarity .hero-product-icon { width: 140px; height: 140px; }
+      .hero-product-label { font-size: 10px; letter-spacing: 0.12em; }
       .hero-product { gap: 10px; }
     }
 
     @media (max-width: 480px) {
       .hero-constellation {
-        gap: 10px 6px;
+        gap: 16px;
         padding: 5px 16px 0;
+        max-width: 260px;
       }
-      .hero-product-icon { width: 58px; height: 58px; }
-      .hero-product--polarity .hero-product-icon { width: 74px; height: 74px; }
-      .hero-product-label { font-size: 7px; letter-spacing: 0.06em; }
-      .hero-product { gap: 6px; }
+      .hero-product-icon { width: 100px; height: 100px; }
+      .hero-product--polarity .hero-product-icon { width: 120px; height: 120px; }
+      .hero-product-label { font-size: 9px; letter-spacing: 0.08em; }
+      .hero-product { gap: 8px; }
 
       .scroll-text--left,
       .scroll-text--right {
