@@ -1,5 +1,14 @@
 [
   {
+    "id": "fc62c05",
+    "date": "2026-03-22",
+    "title": "Add Learn More button at bottom of Science page linking to Ecosystem",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "dc45555",
     "date": "2026-03-22",
     "title": "Result card: 'Your DATA WORKS for You.' in green",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "7df6702",
-    "date": "2026-03-22",
-    "title": "Fix scroll spy: check which section CONTAINS the checkpoint below nav",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

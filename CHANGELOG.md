@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Add Learn More button at bottom of Science page linking to Ecosystem (`fc62c05`)
+
+### Mar 22, 2026
+
 - Result card: 'Your DATA WORKS for You.' in green (`dc45555`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Rewrite Science page: centered, no ring, Reflective AI vs Generative AI (`7b6bb97`)
-
-### Mar 22, 2026
-
-- Fix scroll spy: check which section CONTAINS the checkpoint below nav (`7df6702`)
 
 
 ---
