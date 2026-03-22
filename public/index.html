@@ -2574,25 +2574,25 @@
               <div class="product-icon product-icon--hero">
                 <svg viewBox="0 0 200 200">
                   <defs>
-                    <radialGradient id="polAppGrad" cx="30%" cy="30%" r="70%">
+                    <radialGradient id="polAppCoreGrad" cx="30%" cy="30%" r="70%">
                       <stop offset="0%" stop-color="#6EE7DF"/>
                       <stop offset="50%" stop-color="#4ECDC4"/>
                       <stop offset="100%" stop-color="#2BA89F"/>
                     </radialGradient>
-                    <filter id="polAppGlow" x="-50%" y="-50%" width="200%" height="200%">
-                      <feGaussianBlur stdDeviation="6" result="blur"/>
-                      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
+                    <radialGradient id="polAppAmbient" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stop-color="#4ECDC4" stop-opacity="0.4"/>
+                      <stop offset="100%" stop-color="#4ECDC4" stop-opacity="0"/>
+                    </radialGradient>
                   </defs>
-                  <circle cx="100" cy="100" r="70" fill="#4ECDC4" opacity="0.08" filter="url(#polAppGlow)"/>
-                  <g filter="url(#polAppGlow)">
-                    <circle cx="100" cy="100" r="45" fill="none" stroke="#4ECDC4" stroke-width="3" opacity="0.4"/>
-                    <circle cx="100" cy="100" r="30" fill="none" stroke="#4ECDC4" stroke-width="2.5" opacity="0.6"/>
-                    <circle cx="100" cy="100" r="16" fill="url(#polAppGrad)"/>
-                    <circle cx="94" cy="94" r="5" fill="white" opacity="0.3"/>
-                  </g>
-                  <circle cx="130" cy="65" r="5" fill="#4ECDC4" filter="url(#polAppGlow)" opacity="0.6"/>
-                  <circle cx="68" cy="132" r="4" fill="#2BA89F" filter="url(#polAppGlow)" opacity="0.5"/>
+                  <circle cx="100" cy="100" r="90" fill="url(#polAppAmbient)"/>
+                  <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#4ECDC4" stroke-width="3" transform="rotate(-60 100 100)" opacity="0.9"/>
+                  <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FFA07A" stroke-width="3" transform="rotate(60 100 100)" opacity="0.9"/>
+                  <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#BB8FCE" stroke-width="3" opacity="0.9"/>
+                  <circle cx="140" cy="30" r="10" fill="#4ECDC4"/>
+                  <circle cx="60" cy="30" r="10" fill="#FFA07A"/>
+                  <circle cx="180" cy="100" r="10" fill="#BB8FCE"/>
+                  <circle cx="100" cy="100" r="32" fill="url(#polAppCoreGrad)"/>
+                  <circle cx="88" cy="88" r="12" fill="white" opacity="0.3"/>
                 </svg>
               </div>
               <div class="product-name">Polarity App</div>
