@@ -308,6 +308,14 @@
       color: var(--teal);
     }
 
+    .nav-link.active::after {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #22c55e;
+      bottom: -4px;
+    }
+
     .nav-cta {
       font-family: var(--font-display);
       font-size: 12px;
@@ -2184,6 +2192,7 @@
     </a>
 
     <ul class="nav-links" id="nav-links">
+      <li><a href="#stage" class="nav-link nav-link--launchpad active">Launch Pad</a></li>
       <li><a href="#ccx" class="nav-link">Science</a></li>
       <li><a href="#products" class="nav-link">Products</a></li>
       <li><a href="#team" class="nav-link">Team</a></li>
@@ -2933,7 +2942,7 @@
     let lastScrollY = 0;
 
     // Sections for scroll spy
-    const sections = ['ccx', 'products', 'team', 'contact'];
+    const sections = ['stage', 'ccx', 'products', 'team', 'contact'];
     
     function updateActiveNav() {
       const scrollY = window.scrollY + 150; // Offset for nav height
