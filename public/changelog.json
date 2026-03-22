@@ -1,5 +1,14 @@
 [
   {
+    "id": "89fb34b",
+    "date": "2026-03-22",
+    "title": "Fix: icons + text as one centered group, 4vh gap between them",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "b948e94",
     "date": "2026-03-22",
     "title": "Fix: icons centered between nav and text properly",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Removed",
       "color": "coral"
-    }
-  },
-  {
-    "id": "bb5fae5",
-    "date": "2026-03-21",
-    "title": "Update hero: 'The First Ever AI That Reflects You.' + Learn More button",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

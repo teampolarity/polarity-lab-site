@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Fix: icons + text as one centered group, 4vh gap between them (`89fb34b`)
+
+### Mar 22, 2026
+
 - Fix: icons centered between nav and text properly (`b948e94`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Polish hero: single-line title, clean spacing, remove scroll indicator (`954845b`)
-
-### Mar 21, 2026
-
-- Update hero: 'The First Ever AI That Reflects You.' + Learn More button (`bb5fae5`)
 
 
 ---
