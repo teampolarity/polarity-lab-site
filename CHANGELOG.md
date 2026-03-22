@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Problem card: stacked lines with visual hierarchy (`fef2949`)
+
+### Mar 22, 2026
+
 - Add 'It takes from you.' as final punch line (`3462390`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Reduce top padding on sections — content sits right under nav (`1f557f9`)
-
-### Mar 22, 2026
-
-- Each section fills viewport height — proper page separation (`d930345`)
 
 
 ---

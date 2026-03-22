@@ -1,5 +1,14 @@
 [
   {
+    "id": "fef2949",
+    "date": "2026-03-22",
+    "title": "Problem card: stacked lines with visual hierarchy",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "3462390",
     "date": "2026-03-22",
     "title": "Add 'It takes from you.' as final punch line",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "d930345",
-    "date": "2026-03-22",
-    "title": "Each section fills viewport height — proper page separation",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
