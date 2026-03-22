@@ -1,5 +1,14 @@
 [
   {
+    "id": "212eed7",
+    "date": "2026-03-22",
+    "title": "Make colored claim lines all caps for consistency",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "59f1f65",
     "date": "2026-03-22",
     "title": "Update Theo's title to Brown Medical School",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Removed",
       "color": "coral"
-    }
-  },
-  {
-    "id": "54aa7fc",
-    "date": "2026-03-22",
-    "title": "Nathan: uOttawa Telfer, Finance & BTM",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

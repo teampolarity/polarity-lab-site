@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Make colored claim lines all caps for consistency (`212eed7`)
+
+### Mar 22, 2026
+
 - Update Theo's title to Brown Medical School (`59f1f65`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Nathan: Co-Founder & COO & CXO, removed bio text (`eefde79`)
-
-### Mar 22, 2026
-
-- Nathan: uOttawa Telfer, Finance & BTM (`54aa7fc`)
 
 
 ---
