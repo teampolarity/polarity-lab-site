@@ -400,6 +400,23 @@
         border-top: 1px solid var(--border-ghost);
         font-size: 14px;
       }
+      /* Green dot on mobile: show as inline dot next to text */
+      .nav-links.open .nav-link.active::after {
+        position: static;
+        display: inline-block;
+        transform: none;
+        margin-left: 8px;
+        vertical-align: middle;
+      }
+
+      /* Reduce hero gap on mobile */
+      .stage {
+        height: auto;
+        min-height: calc(100vh - 60px);
+        min-height: calc(100dvh - 60px);
+        padding: 2vh 0 4vh;
+        gap: 3vh;
+      }
     }
 
     /* ==========================================
