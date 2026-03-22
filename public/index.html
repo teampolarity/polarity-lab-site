@@ -915,32 +915,32 @@
 
     @media (max-width: 768px) {
       .hero-constellation {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
         gap: 20px;
         padding: 10px 24px 0;
-        max-width: 300px;
+        max-width: 400px;
       }
-      /* Pyramid: PolarityGPS on top, then PHRESH, then WaxFeed */
-      .hero-product--polarity { order: 1 !important; }
-      .hero-product--painpoints { order: 2 !important; }
-      .hero-product--waxfeed { order: 3 !important; }
-      .hero-product-icon { width: 120px; height: 120px; }
-      .hero-product--polarity .hero-product-icon { width: 140px; height: 140px; }
+      /* Triangle: PolarityGPS centered top, PHRESH + WaxFeed bottom row */
+      .hero-product--polarity { order: 1 !important; grid-column: 1 / -1; justify-self: center; }
+      .hero-product--painpoints { order: 2 !important; justify-self: center; }
+      .hero-product--waxfeed { order: 3 !important; justify-self: center; }
+      .hero-product-icon { width: 100px; height: 100px; }
+      .hero-product--polarity .hero-product-icon { width: 130px; height: 130px; }
       .hero-product-label { font-size: 10px; letter-spacing: 0.12em; }
       .hero-product { gap: 10px; }
     }
 
     @media (max-width: 480px) {
       .hero-constellation {
-        gap: 16px;
+        gap: 14px;
         padding: 5px 16px 0;
-        max-width: 260px;
+        max-width: 320px;
       }
-      .hero-product-icon { width: 100px; height: 100px; }
-      .hero-product--polarity .hero-product-icon { width: 120px; height: 120px; }
-      .hero-product-label { font-size: 9px; letter-spacing: 0.08em; }
-      .hero-product { gap: 8px; }
+      .hero-product-icon { width: 80px; height: 80px; }
+      .hero-product--polarity .hero-product-icon { width: 110px; height: 110px; }
+      .hero-product-label { font-size: 8px; letter-spacing: 0.08em; }
+      .hero-product { gap: 6px; }
 
       .scroll-text--left,
       .scroll-text--right {
