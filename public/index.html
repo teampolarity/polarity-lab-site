@@ -425,8 +425,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 3vh;
+      gap: 0;
     }
 
     /* Scroll container provides the scroll height */
@@ -462,12 +461,13 @@
     .hero-constellation {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      align-items: center;
+      align-items: end;
       justify-items: center;
       gap: 30px;
       width: 100%;
       max-width: 900px;
       padding: 0 20px;
+      flex: 1;
     }
 
     .hero-product {
@@ -588,11 +588,12 @@
     .scroll-text--center {
       text-align: center;
       max-width: 900px;
-      padding: 0 48px;
+      padding: 3vh 48px 5vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 1.5vh;
+      flex-shrink: 0;
     }
 
     .scroll-text--left {
