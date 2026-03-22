@@ -1,5 +1,14 @@
 [
   {
+    "id": "7b6bb97",
+    "date": "2026-03-22",
+    "title": "Rewrite Science page: centered, no ring, Reflective AI vs Generative AI",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "7df6702",
     "date": "2026-03-22",
     "title": "Fix scroll spy: check which section CONTAINS the checkpoint below nav",
@@ -165,15 +174,6 @@
     "id": "4ac988e",
     "date": "2026-03-21",
     "title": "Icons pushed up, text at bottom — space-between layout",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "07c4476",
-    "date": "2026-03-21",
-    "title": "Badge under title, adaptive vh-based spacing throughout hero",
     "category": {
       "label": "Update",
       "color": "text-secondary"
