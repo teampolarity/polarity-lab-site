@@ -1,5 +1,14 @@
 [
   {
+    "id": "d85ff36",
+    "date": "2026-03-22",
+    "title": "Science: 3-column card layout, remove em-dashes, human copy",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "cc616fc",
     "date": "2026-03-22",
     "title": "Science page: clean claim-style layout, no boxes, highlighted keywords",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "bbd2adc",
-    "date": "2026-03-22",
-    "title": "Fix hero: center everything as group with 3vh gap",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

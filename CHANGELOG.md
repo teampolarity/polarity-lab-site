@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Science: 3-column card layout, remove em-dashes, human copy (`d85ff36`)
+
+### Mar 22, 2026
+
 - Science page: clean claim-style layout, no boxes, highlighted keywords (`cc616fc`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Icons sit between nav and text — flex:1 fills upper space (`5bd379c`)
-
-### Mar 22, 2026
-
-- Fix hero: center everything as group with 3vh gap (`bbd2adc`)
 
 
 ---
