@@ -1,5 +1,14 @@
 [
   {
+    "id": "d930345",
+    "date": "2026-03-22",
+    "title": "Each section fills viewport height — proper page separation",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "2f4ff79",
     "date": "2026-03-22",
     "title": "Fix section order: Science → Ecosystem → Team → Contact",
@@ -167,15 +176,6 @@
     "title": "Remove pop-in animations — everything visible on scroll",
     "category": {
       "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "2df29ac",
-    "date": "2026-03-21",
-    "title": "Move hero into normal scroll flow — no more fixed stage",
-    "category": {
-      "label": "Bug Fix",
       "color": "coral"
     }
   }
