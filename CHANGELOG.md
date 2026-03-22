@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Problem card: 'AI knows everything except you.' (`f6ab6cc`)
+
+### Mar 22, 2026
+
 - Problem card: concise, professional, names the competitors (`5db31fa`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Rename Products to Ecosystem in nav (`dbff1b0`)
-
-### Mar 22, 2026
-
-- Add 'Launch Pad' to nav with green dot active indicator (`fe615f2`)
 
 
 ---

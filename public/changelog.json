@@ -1,5 +1,14 @@
 [
   {
+    "id": "f6ab6cc",
+    "date": "2026-03-22",
+    "title": "Problem card: 'AI knows everything except you.'",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "5db31fa",
     "date": "2026-03-22",
     "title": "Problem card: concise, professional, names the competitors",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "fe615f2",
-    "date": "2026-03-22",
-    "title": "Add 'Launch Pad' to nav with green dot active indicator",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
