@@ -311,11 +311,13 @@
     }
 
     .nav-link.active::after {
-      width: 6px;
-      height: 6px;
+      width: 6px !important;
+      height: 6px !important;
       border-radius: 50%;
-      background: #22c55e;
-      bottom: -4px;
+      background: #22c55e !important;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
     .nav-cta {
@@ -2948,7 +2950,7 @@
     const sections = ['stage', 'ccx', 'products', 'team', 'contact'];
     
     function updateActiveNav() {
-      const scrollY = window.scrollY + 80; // Offset for sticky nav height
+      const scrollY = window.scrollY + 60; // Offset for sticky nav height
       
       // Find current section
       let current = '';
