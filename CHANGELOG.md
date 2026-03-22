@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Fix scroll spy: check which section CONTAINS the checkpoint below nav (`7df6702`)
+
+### Mar 22, 2026
+
 - Fix scroll spy: iterate forward, last section past nav wins (`f30bc1b`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Badge under title, adaptive vh-based spacing throughout hero (`07c4476`)
-
-### Mar 21, 2026
-
-- Fix hero badge: visible, reads 'Interdisciplinary Research Laboratory' (`ccc2b97`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "7df6702",
+    "date": "2026-03-22",
+    "title": "Fix scroll spy: check which section CONTAINS the checkpoint below nav",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "f30bc1b",
     "date": "2026-03-22",
     "title": "Fix scroll spy: iterate forward, last section past nav wins",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "ccc2b97",
-    "date": "2026-03-21",
-    "title": "Fix hero badge: visible, reads 'Interdisciplinary Research Laboratory'",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
