@@ -448,8 +448,8 @@
     .spatial-section {
       position: relative;
       overflow: visible;
-      scroll-margin-top: 60px;
-      min-height: calc(100vh - 60px);
+      scroll-margin-top: 56px;
+      min-height: calc(100vh - 56px);
     }
 
     /* Content sections are now visible by default */
@@ -2948,7 +2948,7 @@
     const sections = ['stage', 'ccx', 'products', 'team', 'contact'];
     
     function updateActiveNav() {
-      const scrollY = window.scrollY + 150; // Offset for nav height
+      const scrollY = window.scrollY + 80; // Offset for sticky nav height
       
       // Find current section
       let current = '';
