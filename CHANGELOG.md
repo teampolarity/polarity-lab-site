@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Approach card: line-by-line style, 'We give your DATA BACK' in green (`a391fb1`)
+
+### Mar 22, 2026
+
 - Problem card: tighter lines, 'It doesn't work for you' own line, STEALS in red (`4825990`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Tighten spacing on all pages to match Science layout (`134e040`)
-
-### Mar 22, 2026
-
-- Tighter top padding — content right under nav (10px) (`c26b6df`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "a391fb1",
+    "date": "2026-03-22",
+    "title": "Approach card: line-by-line style, 'We give your DATA BACK' in green",
+    "category": {
+      "label": "Design",
+      "color": "purple"
+    }
+  },
+  {
     "id": "4825990",
     "date": "2026-03-22",
     "title": "Problem card: tighter lines, 'It doesn't work for you' own line, STEALS in red",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "c26b6df",
-    "date": "2026-03-22",
-    "title": "Tighter top padding — content right under nav (10px)",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
