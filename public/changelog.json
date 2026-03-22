@@ -1,5 +1,14 @@
 [
   {
+    "id": "471706a",
+    "date": "2026-03-22",
+    "title": "Result card: 'Your data, finally working for you.'",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "4db9725",
     "date": "2026-03-22",
     "title": "Update: '11 years. 2 patents. 1 Algorithm.' + remove St. Vincent's",
@@ -165,15 +174,6 @@
     "id": "f30bc1b",
     "date": "2026-03-22",
     "title": "Fix scroll spy: iterate forward, last section past nav wins",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "2478644",
-    "date": "2026-03-22",
-    "title": "Fix scroll spy: use getBoundingClientRect for accurate section detection",
     "category": {
       "label": "Bug Fix",
       "color": "coral"

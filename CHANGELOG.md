@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Result card: 'Your data, finally working for you.' (`471706a`)
+
+### Mar 22, 2026
+
 - Update: '11 years. 2 patents. 1 Algorithm.' + remove St. Vincent's (`4db9725`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fix scroll spy: iterate forward, last section past nav wins (`f30bc1b`)
-
-### Mar 22, 2026
-
-- Fix scroll spy: use getBoundingClientRect for accurate section detection (`2478644`)
 
 
 ---
