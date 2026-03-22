@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Icons sit between nav and text — flex:1 fills upper space (`5bd379c`)
+
+### Mar 22, 2026
+
 - Fix hero: center everything as group with 3vh gap (`bbd2adc`)
 
 ### Mar 21, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Add WaxFeed to integration section (keep in all other positions) (`bdf7870`)
-
-### Mar 21, 2026
-
-- Add Pulse and Polarity App to integration section (`6519954`)
 
 
 ---

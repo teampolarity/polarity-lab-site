@@ -1,5 +1,14 @@
 [
   {
+    "id": "5bd379c",
+    "date": "2026-03-22",
+    "title": "Icons sit between nav and text — flex:1 fills upper space",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "bbd2adc",
     "date": "2026-03-22",
     "title": "Fix hero: center everything as group with 3vh gap",
@@ -165,15 +174,6 @@
     "id": "bdf7870",
     "date": "2026-03-21",
     "title": "Add WaxFeed to integration section (keep in all other positions)",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "6519954",
-    "date": "2026-03-21",
-    "title": "Add Pulse and Polarity App to integration section",
     "category": {
       "label": "New Feature",
       "color": "teal"
