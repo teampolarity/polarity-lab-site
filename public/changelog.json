@@ -1,5 +1,14 @@
 [
   {
+    "id": "b948e94",
+    "date": "2026-03-22",
+    "title": "Fix: icons centered between nav and text properly",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "5bd379c",
     "date": "2026-03-22",
     "title": "Icons sit between nav and text — flex:1 fills upper space",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "bdf7870",
-    "date": "2026-03-21",
-    "title": "Add WaxFeed to integration section (keep in all other positions)",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]

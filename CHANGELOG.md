@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Fix: icons centered between nav and text properly (`b948e94`)
+
+### Mar 22, 2026
+
 - Icons sit between nav and text — flex:1 fills upper space (`5bd379c`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Update hero: 'The First Ever AI That Reflects You.' + Learn More button (`bb5fae5`)
-
-### Mar 21, 2026
-
-- Add WaxFeed to integration section (keep in all other positions) (`bdf7870`)
 
 
 ---
