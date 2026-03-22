@@ -1,5 +1,14 @@
 [
   {
+    "id": "1f557f9",
+    "date": "2026-03-22",
+    "title": "Reduce top padding on sections — content sits right under nav",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "d930345",
     "date": "2026-03-22",
     "title": "Each section fills viewport height — proper page separation",
@@ -167,15 +176,6 @@
     "title": "Full performance audit fix — remove all lag sources",
     "category": {
       "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "3687722",
-    "date": "2026-03-21",
-    "title": "Remove pop-in animations — everything visible on scroll",
-    "category": {
-      "label": "Removed",
       "color": "coral"
     }
   }

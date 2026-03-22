@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Reduce top padding on sections — content sits right under nav (`1f557f9`)
+
+### Mar 22, 2026
+
 - Each section fills viewport height — proper page separation (`d930345`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Full performance audit fix — remove all lag sources (`028fa18`)
-
-### Mar 21, 2026
-
-- Remove pop-in animations — everything visible on scroll (`3687722`)
 
 
 ---
