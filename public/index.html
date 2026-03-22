@@ -232,7 +232,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      padding: 16px 48px;
+      padding: 14px clamp(12px, 4vw, 48px);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -270,7 +270,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 40px;
+      gap: clamp(16px, 3vw, 40px);
       list-style: none;
     }
 
@@ -476,13 +476,9 @@
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 10px 48px 60px;
+      padding: 10px clamp(16px, 4vw, 48px) clamp(30px, 6vw, 60px);
       position: relative;
       z-index: 1;
-    }
-
-    @media (max-width: 768px) {
-      .section-inner { padding: 10px 24px 40px; }
     }
 
     /* ==========================================
@@ -493,10 +489,10 @@
       grid-template-columns: 1fr 1fr 1fr;
       align-items: center;
       justify-items: center;
-      gap: 30px;
+      gap: clamp(12px, 3vw, 30px);
       width: 100%;
       max-width: 900px;
-      padding: 0 20px;
+      padding: 0 clamp(12px, 3vw, 20px);
     }
 
     .hero-product {
@@ -512,8 +508,8 @@
     }
 
     .hero-product-icon {
-      width: 140px;
-      height: 140px;
+      width: clamp(80px, 18vw, 140px);
+      height: clamp(80px, 18vw, 140px);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -540,7 +536,7 @@
 
     .hero-product-label {
       font-family: var(--font-display);
-      font-size: 11px;
+      font-size: clamp(8px, 1.5vw, 11px);
       font-weight: 600;
       letter-spacing: 0.2em;
       text-transform: uppercase;
@@ -572,8 +568,8 @@
     }
 
     .hero-product--polarity .hero-product-icon {
-      width: 180px;
-      height: 180px;
+      width: clamp(100px, 22vw, 180px);
+      height: clamp(100px, 22vw, 180px);
     }
 
     @keyframes polarityFloat {
@@ -991,8 +987,7 @@
       .newsletter-form input,
       .newsletter-form button { width: 100%; }
 
-      /* Mobile section padding */
-      .section-inner { padding: 10px 16px 30px !important; }
+      /* Section padding now handled by clamp() */
 
       /* Mobile ccx tagline */
       .ccx-tagline { font-size: 17px; }
@@ -1004,12 +999,10 @@
       .ccx-claim-line { font-size: 12px; }
       .ccx-claim-line--red, .ccx-claim-line--green { font-size: 14px; }
 
-      /* Mobile product cards */
-      .product-card { padding: 24px; }
-      .product-icon--hero { width: 80px !important; height: 80px !important; }
-      .product-icon--hero svg, .product-icon--hero img { width: 80px !important; height: 80px !important; }
-      .product-name { font-size: 17px; }
-      .product-desc { font-size: 13px; }
+      /* Product cards now fluid via clamp() */
+      .product-card { padding: 20px; }
+      .product-name { font-size: 16px; }
+      .product-desc { font-size: 12px; }
 
       /* Mobile team cards */
       .team-card { padding: 24px; }
@@ -1551,7 +1544,7 @@
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
       border-radius: 20px;
-      padding: 36px;
+      padding: clamp(20px, 4vw, 36px);
       text-decoration: none;
       color: var(--text-primary);
       transition: all 0.6s var(--ease-out-expo);
@@ -1630,20 +1623,20 @@
     }
 
     .product-icon--hero {
-      width: 100px;
-      height: 100px;
+      width: clamp(70px, 12vw, 100px);
+      height: clamp(70px, 12vw, 100px);
       background: transparent !important;
     }
 
     .product-icon--hero svg,
     .product-icon--hero img {
-      width: 100px;
+      width: clamp(70px, 12vw, 100px);
       height: 100px;
     }
 
     .product-name {
       font-family: var(--font-display);
-      font-size: 20px;
+      font-size: clamp(16px, 2.5vw, 20px);
       font-weight: 600;
       margin-bottom: 10px;
       position: relative;
@@ -1652,7 +1645,7 @@
     }
 
     .product-desc {
-      font-size: 14px;
+      font-size: clamp(12px, 1.8vw, 14px);
       color: var(--text-tertiary);
       position: relative;
       z-index: 1;
