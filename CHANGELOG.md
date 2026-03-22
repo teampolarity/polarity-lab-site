@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Fix section order: Science → Ecosystem → Team → Contact (`2f4ff79`)
+
+### Mar 22, 2026
+
 - Sticky nav: stays at top as you scroll, proper section spacing (`0a88918`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Move hero into normal scroll flow — no more fixed stage (`2df29ac`)
-
-### Mar 21, 2026
-
-- Performance: throttle WebGL to 30fps, faster scroll, less padding (`07fa934`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "2f4ff79",
+    "date": "2026-03-22",
+    "title": "Fix section order: Science → Ecosystem → Team → Contact",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "0a88918",
     "date": "2026-03-22",
     "title": "Sticky nav: stays at top as you scroll, proper section spacing",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "07fa934",
-    "date": "2026-03-21",
-    "title": "Performance: throttle WebGL to 30fps, faster scroll, less padding",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
