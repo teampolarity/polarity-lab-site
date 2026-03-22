@@ -1107,6 +1107,14 @@
       margin-top: 4px;
     }
 
+    .ccx-claim-line--green {
+      color: #22c55e;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      margin-top: 4px;
+    }
+
     @media (max-width: 768px) {
       .ccx-claims { grid-template-columns: 1fr; }
     }
@@ -2392,7 +2400,12 @@
               <div class="ccx-claim">
                 <p class="ccx-claim-label">Our Approach</p>
                 <h3 class="ccx-claim-title">We scan the mind, not the internet.</h3>
-                <p class="ccx-claim-desc">Built on <span style="color:var(--teal);">radiology and brain mapping</span>. Led by <strong>Theodore Addo, MD</strong> (Radiology, St. Vincent's). 11 years of research. 2 patents.</p>
+                <div class="ccx-claim-lines">
+                  <p class="ccx-claim-line">Built on <span style="color:var(--teal); font-weight:600;">radiology and brain mapping</span>.</p>
+                  <p class="ccx-claim-line">Led by <strong>Theodore Addo, MD</strong> (Radiology, St. Vincent's).</p>
+                  <p class="ccx-claim-line">11 years of research. 2 patents.</p>
+                  <p class="ccx-claim-line ccx-claim-line--green">We give your DATA BACK.</p>
+                </div>
               </div>
 
               <div class="ccx-claim">
