@@ -1,5 +1,14 @@
 [
   {
+    "id": "f30bc1b",
+    "date": "2026-03-22",
+    "title": "Fix scroll spy: iterate forward, last section past nav wins",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "2478644",
     "date": "2026-03-22",
     "title": "Fix scroll spy: use getBoundingClientRect for accurate section detection",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "f60e459",
-    "date": "2026-03-21",
-    "title": "Hero fills viewport: icons centered, Learn More at bottom",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

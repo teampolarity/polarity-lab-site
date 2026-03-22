@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Fix scroll spy: iterate forward, last section past nav wins (`f30bc1b`)
+
+### Mar 22, 2026
+
 - Fix scroll spy: use getBoundingClientRect for accurate section detection (`2478644`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Fix hero badge: visible, reads 'Interdisciplinary Research Laboratory' (`ccc2b97`)
-
-### Mar 21, 2026
-
-- Hero fills viewport: icons centered, Learn More at bottom (`f60e459`)
 
 
 ---
