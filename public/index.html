@@ -2950,22 +2950,21 @@
     const sections = ['stage', 'ccx', 'products', 'team', 'contact'];
     
     function updateActiveNav() {
-      const scrollY = window.scrollY + 60; // Offset for sticky nav height
-      
-      // Find current section
-      let current = '';
-      for (const id of sections) {
-        const section = document.getElementById(id);
+      const navHeight = nav.offsetHeight || 56;
+
+      // Find which section is currently in view
+      let current = 'stage';
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
         if (section) {
-          const top = section.offsetTop;
-          const height = section.offsetHeight;
-          if (scrollY >= top && scrollY < top + height) {
-            current = id;
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= navHeight + 10) {
+            current = sections[i];
             break;
           }
         }
       }
-      
+
       // Update active class on nav links
       document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
@@ -2974,9 +2973,6 @@
           link.classList.add('active');
         }
       });
-      
-      // Nav background
-      nav.classList.toggle('scrolled', window.scrollY > 50);
     }
 
     window.addEventListener('scroll', updateActiveNav, { passive: true });
