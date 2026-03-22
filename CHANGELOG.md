@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Mar 22, 2026
+
+- Fix hero: center everything as group with 3vh gap (`bbd2adc`)
+
 ### Mar 21, 2026
 
 - Icons pushed up, text at bottom — space-between layout (`4ac988e`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Add Pulse and Polarity App to integration section (`6519954`)
-
-### Mar 21, 2026
-
-- Hero: 3 icons only (PHRESH, PolarityGPS, WaxFeed) + bouncy product cards (`899258a`)
 
 
 ---

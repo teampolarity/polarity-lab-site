@@ -1,5 +1,14 @@
 [
   {
+    "id": "bbd2adc",
+    "date": "2026-03-22",
+    "title": "Fix hero: center everything as group with 3vh gap",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "4ac988e",
     "date": "2026-03-21",
     "title": "Icons pushed up, text at bottom — space-between layout",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "899258a",
-    "date": "2026-03-21",
-    "title": "Hero: 3 icons only (PHRESH, PolarityGPS, WaxFeed) + bouncy product cards",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
