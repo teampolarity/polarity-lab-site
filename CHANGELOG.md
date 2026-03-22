@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Add 'It takes from you.' as final punch line (`3462390`)
+
+### Mar 22, 2026
+
 - Problem: combined 'knows everything except you' + 'gives nothing back' (`d927711`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Each section fills viewport height — proper page separation (`d930345`)
-
-### Mar 22, 2026
-
-- Fix section order: Science → Ecosystem → Team → Contact (`2f4ff79`)
 
 
 ---

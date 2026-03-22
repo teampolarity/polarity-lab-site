@@ -1,5 +1,14 @@
 [
   {
+    "id": "3462390",
+    "date": "2026-03-22",
+    "title": "Add 'It takes from you.' as final punch line",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "d927711",
     "date": "2026-03-22",
     "title": "Problem: combined 'knows everything except you' + 'gives nothing back'",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "2f4ff79",
-    "date": "2026-03-22",
-    "title": "Fix section order: Science → Ecosystem → Team → Contact",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
