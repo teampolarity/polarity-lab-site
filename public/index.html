@@ -380,10 +380,26 @@
     }
 
     @media (max-width: 900px) {
-      .nav { padding: 16px 24px; }
-      .nav.scrolled { padding: 12px 24px; }
+      .nav { padding: 14px 16px; flex-wrap: wrap; }
+      .nav.scrolled { padding: 12px 16px; }
       .nav-links, .nav-cta { display: none; }
       .nav-mobile { display: block; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        padding: 10px 0 0;
+        order: 10;
+      }
+      .nav-links.open li { width: 100%; }
+      .nav-links.open .nav-link {
+        display: block;
+        padding: 12px 0;
+        border-top: 1px solid var(--border-ghost);
+        font-size: 14px;
+      }
     }
 
     /* ==========================================
@@ -966,6 +982,47 @@
         font-size: 15px;
       }
       #text-stats { display: none; }
+
+      /* Mobile contact fixes */
+      .contact-title { font-size: clamp(28px, 7vw, 40px) !important; }
+      .contact-links { flex-direction: column; gap: 12px; }
+      .contact-btn { padding: 14px 20px; font-size: 13px; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input,
+      .newsletter-form button { width: 100%; }
+
+      /* Mobile section padding */
+      .section-inner { padding: 10px 16px 30px !important; }
+
+      /* Mobile ccx tagline */
+      .ccx-tagline { font-size: 17px; }
+      .ccx-tagline br { display: none; }
+
+      /* Mobile claim cards */
+      .ccx-claim { padding: 20px; }
+      .ccx-claim-title { font-size: 16px; }
+      .ccx-claim-line { font-size: 12px; }
+      .ccx-claim-line--red, .ccx-claim-line--green { font-size: 14px; }
+
+      /* Mobile product cards */
+      .product-card { padding: 24px; }
+      .product-icon--hero { width: 80px !important; height: 80px !important; }
+      .product-icon--hero svg, .product-icon--hero img { width: 80px !important; height: 80px !important; }
+      .product-name { font-size: 17px; }
+      .product-desc { font-size: 13px; }
+
+      /* Mobile team cards */
+      .team-card { padding: 24px; }
+      .team-card-name { font-size: 18px; }
+
+      /* Mobile hero badge */
+      .hero-badge { font-size: 8px; padding: 8px 16px; }
+
+      /* Mobile Learn More */
+      .hero-learn-more { padding: 10px 24px; font-size: 13px; }
+
+      /* Mobile section title */
+      .section-title { font-size: clamp(24px, 6vw, 36px) !important; }
     }
 
     /* ==========================================
