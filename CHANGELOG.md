@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Add 'Launch Pad' to nav with green dot active indicator (`fe615f2`)
+
+### Mar 22, 2026
+
 - Add smooth scroll animation for Learn More and all anchor links (`8216724`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Major performance fix: remove WebGL, cursor, constant rAF loops (`fc95474`)
-
-### Mar 21, 2026
-
-- Move hero text higher (58%) for better visual balance (`7c6e7b9`)
 
 
 ---

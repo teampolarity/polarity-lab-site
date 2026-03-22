@@ -1,5 +1,14 @@
 [
   {
+    "id": "fe615f2",
+    "date": "2026-03-22",
+    "title": "Add 'Launch Pad' to nav with green dot active indicator",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "8216724",
     "date": "2026-03-22",
     "title": "Add smooth scroll animation for Learn More and all anchor links",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "7c6e7b9",
-    "date": "2026-03-21",
-    "title": "Move hero text higher (58%) for better visual balance",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
