@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Fix active dot on Science: !important overrides, reduced scroll offset (`36e8d48`)
+
+### Mar 22, 2026
+
 - Fix nav scroll spy: correct offset, proper section detection (`ec32734`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Nav is now static header — scrolls with page, not fixed (`3ca675e`)
-
-### Mar 21, 2026
-
-- Nav: transparent background, fixed at top, content scrolls behind (`3380b54`)
 
 
 ---
