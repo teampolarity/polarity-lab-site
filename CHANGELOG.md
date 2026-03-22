@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Update: '11 years. 2 patents. 1 Algorithm.' + remove St. Vincent's (`4db9725`)
+
+### Mar 22, 2026
+
 - All 3 cards: matching line-by-line structure, Theo line split properly (`d4211c2`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fix scroll spy: use getBoundingClientRect for accurate section detection (`2478644`)
-
-### Mar 22, 2026
-
-- Fix active dot on Science: !important overrides, reduced scroll offset (`36e8d48`)
 
 
 ---
