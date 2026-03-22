@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
+- Fix scroll spy: use getBoundingClientRect for accurate section detection (`2478644`)
+
+### Mar 22, 2026
+
 - Fix active dot on Science: !important overrides, reduced scroll offset (`36e8d48`)
 
 ### Mar 22, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 21, 2026
 
 - Hero fills viewport: icons centered, Learn More at bottom (`f60e459`)
-
-### Mar 21, 2026
-
-- Nav is now static header — scrolls with page, not fixed (`3ca675e`)
 
 
 ---

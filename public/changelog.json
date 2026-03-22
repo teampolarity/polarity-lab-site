@@ -1,5 +1,14 @@
 [
   {
+    "id": "2478644",
+    "date": "2026-03-22",
+    "title": "Fix scroll spy: use getBoundingClientRect for accurate section detection",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "36e8d48",
     "date": "2026-03-22",
     "title": "Fix active dot on Science: !important overrides, reduced scroll offset",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "3ca675e",
-    "date": "2026-03-21",
-    "title": "Nav is now static header — scrolls with page, not fixed",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
