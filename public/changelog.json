@@ -1,182 +1,182 @@
 [
   {
-    "id": "aefb271",
+    "id": "677ad2a",
     "date": "2026-03-22",
-    "title": "Rename to 'The Polarity Ecosystem'",
+    "title": "Fix OG image URLs to use www subdomain",
     "category": {
-      "label": "Update",
-      "color": "text-secondary"
+      "label": "Bug Fix",
+      "color": "coral"
     }
   },
   {
-    "id": "fc62c05",
+    "id": "211262b",
     "date": "2026-03-22",
-    "title": "Add Learn More button at bottom of Science page linking to Ecosystem",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "dc45555",
-    "date": "2026-03-22",
-    "title": "Result card: 'Your DATA WORKS for You.' in green",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "471706a",
-    "date": "2026-03-22",
-    "title": "Result card: 'Your data, finally working for you.'",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "4db9725",
-    "date": "2026-03-22",
-    "title": "Update: '11 years. 2 patents. 1 Algorithm.' + remove St. Vincent's",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "d4211c2",
-    "date": "2026-03-22",
-    "title": "All 3 cards: matching line-by-line structure, Theo line split properly",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "1fd3a1d",
-    "date": "2026-03-22",
-    "title": "Theo line merged, DATA BACK in mustard yellow",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "a391fb1",
-    "date": "2026-03-22",
-    "title": "Approach card: line-by-line style, 'We give your DATA BACK' in green",
-    "category": {
-      "label": "Design",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "4825990",
-    "date": "2026-03-22",
-    "title": "Problem card: tighter lines, 'It doesn't work for you' own line, STEALS in red",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "fef2949",
-    "date": "2026-03-22",
-    "title": "Problem card: stacked lines with visual hierarchy",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "3462390",
-    "date": "2026-03-22",
-    "title": "Add 'It takes from you.' as final punch line",
+    "title": "Add Open Graph and Twitter meta tags for social sharing",
     "category": {
       "label": "New Feature",
       "color": "teal"
     }
   },
   {
-    "id": "d927711",
+    "id": "0949707",
     "date": "2026-03-22",
-    "title": "Problem: combined 'knows everything except you' + 'gives nothing back'",
+    "title": "Mobile hero: fill viewport exactly, center content, hide science",
+    "category": {
+      "label": "Mobile",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "4298f55",
+    "date": "2026-03-22",
+    "title": "Fix mobile section spacing: add margin and padding separation",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "b478c82",
+    "date": "2026-03-22",
+    "title": "Add mobile section padding to prevent content spilling upward",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "a0d6808",
+    "date": "2026-03-22",
+    "title": "Force mobile hero compact with !important overrides",
+    "category": {
+      "label": "Mobile",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "b2fbd1b",
+    "date": "2026-03-22",
+    "title": "Fix mobile hero: remove min-height, align to top",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "d1a5e92",
+    "date": "2026-03-22",
+    "title": "Fix mobile: reduce hero gap, fix nav dot position",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "af9d63c",
+    "date": "2026-03-22",
+    "title": "Change email to team@polarity-lab.com",
     "category": {
       "label": "Update",
       "color": "text-secondary"
     }
   },
   {
-    "id": "0c0bb0e",
+    "id": "431b4b6",
     "date": "2026-03-22",
-    "title": "Problem: AI takes your data, gives you nothing back",
+    "title": "Fully adaptive: all sizing uses clamp() for any screen size",
     "category": {
       "label": "Update",
       "color": "text-secondary"
     }
   },
   {
-    "id": "f6ab6cc",
+    "id": "289fc77",
     "date": "2026-03-22",
-    "title": "Problem card: 'AI knows everything except you.'",
+    "title": "Full mobile optimization for phones (375px+)",
+    "category": {
+      "label": "Mobile",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "68591fb",
+    "date": "2026-03-22",
+    "title": "Mobile hero: triangle/pyramid shape (GPS top, two below)",
+    "category": {
+      "label": "Mobile",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "2a11ec1",
+    "date": "2026-03-22",
+    "title": "Mobile: pyramid layout for hero icons, bigger sizes",
+    "category": {
+      "label": "Mobile",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "ab192a5",
+    "date": "2026-03-22",
+    "title": "Shadrack: Brown University, CS & Religious Studies",
     "category": {
       "label": "Update",
       "color": "text-secondary"
     }
   },
   {
-    "id": "5db31fa",
+    "id": "7c8671b",
     "date": "2026-03-22",
-    "title": "Problem card: concise, professional, names the competitors",
+    "title": "Nathan: University of Ottawa, Finance & BTM",
     "category": {
       "label": "Update",
       "color": "text-secondary"
     }
   },
   {
-    "id": "0d60116",
+    "id": "c182634",
     "date": "2026-03-22",
-    "title": "Science cards: centered text, rewritten copy, empowering tone",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "2a79dda",
-    "date": "2026-03-22",
-    "title": "Update Theo: MD, Radiology Resident @ St. Vincent's",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "852776f",
-    "date": "2026-03-22",
-    "title": "Science page: punchy, less words, labeled cards",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "d85ff36",
-    "date": "2026-03-22",
-    "title": "Science: 3-column card layout, remove em-dashes, human copy",
+    "title": "Shadrack: Co-Founder & CTO & CIO, removed bio text",
     "category": {
       "label": "Removed",
       "color": "coral"
     }
   },
   {
-    "id": "cc616fc",
+    "id": "51bebcb",
     "date": "2026-03-22",
-    "title": "Science page: clean claim-style layout, no boxes, highlighted keywords",
+    "title": "Theo: Founder & PI & CEO, removed bio text",
     "category": {
-      "label": "Design",
-      "color": "purple"
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "eefde79",
+    "date": "2026-03-22",
+    "title": "Nathan: Co-Founder & COO & CXO, removed bio text",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "54aa7fc",
+    "date": "2026-03-22",
+    "title": "Nathan: uOttawa Telfer, Finance & BTM",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
+    "id": "03af920",
+    "date": "2026-03-22",
+    "title": "Team cards: center all text and LinkedIn icon",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
     }
   }
 ]

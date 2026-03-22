@@ -6,83 +6,83 @@ Recent updates to the Polarity Lab website.
 
 ### Mar 22, 2026
 
-- Rename to 'The Polarity Ecosystem' (`aefb271`)
+- Fix OG image URLs to use www subdomain (`677ad2a`)
 
 ### Mar 22, 2026
 
-- Add Learn More button at bottom of Science page linking to Ecosystem (`fc62c05`)
+- Add Open Graph and Twitter meta tags for social sharing (`211262b`)
 
 ### Mar 22, 2026
 
-- Result card: 'Your DATA WORKS for You.' in green (`dc45555`)
+- Mobile hero: fill viewport exactly, center content, hide science (`0949707`)
 
 ### Mar 22, 2026
 
-- Result card: 'Your data, finally working for you.' (`471706a`)
+- Fix mobile section spacing: add margin and padding separation (`4298f55`)
 
 ### Mar 22, 2026
 
-- Update: '11 years. 2 patents. 1 Algorithm.' + remove St. Vincent's (`4db9725`)
+- Add mobile section padding to prevent content spilling upward (`b478c82`)
 
 ### Mar 22, 2026
 
-- All 3 cards: matching line-by-line structure, Theo line split properly (`d4211c2`)
+- Force mobile hero compact with !important overrides (`a0d6808`)
 
 ### Mar 22, 2026
 
-- Theo line merged, DATA BACK in mustard yellow (`1fd3a1d`)
+- Fix mobile hero: remove min-height, align to top (`b2fbd1b`)
 
 ### Mar 22, 2026
 
-- Approach card: line-by-line style, 'We give your DATA BACK' in green (`a391fb1`)
+- Fix mobile: reduce hero gap, fix nav dot position (`d1a5e92`)
 
 ### Mar 22, 2026
 
-- Problem card: tighter lines, 'It doesn't work for you' own line, STEALS in red (`4825990`)
+- Change email to team@polarity-lab.com (`af9d63c`)
 
 ### Mar 22, 2026
 
-- Problem card: stacked lines with visual hierarchy (`fef2949`)
+- Fully adaptive: all sizing uses clamp() for any screen size (`431b4b6`)
 
 ### Mar 22, 2026
 
-- Add 'It takes from you.' as final punch line (`3462390`)
+- Full mobile optimization for phones (375px+) (`289fc77`)
 
 ### Mar 22, 2026
 
-- Problem: combined 'knows everything except you' + 'gives nothing back' (`d927711`)
+- Mobile hero: triangle/pyramid shape (GPS top, two below) (`68591fb`)
 
 ### Mar 22, 2026
 
-- Problem: AI takes your data, gives you nothing back (`0c0bb0e`)
+- Mobile: pyramid layout for hero icons, bigger sizes (`2a11ec1`)
 
 ### Mar 22, 2026
 
-- Problem card: 'AI knows everything except you.' (`f6ab6cc`)
+- Shadrack: Brown University, CS & Religious Studies (`ab192a5`)
 
 ### Mar 22, 2026
 
-- Problem card: concise, professional, names the competitors (`5db31fa`)
+- Nathan: University of Ottawa, Finance & BTM (`7c8671b`)
 
 ### Mar 22, 2026
 
-- Science cards: centered text, rewritten copy, empowering tone (`0d60116`)
+- Shadrack: Co-Founder & CTO & CIO, removed bio text (`c182634`)
 
 ### Mar 22, 2026
 
-- Update Theo: MD, Radiology Resident @ St. Vincent's (`2a79dda`)
+- Theo: Founder & PI & CEO, removed bio text (`51bebcb`)
 
 ### Mar 22, 2026
 
-- Science page: punchy, less words, labeled cards (`852776f`)
+- Nathan: Co-Founder & COO & CXO, removed bio text (`eefde79`)
 
 ### Mar 22, 2026
 
-- Science: 3-column card layout, remove em-dashes, human copy (`d85ff36`)
+- Nathan: uOttawa Telfer, Finance & BTM (`54aa7fc`)
 
 ### Mar 22, 2026
 
-- Science page: clean claim-style layout, no boxes, highlighted keywords (`cc616fc`)
+- Team cards: center all text and LinkedIn icon (`03af920`)
 
 
 ---
