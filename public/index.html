@@ -1082,6 +1082,33 @@
       line-height: 1.7;
     }
 
+    .ccx-claim-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .ccx-claim-line {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      line-height: 1.6;
+    }
+
+    .ccx-claim-line--highlight {
+      color: var(--teal);
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .ccx-claim-line--bold {
+      color: var(--text-pure);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.02em;
+      margin-top: 4px;
+    }
+
     @media (max-width: 768px) {
       .ccx-claims { grid-template-columns: 1fr; }
     }
@@ -2355,7 +2382,12 @@
               <div class="ccx-claim">
                 <p class="ccx-claim-label">The Problem</p>
                 <h3 class="ccx-claim-title">AI knows everything except you.</h3>
-                <p class="ccx-claim-desc">Trained on the entire internet. <span style="color:var(--teal);">Billions of data points. None of them yours.</span> Your data goes in, generic answers come out. It doesn't learn you. It doesn't work for you. <strong>It takes from you.</strong></p>
+                <div class="ccx-claim-lines">
+                  <p class="ccx-claim-line">Generative AI is trained on the internet.</p>
+                  <p class="ccx-claim-line ccx-claim-line--highlight">Your data goes in. Generic answers come out.</p>
+                  <p class="ccx-claim-line">You have no power over it. It doesn't learn you. It doesn't work for you.</p>
+                  <p class="ccx-claim-line ccx-claim-line--bold">It STEALS your DATA.</p>
+                </div>
               </div>
 
               <div class="ccx-claim">
