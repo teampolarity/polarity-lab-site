@@ -1,5 +1,14 @@
 [
   {
+    "id": "a8792cf",
+    "date": "2026-03-23",
+    "title": "Update Theo's title to Brown Medical School in science section",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "cc0480c",
     "date": "2026-03-22",
     "title": "PolarityGPS globe: orbits wrap around with depth effect",
@@ -165,15 +174,6 @@
     "id": "c182634",
     "date": "2026-03-22",
     "title": "Shadrack: Co-Founder & CTO & CIO, removed bio text",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "51bebcb",
-    "date": "2026-03-22",
-    "title": "Theo: Founder & PI & CEO, removed bio text",
     "category": {
       "label": "Removed",
       "color": "coral"

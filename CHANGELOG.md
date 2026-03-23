@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Mar 23, 2026
+
+- Update Theo's title to Brown Medical School in science section (`a8792cf`)
+
 ### Mar 22, 2026
 
 - PolarityGPS globe: orbits wrap around with depth effect (`cc0480c`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Shadrack: Co-Founder & CTO & CIO, removed bio text (`c182634`)
-
-### Mar 22, 2026
-
-- Theo: Founder & PI & CEO, removed bio text (`51bebcb`)
 
 
 ---
