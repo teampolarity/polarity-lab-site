@@ -1,5 +1,14 @@
 [
   {
+    "id": "7dbcade",
+    "date": "2026-04-06",
+    "title": "Rewrite site content to match environmental therapeutics lab framing",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "a8792cf",
     "date": "2026-03-23",
     "title": "Update Theo's title to Brown Medical School in science section",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "c182634",
-    "date": "2026-03-22",
-    "title": "Shadrack: Co-Founder & CTO & CIO, removed bio text",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]
