@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Redesign to SpaceX-level professional aesthetic (`778e2fc`)
+
+### Apr 6, 2026
+
 - Incorporate pitch deck research content into site (`cd4c040`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Hero: unify icons+headline into one composition, strip clutter (`3cca828`)
-
-### Apr 6, 2026
-
-- Fix hero layout: prevent text/icon overlap, tighten vertical rhythm (`c3f52a0`)
 
 
 ---

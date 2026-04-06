@@ -1,5 +1,14 @@
 [
   {
+    "id": "778e2fc",
+    "date": "2026-04-06",
+    "title": "Redesign to SpaceX-level professional aesthetic",
+    "category": {
+      "label": "Design",
+      "color": "purple"
+    }
+  },
+  {
     "id": "cd4c040",
     "date": "2026-04-06",
     "title": "Incorporate pitch deck research content into site",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "c3f52a0",
-    "date": "2026-04-06",
-    "title": "Fix hero layout: prevent text/icon overlap, tighten vertical rhythm",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
