@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Rewrite About section in plain English for cold readers (`00bb83c`)
+
+### Apr 6, 2026
+
 - About: add definitions and research domains to address feedback (`2eb03c0`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Add mobile section padding to prevent content spilling upward (`b478c82`)
-
-### Mar 22, 2026
-
-- Force mobile hero compact with !important overrides (`a0d6808`)
 
 
 ---

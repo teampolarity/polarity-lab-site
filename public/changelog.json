@@ -1,5 +1,14 @@
 [
   {
+    "id": "00bb83c",
+    "date": "2026-04-06",
+    "title": "Rewrite About section in plain English for cold readers",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "2eb03c0",
     "date": "2026-04-06",
     "title": "About: add definitions and research domains to address feedback",
@@ -167,15 +176,6 @@
     "title": "Add mobile section padding to prevent content spilling upward",
     "category": {
       "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "a0d6808",
-    "date": "2026-03-22",
-    "title": "Force mobile hero compact with !important overrides",
-    "category": {
-      "label": "Mobile",
       "color": "teal"
     }
   }
