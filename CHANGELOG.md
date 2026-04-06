@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Hero: swap Phresh for AVDP — show only live/in-production products (`fe016b2`)
+
+### Apr 6, 2026
+
 - Hero: remove Polarity Lab atom, restore Phresh leaf icon, 3-icon grid (`ef21fba`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Full mobile optimization for phones (375px+) (`289fc77`)
-
-### Mar 22, 2026
-
-- Mobile hero: triangle/pyramid shape (GPS top, two below) (`68591fb`)
 
 
 ---
