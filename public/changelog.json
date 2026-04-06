@@ -1,5 +1,14 @@
 [
   {
+    "id": "cfa3090",
+    "date": "2026-04-06",
+    "title": "Fix layout: left-align all section headers, fix hero centering",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "f59ccc1",
     "date": "2026-04-06",
     "title": "Fix hero title overflow — 9vw was way too large, back to 4.8vw/72px max",
@@ -165,15 +174,6 @@
     "id": "3c817d9",
     "date": "2026-04-06",
     "title": "Make each section viewport-fit: compact layouts, honest content",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "1c2cd4a",
-    "date": "2026-04-06",
-    "title": "Tighten layout rhythm throughout: Apple-level spacing discipline",
     "category": {
       "label": "Update",
       "color": "text-secondary"
