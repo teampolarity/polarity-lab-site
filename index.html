@@ -2475,6 +2475,70 @@
       padding-bottom: 60px;
     }
 
+    .contact-close {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto 80px;
+    }
+
+    .contact-close-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-ghost);
+      margin-bottom: 20px;
+    }
+
+    .contact-close-title {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3.5vw, 44px);
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .contact-close-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .contact-close-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-close-primary {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--void-space);
+      background: var(--teal);
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-close-primary:hover { opacity: 0.85; }
+
+    .contact-close-secondary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      transition: color 0.2s ease;
+    }
+
+    .contact-close-secondary:hover { color: var(--text-primary); }
+
     .contact-title {
       font-family: var(--font-display);
       font-size: clamp(40px, 5vw, 56px);
@@ -3266,195 +3330,17 @@
     </section>
 
 
-    <!-- SAFETY SECTION -->
-    <section class="spatial-section safety" id="safety">
-      <div class="section-inner">
-        <div class="safety-header reveal">
-          <p class="section-label">Non-Negotiable</p>
-          <h2 class="section-title">How We Work With People</h2>
-          <p class="safety-intro">We study real people. These are not aspirations. They are constraints we will not relax.</p>
-        </div>
-
-        <div class="safety-grid stagger">
-          <div class="safety-item">
-            <h4>Ethics Review Before Every Study</h4>
-            <p>Before any study involving people runs, it goes through an independent ethics board. Not after. Not in parallel. Before.</p>
-          </div>
-          <div class="safety-item">
-            <h4>Your Data Is Yours</h4>
-            <p>You own what you give us. Consent is specific, written down, and you can take it back at any time, for any reason, with no consequence.</p>
-          </div>
-          <div class="safety-item">
-            <h4>Delete Means Delete</h4>
-            <p>Ask and it's gone. Every trace. No retention periods, no exceptions, no fine print.</p>
-          </div>
-          <div class="safety-item">
-            <h4>We Show Our Work</h4>
-            <p>The methods are written down before the experiment runs, not after. Anyone can see how we measured what we measured. No hidden variables.</p>
-          </div>
-          <div class="safety-item">
-            <h4>Never Used Against You</h4>
-            <p>Anything we build to measure human behavior will never be used for surveillance, hiring, or social scoring. Not by us. Not licensed to anyone who would.</p>
-          </div>
-          <div class="safety-item">
-            <h4>We Publish Patterns, Not People</h4>
-            <p>What we study and publish is broad patterns across many people, never data tied to any individual. Nothing that could identify you gets published without your explicit sign-off.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INVOLVE SECTION -->
-    <section class="spatial-section involve" id="involve">
-      <div class="section-inner">
-        <div class="involve-header reveal">
-          <p class="section-label">Join the Research</p>
-          <h2 class="section-title">Get Involved</h2>
-        </div>
-
-        <div class="involve-grid stagger">
-          <div class="involve-card">
-            <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 3h6M10 3v6l-4 8h12l-4-8V3"/>
-                <line x1="7" y1="17" x2="17" y2="17"/>
-                <circle cx="10" cy="14" r="0.5" fill="#4ECDC4"/>
-                <circle cx="13" cy="12.5" r="0.5" fill="#4ECDC4"/>
-              </svg>
-            </div>
-            <h3>Research Collaborators</h3>
-            <p>You study how people's attention, memory, or social behavior changes over time. We're building the tools to measure it and the environments to reverse it. We should talk.</p>
-            <a href="mailto:team@polarity-lab.com?subject=Research%20Collaboration">Discuss Collaboration →</a>
-          </div>
-
-          <div class="involve-card">
-            <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-              </svg>
-            </div>
-            <h3>Advisors</h3>
-            <p>Clinical, academic, or industry experience. We want people who will tell us when we're wrong, not people who just want their name on something.</p>
-            <a href="mailto:team@polarity-lab.com?subject=Advisory%20Interest">Express Interest →</a>
-          </div>
-
-          <div class="involve-card">
-            <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#E63329" stroke-width="1.5">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-              </svg>
-            </div>
-            <h3>Specialists</h3>
-            <p>You have deep expertise in one area and a research question you can't shake. Bring it here. Build it within the lab's thesis and own what you produce.</p>
-            <a href="mailto:team@polarity-lab.com?subject=Domain%20Lead%20Interest">Get in Touch →</a>
-          </div>
-
-          <div class="involve-card">
-            <div class="involve-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#FF6B00" stroke-width="1.5">
-                <polyline points="2,12 6,12 8,6 10,18 12,9 14,15 16,12 22,12"/>
-              </svg>
-            </div>
-            <h3>Investors</h3>
-            <p>We're raising $1.5M to fund the first 18 months of research and development: building the measurement tools and experiences described on this page. If that's interesting to you, let's talk.</p>
-            <a href="mailto:team@polarity-lab.com?subject=Investment%20Interest">Request the Deck →</a>
-          </div>
-
-        </div>
-
-        <div class="involve-cta reveal">
-          <p>The ask: <strong>30 minutes</strong>. See if there is alignment.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- LAB CTA SECTION -->
-    <section class="spatial-section algorithm-cta">
-      <div class="section-inner">
-        <div class="algorithm-cta-box reveal">
-          <p class="algorithm-cta-label">The Lab</p>
-          <h2 class="algorithm-cta-title">If you've read this far, you probably feel it too.</h2>
-          <p class="algorithm-cta-desc">The isolation. The distraction. The sense that something is being quietly lost. We're building the tools to measure it and the experiences to reverse it. If that's work you want to be part of, reach out.</p>
-          <a href="mailto:team@polarity-lab.com" class="algorithm-cta-btn">
-            Start a conversation →
-          </a>
-        </div>
-      </div>
-    </section>
 
     <!-- CONTACT SECTION -->
     <section class="spatial-section contact" id="contact">
       <div class="section-inner">
-        <h2 class="contact-title reveal">Reach us</h2>
-
-        <div class="contact-links reveal">
-          <a href="mailto:team@polarity-lab.com" class="contact-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-            team@polarity-lab.com
-          </a>
-
-          <a href="https://www.linkedin.com/company/polarity-lab/" target="_blank" class="contact-btn">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-            </svg>
-            LinkedIn
-          </a>
-        </div>
-
-        <div class="newsletter reveal">
-          <p class="newsletter-label">Get updates</p>
-          <form class="newsletter-form" id="newsletter-form">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit">Subscribe</button>
-          </form>
-        </div>
-
-        <!-- Changelog Section -->
-        <div class="changelog-section">
-          <div class="changelog-header">
-            <span class="changelog-title">What We've Shipped</span>
-          </div>
-          <div class="changelog-entries">
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">Apr '26</span>
-                <span class="changelog-tag teal">Lab</span>
-              </div>
-              <p class="changelog-message">Lab thesis refined. Research direction and core framing locked in. Fundraising begun.</p>
-            </div>
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">Mar '26</span>
-                <span class="changelog-tag coral">phresh</span>
-              </div>
-              <p class="changelog-message">phresh launches. AI-powered personal styling and fashion discovery.</p>
-            </div>
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">Jan '26</span>
-                <span class="changelog-tag purple">WAXFEED</span>
-              </div>
-              <p class="changelog-message">WAXFEED beta launches. Music and culture discovery for DJs and deep listeners.</p>
-            </div>
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">Oct '25</span>
-                <span class="changelog-tag teal">AVDP</span>
-              </div>
-              <p class="changelog-message">A Very Distant Perspective launches. Experimental film as environmental therapeutic.</p>
-            </div>
-            <div class="changelog-entry">
-              <div class="changelog-meta">
-                <span class="changelog-date">Sep '25</span>
-                <span class="changelog-tag teal">Lab</span>
-              </div>
-              <p class="changelog-message">Polarity Lab LLC incorporated. Providence, RI. Two provisional patents filed.</p>
-            </div>
+        <div class="contact-close reveal">
+          <p class="contact-close-eyebrow">Polarity Lab · Providence, RI · Est. 2025</p>
+          <h2 class="contact-close-title">We're raising $500k to build Integrity Delta.</h2>
+          <p class="contact-close-desc">If you want the brief, want to collaborate on the research, or just want to understand what we're building, reach out. The ask is 30 minutes.</p>
+          <div class="contact-close-links">
+            <a href="mailto:team@polarity-lab.com?subject=Integrity%20Delta%20Brief" class="contact-close-primary">Request the brief →</a>
+            <a href="mailto:team@polarity-lab.com" class="contact-close-secondary">team@polarity-lab.com</a>
           </div>
         </div>
 
@@ -3949,7 +3835,7 @@
     // NEWSLETTER FORM (Formspree)
     // ==========================================
     const newsletterForm = document.getElementById('newsletter-form');
-    newsletterForm.addEventListener('submit', async (e) => {
+    if (newsletterForm) newsletterForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const button = newsletterForm.querySelector('button');
       const emailInput = newsletterForm.querySelector('input[name="email"]');
