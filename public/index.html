@@ -417,32 +417,36 @@
     .theme-toggle {
       position: fixed;
       bottom: 24px;
-      right: 24px;
+      left: 24px;
       z-index: 1001;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--void-surface);
+      width: 36px;
+      height: 36px;
+      border-radius: 0;
+      background: transparent;
       border: 1px solid var(--border-ghost);
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.4s var(--ease-out-expo);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s var(--ease-out-expo);
+      box-shadow: none;
     }
 
     .theme-toggle:hover {
-      transform: scale(1.1) rotate(15deg);
+      transform: none;
       border-color: var(--teal);
-      box-shadow: 0 0 30px var(--teal-glow);
+      box-shadow: none;
     }
 
     .theme-toggle svg {
-      width: 20px;
-      height: 20px;
-      color: var(--text-primary);
-      transition: transform 0.4s var(--ease-out-expo);
+      width: 14px;
+      height: 14px;
+      color: var(--text-tertiary);
+      transition: color 0.3s;
+    }
+
+    .theme-toggle:hover svg {
+      color: var(--teal);
     }
 
     .theme-toggle .sun { display: block; }
@@ -655,7 +659,7 @@
       left: 50%;
       top: 58%;
       transform: translate(-50%, -50%);
-      text-align: center;
+      text-align: left;
       width: min(820px, 88vw);
       box-sizing: border-box;
     }
@@ -947,8 +951,7 @@
       margin-top: 20px;
       font-weight: 400;
       max-width: 560px;
-      margin-left: auto;
-      margin-right: auto;
+      text-align: left;
     }
 
     .hero-title .gradient {
@@ -962,11 +965,11 @@
       font-size: 18px;
       font-weight: 400;
       color: var(--text-secondary);
-      max-width: 520px;
-      margin: 0 auto;
+      max-width: 560px;
+      margin: 0;
       line-height: 1.7;
-      text-align: center;
-      padding: 0 24px;
+      text-align: left;
+      padding: 0;
     }
 
     .hero-cta {
@@ -1120,7 +1123,7 @@
 
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(28px, 3.2vw, 48px);
+      font-size: clamp(24px, 2.4vw, 36px);
       font-weight: 700;
       line-height: 1.12;
       letter-spacing: -0.025em;
@@ -3514,7 +3517,7 @@
 
     /* --- TYPOGRAPHY SCALE --- */
     .section-title {
-      font-size: clamp(28px, 3.2vw, 48px);
+      font-size: clamp(24px, 2.4vw, 36px);
       font-weight: 700;
       letter-spacing: -0.025em;
       line-height: 1.12;
@@ -4019,28 +4022,28 @@
         <div class="disease-grid reveal">
           <div class="disease-card disease-card--coral">
             <div class="disease-card-name">AI-Psychosis</div>
-            <p class="disease-card-desc">People losing grip on reality through sustained LLM interaction. An emerging clinical phenomenon documented in case reports and psychiatric literature — patients presenting with delusional thinking, inability to distinguish AI output from lived experience.</p>
+            <p class="disease-card-desc">People losing grip on reality through sustained LLM interaction. An emerging clinical phenomenon documented in case reports and psychiatric literature, with patients presenting with delusional thinking and an inability to distinguish AI output from lived experience.</p>
             <p class="disease-card-gap">No clinical definition exists. No diagnostic criteria. No treatment protocol.</p>
           </div>
           <div class="disease-card disease-card--teal">
             <div class="disease-card-name">Loneliness Epidemic</div>
-            <p class="disease-card-desc">The U.S. Surgeon General declared loneliness a public health epidemic in 2023. Measurable at population scale. Directly correlated with technology adoption curves — rising social media use, declining in-person time.</p>
+            <p class="disease-card-desc">The U.S. Surgeon General declared loneliness a public health epidemic in 2023. Measurable at population scale. Directly correlated with technology adoption curves: rising social media use, declining in-person time.</p>
             <p class="disease-card-gap">Documented. Quantified. No standard treatment pathway built for platform-induced cases.</p>
           </div>
           <div class="disease-card disease-card--purple">
             <div class="disease-card-name">Cognitive Atrophy</div>
-            <p class="disease-card-desc">The brain discards unused skills. As AI handles cognitive work, human capacity atrophies. Clark and Chalmers showed cognition extends into tools — when the tool handles it, you lose it. Decades of supporting research across memory, navigation, and critical thinking.</p>
+            <p class="disease-card-desc">The brain discards unused skills. As AI handles cognitive work, human capacity atrophies. Clark and Chalmers showed cognition extends into tools. When the tool handles it, you lose it. Decades of supporting research across memory, navigation, and critical thinking.</p>
             <p class="disease-card-gap">The mechanism is understood. The measurement infrastructure to track it at an individual level doesn't exist yet.</p>
           </div>
           <div class="disease-card disease-card--red">
             <div class="disease-card-name">Sycophancy Feedback Loop</div>
-            <p class="disease-card-desc">AI systems are trained to agree with users. We adapt to trust them. The result is an echo chamber that degrades independent judgment at scale — people becoming progressively less capable of evaluating claims without AI reinforcement.</p>
+            <p class="disease-card-desc">AI systems are trained to agree with users. We adapt to trust them. The result is an echo chamber that degrades independent judgment at scale. People become progressively less capable of evaluating claims without AI reinforcement.</p>
             <p class="disease-card-gap">No corrective mechanism exists. No benchmark for how far any given person or system has drifted.</p>
           </div>
         </div>
 
         <div class="disease-unifier reveal">
-          <p><strong>These are not separate problems.</strong> They are symptoms of one pathology: technology-induced isolation — from other humans, from our own cognition, from accumulated human knowledge.</p>
+          <p><strong>These are not separate problems.</strong> They are symptoms of one pathology: technology-induced isolation from other humans, from our own cognition, from accumulated human knowledge.</p>
           <p class="disease-speed">Traditional medicine operates on a 10 to 15 year cycle. The disease moves at the speed of a software update.</p>
         </div>
 
@@ -4051,14 +4054,14 @@
                 <div class="ccx-step-num">1</div>
                 <div>
                   <h4>Name it precisely</h4>
-                  <p>Terms like "screen addiction" and "social media anxiety" are too vague to study or treat. We define specific mechanisms — what is atrophying, what is being lost, and through exactly what process — with enough clinical precision that the harm can be named, replicated, and eventually diagnosed.</p>
+                  <p>Terms like "screen addiction" and "social media anxiety" are too vague to study or treat. We define specific mechanisms with enough clinical precision to name, replicate, and eventually diagnose: what is atrophying, what is being lost, and through exactly what process.</p>
                 </div>
               </div>
               <div class="ccx-step ccx-step--primary">
                 <div class="ccx-step-num ccx-step-num--primary">2</div>
                 <div>
                   <h4>Build the diagnostic instrument <span class="ccx-step-tag">Core research</span></h4>
-                  <p>This is the primary work. Before medicine could treat high cholesterol, it needed a test that produced a number. We build that infrastructure for harms that don't have numbers yet — independent scoring tools any researcher, clinician, or regulator can run and reproduce. Integrity Delta is the first.</p>
+                  <p>This is the primary work. Before medicine could treat high cholesterol, it needed a test that produced a number. We build that infrastructure for harms that don't have numbers yet. Independent scoring tools any researcher, clinician, or regulator can run and reproduce. Integrity Delta is the first.</p>
                 </div>
               </div>
               <div class="ccx-step">
@@ -4094,7 +4097,7 @@
         <div class="cases-header reveal">
           <p class="section-label">The Work</p>
           <h2 class="section-title">Five harms. Two instruments built. Five environments designed to reverse them.</h2>
-          <p class="cases-lede">The research starts with an observation — something specific that platforms are doing to people. The serious work is building a tool that measures it. The product comes last, once you know what you're reversing.</p>
+          <p class="cases-lede">The research starts with a specific observation: what platforms are doing to people. The serious work is building a tool that measures it. The product comes last, once you know what you're reversing.</p>
           <div class="cases-legend">
             <div class="cases-legend-item">
               <span class="cases-legend-dot cases-legend-dot--obs"></span>
@@ -4131,11 +4134,11 @@
               <div class="rc-name rc-name--large">Integrity Delta</div>
               <div class="rc-desc">
                 <p>There is no independent, standard way to measure how honest an AI is. The companies that build these systems define and measure their own safety metrics. No outside accountability. No reproducible benchmark.</p>
-                <p style="margin-top:10px;">Integrity Delta is that benchmark — a scoring instrument any researcher, enterprise, or regulator can run against any AI system to produce a consistent, auditable measurement of how much it steers users toward what they want to hear rather than what is actually true.</p>
+                <p style="margin-top:10px;">Integrity Delta is that benchmark: a scoring instrument any researcher, enterprise, or regulator can run against any AI system to produce a consistent, auditable measurement of how much it steers users toward what they want to hear rather than what is actually true.</p>
               </div>
 
               <div class="rc-hypothesis">
-                <div class="rc-hypothesis-title">Resolution Valley — Core Hypothesis</div>
+                <div class="rc-hypothesis-title">Resolution Valley: Core Hypothesis</div>
                 <p class="rc-hypothesis-body">Mid-tier models (7B to 13B parameters) occupy the most dangerous zone: smart enough to form correct answers internally, too weak to resist user pressure to agree. This is the parameter range hospitals and enterprises deploy today.</p>
               </div>
 
@@ -4172,8 +4175,8 @@
               <span class="rc-type rc-type--instrument">Diagnostic Instrument</span>
             </div>
             <div class="rc-name">Proximity Index</div>
-            <div class="rc-desc">A scoring methodology developed in partnership with MUSEOFRI (Providence, RI, 2026). The instrument takes two inputs: (1) a catalog of cultural output produced by or for a specific community — music, events, art, film — and (2) what discovery platforms actually surface to members of that community. The gap between those two numbers is the Proximity Index score. A score of zero means everything made for you reaches you. A high score means your own culture is algorithmically invisible to you.</div>
-            <div class="rc-finding"><strong>Finding:</strong> Across BIPOC-led communities in Providence, the gap was not caused by a lack of cultural output. Communities were actively producing. The instrument confirmed the problem was in the pathways, not the product — giving PolarityGPS a specific, measurable target to fix.</div>
+            <div class="rc-desc">A scoring methodology developed in partnership with MUSEOFRI (Providence, RI, 2026). Two inputs: cultural output produced by or for a community, and what discovery platforms actually surface to that community. The gap between those two numbers is the score. Zero means everything made for you reaches you. A high score means your own culture is algorithmically invisible to you.</div>
+            <div class="rc-finding"><strong>Finding:</strong> Across BIPOC-led communities in Providence, the gap was not caused by a lack of output. Communities were actively producing. The problem was in the pathways, not the product, giving PolarityGPS a specific, measurable target to fix.</div>
           </div>
           <div class="rc-connector">→</div>
           <div class="rc-half rc-environment">
@@ -4182,7 +4185,7 @@
               <span class="rc-type rc-type--environment">Therapeutic Environment</span>
             </div>
             <div class="rc-name">PolarityGPS</div>
-            <div class="rc-desc">Cultural discovery platform connecting people to music, places, and experiences produced by and for their community — not what an engagement algorithm assumed they wanted. Built directly from the Proximity Index finding: the output exists, the pathways don't.</div>
+            <div class="rc-desc">Cultural discovery platform connecting people to music, places, and experiences produced by and for their community, not what an engagement algorithm assumed they wanted. Built directly from the Proximity Index finding: the output exists, the pathways don't.</div>
             <a href="https://polaritygps.com" target="_blank" class="rc-link">Explore →</a>
           </div>
         </div>
@@ -4194,8 +4197,8 @@
               <span class="rc-type rc-type--obs">Research Observation</span>
             </div>
             <div class="rc-name">Music Discovery Erosion</div>
-            <div class="rc-desc">Streaming platforms algorithmically concentrate music discovery. The top 1% of tracks account for the overwhelming majority of streams across catalogs of hundreds of millions of songs. Recommendation systems are built to replay what you already know, not introduce what you don't. DJs and deep listeners — the people most invested in discovery — had no platform designed around their actual behavior. The observation was specific enough to act on directly: build the environment the algorithm refuses to be.</div>
-            <div class="rc-finding"><strong>Observation:</strong> Algorithmic distribution is compressing musical identity at scale. What people listen to is narrowing, not expanding. No instrument built yet — the observation was the design brief.</div>
+            <div class="rc-desc">Streaming platforms algorithmically concentrate music discovery. The top 1% of tracks account for the overwhelming majority of streams across catalogs of hundreds of millions of songs. Recommendation systems replay what you already know. DJs and deep listeners had no platform built around their actual behavior.</div>
+            <div class="rc-finding"><strong>Observation:</strong> Algorithmic distribution is compressing musical identity at scale. What people listen to is narrowing, not expanding. No instrument built yet. The observation was the design brief.</div>
           </div>
           <div class="rc-connector">→</div>
           <div class="rc-half rc-environment">
@@ -4216,7 +4219,7 @@
               <span class="rc-type rc-type--obs">Research Observation</span>
             </div>
             <div class="rc-name">Conversational Depth Decline</div>
-            <div class="rc-desc">Studies consistently show that the presence of a smartphone — even face-down, unused — measurably reduces the quality of in-person conversation. People are having shorter, shallower exchanges and fewer of the extended, unscripted conversations that build actual connection. Real conversation has become unusual enough that most people haven't had one in weeks. The observation suggested a non-obvious intervention: if the behavior has become rare, exposure to it — even as a viewer — might function as a reintroduction.</div>
+            <div class="rc-desc">Studies consistently show that the presence of a smartphone, even face-down and unused, measurably reduces the quality of in-person conversation. People are having shorter, shallower exchanges and fewer of the extended, unscripted conversations that build actual connection. Real conversation has become unusual enough that most people haven't had one in weeks.</div>
             <div class="rc-finding"><strong>Observation:</strong> Watching people genuinely talk to each other changes how you want to interact. Genuine conversation has become unusual enough that modeling it has therapeutic value. No instrument built yet.</div>
           </div>
           <div class="rc-connector">→</div>
@@ -4226,10 +4229,10 @@
               <span class="rc-type rc-type--environment">Therapeutic Environment</span>
             </div>
             <div class="rc-name">AVDP</div>
-            <div class="rc-desc">A Very Distant Perspective. A documentary interview series of real, unscripted conversations about being human. Built on the finding that watching genuine conversation is itself therapeutic — it models something people have largely stopped doing and makes them want to do it themselves.</div>
+            <div class="rc-desc">A Very Distant Perspective. A documentary interview series of real, unscripted conversations about being human. Built on the finding that watching genuine conversation is itself therapeutic. It models something people have largely stopped doing and makes them want to do it themselves.</div>
             <div class="rc-proof">
               <div class="rc-proof-title">Proof of concept</div>
-              <p class="rc-proof-body">The lab filmed Zay, a potter in the US, creating and describing his ceramic work. The episodes reached Mateo, a store owner in Canada. He saw Zay's work and wanted to carry it. The lab connected them directly. A real economic opportunity created through authentic creative exposure — two people across countries who would never have met, connected through the environment.</p>
+              <p class="rc-proof-body">The lab filmed Zay, a potter in the US, creating and describing his ceramic work. The episodes reached Mateo, a store owner in Canada. He saw Zay's work and wanted to carry it. The lab connected them directly. Two people across countries who would never have met, connected through the environment.</p>
               <p class="rc-proof-result">AVDP doesn't just create content. It creates connections.</p>
             </div>
             <a href="https://www.instagram.com/averydistantperspective" target="_blank" class="rc-link">Follow →</a>
@@ -4243,7 +4246,7 @@
               <span class="rc-type rc-type--obs">Research Observation · Instrument in Design</span>
             </div>
             <div class="rc-name">Style Drift</div>
-            <div class="rc-desc">Fashion recommendation systems are built around engagement and trending content, not individual identity. Sustained exposure homogenizes aesthetic expression — people's style gradually converges toward what platforms surface rather than what reflects them. The mechanism is invisible: it doesn't feel like influence, it feels like taste. The diagnostic instrument being designed for this uses computer vision to analyze the visual patterns in a person's actual style choices over time, scoring the ratio of self-directed expression to trend-following. That score is the measurement needed before Phresh can be validated.</div>
+            <div class="rc-desc">Fashion recommendation systems are built around engagement and trending content, not individual identity. Sustained exposure homogenizes aesthetic expression. People's style gradually converges toward what platforms surface rather than what reflects them. The mechanism is invisible: it doesn't feel like influence, it feels like taste.</div>
             <div class="rc-finding"><strong>Observation:</strong> Fashion is increasingly a mirror of what platforms surface, not who people are. The instrument being designed will produce a score that makes this measurable for the first time.</div>
           </div>
           <div class="rc-connector">→</div>
@@ -4253,7 +4256,7 @@
               <span class="rc-type rc-type--environment">Therapeutic Environment</span>
             </div>
             <div class="rc-name">Phresh</div>
-            <div class="rc-desc">Personal styling and fashion discovery built on computer vision and identity modeling. Built to understand who you actually are — your body, your aesthetic history, your genuine taste — and surface clothing that fits all three. Not the feed's version of you.</div>
+            <div class="rc-desc">Personal styling and fashion discovery built on computer vision and identity modeling. Built to understand who you actually are: your body, your aesthetic history, your genuine taste. It surfaces clothing that fits all three. Not the feed's version of you.</div>
           </div>
         </div>
 
