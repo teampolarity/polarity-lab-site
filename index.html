@@ -503,7 +503,7 @@
        ========================================== */
     .hero-constellation {
       position: absolute;
-      top: 24%;
+      top: 40%;
       left: 50%;
       transform: translate(-50%, -50%);
       display: grid;
@@ -511,10 +511,10 @@
       align-items: center;
       justify-items: center;
       justify-content: center;
-      gap: 64px;
+      gap: 56px;
       width: 100%;
-      max-width: 900px;
-      padding: 20px 20px;
+      max-width: 860px;
+      padding: 0 20px;
       perspective: 1500px;
     }
 
@@ -652,7 +652,7 @@
 
     .scroll-text--center {
       left: 50%;
-      top: 62%;
+      top: 58%;
       transform: translate(-50%, -50%);
       text-align: center;
       width: min(820px, 88vw);
@@ -866,12 +866,12 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(28px, 3.6vw, 56px);
+      font-size: clamp(30px, 4vw, 62px);
       font-weight: 600;
       letter-spacing: -0.03em;
-      line-height: 1.15;
+      line-height: 1.12;
       color: var(--text-pure);
-      margin-bottom: 16px;
+      margin-bottom: 0;
     }
 
     .hero-title .gradient {
@@ -982,7 +982,7 @@
         gap: 16px;
         padding: 16px;
         max-width: 100%;
-        top: 26%;
+        top: 38%;
       }
       .hero-product--waxfeed,
       .hero-product--avdp,
@@ -2411,22 +2411,16 @@
         font-size: 10px;
       }
 
-      /* Hero text — move up so title + subtitle don't clip */
+      /* Hero text */
       .scroll-text--center {
-        top: 48% !important;
+        top: 62% !important;
         padding: 0 20px;
         max-width: 100%;
       }
       .hero-title {
-        font-size: clamp(28px, 7vw, 42px);
+        font-size: clamp(26px, 6.5vw, 40px);
         line-height: 1.15;
-        margin-bottom: 16px;
-      }
-      .hero-subtitle {
-        font-size: 13px;
-        max-width: 100%;
-        padding: 0 8px;
-        line-height: 1.5;
+        margin-bottom: 0;
       }
       .hero-cta {
         gap: 8px;
@@ -2709,21 +2703,10 @@
     <!-- SCROLL TEXT REVEALS -->
 
     <!-- Text 1: Hero -->
-    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 62%;">
-      <div class="hero-badge">Interdisciplinary Research Laboratory</div>
+    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 58%;">
       <h1 class="hero-title">
         We design environments that <span class="gradient">reconnect people to each other</span>
       </h1>
-      <p class="hero-subtitle">
-        An interdisciplinary research lab studying how modern environments shape human cognition and designing ones that strengthen it.
-      </p>
-      <div class="hero-cta">
-        <a href="#about">The Lab</a>
-        <span class="hero-cta-dot">·</span>
-        <a href="#research">The Research</a>
-        <span class="hero-cta-dot">·</span>
-        <a href="#products">What We Build</a>
-      </div>
     </div>
 
     <!-- Scroll choreography text removed - now using actual content sections -->
