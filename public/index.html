@@ -891,6 +891,18 @@
       margin: 22px auto 18px;
     }
 
+    .hero-stats-bar {
+      position: absolute;
+      bottom: 52px;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      flex-wrap: wrap;
+      z-index: 10;
+    }
     .hero-stats {
       display: flex;
       align-items: center;
@@ -3102,10 +3114,9 @@
         line-height: 1.08;
         margin-bottom: 0;
       }
-      .hero-stats { gap: 0; }
-      .hero-stat { padding: 0 14px; }
-      .hero-stat-sep { height: 20px; }
-      .hero-divider { margin: 22px auto; }
+      .hero-stats-bar { bottom: 44px; flex-wrap: nowrap; }
+      .hero-stat { padding: 0 12px; }
+      .hero-stat-sep { height: 18px; }
       .hero-cta {
         gap: 8px;
         font-size: 12px;
@@ -3352,33 +3363,34 @@
        ========================================== -->
   <div class="stage" id="stage">
     <!-- Text 1: Hero -->
-    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 44%;">
+    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 50%;">
       <p class="hero-eyebrow">Diagnostics &nbsp;·&nbsp; Therapeutic Design &nbsp;·&nbsp; Providence, RI</p>
       <h1 class="hero-title">
         An <span class="gradient">environmental<br>therapeutics</span> lab.
       </h1>
       <p class="hero-sub">We design experiences that improve human health, and instruments that measure when technology does the opposite.</p>
-      <div class="hero-divider"></div>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="hero-stat-value">12</span>
-          <span class="hero-stat-label">Years of Research</span>
-        </div>
-        <div class="hero-stat-sep"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">5</span>
-          <span class="hero-stat-label">Research Cases</span>
-        </div>
-        <div class="hero-stat-sep"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">2</span>
-          <span class="hero-stat-label">Diagnostic Instruments</span>
-        </div>
-        <div class="hero-stat-sep"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">Providence</span>
-          <span class="hero-stat-label">Rhode Island</span>
-        </div>
+    </div>
+
+    <!-- Stats pinned to bottom of stage, independent of centered text -->
+    <div class="hero-stats-bar" id="hero-stats-bar">
+      <div class="hero-stat">
+        <span class="hero-stat-value">12</span>
+        <span class="hero-stat-label">Years of Research</span>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">5</span>
+        <span class="hero-stat-label">Research Cases</span>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">2</span>
+        <span class="hero-stat-label">Diagnostic Instruments</span>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">Providence</span>
+        <span class="hero-stat-label">Rhode Island</span>
       </div>
     </div>
 
@@ -3697,7 +3709,7 @@
           powerPreference: 'high-performance'
         });
         this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 10);
@@ -3847,22 +3859,25 @@
       }
 
       animate() {
+        if (!this.paused) {
+          this.time += 0.016;
+          this.material.uniforms.uTime.value = this.time;
+          this.mouse.x += (this.targetMouse.x - this.mouse.x) * 0.065;
+          this.mouse.y += (this.targetMouse.y - this.mouse.y) * 0.065;
+          this.material.uniforms.uMouse.value.set(this.mouse.x, this.mouse.y);
+          this.renderer.render(this.scene, this.camera);
+        }
         requestAnimationFrame(() => this.animate());
-        
-        this.time += 0.016;
-        this.material.uniforms.uTime.value = this.time;
-        
-        // Smooth mouse follow — slightly faster for subtle responsiveness
-        this.mouse.x += (this.targetMouse.x - this.mouse.x) * 0.065;
-        this.mouse.y += (this.targetMouse.y - this.mouse.y) * 0.065;
-        this.material.uniforms.uMouse.value.set(this.mouse.x, this.mouse.y);
-        
-        this.renderer.render(this.scene, this.camera);
       }
     }
 
     // Initialize WebGL background
     const webglBg = new WebGLBackground();
+    // Pause renderer when canvas is off-screen to reduce GPU load
+    const webglObserver = new IntersectionObserver((entries) => {
+      webglBg.paused = !entries[0].isIntersecting;
+    }, { threshold: 0 });
+    webglObserver.observe(document.getElementById('webgl-bg'));
 
     // ==========================================
     // CUSTOM CURSOR
