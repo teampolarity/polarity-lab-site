@@ -1,5 +1,14 @@
 [
   {
+    "id": "ef21fba",
+    "date": "2026-04-06",
+    "title": "Hero: remove Polarity Lab atom, restore Phresh leaf icon, 3-icon grid",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "b37c80a",
     "date": "2026-04-06",
     "title": "Redesign projects section, remove Pulse/Studio, fix nav and screen fit",
@@ -165,15 +174,6 @@
     "id": "68591fb",
     "date": "2026-03-22",
     "title": "Mobile hero: triangle/pyramid shape (GPS top, two below)",
-    "category": {
-      "label": "Mobile",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "2a11ec1",
-    "date": "2026-03-22",
-    "title": "Mobile: pyramid layout for hero icons, bigger sizes",
     "category": {
       "label": "Mobile",
       "color": "teal"

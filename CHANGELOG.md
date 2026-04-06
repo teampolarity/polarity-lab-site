@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Hero: remove Polarity Lab atom, restore Phresh leaf icon, 3-icon grid (`ef21fba`)
+
+### Apr 6, 2026
+
 - Redesign projects section, remove Pulse/Studio, fix nav and screen fit (`b37c80a`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Mobile hero: triangle/pyramid shape (GPS top, two below) (`68591fb`)
-
-### Mar 22, 2026
-
-- Mobile: pyramid layout for hero icons, bigger sizes (`2a11ec1`)
 
 
 ---
