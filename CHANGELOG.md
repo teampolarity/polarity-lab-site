@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Feature Integrity Delta as anchor R&D product above the grid (`7e214cb`)
+
+### Apr 6, 2026
+
 - Descope all remaining jargon for public/pitch audience (`3a4888a`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fix OG image URLs to use www subdomain (`677ad2a`)
-
-### Mar 22, 2026
-
-- Add Open Graph and Twitter meta tags for social sharing (`211262b`)
 
 
 ---
