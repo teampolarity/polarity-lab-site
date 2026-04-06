@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Plain-English rewrite of all remaining sections (`a6ad46c`)
+
+### Apr 6, 2026
+
 - Rewrite About section in plain English for cold readers (`00bb83c`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fix mobile section spacing: add margin and padding separation (`4298f55`)
-
-### Mar 22, 2026
-
-- Add mobile section padding to prevent content spilling upward (`b478c82`)
 
 
 ---
