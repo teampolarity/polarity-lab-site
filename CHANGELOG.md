@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Sharpen taxonomy: instruments vs observations vs environments (`145cd48`)
+
+### Apr 6, 2026
+
 - Fix hero layout and WebGL performance (`2796a85`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Hero: swap Phresh for AVDP — show only live/in-production products (`fe016b2`)
-
-### Apr 6, 2026
-
-- Hero: remove Polarity Lab atom, restore Phresh leaf icon, 3-icon grid (`ef21fba`)
 
 
 ---

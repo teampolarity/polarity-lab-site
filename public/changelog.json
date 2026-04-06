@@ -1,5 +1,14 @@
 [
   {
+    "id": "145cd48",
+    "date": "2026-04-06",
+    "title": "Sharpen taxonomy: instruments vs observations vs environments",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "2796a85",
     "date": "2026-04-06",
     "title": "Fix hero layout and WebGL performance",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "ef21fba",
-    "date": "2026-04-06",
-    "title": "Hero: remove Polarity Lab atom, restore Phresh leaf icon, 3-icon grid",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]
