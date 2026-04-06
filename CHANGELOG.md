@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Flatten Work and Team sections to match About/Research/Contact quality (`dd081a5`)
+
+### Apr 6, 2026
+
 - Fix about section alignment: narrative left-aligned to match header (`e346f92`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Simplify hero to direct label + one-line explainer (`cfe5c3c`)
-
-### Apr 6, 2026
-
-- Feature Integrity Delta as anchor R&D product above the grid (`7e214cb`)
 
 
 ---
