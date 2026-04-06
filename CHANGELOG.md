@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Incorporate pitch deck research content into site (`cd4c040`)
+
+### Apr 6, 2026
+
 - Sharpen taxonomy: instruments vs observations vs environments (`145cd48`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Fix hero layout: prevent text/icon overlap, tighten vertical rhythm (`c3f52a0`)
-
-### Apr 6, 2026
-
-- Hero: swap Phresh for AVDP — show only live/in-production products (`fe016b2`)
 
 
 ---
