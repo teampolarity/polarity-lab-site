@@ -1169,6 +1169,36 @@
     .ccx-step:nth-child(2) .ccx-step-num { color: var(--coral); border-color: var(--coral); background: rgba(255, 138, 101, 0.1); }
     .ccx-step:nth-child(3) .ccx-step-num { color: var(--purple); border-color: var(--purple); background: rgba(187, 143, 206, 0.1); }
 
+    .ccx-step--primary {
+      background: rgba(255, 138, 101, 0.04);
+      border-color: rgba(255, 138, 101, 0.2);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 0 -20px;
+    }
+
+    .ccx-step--primary:hover {
+      background: rgba(255, 138, 101, 0.07);
+      border-color: rgba(255, 138, 101, 0.3);
+    }
+
+    .ccx-step-tag {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--coral);
+      background: rgba(255, 138, 101, 0.12);
+      padding: 2px 7px;
+      border-radius: 4px;
+      vertical-align: middle;
+      margin-left: 8px;
+      position: relative;
+      top: -1px;
+    }
+
     .ccx-step h4 {
       font-family: var(--font-display);
       font-size: 16px;
@@ -3141,11 +3171,11 @@
         <div class="ccx-content">
           <div class="ccx-text reveal">
             <p class="section-label">The Research</p>
-            <h2 class="section-title">What technology is actually doing to people</h2>
+            <h2 class="section-title">The problem no one has measured yet</h2>
 
             <div class="ccx-definition">
-              <div class="ccx-definition-term">We call it biotechnological disease</div>
-              <p class="ccx-definition-desc">You pick up your phone to check one thing and 45 minutes disappear. You feel more connected than any generation in history, and somehow lonelier. You use AI to help you think, and notice yourself trusting your own judgment a little less each time. These aren't personality flaws. They're real, documented outcomes produced by systems specifically designed to produce them.</p>
+              <div class="ccx-definition-term">The structural gap</div>
+              <p class="ccx-definition-desc">Technology companies are not medically accountable for what their products do to people. Not because the harm isn't real — it is, and it's documented — but because medicine has no infrastructure to measure it. There is no clinical definition for loneliness caused by platform design. No standard test for cognitive decline from AI dependency. No number a doctor can point to, track, or use to justify an intervention. The harm exists entirely outside medicine's ability to act on it. That is the problem.</p>
             </div>
 
             <div class="ccx-steps stagger">
@@ -3153,21 +3183,21 @@
                 <div class="ccx-step-num">1</div>
                 <div>
                   <h4>Name it precisely</h4>
-                  <p>Most of what gets called "screen addiction" or "social media anxiety" doesn't have a rigorous definition. We identify the specific mechanisms: what is shrinking, what is being lost, and why.</p>
+                  <p>Terms like "screen addiction" and "social media anxiety" are too vague to study or treat. We define the specific mechanisms — what is atrophying, what is being lost, and through exactly what process — with enough clinical precision that the harm can be named, replicated, and eventually diagnosed.</p>
                 </div>
               </div>
-              <div class="ccx-step">
-                <div class="ccx-step-num">2</div>
+              <div class="ccx-step ccx-step--primary">
+                <div class="ccx-step-num ccx-step-num--primary">2</div>
                 <div>
-                  <h4>Build the measurement</h4>
-                  <p>Not a survey. Not a self-report. Actual numbers a clinician or researcher can act on. You cannot treat what you cannot measure, and right now most of this damage goes unmeasured.</p>
+                  <h4>Build the diagnostic instrument <span class="ccx-step-tag">Core research</span></h4>
+                  <p>This is the primary work. Before medicine could treat high cholesterol, it needed a test that produced a number. We build that infrastructure for harms that don't have numbers yet — independent scoring tools that any researcher, clinician, or regulator can run and reproduce. Integrity Delta is the first: a measurement of AI honesty and the degree to which a system steers users away from accurate information.</p>
                 </div>
               </div>
               <div class="ccx-step">
                 <div class="ccx-step-num">3</div>
                 <div>
                   <h4>Build the antidote</h4>
-                  <p>A film can restore something TikTok eroded. Music can rebuild attention a notification system fractured. The technology that caused the harm does not have to be the one that fixes it.</p>
+                  <p>Once you can measure the damage, you can design an environment that reverses it — and verify that it actually works. Therapeutic environments are the application layer: built on top of the diagnostic foundation, validated against it.</p>
                 </div>
               </div>
             </div>
@@ -3194,8 +3224,8 @@
       <div class="section-inner">
         <div class="products-header reveal">
           <p class="section-label">Lab Projects</p>
-          <h2 class="section-title">One diagnostic. Several environments.</h2>
-          <p style="font-size:15px; color:var(--text-tertiary); margin-top:12px; max-width:580px; line-height:1.7;">Integrity Delta is the anchor R&amp;D investment. The products below are the environments — each one proving the lab's thesis in a different context.</p>
+          <h2 class="section-title">The diagnostic instruments are the work.</h2>
+          <p style="font-size:15px; color:var(--text-tertiary); margin-top:12px; max-width:580px; line-height:1.7;">The environments are real and they prove the thesis. But the diagnostic instruments are the research output — the B2B layer that funds everything and produces the science.</p>
         </div>
 
         <!-- FEATURED: Integrity Delta -->
