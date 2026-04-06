@@ -1,5 +1,14 @@
 [
   {
+    "id": "f66d559",
+    "date": "2026-04-06",
+    "title": "UI/UX audit fixes: typography, copy, theme toggle",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "3a6b175",
     "date": "2026-04-06",
     "title": "Fix hero centering (JS overriding CSS transform), reduce title size, fix lede indent",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "2eb03c0",
-    "date": "2026-04-06",
-    "title": "About: add definitions and research domains to address feedback",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
