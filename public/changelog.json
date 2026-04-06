@@ -1,5 +1,14 @@
 [
   {
+    "id": "1c2cd4a",
+    "date": "2026-04-06",
+    "title": "Tighten layout rhythm throughout: Apple-level spacing discipline",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "3cca828",
     "date": "2026-04-06",
     "title": "Hero: unify icons+headline into one composition, strip clutter",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "af9d63c",
-    "date": "2026-03-22",
-    "title": "Change email to team@polarity-lab.com",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

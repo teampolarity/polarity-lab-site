@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Tighten layout rhythm throughout: Apple-level spacing discipline (`1c2cd4a`)
+
+### Apr 6, 2026
+
 - Hero: unify icons+headline into one composition, strip clutter (`3cca828`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fix mobile: reduce hero gap, fix nav dot position (`d1a5e92`)
-
-### Mar 22, 2026
-
-- Change email to team@polarity-lab.com (`af9d63c`)
 
 
 ---
