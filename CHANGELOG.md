@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Fix hero centering (JS overriding CSS transform), reduce title size, fix lede indent (`3a6b175`)
+
+### Apr 6, 2026
+
 - Fix layout: left-align all section headers, fix hero centering (`cfa3090`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - About: add definitions and research domains to address feedback (`2eb03c0`)
-
-### Apr 6, 2026
-
-- Make each section viewport-fit: compact layouts, honest content (`3c817d9`)
 
 
 ---
