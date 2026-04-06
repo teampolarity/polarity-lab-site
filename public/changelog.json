@@ -1,5 +1,14 @@
 [
   {
+    "id": "3c817d9",
+    "date": "2026-04-06",
+    "title": "Make each section viewport-fit: compact layouts, honest content",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "1c2cd4a",
     "date": "2026-04-06",
     "title": "Tighten layout rhythm throughout: Apple-level spacing discipline",
@@ -165,15 +174,6 @@
     "id": "b2fbd1b",
     "date": "2026-03-22",
     "title": "Fix mobile hero: remove min-height, align to top",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "d1a5e92",
-    "date": "2026-03-22",
-    "title": "Fix mobile: reduce hero gap, fix nav dot position",
     "category": {
       "label": "Bug Fix",
       "color": "coral"

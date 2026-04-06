@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Make each section viewport-fit: compact layouts, honest content (`3c817d9`)
+
+### Apr 6, 2026
+
 - Tighten layout rhythm throughout: Apple-level spacing discipline (`1c2cd4a`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fix mobile hero: remove min-height, align to top (`b2fbd1b`)
-
-### Mar 22, 2026
-
-- Fix mobile: reduce hero gap, fix nav dot position (`d1a5e92`)
 
 
 ---
