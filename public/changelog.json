@@ -1,5 +1,14 @@
 [
   {
+    "id": "b37c80a",
+    "date": "2026-04-06",
+    "title": "Redesign projects section, remove Pulse/Studio, fix nav and screen fit",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "6f31d7b",
     "date": "2026-04-06",
     "title": "Fix: apply content rewrite to public/index.html (Vercel output dir)",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Mobile",
       "color": "teal"
-    }
-  },
-  {
-    "id": "ab192a5",
-    "date": "2026-03-22",
-    "title": "Shadrack: Brown University, CS & Religious Studies",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Redesign projects section, remove Pulse/Studio, fix nav and screen fit (`b37c80a`)
+
+### Apr 6, 2026
+
 - Fix: apply content rewrite to public/index.html (Vercel output dir) (`6f31d7b`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Mobile: pyramid layout for hero icons, bigger sizes (`2a11ec1`)
-
-### Mar 22, 2026
-
-- Shadrack: Brown University, CS & Religious Studies (`ab192a5`)
 
 
 ---
