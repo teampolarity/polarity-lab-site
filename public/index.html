@@ -1170,6 +1170,96 @@
       max-width: 520px;
     }
 
+    .ccx-subtitle {
+      font-family: var(--font-display);
+      font-size: clamp(16px, 2vw, 22px);
+      font-weight: 600;
+      color: var(--coral);
+      margin-top: 6px;
+      margin-bottom: 32px;
+    }
+
+    .disease-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .disease-card {
+      background: var(--void-surface);
+      border: 1px solid var(--border-ghost);
+      border-radius: 12px;
+      padding: 22px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .disease-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+    }
+
+    .disease-card--coral::before  { background: var(--coral); }
+    .disease-card--teal::before   { background: var(--teal); }
+    .disease-card--purple::before { background: var(--purple); }
+    .disease-card--red::before    { background: var(--red); }
+
+    .disease-card-name {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 10px;
+    }
+
+    .disease-card--coral  .disease-card-name { color: var(--coral); }
+    .disease-card--teal   .disease-card-name { color: var(--teal); }
+    .disease-card--purple .disease-card-name { color: var(--purple); }
+    .disease-card--red    .disease-card-name { color: var(--red); }
+
+    .disease-card-desc {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      line-height: 1.65;
+    }
+
+    .disease-card-gap {
+      font-size: 11px;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .disease-card--coral  .disease-card-gap { color: rgba(255,138,101,0.5); }
+    .disease-card--teal   .disease-card-gap { color: rgba(78,205,196,0.5); }
+    .disease-card--purple .disease-card-gap { color: rgba(187,143,206,0.5); }
+    .disease-card--red    .disease-card-gap { color: rgba(230,51,41,0.5); }
+
+    .disease-unifier {
+      background: var(--void-surface);
+      border: 1px solid var(--border-ghost);
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin-bottom: 40px;
+    }
+
+    .disease-unifier p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .disease-unifier strong { color: var(--text-primary); }
+
+    .disease-speed {
+      margin-top: 8px !important;
+      color: var(--text-ghost) !important;
+      font-size: 13px !important;
+    }
+
     .ccx-definition {
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
@@ -1946,6 +2036,99 @@
       border: 1px solid var(--border-ghost);
       padding: 3px 10px;
       border-radius: 20px;
+    }
+
+    .rc-hypothesis {
+      background: rgba(255, 138, 101, 0.04);
+      border: 1px solid rgba(255, 138, 101, 0.2);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin: 16px 0;
+    }
+
+    .rc-hypothesis-title {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--coral);
+      margin-bottom: 8px;
+    }
+
+    .rc-hypothesis-body {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      line-height: 1.6;
+    }
+
+    .rc-data-rows {
+      border: 1px solid rgba(78, 205, 196, 0.15);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 14px 0;
+    }
+
+    .rc-data-row {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-ghost);
+    }
+
+    .rc-data-row:last-child { border-bottom: none; }
+
+    .rc-data-num {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--teal);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .rc-data-desc {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      line-height: 1.45;
+    }
+
+    .rc-status {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-ghost);
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
+
+    .rc-proof {
+      background: var(--void-surface);
+      border: 1px solid var(--border-ghost);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-top: 14px;
+    }
+
+    .rc-proof-title {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--teal);
+      margin-bottom: 8px;
+    }
+
+    .rc-proof-body {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      line-height: 1.6;
+    }
+
+    .rc-proof-result {
+      font-size: 12px;
+      color: var(--teal);
+      margin-top: 8px;
+      font-weight: 500;
     }
 
     .rc-link {
@@ -3493,36 +3676,63 @@
     <!-- RESEARCH SECTION -->
     <section class="spatial-section ccx" id="research">
       <div class="section-inner">
+
+        <div class="reveal" style="margin-bottom: 32px;">
+          <p class="section-label">The Research</p>
+          <h2 class="section-title">Technology has produced a new class of disease.</h2>
+          <p class="ccx-subtitle">It is documented. It is accelerating.</p>
+        </div>
+
+        <div class="disease-grid reveal">
+          <div class="disease-card disease-card--coral">
+            <div class="disease-card-name">AI-Psychosis</div>
+            <p class="disease-card-desc">People losing grip on reality through sustained LLM interaction. An emerging clinical phenomenon documented in case reports and psychiatric literature — patients presenting with delusional thinking, inability to distinguish AI output from lived experience.</p>
+            <p class="disease-card-gap">No clinical definition exists. No diagnostic criteria. No treatment protocol.</p>
+          </div>
+          <div class="disease-card disease-card--teal">
+            <div class="disease-card-name">Loneliness Epidemic</div>
+            <p class="disease-card-desc">The U.S. Surgeon General declared loneliness a public health epidemic in 2023. Measurable at population scale. Directly correlated with technology adoption curves — rising social media use, declining in-person time.</p>
+            <p class="disease-card-gap">Documented. Quantified. No standard treatment pathway built for platform-induced cases.</p>
+          </div>
+          <div class="disease-card disease-card--purple">
+            <div class="disease-card-name">Cognitive Atrophy</div>
+            <p class="disease-card-desc">The brain discards unused skills. As AI handles cognitive work, human capacity atrophies. Clark and Chalmers showed cognition extends into tools — when the tool handles it, you lose it. Decades of supporting research across memory, navigation, and critical thinking.</p>
+            <p class="disease-card-gap">The mechanism is understood. The measurement infrastructure to track it at an individual level doesn't exist yet.</p>
+          </div>
+          <div class="disease-card disease-card--red">
+            <div class="disease-card-name">Sycophancy Feedback Loop</div>
+            <p class="disease-card-desc">AI systems are trained to agree with users. We adapt to trust them. The result is an echo chamber that degrades independent judgment at scale — people becoming progressively less capable of evaluating claims without AI reinforcement.</p>
+            <p class="disease-card-gap">No corrective mechanism exists. No benchmark for how far any given person or system has drifted.</p>
+          </div>
+        </div>
+
+        <div class="disease-unifier reveal">
+          <p><strong>These are not separate problems.</strong> They are symptoms of one pathology: technology-induced isolation — from other humans, from our own cognition, from accumulated human knowledge.</p>
+          <p class="disease-speed">Traditional medicine operates on a 10 to 15 year cycle. The disease moves at the speed of a software update.</p>
+        </div>
+
         <div class="ccx-content">
           <div class="ccx-text reveal">
-            <p class="section-label">The Research</p>
-            <h2 class="section-title">Platform harms are documented. Medicine still can't act on them.</h2>
-
-            <div class="ccx-definition">
-              <div class="ccx-definition-term">The measurement gap</div>
-              <p class="ccx-definition-desc">Every major platform runs on engagement metrics — clicks, watch time, return visits. Those numbers are precise and they're studied constantly. What isn't measured is what those metrics cost: the erosion of musical taste, the homogenization of how people dress, the replacement of genuine conversation with shorter and shallower exchanges, the slow narrowing of what an AI will tell you because agreeing with you keeps you in the app. These aren't vague concerns. Researchers document them. But medicine can't act on them because there are no standardized scores. No number a clinician can track. No benchmark a regulator can point to. You can't treat what you can't measure. That is the gap this lab is building into.</p>
-            </div>
-
             <div class="ccx-steps stagger">
               <div class="ccx-step">
                 <div class="ccx-step-num">1</div>
                 <div>
                   <h4>Name it precisely</h4>
-                  <p>Terms like "screen addiction" and "social media anxiety" are too vague to study or treat. We define the specific mechanisms — what is atrophying, what is being lost, and through exactly what process — with enough clinical precision that the harm can be named, replicated, and eventually diagnosed.</p>
+                  <p>Terms like "screen addiction" and "social media anxiety" are too vague to study or treat. We define specific mechanisms — what is atrophying, what is being lost, and through exactly what process — with enough clinical precision that the harm can be named, replicated, and eventually diagnosed.</p>
                 </div>
               </div>
               <div class="ccx-step ccx-step--primary">
                 <div class="ccx-step-num ccx-step-num--primary">2</div>
                 <div>
                   <h4>Build the diagnostic instrument <span class="ccx-step-tag">Core research</span></h4>
-                  <p>This is the primary work. Before medicine could treat high cholesterol, it needed a test that produced a number. We build that infrastructure for harms that don't have numbers yet — independent scoring tools that any researcher, clinician, or regulator can run and reproduce. Integrity Delta is the first: a measurement of AI honesty and the degree to which a system steers users away from accurate information.</p>
+                  <p>This is the primary work. Before medicine could treat high cholesterol, it needed a test that produced a number. We build that infrastructure for harms that don't have numbers yet — independent scoring tools any researcher, clinician, or regulator can run and reproduce. Integrity Delta is the first.</p>
                 </div>
               </div>
               <div class="ccx-step">
                 <div class="ccx-step-num">3</div>
                 <div>
                   <h4>Build the antidote</h4>
-                  <p>Once you can measure the damage, you can design an environment that reverses it — and verify that it actually works. Therapeutic environments are the application layer: built on top of the diagnostic foundation, validated against it.</p>
+                  <p>Once you can measure the damage, you can design an environment that reverses it and verify it actually works. Therapeutic environments are the application layer: built on top of the diagnostic foundation, validated against it.</p>
                 </div>
               </div>
             </div>
@@ -3541,6 +3751,7 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -3587,9 +3798,28 @@
               <div class="rc-name rc-name--large">Integrity Delta</div>
               <div class="rc-desc">
                 <p>There is no independent, standard way to measure how honest an AI is. The companies that build these systems define and measure their own safety metrics. No outside accountability. No reproducible benchmark.</p>
-                <p style="margin-top:10px;">Integrity Delta is that benchmark — a scoring instrument any researcher, enterprise, or regulator can run against any AI system to produce a consistent, auditable measurement of how much it steers users toward what they want to hear rather than what is actually true. The same kind of standardized accountability that exists for financial audits and drug trials, applied to AI for the first time.</p>
+                <p style="margin-top:10px;">Integrity Delta is that benchmark — a scoring instrument any researcher, enterprise, or regulator can run against any AI system to produce a consistent, auditable measurement of how much it steers users toward what they want to hear rather than what is actually true.</p>
               </div>
-              <div class="rc-finding"><strong>Paired environment:</strong> In design. The diagnostic comes first. The intervention layer for AI-use rehabilitation follows once the instrument is validated.</div>
+
+              <div class="rc-hypothesis">
+                <div class="rc-hypothesis-title">Resolution Valley — Core Hypothesis</div>
+                <p class="rc-hypothesis-body">Mid-tier models (7B to 13B parameters) occupy the most dangerous zone: smart enough to form correct answers internally, too weak to resist user pressure to agree. This is the parameter range hospitals and enterprises deploy today.</p>
+              </div>
+
+              <div class="rc-data-rows">
+                <div class="rc-data-row">
+                  <span class="rc-data-num">49%</span>
+                  <span class="rc-data-desc">increase in sycophantic endorsement over human advisors<br><span style="opacity:0.5;">Cheng et al., 2026</span></span>
+                </div>
+                <div class="rc-data-row">
+                  <span class="rc-data-num">100%</span>
+                  <span class="rc-data-desc">initial compliance with illogical medical requests<br><span style="opacity:0.5;">Chen et al., 2025</span></span>
+                </div>
+              </div>
+
+              <p class="rc-status">Manuscript drafted · OSF pre-registration drafted · 2 provisional patents</p>
+
+              <div class="rc-finding" style="margin-top:14px;"><strong>Paired environment:</strong> In design. The diagnostic comes first. The intervention layer for AI-use rehabilitation follows once the instrument is validated.</div>
               <div class="rc-buyers">
                 <span class="rc-buyer">Research Institutions</span>
                 <span class="rc-buyer">Enterprise</span>
@@ -3664,6 +3894,11 @@
             </div>
             <div class="rc-name">AVDP</div>
             <div class="rc-desc">A Very Distant Perspective. A documentary interview series of real, unscripted conversations about being human. Built on the finding that watching genuine conversation is itself therapeutic — it models something people have largely stopped doing and makes them want to do it themselves.</div>
+            <div class="rc-proof">
+              <div class="rc-proof-title">Proof of concept</div>
+              <p class="rc-proof-body">The lab filmed Zay, a potter in the US, creating and describing his ceramic work. The episodes reached Mateo, a store owner in Canada. He saw Zay's work and wanted to carry it. The lab connected them directly. A real economic opportunity created through authentic creative exposure — two people across countries who would never have met, connected through the environment.</p>
+              <p class="rc-proof-result">AVDP doesn't just create content. It creates connections.</p>
+            </div>
             <a href="https://www.instagram.com/averydistantperspective" target="_blank" class="rc-link">Follow →</a>
           </div>
         </div>
