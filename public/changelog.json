@@ -1,5 +1,14 @@
 [
   {
+    "id": "9e9c2e6",
+    "date": "2026-04-06",
+    "title": "Rework hero layout for icon-free design",
+    "category": {
+      "label": "Design",
+      "color": "purple"
+    }
+  },
+  {
     "id": "8c01a2f",
     "date": "2026-04-06",
     "title": "Restructure to diagnostic→environment research case format",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "a8792cf",
-    "date": "2026-03-23",
-    "title": "Update Theo's title to Brown Medical School in science section",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

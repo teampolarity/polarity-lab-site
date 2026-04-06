@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Rework hero layout for icon-free design (`9e9c2e6`)
+
+### Apr 6, 2026
+
 - Restructure to diagnostic→environment research case format (`8c01a2f`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Rewrite site content to match environmental therapeutics lab framing (`7dbcade`)
-
-### Mar 23, 2026
-
-- Update Theo's title to Brown Medical School in science section (`a8792cf`)
 
 
 ---
