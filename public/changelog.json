@@ -1,5 +1,14 @@
 [
   {
+    "id": "2eb03c0",
+    "date": "2026-04-06",
+    "title": "About: add definitions and research domains to address feedback",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "3c817d9",
     "date": "2026-04-06",
     "title": "Make each section viewport-fit: compact layouts, honest content",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Mobile",
       "color": "teal"
-    }
-  },
-  {
-    "id": "b2fbd1b",
-    "date": "2026-03-22",
-    "title": "Fix mobile hero: remove min-height, align to top",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- About: add definitions and research domains to address feedback (`2eb03c0`)
+
+### Apr 6, 2026
+
 - Make each section viewport-fit: compact layouts, honest content (`3c817d9`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Force mobile hero compact with !important overrides (`a0d6808`)
-
-### Mar 22, 2026
-
-- Fix mobile hero: remove min-height, align to top (`b2fbd1b`)
 
 
 ---
