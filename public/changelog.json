@@ -1,5 +1,14 @@
 [
   {
+    "id": "3a4888a",
+    "date": "2026-04-06",
+    "title": "Descope all remaining jargon for public/pitch audience",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "4b47aac",
     "date": "2026-04-06",
     "title": "Reflow About section from glossary to narrative",
@@ -167,15 +176,6 @@
     "title": "Add Open Graph and Twitter meta tags for social sharing",
     "category": {
       "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "0949707",
-    "date": "2026-03-22",
-    "title": "Mobile hero: fill viewport exactly, center content, hide science",
-    "category": {
-      "label": "Mobile",
       "color": "teal"
     }
   }

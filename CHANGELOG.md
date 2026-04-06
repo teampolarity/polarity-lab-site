@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Descope all remaining jargon for public/pitch audience (`3a4888a`)
+
+### Apr 6, 2026
+
 - Reflow About section from glossary to narrative (`4b47aac`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Add Open Graph and Twitter meta tags for social sharing (`211262b`)
-
-### Mar 22, 2026
-
-- Mobile hero: fill viewport exactly, center content, hide science (`0949707`)
 
 
 ---
