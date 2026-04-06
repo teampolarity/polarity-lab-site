@@ -1252,7 +1252,7 @@
     /* About Section */
     .about-header {
       max-width: 600px;
-      margin: 0 auto 48px;
+      margin: 0 auto 40px;
       text-align: center;
     }
 
@@ -1262,9 +1262,9 @@
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 40px;
-      max-width: 1200px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -1342,9 +1342,35 @@
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
       border-radius: 16px;
-      padding: 28px;
+      padding: 32px 28px;
       transition: all 0.5s var(--ease-out-expo);
     }
+
+    .about-card h4 {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-pure);
+      margin-bottom: 12px;
+    }
+
+    .about-card p {
+      font-size: 14px;
+      color: var(--text-tertiary);
+      line-height: 1.65;
+    }
+
+    .about-card-link {
+      display: inline-block;
+      margin-top: 16px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+    .about-card-link:hover { opacity: 0.7; }
 
     .about-card:hover {
       border-color: var(--border-medium);
@@ -2736,50 +2762,21 @@
           <h2 class="section-title">We study how environments shape people. We build better ones.</h2>
         </div>
 
-        <div class="about-grid">
-          <div class="about-main reveal">
-            <div class="about-main-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
-              </svg>
-            </div>
-            <h3>The Thesis<span class="about-main-badge">Core</span></h3>
-            <p>Technology has produced a new category of disease. Cognitive atrophy, technology-induced isolation, reality distortion from sustained AI interaction. These are measurable, documented health outcomes. The lab calls this class of pathology biotechnological disease. The risk is not just that AI lies. It is that AI dependency degrades the human skills we need to catch it.</p>
-            <a href="#research" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 20px; font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; transition: gap 0.4s var(--ease-out-expo);" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='6px'">See the research →</a>
+        <div class="about-grid stagger">
+          <div class="about-card">
+            <h4>The Thesis</h4>
+            <p>Modern environments are producing measurable harm. Cognitive atrophy, isolation, reality distortion from sustained AI use. The lab calls this biotechnological disease. You cannot treat what you cannot name.</p>
+            <a href="#research" class="about-card-link">See the research →</a>
           </div>
 
-          <div class="about-cards stagger">
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                  <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/>
-                </svg>
-              </div>
-              <h4>The Model</h4>
-              <p>The lab seeds research questions across disciplines and recruits specialists to own them. Each person drives their domain forward. Ownership compounds. There are no fixed criteria for advancement, only demonstrated ownership.</p>
-            </div>
+          <div class="about-card">
+            <h4>The Model</h4>
+            <p>Specialists own their domain. No fixed criteria for advancement, only demonstrated ownership. The lab brings the thesis. They bring the discipline. Ownership compounds over time.</p>
+          </div>
 
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#BB8FCE" stroke-width="1.5">
-                  <path d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
-                </svg>
-              </div>
-              <h4>The Response</h4>
-              <p>The lab builds two things. Instruments that measure the damage. And environments, across medicine, film, music, and technology, that rebuild the human capacities being lost. The medium that caused the harm does not have to be the one that heals it.</p>
-            </div>
-
-            <div class="about-card">
-              <div class="about-card-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
-                  <circle cx="8" cy="10" r="5"/>
-                  <circle cx="16" cy="10" r="5"/>
-                  <circle cx="12" cy="16" r="5"/>
-                </svg>
-              </div>
-              <h4>The Environment</h4>
-              <p>A film is an environment. So is a song, a platform, a clinical tool. The lab does not prescribe the medium. It asks: does this reconnect people to each other? Does it make the human stronger? If yes, it belongs here.</p>
-            </div>
+          <div class="about-card">
+            <h4>The Response</h4>
+            <p>Diagnostic instruments that measure the damage. Environments, across film, music, medicine, and technology, that rebuild what is being lost. The medium that caused harm does not have to be the one that heals.</p>
           </div>
         </div>
       </div>
@@ -2803,21 +2800,21 @@
                 <div class="ccx-step-num">1</div>
                 <div>
                   <h4>Identify</h4>
-                  <p>The lab finds the research question nobody is asking. In each discipline, there is a gap between what technology promises and what it actually produces in the humans who use it.</p>
+                  <p>Find the gap between what technology promises and what it actually produces in the people who use it.</p>
                 </div>
               </div>
               <div class="ccx-step">
                 <div class="ccx-step-num">2</div>
                 <div>
                   <h4>Measure</h4>
-                  <p>You cannot treat what you cannot measure. The lab builds diagnostic instruments first. The Integrity Delta is the first: a scoring instrument for AI honesty and sycophancy.</p>
+                  <p>Build diagnostic instruments first. You cannot treat what you cannot measure.</p>
                 </div>
               </div>
               <div class="ccx-step">
                 <div class="ccx-step-num">3</div>
                 <div>
                   <h4>Design</h4>
-                  <p>The treatment is environmental. Film, music, clinical tools, platforms. The lab designs the environment that produces healing. The medium that caused the harm does not have to be the one that reverses it.</p>
+                  <p>Build the environment that produces the outcome. Film, music, clinical tools, platforms. The medium that caused harm does not have to be the one that reverses it.</p>
                 </div>
               </div>
             </div>
@@ -2972,47 +2969,33 @@
         <div class="safety-header reveal">
           <p class="section-label">Non-Negotiable</p>
           <h2 class="section-title">Research Ethics</h2>
-          <p class="safety-intro">We study real people. That means real responsibilities. These are not aspirations. They are constraints we will not relax.</p>
+          <p class="safety-intro">We study real people. These are not aspirations. They are constraints we will not relax.</p>
         </div>
 
         <div class="safety-grid stagger">
           <div class="safety-item">
-            <h4>IRB Compliance</h4>
-            <p>Every study involving human subjects goes through institutional review. No shortcuts. No exceptions.</p>
+            <h4>Human Subjects Review</h4>
+            <p>Any study involving human subjects goes through institutional review before it runs. No shortcuts.</p>
           </div>
           <div class="safety-item">
             <h4>Participant Data Sovereignty</h4>
-            <p>Research participants own their data. Always. Withdrawal from any study is unconditional and immediate.</p>
-          </div>
-          <div class="safety-item">
-            <h4>Transparent Methodology</h4>
-            <p>We publish methods before we run experiments. The research is open. The reasoning is visible.</p>
+            <p>Participants own their data. Consent is specific, documented, and revocable at any time without consequence.</p>
           </div>
           <div class="safety-item">
             <h4>Right to Deletion</h4>
-            <p>Ask and it is gone. Every trace. No retention period. No exceptions.</p>
+            <p>Ask and it is gone. Every trace. No retention periods, no exceptions.</p>
+          </div>
+          <div class="safety-item">
+            <h4>Open Methodology</h4>
+            <p>Methods are documented before experiments run. The reasoning is visible. No hidden variables.</p>
           </div>
           <div class="safety-item">
             <h4>No Weaponization</h4>
-            <p>Diagnostic instruments built here will never be used for surveillance, hiring decisions, or social scoring. Full stop.</p>
+            <p>Diagnostic instruments built here will never be used for surveillance, hiring, or social scoring. Full stop.</p>
           </div>
           <div class="safety-item">
-            <h4>Independent Ethics Review</h4>
-            <p>The lab maintains an independent ethics board. Their recommendations are binding, not advisory.</p>
-          </div>
-        </div>
-
-        <div class="safety-privacy reveal" style="margin-top: 64px; background: var(--void-surface); border: 1px solid var(--border-ghost); border-radius: 20px; padding: 48px; max-width: 900px; margin-left: auto; margin-right: auto;">
-          <h3 style="font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--text-pure); margin-bottom: 24px; text-align: center;">What Participants See vs What We Study</h3>
-          <div class="safety-privacy-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 36px;">
-            <div>
-              <h4 style="font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--teal); margin-bottom: 12px;">What Participants See</h4>
-              <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Their full data. What they contributed, what was collected, and how it was used. Consent is specific, documented, and revocable at any time.</p>
-            </div>
-            <div>
-              <h4 style="font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--purple); margin-bottom: 12px;">What We Study</h4>
-              <p style="font-size: 14px; color: var(--text-secondary); line-height: 1.7;">Anonymized patterns at the population level. We study what technology does to groups over time. Never individual profiles. Never identifiable data published without explicit consent.</p>
-            </div>
+            <h4>Anonymized Analysis</h4>
+            <p>We study patterns at the population level. Never individual profiles. Never identifiable data published without explicit consent.</p>
           </div>
         </div>
       </div>
@@ -3089,7 +3072,7 @@
       <div class="section-inner">
         <div class="algorithm-cta-box reveal">
           <p class="algorithm-cta-label">The Lab</p>
-          <h2 class="algorithm-cta-title">One thesis. One discipline at a time.</h2>
+          <h2 class="algorithm-cta-title">Environments that reconnect people to each other.</h2>
           <p class="algorithm-cta-desc">Rooted in 12 years of independent research across medicine, neuroscience, film, music, and engineering. Now building the instruments and environments to treat what technology has produced.</p>
           <a href="mailto:team@polarity-lab.com" class="algorithm-cta-btn">
             Get in touch →
