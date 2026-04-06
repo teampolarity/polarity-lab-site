@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Fix about section alignment: narrative left-aligned to match header (`e346f92`)
+
+### Apr 6, 2026
+
 - Remove scroll indicator line overlapping stats bar (`26a0895`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Feature Integrity Delta as anchor R&D product above the grid (`7e214cb`)
-
-### Apr 6, 2026
-
-- Descope all remaining jargon for public/pitch audience (`3a4888a`)
 
 
 ---
