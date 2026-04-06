@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Rename PainPoints → Proximity Index, add Case 5 Style Drift → Phresh (`656532d`)
+
+### Apr 6, 2026
+
 - Fix hero vertical fit and eyebrow copy (`34408e8`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Redesign projects section, remove Pulse/Studio, fix nav and screen fit (`b37c80a`)
-
-### Apr 6, 2026
-
-- Fix: apply content rewrite to public/index.html (Vercel output dir) (`6f31d7b`)
 
 
 ---

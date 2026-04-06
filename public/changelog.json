@@ -1,5 +1,14 @@
 [
   {
+    "id": "656532d",
+    "date": "2026-04-06",
+    "title": "Rename PainPoints → Proximity Index, add Case 5 Style Drift → Phresh",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "34408e8",
     "date": "2026-04-06",
     "title": "Fix hero vertical fit and eyebrow copy",
@@ -165,15 +174,6 @@
     "id": "b37c80a",
     "date": "2026-04-06",
     "title": "Redesign projects section, remove Pulse/Studio, fix nav and screen fit",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "6f31d7b",
-    "date": "2026-04-06",
-    "title": "Fix: apply content rewrite to public/index.html (Vercel output dir)",
     "category": {
       "label": "Bug Fix",
       "color": "coral"
