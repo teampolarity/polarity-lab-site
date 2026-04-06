@@ -507,12 +507,13 @@
       left: 50%;
       transform: translate(-50%, -50%);
       display: grid;
-      grid-template-columns: 1fr auto auto 1fr;
+      grid-template-columns: repeat(3, auto);
       align-items: center;
       justify-items: center;
-      gap: 60px;
+      justify-content: center;
+      gap: 80px;
       width: 100%;
-      max-width: 1200px;
+      max-width: 1000px;
       padding: 40px 20px;
       perspective: 1500px;
     }
@@ -977,8 +978,7 @@
 
     @media (max-width: 768px) {
       .hero-constellation {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto auto;
+        grid-template-columns: repeat(3, 1fr);
         gap: 16px;
         padding: 16px;
         max-width: 100%;
@@ -986,12 +986,10 @@
       }
       .hero-product--waxfeed,
       .hero-product--avdp,
-      .hero-product--polarity,
       .hero-product--painpoints {
         justify-self: center;
       }
       .hero-product-icon { width: 70px; height: 70px; }
-      .hero-product--polarity .hero-product-icon { width: 90px; height: 90px; }
       .hero-product-label { font-size: 8px; letter-spacing: 0.1em; }
 
       .scroll-text--left,
@@ -2685,52 +2683,6 @@
         <span class="hero-product-label" style="text-transform: uppercase;">WaxFeed</span>
       </a>
 
-      <!-- Polarity -->
-      <a href="#about" class="hero-product hero-product--polarity" id="icon-polarity">
-        <div class="hero-product-icon">
-          <svg viewBox="0 0 200 200">
-            <defs>
-              <radialGradient id="heroCoreGrad" cx="30%" cy="30%" r="70%">
-                <stop offset="0%" stop-color="#6EE7DF"/>
-                <stop offset="50%" stop-color="#4ECDC4"/>
-                <stop offset="100%" stop-color="#2BA89F"/>
-              </radialGradient>
-              <radialGradient id="heroAmbient" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#4ECDC4" stop-opacity="0.4"/>
-                <stop offset="100%" stop-color="#4ECDC4" stop-opacity="0"/>
-              </radialGradient>
-              <filter id="heroOrbitalGlow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="4" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-              <filter id="heroCoreGlow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="10" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            <circle cx="100" cy="100" r="90" fill="url(#heroAmbient)"/>
-            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#4ECDC4" stroke-width="3" transform="rotate(-60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
-            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#FFA07A" stroke-width="3" transform="rotate(60 100 100)" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
-            <ellipse cx="100" cy="100" rx="80" ry="25" fill="none" stroke="#BB8FCE" stroke-width="3" filter="url(#heroOrbitalGlow)" opacity="0.9"/>
-            <circle cx="140" cy="30" r="10" fill="#4ECDC4" filter="url(#heroOrbitalGlow)"/>
-            <circle cx="60" cy="30" r="10" fill="#FFA07A" filter="url(#heroOrbitalGlow)"/>
-            <circle cx="180" cy="100" r="10" fill="#BB8FCE" filter="url(#heroOrbitalGlow)"/>
-            <circle cx="100" cy="100" r="32" fill="url(#heroCoreGrad)" filter="url(#heroCoreGlow)"/>
-            <circle cx="88" cy="88" r="12" fill="white" opacity="0.3"/>
-          </svg>
-        </div>
-        <span class="hero-product-label">Polarity Lab</span>
-      </a>
-
       <!-- PolarityGPS -->
       <a href="https://polaritygps.com" target="_blank" class="hero-product hero-product--painpoints" id="icon-painpoints">
         <div class="hero-product-icon">
@@ -2745,43 +2697,36 @@
         <span class="hero-product-label">PolarityGPS</span>
       </a>
 
-      <!-- Phresh -->
+      <!-- Phresh (leaf) -->
       <a href="https://phresh.fit" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
         <div class="hero-product-icon">
-          <svg viewBox="0 0 200 200" fill="none">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
             <defs>
-              <radialGradient id="phreshAmbient" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#BB8FCE" stop-opacity="0.2"/>
-                <stop offset="100%" stop-color="#BB8FCE" stop-opacity="0"/>
-              </radialGradient>
-              <filter id="phreshGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="4" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
+              <linearGradient id="heroLeafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#16a34a"/>
+                <stop offset="50%" stop-color="#22c55e"/>
+                <stop offset="100%" stop-color="#4ade80"/>
+              </linearGradient>
+              <filter id="heroLeafGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="6" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
             </defs>
-            <circle cx="100" cy="100" r="90" fill="url(#phreshAmbient)"/>
-            <circle cx="100" cy="100" r="82" fill="none" stroke="#BB8FCE" stroke-width="1.5" opacity="0.3"/>
-            <!-- Hanger -->
-            <path d="M100 52 C100 52 100 44 108 44 C116 44 116 52 116 52" stroke="#BB8FCE" stroke-width="3" stroke-linecap="round" fill="none" filter="url(#phreshGlow)" opacity="0.9"/>
-            <circle cx="100" cy="52" r="3" fill="#BB8FCE" filter="url(#phreshGlow)"/>
-            <!-- Garment body -->
-            <path d="M72 68 L60 84 L74 90 L74 136 L126 136 L126 90 L140 84 L128 68 C128 68 118 76 100 76 C82 76 72 68 72 68Z" stroke="#BB8FCE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#phreshGlow)" opacity="0.85"/>
-            <!-- Sparkle accents -->
-            <g fill="#BB8FCE" filter="url(#phreshGlow)" opacity="0.7">
-              <circle cx="152" cy="68" r="2.5"/>
-              <circle cx="148" cy="58" r="1.5"/>
-              <circle cx="158" cy="62" r="1.5"/>
-              <circle cx="52" cy="120" r="2"/>
-              <circle cx="47" cy="113" r="1.5"/>
-              <circle cx="55" cy="112" r="1"/>
+            <circle cx="100" cy="100" r="70" fill="#22c55e" opacity="0.08" filter="url(#heroLeafGlow)"/>
+            <g filter="url(#heroLeafGlow)">
+              <path d="M100 30 C50 55, 35 100, 58 140 Q72 165, 100 172 Q128 165, 142 140 C165 100, 150 55, 100 30Z" fill="url(#heroLeafGrad)" opacity="0.9"/>
             </g>
+            <path d="M100 45 L100 158" stroke="#166534" stroke-width="2.5" stroke-linecap="round" opacity="0.45"/>
+            <path d="M100 70 L72 55" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M100 70 L128 55" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M100 92 L65 78" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M100 92 L135 78" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M100 114 L68 102" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M100 114 L132 102" stroke="#166534" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
+            <path d="M82 50 Q74 72, 78 95" stroke="white" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.2"/>
           </svg>
         </div>
-        <span class="hero-product-label">Phresh</span>
+        <span class="hero-product-label">PHRESH</span>
       </a>
     </div>
 
