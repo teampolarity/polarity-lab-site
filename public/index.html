@@ -1338,6 +1338,95 @@
       gap: 20px;
     }
 
+    /* About definitions */
+    .about-defs {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: start;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      background: var(--void-surface);
+      border: 1px solid var(--border-ghost);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .about-def {
+      padding: 32px 36px;
+    }
+
+    .about-def-divider {
+      width: 1px;
+      background: var(--border-ghost);
+      align-self: stretch;
+    }
+
+    .about-def-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 12px;
+    }
+
+    .about-def-text {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Research Domains */
+    .about-domains {
+      max-width: 1100px;
+      margin: 36px auto 0;
+    }
+
+    .about-domains-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-ghost);
+      margin-bottom: 16px;
+    }
+
+    .about-domains-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .about-domain-tag {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: var(--text-tertiary);
+      border: 1px solid var(--border-ghost);
+      border-radius: 100px;
+      padding: 6px 14px;
+      transition: all 0.3s ease;
+    }
+
+    .about-domain-tag:hover {
+      color: var(--text-pure);
+      border-color: var(--border-medium);
+    }
+
+    @media (max-width: 768px) {
+      .about-defs {
+        grid-template-columns: 1fr;
+      }
+      .about-def-divider {
+        width: auto;
+        height: 1px;
+        align-self: auto;
+      }
+    }
+
     .about-card {
       background: var(--void-surface);
       border: 1px solid var(--border-ghost);
@@ -2762,6 +2851,20 @@
           <h2 class="section-title">We study how environments shape people. We build better ones.</h2>
         </div>
 
+        <!-- Core definitions -->
+        <div class="about-defs reveal">
+          <div class="about-def">
+            <div class="about-def-label">Therapeutic Environment</div>
+            <p class="about-def-text">A designed context where the conditions themselves produce a measurable improvement in a specific human capacity. Not a feature. Not a wellness prompt. A film, a platform, a piece of music, a clinical protocol where the environment does the work. You leave it more connected, more cognitively present, or more yourself than when you entered.</p>
+          </div>
+          <div class="about-def-divider"></div>
+          <div class="about-def">
+            <div class="about-def-label">Diagnostic Instrument</div>
+            <p class="about-def-text">A calibrated tool that produces a reproducible score for a specific form of harm. Not a survey. Not a self-report. A measurement. If the instrument says a system has a sycophancy coefficient of 0.74, that number means the same thing to every researcher who uses it. Measurement comes before treatment.</p>
+          </div>
+        </div>
+
+        <!-- Thesis / Model / Response -->
         <div class="about-grid stagger">
           <div class="about-card">
             <h4>The Thesis</h4>
@@ -2776,7 +2879,22 @@
 
           <div class="about-card">
             <h4>The Response</h4>
-            <p>Diagnostic instruments that measure the damage. Environments, across film, music, medicine, and technology, that rebuild what is being lost. The medium that caused harm does not have to be the one that heals.</p>
+            <p>Diagnostic instruments that measure the damage. Environments across film, music, medicine, and technology that rebuild what is being lost. The medium that caused harm does not have to be the one that heals.</p>
+          </div>
+        </div>
+
+        <!-- Research Domains -->
+        <div class="about-domains reveal">
+          <p class="about-domains-label">Research Domains</p>
+          <div class="about-domains-grid">
+            <span class="about-domain-tag">Neuroscience &amp; Cognition</span>
+            <span class="about-domain-tag">Clinical Medicine</span>
+            <span class="about-domain-tag">Film &amp; Documentary</span>
+            <span class="about-domain-tag">Music &amp; Culture</span>
+            <span class="about-domain-tag">AI Systems &amp; Integrity</span>
+            <span class="about-domain-tag">Fashion &amp; Identity</span>
+            <span class="about-domain-tag">Environmental Health</span>
+            <span class="about-domain-tag">Social Architecture</span>
           </div>
         </div>
       </div>
