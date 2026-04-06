@@ -1,5 +1,14 @@
 [
   {
+    "id": "2796a85",
+    "date": "2026-04-06",
+    "title": "Fix hero layout and WebGL performance",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "656532d",
     "date": "2026-04-06",
     "title": "Rename PainPoints → Proximity Index, add Case 5 Style Drift → Phresh",
@@ -167,15 +176,6 @@
     "title": "Hero: remove Polarity Lab atom, restore Phresh leaf icon, 3-icon grid",
     "category": {
       "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "b37c80a",
-    "date": "2026-04-06",
-    "title": "Redesign projects section, remove Pulse/Studio, fix nav and screen fit",
-    "category": {
-      "label": "Bug Fix",
       "color": "coral"
     }
   }

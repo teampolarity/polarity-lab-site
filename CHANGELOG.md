@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Fix hero layout and WebGL performance (`2796a85`)
+
+### Apr 6, 2026
+
 - Rename PainPoints → Proximity Index, add Case 5 Style Drift → Phresh (`656532d`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Hero: remove Polarity Lab atom, restore Phresh leaf icon, 3-icon grid (`ef21fba`)
-
-### Apr 6, 2026
-
-- Redesign projects section, remove Pulse/Studio, fix nav and screen fit (`b37c80a`)
 
 
 ---
