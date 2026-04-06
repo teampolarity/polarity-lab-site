@@ -1,5 +1,14 @@
 [
   {
+    "id": "34408e8",
+    "date": "2026-04-06",
+    "title": "Fix hero vertical fit and eyebrow copy",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "9e9c2e6",
     "date": "2026-04-06",
     "title": "Rework hero layout for icon-free design",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "7dbcade",
-    "date": "2026-04-06",
-    "title": "Rewrite site content to match environmental therapeutics lab framing",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Fix hero vertical fit and eyebrow copy (`34408e8`)
+
+### Apr 6, 2026
+
 - Rework hero layout for icon-free design (`9e9c2e6`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Fix: apply content rewrite to public/index.html (Vercel output dir) (`6f31d7b`)
-
-### Apr 6, 2026
-
-- Rewrite site content to match environmental therapeutics lab framing (`7dbcade`)
 
 
 ---
