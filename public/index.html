@@ -503,7 +503,7 @@
        ========================================== */
     .hero-constellation {
       position: absolute;
-      top: 28%;
+      top: 24%;
       left: 50%;
       transform: translate(-50%, -50%);
       display: grid;
@@ -511,10 +511,10 @@
       align-items: center;
       justify-items: center;
       justify-content: center;
-      gap: 80px;
+      gap: 64px;
       width: 100%;
-      max-width: 1000px;
-      padding: 40px 20px;
+      max-width: 900px;
+      padding: 20px 20px;
       perspective: 1500px;
     }
 
@@ -532,8 +532,8 @@
     }
 
     .hero-product-icon {
-      width: 140px;
-      height: 140px;
+      width: 110px;
+      height: 110px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -652,10 +652,10 @@
 
     .scroll-text--center {
       left: 50%;
-      top: 50%;
+      top: 62%;
       transform: translate(-50%, -50%);
       text-align: center;
-      width: min(900px, 90vw);
+      width: min(820px, 88vw);
       box-sizing: border-box;
     }
 
@@ -838,7 +838,7 @@
       padding: 12px 24px;
       border-radius: 100px;
       text-transform: uppercase;
-      margin-bottom: 40px;
+      margin-bottom: 24px;
       opacity: 0;
       transform: scale(0.9);
       transition: all 0.8s var(--ease-out-expo);
@@ -866,12 +866,12 @@
 
     .hero-title {
       font-family: var(--font-display);
-      font-size: clamp(32px, 5vw, 72px);
+      font-size: clamp(28px, 3.6vw, 56px);
       font-weight: 600;
       letter-spacing: -0.03em;
-      line-height: 1.1;
+      line-height: 1.15;
       color: var(--text-pure);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .hero-title .gradient {
@@ -2709,7 +2709,7 @@
     <!-- SCROLL TEXT REVEALS -->
 
     <!-- Text 1: Hero -->
-    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 50%;">
+    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 62%;">
       <div class="hero-badge">Interdisciplinary Research Laboratory</div>
       <h1 class="hero-title">
         We design environments that <span class="gradient">reconnect people to each other</span>
@@ -3532,7 +3532,6 @@
         this.nav = document.getElementById('nav');
         this.constellation = document.getElementById('hero-constellation');
         this.iconWaxfeed = document.getElementById('icon-waxfeed');
-        this.iconPolarity = document.getElementById('icon-polarity');
         this.iconPainpoints = document.getElementById('icon-painpoints');
         this.iconAvdp = document.getElementById('icon-avdp');
         this.scrollIndicator = document.getElementById('scroll-indicator');
@@ -3605,14 +3604,6 @@
           const waxRotate = iconExitProgress * -15;
           this.iconWaxfeed.style.transform = `translate(${waxX}px, ${waxY}px) scale(${waxScale}) rotate(${waxRotate}deg)`;
           this.iconWaxfeed.style.opacity = waxOpacity;
-        }
-
-        if (this.iconPolarity) {
-          const polY = iconExitProgress * -180;
-          const polOpacity = 1 - iconExitProgress;
-          const polScale = 1 - iconExitProgress * 0.15;
-          this.iconPolarity.style.transform = `translateY(${polY}px) scale(${polScale})`;
-          this.iconPolarity.style.opacity = polOpacity;
         }
 
         if (this.iconPainpoints) {
