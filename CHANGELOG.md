@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Fix: apply content rewrite to public/index.html (Vercel output dir) (`6f31d7b`)
+
+### Apr 6, 2026
+
 - Rewrite site content to match environmental therapeutics lab framing (`7dbcade`)
 
 ### Mar 23, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Shadrack: Brown University, CS & Religious Studies (`ab192a5`)
-
-### Mar 22, 2026
-
-- Nathan: University of Ottawa, Finance & BTM (`7c8671b`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "6f31d7b",
+    "date": "2026-04-06",
+    "title": "Fix: apply content rewrite to public/index.html (Vercel output dir)",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "7dbcade",
     "date": "2026-04-06",
     "title": "Rewrite site content to match environmental therapeutics lab framing",
@@ -165,15 +174,6 @@
     "id": "ab192a5",
     "date": "2026-03-22",
     "title": "Shadrack: Brown University, CS & Religious Studies",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "7c8671b",
-    "date": "2026-03-22",
-    "title": "Nathan: University of Ottawa, Finance & BTM",
     "category": {
       "label": "Update",
       "color": "text-secondary"
