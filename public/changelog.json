@@ -1,5 +1,14 @@
 [
   {
+    "id": "d48c6f8",
+    "date": "2026-04-06",
+    "title": "Fix remaining em dashes in about narrative and all breakpoint font sizes",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "c5d228e",
     "date": "2026-04-06",
     "title": "Fix section-title font-size in all three breakpoint rules",
@@ -165,15 +174,6 @@
     "id": "4b47aac",
     "date": "2026-04-06",
     "title": "Reflow About section from glossary to narrative",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "a6ad46c",
-    "date": "2026-04-06",
-    "title": "Plain-English rewrite of all remaining sections",
     "category": {
       "label": "Update",
       "color": "text-secondary"
