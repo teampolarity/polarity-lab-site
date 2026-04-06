@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Fix section-title font-size in all three breakpoint rules (`c5d228e`)
+
+### Apr 6, 2026
+
 - UI/UX audit fixes: typography, copy, theme toggle (`f66d559`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Plain-English rewrite of all remaining sections (`a6ad46c`)
-
-### Apr 6, 2026
-
-- Rewrite About section in plain English for cold readers (`00bb83c`)
 
 
 ---
