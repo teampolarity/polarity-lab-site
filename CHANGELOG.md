@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Reflow About section from glossary to narrative (`4b47aac`)
+
+### Apr 6, 2026
+
 - Plain-English rewrite of all remaining sections (`a6ad46c`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Mobile hero: fill viewport exactly, center content, hide science (`0949707`)
-
-### Mar 22, 2026
-
-- Fix mobile section spacing: add margin and padding separation (`4298f55`)
 
 
 ---
