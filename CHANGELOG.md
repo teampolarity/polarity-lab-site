@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Strip to pitch-ready structure for the 14th (`459ef8d`)
+
+### Apr 6, 2026
+
 - Simplify hero to direct label + one-line explainer (`cfe5c3c`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Make colored claim lines all caps for consistency (`212eed7`)
-
-### Mar 22, 2026
-
-- Update Theo's title to Brown Medical School (`59f1f65`)
 
 
 ---

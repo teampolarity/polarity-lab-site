@@ -1,5 +1,14 @@
 [
   {
+    "id": "459ef8d",
+    "date": "2026-04-06",
+    "title": "Strip to pitch-ready structure for the 14th",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "cfe5c3c",
     "date": "2026-04-06",
     "title": "Simplify hero to direct label + one-line explainer",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "59f1f65",
-    "date": "2026-03-22",
-    "title": "Update Theo's title to Brown Medical School",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]
