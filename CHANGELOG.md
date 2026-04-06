@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Remove scroll indicator line overlapping stats bar (`26a0895`)
+
+### Apr 6, 2026
+
 - Fix remaining em dashes in about narrative and all breakpoint font sizes (`d48c6f8`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Descope all remaining jargon for public/pitch audience (`3a4888a`)
-
-### Apr 6, 2026
-
-- Reflow About section from glossary to narrative (`4b47aac`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "26a0895",
+    "date": "2026-04-06",
+    "title": "Remove scroll indicator line overlapping stats bar",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "d48c6f8",
     "date": "2026-04-06",
     "title": "Fix remaining em dashes in about narrative and all breakpoint font sizes",
@@ -165,15 +174,6 @@
     "id": "3a4888a",
     "date": "2026-04-06",
     "title": "Descope all remaining jargon for public/pitch audience",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "4b47aac",
-    "date": "2026-04-06",
-    "title": "Reflow About section from glossary to narrative",
     "category": {
       "label": "Update",
       "color": "text-secondary"
