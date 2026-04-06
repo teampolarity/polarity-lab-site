@@ -1,5 +1,14 @@
 [
   {
+    "id": "23a19d6",
+    "date": "2026-04-06",
+    "title": "Remove purple from hero gradient, enforce teal-only accent",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "dd081a5",
     "date": "2026-04-06",
     "title": "Flatten Work and Team sections to match About/Research/Contact quality",
@@ -165,15 +174,6 @@
     "id": "459ef8d",
     "date": "2026-04-06",
     "title": "Strip to pitch-ready structure for the 14th",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "cfe5c3c",
-    "date": "2026-04-06",
-    "title": "Simplify hero to direct label + one-line explainer",
     "category": {
       "label": "Update",
       "color": "text-secondary"

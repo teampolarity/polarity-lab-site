@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Remove purple from hero gradient, enforce teal-only accent (`23a19d6`)
+
+### Apr 6, 2026
+
 - Flatten Work and Team sections to match About/Research/Contact quality (`dd081a5`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Strip to pitch-ready structure for the 14th (`459ef8d`)
-
-### Apr 6, 2026
-
-- Simplify hero to direct label + one-line explainer (`cfe5c3c`)
 
 
 ---
