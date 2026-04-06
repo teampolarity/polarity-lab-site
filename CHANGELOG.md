@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Fix hero title overflow — 9vw was way too large, back to 4.8vw/72px max (`f59ccc1`)
+
+### Apr 6, 2026
+
 - Redesign to SpaceX-level professional aesthetic (`778e2fc`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Tighten layout rhythm throughout: Apple-level spacing discipline (`1c2cd4a`)
-
-### Apr 6, 2026
-
-- Hero: unify icons+headline into one composition, strip clutter (`3cca828`)
 
 
 ---
