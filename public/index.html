@@ -473,10 +473,14 @@
     }
 
     .spatial-section {
-      min-height: 100vh;
+      min-height: auto;
       position: relative;
       overflow: visible;
-      scroll-margin-top: 100px;
+      scroll-margin-top: 80px;
+    }
+
+    .spatial-section.hero {
+      min-height: 100vh;
     }
 
     .spatial-section:first-child {
@@ -489,13 +493,13 @@
       width: 100%;
       max-width: 1400px;
       margin: 0 auto;
-      padding: 120px 48px;
+      padding: 80px 48px;
       position: relative;
       z-index: 1;
     }
 
     @media (max-width: 768px) {
-      .section-inner { padding: 100px 24px; }
+      .section-inner { padding: 60px 20px; }
     }
 
     /* ==========================================
@@ -1247,8 +1251,8 @@
 
     /* About Section */
     .about-header {
-      max-width: 700px;
-      margin: 0 auto 80px;
+      max-width: 600px;
+      margin: 0 auto 48px;
       text-align: center;
     }
 
@@ -1388,7 +1392,7 @@
     /* Team Section */
     .team-header {
       text-align: center;
-      margin: 0 auto 80px;
+      margin: 0 auto 48px;
     }
 
     .team-header .section-label {
@@ -1501,7 +1505,7 @@
     /* Lab Projects Section */
     .products-header {
       max-width: 900px;
-      margin: 0 0 60px;
+      margin: 0 0 40px;
     }
 
     .products-header .section-label {
@@ -1650,7 +1654,7 @@
     /* Safety Section */
     .safety-header {
       max-width: 700px;
-      margin: 0 auto 60px;
+      margin: 0 auto 40px;
       text-align: center;
     }
 
@@ -1728,7 +1732,7 @@
     /* Research Section */
     .research-header {
       text-align: center;
-      margin: 0 auto 80px;
+      margin: 0 auto 48px;
     }
 
     .research-header .section-label {
@@ -1849,7 +1853,7 @@
     /* Involve Section */
     .involve-header {
       text-align: center;
-      margin: 0 auto 80px;
+      margin: 0 auto 48px;
     }
 
     .involve-header .section-label {
@@ -1960,7 +1964,7 @@
     /* Studio Section */
     .studio-header {
       text-align: center;
-      margin: 0 auto 80px;
+      margin: 0 auto 48px;
     }
 
     .studio-header .section-label {
@@ -2210,7 +2214,7 @@
 
     .newsletter {
       max-width: 450px;
-      margin: 0 auto 80px;
+      margin: 0 auto 48px;
     }
 
     .newsletter-label {
@@ -2729,7 +2733,7 @@
       <div class="section-inner">
         <div class="about-header reveal">
           <p class="section-label">Who We Are</p>
-          <h2 class="section-title">An interdisciplinary research lab studying how environments shape human cognition and designing ones that strengthen it</h2>
+          <h2 class="section-title">We study how environments shape people. We build better ones.</h2>
         </div>
 
         <div class="about-grid">
@@ -2752,7 +2756,7 @@
                 </svg>
               </div>
               <h4>The Model</h4>
-              <p>The lab enters a discipline, seeds a research question, recruits a specialist to carry it forward, and moves to the next. Each cycle compounds. The discipline is the domain. The specialist owns it.</p>
+              <p>The lab seeds research questions across disciplines and recruits specialists to own them. Each person drives their domain forward. Ownership compounds. There are no fixed criteria for advancement, only demonstrated ownership.</p>
             </div>
 
             <div class="about-card">
