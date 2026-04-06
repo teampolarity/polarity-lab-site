@@ -1,5 +1,14 @@
 [
   {
+    "id": "cfe5c3c",
+    "date": "2026-04-06",
+    "title": "Simplify hero to direct label + one-line explainer",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "7e214cb",
     "date": "2026-04-06",
     "title": "Feature Integrity Delta as anchor R&D product above the grid",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "677ad2a",
-    "date": "2026-03-22",
-    "title": "Fix OG image URLs to use www subdomain",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
