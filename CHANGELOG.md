@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Restructure to diagnostic→environment research case format (`8c01a2f`)
+
+### Apr 6, 2026
+
 - Reframe research section around the structural problem and diagnostic primacy (`3ab6eff`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 23, 2026
 
 - Update Theo's title to Brown Medical School in science section (`a8792cf`)
-
-### Mar 22, 2026
-
-- PolarityGPS globe: orbits wrap around with depth effect (`cc0480c`)
 
 
 ---

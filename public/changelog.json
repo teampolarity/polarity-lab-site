@@ -1,5 +1,14 @@
 [
   {
+    "id": "8c01a2f",
+    "date": "2026-04-06",
+    "title": "Restructure to diagnostic→environment research case format",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "3ab6eff",
     "date": "2026-04-06",
     "title": "Reframe research section around the structural problem and diagnostic primacy",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "cc0480c",
-    "date": "2026-03-22",
-    "title": "PolarityGPS globe: orbits wrap around with depth effect",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
