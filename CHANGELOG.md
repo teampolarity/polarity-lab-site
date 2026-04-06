@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Hero: unify icons+headline into one composition, strip clutter (`3cca828`)
+
+### Apr 6, 2026
+
 - Fix hero layout: prevent text/icon overlap, tighten vertical rhythm (`c3f52a0`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Change email to team@polarity-lab.com (`af9d63c`)
-
-### Mar 22, 2026
-
-- Fully adaptive: all sizing uses clamp() for any screen size (`431b4b6`)
 
 
 ---

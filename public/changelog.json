@@ -1,5 +1,14 @@
 [
   {
+    "id": "3cca828",
+    "date": "2026-04-06",
+    "title": "Hero: unify icons+headline into one composition, strip clutter",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "c3f52a0",
     "date": "2026-04-06",
     "title": "Fix hero layout: prevent text/icon overlap, tighten vertical rhythm",
@@ -165,15 +174,6 @@
     "id": "af9d63c",
     "date": "2026-03-22",
     "title": "Change email to team@polarity-lab.com",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "431b4b6",
-    "date": "2026-03-22",
-    "title": "Fully adaptive: all sizing uses clamp() for any screen size",
     "category": {
       "label": "Update",
       "color": "text-secondary"
