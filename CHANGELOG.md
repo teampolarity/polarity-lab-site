@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 6, 2026
 
+- Fix hero layout: prevent text/icon overlap, tighten vertical rhythm (`c3f52a0`)
+
+### Apr 6, 2026
+
 - Hero: swap Phresh for AVDP — show only live/in-production products (`fe016b2`)
 
 ### Apr 6, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Mar 22, 2026
 
 - Fully adaptive: all sizing uses clamp() for any screen size (`431b4b6`)
-
-### Mar 22, 2026
-
-- Full mobile optimization for phones (375px+) (`289fc77`)
 
 
 ---
