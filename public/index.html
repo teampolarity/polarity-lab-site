@@ -1664,14 +1664,163 @@
       justify-content: flex-start;
     }
 
+    /* Featured diagnostic card */
+    .product-featured {
+      max-width: 1200px;
+      margin: 0 0 28px;
+      border: 1px solid rgba(78, 205, 196, 0.25);
+      border-radius: 16px;
+      background: var(--void-surface);
+      padding: 40px 44px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: start;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-featured::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--teal), transparent);
+    }
+
+    .product-featured-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .product-featured-status {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: var(--teal-subtle);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .product-featured-type {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-ghost);
+    }
+
+    .product-featured-name {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+      letter-spacing: -0.02em;
+    }
+
+    .product-featured-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      max-width: 580px;
+    }
+
+    .product-featured-desc p {
+      margin-bottom: 12px;
+    }
+
+    .product-featured-desc p:last-child {
+      margin-bottom: 0;
+    }
+
+    .product-featured-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 24px;
+      padding-top: 4px;
+      min-width: 180px;
+    }
+
+    .product-featured-buyers {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .product-featured-buyers-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-ghost);
+      margin-bottom: 4px;
+    }
+
+    .product-featured-buyer {
+      font-size: 12px;
+      color: var(--text-secondary);
+      background: var(--void-elevated);
+      border: 1px solid var(--border-ghost);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    .product-featured-cta {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .product-featured-cta:hover {
+      gap: 10px;
+    }
+
+    .products-subsection-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-ghost);
+      margin-bottom: 16px;
+      max-width: 1200px;
+    }
+
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 2px;
       max-width: 1200px;
       border: 1px solid var(--border-ghost);
       border-radius: 16px;
       overflow: hidden;
+    }
+
+    @media (max-width: 900px) {
+      .product-featured {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 28px 24px;
+      }
+      .product-featured-aside {
+        align-items: flex-start;
+      }
+      .product-featured-buyers {
+        align-items: flex-start;
+      }
     }
 
     .product-card {
@@ -1688,12 +1837,12 @@
       gap: 0;
     }
 
-    .product-card:nth-child(3),
-    .product-card:nth-child(6) {
+    /* 4 cards in a single row — last card, no right border; all cards, no bottom border */
+    .product-card:last-child {
       border-right: none;
     }
 
-    .product-card:nth-last-child(-n+3) {
+    .product-card {
       border-bottom: none;
     }
 
@@ -1788,11 +1937,11 @@
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
       }
-      .product-card:nth-child(3) { border-right: 1px solid var(--border-ghost); }
-      .product-card:nth-child(2),
-      .product-card:nth-child(4) { border-right: none; }
-      .product-card:nth-last-child(-n+3) { border-bottom: 1px solid var(--border-ghost); }
+      .product-card:nth-child(even) { border-right: none; }
+      .product-card:nth-child(odd) { border-right: 1px solid var(--border-ghost); }
       .product-card:nth-last-child(-n+2) { border-bottom: none; }
+      .product-card:nth-child(1),
+      .product-card:nth-child(2) { border-bottom: 1px solid var(--border-ghost); }
     }
 
     @media (max-width: 600px) {
@@ -2972,10 +3121,36 @@
       <div class="section-inner">
         <div class="products-header reveal">
           <p class="section-label">Lab Projects</p>
-          <h2 class="section-title">What We've Built</h2>
-          <p style="font-size:15px; color:var(--text-tertiary); margin-top:12px; max-width:560px; line-height:1.7;">Some are live. Some are still being built. Each one is either a tool for measuring harm, or an experience designed to reverse it.</p>
+          <h2 class="section-title">One diagnostic. Several environments.</h2>
+          <p style="font-size:15px; color:var(--text-tertiary); margin-top:12px; max-width:580px; line-height:1.7;">Integrity Delta is the anchor R&amp;D investment. The products below are the environments — each one proving the lab's thesis in a different context.</p>
         </div>
 
+        <!-- FEATURED: Integrity Delta -->
+        <div class="product-featured reveal">
+          <div class="product-featured-main">
+            <div class="product-featured-eyebrow">
+              <span class="product-featured-status">Core R&amp;D</span>
+              <span class="product-featured-type">Diagnostic Instrument</span>
+            </div>
+            <div class="product-featured-name">Integrity Delta</div>
+            <div class="product-featured-desc">
+              <p>There is currently no independent, standard way to measure how honest an AI is. The companies that build these systems define and measure their own safety metrics. No outside accountability. No reproducible benchmark.</p>
+              <p>Integrity Delta is that benchmark. A scoring instrument any researcher, enterprise, or regulator can run against any AI system to produce a consistent, auditable measurement of how much it is steering users toward what they want to hear rather than what is actually true. The same kind of standardized accountability that already exists for financial audits, drug trials, and food safety — applied to AI.</p>
+            </div>
+          </div>
+          <div class="product-featured-aside">
+            <div class="product-featured-buyers">
+              <div class="product-featured-buyers-label">Who uses it</div>
+              <span class="product-featured-buyer">Research Institutions</span>
+              <span class="product-featured-buyer">Enterprise</span>
+              <span class="product-featured-buyer">Government</span>
+            </div>
+            <a href="mailto:team@polarity-lab.com?subject=Integrity%20Delta%20Brief" class="product-featured-cta">Request the brief →</a>
+          </div>
+        </div>
+
+        <!-- Supporting environments -->
+        <p class="products-subsection-label reveal">Therapeutic Environments</p>
         <div class="products-grid stagger">
 
           <a href="https://polaritygps.com" target="_blank" class="product-card">
@@ -3010,7 +3185,7 @@
               <span class="product-status product-status--production">In Production</span>
             </div>
             <div class="product-name">AVDP</div>
-            <div class="product-desc">A Very Distant Perspective. A documentary series of real, unscripted conversations about being human. The kind that make you want to pick up the phone and have one yourself.</div>
+            <div class="product-desc">A documentary series of real, unscripted conversations about being human. The kind that make you want to pick up the phone and have one yourself.</div>
             <div class="product-footer">
               <span class="product-domain">Film</span>
             </div>
@@ -3021,20 +3196,8 @@
               <div></div>
               <span class="product-status product-status--rd">In R&amp;D</span>
             </div>
-            <div class="product-name">Integrity Delta</div>
-            <div class="product-desc">A tool that tracks whether an AI is telling you what you want to hear instead of what's actually true. The problem is widespread. There's no good way to measure it yet. We're building one.</div>
-            <div class="product-footer">
-              <span class="product-domain">Diagnostics</span>
-            </div>
-          </div>
-
-          <div class="product-card">
-            <div class="product-card-top">
-              <div></div>
-              <span class="product-status product-status--rd">In R&amp;D</span>
-            </div>
             <div class="product-name">Phresh</div>
-            <div class="product-desc">AI-powered personal styling and fashion discovery. An environment that reconnects people to their own taste, not the feed's.</div>
+            <div class="product-desc">Personal styling and fashion discovery built on your actual taste, not the feed's.</div>
             <div class="product-footer">
               <span class="product-domain">Technology</span>
             </div>
