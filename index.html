@@ -1120,10 +1120,10 @@
 
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(36px, 5.2vw, 72px);
+      font-size: clamp(28px, 3.2vw, 48px);
       font-weight: 700;
-      line-height: 1.08;
-      letter-spacing: -0.03em;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
       margin-bottom: 20px;
       color: var(--text-pure);
     }
@@ -1458,7 +1458,7 @@
       color: var(--text-secondary);
       line-height: 1.7;
       max-width: 560px;
-      margin: 16px auto 0;
+      margin: 16px 0 0;
     }
 
     .about-narrative {
@@ -3514,10 +3514,10 @@
 
     /* --- TYPOGRAPHY SCALE --- */
     .section-title {
-      font-size: clamp(36px, 5.2vw, 72px);
+      font-size: clamp(28px, 3.2vw, 48px);
       font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.08;
+      letter-spacing: -0.025em;
+      line-height: 1.12;
       margin-bottom: 20px;
     }
 
@@ -4717,13 +4717,14 @@
         // === ZONE: Hero & Icons (0-1.5vh) ===
         const iconExitProgress = this.easeOutCubic(this.zoneProgress(0, vh * 1.0));
 
-        // Hero text - positioned at 68% from top
+        // Hero text - centered, fades and lifts on scroll
         if (this.textHero) {
           const heroProgress = this.zoneProgress(0, vh * 0.6);
           const heroOpacity = 1 - this.easeOutCubic(heroProgress);
           const heroY = heroProgress * -30;
           this.textHero.style.opacity = heroOpacity;
-          this.textHero.style.transform = `translateX(-50%) translateY(${heroY}px)`;
+          // Preserve the CSS -50% Y centering while animating scroll offset
+          this.textHero.style.transform = `translateX(-50%) translateY(calc(-50% + ${heroY}px))`;
           this.textHero.classList.toggle('visible', heroOpacity > 0.1);
         }
 
