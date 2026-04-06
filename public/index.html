@@ -3819,6 +3819,121 @@
       border-top-color: rgba(255, 255, 255, 0.04);
     }
 
+    /* --- WORK SECTION: flatten multi-color elements --- */
+    .rc-type--environment {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Hypothesis block: remove coral tint */
+    .rc-hypothesis {
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 0;
+      border-color: rgba(255, 255, 255, 0.06);
+    }
+    .rc-hypothesis-title {
+      color: rgba(255, 255, 255, 0.35);
+      letter-spacing: 0.1em;
+      font-size: 10px;
+    }
+
+    /* Data rows box: flatten */
+    .rc-data-rows {
+      border-radius: 0;
+      border-color: rgba(255, 255, 255, 0.06);
+      background: transparent;
+    }
+
+    /* CTA button: ghost style instead of solid teal fill */
+    .rc-cta {
+      background: transparent;
+      color: var(--teal);
+      border: 1px solid rgba(78, 205, 196, 0.3);
+      border-radius: 0;
+    }
+    .rc-cta:hover {
+      background: rgba(78, 205, 196, 0.06);
+      border-color: rgba(78, 205, 196, 0.5);
+    }
+
+    /* CCX methodology: remove colored number badges */
+    .ccx-step:nth-child(1) .ccx-step-num,
+    .ccx-step:nth-child(2) .ccx-step-num,
+    .ccx-step:nth-child(3) .ccx-step-num,
+    .ccx-step:nth-child(4) .ccx-step-num {
+      color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.08);
+      background: transparent;
+    }
+
+    /* CCX methodology: remove coral step tag */
+    .ccx-step-tag {
+      display: none;
+    }
+
+    /* CCX methodology: flatten cards to separator style */
+    .ccx-step {
+      background: transparent;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 0;
+      padding: 36px 0;
+    }
+    .ccx-step:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .ccx-step--primary {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.05);
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+    }
+    .ccx-step:hover {
+      transform: none;
+      background: rgba(255, 255, 255, 0.01);
+    }
+
+    /* --- TEAM SECTION: flatten to separator rows --- */
+    .team-grid {
+      margin: 0;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .team-card {
+      background: transparent;
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 0;
+      padding: 52px 0;
+    }
+    .team-card:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .team-card:hover {
+      background: rgba(255, 255, 255, 0.01);
+      border-color: rgba(255, 255, 255, 0.06);
+      transform: none;
+    }
+    /* All role colors unified to teal */
+    .team-card:nth-child(1) .team-card-role,
+    .team-card:nth-child(2) .team-card-role,
+    .team-card:nth-child(3) .team-card-role,
+    .team-card:nth-child(4) .team-card-role {
+      color: var(--teal);
+    }
+    /* Flatten team location pill */
+    .team-location {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      color: rgba(255, 255, 255, 0.25);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+    }
+
     /* --- MOBILE OVERRIDES --- */
     @media (max-width: 900px) {
       .section-inner { padding: 80px 28px; }
