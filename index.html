@@ -1045,9 +1045,9 @@
 
     .section-title {
       font-family: var(--font-display);
-      font-size: clamp(32px, 4vw, 48px);
+      font-size: clamp(24px, 3vw, 38px);
       font-weight: 600;
-      line-height: 1.15;
+      line-height: 1.2;
       letter-spacing: -0.02em;
       margin-bottom: 24px;
       color: var(--text-pure);
@@ -1500,119 +1500,129 @@
       }
     }
 
-    /* Products Section */
+    /* Lab Projects Section */
     .products-header {
-      text-align: center;
-      margin: 0 auto 80px;
-      max-width: 700px;
+      max-width: 900px;
+      margin: 0 0 60px;
     }
 
     .products-header .section-label {
-      justify-content: center;
+      justify-content: flex-start;
     }
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      max-width: 1300px;
-      margin: 0 auto;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      max-width: 1200px;
+      border: 1px solid var(--border-ghost);
+      border-radius: 16px;
+      overflow: hidden;
     }
 
     .product-card {
       background: var(--void-surface);
-      border: 1px solid var(--border-ghost);
-      border-radius: 20px;
-      padding: 36px;
+      border: none;
+      border-right: 1px solid var(--border-ghost);
+      border-bottom: 1px solid var(--border-ghost);
+      padding: 32px 28px;
       text-decoration: none;
       color: var(--text-primary);
-      transition: all 0.6s var(--ease-out-expo);
-      position: relative;
-      overflow: hidden;
+      transition: background 0.3s ease;
       display: flex;
       flex-direction: column;
+      gap: 0;
     }
 
-    .product-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, var(--teal-glow), transparent);
-      opacity: 0;
-      transition: opacity 0.6s ease;
+    .product-card:nth-child(3),
+    .product-card:nth-child(6) {
+      border-right: none;
     }
 
-    .product-card:nth-child(2)::before { background: linear-gradient(135deg, var(--purple-glow), transparent); }
-    .product-card:nth-child(3)::before { background: linear-gradient(135deg, var(--red-glow), transparent); }
-    .product-card:nth-child(4)::before { background: linear-gradient(135deg, var(--coral-glow), transparent); }
+    .product-card:nth-last-child(-n+3) {
+      border-bottom: none;
+    }
 
     .product-card:hover {
-      transform: translateY(-12px) scale(1.02);
-      border-color: var(--border-medium);
+      background: var(--void-elevated);
     }
 
-    .product-card:hover::before {
-      opacity: 0.2;
-    }
-
-    .product-icon {
-      width: 72px;
-      height: 72px;
-      border-radius: 20px;
+    .product-card-top {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      position: relative;
-      z-index: 1;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
     }
 
-    .product-card:nth-child(1) .product-icon { background: var(--teal-subtle); }
-    .product-card:nth-child(2) .product-icon { background: rgba(187, 143, 206, 0.15); }
-    .product-card:nth-child(3) .product-icon { background: var(--red-subtle); }
-    .product-card:nth-child(4) .product-icon { background: rgba(255, 138, 101, 0.15); }
-
-    .product-icon svg,
-    .product-icon img {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
+    .product-status {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
     }
 
-    .product-icon img {
-      border-radius: 50%;
+    .product-status--live {
+      color: var(--teal);
+      background: var(--teal-subtle);
+      border: 1px solid rgba(78, 205, 196, 0.2);
+    }
+
+    .product-status--production {
+      color: var(--coral);
+      background: rgba(255, 138, 101, 0.1);
+      border: 1px solid rgba(255, 138, 101, 0.2);
+    }
+
+    .product-status--rd {
+      color: var(--text-ghost);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-ghost);
     }
 
     .product-name {
       font-family: var(--font-display);
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
       margin-bottom: 10px;
-      position: relative;
-      z-index: 1;
       color: var(--text-pure);
+      line-height: 1.2;
     }
 
     .product-desc {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-tertiary);
-      position: relative;
-      z-index: 1;
       margin-bottom: 20px;
-      line-height: 1.6;
+      line-height: 1.65;
       flex: 1;
+    }
+
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+
+    .product-domain {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-ghost);
     }
 
     .product-arrow {
       font-family: var(--font-display);
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 600;
       color: var(--teal);
-      position: relative;
-      z-index: 1;
       opacity: 0;
-      transform: translateX(-10px);
-      transition: all 0.4s var(--ease-out-expo);
+      transform: translateX(-6px);
+      transition: all 0.3s var(--ease-out-expo);
     }
 
     .product-card:hover .product-arrow {
@@ -1620,18 +1630,23 @@
       transform: translateX(0);
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1000px) {
       .products-grid {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 800px;
       }
+      .product-card:nth-child(3) { border-right: 1px solid var(--border-ghost); }
+      .product-card:nth-child(2),
+      .product-card:nth-child(4) { border-right: none; }
+      .product-card:nth-last-child(-n+3) { border-bottom: 1px solid var(--border-ghost); }
+      .product-card:nth-last-child(-n+2) { border-bottom: none; }
     }
 
     @media (max-width: 600px) {
       .products-grid {
         grid-template-columns: 1fr;
-        max-width: 450px;
       }
+      .product-card { border-right: none; border-bottom: 1px solid var(--border-ghost); }
+      .product-card:last-child { border-bottom: none; }
     }
 
     /* Safety Section */
@@ -2643,7 +2658,6 @@
       <li><a href="#about" class="nav-link">About</a></li>
       <li><a href="#research" class="nav-link">Research</a></li>
       <li><a href="#products" class="nav-link">Products</a></li>
-      <li><a href="#studio" class="nav-link">Studio</a></li>
       <li><a href="#team" class="nav-link">Team</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
     </ul>
@@ -2731,104 +2745,43 @@
         <span class="hero-product-label">PolarityGPS</span>
       </a>
 
-      <!-- Pulse -->
-      <a href="https://onpulse.tv" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
+      <!-- Phresh -->
+      <a href="https://phresh.fit" target="_blank" class="hero-product hero-product--avdp" id="icon-avdp">
         <div class="hero-product-icon">
-          <svg viewBox="0 0 200 200">
+          <svg viewBox="0 0 200 200" fill="none">
             <defs>
-              <radialGradient id="pulseBaseGrad" cx="35%" cy="30%" r="70%">
-                <stop offset="0%" stop-color="#2a1a0a"/>
-                <stop offset="60%" stop-color="#1a0f05"/>
-                <stop offset="100%" stop-color="#0d0804"/>
+              <radialGradient id="phreshAmbient" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#BB8FCE" stop-opacity="0.2"/>
+                <stop offset="100%" stop-color="#BB8FCE" stop-opacity="0"/>
               </radialGradient>
-              <radialGradient id="pulseAmbient" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stop-color="#FF6B00" stop-opacity="0.15"/>
-                <stop offset="100%" stop-color="#FF6B00" stop-opacity="0"/>
-              </radialGradient>
-              <filter id="pulseLineGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="3" result="blur"/>
-                <feMerge>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="blur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-              <filter id="pulseRingGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <filter id="phreshGlow" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur stdDeviation="4" result="blur"/>
                 <feMerge>
                   <feMergeNode in="blur"/>
+                  <feMergeNode in="blur"/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
               </filter>
-              <clipPath id="pulseClip">
-                <circle cx="100" cy="100" r="82"/>
-              </clipPath>
-              <!-- TV static noise filter -->
-              <filter id="pulseStatic" x="0%" y="0%" width="100%" height="100%">
-                <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" seed="2" result="noise"/>
-                <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
-                <feComponentTransfer in="grayNoise" result="staticNoise">
-                  <feFuncA type="linear" slope="0.12" intercept="0"/>
-                </feComponentTransfer>
-                <feBlend in="SourceGraphic" in2="staticNoise" mode="screen"/>
-              </filter>
-              <!-- Scanline pattern -->
-              <pattern id="pulseScanlines" width="4" height="4" patternUnits="userSpaceOnUse">
-                <rect width="4" height="2" fill="white" opacity="0.015"/>
-                <rect y="2" width="4" height="2" fill="black" opacity="0.03"/>
-              </pattern>
             </defs>
-            <!-- Ambient glow -->
-            <circle cx="100" cy="100" r="95" fill="url(#pulseAmbient)"/>
-            <!-- Outer ring -->
-            <circle cx="100" cy="100" r="88" fill="none" stroke="#FF6B00" stroke-width="1.5" opacity="0.3" filter="url(#pulseRingGlow)"/>
-            <!-- Main disc -->
-            <circle cx="100" cy="100" r="82" fill="url(#pulseBaseGrad)"/>
-            <!-- TV static overlay + scanlines (clipped to disc) -->
-            <g clip-path="url(#pulseClip)">
-              <circle cx="100" cy="100" r="82" filter="url(#pulseStatic)" fill="transparent"/>
-              <circle cx="100" cy="100" r="82" fill="url(#pulseScanlines)"/>
+            <circle cx="100" cy="100" r="90" fill="url(#phreshAmbient)"/>
+            <circle cx="100" cy="100" r="82" fill="none" stroke="#BB8FCE" stroke-width="1.5" opacity="0.3"/>
+            <!-- Hanger -->
+            <path d="M100 52 C100 52 100 44 108 44 C116 44 116 52 116 52" stroke="#BB8FCE" stroke-width="3" stroke-linecap="round" fill="none" filter="url(#phreshGlow)" opacity="0.9"/>
+            <circle cx="100" cy="52" r="3" fill="#BB8FCE" filter="url(#phreshGlow)"/>
+            <!-- Garment body -->
+            <path d="M72 68 L60 84 L74 90 L74 136 L126 136 L126 90 L140 84 L128 68 C128 68 118 76 100 76 C82 76 72 68 72 68Z" stroke="#BB8FCE" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#phreshGlow)" opacity="0.85"/>
+            <!-- Sparkle accents -->
+            <g fill="#BB8FCE" filter="url(#phreshGlow)" opacity="0.7">
+              <circle cx="152" cy="68" r="2.5"/>
+              <circle cx="148" cy="58" r="1.5"/>
+              <circle cx="158" cy="62" r="1.5"/>
+              <circle cx="52" cy="120" r="2"/>
+              <circle cx="47" cy="113" r="1.5"/>
+              <circle cx="55" cy="112" r="1"/>
             </g>
-            <!-- Inner subtle ring -->
-            <circle cx="100" cy="100" r="82" fill="none" stroke="#FF6B00" stroke-width="0.5" opacity="0.2"/>
-            <!-- Broadcast globe wireframe (clipped to disc) -->
-            <g clip-path="url(#pulseClip)" stroke="#FF6B00" fill="none" opacity="0.1">
-              <!-- Concentric broadcast arcs -->
-              <circle cx="100" cy="100" r="30" stroke-width="0.6"/>
-              <circle cx="100" cy="100" r="50" stroke-width="0.5"/>
-              <circle cx="100" cy="100" r="70" stroke-width="0.4"/>
-              <!-- Meridian lines (vertical curves) -->
-              <ellipse cx="100" cy="100" rx="20" ry="75" stroke-width="0.4"/>
-              <ellipse cx="100" cy="100" rx="50" ry="75" stroke-width="0.3"/>
-              <!-- Equator + latitude lines -->
-              <ellipse cx="100" cy="100" rx="75" ry="12" stroke-width="0.4"/>
-              <ellipse cx="100" cy="80" rx="65" ry="8" stroke-width="0.3"/>
-              <ellipse cx="100" cy="120" rx="65" ry="8" stroke-width="0.3"/>
-            </g>
-            <!-- Pulse line (clipped to circle) -->
-            <g clip-path="url(#pulseClip)">
-              <!-- Faint horizontal scanline bands -->
-              <line x1="20" y1="65" x2="180" y2="65" stroke="#FF6B00" stroke-width="0.2" opacity="0.06"/>
-              <line x1="20" y1="80" x2="180" y2="80" stroke="#FF6B00" stroke-width="0.3" opacity="0.08"/>
-              <line x1="20" y1="100" x2="180" y2="100" stroke="#FF6B00" stroke-width="0.15" opacity="0.04"/>
-              <line x1="20" y1="120" x2="180" y2="120" stroke="#FF6B00" stroke-width="0.3" opacity="0.08"/>
-              <line x1="20" y1="135" x2="180" y2="135" stroke="#FF6B00" stroke-width="0.2" opacity="0.06"/>
-              <!-- Main pulse line -->
-              <polyline
-                points="20,100 55,100 68,60 82,140 96,75 110,125 124,100 180,100"
-                stroke="#FF6B00"
-                stroke-width="4"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                fill="none"
-                filter="url(#pulseLineGlow)"
-              />
-            </g>
-            <!-- Glossy highlight -->
-            <ellipse cx="80" cy="72" rx="40" ry="25" fill="white" opacity="0.04"/>
           </svg>
         </div>
-        <span class="hero-product-label">Pulse</span>
+        <span class="hero-product-label">Phresh</span>
       </a>
     </div>
 
@@ -2978,96 +2931,79 @@
       </div>
     </section>
 
-    <!-- PRODUCTS SECTION -->
+    <!-- LAB PROJECTS SECTION -->
     <section class="spatial-section products" id="products">
       <div class="section-inner">
         <div class="products-header reveal">
-          <p class="section-label">What We Build</p>
-          <h2 class="section-title">Each product is a therapeutic environment or a diagnostic instrument</h2>
+          <p class="section-label">Lab Projects</p>
+          <h2 class="section-title">Environments, instruments, and diagnostics</h2>
+          <p style="font-size:15px; color:var(--text-tertiary); margin-top:12px; max-width:560px; line-height:1.7;">Each project is either a therapeutic environment or a diagnostic instrument. Some are live. Some are in production. Some are still becoming.</p>
         </div>
 
         <div class="products-grid stagger">
-          <div class="product-card" style="cursor: default;">
-            <div class="product-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
-                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-              </svg>
-            </div>
-            <div class="product-name">Integrity Delta</div>
-            <div class="product-desc">A scoring instrument measuring AI honesty and sycophancy. How truthful is the AI system you use every day? We built a way to measure it.</div>
-            <span class="product-arrow">In R&D</span>
-          </div>
 
           <a href="https://polaritygps.com" target="_blank" class="product-card">
-            <div class="product-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="2">
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M12 2v4m0 12v4M2 12h4m12 0h4"/>
-              </svg>
+            <div class="product-card-top">
+              <div></div>
+              <span class="product-status product-status--live">Live</span>
             </div>
             <div class="product-name">PolarityGPS</div>
-            <div class="product-desc">A cultural discovery platform connecting people to places, music, and experiences that match who they actually are. Not what the algorithm thinks you should want.</div>
-            <span class="product-arrow">Explore →</span>
+            <div class="product-desc">Cultural discovery platform. Connects people to places, music, and experiences that match who they actually are, not what an algorithm assumes.</div>
+            <div class="product-footer">
+              <span class="product-domain">Technology</span>
+              <span class="product-arrow">Explore →</span>
+            </div>
           </a>
 
           <a href="https://wax-feed.com" target="_blank" class="product-card">
-            <div class="product-icon">
-              <img src="waxfeed_disc.svg" alt="WAXFEED">
+            <div class="product-card-top">
+              <div></div>
+              <span class="product-status product-status--live">Live</span>
             </div>
-            <div class="product-name" style="text-transform: uppercase;">WAXFEED</div>
-            <div class="product-desc">A music and culture discovery platform for DJs and deep listeners. Built on taste, not trending. Find what you actually love.</div>
-            <span class="product-arrow">Explore →</span>
+            <div class="product-name">WAXFEED</div>
+            <div class="product-desc">Music and culture discovery for DJs and deep listeners. Built on taste, not trending. An environment for people who actually listen.</div>
+            <div class="product-footer">
+              <span class="product-domain">Music</span>
+              <span class="product-arrow">Explore →</span>
+            </div>
           </a>
 
-          <div class="product-card" style="cursor: default;">
-            <div class="product-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="2">
-                <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
-              </svg>
+          <div class="product-card">
+            <div class="product-card-top">
+              <div></div>
+              <span class="product-status product-status--production">In Production</span>
             </div>
             <div class="product-name">AVDP</div>
-            <div class="product-desc">An experimental interview series exploring what it means to be human right now. Film as environmental therapeutic. Real conversations, unscripted.</div>
-            <span class="product-arrow">In Production</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- STUDIO SECTION -->
-    <section class="spatial-section studio" id="studio">
-      <div class="section-inner">
-        <div class="studio-header reveal">
-          <p class="section-label">The Studio</p>
-          <h2 class="section-title" style="text-transform: uppercase;">Pulse</h2>
-          <p class="studio-subtitle">Keep your hand on the pulse. A digital broadcasting network by Polarity Lab.</p>
-        </div>
-
-        <div class="studio-grid stagger">
-          <div class="studio-card">
-            <div class="studio-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#FFA07A" stroke-width="1.5">
-                <path d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"/>
-              </svg>
+            <div class="product-desc">A Very Distant Perspective. An interview series studying human connection through real, unscripted conversation. Film as environmental therapeutic.</div>
+            <div class="product-footer">
+              <span class="product-domain">Film</span>
             </div>
-            <h3>A Very Distant Perspective</h3>
-            <p>Real conversations between real people about what it means to be a person right now. The kind of dialogue that helps us understand how people actually communicate when they care.</p>
-            <a href="https://www.instagram.com/averydistantperspective" target="_blank">Watch on Instagram</a>
           </div>
 
-          <a href="https://onpulse.tv" target="_blank" class="studio-card">
-            <div class="studio-card-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="#4ECDC4" stroke-width="1.5">
-                <path d="M9.348 14.651a3.75 3.75 0 010-5.303m5.304 0a3.75 3.75 0 010 5.303m-7.425 2.122a6.75 6.75 0 010-9.546m9.546 0a6.75 6.75 0 010 9.546M5.106 18.894c-3.808-3.808-3.808-9.98 0-13.789m13.788 0c3.808 3.808 3.808 9.981 0 13.79M12 12h.008v.007H12V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
-              </svg>
+          <div class="product-card">
+            <div class="product-card-top">
+              <div></div>
+              <span class="product-status product-status--rd">In R&amp;D</span>
             </div>
-            <h3>Broadcast</h3>
-            <p>Live content delivery across WBRU and partner channels. Music, conversation, and culture.</p>
-            <span class="studio-link">Visit onpulse.tv</span>
-          </a>
-        </div>
+            <div class="product-name">Integrity Delta</div>
+            <div class="product-desc">A scoring instrument measuring AI honesty and sycophancy drift over time. A diagnostic for the systems we rely on.</div>
+            <div class="product-footer">
+              <span class="product-domain">Diagnostics</span>
+            </div>
+          </div>
 
-        <div class="studio-cta reveal">
-          <a href="https://onpulse.tv" target="_blank">Explore Pulse</a>
+          <div class="product-card">
+            <div class="product-card-top">
+              <div></div>
+              <span class="product-status product-status--rd">In R&amp;D</span>
+            </div>
+            <div class="product-name">Phresh</div>
+            <div class="product-desc">AI-powered personal styling and fashion discovery. An environment that reconnects people to their own taste, not the feed's.</div>
+            <div class="product-footer">
+              <span class="product-domain">Technology</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -3626,7 +3562,7 @@
     let lastScrollY = 0;
 
     // Sections for scroll spy
-    const sections = ['about', 'research', 'products', 'studio', 'team', 'safety', 'contact'];
+    const sections = ['about', 'research', 'products', 'team', 'safety', 'contact'];
     
     function updateActiveNav() {
       const scrollY = window.scrollY + 150; // Offset for nav height
