@@ -1,5 +1,14 @@
 [
   {
+    "id": "127e7ad",
+    "date": "2026-04-07",
+    "title": "avdp: add episode 1 embed, visual credits for Caroline Fenton and Martine Niwe",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "fe1f626",
     "date": "2026-04-07",
     "title": "people: add Chris Zou as Innovation Investigator in Residence (Film Therapeutics)",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "e346f92",
-    "date": "2026-04-06",
-    "title": "Fix about section alignment: narrative left-aligned to match header",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
