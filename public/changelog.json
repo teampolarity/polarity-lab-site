@@ -1,5 +1,95 @@
 [
   {
+    "id": "9339632",
+    "date": "2026-04-07",
+    "title": "fix: replace em dashes with parentheses/colon in avdp body text",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "c6d61ca",
+    "date": "2026-04-07",
+    "title": "feat: add cleanUrls to vercel config",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "b0f80d2",
+    "date": "2026-04-07",
+    "title": "fix: remove em dash from integrity-delta sublabel",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "6ffe694",
+    "date": "2026-04-07",
+    "title": "feat: add Integrity Delta research sub-page",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "8e9819b",
+    "date": "2026-04-07",
+    "title": "feat: add AVDP film therapeutics research sub-page",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "aaf317e",
+    "date": "2026-04-07",
+    "title": "feat: add nonprofit research sub-page",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "62e31c3",
+    "date": "2026-04-07",
+    "title": "feat: rewrite homepage with research-first layout",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
+    "id": "377f05b",
+    "date": "2026-04-07",
+    "title": "feat: create research sub-page directory structure",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
+    "id": "f52fbdb",
+    "date": "2026-04-07",
+    "title": "Add site reframe implementation plan",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "7985c9f",
+    "date": "2026-04-07",
+    "title": "Add site reframe design doc: ARC-model research-first architecture",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "23a19d6",
     "date": "2026-04-06",
     "title": "Remove purple from hero gradient, enforce teal-only accent",
@@ -87,96 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "778e2fc",
-    "date": "2026-04-06",
-    "title": "Redesign to SpaceX-level professional aesthetic",
-    "category": {
-      "label": "Design",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "cd4c040",
-    "date": "2026-04-06",
-    "title": "Incorporate pitch deck research content into site",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "145cd48",
-    "date": "2026-04-06",
-    "title": "Sharpen taxonomy: instruments vs observations vs environments",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "2796a85",
-    "date": "2026-04-06",
-    "title": "Fix hero layout and WebGL performance",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "656532d",
-    "date": "2026-04-06",
-    "title": "Rename PainPoints → Proximity Index, add Case 5 Style Drift → Phresh",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "34408e8",
-    "date": "2026-04-06",
-    "title": "Fix hero vertical fit and eyebrow copy",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "9e9c2e6",
-    "date": "2026-04-06",
-    "title": "Rework hero layout for icon-free design",
-    "category": {
-      "label": "Design",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "8c01a2f",
-    "date": "2026-04-06",
-    "title": "Restructure to diagnostic→environment research case format",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "3ab6eff",
-    "date": "2026-04-06",
-    "title": "Reframe research section around the structural problem and diagnostic primacy",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "459ef8d",
-    "date": "2026-04-06",
-    "title": "Strip to pitch-ready structure for the 14th",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

@@ -4,6 +4,46 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Apr 7, 2026
+
+- fix: replace em dashes with parentheses/colon in avdp body text (`9339632`)
+
+### Apr 7, 2026
+
+- feat: add cleanUrls to vercel config (`c6d61ca`)
+
+### Apr 7, 2026
+
+- fix: remove em dash from integrity-delta sublabel (`b0f80d2`)
+
+### Apr 7, 2026
+
+- feat: add Integrity Delta research sub-page (`6ffe694`)
+
+### Apr 7, 2026
+
+- feat: add AVDP film therapeutics research sub-page (`8e9819b`)
+
+### Apr 7, 2026
+
+- feat: add nonprofit research sub-page (`aaf317e`)
+
+### Apr 7, 2026
+
+- feat: rewrite homepage with research-first layout (`62e31c3`)
+
+### Apr 7, 2026
+
+- feat: create research sub-page directory structure (`377f05b`)
+
+### Apr 7, 2026
+
+- Add site reframe implementation plan (`f52fbdb`)
+
+### Apr 7, 2026
+
+- Add site reframe design doc: ARC-model research-first architecture (`7985c9f`)
+
 ### Apr 6, 2026
 
 - Remove purple from hero gradient, enforce teal-only accent (`23a19d6`)
@@ -43,46 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Fix hero title overflow — 9vw was way too large, back to 4.8vw/72px max (`f59ccc1`)
-
-### Apr 6, 2026
-
-- Redesign to SpaceX-level professional aesthetic (`778e2fc`)
-
-### Apr 6, 2026
-
-- Incorporate pitch deck research content into site (`cd4c040`)
-
-### Apr 6, 2026
-
-- Sharpen taxonomy: instruments vs observations vs environments (`145cd48`)
-
-### Apr 6, 2026
-
-- Fix hero layout and WebGL performance (`2796a85`)
-
-### Apr 6, 2026
-
-- Rename PainPoints → Proximity Index, add Case 5 Style Drift → Phresh (`656532d`)
-
-### Apr 6, 2026
-
-- Fix hero vertical fit and eyebrow copy (`34408e8`)
-
-### Apr 6, 2026
-
-- Rework hero layout for icon-free design (`9e9c2e6`)
-
-### Apr 6, 2026
-
-- Restructure to diagnostic→environment research case format (`8c01a2f`)
-
-### Apr 6, 2026
-
-- Reframe research section around the structural problem and diagnostic primacy (`3ab6eff`)
-
-### Apr 6, 2026
-
-- Strip to pitch-ready structure for the 14th (`459ef8d`)
 
 
 ---
