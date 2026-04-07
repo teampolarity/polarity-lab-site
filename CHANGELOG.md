@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- people: fix project connections, add brain-modeled knowledge graphs patent (`be8004d`)
+
+### Apr 7, 2026
+
 - people: write J'Juan bio with MUSEOFRI affiliation, fix field research framing (`9093da1`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - UI/UX audit fixes: typography, copy, theme toggle (`f66d559`)
-
-### Apr 6, 2026
-
-- Fix hero centering (JS overriding CSS transform), reduce title size, fix lede indent (`3a6b175`)
 
 
 ---
