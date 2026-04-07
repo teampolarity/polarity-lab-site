@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- fix: nav links grey by default, teal/green on hover (`6336e94`)
+
+### Apr 7, 2026
+
 - style: minimalist square domain tags with transparent background (`236d931`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - Add site reframe implementation plan (`f52fbdb`)
-
-### Apr 7, 2026
-
-- Add site reframe design doc: ARC-model research-first architecture (`7985c9f`)
 
 
 ---

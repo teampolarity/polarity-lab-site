@@ -1,5 +1,14 @@
 [
   {
+    "id": "6336e94",
+    "date": "2026-04-07",
+    "title": "fix: nav links grey by default, teal/green on hover",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "236d931",
     "date": "2026-04-07",
     "title": "style: minimalist square domain tags with transparent background",
@@ -165,15 +174,6 @@
     "id": "f52fbdb",
     "date": "2026-04-07",
     "title": "Add site reframe implementation plan",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "7985c9f",
-    "date": "2026-04-07",
-    "title": "Add site reframe design doc: ARC-model research-first architecture",
     "category": {
       "label": "New Feature",
       "color": "teal"
