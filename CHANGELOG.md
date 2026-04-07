@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- avdp: accuracy pass on methods, results, discussion, and funding ask (`24bea85`)
+
+### Apr 7, 2026
+
 - people: revert Nathan to brain-modeled knowledge graphs patent only (`0690956`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Remove scroll indicator line overlapping stats bar (`26a0895`)
-
-### Apr 6, 2026
-
-- Fix remaining em dashes in about narrative and all breakpoint font sizes (`d48c6f8`)
 
 
 ---
