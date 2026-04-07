@@ -1,5 +1,14 @@
 [
   {
+    "id": "d483797",
+    "date": "2026-04-07",
+    "title": "fix: reduce top padding on people section for tighter scroll target",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "41518d4",
     "date": "2026-04-07",
     "title": "nav: add People link before About",
@@ -165,15 +174,6 @@
     "id": "62e31c3",
     "date": "2026-04-07",
     "title": "feat: rewrite homepage with research-first layout",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "377f05b",
-    "date": "2026-04-07",
-    "title": "feat: create research sub-page directory structure",
     "category": {
       "label": "Update",
       "color": "text-secondary"
