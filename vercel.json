@@ -1,6 +1,7 @@
 {
   "buildCommand": "",
   "outputDirectory": "public",
+  "cleanUrls": true,
   "framework": null,
   "redirects": [
     { "source": "/polarity", "destination": "https://app.polarity-lab.com", "permanent": false },
