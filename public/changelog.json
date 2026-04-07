@@ -1,5 +1,14 @@
 [
   {
+    "id": "6a8796d",
+    "date": "2026-04-07",
+    "title": "fix: tighten about section scroll padding further",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "d58c4bb",
     "date": "2026-04-07",
     "title": "fix: reduce top padding on about section for tighter scroll target",
@@ -165,15 +174,6 @@
     "id": "8e9819b",
     "date": "2026-04-07",
     "title": "feat: add AVDP film therapeutics research sub-page",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "aaf317e",
-    "date": "2026-04-07",
-    "title": "feat: add nonprofit research sub-page",
     "category": {
       "label": "New Feature",
       "color": "teal"

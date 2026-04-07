@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- fix: tighten about section scroll padding further (`6a8796d`)
+
+### Apr 7, 2026
+
 - fix: reduce top padding on about section for tighter scroll target (`d58c4bb`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - feat: add AVDP film therapeutics research sub-page (`8e9819b`)
-
-### Apr 7, 2026
-
-- feat: add nonprofit research sub-page (`aaf317e`)
 
 
 ---
