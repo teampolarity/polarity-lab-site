@@ -1,5 +1,14 @@
 [
   {
+    "id": "fe1f626",
+    "date": "2026-04-07",
+    "title": "people: add Chris Zou as Innovation Investigator in Residence (Film Therapeutics)",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "24bea85",
     "date": "2026-04-07",
     "title": "avdp: accuracy pass on methods, results, discussion, and funding ask",
@@ -167,15 +176,6 @@
     "title": "Fix about section alignment: narrative left-aligned to match header",
     "category": {
       "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "26a0895",
-    "date": "2026-04-06",
-    "title": "Remove scroll indicator line overlapping stats bar",
-    "category": {
-      "label": "Removed",
       "color": "coral"
     }
   }
