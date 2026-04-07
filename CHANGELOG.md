@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- fix: reduce spacing between research/people and about/contact sections (`f935f4d`)
+
+### Apr 7, 2026
+
 - fix: tighten about section scroll padding further (`6a8796d`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - feat: add Integrity Delta research sub-page (`6ffe694`)
-
-### Apr 7, 2026
-
-- feat: add AVDP film therapeutics research sub-page (`8e9819b`)
 
 
 ---
