@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- people: add cognitive biometric authentication patent to all three bios (`db1464f`)
+
+### Apr 7, 2026
+
 - people: fix project connections, add brain-modeled knowledge graphs patent (`be8004d`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Fix section-title font-size in all three breakpoint rules (`c5d228e`)
-
-### Apr 6, 2026
-
-- UI/UX audit fixes: typography, copy, theme toggle (`f66d559`)
 
 
 ---
