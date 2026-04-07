@@ -1,5 +1,14 @@
 [
   {
+    "id": "41518d4",
+    "date": "2026-04-07",
+    "title": "nav: add People link before About",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "6336e94",
     "date": "2026-04-07",
     "title": "fix: nav links grey by default, teal/green on hover",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "f52fbdb",
-    "date": "2026-04-07",
-    "title": "Add site reframe implementation plan",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- nav: add People link before About (`41518d4`)
+
+### Apr 7, 2026
+
 - fix: nav links grey by default, teal/green on hover (`6336e94`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - feat: create research sub-page directory structure (`377f05b`)
-
-### Apr 7, 2026
-
-- Add site reframe implementation plan (`f52fbdb`)
 
 
 ---
