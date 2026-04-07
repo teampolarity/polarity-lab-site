@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- fix: make Where We Work domain tags visible in both light and dark mode (`8061c92`)
+
+### Apr 7, 2026
+
 - avdp: add episode 1 embed, visual credits for Caroline Fenton and Martine Niwe (`127e7ad`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Remove purple from hero gradient, enforce teal-only accent (`23a19d6`)
-
-### Apr 6, 2026
-
-- Flatten Work and Team sections to match About/Research/Contact quality (`dd081a5`)
 
 
 ---

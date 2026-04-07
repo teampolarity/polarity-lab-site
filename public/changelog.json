@@ -1,5 +1,14 @@
 [
   {
+    "id": "8061c92",
+    "date": "2026-04-07",
+    "title": "fix: make Where We Work domain tags visible in both light and dark mode",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "127e7ad",
     "date": "2026-04-07",
     "title": "avdp: add episode 1 embed, visual credits for Caroline Fenton and Martine Niwe",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Removed",
       "color": "coral"
-    }
-  },
-  {
-    "id": "dd081a5",
-    "date": "2026-04-06",
-    "title": "Flatten Work and Team sections to match About/Research/Contact quality",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
