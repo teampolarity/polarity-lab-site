@@ -3596,14 +3596,20 @@
       font-weight: 400;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.45);
+      color: rgba(150, 150, 150, 1);
     }
 
-    .nav-link:hover { color: rgba(255, 255, 255, 0.9); }
+    .nav-link:hover { color: var(--teal); }
 
     .nav-link::after {
-      background: rgba(255, 255, 255, 0.4);
+      background: var(--teal);
     }
+
+    .nav-link--dropdown {
+      color: rgba(150, 150, 150, 1) !important;
+    }
+
+    .nav-link--dropdown:hover { color: var(--teal) !important; }
 
     .nav-logo-atom {
       width: 28px;
