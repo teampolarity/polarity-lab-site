@@ -4050,25 +4050,107 @@
        PEOPLE
        ========================================== */
     .people-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px; margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media (max-width: 900px) {
+      .people-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .people-grid { grid-template-columns: 1fr; }
+    }
+    .people-iir-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-ghost);
+    }
+    .people-iir-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 600px) {
+      .people-iir-grid { grid-template-columns: 1fr; }
     }
     .person-card {
-      background: var(--void-elevated); border: 1px solid var(--border-ghost);
-      border-radius: 12px; padding: 28px; text-decoration: none;
+      background: var(--void-elevated);
+      border: 1px solid var(--border-ghost);
+      border-radius: 12px;
+      padding: 32px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
       transition: border-color 0.3s ease;
     }
     .person-card:hover { border-color: var(--border-subtle); }
-    .person-card-role {
-      font-family: var(--font-mono); font-size: 10px; color: var(--teal);
-      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;
+    .person-card-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--void-surface);
+      border: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--teal);
+      margin-bottom: 20px;
+      flex-shrink: 0;
     }
     .person-card-name {
-      font-family: var(--font-display); font-size: 18px; font-weight: 600;
-      color: var(--text-pure); margin-bottom: 6px;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-pure);
+      margin-bottom: 4px;
     }
-    .person-card-affil { font-size: 12px; color: var(--text-tertiary); margin-bottom: 12px; line-height: 1.5; }
-    .person-card-bio { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+    .person-card-role {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--teal);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .person-card-affil {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-bottom: 12px;
+      line-height: 1.6;
+    }
+    .person-card-bio {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .person-card-projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 20px;
+    }
+    .person-card-project {
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      background: var(--void-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-tertiary);
+    }
 
     /* ==========================================
        ABOUT (new layout)
@@ -4228,34 +4310,65 @@
       <div class="section-inner">
         <div class="reveal">
           <p class="section-label">The Lab</p>
-          <h2 class="section-title">The people building it</h2>
+          <h2 class="section-title">The people.</h2>
         </div>
+
         <div class="people-grid stagger">
+
           <a href="https://www.linkedin.com/in/theo-addo/" target="_blank" class="person-card">
-            <div class="person-card-role">Founder · Lead Researcher</div>
+            <div class="person-card-avatar">TA</div>
             <h3 class="person-card-name">Theodore Addo</h3>
-            <p class="person-card-affil">Radiology Resident, St. Vincent's Hospital (2027)</p>
-            <p class="person-card-bio">12 years of independent research across medicine, film, music, and neuroscience. Trained at the MIT Boyden Lab and Brown Medical School.</p>
+            <div class="person-card-role">Founder and Principal Investigator</div>
+            <p class="person-card-affil">Radiology Resident, St. Vincent's Hospital (2027) · MIT Boyden Lab · Brown Medical School</p>
+            <p class="person-card-bio">Twelve years of independent research across medicine, neuroscience, film, and music. Leads all three research programs at Polarity Lab.</p>
+            <div class="person-card-projects">
+              <span class="person-card-project">Nonprofit &amp; Discovery</span>
+              <span class="person-card-project">Film Therapeutics</span>
+              <span class="person-card-project">Integrity Delta</span>
+            </div>
           </a>
+
           <a href="https://www.linkedin.com/in/shadrack-annor-38a627235/" target="_blank" class="person-card">
-            <div class="person-card-role">Principal · Technical &amp; Creative</div>
+            <div class="person-card-avatar">SA</div>
             <h3 class="person-card-name">Shadrack Annor</h3>
-            <p class="person-card-affil">Brown CS &amp; Religious Studies '27</p>
-            <p class="person-card-bio">Research Assistant, Brown CS Dept. Creative direction, brand, UI/UX, and technical infrastructure across lab projects.</p>
+            <div class="person-card-role">Technical Director</div>
+            <p class="person-card-affil">Brown University, CS &amp; Religious Studies '27 · Research Assistant, Brown CS Dept.</p>
+            <p class="person-card-bio">Responsible for technical infrastructure, creative direction, and product design across all lab projects.</p>
+            <div class="person-card-projects">
+              <span class="person-card-project">Nonprofit &amp; Discovery</span>
+              <span class="person-card-project">Film Therapeutics</span>
+              <span class="person-card-project">Integrity Delta</span>
+            </div>
           </a>
+
           <a href="https://www.linkedin.com/in/nathan-amankwah/" target="_blank" class="person-card">
-            <div class="person-card-role">Operations</div>
+            <div class="person-card-avatar">NA</div>
             <h3 class="person-card-name">Nathan Amankwah</h3>
-            <p class="person-card-affil">Finance &amp; BTM, uOttawa '26</p>
-            <p class="person-card-bio">VP Finance, BIPOC Business Society. Partner research and investor positioning for the lab.</p>
+            <div class="person-card-role">Director of Strategy &amp; Partnerships</div>
+            <p class="person-card-affil">Finance &amp; Business Technology Management, University of Ottawa '26 · VP Finance, BIPOC Business Society</p>
+            <p class="person-card-bio">Leads strategy and partnerships. Responsible for investor positioning, partner research, and brand strategy for the lab.</p>
+            <div class="person-card-projects">
+              <span class="person-card-project">Integrity Delta</span>
+            </div>
           </a>
-          <a href="https://juanwilson.com" target="_blank" class="person-card">
-            <div class="person-card-role">Research Collaborator</div>
+
+        </div>
+
+        <p class="people-iir-label reveal">Innovation Investigator in Residence</p>
+
+        <div class="people-iir-grid">
+          <a href="https://juanwilson.com" target="_blank" class="person-card reveal">
+            <div class="person-card-avatar">JW</div>
             <h3 class="person-card-name">J'Juan Wilson Jr.</h3>
+            <div class="person-card-role">Innovation Investigator in Residence</div>
             <p class="person-card-affil">GOODhumanz · Providence, RI</p>
-            <p class="person-card-bio">30 years of experience in nonprofit consulting and community organizing. Leading data collection on the Nonprofit &amp; Discovery project.</p>
+            <p class="person-card-bio">Thirty years in nonprofit consulting and community organizing. Author of the Closing the Gap whitepaper and the MUSEOFRI Pain Points Report. Leads community research on the Nonprofit &amp; Discovery project.</p>
+            <div class="person-card-projects">
+              <span class="person-card-project">Nonprofit &amp; Discovery</span>
+            </div>
           </a>
         </div>
+
       </div>
     </section>
 
