@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- people: revert Nathan to brain-modeled knowledge graphs patent only (`0690956`)
+
+### Apr 7, 2026
+
 - people: add cognitive biometric authentication patent to all three bios (`db1464f`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Fix remaining em dashes in about narrative and all breakpoint font sizes (`d48c6f8`)
-
-### Apr 6, 2026
-
-- Fix section-title font-size in all three breakpoint rules (`c5d228e`)
 
 
 ---
