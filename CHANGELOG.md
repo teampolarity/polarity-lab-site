@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- fix: reduce top padding on about section for tighter scroll target (`d58c4bb`)
+
+### Apr 7, 2026
+
 - fix: reduce top padding on people section for tighter scroll target (`d483797`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - feat: add nonprofit research sub-page (`aaf317e`)
-
-### Apr 7, 2026
-
-- feat: rewrite homepage with research-first layout (`62e31c3`)
 
 
 ---

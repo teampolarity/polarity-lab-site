@@ -1,5 +1,14 @@
 [
   {
+    "id": "d58c4bb",
+    "date": "2026-04-07",
+    "title": "fix: reduce top padding on about section for tighter scroll target",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "d483797",
     "date": "2026-04-07",
     "title": "fix: reduce top padding on people section for tighter scroll target",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "62e31c3",
-    "date": "2026-04-07",
-    "title": "feat: rewrite homepage with research-first layout",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
