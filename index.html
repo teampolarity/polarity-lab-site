@@ -415,12 +415,9 @@
        THEME TOGGLE
        ========================================== */
     .theme-toggle {
-      position: fixed;
-      bottom: 24px;
-      left: 24px;
-      z-index: 1001;
-      width: 36px;
-      height: 36px;
+      position: static;
+      width: 32px;
+      height: 32px;
       border-radius: 0;
       background: transparent;
       border: 1px solid var(--border-ghost);
@@ -3961,6 +3958,138 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+    /* ==========================================
+       RESEARCH DROPDOWN
+       ========================================== */
+    .nav-item--dropdown { position: relative; }
+    .nav-link--dropdown {
+      background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; gap: 4px;
+      font-family: var(--font-body); font-size: 13px; font-weight: 500;
+      color: var(--text-tertiary); transition: color 0.3s ease; padding: 8px 0;
+    }
+    .nav-link--dropdown:hover { color: var(--teal); }
+    .nav-dropdown-chevron { width: 14px; height: 14px; transition: transform 0.3s ease; }
+    .nav-item--dropdown.open .nav-dropdown-chevron { transform: rotate(180deg); }
+    .nav-dropdown {
+      position: absolute; top: calc(100% + 12px); left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      background: var(--void-elevated); border: 1px solid var(--border-subtle);
+      border-radius: 8px; padding: 8px; min-width: 220px;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease; z-index: 100;
+    }
+    .nav-item--dropdown.open .nav-dropdown {
+      opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0);
+    }
+    .nav-dropdown-item {
+      display: block; padding: 10px 14px; border-radius: 6px;
+      font-size: 13px; color: var(--text-secondary); text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+    .nav-dropdown-item:hover { background: var(--void-surface); color: var(--teal); }
+
+    /* ==========================================
+       HERO MINIMAL
+       ========================================== */
+    .hero-minimal {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      position: relative; z-index: 2; padding: 0 24px;
+    }
+    .hero-minimal-title {
+      font-family: var(--font-display);
+      font-size: clamp(48px, 8vw, 96px); font-weight: 700;
+      letter-spacing: -0.02em; color: var(--text-pure); line-height: 1; margin-bottom: 16px;
+    }
+    .hero-minimal-tagline {
+      font-family: var(--font-body); font-size: clamp(16px, 2vw, 20px);
+      color: var(--text-secondary); margin-bottom: 12px; font-style: italic;
+    }
+    .hero-minimal-location {
+      font-family: var(--font-mono); font-size: 12px; color: var(--text-tertiary);
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+
+    /* ==========================================
+       RESEARCH CARDS
+       ========================================== */
+    .research-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px; margin-top: 48px;
+    }
+    .research-card {
+      background: var(--void-elevated); border: 1px solid var(--border-ghost);
+      border-radius: 12px; padding: 32px; text-decoration: none;
+      display: flex; flex-direction: column; gap: 16px;
+      transition: border-color 0.3s ease, transform 0.3s var(--ease-out-expo);
+    }
+    .research-card:hover { border-color: var(--teal); transform: translateY(-4px); }
+    .research-card-question {
+      font-family: var(--font-display); font-size: 18px; font-weight: 600;
+      color: var(--text-primary); line-height: 1.4; flex: 1;
+    }
+    .research-card-meta { display: flex; flex-direction: column; gap: 10px; }
+    .research-card-project {
+      font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);
+      letter-spacing: 0.08em; text-transform: uppercase;
+    }
+    .research-card-footer { display: flex; align-items: center; justify-content: space-between; }
+    .research-card-badge {
+      font-size: 11px; font-weight: 600; padding: 4px 10px;
+      border-radius: 20px; letter-spacing: 0.05em; text-transform: uppercase;
+    }
+    .research-card-badge--active { background: rgba(78,205,196,0.12); color: var(--teal); border: 1px solid rgba(78,205,196,0.3); }
+    .research-card-badge--production { background: rgba(187,143,206,0.12); color: var(--purple); border: 1px solid rgba(187,143,206,0.3); }
+    .research-card-badge--funding { background: rgba(255,138,101,0.12); color: var(--coral); border: 1px solid rgba(255,138,101,0.3); }
+    .research-card-arrow { font-size: 14px; color: var(--teal); transition: transform 0.3s ease; }
+    .research-card:hover .research-card-arrow { transform: translateX(4px); }
+
+    /* ==========================================
+       PEOPLE
+       ========================================== */
+    .people-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px; margin-top: 48px;
+    }
+    .person-card {
+      background: var(--void-elevated); border: 1px solid var(--border-ghost);
+      border-radius: 12px; padding: 28px; text-decoration: none;
+      transition: border-color 0.3s ease;
+    }
+    .person-card:hover { border-color: var(--border-subtle); }
+    .person-card-role {
+      font-family: var(--font-mono); font-size: 10px; color: var(--teal);
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;
+    }
+    .person-card-name {
+      font-family: var(--font-display); font-size: 18px; font-weight: 600;
+      color: var(--text-pure); margin-bottom: 6px;
+    }
+    .person-card-affil { font-size: 12px; color: var(--text-tertiary); margin-bottom: 12px; line-height: 1.5; }
+    .person-card-bio { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ==========================================
+       ABOUT (new layout)
+       ========================================== */
+    .about-body { max-width: 720px; margin: 0 auto; }
+    .about-body p { font-size: 16px; color: var(--text-secondary); line-height: 1.8; margin-bottom: 20px; }
+
+    /* ==========================================
+       CONTACT
+       ========================================== */
+    .contact-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
+    @media (max-width: 640px) { .contact-cols { grid-template-columns: 1fr; } }
+    .contact-col-label {
+      font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px;
+    }
+    .contact-col-link {
+      font-family: var(--font-display); font-size: 15px; font-weight: 500;
+      color: var(--teal); text-decoration: none; transition: opacity 0.2s ease;
+    }
+    .contact-col-link:hover { opacity: 0.7; }
   </style>
 </head>
 <body>
@@ -3976,17 +4105,6 @@
   <!-- Custom Cursor -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursor-dot"></div>
-
-  <!-- Theme Toggle -->
-  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-    <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <circle cx="12" cy="12" r="5"/>
-      <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
-    </svg>
-    <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-    </svg>
-  </button>
 
   <!-- Navigation -->
   <nav class="nav" id="nav">
@@ -4015,94 +4133,144 @@
         <circle cx="50" cy="50" r="14" fill="url(#navCoreGrad)" filter="url(#navGlow)"/>
         <circle cx="45" cy="45" r="5" fill="white" opacity="0.25"/>
       </svg>
-      <span class="nav-logo-text">Polarity Lab</span>
+      <span class="nav-logo-text">POLARITY</span>
     </a>
 
     <ul class="nav-links" id="nav-links">
+      <li class="nav-item nav-item--dropdown">
+        <button class="nav-link nav-link--dropdown" id="research-dropdown-btn">
+          Research
+          <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown" id="research-dropdown">
+          <a href="research/nonprofit.html" class="nav-dropdown-item">Nonprofit &amp; Discovery</a>
+          <a href="research/avdp.html" class="nav-dropdown-item">Film Therapeutics</a>
+          <a href="research/integrity-delta.html" class="nav-dropdown-item">Integrity Delta</a>
+        </div>
+      </li>
       <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#research" class="nav-link">Research</a></li>
-      <li><a href="#work" class="nav-link">Work</a></li>
-      <li><a href="#team" class="nav-link">Team</a></li>
       <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+      </li>
     </ul>
 
-    <a href="#contact" class="nav-cta"><span>Contact</span></a>
-
-    <button class="nav-mobile" id="nav-mobile" aria-label="Toggle menu">
+    <button class="nav-mobile" id="nav-mobile" aria-label="Menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </nav>
 
-  <!-- ==========================================
-       STAGE - Fixed viewport canvas
-       ========================================== -->
-  <div class="stage" id="stage">
-    <!-- Text 1: Hero -->
-    <div class="scroll-text scroll-text--center" id="text-hero" style="top: 46%;">
-      <p class="hero-eyebrow">Diagnostics &nbsp;·&nbsp; Therapeutic Design &nbsp;·&nbsp; Providence, RI</p>
-      <h1 class="hero-title">
-        An <span class="gradient">environmental<br>therapeutics</span> lab.
-      </h1>
-      <p class="hero-sub">We design experiences that improve human health, and instruments that measure when technology does the opposite.</p>
-    </div>
-
-    <!-- Stats pinned to bottom of stage, independent of centered text -->
-    <div class="hero-stats-bar" id="hero-stats-bar">
-      <div class="hero-stat">
-        <span class="hero-stat-value">12</span>
-        <span class="hero-stat-label">Years of Research</span>
-      </div>
-      <div class="hero-stat-sep"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-value">5</span>
-        <span class="hero-stat-label">Research Cases</span>
-      </div>
-      <div class="hero-stat-sep"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-value">2</span>
-        <span class="hero-stat-label">Diagnostic Instruments</span>
-      </div>
-      <div class="hero-stat-sep"></div>
-      <div class="hero-stat">
-        <span class="hero-stat-value">Providence</span>
-        <span class="hero-stat-label">Rhode Island</span>
-      </div>
-    </div>
-
-    <!-- Scroll choreography text removed - now using actual content sections -->
-
-    <!-- Scroll indicator -->
-    <div class="hero-scroll" id="scroll-indicator">
-      <span>Scroll</span>
-      <div class="hero-scroll-line"></div>
-    </div>
-  </div>
-
   <!-- SCROLL CONTAINER - Content sections -->
   <div class="scroll-container">
-    <section class="spatial-section hero" id="home" data-scroll-zone="hero">
-      <div class="section-inner"></div>
+
+    <!-- HERO -->
+    <section class="hero-minimal" id="hero">
+      <h1 class="hero-minimal-title reveal">POLARITY</h1>
+      <p class="hero-minimal-tagline reveal">An environmental therapeutics lab.</p>
+      <p class="hero-minimal-location reveal">Providence, RI · Est. 2025</p>
+    </section>
+
+    <!-- RESEARCH SECTION -->
+    <section class="spatial-section" id="research">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="section-label">Our Research</p>
+          <h2 class="section-title">Each project starts with a specific question.</h2>
+          <p class="about-lede">We build the team, gather the evidence, then design the answer.</p>
+        </div>
+        <div class="research-grid stagger">
+          <a href="research/nonprofit.html" class="research-card">
+            <p class="research-card-question">Why can't the communities that need resources the most find the ones built specifically for them?</p>
+            <div class="research-card-meta">
+              <span class="research-card-project">Proximity Index · PolarityGPS</span>
+              <div class="research-card-footer">
+                <span class="research-card-badge research-card-badge--active">Active</span>
+                <span class="research-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+          <a href="research/avdp.html" class="research-card">
+            <p class="research-card-question">Can the right environment make people genuinely open up, and does watching that change how we connect with each other?</p>
+            <div class="research-card-meta">
+              <span class="research-card-project">AVDP · A Very Distant Perspective</span>
+              <div class="research-card-footer">
+                <span class="research-card-badge research-card-badge--production">In Production</span>
+                <span class="research-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+          <a href="research/integrity-delta.html" class="research-card">
+            <p class="research-card-question">When a hospital's AI system knows the right diagnosis, what stops it from telling the doctor?</p>
+            <div class="research-card-meta">
+              <span class="research-card-project">Integrity Delta · IΔ</span>
+              <div class="research-card-footer">
+                <span class="research-card-badge research-card-badge--funding">Seeking Funding</span>
+                <span class="research-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PEOPLE SECTION -->
+    <section class="spatial-section" id="people">
+      <div class="section-inner">
+        <div class="reveal">
+          <p class="section-label">The Lab</p>
+          <h2 class="section-title">The people building it</h2>
+        </div>
+        <div class="people-grid stagger">
+          <a href="https://www.linkedin.com/in/theo-addo/" target="_blank" class="person-card">
+            <div class="person-card-role">Founder · Lead Researcher</div>
+            <h3 class="person-card-name">Theodore Addo</h3>
+            <p class="person-card-affil">Radiology Resident, St. Vincent's Hospital (2027)</p>
+            <p class="person-card-bio">12 years of independent research across medicine, film, music, and neuroscience. Trained at the MIT Boyden Lab and Brown Medical School.</p>
+          </a>
+          <a href="https://www.linkedin.com/in/shadrack-annor-38a627235/" target="_blank" class="person-card">
+            <div class="person-card-role">Principal · Technical &amp; Creative</div>
+            <h3 class="person-card-name">Shadrack Annor</h3>
+            <p class="person-card-affil">Brown CS &amp; Religious Studies '27</p>
+            <p class="person-card-bio">Research Assistant, Brown CS Dept. Creative direction, brand, UI/UX, and technical infrastructure across lab projects.</p>
+          </a>
+          <a href="https://www.linkedin.com/in/nathan-amankwah/" target="_blank" class="person-card">
+            <div class="person-card-role">Operations</div>
+            <h3 class="person-card-name">Nathan Amankwah</h3>
+            <p class="person-card-affil">Finance &amp; BTM, uOttawa '26</p>
+            <p class="person-card-bio">VP Finance, BIPOC Business Society. Partner research and investor positioning for the lab.</p>
+          </a>
+          <a href="https://juanwilson.com" target="_blank" class="person-card">
+            <div class="person-card-role">Research Collaborator</div>
+            <h3 class="person-card-name">J'Juan Wilson Jr.</h3>
+            <p class="person-card-affil">GOODhumanz · Providence, RI</p>
+            <p class="person-card-bio">30 years of experience in nonprofit consulting and community organizing. Leading data collection on the Nonprofit &amp; Discovery project.</p>
+          </a>
+        </div>
+      </div>
     </section>
 
     <!-- ABOUT SECTION -->
-    <section class="spatial-section about" id="about">
+    <section class="spatial-section" id="about">
       <div class="section-inner">
-        <div class="about-header reveal">
-          <p class="section-label">Who We Are</p>
-          <h2 class="section-title">Technology is engineered to hold your attention. We build things designed to improve your life.</h2>
-          <p class="about-lede">Most platforms make money when you keep scrolling. That incentive has produced a measurable result: people are more isolated, more anxious, and less able to focus than a generation ago. We study the mechanism, and we build the antidote.</p>
+        <div class="reveal">
+          <p class="section-label">About the Lab</p>
+          <h2 class="section-title">An environmental therapeutics lab.</h2>
         </div>
-
-        <!-- Flowing narrative -->
-        <div class="about-narrative reveal">
-          <p>Most of what we build falls into one of two categories.</p>
-          <p>The first is what we call a <strong>therapeutic environment</strong>: a place or experience designed so that going through it produces a real, specific change in you. Think about the last time you finished a film and immediately called someone you hadn't spoken to in months. The film didn't tell you to call. You just came out of it different. That's what we mean: the environment does the work. You leave less isolated, thinking more clearly, trusting yourself more. Not because you tried. Because of what it put you through.</p>
-          <p>The second is a <strong>diagnostic instrument</strong>: a tool that gives you a number for something that doesn't have one yet. A blood pressure cuff doesn't ask how you feel. It gives a reading that means the same thing in any clinic in the world. We build that for things medicine hasn't gotten to yet: how disconnected someone has become from real relationships, how much an AI is steering their thinking without them knowing it, how much a platform is quietly eroding someone's ability to make their own decisions. A number that can be studied, tracked, and acted on.</p>
+        <div class="about-body reveal">
+          <p>Most platforms make money when you keep scrolling. That incentive has produced a measurable result: people are more isolated, more anxious, and less able to focus than a generation ago. We study the mechanism, and we build the antidote.</p>
+          <p>A <strong>diagnostic instrument</strong> gives you a number for something that doesn't have one yet. A blood pressure cuff doesn't ask how you feel. It gives a reading that means the same thing in any clinic in the world. We build that for things medicine hasn't gotten to yet: how disconnected someone has become from real relationships, how much an AI is steering their thinking without them knowing it.</p>
+          <p>A <strong>therapeutic environment</strong> is a place or experience designed so that going through it produces a real, specific change in you. The environment does the work. You leave less isolated, thinking more clearly, trusting yourself more. Not because you tried. Because of what it put you through.</p>
         </div>
-
-        <!-- Research Domains -->
         <div class="about-domains reveal">
           <p class="about-domains-label">Where We Work</p>
           <div class="about-domains-grid">
@@ -4119,329 +4287,42 @@
       </div>
     </section>
 
-    <!-- RESEARCH SECTION -->
-    <section class="spatial-section ccx" id="research">
-      <div class="section-inner">
-
-        <div class="reveal" style="margin-bottom: 32px;">
-          <p class="section-label">The Research</p>
-          <h2 class="section-title">Technology has produced a new class of disease.</h2>
-          <p class="ccx-subtitle">It is documented. It is accelerating.</p>
-        </div>
-
-        <div class="disease-grid reveal">
-          <div class="disease-card disease-card--coral">
-            <div class="disease-card-name">AI-Psychosis</div>
-            <p class="disease-card-desc">People losing grip on reality through sustained LLM interaction. An emerging clinical phenomenon documented in case reports and psychiatric literature, with patients presenting with delusional thinking and an inability to distinguish AI output from lived experience.</p>
-            <p class="disease-card-gap">No clinical definition exists. No diagnostic criteria. No treatment protocol.</p>
-          </div>
-          <div class="disease-card disease-card--teal">
-            <div class="disease-card-name">Loneliness Epidemic</div>
-            <p class="disease-card-desc">The U.S. Surgeon General declared loneliness a public health epidemic in 2023. Measurable at population scale. Directly correlated with technology adoption curves: rising social media use, declining in-person time.</p>
-            <p class="disease-card-gap">Documented. Quantified. No standard treatment pathway built for platform-induced cases.</p>
-          </div>
-          <div class="disease-card disease-card--purple">
-            <div class="disease-card-name">Cognitive Atrophy</div>
-            <p class="disease-card-desc">The brain discards unused skills. As AI handles cognitive work, human capacity atrophies. Clark and Chalmers showed cognition extends into tools. When the tool handles it, you lose it. Decades of supporting research across memory, navigation, and critical thinking.</p>
-            <p class="disease-card-gap">The mechanism is understood. The measurement infrastructure to track it at an individual level doesn't exist yet.</p>
-          </div>
-          <div class="disease-card disease-card--red">
-            <div class="disease-card-name">Sycophancy Feedback Loop</div>
-            <p class="disease-card-desc">AI systems are trained to agree with users. We adapt to trust them. The result is an echo chamber that degrades independent judgment at scale. People become progressively less capable of evaluating claims without AI reinforcement.</p>
-            <p class="disease-card-gap">No corrective mechanism exists. No benchmark for how far any given person or system has drifted.</p>
-          </div>
-        </div>
-
-        <div class="disease-unifier reveal">
-          <p><strong>These are not separate problems.</strong> They are symptoms of one pathology: technology-induced isolation from other humans, from our own cognition, from accumulated human knowledge.</p>
-          <p class="disease-speed">Traditional medicine operates on a 10 to 15 year cycle. The disease moves at the speed of a software update.</p>
-        </div>
-
-        <div class="ccx-content">
-          <div class="ccx-text reveal">
-            <div class="ccx-steps stagger">
-              <div class="ccx-step">
-                <div class="ccx-step-num">1</div>
-                <div>
-                  <h4>Name it precisely</h4>
-                  <p>Terms like "screen addiction" and "social media anxiety" are too vague to study or treat. We define specific mechanisms with enough clinical precision to name, replicate, and eventually diagnose: what is atrophying, what is being lost, and through exactly what process.</p>
-                </div>
-              </div>
-              <div class="ccx-step ccx-step--primary">
-                <div class="ccx-step-num ccx-step-num--primary">2</div>
-                <div>
-                  <h4>Build the diagnostic instrument <span class="ccx-step-tag">Core research</span></h4>
-                  <p>This is the primary work. Before medicine could treat high cholesterol, it needed a test that produced a number. We build that infrastructure for harms that don't have numbers yet. Independent scoring tools any researcher, clinician, or regulator can run and reproduce. Integrity Delta is the first.</p>
-                </div>
-              </div>
-              <div class="ccx-step">
-                <div class="ccx-step-num">3</div>
-                <div>
-                  <h4>Build the antidote</h4>
-                  <p>Once you can measure the damage, you can design an environment that reverses it and verify it actually works. Therapeutic environments are the application layer: built on top of the diagnostic foundation, validated against it.</p>
-                </div>
-              </div>
-            </div>
-
-            <a href="mailto:team@polarity-lab.com?subject=Research%20Collaboration" style="display: inline-flex; align-items: center; gap: 6px; margin-top: 28px; font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; transition: gap 0.4s var(--ease-out-expo);" onmouseover="this.style.gap='12px'" onmouseout="this.style.gap='6px'">Collaborate on research →</a>
-          </div>
-
-          <div class="ccx-visual">
-            <div class="ccx-diagram">
-              <div class="ccx-ring"></div>
-              <div class="ccx-ring"></div>
-              <div class="ccx-ring"></div>
-              <div class="ccx-core">
-                <div class="ccx-core-inner"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- RESEARCH CASES SECTION -->
-    <section class="spatial-section products" id="work">
-      <div class="section-inner">
-        <div class="cases-header reveal">
-          <p class="section-label">The Work</p>
-          <h2 class="section-title">Five harms. Two instruments built. Five environments designed to reverse them.</h2>
-          <p class="cases-lede">The research starts with a specific observation: what platforms are doing to people. The serious work is building a tool that measures it. The product comes last, once you know what you're reversing.</p>
-          <div class="cases-legend">
-            <div class="cases-legend-item">
-              <span class="cases-legend-dot cases-legend-dot--obs"></span>
-              <div>
-                <span class="cases-legend-term">Research Observation</span>
-                <span class="cases-legend-def">Documented harm. Evidence base established. No scoring instrument built yet.</span>
-              </div>
-            </div>
-            <div class="cases-legend-item">
-              <span class="cases-legend-dot cases-legend-dot--inst"></span>
-              <div>
-                <span class="cases-legend-term">Diagnostic Instrument</span>
-                <span class="cases-legend-def">A scoring tool. Takes defined inputs, produces a reproducible number. Run-able by any researcher independently.</span>
-              </div>
-            </div>
-            <div class="cases-legend-item">
-              <span class="cases-legend-dot cases-legend-dot--env"></span>
-              <div>
-                <span class="cases-legend-term">Therapeutic Environment</span>
-                <span class="cases-legend-def">A product designed to reverse the specific harm the observation identified.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- CASE 1: Integrity Delta (Primary — no paired environment yet) -->
-        <div class="research-case research-case--primary reveal">
-          <div class="rc-primary-layout">
-            <div>
-              <div class="rc-eyebrow">
-                <span class="rc-badge rc-badge--primary">Primary Research · Active</span>
-                <span class="rc-type rc-type--instrument">Diagnostic Instrument</span>
-              </div>
-              <div class="rc-name rc-name--large">Integrity Delta</div>
-              <div class="rc-desc">
-                <p>There is no independent, standard way to measure how honest an AI is. The companies that build these systems define and measure their own safety metrics. No outside accountability. No reproducible benchmark.</p>
-                <p style="margin-top:10px;">Integrity Delta is that benchmark: a scoring instrument any researcher, enterprise, or regulator can run against any AI system to produce a consistent, auditable measurement of how much it steers users toward what they want to hear rather than what is actually true.</p>
-              </div>
-
-              <div class="rc-hypothesis">
-                <div class="rc-hypothesis-title">Resolution Valley: Core Hypothesis</div>
-                <p class="rc-hypothesis-body">Mid-tier models (7B to 13B parameters) occupy the most dangerous zone: smart enough to form correct answers internally, too weak to resist user pressure to agree. This is the parameter range hospitals and enterprises deploy today.</p>
-              </div>
-
-              <div class="rc-data-rows">
-                <div class="rc-data-row">
-                  <span class="rc-data-num">49%</span>
-                  <span class="rc-data-desc">increase in sycophantic endorsement over human advisors<br><span style="opacity:0.5;">Cheng et al., 2026</span></span>
-                </div>
-                <div class="rc-data-row">
-                  <span class="rc-data-num">100%</span>
-                  <span class="rc-data-desc">initial compliance with illogical medical requests<br><span style="opacity:0.5;">Chen et al., 2025</span></span>
-                </div>
-              </div>
-
-              <p class="rc-status">Manuscript drafted · OSF pre-registration drafted · 2 provisional patents</p>
-
-              <div class="rc-finding" style="margin-top:14px;"><strong>Paired environment:</strong> In design. The diagnostic comes first. The intervention layer for AI-use rehabilitation follows once the instrument is validated.</div>
-              <div class="rc-buyers">
-                <span class="rc-buyer">Research Institutions</span>
-                <span class="rc-buyer">Enterprise</span>
-                <span class="rc-buyer">Government</span>
-              </div>
-            </div>
-            <div class="rc-primary-aside">
-              <a href="mailto:team@polarity-lab.com?subject=Integrity%20Delta%20Brief" class="rc-cta">Request the brief →</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- CASE 2: Proximity Index → PolarityGPS -->
-        <div class="research-case reveal">
-          <div class="rc-half rc-instrument">
-            <div class="rc-eyebrow">
-              <span class="rc-type rc-type--instrument">Diagnostic Instrument</span>
-            </div>
-            <div class="rc-name">Proximity Index</div>
-            <div class="rc-desc">A scoring methodology developed in partnership with MUSEOFRI (Providence, RI, 2026). Two inputs: cultural output produced by or for a community, and what discovery platforms actually surface to that community. The gap between those two numbers is the score. Zero means everything made for you reaches you. A high score means your own culture is algorithmically invisible to you.</div>
-            <div class="rc-finding"><strong>Finding:</strong> Across BIPOC-led communities in Providence, the gap was not caused by a lack of output. Communities were actively producing. The problem was in the pathways, not the product, giving PolarityGPS a specific, measurable target to fix.</div>
-          </div>
-          <div class="rc-connector">→</div>
-          <div class="rc-half rc-environment">
-            <div class="rc-eyebrow">
-              <span class="rc-badge rc-badge--live">Live</span>
-              <span class="rc-type rc-type--environment">Therapeutic Environment</span>
-            </div>
-            <div class="rc-name">PolarityGPS</div>
-            <div class="rc-desc">Cultural discovery platform connecting people to music, places, and experiences produced by and for their community, not what an engagement algorithm assumed they wanted. Built directly from the Proximity Index finding: the output exists, the pathways don't.</div>
-            <a href="https://polaritygps.com" target="_blank" class="rc-link">Explore →</a>
-          </div>
-        </div>
-
-        <!-- CASE 3: Music Discovery Erosion → WAXFEED -->
-        <div class="research-case reveal">
-          <div class="rc-half rc-instrument">
-            <div class="rc-eyebrow">
-              <span class="rc-type rc-type--obs">Research Observation</span>
-            </div>
-            <div class="rc-name">Music Discovery Erosion</div>
-            <div class="rc-desc">Streaming platforms algorithmically concentrate music discovery. The top 1% of tracks account for the overwhelming majority of streams across catalogs of hundreds of millions of songs. Recommendation systems replay what you already know. DJs and deep listeners had no platform built around their actual behavior.</div>
-            <div class="rc-finding"><strong>Observation:</strong> Algorithmic distribution is compressing musical identity at scale. What people listen to is narrowing, not expanding. No instrument built yet. The observation was the design brief.</div>
-          </div>
-          <div class="rc-connector">→</div>
-          <div class="rc-half rc-environment">
-            <div class="rc-eyebrow">
-              <span class="rc-badge rc-badge--live">Live</span>
-              <span class="rc-type rc-type--environment">Therapeutic Environment</span>
-            </div>
-            <div class="rc-name">WAXFEED</div>
-            <div class="rc-desc">Music and culture discovery for DJs and deep listeners. Built on taste, not trending. Discovery is the product, not a side effect of engagement optimization.</div>
-            <a href="https://wax-feed.com" target="_blank" class="rc-link">Explore →</a>
-          </div>
-        </div>
-
-        <!-- CASE 4: Conversational Depth → AVDP -->
-        <div class="research-case reveal">
-          <div class="rc-half rc-instrument">
-            <div class="rc-eyebrow">
-              <span class="rc-type rc-type--obs">Research Observation</span>
-            </div>
-            <div class="rc-name">Conversational Depth Decline</div>
-            <div class="rc-desc">Studies consistently show that the presence of a smartphone, even face-down and unused, measurably reduces the quality of in-person conversation. People are having shorter, shallower exchanges and fewer of the extended, unscripted conversations that build actual connection. Real conversation has become unusual enough that most people haven't had one in weeks.</div>
-            <div class="rc-finding"><strong>Observation:</strong> Watching people genuinely talk to each other changes how you want to interact. Genuine conversation has become unusual enough that modeling it has therapeutic value. No instrument built yet.</div>
-          </div>
-          <div class="rc-connector">→</div>
-          <div class="rc-half rc-environment">
-            <div class="rc-eyebrow">
-              <span class="rc-badge rc-badge--production">In Production</span>
-              <span class="rc-type rc-type--environment">Therapeutic Environment</span>
-            </div>
-            <div class="rc-name">AVDP</div>
-            <div class="rc-desc">A Very Distant Perspective. A documentary interview series of real, unscripted conversations about being human. Built on the finding that watching genuine conversation is itself therapeutic. It models something people have largely stopped doing and makes them want to do it themselves.</div>
-            <div class="rc-proof">
-              <div class="rc-proof-title">Proof of concept</div>
-              <p class="rc-proof-body">The lab filmed Zay, a potter in the US, creating and describing his ceramic work. The episodes reached Mateo, a store owner in Canada. He saw Zay's work and wanted to carry it. The lab connected them directly. Two people across countries who would never have met, connected through the environment.</p>
-              <p class="rc-proof-result">AVDP doesn't just create content. It creates connections.</p>
-            </div>
-            <a href="https://www.instagram.com/averydistantperspective" target="_blank" class="rc-link">Follow →</a>
-          </div>
-        </div>
-
-        <!-- CASE 5: Style Drift → Phresh -->
-        <div class="research-case reveal">
-          <div class="rc-half rc-instrument">
-            <div class="rc-eyebrow">
-              <span class="rc-type rc-type--obs">Research Observation · Instrument in Design</span>
-            </div>
-            <div class="rc-name">Style Drift</div>
-            <div class="rc-desc">Fashion recommendation systems are built around engagement and trending content, not individual identity. Sustained exposure homogenizes aesthetic expression. People's style gradually converges toward what platforms surface rather than what reflects them. The mechanism is invisible: it doesn't feel like influence, it feels like taste.</div>
-            <div class="rc-finding"><strong>Observation:</strong> Fashion is increasingly a mirror of what platforms surface, not who people are. The instrument being designed will produce a score that makes this measurable for the first time.</div>
-          </div>
-          <div class="rc-connector">→</div>
-          <div class="rc-half rc-environment">
-            <div class="rc-eyebrow">
-              <span class="rc-badge rc-badge--pending">In R&amp;D</span>
-              <span class="rc-type rc-type--environment">Therapeutic Environment</span>
-            </div>
-            <div class="rc-name">Phresh</div>
-            <div class="rc-desc">Personal styling and fashion discovery built on computer vision and identity modeling. Built to understand who you actually are: your body, your aesthetic history, your genuine taste. It surfaces clothing that fits all three. Not the feed's version of you.</div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- TEAM SECTION -->
-    <section class="spatial-section team" id="team">
-      <div class="section-inner">
-        <div class="team-header reveal">
-          <p class="section-label">The Lab</p>
-          <h2 class="section-title">The people building it</h2>
-          <div class="team-location">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
-              <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
-            </svg>
-            Providence, RI · Est. 2025
-          </div>
-        </div>
-
-        <div class="team-grid stagger">
-          <a href="https://www.linkedin.com/in/theo-addo/" target="_blank" class="team-card">
-            <div class="team-card-role">Founder · Lead Researcher</div>
-            <h3 class="team-card-name">Theodore Addo</h3>
-            <p class="team-card-title">Radiology Resident, St. Vincent's Hospital (2027)</p>
-            <p class="team-card-bio">12 years of independent research across medicine, film, music, and neuroscience. Trained at the MIT Boyden Lab (the team that pioneered brain expansion imaging) and Brown Medical School. The cross-disciplinary background is the thesis.</p>
-            <div class="team-card-linkedin">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-          </a>
-
-          <a href="https://www.linkedin.com/in/shadrack-annor-38a627235/" target="_blank" class="team-card">
-            <div class="team-card-role">Principal · Technical & Creative</div>
-            <h3 class="team-card-name">Shadrack Annor</h3>
-            <p class="team-card-title">Brown CS & Religious Studies '27</p>
-            <p class="team-card-bio">Research Assistant, Brown CS Dept. Creative direction, brand, UI/UX, and technical infrastructure across lab projects.</p>
-            <div class="team-card-linkedin">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-          </a>
-
-          <a href="https://www.linkedin.com/in/nathan-amankwah/" target="_blank" class="team-card">
-            <div class="team-card-role">Partner · Strategy & Partnerships</div>
-            <h3 class="team-card-name">Nathan Amankwah</h3>
-            <p class="team-card-title">Finance & BTM, uOttawa '26</p>
-            <p class="team-card-bio">VP Finance, BIPOC Business Society. Brand strategy, partner research, and investor positioning for the lab.</p>
-            <div class="team-card-linkedin">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-
-
     <!-- CONTACT SECTION -->
-    <section class="spatial-section contact" id="contact">
+    <section class="spatial-section" id="contact">
       <div class="section-inner">
-        <div class="contact-close reveal">
-          <p class="contact-close-eyebrow">Polarity Lab · Providence, RI · Est. 2025</p>
-          <h2 class="contact-close-title">We're raising $500k to build Integrity Delta.</h2>
-          <p class="contact-close-desc">If you want the brief, want to collaborate on the research, or just want to understand what we're building, reach out. The ask is 30 minutes.</p>
-          <div class="contact-close-links">
-            <a href="mailto:team@polarity-lab.com?subject=Integrity%20Delta%20Brief" class="contact-close-primary">Request the brief →</a>
-            <a href="mailto:team@polarity-lab.com" class="contact-close-secondary">team@polarity-lab.com</a>
+        <div class="reveal">
+          <p class="section-label">Get in Touch</p>
+          <h2 class="section-title">Let's talk.</h2>
+        </div>
+        <div class="contact-cols reveal">
+          <div>
+            <p class="contact-col-label">Research &amp; Collaboration</p>
+            <a href="mailto:team@polarity-lab.com?subject=Research%20Collaboration" class="contact-col-link">team@polarity-lab.com</a>
+          </div>
+          <div>
+            <p class="contact-col-label">Funding &amp; Investment</p>
+            <a href="mailto:team@polarity-lab.com?subject=Integrity%20Delta%20Brief" class="contact-col-link">Request the Integrity Delta brief →</a>
           </div>
         </div>
 
-        <footer class="footer">
-          <p class="footer-copyright">© 2025–2026 POLARITY LAB LLC · Providence, RI</p>
-        </footer>
+        <!-- Newsletter -->
+        <div class="newsletter" style="margin-top: 48px; margin-left: 0;">
+          <p class="newsletter-label">Stay updated</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" name="email" placeholder="your@email.com" required>
+            <button type="submit">Subscribe</button>
+          </form>
+        </div>
       </div>
     </section>
+
+    <!-- FOOTER -->
+    <footer style="padding: 48px; text-align: center; border-top: 1px solid var(--border-ghost);">
+      <p style="font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.1em; text-transform: uppercase;">
+        Polarity Lab · Providence, RI · team@polarity-lab.com
+      </p>
+    </footer>
+
   </div>
 
   <script>
@@ -4725,6 +4606,19 @@
       });
     });
 
+    // ==========================================
+    // RESEARCH DROPDOWN
+    // ==========================================
+    const researchDropdownBtn = document.getElementById('research-dropdown-btn');
+    const researchDropdownItem = researchDropdownBtn?.closest('.nav-item--dropdown');
+    researchDropdownBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      researchDropdownItem.classList.toggle('open');
+    });
+    document.addEventListener('click', () => {
+      researchDropdownItem?.classList.remove('open');
+    });
+
     // Logo click scroll to top
     document.getElementById('nav-logo').addEventListener('click', (e) => {
       e.preventDefault();
@@ -4732,18 +4626,16 @@
     });
 
     // ==========================================
-    // NAV SCROLL EFFECTS & ACTIVE STATE
+    // NAV ACTIVE STATE (scroll spy)
     // ==========================================
     const nav = document.getElementById('nav');
-    let lastScrollY = 0;
 
     // Sections for scroll spy
-    const sections = ['about', 'research', 'products', 'team', 'safety', 'contact'];
-    
+    const sections = ['hero', 'research', 'people', 'about', 'contact'];
+
     function updateActiveNav() {
-      const scrollY = window.scrollY + 150; // Offset for nav height
-      
-      // Find current section
+      const scrollY = window.scrollY + 150;
+
       let current = '';
       for (const id of sections) {
         const section = document.getElementById(id);
@@ -4756,8 +4648,7 @@
           }
         }
       }
-      
-      // Update active class on nav links
+
       document.querySelectorAll('.nav-link').forEach(link => {
         link.classList.remove('active');
         const href = link.getAttribute('href');
@@ -4765,102 +4656,29 @@
           link.classList.add('active');
         }
       });
-      
-      // Nav background
-      nav.classList.toggle('scrolled', window.scrollY > 50);
     }
 
     window.addEventListener('scroll', updateActiveNav, { passive: true });
-    updateActiveNav(); // Initial call
+    updateActiveNav();
 
     // ==========================================
-    // SCROLL CHOREOGRAPHY SYSTEM
+    // SCROLL CHOREOGRAPHY SYSTEM (simplified — static hero)
     // ==========================================
     class ScrollChoreographer {
       constructor() {
-        this.scrollY = 0;
-        this.targetScrollY = 0;
-        this.ease = 0.1;
-        this.vh = window.innerHeight;
-
-        // Elements
         this.nav = document.getElementById('nav');
-        this.scrollIndicator = document.getElementById('scroll-indicator');
-
-        // Hero text only
-        this.textHero = document.getElementById('text-hero');
-
-        this.stage = document.getElementById('stage');
-
-        // Make product labels visible initially
-        document.querySelectorAll('.hero-product').forEach(el => el.classList.add('visible'));
-
         this.init();
-        this.animate();
       }
 
       init() {
-        window.addEventListener('scroll', () => {
-          this.targetScrollY = window.scrollY;
-        }, { passive: true });
-
-        window.addEventListener('resize', () => {
-          this.vh = window.innerHeight;
-        });
+        window.addEventListener('scroll', () => this.onScroll(), { passive: true });
+        this.onScroll();
       }
 
-      easeOutCubic(t) {
-        return 1 - Math.pow(1 - t, 3);
-      }
-
-      zoneProgress(scrollStart, scrollEnd) {
-        const current = this.scrollY;
-        if (current < scrollStart) return 0;
-        if (current > scrollEnd) return 1;
-        return (current - scrollStart) / (scrollEnd - scrollStart);
-      }
-
-      animate() {
-        // Smooth scroll interpolation
-        this.scrollY += (this.targetScrollY - this.scrollY) * this.ease;
-
-        const vh = this.vh;
-        const isMobile = window.innerWidth <= 768;
-
-        // === ZONE: Hero & Icons (0-1.5vh) ===
-        const iconExitProgress = this.easeOutCubic(this.zoneProgress(0, vh * 1.0));
-
-        // Hero text - centered, fades and lifts on scroll
-        if (this.textHero) {
-          const heroProgress = this.zoneProgress(0, vh * 0.6);
-          const heroOpacity = 1 - this.easeOutCubic(heroProgress);
-          const heroY = heroProgress * -30;
-          this.textHero.style.opacity = heroOpacity;
-          // Preserve the CSS -50% Y centering while animating scroll offset
-          this.textHero.style.transform = `translateX(-50%) translateY(calc(-50% + ${heroY}px))`;
-          this.textHero.classList.toggle('visible', heroOpacity > 0.1);
+      onScroll() {
+        if (this.nav) {
+          this.nav.classList.toggle('scrolled', window.scrollY > 50);
         }
-
-        // Scroll indicator
-        if (this.scrollIndicator) {
-          const indicatorOpacity = 1 - this.easeOutCubic(this.zoneProgress(0, vh * 0.4));
-          this.scrollIndicator.style.opacity = indicatorOpacity;
-        }
-
-        // Hide the stage layer once scrolled past hero so it doesn't block touch/scroll
-        if (this.stage) {
-          if (iconExitProgress > 0.8) {
-            this.stage.style.pointerEvents = 'none';
-            this.stage.style.visibility = 'hidden';
-            if (isMobile) this.stage.style.display = 'none';
-          } else {
-            this.stage.style.pointerEvents = 'none';
-            this.stage.style.visibility = 'visible';
-            if (isMobile) this.stage.style.display = '';
-          }
-        }
-
-        requestAnimationFrame(() => this.animate());
       }
     }
 
