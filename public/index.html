@@ -1601,36 +1601,67 @@
       margin: 36px 0 0;
     }
 
+    .about-domains {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+      display: block !important;
+    }
+
     .about-domains-label {
       font-family: var(--font-mono);
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 600;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--text-ghost);
+      color: #555 !important;
       margin-bottom: 16px;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+
+    [data-theme="dark"] .about-domains-label {
+      color: #aaa !important;
     }
 
     .about-domains-grid {
-      display: flex;
+      display: flex !important;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 10px;
+      opacity: 1 !important;
+      visibility: visible !important;
     }
 
     .about-domain-tag {
       font-family: var(--font-mono);
-      font-size: 11px;
+      font-size: 12px;
       letter-spacing: 0.08em;
-      color: var(--text-tertiary);
-      border: 1px solid var(--border-ghost);
-      border-radius: 100px;
-      padding: 6px 14px;
-      transition: all 0.3s ease;
+      color: #222 !important;
+      border: 2px solid #999 !important;
+      background: #e8e8e8 !important;
+      border-radius: 100px !important;
+      padding: 10px 20px;
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+    }
+
+    [data-theme="dark"] .about-domain-tag {
+      color: #ddd !important;
+      border: 2px solid #555 !important;
+      background: #1a1a1f !important;
     }
 
     .about-domain-tag:hover {
-      color: var(--text-pure);
-      border-color: var(--border-medium);
+      color: #000 !important;
+      border-color: #555 !important;
+      background: #d0d0d0 !important;
+    }
+
+    [data-theme="dark"] .about-domain-tag:hover {
+      color: #fff !important;
+      border-color: #888 !important;
+      background: #2a2a2f !important;
     }
 
     @media (max-width: 768px) {
@@ -3783,13 +3814,7 @@
       letter-spacing: -0.02em;
     }
 
-    /* --- ABOUT DOMAINS --- */
-    .about-domain-tag {
-      background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 2px;
-      color: rgba(255, 255, 255, 0.35);
-    }
+    /* --- ABOUT DOMAINS --- kept above with !important */
 
     /* --- CONTACT SECTION --- */
     .contact-close {
@@ -4395,17 +4420,17 @@
           <p>A <strong>diagnostic instrument</strong> gives you a number for something that doesn't have one yet. A blood pressure cuff doesn't ask how you feel. It gives a reading that means the same thing in any clinic in the world. We build that for things medicine hasn't gotten to yet: how disconnected someone has become from real relationships, how much an AI is steering their thinking without them knowing it.</p>
           <p>A <strong>therapeutic environment</strong> is a place or experience designed so that going through it produces a real, specific change in you. The environment does the work. You leave less isolated, thinking more clearly, trusting yourself more. Not because you tried. Because of what it put you through.</p>
         </div>
-        <div class="about-domains reveal">
-          <p class="about-domains-label">Where We Work</p>
-          <div class="about-domains-grid">
-            <span class="about-domain-tag">Brain Science &amp; Attention</span>
-            <span class="about-domain-tag">Medicine &amp; Mental Health</span>
-            <span class="about-domain-tag">Film &amp; Storytelling</span>
-            <span class="about-domain-tag">Music &amp; Sound</span>
-            <span class="about-domain-tag">Artificial Intelligence</span>
-            <span class="about-domain-tag">Fashion &amp; Identity</span>
-            <span class="about-domain-tag">Human Connection</span>
-            <span class="about-domain-tag">Public Health</span>
+        <div class="about-domains" style="opacity:1;visibility:visible;display:block;margin-top:36px;">
+          <p class="about-domains-label" style="opacity:1;visibility:visible;color:#555;font-size:11px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:16px;">Where We Work</p>
+          <div class="about-domains-grid" style="display:flex;flex-wrap:wrap;gap:10px;opacity:1;visibility:visible;">
+            <span class="about-domain-tag" style="color:#222;border:2px solid #999;background:#e8e8e8;border-radius:100px;padding:10px 20px;font-size:12px;display:inline-block;opacity:1;visibility:visible;">Brain Science &amp; Attention</span>
+            <span class="about-domain-tag" style="color:#222;border:2px solid #999;background:#e8e8e8;border-radius:100px;padding:10px 20px;font-size:12px;display:inline-block;opacity:1;visibility:visible;">Medicine &amp; Mental Health</span>
+            <span class="about-domain-tag" style="color:#222;border:2px solid #999;background:#e8e8e8;border-radius:100px;padding:10px 20px;font-size:12px;display:inline-block;opacity:1;visibility:visible;">Film &amp; Storytelling</span>
+            <span class="about-domain-tag" style="color:#222;border:2px solid #999;background:#e8e8e8;border-radius:100px;padding:10px 20px;font-size:12px;display:inline-block;opacity:1;visibility:visible;">Music &amp; Sound</span>
+            <span class="about-domain-tag" style="color:#222;border:2px solid #999;background:#e8e8e8;border-radius:100px;padding:10px 20px;font-size:12px;display:inline-block;opacity:1;visibility:visible;">Artificial Intelligence</span>
+            <span class="about-domain-tag" style="color:#222;border:2px solid #999;background:#e8e8e8;border-radius:100px;padding:10px 20px;font-size:12px;display:inline-block;opacity:1;visibility:visible;">Fashion &amp; Identity</span>
+            <span class="about-domain-tag" style="color:#222;border:2px solid #999;background:#e8e8e8;border-radius:100px;padding:10px 20px;font-size:12px;display:inline-block;opacity:1;visibility:visible;">Human Connection</span>
+            <span class="about-domain-tag" style="color:#222;border:2px solid #999;background:#e8e8e8;border-radius:100px;padding:10px 20px;font-size:12px;display:inline-block;opacity:1;visibility:visible;">Public Health</span>
           </div>
         </div>
       </div>
