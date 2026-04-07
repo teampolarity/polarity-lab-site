@@ -6,6 +6,14 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- people: write J'Juan bio with MUSEOFRI affiliation, fix field research framing (`9093da1`)
+
+### Apr 7, 2026
+
+- feat: reframe people section with ARC-style titles and structure (`32a9887`)
+
+### Apr 7, 2026
+
 - fix: replace em dashes with parentheses/colon in avdp body text (`9339632`)
 
 ### Apr 7, 2026
@@ -75,14 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 6, 2026
 
 - Fix hero centering (JS overriding CSS transform), reduce title size, fix lede indent (`3a6b175`)
-
-### Apr 6, 2026
-
-- Fix layout: left-align all section headers, fix hero centering (`cfa3090`)
-
-### Apr 6, 2026
-
-- Fix hero title overflow — 9vw was way too large, back to 4.8vw/72px max (`f59ccc1`)
 
 
 ---

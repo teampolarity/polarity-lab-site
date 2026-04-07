@@ -1,5 +1,23 @@
 [
   {
+    "id": "9093da1",
+    "date": "2026-04-07",
+    "title": "people: write J'Juan bio with MUSEOFRI affiliation, fix field research framing",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "32a9887",
+    "date": "2026-04-07",
+    "title": "feat: reframe people section with ARC-style titles and structure",
+    "category": {
+      "label": "Design",
+      "color": "purple"
+    }
+  },
+  {
     "id": "9339632",
     "date": "2026-04-07",
     "title": "fix: replace em dashes with parentheses/colon in avdp body text",
@@ -156,24 +174,6 @@
     "id": "3a6b175",
     "date": "2026-04-06",
     "title": "Fix hero centering (JS overriding CSS transform), reduce title size, fix lede indent",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "cfa3090",
-    "date": "2026-04-06",
-    "title": "Fix layout: left-align all section headers, fix hero centering",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "f59ccc1",
-    "date": "2026-04-06",
-    "title": "Fix hero title overflow — 9vw was way too large, back to 4.8vw/72px max",
     "category": {
       "label": "Bug Fix",
       "color": "coral"
