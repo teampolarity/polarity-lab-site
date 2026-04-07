@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 7, 2026
 
+- style: minimalist square domain tags with transparent background (`236d931`)
+
+### Apr 7, 2026
+
 - fix: make Where We Work domain tags visible in both light and dark mode (`8061c92`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - Add site reframe design doc: ARC-model research-first architecture (`7985c9f`)
-
-### Apr 6, 2026
-
-- Remove purple from hero gradient, enforce teal-only accent (`23a19d6`)
 
 
 ---
