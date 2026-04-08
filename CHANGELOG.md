@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Fix Community Discovery hub and Wax Feed framing for coherent visitor flow (`be2ec74`)
+
+### Apr 8, 2026
+
 - Sync public/research/ with research/ — fixes Vercel serving stale files (`7212f9e`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Apply woven involvement structure to nonprofit.html (`b0ba279`)
-
-### Apr 8, 2026
-
-- avdp: add NEEWER car mount to gear list (`041265d`)
 
 
 ---

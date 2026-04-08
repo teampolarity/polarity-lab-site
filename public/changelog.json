@@ -1,5 +1,14 @@
 [
   {
+    "id": "be2ec74",
+    "date": "2026-04-08",
+    "title": "Fix Community Discovery hub and Wax Feed framing for coherent visitor flow",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "7212f9e",
     "date": "2026-04-08",
     "title": "Sync public/research/ with research/ — fixes Vercel serving stale files",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "041265d",
-    "date": "2026-04-08",
-    "title": "avdp: add NEEWER car mount to gear list",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
