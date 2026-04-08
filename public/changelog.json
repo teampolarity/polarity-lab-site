@@ -1,5 +1,14 @@
 [
   {
+    "id": "f9a6ef1",
+    "date": "2026-04-08",
+    "title": "Fix all broken evidence links on Community Discovery page",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "1517ab5",
     "date": "2026-04-08",
     "title": "Remove internal document names from J'Juan bio",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "e69934e",
-    "date": "2026-04-08",
-    "title": "avdp: redesign support section, add full gear list",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
