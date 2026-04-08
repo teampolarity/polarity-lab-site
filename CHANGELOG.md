@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Update all research page badges to lab names; WAXFEED caps on hub (`07a780b`)
+
+### Apr 8, 2026
+
 - Update project page badges to Community Discovery (`1bdd03d`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Replace stage badges with research type badges (`4215da5`)
-
-### Apr 8, 2026
-
-- Replace 'Seeking Funding' badge with 'Pilot Stage' (`425a5e0`)
 
 
 ---

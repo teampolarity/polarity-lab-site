@@ -1,5 +1,14 @@
 [
   {
+    "id": "07a780b",
+    "date": "2026-04-08",
+    "title": "Update all research page badges to lab names; WAXFEED caps on hub",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "1bdd03d",
     "date": "2026-04-08",
     "title": "Update project page badges to Community Discovery",
@@ -165,15 +174,6 @@
     "id": "4215da5",
     "date": "2026-04-08",
     "title": "Replace stage badges with research type badges",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "425a5e0",
-    "date": "2026-04-08",
-    "title": "Replace 'Seeking Funding' badge with 'Pilot Stage'",
     "category": {
       "label": "Update",
       "color": "text-secondary"
