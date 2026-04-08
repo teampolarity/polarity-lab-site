@@ -1,5 +1,14 @@
 [
   {
+    "id": "62cb142",
+    "date": "2026-04-08",
+    "title": "Make WAXFEED standalone: remove PolarityGPS comparisons, fix methods",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "1fd9a3a",
     "date": "2026-04-08",
     "title": "WAXFEED is a therapeutic environment, not the only one for music",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "86f7a12",
-    "date": "2026-04-08",
-    "title": "Unify lab names across site: AI Honesty, Film Therapeutics, Community Discovery",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

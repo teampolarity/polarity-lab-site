@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Make WAXFEED standalone: remove PolarityGPS comparisons, fix methods (`62cb142`)
+
+### Apr 8, 2026
+
 - WAXFEED is a therapeutic environment, not the only one for music (`1fd9a3a`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Add field-establishing opening paragraphs to each research page (`1ae32d5`)
-
-### Apr 8, 2026
-
-- Unify lab names across site: AI Honesty, Film Therapeutics, Community Discovery (`86f7a12`)
 
 
 ---
