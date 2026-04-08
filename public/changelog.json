@@ -1,5 +1,14 @@
 [
   {
+    "id": "6e195a8",
+    "date": "2026-04-08",
+    "title": "Add Wax Feed music discovery research page and restructure Community Discovery hub",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "d5a91cb",
     "date": "2026-04-08",
     "title": "Remove internal document from Community Discovery evidence section",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "d9ca957",
-    "date": "2026-04-08",
-    "title": "avdp: clean up gear CTAs and remove internal language from page",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]

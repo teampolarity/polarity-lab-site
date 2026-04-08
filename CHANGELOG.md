@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Add Wax Feed music discovery research page and restructure Community Discovery hub (`6e195a8`)
+
+### Apr 8, 2026
+
 - Remove internal document from Community Discovery evidence section (`d5a91cb`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - avdp: correct Harbinger LV7 price to ~$100 (`96d0199`)
-
-### Apr 8, 2026
-
-- avdp: clean up gear CTAs and remove internal language from page (`d9ca957`)
 
 
 ---
