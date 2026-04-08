@@ -1,5 +1,14 @@
 [
   {
+    "id": "d66cda1",
+    "date": "2026-04-08",
+    "title": "Standardize involve cards across all research pages and homepage",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "871514f",
     "date": "2026-04-08",
     "title": "Rewrite about copy and expand contact section",
@@ -165,15 +174,6 @@
     "id": "127e7ad",
     "date": "2026-04-07",
     "title": "avdp: add episode 1 embed, visual credits for Caroline Fenton and Martine Niwe",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "fe1f626",
-    "date": "2026-04-07",
-    "title": "people: add Chris Zou as Innovation Investigator in Residence (Film Therapeutics)",
     "category": {
       "label": "New Feature",
       "color": "teal"

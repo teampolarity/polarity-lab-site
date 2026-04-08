@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Standardize involve cards across all research pages and homepage (`d66cda1`)
+
+### Apr 8, 2026
+
 - Rewrite about copy and expand contact section (`871514f`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - avdp: add episode 1 embed, visual credits for Caroline Fenton and Martine Niwe (`127e7ad`)
-
-### Apr 7, 2026
-
-- people: add Chris Zou as Innovation Investigator in Residence (Film Therapeutics) (`fe1f626`)
 
 
 ---
