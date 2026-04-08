@@ -1,5 +1,14 @@
 [
   {
+    "id": "1fd9a3a",
+    "date": "2026-04-08",
+    "title": "WAXFEED is a therapeutic environment, not the only one for music",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "eb7f7f3",
     "date": "2026-04-08",
     "title": "Replace all Wax Feed with WAXFEED throughout site",
@@ -165,15 +174,6 @@
     "id": "86f7a12",
     "date": "2026-04-08",
     "title": "Unify lab names across site: AI Honesty, Film Therapeutics, Community Discovery",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "439ea0c",
-    "date": "2026-04-08",
-    "title": "Use actual project names in nav dropdown",
     "category": {
       "label": "Update",
       "color": "text-secondary"

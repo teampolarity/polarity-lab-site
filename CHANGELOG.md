@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- WAXFEED is a therapeutic environment, not the only one for music (`1fd9a3a`)
+
+### Apr 8, 2026
+
 - Replace all Wax Feed with WAXFEED throughout site (`eb7f7f3`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Unify lab names across site: AI Honesty, Film Therapeutics, Community Discovery (`86f7a12`)
-
-### Apr 8, 2026
-
-- Use actual project names in nav dropdown (`439ea0c`)
 
 
 ---
