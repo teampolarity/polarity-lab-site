@@ -1,5 +1,14 @@
 [
   {
+    "id": "bb6c57e",
+    "date": "2026-04-08",
+    "title": "Redesign Community Discovery hub as Arc Institute-style lab page",
+    "category": {
+      "label": "Design",
+      "color": "purple"
+    }
+  },
+  {
     "id": "be2ec74",
     "date": "2026-04-08",
     "title": "Fix Community Discovery hub and Wax Feed framing for coherent visitor flow",
@@ -165,15 +174,6 @@
     "id": "d2f6477",
     "date": "2026-04-08",
     "title": "Apply woven involvement structure to integrity-delta.html",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "b0ba279",
-    "date": "2026-04-08",
-    "title": "Apply woven involvement structure to nonprofit.html",
     "category": {
       "label": "Update",
       "color": "text-secondary"

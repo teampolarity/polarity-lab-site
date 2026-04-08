@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Redesign Community Discovery hub as Arc Institute-style lab page (`bb6c57e`)
+
+### Apr 8, 2026
+
 - Fix Community Discovery hub and Wax Feed framing for coherent visitor flow (`be2ec74`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Apply woven involvement structure to integrity-delta.html (`d2f6477`)
-
-### Apr 8, 2026
-
-- Apply woven involvement structure to nonprofit.html (`b0ba279`)
 
 
 ---
