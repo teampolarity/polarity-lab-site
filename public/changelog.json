@@ -1,5 +1,14 @@
 [
   {
+    "id": "7212f9e",
+    "date": "2026-04-08",
+    "title": "Sync public/research/ with research/ — fixes Vercel serving stale files",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "6e195a8",
     "date": "2026-04-08",
     "title": "Add Wax Feed music discovery research page and restructure Community Discovery hub",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "96d0199",
-    "date": "2026-04-08",
-    "title": "avdp: correct Harbinger LV7 price to ~$100",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

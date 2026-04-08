@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Sync public/research/ with research/ — fixes Vercel serving stale files (`7212f9e`)
+
+### Apr 8, 2026
+
 - Add Wax Feed music discovery research page and restructure Community Discovery hub (`6e195a8`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - avdp: add NEEWER car mount to gear list (`041265d`)
-
-### Apr 8, 2026
-
-- avdp: correct Harbinger LV7 price to ~$100 (`96d0199`)
 
 
 ---
