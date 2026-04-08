@@ -1,5 +1,14 @@
 [
   {
+    "id": "ba10ec6",
+    "date": "2026-04-08",
+    "title": "Fix involve card accent color on integrity-delta to teal",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "d66cda1",
     "date": "2026-04-08",
     "title": "Standardize involve cards across all research pages and homepage",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "127e7ad",
-    "date": "2026-04-07",
-    "title": "avdp: add episode 1 embed, visual credits for Caroline Fenton and Martine Niwe",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
