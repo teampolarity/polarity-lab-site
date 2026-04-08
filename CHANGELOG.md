@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Remove internal document names from J'Juan bio (`1517ab5`)
+
+### Apr 8, 2026
+
 - Remove references to internal documents on community discovery page (`934b2ed`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - avdp: redesign support section, add full gear list (`e69934e`)
-
-### Apr 8, 2026
-
-- avdp: add Get Involved and Support sections with tiered funding model (`b9dc03d`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "1517ab5",
+    "date": "2026-04-08",
+    "title": "Remove internal document names from J'Juan bio",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "934b2ed",
     "date": "2026-04-08",
     "title": "Remove references to internal documents on community discovery page",
@@ -165,15 +174,6 @@
     "id": "e69934e",
     "date": "2026-04-08",
     "title": "avdp: redesign support section, add full gear list",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "b9dc03d",
-    "date": "2026-04-08",
-    "title": "avdp: add Get Involved and Support sections with tiered funding model",
     "category": {
       "label": "New Feature",
       "color": "teal"
