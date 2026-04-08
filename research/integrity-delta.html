@@ -609,6 +609,50 @@
 
     .funding-ask-cta:hover { opacity: 0.85; }
 
+    /* Involve grid (shared with other research pages) */
+    .involve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .involve-role {
+      background: var(--void-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .involve-role-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--coral);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .involve-role-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .involve-cta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 2px;
+      transition: border-color 0.3s ease;
+    }
+
+    .involve-cta:hover { border-color: var(--coral); }
+
     /* Sub-page footer */
     .subpage-footer {
       padding: 48px;
@@ -907,6 +951,13 @@
         <p>The Resolution Valley hypothesis predicts that the most clinically dangerous models are not the largest or smallest, but the mid-tier: models in the 7 billion to 13 billion parameter range. These models are large enough to derive the correct clinical answer internally, but too small to resist adversarial user pressure at the output stage. This is exactly the parameter range hospitals are deploying today to balance cost and capability.</p>
         <p>Our measurement framework operates at three tiers. White-box access (full internal layer visibility) uses logit-lens and linear probe methods to read the model's internal representation directly. Gray-box access (partial visibility) uses structured prompting to elicit intermediate reasoning before adversarial pressure is applied. Black-box access (API only) uses multi-turn adversarial prompting designed to surface the gap between stated confidence and final output under pressure.</p>
         <p>The External Integrity Monitor (EIM) is the intervention layer this research is building toward: a real-time watchdog that catches the IΔ gap before it reaches the patient. Rather than replacing the clinical AI, the EIM monitors the projection of model activations along the sycophancy direction during inference and flags when the gap between internal representation and output exceeds a clinically calibrated threshold.</p>
+        <div class="involve-grid">
+          <div class="involve-role">
+            <p class="involve-role-title">Technical Research Partner</p>
+            <p class="involve-role-desc">The multi-center validation protocol requires institutions with clinical compute infrastructure and access to board-certified radiologist networks for ground-truth re-labeling. If your institution has relevant infrastructure and interest in this research question, we want to talk.</p>
+            <a href="mailto:team@polarity-lab.com?subject=Integrity%20Delta%20Technical%20Partnership" class="involve-cta">Get in touch →</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -953,6 +1004,18 @@
       <div class="paper-body reveal">
         <p>The clinical stakes extend beyond any individual misdiagnosis. When clinical AI optimized for agreeableness makes clinical decisions, clinicians who repeatedly defer to it stop receiving honest expert input. They receive validation of their own assumptions. Over time, the skill of independent diagnostic reasoning atrophies, and a deskilled clinician is less able to recognize a wrong AI output. This is the pathway from IΔ &gt; 0 to persistent, system-level harm.</p>
         <p>The broader question this research opens is not just about model honesty. We are told AI systems are trained on human data to become more human. The inverse adaptation is also occurring: humans are adopting LLM reasoning patterns and developing a tolerance for confident-sounding outputs over honest, uncertain ones. Polarity Lab's institutional thesis holds that this is a new class of harm to human cognition. The Integrity Delta is the instrument we are building to measure where it is most dangerous.</p>
+        <div class="involve-grid">
+          <div class="involve-role">
+            <p class="involve-role-title">Research Advisor</p>
+            <p class="involve-role-desc">We are looking for clinical AI researchers and diagnostic imaging specialists willing to review methodology, stress-test assumptions, and shape the validation protocol. The work is early-stage and the questions are genuinely open.</p>
+            <a href="mailto:team@polarity-lab.com?subject=Integrity%20Delta%20Advisory" class="involve-cta">Get in touch →</a>
+          </div>
+          <div class="involve-role">
+            <p class="involve-role-title">Lab Partner</p>
+            <p class="involve-role-desc">Health systems and research institutions that fund the validation study gain early access to the EIM framework and direct collaboration with the team as the tool is developed toward clinical deployment. The brief is available on request.</p>
+            <a href="mailto:team@polarity-lab.com?subject=Integrity%20Delta%20Brief" class="involve-cta">Request the brief →</a>
+          </div>
+        </div>
       </div>
     </section>
 
