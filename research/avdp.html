@@ -591,6 +591,151 @@
       line-height: 1.7;
     }
 
+    /* Get involved */
+    .involve-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 768px) {
+      .involve-grid { grid-template-columns: 1fr; }
+    }
+
+    .involve-col-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .involve-role {
+      padding: 20px 0;
+      border-top: 1px solid var(--border-ghost);
+    }
+
+    .involve-role:last-child {
+      border-bottom: 1px solid var(--border-ghost);
+    }
+
+    .involve-role-title {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-pure);
+      margin-bottom: 6px;
+    }
+
+    .involve-role-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .involve-cta {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--teal);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+    }
+
+    .involve-cta:hover { opacity: 0.7; }
+
+    /* Support table */
+    .support-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 32px;
+      font-size: 14px;
+    }
+
+    .support-table th {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: left;
+      padding: 0 16px 12px 0;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .support-table td {
+      padding: 16px 16px 16px 0;
+      border-bottom: 1px solid var(--border-ghost);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+
+    .support-table td:first-child {
+      color: var(--text-pure);
+      font-weight: 500;
+    }
+
+    .support-table td.support-price {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--teal);
+      white-space: nowrap;
+    }
+
+    .support-tier {
+      display: inline-flex;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .support-tier--contributor {
+      background: rgba(78,205,196,0.1);
+      color: var(--teal);
+      border: 1px solid rgba(78,205,196,0.25);
+    }
+
+    .support-tier--collaborating {
+      background: rgba(187,143,206,0.1);
+      color: var(--purple);
+      border: 1px solid rgba(187,143,206,0.25);
+    }
+
+    .support-tier--partner {
+      background: rgba(255,138,101,0.1);
+      color: var(--coral);
+      border: 1px solid rgba(255,138,101,0.25);
+    }
+
+    .support-tiers-legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-ghost);
+    }
+
+    .support-tier-legend-item {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+      min-width: 180px;
+    }
+
+    .support-tier-legend-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
     .funding-ask-cta {
       display: inline-flex;
       align-items: center;
@@ -881,13 +1026,98 @@
       </div>
     </section>
 
-    <!-- FUNDING ASK -->
+    <!-- GET INVOLVED -->
     <section class="paper-section">
-      <div class="funding-ask reveal">
-        <p class="funding-ask-label">Support This Project</p>
-        <h2 class="funding-ask-title">Help us document Ghana's World Cup team.</h2>
-        <p class="funding-ask-desc">The Ghana national football team is coming to Rhode Island for the World Cup. The lab has been given the opportunity to produce an episode with them. Camera and audio gear unlocks it. Film therapeutics is novel, underfunded, and directly connected to the lab's broader research on environments that restore human connection.</p>
-        <a href="mailto:team@polarity-lab.com?subject=AVDP" class="funding-ask-cta">Get in touch →</a>
+      <p class="paper-section-label">Get Involved</p>
+      <h2 class="paper-section-title">Join the research.</h2>
+      <div class="paper-body reveal">
+        <p>AVDP is an active research program. The work requires people with specific skills and people who believe in the question enough to help fund it. Both are welcome. Everything starts with an email.</p>
+      </div>
+      <div class="involve-grid reveal">
+        <div>
+          <p class="involve-col-label">Research Collaborators</p>
+          <div class="involve-role">
+            <p class="involve-role-title">Production Collaborator</p>
+            <p class="involve-role-desc">Camera, audio, or editing. You understand the format and can execute on it. We're building toward the Ghana episode and shortform series.</p>
+            <a href="mailto:team@polarity-lab.com?subject=AVDP%20Production%20Collaborator" class="involve-cta">Express interest →</a>
+          </div>
+          <div class="involve-role">
+            <p class="involve-role-title">Research Collaborator</p>
+            <p class="involve-role-desc">Background in affective computing, psychology, or conversation analysis. The formal A/B study design is in development and needs methodological input.</p>
+            <a href="mailto:team@polarity-lab.com?subject=AVDP%20Research%20Collaborator" class="involve-cta">Express interest →</a>
+          </div>
+        </div>
+        <div>
+          <p class="involve-col-label">Advisors</p>
+          <div class="involve-role">
+            <p class="involve-role-title">Film or Documentary Advisor</p>
+            <p class="involve-role-desc">Experience in documentary production, distribution, or media funding. AVDP is heading toward a formal distribution strategy and the Ghana episode is the anchor.</p>
+            <a href="mailto:team@polarity-lab.com?subject=AVDP%20Advisor" class="involve-cta">Express interest →</a>
+          </div>
+          <div class="involve-role">
+            <p class="involve-role-title">Research Advisor</p>
+            <p class="involve-role-desc">Faculty or institutional researcher in psychology, public health, or affective computing. IRB sponsorship and methodological partnership are the primary needs.</p>
+            <a href="mailto:team@polarity-lab.com?subject=AVDP%20Research%20Advisor" class="involve-cta">Express interest →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUPPORT -->
+    <section class="paper-section">
+      <p class="paper-section-label">Support This Research</p>
+      <h2 class="paper-section-title">Fund what the next episode needs.</h2>
+      <div class="paper-body reveal">
+        <p>The Ghana national football team is coming to Rhode Island ahead of the World Cup. The lab has been given the opportunity to produce an episode with them. What makes it possible is specific gear. Fund one item and you are credited in the episode and on this page. The more you put in, the more you get back.</p>
+      </div>
+
+      <div class="reveal">
+        <table class="support-table">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Rationale</th>
+              <th>Price</th>
+              <th>Tier</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Harbinger LV7 Mixer</td>
+              <td>7-channel analog mixer with Bluetooth. Live-mixed ambient soundscape is the core environmental variable.</td>
+              <td class="support-price">~$299</td>
+              <td><span class="support-tier support-tier--contributor">Contributor</span></td>
+              <td><a href="mailto:team@polarity-lab.com?subject=Fund%3A%20Harbinger%20LV7%20Mixer" class="involve-cta">Fund this →</a></td>
+            </tr>
+            <tr>
+              <td>DJI Drone</td>
+              <td>Aerial capture for the Ghana episode. Model TBD (Mavic 5 Pro or DJI Neo) pending production team review.</td>
+              <td class="support-price">TBD</td>
+              <td><span class="support-tier support-tier--collaborating">Collaborating Funder</span></td>
+              <td><a href="mailto:team@polarity-lab.com?subject=Fund%3A%20DJI%20Drone" class="involve-cta">Fund this →</a></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="support-tiers-legend">
+          <div class="support-tier-legend-item">
+            <span class="support-tier support-tier--contributor">Contributor</span>
+            <p class="support-tier-legend-desc">Fund a single item. Credited in the episode and on this page.</p>
+          </div>
+          <div class="support-tier-legend-item">
+            <span class="support-tier support-tier--collaborating">Collaborating Funder</span>
+            <p class="support-tier-legend-desc">Fund a larger need. Credited plus early access to findings and content before public release.</p>
+          </div>
+          <div class="support-tier-legend-item">
+            <span class="support-tier support-tier--partner">Lab Partner</span>
+            <p class="support-tier-legend-desc">Ongoing relationship. Direct access to the team and a seat at the table as the lab scales.</p>
+          </div>
+        </div>
+
+        <p style="margin-top: 28px;">
+          <a href="mailto:team@polarity-lab.com?subject=AVDP%20Lab%20Partner" class="funding-ask-cta">Become a Lab Partner →</a>
+        </p>
       </div>
     </section>
 
