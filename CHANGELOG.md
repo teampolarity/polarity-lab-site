@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Clean up homepage about and contact sections (`b522657`)
+
+### Apr 8, 2026
+
 - Apply woven involvement structure to integrity-delta.html (`d2f6477`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - avdp: accuracy pass on methods, results, discussion, and funding ask (`24bea85`)
-
-### Apr 7, 2026
-
-- people: revert Nathan to brain-modeled knowledge graphs patent only (`0690956`)
 
 
 ---

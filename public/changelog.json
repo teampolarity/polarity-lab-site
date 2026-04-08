@@ -1,5 +1,14 @@
 [
   {
+    "id": "b522657",
+    "date": "2026-04-08",
+    "title": "Clean up homepage about and contact sections",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "d2f6477",
     "date": "2026-04-08",
     "title": "Apply woven involvement structure to integrity-delta.html",
@@ -165,15 +174,6 @@
     "id": "24bea85",
     "date": "2026-04-07",
     "title": "avdp: accuracy pass on methods, results, discussion, and funding ask",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "0690956",
-    "date": "2026-04-07",
-    "title": "people: revert Nathan to brain-modeled knowledge graphs patent only",
     "category": {
       "label": "Update",
       "color": "text-secondary"
