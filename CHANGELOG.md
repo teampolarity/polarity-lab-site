@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Add field-establishing opening paragraphs to each research page (`1ae32d5`)
+
+### Apr 8, 2026
+
 - Unify lab names across site: AI Honesty, Film Therapeutics, Community Discovery (`86f7a12`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - fix: reduce spacing between research/people and about/contact sections (`f935f4d`)
-
-### Apr 7, 2026
-
-- fix: tighten about section scroll padding further (`6a8796d`)
 
 
 ---
