@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Replace all Wax Feed with WAXFEED throughout site (`eb7f7f3`)
+
+### Apr 8, 2026
+
 - Update all research page badges to lab names; WAXFEED caps on hub (`07a780b`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Use actual project names in nav dropdown (`439ea0c`)
-
-### Apr 8, 2026
-
-- Replace stage badges with research type badges (`4215da5`)
 
 
 ---

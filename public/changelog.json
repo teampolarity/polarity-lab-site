@@ -1,5 +1,14 @@
 [
   {
+    "id": "eb7f7f3",
+    "date": "2026-04-08",
+    "title": "Replace all Wax Feed with WAXFEED throughout site",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "07a780b",
     "date": "2026-04-08",
     "title": "Update all research page badges to lab names; WAXFEED caps on hub",
@@ -165,15 +174,6 @@
     "id": "439ea0c",
     "date": "2026-04-08",
     "title": "Use actual project names in nav dropdown",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "4215da5",
-    "date": "2026-04-08",
-    "title": "Replace stage badges with research type badges",
     "category": {
       "label": "Update",
       "color": "text-secondary"
