@@ -1,5 +1,14 @@
 [
   {
+    "id": "425a5e0",
+    "date": "2026-04-08",
+    "title": "Replace 'Seeking Funding' badge with 'Pilot Stage'",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "b6615dc",
     "date": "2026-04-08",
     "title": "Fix integrity-delta involve card structure to match avdp",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "6336e94",
-    "date": "2026-04-07",
-    "title": "fix: nav links grey by default, teal/green on hover",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
