@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- avdp: add NEEWER car mount to gear list (`041265d`)
+
+### Apr 8, 2026
+
 - avdp: correct Harbinger LV7 price to ~$100 (`96d0199`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - people: fix project connections, add brain-modeled knowledge graphs patent (`be8004d`)
-
-### Apr 7, 2026
-
-- people: write J'Juan bio with MUSEOFRI affiliation, fix field research framing (`9093da1`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "041265d",
+    "date": "2026-04-08",
+    "title": "avdp: add NEEWER car mount to gear list",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "96d0199",
     "date": "2026-04-08",
     "title": "avdp: correct Harbinger LV7 price to ~$100",
@@ -165,15 +174,6 @@
     "id": "be8004d",
     "date": "2026-04-07",
     "title": "people: fix project connections, add brain-modeled knowledge graphs patent",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "9093da1",
-    "date": "2026-04-07",
-    "title": "people: write J'Juan bio with MUSEOFRI affiliation, fix field research framing",
     "category": {
       "label": "Bug Fix",
       "color": "coral"
