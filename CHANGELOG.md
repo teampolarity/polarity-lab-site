@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Add polaritygps.html project page, update WAXFEED team and label (`9e1301a`)
+
+### Apr 8, 2026
+
 - Refine Community Discovery lab hub to be field-agnostic (`d1d27b6`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Rewrite about copy and expand contact section (`871514f`)
-
-### Apr 8, 2026
-
-- Clean up homepage about and contact sections (`b522657`)
 
 
 ---
