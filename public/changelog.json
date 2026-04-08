@@ -1,5 +1,14 @@
 [
   {
+    "id": "e69934e",
+    "date": "2026-04-08",
+    "title": "avdp: redesign support section, add full gear list",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "b9dc03d",
     "date": "2026-04-08",
     "title": "avdp: add Get Involved and Support sections with tiered funding model",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "b0f80d2",
-    "date": "2026-04-07",
-    "title": "fix: remove em dash from integrity-delta sublabel",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

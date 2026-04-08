@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- avdp: redesign support section, add full gear list (`e69934e`)
+
+### Apr 8, 2026
+
 - avdp: add Get Involved and Support sections with tiered funding model (`b9dc03d`)
 
 ### Apr 7, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - feat: add cleanUrls to vercel config (`c6d61ca`)
-
-### Apr 7, 2026
-
-- fix: remove em dash from integrity-delta sublabel (`b0f80d2`)
 
 
 ---
