@@ -1,5 +1,14 @@
 [
   {
+    "id": "b0f4ca3",
+    "date": "2026-04-08",
+    "title": "Update WAXFEED badge to Music Research",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "1ba9768",
     "date": "2026-04-08",
     "title": "Make hub project entries consistent: 3 links each (research, join, website)",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "96a80d3",
-    "date": "2026-04-08",
-    "title": "Add network/introductions pathway across all pages",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
