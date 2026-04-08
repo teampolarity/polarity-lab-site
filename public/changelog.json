@@ -1,5 +1,14 @@
 [
   {
+    "id": "69a8639",
+    "date": "2026-04-08",
+    "title": "Fix two incorrect evidence links on WAXFEED page",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "3748aa7",
     "date": "2026-04-08",
     "title": "Update homepage research section and Shadrack's project tags",
@@ -167,15 +176,6 @@
     "title": "Fix all broken evidence links on Community Discovery page",
     "category": {
       "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "1517ab5",
-    "date": "2026-04-08",
-    "title": "Remove internal document names from J'Juan bio",
-    "category": {
-      "label": "Removed",
       "color": "coral"
     }
   }
