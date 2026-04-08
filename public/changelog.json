@@ -1,5 +1,14 @@
 [
   {
+    "id": "d9ca957",
+    "date": "2026-04-08",
+    "title": "avdp: clean up gear CTAs and remove internal language from page",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "77f4e42",
     "date": "2026-04-08",
     "title": "avdp: weave collaborator and funding asks into research sections",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Design",
       "color": "purple"
-    }
-  },
-  {
-    "id": "9339632",
-    "date": "2026-04-07",
-    "title": "fix: replace em dashes with parentheses/colon in avdp body text",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

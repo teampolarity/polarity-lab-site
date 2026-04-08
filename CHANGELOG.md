@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- avdp: clean up gear CTAs and remove internal language from page (`d9ca957`)
+
+### Apr 8, 2026
+
 - avdp: weave collaborator and funding asks into research sections (`77f4e42`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - feat: reframe people section with ARC-style titles and structure (`32a9887`)
-
-### Apr 7, 2026
-
-- fix: replace em dashes with parentheses/colon in avdp body text (`9339632`)
 
 
 ---
