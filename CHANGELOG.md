@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Make hub project entries consistent: 3 links each (research, join, website) (`1ba9768`)
+
+### Apr 8, 2026
+
 - Clean up WAXFEED page: Shadrack Annor, remove Music Discovery references (`b401f5e`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Add network/introductions pathway across all pages (`96a80d3`)
-
-### Apr 8, 2026
-
-- Fix involve card accent color on integrity-delta to teal (`ba10ec6`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "1ba9768",
+    "date": "2026-04-08",
+    "title": "Make hub project entries consistent: 3 links each (research, join, website)",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "b401f5e",
     "date": "2026-04-08",
     "title": "Clean up WAXFEED page: Shadrack Annor, remove Music Discovery references",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "ba10ec6",
-    "date": "2026-04-08",
-    "title": "Fix involve card accent color on integrity-delta to teal",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
