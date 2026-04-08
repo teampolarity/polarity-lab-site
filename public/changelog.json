@@ -1,5 +1,14 @@
 [
   {
+    "id": "b401f5e",
+    "date": "2026-04-08",
+    "title": "Clean up WAXFEED page: Shadrack Annor, remove Music Discovery references",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "49b01d9",
     "date": "2026-04-08",
     "title": "Fix hub project links: PolarityGPS join CTA, Wax Feed links to wax-feed.com",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "d66cda1",
-    "date": "2026-04-08",
-    "title": "Standardize involve cards across all research pages and homepage",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
