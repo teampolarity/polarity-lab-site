@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Update project page badges to Community Discovery (`1bdd03d`)
+
+### Apr 8, 2026
+
 - Update WAXFEED badge to Music Research (`b0f4ca3`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Replace 'Seeking Funding' badge with 'Pilot Stage' (`425a5e0`)
-
-### Apr 8, 2026
-
-- Fix integrity-delta involve card structure to match avdp (`b6615dc`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "1bdd03d",
+    "date": "2026-04-08",
+    "title": "Update project page badges to Community Discovery",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "b0f4ca3",
     "date": "2026-04-08",
     "title": "Update WAXFEED badge to Music Research",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "b6615dc",
-    "date": "2026-04-08",
-    "title": "Fix integrity-delta involve card structure to match avdp",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
