@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Refine Community Discovery lab hub to be field-agnostic (`d1d27b6`)
+
+### Apr 8, 2026
+
 - Redesign Community Discovery hub as Arc Institute-style lab page (`bb6c57e`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Clean up homepage about and contact sections (`b522657`)
-
-### Apr 8, 2026
-
-- Apply woven involvement structure to integrity-delta.html (`d2f6477`)
 
 
 ---
