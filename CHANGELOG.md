@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- avdp: weave collaborator and funding asks into research sections (`77f4e42`)
+
+### Apr 8, 2026
+
 - avdp: redesign support section, add full gear list (`e69934e`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - fix: replace em dashes with parentheses/colon in avdp body text (`9339632`)
-
-### Apr 7, 2026
-
-- feat: add cleanUrls to vercel config (`c6d61ca`)
 
 
 ---

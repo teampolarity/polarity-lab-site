@@ -1,5 +1,14 @@
 [
   {
+    "id": "77f4e42",
+    "date": "2026-04-08",
+    "title": "avdp: weave collaborator and funding asks into research sections",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "e69934e",
     "date": "2026-04-08",
     "title": "avdp: redesign support section, add full gear list",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "c6d61ca",
-    "date": "2026-04-07",
-    "title": "feat: add cleanUrls to vercel config",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
