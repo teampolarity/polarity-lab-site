@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Fix integrity-delta involve card structure to match avdp (`b6615dc`)
+
+### Apr 8, 2026
+
 - Add network/introductions pathway across all pages (`96a80d3`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - fix: nav links grey by default, teal/green on hover (`6336e94`)
-
-### Apr 7, 2026
-
-- style: minimalist square domain tags with transparent background (`236d931`)
 
 
 ---

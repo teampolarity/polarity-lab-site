@@ -1,5 +1,14 @@
 [
   {
+    "id": "b6615dc",
+    "date": "2026-04-08",
+    "title": "Fix integrity-delta involve card structure to match avdp",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "96a80d3",
     "date": "2026-04-08",
     "title": "Add network/introductions pathway across all pages",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "236d931",
-    "date": "2026-04-07",
-    "title": "style: minimalist square domain tags with transparent background",
-    "category": {
-      "label": "Design",
-      "color": "purple"
     }
   }
 ]
