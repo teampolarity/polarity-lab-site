@@ -1,5 +1,14 @@
 [
   {
+    "id": "934b2ed",
+    "date": "2026-04-08",
+    "title": "Remove references to internal documents on community discovery page",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "1ae32d5",
     "date": "2026-04-08",
     "title": "Add field-establishing opening paragraphs to each research page",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "f935f4d",
-    "date": "2026-04-07",
-    "title": "fix: reduce spacing between research/people and about/contact sections",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
