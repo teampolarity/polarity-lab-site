@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Fix all evidence links on WAXFEED page (`8a6604f`)
+
+### Apr 8, 2026
+
 - Make WAXFEED standalone: remove PolarityGPS comparisons, fix methods (`62cb142`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Remove references to internal documents on community discovery page (`934b2ed`)
-
-### Apr 8, 2026
-
-- Add field-establishing opening paragraphs to each research page (`1ae32d5`)
 
 
 ---

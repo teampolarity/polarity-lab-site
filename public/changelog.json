@@ -1,5 +1,14 @@
 [
   {
+    "id": "8a6604f",
+    "date": "2026-04-08",
+    "title": "Fix all evidence links on WAXFEED page",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "62cb142",
     "date": "2026-04-08",
     "title": "Make WAXFEED standalone: remove PolarityGPS comparisons, fix methods",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Removed",
       "color": "coral"
-    }
-  },
-  {
-    "id": "1ae32d5",
-    "date": "2026-04-08",
-    "title": "Add field-establishing opening paragraphs to each research page",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
