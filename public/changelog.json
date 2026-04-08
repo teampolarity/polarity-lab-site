@@ -1,5 +1,23 @@
 [
   {
+    "id": "d2f6477",
+    "date": "2026-04-08",
+    "title": "Apply woven involvement structure to integrity-delta.html",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
+    "id": "b0ba279",
+    "date": "2026-04-08",
+    "title": "Apply woven involvement structure to nonprofit.html",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "041265d",
     "date": "2026-04-08",
     "title": "avdp: add NEEWER car mount to gear list",
@@ -159,24 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "db1464f",
-    "date": "2026-04-07",
-    "title": "people: add cognitive biometric authentication patent to all three bios",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "be8004d",
-    "date": "2026-04-07",
-    "title": "people: fix project connections, add brain-modeled knowledge graphs patent",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

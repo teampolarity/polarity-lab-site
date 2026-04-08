@@ -6,6 +6,14 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Apply woven involvement structure to integrity-delta.html (`d2f6477`)
+
+### Apr 8, 2026
+
+- Apply woven involvement structure to nonprofit.html (`b0ba279`)
+
+### Apr 8, 2026
+
 - avdp: add NEEWER car mount to gear list (`041265d`)
 
 ### Apr 8, 2026
@@ -75,14 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - people: revert Nathan to brain-modeled knowledge graphs patent only (`0690956`)
-
-### Apr 7, 2026
-
-- people: add cognitive biometric authentication patent to all three bios (`db1464f`)
-
-### Apr 7, 2026
-
-- people: fix project connections, add brain-modeled knowledge graphs patent (`be8004d`)
 
 
 ---
