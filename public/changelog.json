@@ -1,5 +1,14 @@
 [
   {
+    "id": "d5a91cb",
+    "date": "2026-04-08",
+    "title": "Remove internal document from Community Discovery evidence section",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "f9a6ef1",
     "date": "2026-04-08",
     "title": "Fix all broken evidence links on Community Discovery page",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Removed",
       "color": "coral"
-    }
-  },
-  {
-    "id": "77f4e42",
-    "date": "2026-04-08",
-    "title": "avdp: weave collaborator and funding asks into research sections",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
