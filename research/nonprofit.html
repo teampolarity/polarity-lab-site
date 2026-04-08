@@ -609,6 +609,50 @@
 
     .funding-ask-cta:hover { opacity: 0.85; }
 
+    /* Involve grid */
+    .involve-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .involve-role {
+      background: var(--void-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .involve-role-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .involve-role-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .involve-cta {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 2px;
+      transition: border-color 0.3s ease;
+    }
+
+    .involve-cta:hover { border-color: var(--teal); }
+
     /* Sub-page footer */
     .subpage-footer {
       padding: 48px;
@@ -820,8 +864,8 @@
         <p>A score of zero means everything made for you reaches you. A high score means your own culture, resources, and support systems are algorithmically invisible to you.</p>
         <p>The instrument was developed in partnership with MUSEOFRI (Providence, RI, 2026). Data collection focused on BIPOC-led nonprofits and the communities they serve across Rhode Island. The scoring methodology is currently being grounded in the academic literature on nonprofit pain points. That work is open.</p>
       </div>
-      <div class="reveal" style="margin-top:8px;">
-        <div class="involve-role" style="border-top:1px solid var(--border-ghost);">
+      <div class="involve-grid reveal">
+        <div class="involve-role">
           <p class="involve-role-title">Research Collaborator</p>
           <p class="involve-role-desc">The evidentiary base for the Proximity Index scoring methodology is being built from the academic literature on nonprofit resource access, community visibility, and philanthropic infrastructure. If you work in this area or want to contribute to the literature review and scoring design, reach out.</p>
           <a href="mailto:team@polarity-lab.com?subject=Nonprofit%20Research%20Collaborator" class="involve-cta">Get in touch →</a>
@@ -837,8 +881,8 @@
         <p>Across BIPOC-led communities in Providence, the gap was not caused by a lack of output. Communities were actively producing. The problem was in the pathways.</p>
         <p>This gives PolarityGPS a specific, measurable target: not to create new cultural content, but to fix the discovery infrastructure so that what already exists can reach the people it was made for.</p>
       </div>
-      <div class="reveal" style="margin-top:8px;">
-        <div class="involve-role" style="border-top:1px solid var(--border-ghost); border-bottom:1px solid var(--border-ghost);">
+      <div class="involve-grid reveal">
+        <div class="involve-role">
           <p class="involve-role-title">Community Research Partner</p>
           <p class="involve-role-desc">This research is grounded in Providence and Rhode Island but the gap it documents is not local. If you work with BIPOC-led organizations or communities elsewhere and want to extend the Proximity Index to your context, reach out.</p>
           <a href="mailto:team@polarity-lab.com?subject=Nonprofit%20Community%20Partner" class="involve-cta">Get in touch →</a>
@@ -855,13 +899,13 @@
         <p>The next phase of this research involves systematic data accumulation from the academic literature on nonprofit pain points, building the evidentiary base for the Proximity Index scoring methodology.</p>
         <p><a href="https://polaritygps.com" target="_blank" style="color: var(--teal); font-weight: 600;">Explore PolarityGPS →</a></p>
       </div>
-      <div class="reveal" style="margin-top:8px;">
-        <div class="involve-role" style="border-top:1px solid var(--border-ghost);">
+      <div class="involve-grid reveal">
+        <div class="involve-role">
           <p class="involve-role-title">Advisor</p>
           <p class="involve-role-desc">Experience in nonprofit sector research, philanthropic infrastructure, or community discovery technology. The Proximity Index needs methodological grounding from people who have worked inside these systems.</p>
           <a href="mailto:team@polarity-lab.com?subject=Nonprofit%20Advisor" class="involve-cta">Get in touch →</a>
         </div>
-        <div class="involve-role" style="border-bottom:1px solid var(--border-ghost);">
+        <div class="involve-role">
           <p class="involve-role-title">Lab Partner</p>
           <p class="involve-role-desc">Organizations or individuals who want an ongoing relationship with this research as it develops. Funders, foundations, and institutional partners with existing relationships in the nonprofit ecosystem are the right fit here.</p>
           <a href="mailto:team@polarity-lab.com?subject=Nonprofit%20Lab%20Partner" class="involve-cta">Get in touch →</a>

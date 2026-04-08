@@ -594,57 +594,46 @@
     /* Get involved */
     .involve-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
       margin-top: 32px;
     }
 
-    @media (max-width: 768px) {
-      .involve-grid { grid-template-columns: 1fr; }
-    }
-
-    .involve-col-label {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-tertiary);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
     .involve-role {
-      padding: 20px 0;
-      border-top: 1px solid var(--border-ghost);
-    }
-
-    .involve-role:last-child {
-      border-bottom: 1px solid var(--border-ghost);
+      background: var(--void-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 24px;
     }
 
     .involve-role-title {
-      font-family: var(--font-display);
-      font-size: 15px;
+      font-family: var(--font-mono);
+      font-size: 11px;
       font-weight: 600;
-      color: var(--text-pure);
-      margin-bottom: 6px;
+      letter-spacing: 0.12em;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 8px;
     }
 
     .involve-role-desc {
       font-size: 14px;
       color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: 12px;
+      line-height: 1.55;
+      margin-bottom: 16px;
     }
 
     .involve-cta {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--teal);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
       text-decoration: none;
-      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 2px;
+      transition: border-color 0.3s ease;
     }
 
-    .involve-cta:hover { opacity: 0.7; }
+    .involve-cta:hover { border-color: var(--teal); }
 
     /* Support table */
     .support-table {
@@ -994,8 +983,8 @@
         <p>Episodes to date have varied multiple experimental dimensions in parallel: episode duration (from 60 seconds to 2 hours), capture methodology (single-take, asynchronous, multicam, b-roll integration), presentation format (how editing affects perceived authenticity), and language. Episodes have been produced in English and Mandarin Chinese with English subtitles, testing whether authentic connection crosses language and cultural barriers through format alone.</p>
         <p>The formal research design calls for a structured A/B comparison: sessions recorded with ambient music present against sessions recorded without, with post-session participant surveys measuring comfort, authenticity, and willingness to disclose. Independent raters will assess transcripts for conversational depth and vulnerability. This measurement phase is in development. If you have a background in affective computing, psychology, or conversation analysis and want to contribute to the study design, reach out.</p>
       </div>
-      <div class="reveal" style="margin-top:8px;">
-        <div class="involve-role" style="border-top:1px solid var(--border-ghost);">
+      <div class="involve-grid reveal">
+        <div class="involve-role">
           <p class="involve-role-title">Research Collaborator</p>
           <p class="involve-role-desc">The A/B study design is open. We need methodological input from researchers in affective computing, psychology, or conversation analysis. IRB sponsorship through a university partner is also a need.</p>
           <a href="mailto:team@polarity-lab.com?subject=AVDP%20Research%20Collaborator" class="involve-cta">Get in touch →</a>
@@ -1021,37 +1010,27 @@
         <p><a href="https://www.instagram.com/averydistantperspective" target="_blank" style="color: var(--teal); font-weight: 600;">Follow AVDP on Instagram →</a></p>
         <p style="margin-top:24px;">The next episode is with the Ghana national football team, coming to Rhode Island ahead of the World Cup. The lab has been given the opportunity to produce it. What makes it possible is the gear below. Fund a specific item and you are credited in the episode.</p>
       </div>
-      <div class="reveal" style="margin-top:8px;">
-        <div class="involve-role" style="border-top:1px solid var(--border-ghost);">
-          <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
-            <p class="involve-role-title">3× Osmo Pocket 3 <span style="font-family:var(--font-mono);font-size:12px;font-weight:400;color:var(--teal);">~$519 each</span></p>
-            <a href="mailto:team@polarity-lab.com?subject=Fund%3A%20Osmo%20Pocket%203" class="involve-cta">Get in touch →</a>
-          </div>
+      <div class="involve-grid reveal">
+        <div class="involve-role">
+          <p class="involve-role-title">3× Osmo Pocket 3 <span style="font-family:var(--font-mono);font-size:11px;font-weight:400;color:var(--text-secondary);">~$519 each</span></p>
           <p class="involve-role-desc">Multicam setup for the Ghana episode. Three cameras give simultaneous coverage across subjects, which is what a four-person conversation at production quality requires.</p>
+          <a href="mailto:team@polarity-lab.com?subject=Fund%3A%20Osmo%20Pocket%203" class="involve-cta">Get in touch →</a>
         </div>
         <div class="involve-role">
-          <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
-            <p class="involve-role-title">2× DJI Mic 3 <span style="font-family:var(--font-mono);font-size:12px;font-weight:400;color:var(--teal);">~$249 each</span></p>
-            <a href="mailto:team@polarity-lab.com?subject=Fund%3A%20DJI%20Mic%203" class="involve-cta">Get in touch →</a>
-          </div>
+          <p class="involve-role-title">2× DJI Mic 3 <span style="font-family:var(--font-mono);font-size:11px;font-weight:400;color:var(--text-secondary);">~$249 each</span></p>
           <p class="involve-role-desc">Wireless lavalier mics for a four-person setup. Clean audio separation is what allows the ambient soundscape to function as a research variable rather than background noise.</p>
+          <a href="mailto:team@polarity-lab.com?subject=Fund%3A%20DJI%20Mic%203" class="involve-cta">Get in touch →</a>
         </div>
         <div class="involve-role">
-          <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
-            <p class="involve-role-title">Harbinger LV7 Mixer <span style="font-family:var(--font-mono);font-size:12px;font-weight:400;color:var(--teal);">~$100</span></p>
-            <a href="mailto:team@polarity-lab.com?subject=Fund%3A%20Harbinger%20LV7" class="involve-cta">Get in touch →</a>
-          </div>
+          <p class="involve-role-title">Harbinger LV7 Mixer <span style="font-family:var(--font-mono);font-size:11px;font-weight:400;color:var(--text-secondary);">~$100</span></p>
           <p class="involve-role-desc">7-channel analog mixer with Bluetooth. The live-mixed ambient soundscape is the core independent variable in the research design. This is what produces it.</p>
+          <a href="mailto:team@polarity-lab.com?subject=Fund%3A%20Harbinger%20LV7" class="involve-cta">Get in touch →</a>
         </div>
-        <div class="involve-role" style="border-bottom:1px solid var(--border-ghost);">
-          <div style="display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;">
-            <p class="involve-role-title">NEEWER Triple Suction Cup Car Mount <span style="font-family:var(--font-mono);font-size:12px;font-weight:400;color:var(--teal);">$89</span></p>
-            <a href="mailto:team@polarity-lab.com?subject=Fund%3A%20NEEWER%20Car%20Mount" class="involve-cta">Get in touch →</a>
-          </div>
+        <div class="involve-role">
+          <p class="involve-role-title">NEEWER Car Mount <span style="font-family:var(--font-mono);font-size:11px;font-weight:400;color:var(--text-secondary);">$89</span></p>
           <p class="involve-role-desc">Windshield-mounted camera rig for in-car capture. Extends the format into vehicle environments, adding a new context for recording conversation and expanding the range of settings the research can document.</p>
+          <a href="mailto:team@polarity-lab.com?subject=Fund%3A%20NEEWER%20Car%20Mount" class="involve-cta">Get in touch →</a>
         </div>
-      </div>
-      <div class="reveal">
         <div class="involve-role">
           <p class="involve-role-title">Production Collaborator</p>
           <p class="involve-role-desc">Camera, audio, or editing. You know the format and can execute on it. We are building toward the Ghana episode and a shortform series.</p>
@@ -1069,13 +1048,13 @@
         <p>The multilingual dimension adds a cross-cultural question: does genuine emotional openness carry across language barriers through format alone? The Mandarin Chinese episode with English subtitles is the first test of this. The Ghana episode extends the corpus to West African cultural and linguistic context, which no existing affective dataset has addressed at this length or under these conditions.</p>
         <p>This is a research area being built in real time. If you have experience in documentary production, distribution, or media funding and want to be part of how this work reaches the world, reach out.</p>
       </div>
-      <div class="reveal" style="margin-top:8px;">
-        <div class="involve-role" style="border-top:1px solid var(--border-ghost);">
+      <div class="involve-grid reveal">
+        <div class="involve-role">
           <p class="involve-role-title">Film and Documentary Advisor</p>
           <p class="involve-role-desc">AVDP is heading toward a formal distribution strategy. The Ghana episode is the anchor. Experience in documentary production, media funding, or public health media is relevant here.</p>
           <a href="mailto:team@polarity-lab.com?subject=AVDP%20Film%20Advisor" class="involve-cta">Get in touch →</a>
         </div>
-        <div class="involve-role" style="border-bottom:1px solid var(--border-ghost);">
+        <div class="involve-role">
           <p class="involve-role-title">Lab Partner</p>
           <p class="involve-role-desc">If you want a deeper relationship with the lab and its work, not just this episode, this is a different conversation. Lab Partners have direct access to the team and stay involved as the work scales.</p>
           <a href="mailto:team@polarity-lab.com?subject=AVDP%20Lab%20Partner" class="involve-cta">Get in touch →</a>
