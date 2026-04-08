@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Add memory and self-relation dimension to AVDP research program (`ca71db3`)
+
+### Apr 8, 2026
+
 - Fix two incorrect evidence links on WAXFEED page (`69a8639`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Remove internal document from Community Discovery evidence section (`d5a91cb`)
-
-### Apr 8, 2026
-
-- Fix all broken evidence links on Community Discovery page (`f9a6ef1`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "ca71db3",
+    "date": "2026-04-08",
+    "title": "Add memory and self-relation dimension to AVDP research program",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "69a8639",
     "date": "2026-04-08",
     "title": "Fix two incorrect evidence links on WAXFEED page",
@@ -167,15 +176,6 @@
     "title": "Remove internal document from Community Discovery evidence section",
     "category": {
       "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "f9a6ef1",
-    "date": "2026-04-08",
-    "title": "Fix all broken evidence links on Community Discovery page",
-    "category": {
-      "label": "Bug Fix",
       "color": "coral"
     }
   }
