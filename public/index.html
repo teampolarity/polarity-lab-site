@@ -4193,11 +4193,14 @@
     /* ==========================================
        CONTACT
        ========================================== */
-    .contact-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 48px; }
+    .contact-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 48px; margin-top: 48px; }
     @media (max-width: 640px) { .contact-cols { grid-template-columns: 1fr; } }
     .contact-col-label {
       font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary);
-      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 12px;
+      letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px;
+    }
+    .contact-col-desc {
+      font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 14px;
     }
     .contact-col-link {
       font-family: var(--font-display); font-size: 15px; font-weight: 500;
@@ -4424,7 +4427,7 @@
           <h2 class="section-title">An environmental therapeutics lab.</h2>
         </div>
         <div class="about-body reveal">
-          <p>Most platforms make money when you keep scrolling. That incentive has produced a measurable result: people are more isolated, more anxious, and less able to focus than a generation ago. We study the mechanism, and we build the antidote.</p>
+          <p>The environments people move through shape what they think, feel, and know. Most of them were not designed with that in mind. Platforms optimized for engagement over attention. Clinical AI trained to agree over accuracy. Resource infrastructure that serves the organizations already visible, not the ones that need it most. We study the mechanism. We build the antidote.</p>
           <p>A <strong>diagnostic instrument</strong> gives you a number for something that doesn't have one yet. A blood pressure cuff doesn't ask how you feel. It gives a reading that means the same thing in any clinic in the world. We build that for things medicine hasn't gotten to yet: how disconnected someone has become from real relationships, how much an AI is steering their thinking without them knowing it.</p>
           <p>A <strong>therapeutic environment</strong> is a place or experience designed so that going through it produces a real, specific change in you. The environment does the work. You leave less isolated, thinking more clearly, trusting yourself more. Not because you tried. Because of what it put you through.</p>
         </div>
@@ -4453,11 +4456,18 @@
         <div class="contact-cols reveal">
           <div>
             <p class="contact-col-label">Research &amp; Collaboration</p>
+            <p class="contact-col-desc">Institutions, practitioners, and researchers interested in working alongside the lab on active programs.</p>
             <a href="mailto:team@polarity-lab.com?subject=Research%20Collaboration" class="contact-col-link">team@polarity-lab.com</a>
           </div>
           <div>
             <p class="contact-col-label">Funding &amp; Investment</p>
+            <p class="contact-col-desc">Funders, health systems, and foundations interested in supporting specific programs or the lab overall.</p>
             <a href="mailto:team@polarity-lab.com?subject=Funding%20Inquiry" class="contact-col-link">team@polarity-lab.com</a>
+          </div>
+          <div>
+            <p class="contact-col-label">Join the Lab</p>
+            <p class="contact-col-desc">The lab is built on people doing what they already do well. If your work touches what we're building and you want to be part of it, reach out.</p>
+            <a href="mailto:team@polarity-lab.com?subject=Joining%20the%20Lab" class="contact-col-link">team@polarity-lab.com</a>
           </div>
         </div>
 
