@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Apr 8, 2026
+
+- avdp: add Get Involved and Support sections with tiered funding model (`b9dc03d`)
+
 ### Apr 7, 2026
 
 - fix: reduce spacing between research/people and about/contact sections (`f935f4d`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - fix: remove em dash from integrity-delta sublabel (`b0f80d2`)
-
-### Apr 7, 2026
-
-- feat: add Integrity Delta research sub-page (`6ffe694`)
 
 
 ---

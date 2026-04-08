@@ -1,5 +1,14 @@
 [
   {
+    "id": "b9dc03d",
+    "date": "2026-04-08",
+    "title": "avdp: add Get Involved and Support sections with tiered funding model",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "f935f4d",
     "date": "2026-04-07",
     "title": "fix: reduce spacing between research/people and about/contact sections",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "6ffe694",
-    "date": "2026-04-07",
-    "title": "feat: add Integrity Delta research sub-page",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
