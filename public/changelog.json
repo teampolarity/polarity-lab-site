@@ -1,5 +1,14 @@
 [
   {
+    "id": "96a80d3",
+    "date": "2026-04-08",
+    "title": "Add network/introductions pathway across all pages",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "ba10ec6",
     "date": "2026-04-08",
     "title": "Fix involve card accent color on integrity-delta to teal",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Design",
       "color": "purple"
-    }
-  },
-  {
-    "id": "8061c92",
-    "date": "2026-04-07",
-    "title": "fix: make Where We Work domain tags visible in both light and dark mode",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

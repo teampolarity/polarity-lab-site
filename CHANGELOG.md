@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Add network/introductions pathway across all pages (`96a80d3`)
+
+### Apr 8, 2026
+
 - Fix involve card accent color on integrity-delta to teal (`ba10ec6`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - style: minimalist square domain tags with transparent background (`236d931`)
-
-### Apr 7, 2026
-
-- fix: make Where We Work domain tags visible in both light and dark mode (`8061c92`)
 
 
 ---
