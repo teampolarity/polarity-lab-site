@@ -1,5 +1,14 @@
 [
   {
+    "id": "96d0199",
+    "date": "2026-04-08",
+    "title": "avdp: correct Harbinger LV7 price to ~$100",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "d9ca957",
     "date": "2026-04-08",
     "title": "avdp: clean up gear CTAs and remove internal language from page",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "32a9887",
-    "date": "2026-04-07",
-    "title": "feat: reframe people section with ARC-style titles and structure",
-    "category": {
-      "label": "Design",
-      "color": "purple"
     }
   }
 ]

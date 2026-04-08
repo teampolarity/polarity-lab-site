@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- avdp: correct Harbinger LV7 price to ~$100 (`96d0199`)
+
+### Apr 8, 2026
+
 - avdp: clean up gear CTAs and remove internal language from page (`d9ca957`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - people: write J'Juan bio with MUSEOFRI affiliation, fix field research framing (`9093da1`)
-
-### Apr 7, 2026
-
-- feat: reframe people section with ARC-style titles and structure (`32a9887`)
 
 
 ---
