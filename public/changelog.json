@@ -1,5 +1,14 @@
 [
   {
+    "id": "4215da5",
+    "date": "2026-04-08",
+    "title": "Replace stage badges with research type badges",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "425a5e0",
     "date": "2026-04-08",
     "title": "Replace 'Seeking Funding' badge with 'Pilot Stage'",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "41518d4",
-    "date": "2026-04-07",
-    "title": "nav: add People link before About",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]

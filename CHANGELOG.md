@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Replace stage badges with research type badges (`4215da5`)
+
+### Apr 8, 2026
+
 - Replace 'Seeking Funding' badge with 'Pilot Stage' (`425a5e0`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - fix: reduce top padding on people section for tighter scroll target (`d483797`)
-
-### Apr 7, 2026
-
-- nav: add People link before About (`41518d4`)
 
 
 ---
