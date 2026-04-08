@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Use actual project names in nav dropdown (`439ea0c`)
+
+### Apr 8, 2026
+
 - Replace stage badges with research type badges (`4215da5`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - fix: reduce top padding on about section for tighter scroll target (`d58c4bb`)
-
-### Apr 7, 2026
-
-- fix: reduce top padding on people section for tighter scroll target (`d483797`)
 
 
 ---

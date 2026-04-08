@@ -1,5 +1,14 @@
 [
   {
+    "id": "439ea0c",
+    "date": "2026-04-08",
+    "title": "Use actual project names in nav dropdown",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "4215da5",
     "date": "2026-04-08",
     "title": "Replace stage badges with research type badges",
@@ -165,15 +174,6 @@
     "id": "d58c4bb",
     "date": "2026-04-07",
     "title": "fix: reduce top padding on about section for tighter scroll target",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "d483797",
-    "date": "2026-04-07",
-    "title": "fix: reduce top padding on people section for tighter scroll target",
     "category": {
       "label": "Bug Fix",
       "color": "coral"
