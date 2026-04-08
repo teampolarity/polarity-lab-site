@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Fix hub project links: PolarityGPS join CTA, Wax Feed links to wax-feed.com (`49b01d9`)
+
+### Apr 8, 2026
+
 - Add polaritygps.html project page, update WAXFEED team and label (`9e1301a`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Standardize involve cards across all research pages and homepage (`d66cda1`)
-
-### Apr 8, 2026
-
-- Rewrite about copy and expand contact section (`871514f`)
 
 
 ---

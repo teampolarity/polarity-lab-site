@@ -1,5 +1,14 @@
 [
   {
+    "id": "49b01d9",
+    "date": "2026-04-08",
+    "title": "Fix hub project links: PolarityGPS join CTA, Wax Feed links to wax-feed.com",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "9e1301a",
     "date": "2026-04-08",
     "title": "Add polaritygps.html project page, update WAXFEED team and label",
@@ -165,15 +174,6 @@
     "id": "d66cda1",
     "date": "2026-04-08",
     "title": "Standardize involve cards across all research pages and homepage",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "871514f",
-    "date": "2026-04-08",
-    "title": "Rewrite about copy and expand contact section",
     "category": {
       "label": "Update",
       "color": "text-secondary"
