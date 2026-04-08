@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Update homepage research section and Shadrack's project tags (`3748aa7`)
+
+### Apr 8, 2026
+
 - Fix all evidence links on WAXFEED page (`8a6604f`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Remove internal document names from J'Juan bio (`1517ab5`)
-
-### Apr 8, 2026
-
-- Remove references to internal documents on community discovery page (`934b2ed`)
 
 
 ---
