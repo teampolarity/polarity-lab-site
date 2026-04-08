@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 8, 2026
 
+- Rewrite about copy and expand contact section (`871514f`)
+
+### Apr 8, 2026
+
 - Clean up homepage about and contact sections (`b522657`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 7, 2026
 
 - people: add Chris Zou as Innovation Investigator in Residence (Film Therapeutics) (`fe1f626`)
-
-### Apr 7, 2026
-
-- avdp: accuracy pass on methods, results, discussion, and funding ask (`24bea85`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "871514f",
+    "date": "2026-04-08",
+    "title": "Rewrite about copy and expand contact section",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "b522657",
     "date": "2026-04-08",
     "title": "Clean up homepage about and contact sections",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "24bea85",
-    "date": "2026-04-07",
-    "title": "avdp: accuracy pass on methods, results, discussion, and funding ask",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
