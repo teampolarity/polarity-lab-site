@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 9, 2026
 
+- Fix legal compliance, light mode nav, and mobile fund layout (`a0aab34`)
+
+### Apr 9, 2026
+
 - Rebuild site as lab-as-fund platform with four research fields (`2918002`)
 
 ### Apr 8, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Sync public/research/ with research/ — fixes Vercel serving stale files (`7212f9e`)
-
-### Apr 8, 2026
-
-- Add Wax Feed music discovery research page and restructure Community Discovery hub (`6e195a8`)
 
 
 ---

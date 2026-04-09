@@ -1,5 +1,14 @@
 [
   {
+    "id": "a0aab34",
+    "date": "2026-04-09",
+    "title": "Fix legal compliance, light mode nav, and mobile fund layout",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "2918002",
     "date": "2026-04-09",
     "title": "Rebuild site as lab-as-fund platform with four research fields",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "6e195a8",
-    "date": "2026-04-08",
-    "title": "Add Wax Feed music discovery research page and restructure Community Discovery hub",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
