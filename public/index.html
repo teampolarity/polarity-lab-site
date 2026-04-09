@@ -251,8 +251,13 @@
       border-bottom: 1px solid var(--border-ghost);
     }
 
+    [data-theme="light"] .nav {
+      background: rgba(245, 245, 247, 0.92);
+    }
+
     [data-theme="light"] .nav.scrolled {
-      background: rgba(250, 250, 250, 0.8);
+      background: rgba(245, 245, 247, 0.96);
+      backdrop-filter: blur(20px) saturate(180%);
     }
 
     .nav-logo {
@@ -2801,6 +2806,7 @@
       font-family: var(--font-mono);
       font-size: 11px;
       font-weight: 600;
+      white-space: nowrap;
       color: var(--teal);
       white-space: nowrap;
       padding-top: 2px;
@@ -2900,6 +2906,11 @@
       color: var(--fund-accent, var(--teal));
       white-space: nowrap;
       min-width: 76px;
+    }
+
+    .fund-tier-range--partner {
+      font-size: 9px;
+      letter-spacing: 0.04em;
     }
 
     .fund-tier-perk {
@@ -3862,12 +3873,10 @@
     .nav-logo-text {
       font-size: 12px;
       letter-spacing: 0.22em;
-      color: rgba(255, 255, 255, 0.85);
     }
 
     .nav.scrolled {
-      background: rgba(2, 2, 4, 0.85);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid var(--border-ghost);
     }
 
     /* --- RESEARCH CASES — flat, open --- */
@@ -4603,7 +4612,7 @@
           <p class="section-label">Support the Work</p>
           <h2 class="section-title">Back a project. Build a stake in it.</h2>
         </div>
-        <p class="fund-intro reveal">Start with $10 and get your name on something real. At $1,000 you're at the founding table.</p>
+        <p class="fund-intro reveal">Start with $10 and get your name on something real. Reach out if you want deeper involvement.</p>
 
         <!-- GIVE WHERE MOST NEEDED -->
         <div class="fund-featured reveal">
@@ -4649,7 +4658,7 @@
                 <span class="fund-tier-perk">Credits + research updates</span>
               </div>
               <div class="fund-tier">
-                <span class="fund-tier-range">$1,000+</span>
+                <span class="fund-tier-range fund-tier-range--partner">Founding Partner</span>
                 <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20AVDP" class="fund-tier-perk fund-tier-link">Get in touch →</a>
               </div>
             </div>
@@ -4674,7 +4683,7 @@
                 <span class="fund-tier-perk">Access + research updates</span>
               </div>
               <div class="fund-tier">
-                <span class="fund-tier-range">$1,000+</span>
+                <span class="fund-tier-range fund-tier-range--partner">Founding Partner</span>
                 <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20WAXFEED" class="fund-tier-perk fund-tier-link">Get in touch →</a>
               </div>
             </div>
@@ -4699,7 +4708,7 @@
                 <span class="fund-tier-perk">Access + research updates</span>
               </div>
               <div class="fund-tier">
-                <span class="fund-tier-range">$1,000+</span>
+                <span class="fund-tier-range fund-tier-range--partner">Founding Partner</span>
                 <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20Integrity%20Delta" class="fund-tier-perk fund-tier-link">Get in touch →</a>
               </div>
             </div>

@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "polarity-site",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "4242", "public"],
+      "port": 4242
+    }
+  ]
+}
