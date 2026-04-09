@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 9, 2026
 
+- Replace hero tagline and clear remaining stale lab framing (`c1c0945`)
+
+### Apr 9, 2026
+
 - Rewrite lab vision copy on homepage and join page (`550d46b`)
 
 ### Apr 9, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Update WAXFEED badge to Music Research (`b0f4ca3`)
-
-### Apr 8, 2026
-
-- Make hub project entries consistent: 3 links each (research, join, website) (`1ba9768`)
 
 
 ---

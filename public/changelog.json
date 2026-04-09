@@ -1,5 +1,14 @@
 [
   {
+    "id": "c1c0945",
+    "date": "2026-04-09",
+    "title": "Replace hero tagline and clear remaining stale lab framing",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "550d46b",
     "date": "2026-04-09",
     "title": "Rewrite lab vision copy on homepage and join page",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "1ba9768",
-    "date": "2026-04-08",
-    "title": "Make hub project entries consistent: 3 links each (research, join, website)",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
