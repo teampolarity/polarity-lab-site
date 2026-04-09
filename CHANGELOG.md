@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 9, 2026
 
+- Remove tier labels and multipliers from project role cards (`088a373`)
+
+### Apr 9, 2026
+
 - Sharpen project card pitches to hook-first, curiosity-driven copy (`69cf513`)
 
 ### Apr 9, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Clean up WAXFEED page: Shadrack Annor, remove Music Discovery references (`b401f5e`)
-
-### Apr 8, 2026
-
-- Fix hub project links: PolarityGPS join CTA, Wax Feed links to wax-feed.com (`49b01d9`)
 
 
 ---

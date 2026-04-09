@@ -1,5 +1,14 @@
 [
   {
+    "id": "088a373",
+    "date": "2026-04-09",
+    "title": "Remove tier labels and multipliers from project role cards",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "69cf513",
     "date": "2026-04-09",
     "title": "Sharpen project card pitches to hook-first, curiosity-driven copy",
@@ -167,15 +176,6 @@
     "title": "Clean up WAXFEED page: Shadrack Annor, remove Music Discovery references",
     "category": {
       "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "49b01d9",
-    "date": "2026-04-08",
-    "title": "Fix hub project links: PolarityGPS join CTA, Wax Feed links to wax-feed.com",
-    "category": {
-      "label": "Bug Fix",
       "color": "coral"
     }
   }
