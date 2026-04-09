@@ -1,5 +1,14 @@
 [
   {
+    "id": "9e5518e",
+    "date": "2026-04-09",
+    "title": "Drop location and founding year from hero",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "fd2d86d",
     "date": "2026-04-09",
     "title": "Fix recognition paragraph to not single out academia",
@@ -165,15 +174,6 @@
     "id": "07a780b",
     "date": "2026-04-08",
     "title": "Update all research page badges to lab names; WAXFEED caps on hub",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "1bdd03d",
-    "date": "2026-04-08",
-    "title": "Update project page badges to Community Discovery",
     "category": {
       "label": "Enhancement",
       "color": "purple"

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 9, 2026
 
+- Drop location and founding year from hero (`9e5518e`)
+
+### Apr 9, 2026
+
 - Fix recognition paragraph to not single out academia (`fd2d86d`)
 
 ### Apr 9, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Update all research page badges to lab names; WAXFEED caps on hub (`07a780b`)
-
-### Apr 8, 2026
-
-- Update project page badges to Community Discovery (`1bdd03d`)
 
 
 ---
