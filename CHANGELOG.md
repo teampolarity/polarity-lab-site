@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 9, 2026
 
+- Sharpen project card pitches to hook-first, curiosity-driven copy (`69cf513`)
+
+### Apr 9, 2026
+
 - Restructure homepage for trust-first IA and add fund page (`ec7e1ef`)
 
 ### Apr 9, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Fix hub project links: PolarityGPS join CTA, Wax Feed links to wax-feed.com (`49b01d9`)
-
-### Apr 8, 2026
-
-- Add polaritygps.html project page, update WAXFEED team and label (`9e1301a`)
 
 
 ---

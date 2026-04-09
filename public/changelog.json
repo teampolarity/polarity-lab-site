@@ -1,5 +1,14 @@
 [
   {
+    "id": "69cf513",
+    "date": "2026-04-09",
+    "title": "Sharpen project card pitches to hook-first, curiosity-driven copy",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "ec7e1ef",
     "date": "2026-04-09",
     "title": "Restructure homepage for trust-first IA and add fund page",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "9e1301a",
-    "date": "2026-04-08",
-    "title": "Add polaritygps.html project page, update WAXFEED team and label",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
