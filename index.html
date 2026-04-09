@@ -1081,7 +1081,7 @@
     /* ==========================================
        CONTENT SECTIONS (Visible when scrolled)
        ========================================== */
-    .ccx, .about, .team, .products, .studio, .safety, .research, .involve, .contact {
+    .ccx, .about, .team, .products, .studio, .safety, .research, .involve, .contact, .fund {
       background: linear-gradient(180deg, var(--void-deep) 0%, var(--void-space) 20%, var(--void-space) 80%, var(--void-deep) 100%);
     }
 
@@ -2614,9 +2614,9 @@
 
     .research-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 24px;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: 0 auto 48px;
     }
 
@@ -2721,6 +2721,247 @@
         grid-template-columns: 1fr;
         max-width: 450px;
       }
+    }
+
+    /* Fund Section */
+    .fund-header {
+      text-align: center;
+      margin: 0 auto 16px;
+    }
+
+    .fund-header .section-label {
+      justify-content: center;
+    }
+
+    .fund-intro {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 560px;
+      margin: 0 auto 48px;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    .fund-featured {
+      background: var(--void-elevated);
+      border: 1px solid var(--border-medium);
+      border-radius: 20px;
+      padding: 48px;
+      max-width: 1200px;
+      margin: 0 auto 32px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .fund-featured-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 16px;
+    }
+
+    .fund-featured-title {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 700;
+      color: var(--text-pure);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .fund-featured-desc {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .fund-featured-tiers {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .fund-featured-tier {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 16px;
+      background: var(--void-surface);
+      border-radius: 10px;
+      border: 1px solid var(--border-ghost);
+    }
+
+    .fund-featured-tier-amount {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--teal);
+      white-space: nowrap;
+      padding-top: 2px;
+      min-width: 86px;
+    }
+
+    .fund-featured-tier-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .fund-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .fund-card {
+      background: var(--void-surface);
+      border: 1px solid var(--border-ghost);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.5s var(--ease-out-expo);
+    }
+
+    .fund-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--fund-accent, var(--teal));
+    }
+
+    .fund-card:hover {
+      border-color: var(--fund-accent, var(--teal));
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+    }
+
+    .fund-card-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--fund-accent, var(--teal));
+      margin-bottom: 12px;
+    }
+
+    .fund-card-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-pure);
+      margin-bottom: 10px;
+    }
+
+    .fund-card-ask {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .fund-tiers {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+
+    .fund-tier {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 14px;
+      background: var(--void-elevated);
+      border-radius: 8px;
+      border: 1px solid var(--border-void);
+    }
+
+    .fund-tier-range {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--fund-accent, var(--teal));
+      white-space: nowrap;
+      min-width: 76px;
+    }
+
+    .fund-tier-perk {
+      font-size: 12px;
+      color: var(--text-secondary);
+      text-align: right;
+      line-height: 1.4;
+    }
+
+    a.fund-tier-link {
+      color: var(--fund-accent, var(--teal));
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+
+    a.fund-tier-link:hover {
+      opacity: 0.75;
+    }
+
+    .fund-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fund-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: all 0.2s ease;
+      background: var(--fund-accent, var(--teal));
+      color: #000;
+      text-align: center;
+    }
+
+    .fund-btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .fund-btn--outline {
+      background: transparent;
+      color: var(--fund-accent, var(--teal));
+      border: 1px solid var(--fund-accent, var(--teal));
+    }
+
+    .fund-btn--outline:hover {
+      background: rgba(255, 255, 255, 0.04);
+      opacity: 1;
+    }
+
+    @media (max-width: 900px) {
+      .fund-grid { grid-template-columns: 1fr; max-width: 450px; }
+      .fund-featured { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
     }
 
     /* Involve Section */
@@ -4048,8 +4289,14 @@
        RESEARCH CARDS
        ========================================== */
     .research-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: grid; grid-template-columns: repeat(4, 1fr);
       gap: 24px; margin-top: 48px;
+    }
+    @media (max-width: 1100px) {
+      .research-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .research-grid { grid-template-columns: 1fr; }
     }
     .research-card {
       background: var(--void-elevated); border: 1px solid var(--border-ghost);
@@ -4258,14 +4505,14 @@
           <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
         </button>
         <div class="nav-dropdown" id="research-dropdown">
-          <a href="research/nonprofit.html" class="nav-dropdown-item">Community Discovery</a>
-          <a href="research/avdp.html" class="nav-dropdown-item">Film Therapeutics</a>
-          <a href="research/integrity-delta.html" class="nav-dropdown-item">AI Honesty</a>
+          <a href="/research/community-discovery.html" class="nav-dropdown-item">Community Discovery</a>
+          <a href="/research/film-therapeutics.html" class="nav-dropdown-item">Film Therapeutics</a>
+          <a href="/research/ai-honesty.html" class="nav-dropdown-item">AI Honesty</a>
+          <a href="/research/cognitive-profiling.html" class="nav-dropdown-item">Cognitive Profiling</a>
         </div>
       </li>
-      <li><a href="#people" class="nav-link">People</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="/join.html" class="nav-link">Join</a></li>
+      <li><a href="#fund" class="nav-link">Fund</a></li>
       <li>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
           <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -4302,10 +4549,10 @@
         <div class="reveal">
           <p class="section-label">Our Research</p>
           <h2 class="section-title">Each project starts with a specific question.</h2>
-          <p class="about-lede">We build the team, gather the evidence, then design the answer.</p>
+          <p class="about-lede">Each field has a diagnostic instrument and a therapeutic environment. We build both.</p>
         </div>
         <div class="research-grid stagger">
-          <a href="research/nonprofit.html" class="research-card">
+          <a href="/research/community-discovery.html" class="research-card">
             <p class="research-card-question">Why does what communities produce almost never reach the people it was made for?</p>
             <div class="research-card-meta">
               <span class="research-card-project">Community Discovery</span>
@@ -4315,7 +4562,7 @@
               </div>
             </div>
           </a>
-          <a href="research/avdp.html" class="research-card">
+          <a href="/research/film-therapeutics.html" class="research-card">
             <p class="research-card-question">Can the right environment make people genuinely open up, and does watching that change how we connect with each other?</p>
             <div class="research-card-meta">
               <span class="research-card-project">Film Therapeutics</span>
@@ -4325,7 +4572,7 @@
               </div>
             </div>
           </a>
-          <a href="research/integrity-delta.html" class="research-card">
+          <a href="/research/ai-honesty.html" class="research-card">
             <p class="research-card-question">When a hospital's AI system knows the right diagnosis, what stops it from telling the doctor?</p>
             <div class="research-card-meta">
               <span class="research-card-project">AI Honesty</span>
@@ -4335,6 +4582,146 @@
               </div>
             </div>
           </a>
+          <a href="/research/cognitive-profiling.html" class="research-card">
+            <p class="research-card-question">What does the music someone loves, and how they talk about it, reveal about who they actually are?</p>
+            <div class="research-card-meta">
+              <span class="research-card-project">Cognitive Profiling</span>
+              <div class="research-card-footer">
+                <span class="research-card-badge research-card-badge--type">Cognitive Profiling</span>
+                <span class="research-card-arrow">→</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUND SECTION -->
+    <section class="spatial-section fund" id="fund" style="scroll-margin-top:40px;">
+      <div class="section-inner" style="padding-bottom:40px;">
+        <div class="reveal fund-header">
+          <p class="section-label">Support the Work</p>
+          <h2 class="section-title">Back a project. Build a stake in it.</h2>
+        </div>
+        <p class="fund-intro reveal">Start with $10 and get your name on something real. At $1,000 you're at the founding table.</p>
+
+        <!-- GIVE WHERE MOST NEEDED -->
+        <div class="fund-featured reveal">
+          <div>
+            <p class="fund-featured-label">Give where most needed</p>
+            <h3 class="fund-featured-title">Polarity Lab General Fund</h3>
+            <p class="fund-featured-desc">Back the lab, not just one project. Your contribution goes where the lab determines it is needed most. Think of it as investing in the portfolio, not a single stock.</p>
+          </div>
+          <div>
+            <div class="fund-featured-tiers">
+              <div class="fund-featured-tier">
+                <span class="fund-featured-tier-amount">$10 – $99</span>
+                <span class="fund-featured-tier-desc">Early access to all Polarity Lab tools and products as they launch, plus recognition in lab credits.</span>
+              </div>
+              <div class="fund-featured-tier">
+                <span class="fund-featured-tier-amount">$100 – $999</span>
+                <span class="fund-featured-tier-desc">Everything above, plus quarterly research updates directly from the team.</span>
+              </div>
+              <div class="fund-featured-tier">
+                <span class="fund-featured-tier-amount">Founding Partner</span>
+                <span class="fund-featured-tier-desc">Get in touch with the team directly. Early founding partnerships are available for those who want deeper involvement.</span>
+              </div>
+            </div>
+            <a href="mailto:team@polarity-lab.com?subject=General%20Fund%20Interest" class="fund-btn" style="width:100%;box-sizing:border-box;">Back the Lab →</a>
+          </div>
+        </div>
+
+        <!-- PROJECT CARDS -->
+        <div class="fund-grid stagger">
+
+          <!-- AVDP -->
+          <div class="fund-card" style="--fund-accent:#FF8A65;">
+            <p class="fund-card-label">Film Therapeutics</p>
+            <h3 class="fund-card-title">A Very Distant Perspective</h3>
+            <p class="fund-card-ask">The Ghana national football team is coming to Rhode Island ahead of the World Cup. The lab has the access to film it. What it needs is the gear. Fund a specific item and get credited in the episode.</p>
+            <div class="fund-tiers">
+              <div class="fund-tier">
+                <span class="fund-tier-range">$10 – $99</span>
+                <span class="fund-tier-perk">Episode credits</span>
+              </div>
+              <div class="fund-tier">
+                <span class="fund-tier-range">$100 – $999</span>
+                <span class="fund-tier-perk">Credits + research updates</span>
+              </div>
+              <div class="fund-tier">
+                <span class="fund-tier-range">$1,000+</span>
+                <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20AVDP" class="fund-tier-perk fund-tier-link">Get in touch →</a>
+              </div>
+            </div>
+            <div class="fund-actions">
+              <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20AVDP" class="fund-btn">Support this project →</a>
+              <a href="/research/film-therapeutics.html" class="fund-btn fund-btn--outline">See the research</a>
+            </div>
+          </div>
+
+          <!-- WAXFEED -->
+          <div class="fund-card" style="--fund-accent:#F5A623;">
+            <p class="fund-card-label">Cognitive Profiling</p>
+            <h3 class="fund-card-title">WAXFEED</h3>
+            <p class="fund-card-ask">A music discovery platform that learns who you are through what you love. Back the research and the product at the same time.</p>
+            <div class="fund-tiers">
+              <div class="fund-tier">
+                <span class="fund-tier-range">$10 – $99</span>
+                <span class="fund-tier-perk">Early WAXFEED access</span>
+              </div>
+              <div class="fund-tier">
+                <span class="fund-tier-range">$100 – $999</span>
+                <span class="fund-tier-perk">Access + research updates</span>
+              </div>
+              <div class="fund-tier">
+                <span class="fund-tier-range">$1,000+</span>
+                <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20WAXFEED" class="fund-tier-perk fund-tier-link">Get in touch →</a>
+              </div>
+            </div>
+            <div class="fund-actions">
+              <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20WAXFEED" class="fund-btn">Support this project →</a>
+              <a href="/research/cognitive-profiling.html" class="fund-btn fund-btn--outline">See the research</a>
+            </div>
+          </div>
+
+          <!-- INTEGRITY DELTA -->
+          <div class="fund-card" style="--fund-accent:#4ECDC4;">
+            <p class="fund-card-label">AI Honesty</p>
+            <h3 class="fund-card-title">Integrity Delta</h3>
+            <p class="fund-card-ask">Clinical AI suppresses its own correct diagnoses under adversarial pressure. The validation study tests this at scale across 1,000 chest radiographs. That study produces the manuscript and the path to regulatory consideration.</p>
+            <div class="fund-tiers">
+              <div class="fund-tier">
+                <span class="fund-tier-range">$10 – $99</span>
+                <span class="fund-tier-perk">Early EIM framework access</span>
+              </div>
+              <div class="fund-tier">
+                <span class="fund-tier-range">$100 – $999</span>
+                <span class="fund-tier-perk">Access + research updates</span>
+              </div>
+              <div class="fund-tier">
+                <span class="fund-tier-range">$1,000+</span>
+                <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20Integrity%20Delta" class="fund-tier-perk fund-tier-link">Get in touch →</a>
+              </div>
+            </div>
+            <div class="fund-actions">
+              <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20Integrity%20Delta" class="fund-btn">Support this project →</a>
+              <a href="/research/ai-honesty.html" class="fund-btn fund-btn--outline">See the research</a>
+            </div>
+          </div>
+
+        </div>
+        <p class="reveal" style="text-align:center;font-size:13px;color:var(--text-tertiary);margin-top:32px;font-family:var(--font-mono);letter-spacing:0.05em;">$10–$999 contributions are gifts in exchange for perks. No financial return. <a href="/legal.html" style="color:var(--teal);">Full terms →</a></p>
+      </div>
+    </section>
+
+    <!-- JOIN CTA SECTION -->
+    <section class="spatial-section" id="join-cta" style="scroll-margin-top:40px;">
+      <div class="section-inner" style="padding-top:40px;padding-bottom:40px;">
+        <div class="reveal" style="max-width:800px;margin:0 auto;text-align:center;">
+          <p class="section-label" style="justify-content:center;">Join the Lab</p>
+          <h2 class="section-title">Bring a product. We'll show you the research.<br>Bring research. We'll show you the product.</h2>
+          <p style="font-size:16px;color:var(--text-secondary);line-height:1.7;margin:24px auto 32px;max-width:560px;">Most projects only have one. Polarity Lab builds the other. If what you do fits the environmental therapeutics thesis and you have something real to show, we want to hear from you.</p>
+          <a href="/join.html" style="display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#000;font-family:var(--font-display);font-size:14px;font-weight:700;padding:14px 28px;border-radius:8px;text-decoration:none;letter-spacing:0.02em;transition:opacity 0.2s ease;">Bring your project to the lab →</a>
         </div>
       </div>
     </section>

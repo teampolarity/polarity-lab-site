@@ -1,0 +1,3 @@
+/polarity https://app.polarity-lab.com 302
+/polarity/* https://app.polarity-lab.com/:splat 302
+/research/nonprofit.html /research/community-discovery.html 301
