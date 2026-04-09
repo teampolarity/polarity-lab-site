@@ -1,5 +1,14 @@
 [
   {
+    "id": "7036540",
+    "date": "2026-04-09",
+    "title": "Fix Founding Partner label overflow on general fund card mobile",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "02b7264",
     "date": "2026-04-09",
     "title": "Update Theo's title from Principal Investigator to Executive Director",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "bb6c57e",
-    "date": "2026-04-08",
-    "title": "Redesign Community Discovery hub as Arc Institute-style lab page",
-    "category": {
-      "label": "Design",
-      "color": "purple"
     }
   }
 ]

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 9, 2026
 
+- Fix Founding Partner label overflow on general fund card mobile (`7036540`)
+
+### Apr 9, 2026
+
 - Update Theo's title from Principal Investigator to Executive Director (`02b7264`)
 
 ### Apr 9, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Refine Community Discovery lab hub to be field-agnostic (`d1d27b6`)
-
-### Apr 8, 2026
-
-- Redesign Community Discovery hub as Arc Institute-style lab page (`bb6c57e`)
 
 
 ---
