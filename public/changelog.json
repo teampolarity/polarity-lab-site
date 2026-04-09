@@ -1,5 +1,14 @@
 [
   {
+    "id": "ed3afeb",
+    "date": "2026-04-09",
+    "title": "Restructure homepage for trust-first IA, remove Fund from nav",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "a0aab34",
     "date": "2026-04-09",
     "title": "Fix legal compliance, light mode nav, and mobile fund layout",
@@ -165,15 +174,6 @@
     "id": "be2ec74",
     "date": "2026-04-08",
     "title": "Fix Community Discovery hub and Wax Feed framing for coherent visitor flow",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "7212f9e",
-    "date": "2026-04-08",
-    "title": "Sync public/research/ with research/ — fixes Vercel serving stale files",
     "category": {
       "label": "Bug Fix",
       "color": "coral"

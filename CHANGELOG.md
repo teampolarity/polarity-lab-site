@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 9, 2026
 
+- Restructure homepage for trust-first IA, remove Fund from nav (`ed3afeb`)
+
+### Apr 9, 2026
+
 - Fix legal compliance, light mode nav, and mobile fund layout (`a0aab34`)
 
 ### Apr 9, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Fix Community Discovery hub and Wax Feed framing for coherent visitor flow (`be2ec74`)
-
-### Apr 8, 2026
-
-- Sync public/research/ with research/ — fixes Vercel serving stale files (`7212f9e`)
 
 
 ---
