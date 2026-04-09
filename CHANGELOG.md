@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 9, 2026
 
+- Rewrite lab vision copy on homepage and join page (`550d46b`)
+
+### Apr 9, 2026
+
 - Remove tier labels and multipliers from project role cards (`088a373`)
 
 ### Apr 9, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Make hub project entries consistent: 3 links each (research, join, website) (`1ba9768`)
-
-### Apr 8, 2026
-
-- Clean up WAXFEED page: Shadrack Annor, remove Music Discovery references (`b401f5e`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "550d46b",
+    "date": "2026-04-09",
+    "title": "Rewrite lab vision copy on homepage and join page",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "088a373",
     "date": "2026-04-09",
     "title": "Remove tier labels and multipliers from project role cards",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "b401f5e",
-    "date": "2026-04-08",
-    "title": "Clean up WAXFEED page: Shadrack Annor, remove Music Discovery references",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]
