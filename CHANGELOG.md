@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 9, 2026
 
+- Fix recognition paragraph to not single out academia (`fd2d86d`)
+
+### Apr 9, 2026
+
 - Replace hero tagline and clear remaining stale lab framing (`c1c0945`)
 
 ### Apr 9, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Update project page badges to Community Discovery (`1bdd03d`)
-
-### Apr 8, 2026
-
-- Update WAXFEED badge to Music Research (`b0f4ca3`)
 
 
 ---

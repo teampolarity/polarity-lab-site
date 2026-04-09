@@ -1,5 +1,14 @@
 [
   {
+    "id": "fd2d86d",
+    "date": "2026-04-09",
+    "title": "Fix recognition paragraph to not single out academia",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "c1c0945",
     "date": "2026-04-09",
     "title": "Replace hero tagline and clear remaining stale lab framing",
@@ -165,15 +174,6 @@
     "id": "1bdd03d",
     "date": "2026-04-08",
     "title": "Update project page badges to Community Discovery",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "b0f4ca3",
-    "date": "2026-04-08",
-    "title": "Update WAXFEED badge to Music Research",
     "category": {
       "label": "Enhancement",
       "color": "purple"
