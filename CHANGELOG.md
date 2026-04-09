@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Apr 9, 2026
+
+- Rebuild site as lab-as-fund platform with four research fields (`2918002`)
+
 ### Apr 8, 2026
 
 - Add memory and self-relation dimension to AVDP research program (`ca71db3`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Add Wax Feed music discovery research page and restructure Community Discovery hub (`6e195a8`)
-
-### Apr 8, 2026
-
-- Remove internal document from Community Discovery evidence section (`d5a91cb`)
 
 
 ---
