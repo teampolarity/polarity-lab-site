@@ -1,5 +1,14 @@
 [
   {
+    "id": "02b7264",
+    "date": "2026-04-09",
+    "title": "Update Theo's title from Principal Investigator to Executive Director",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "ed3afeb",
     "date": "2026-04-09",
     "title": "Restructure homepage for trust-first IA, remove Fund from nav",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Design",
       "color": "purple"
-    }
-  },
-  {
-    "id": "be2ec74",
-    "date": "2026-04-08",
-    "title": "Fix Community Discovery hub and Wax Feed framing for coherent visitor flow",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

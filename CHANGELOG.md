@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 9, 2026
 
+- Update Theo's title from Principal Investigator to Executive Director (`02b7264`)
+
+### Apr 9, 2026
+
 - Restructure homepage for trust-first IA, remove Fund from nav (`ed3afeb`)
 
 ### Apr 9, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Redesign Community Discovery hub as Arc Institute-style lab page (`bb6c57e`)
-
-### Apr 8, 2026
-
-- Fix Community Discovery hub and Wax Feed framing for coherent visitor flow (`be2ec74`)
 
 
 ---
