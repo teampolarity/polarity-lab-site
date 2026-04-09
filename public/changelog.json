@@ -1,5 +1,14 @@
 [
   {
+    "id": "ec7e1ef",
+    "date": "2026-04-09",
+    "title": "Restructure homepage for trust-first IA and add fund page",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "7036540",
     "date": "2026-04-09",
     "title": "Fix Founding Partner label overflow on general fund card mobile",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "d1d27b6",
-    "date": "2026-04-08",
-    "title": "Refine Community Discovery lab hub to be field-agnostic",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

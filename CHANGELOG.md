@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 9, 2026
 
+- Restructure homepage for trust-first IA and add fund page (`ec7e1ef`)
+
+### Apr 9, 2026
+
 - Fix Founding Partner label overflow on general fund card mobile (`7036540`)
 
 ### Apr 9, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Add polaritygps.html project page, update WAXFEED team and label (`9e1301a`)
-
-### Apr 8, 2026
-
-- Refine Community Discovery lab hub to be field-agnostic (`d1d27b6`)
 
 
 ---
