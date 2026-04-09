@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050508">
+  <meta name="description" content="Support Polarity Lab research. Back a specific project or give where the lab needs it most. Start with $10.">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Support the Work — Polarity Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --void-pure: #000000;
+      --void-deep: #020204;
+      --void-space: #050508;
+      --void-nebula: #080810;
+      --void-surface: #0c0c14;
+      --void-elevated: #12121c;
+      --teal: #4ECDC4;
+      --teal-bright: #5EEEE4;
+      --teal-deep: #2BA89F;
+      --teal-glow: rgba(78, 205, 196, 0.5);
+      --teal-subtle: rgba(78, 205, 196, 0.12);
+      --coral: #FF8A65;
+      --coral-glow: rgba(255, 138, 101, 0.5);
+      --purple: #BB8FCE;
+      --purple-glow: rgba(187, 143, 206, 0.5);
+      --amber: #F5A623;
+      --text-pure: #ffffff;
+      --text-primary: rgba(255, 255, 255, 0.95);
+      --text-secondary: rgba(255, 255, 255, 0.65);
+      --text-tertiary: rgba(255, 255, 255, 0.4);
+      --text-ghost: rgba(255, 255, 255, 0.2);
+      --text-void: rgba(255, 255, 255, 0.08);
+      --border-void: rgba(255, 255, 255, 0.03);
+      --border-ghost: rgba(255, 255, 255, 0.06);
+      --border-subtle: rgba(255, 255, 255, 0.1);
+      --border-medium: rgba(255, 255, 255, 0.18);
+      --font-display: 'Space Grotesk', -apple-system, sans-serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+      --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="light"] {
+      --void-pure: #ffffff;
+      --void-deep: #fafafa;
+      --void-space: #f5f5f7;
+      --void-nebula: #f0f0f5;
+      --void-surface: #eaeaf0;
+      --void-elevated: #e5e5eb;
+      --text-pure: #0a0a0f;
+      --text-primary: rgba(10, 10, 15, 0.95);
+      --text-secondary: rgba(10, 10, 15, 0.65);
+      --text-tertiary: rgba(10, 10, 15, 0.45);
+      --text-ghost: rgba(10, 10, 15, 0.25);
+      --text-void: rgba(10, 10, 15, 0.08);
+      --border-void: rgba(0, 0, 0, 0.03);
+      --border-ghost: rgba(0, 0, 0, 0.06);
+      --border-subtle: rgba(0, 0, 0, 0.1);
+      --border-medium: rgba(0, 0, 0, 0.15);
+      --teal-glow: rgba(78, 205, 196, 0.3);
+      --coral-glow: rgba(255, 138, 101, 0.3);
+      --purple-glow: rgba(187, 143, 206, 0.3);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+    body {
+      font-family: var(--font-body);
+      background: var(--void-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      transition: background 0.6s var(--ease-smooth), color 0.6s var(--ease-smooth);
+    }
+
+    ::-webkit-scrollbar { width: 3px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--teal), var(--purple)); border-radius: 2px; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 24px 48px; display: flex; align-items: center;
+      justify-content: space-between; transition: all 0.6s var(--ease-out-expo);
+      background: transparent;
+    }
+    .nav.scrolled {
+      background: rgba(2, 2, 4, 0.7);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      padding: 16px 48px; border-bottom: 1px solid var(--border-ghost);
+    }
+    [data-theme="light"] .nav { background: rgba(245, 245, 247, 0.92); }
+    [data-theme="light"] .nav.scrolled { background: rgba(245, 245, 247, 0.96); backdrop-filter: blur(20px) saturate(180%); }
+
+    .nav-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .nav-logo-atom { width: 40px; height: 40px; filter: drop-shadow(0 0 20px var(--teal-glow)); transition: transform 0.6s var(--ease-out-expo); }
+    .nav-logo:hover .nav-logo-atom { transform: rotate(180deg); }
+    .nav-logo-text { font-family: var(--font-display); font-size: 14px; font-weight: 600; letter-spacing: 0.15em; color: var(--text-pure); text-transform: uppercase; }
+
+    .nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+    .nav-link {
+      font-family: var(--font-body); font-size: 13px; font-weight: 500;
+      letter-spacing: 0.02em; color: var(--text-tertiary); text-decoration: none;
+      position: relative; transition: all 0.4s var(--ease-out-expo); padding: 8px 0;
+      background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; gap: 4px;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--teal), transparent);
+      transition: all 0.4s var(--ease-out-expo); transform: translateX(-50%);
+    }
+    .nav-link:hover { color: var(--teal); }
+    .nav-link:hover::after { width: 100%; }
+    .nav-link.active { color: var(--teal); }
+    .nav-link.active::after { width: 100%; }
+
+    .nav-mobile { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+    .nav-mobile span { display: block; width: 24px; height: 1.5px; background: var(--text-primary); margin: 6px 0; transition: all 0.3s ease; }
+
+    @media (max-width: 900px) {
+      .nav { padding: 16px 24px; }
+      .nav.scrolled { padding: 12px 24px; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--void-deep); border-bottom: 1px solid var(--border-ghost); flex-direction: column; padding: 16px 24px; gap: 4px; }
+      .nav-links.open { display: flex; }
+      .nav-links .nav-link { padding: 12px 0; font-size: 14px; }
+      .nav-mobile { display: block; }
+    }
+
+    /* THEME TOGGLE */
+    .theme-toggle {
+      position: static; width: 32px; height: 32px; border-radius: 0;
+      background: transparent; border: 1px solid var(--border-ghost);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s var(--ease-out-expo);
+    }
+    .theme-toggle:hover { border-color: var(--teal); }
+    .theme-toggle svg { width: 14px; height: 14px; color: var(--text-tertiary); transition: color 0.3s; }
+    .theme-toggle:hover svg { color: var(--teal); }
+    .theme-toggle .sun { display: block; }
+    .theme-toggle .moon { display: none; }
+    [data-theme="light"] .theme-toggle .sun { display: none; }
+    [data-theme="light"] .theme-toggle .moon { display: block; }
+
+    /* RESEARCH DROPDOWN */
+    .nav-item--dropdown { position: relative; }
+    .nav-link--dropdown { background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px; font-family: var(--font-body); font-size: 13px; font-weight: 500; color: var(--text-tertiary); transition: color 0.3s ease; padding: 8px 0; }
+    .nav-link--dropdown:hover { color: var(--teal); }
+    .nav-dropdown-chevron { width: 14px; height: 14px; transition: transform 0.3s ease; }
+    .nav-item--dropdown.open .nav-dropdown-chevron { transform: rotate(180deg); }
+    .nav-dropdown { position: absolute; top: calc(100% + 12px); left: 50%; transform: translateX(-50%) translateY(-8px); background: var(--void-elevated); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 6px; min-width: 210px; opacity: 0; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; z-index: 100; }
+    .nav-item--dropdown.open .nav-dropdown { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+    .nav-dropdown-item { display: block; padding: 10px 14px; border-radius: 6px; font-size: 13px; color: var(--text-secondary); text-decoration: none; transition: background 0.2s ease, color 0.2s ease; }
+    .nav-dropdown-item:hover { background: var(--void-surface); color: var(--teal); }
+
+    /* PAGE LAYOUT */
+    .page-wrapper { position: relative; z-index: 2; min-height: 100vh; }
+
+    .subpage-header {
+      padding: 140px 48px 80px;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border-ghost);
+    }
+    @media (max-width: 768px) { .subpage-header { padding: 120px 24px 60px; } }
+
+    .breadcrumb { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 32px; display: flex; align-items: center; gap: 8px; }
+    .breadcrumb a { color: var(--teal); text-decoration: none; transition: opacity 0.2s ease; }
+    .breadcrumb a:hover { opacity: 0.7; }
+
+    .subpage-eyebrow { font-family: var(--font-mono); font-size: 11px; color: var(--teal); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 20px; display: block; }
+
+    .subpage-title { font-family: var(--font-display); font-size: clamp(32px, 5vw, 64px); font-weight: 700; color: var(--text-pure); line-height: 1.08; letter-spacing: -0.02em; max-width: 860px; margin-bottom: 24px; }
+
+    .subpage-subtitle { font-size: clamp(15px, 1.8vw, 18px); color: var(--text-secondary); max-width: 560px; line-height: 1.7; }
+
+    /* FUND SECTION */
+    .fund-section {
+      padding: 80px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border-ghost);
+    }
+    @media (max-width: 768px) { .fund-section { padding: 60px 24px; } }
+
+    .fund-section-label { font-family: var(--font-mono); font-size: 11px; color: var(--teal); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 40px; display: block; }
+
+    /* GENERAL FUND FEATURED */
+    .fund-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      background: var(--void-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 40px;
+    }
+    @media (max-width: 768px) { .fund-featured { grid-template-columns: 1fr; gap: 32px; padding: 28px; } }
+
+    .fund-featured-label { font-family: var(--font-mono); font-size: 10px; color: var(--teal); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+    .fund-featured-title { font-family: var(--font-display); font-size: clamp(22px, 3vw, 32px); font-weight: 700; color: var(--text-pure); letter-spacing: -0.01em; margin-bottom: 16px; line-height: 1.15; }
+    .fund-featured-desc { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+
+    .fund-featured-tiers { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .fund-featured-tier { display: flex; align-items: flex-start; gap: 16px; padding: 14px 16px; background: var(--void-surface); border-radius: 10px; border: 1px solid var(--border-ghost); }
+    .fund-featured-tier-amount { font-family: var(--font-mono); font-size: 11px; font-weight: 600; white-space: nowrap; color: var(--teal); padding-top: 2px; min-width: 116px; flex-shrink: 0; }
+    .fund-featured-tier-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+    /* PROJECT FUND GRID */
+    .fund-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media (max-width: 900px) { .fund-grid { grid-template-columns: 1fr; } }
+
+    .fund-card {
+      background: var(--void-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: border-color 0.3s ease;
+    }
+    .fund-card:hover { border-color: var(--fund-accent, var(--teal)); }
+
+    .fund-card-label { font-family: var(--font-mono); font-size: 10px; font-weight: 600; color: var(--fund-accent, var(--teal)); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 8px; }
+    .fund-card-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--text-pure); letter-spacing: -0.01em; margin-bottom: 12px; line-height: 1.2; }
+    .fund-card-ask { font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 24px; flex: 1; }
+
+    .fund-tiers { display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px; }
+    .fund-tier { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; background: var(--void-surface); border-radius: 8px; border: 1px solid var(--border-void); }
+    .fund-tier-range { font-family: var(--font-mono); font-size: 10px; font-weight: 600; color: var(--fund-accent, var(--teal)); white-space: nowrap; min-width: 76px; }
+    .fund-tier-range--partner { font-size: 9px; letter-spacing: 0.04em; }
+    .fund-tier-perk { font-size: 12px; color: var(--text-secondary); text-align: right; line-height: 1.4; }
+    a.fund-tier-link { color: var(--fund-accent, var(--teal)); text-decoration: none; transition: opacity 0.15s; }
+    a.fund-tier-link:hover { opacity: 0.75; }
+
+    .fund-actions { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+    .fund-btn {
+      display: flex; align-items: center; justify-content: center;
+      padding: 12px 20px; border-radius: 8px; font-family: var(--font-display);
+      font-size: 13px; font-weight: 700; letter-spacing: 0.02em;
+      text-decoration: none; transition: opacity 0.2s ease; cursor: pointer;
+      border: none; background: var(--fund-accent, var(--teal)); color: #000;
+    }
+    .fund-btn:hover { opacity: 0.85; }
+    .fund-btn--outline { background: transparent; color: var(--fund-accent, var(--teal)); border: 1px solid var(--fund-accent, var(--teal)); }
+    .fund-btn--outline:hover { background: rgba(78, 205, 196, 0.08); opacity: 1; }
+
+    /* SUBPAGE FOOTER */
+    .subpage-footer {
+      padding: 48px; border-top: 1px solid var(--border-ghost);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px; max-width: 1200px; margin: 0 auto;
+    }
+    @media (max-width: 768px) { .subpage-footer { padding: 32px 24px; flex-direction: column; align-items: flex-start; } }
+    .subpage-footer-left { font-size: 13px; color: var(--text-tertiary); }
+    .subpage-footer-back { font-family: var(--font-display); font-size: 13px; font-weight: 600; color: var(--teal); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: gap 0.3s ease; }
+    .subpage-footer-back:hover { gap: 10px; }
+
+    /* REVEAL */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" id="nav">
+    <a href="/" class="nav-logo" id="nav-logo">
+      <svg class="nav-logo-atom" viewBox="0 0 100 100">
+        <defs>
+          <radialGradient id="navCoreGrad" cx="30%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#6EE7DF"/>
+            <stop offset="50%" stop-color="#4ECDC4"/>
+            <stop offset="100%" stop-color="#2BA89F"/>
+          </radialGradient>
+          <filter id="navGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#4ECDC4" stroke-width="1.5" transform="rotate(-60 50 50)" filter="url(#navGlow)" opacity="0.9"/>
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" filter="url(#navGlow)" opacity="0.9"/>
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" filter="url(#navGlow)" opacity="0.9"/>
+        <circle cx="70" cy="15" r="4" fill="#4ECDC4" filter="url(#navGlow)"/>
+        <circle cx="30" cy="15" r="4" fill="#FFA07A" filter="url(#navGlow)"/>
+        <circle cx="90" cy="50" r="4" fill="#BB8FCE" filter="url(#navGlow)"/>
+        <circle cx="50" cy="50" r="14" fill="url(#navCoreGrad)" filter="url(#navGlow)"/>
+        <circle cx="45" cy="45" r="5" fill="white" opacity="0.25"/>
+      </svg>
+      <span class="nav-logo-text">POLARITY</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li class="nav-item nav-item--dropdown">
+        <button class="nav-link nav-link--dropdown" id="research-dropdown-btn">
+          Research
+          <svg class="nav-dropdown-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="nav-dropdown" id="research-dropdown">
+          <a href="/research/community-discovery.html" class="nav-dropdown-item">Community Discovery</a>
+          <a href="/research/film-therapeutics.html" class="nav-dropdown-item">Film Therapeutics</a>
+          <a href="/research/ai-honesty.html" class="nav-dropdown-item">AI Honesty</a>
+          <a href="/research/cognitive-profiling.html" class="nav-dropdown-item">Cognitive Profiling</a>
+        </div>
+      </li>
+      <li><a href="/join.html" class="nav-link">Join</a></li>
+      <li><a href="/fund.html" class="nav-link active">Fund</a></li>
+      <li>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+          </svg>
+          <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+      </li>
+    </ul>
+    <button class="nav-mobile" id="nav-mobile" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page-wrapper">
+
+    <div class="subpage-header">
+      <div class="breadcrumb reveal">
+        <a href="/">Polarity Lab</a>
+        <span>/</span>
+        <span>Support the Work</span>
+      </div>
+      <span class="subpage-eyebrow reveal">Support the Work</span>
+      <h1 class="subpage-title reveal">Back a project. Build a stake in it.</h1>
+      <p class="subpage-subtitle reveal">Start with $10 and get your name on something real. Reach out if you want deeper involvement.</p>
+    </div>
+
+    <!-- GIVE WHERE MOST NEEDED -->
+    <div class="fund-section">
+      <span class="fund-section-label reveal">Give where most needed</span>
+      <div class="fund-featured reveal">
+        <div>
+          <p class="fund-featured-label">General Fund</p>
+          <h2 class="fund-featured-title">Polarity Lab General Fund</h2>
+          <p class="fund-featured-desc">Back the lab, not just one project. Your contribution goes where the lab determines it is needed most across all active programs. Think of it as investing in the portfolio, not a single stock.</p>
+        </div>
+        <div>
+          <div class="fund-featured-tiers">
+            <div class="fund-featured-tier">
+              <span class="fund-featured-tier-amount">$10 – $99</span>
+              <span class="fund-featured-tier-desc">Early access to all Polarity Lab tools and products as they launch, plus recognition in lab credits.</span>
+            </div>
+            <div class="fund-featured-tier">
+              <span class="fund-featured-tier-amount">$100 – $999</span>
+              <span class="fund-featured-tier-desc">Everything above, plus quarterly research updates directly from the team.</span>
+            </div>
+            <div class="fund-featured-tier">
+              <span class="fund-featured-tier-amount">Founding Partner</span>
+              <span class="fund-featured-tier-desc">Get in touch with the team directly. Early founding partnerships are available for those who want deeper involvement.</span>
+            </div>
+          </div>
+          <a href="mailto:team@polarity-lab.com?subject=General%20Fund%20Interest" class="fund-btn" style="width:100%;box-sizing:border-box;background:var(--teal);">Back the Lab →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROJECT CARDS -->
+    <div class="fund-section" style="border-bottom:none;">
+      <span class="fund-section-label reveal">Back a specific project</span>
+
+      <div class="fund-grid">
+
+        <!-- AVDP -->
+        <div class="fund-card reveal" style="--fund-accent:#FF8A65;">
+          <p class="fund-card-label">Film Therapeutics</p>
+          <h3 class="fund-card-title">A Very Distant Perspective</h3>
+          <p class="fund-card-ask">A documentary series on end-of-life conversations. The thesis: watching someone be fully honest changes the person watching. The Ghana national football team is the next episode. Fund a specific item and get credited.</p>
+          <div class="fund-tiers">
+            <div class="fund-tier">
+              <span class="fund-tier-range">$10 – $99</span>
+              <span class="fund-tier-perk">Episode credits</span>
+            </div>
+            <div class="fund-tier">
+              <span class="fund-tier-range">$100 – $999</span>
+              <span class="fund-tier-perk">Credits + signed artifact</span>
+            </div>
+            <div class="fund-tier">
+              <span class="fund-tier-range fund-tier-range--partner">Founding Partner</span>
+              <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20AVDP" class="fund-tier-perk fund-tier-link">Get in touch →</a>
+            </div>
+          </div>
+          <div class="fund-actions">
+            <a href="mailto:team@polarity-lab.com?subject=Support%20AVDP" class="fund-btn">Back this project →</a>
+            <a href="/research/avdp.html" class="fund-btn fund-btn--outline">Full project →</a>
+          </div>
+        </div>
+
+        <!-- WAXFEED -->
+        <div class="fund-card reveal" style="--fund-accent:#F5A623;">
+          <p class="fund-card-label">Cognitive Profiling</p>
+          <h3 class="fund-card-title">WAXFEED</h3>
+          <p class="fund-card-ask">A music discovery platform that builds a cognitive profile from what you listen to. The research instrument and the product are the same thing. Back both at once.</p>
+          <div class="fund-tiers">
+            <div class="fund-tier">
+              <span class="fund-tier-range">$10 – $99</span>
+              <span class="fund-tier-perk">Early WAXFEED access</span>
+            </div>
+            <div class="fund-tier">
+              <span class="fund-tier-range">$100 – $999</span>
+              <span class="fund-tier-perk">Access + custom vinyl</span>
+            </div>
+            <div class="fund-tier">
+              <span class="fund-tier-range fund-tier-range--partner">Founding Partner</span>
+              <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20WAXFEED" class="fund-tier-perk fund-tier-link">Get in touch →</a>
+            </div>
+          </div>
+          <div class="fund-actions">
+            <a href="mailto:team@polarity-lab.com?subject=Support%20WAXFEED" class="fund-btn">Back this project →</a>
+            <a href="/research/wax-feed.html" class="fund-btn fund-btn--outline">Full project →</a>
+          </div>
+        </div>
+
+        <!-- INTEGRITY DELTA -->
+        <div class="fund-card reveal" style="--fund-accent:#4ECDC4;">
+          <p class="fund-card-label">AI Honesty</p>
+          <h3 class="fund-card-title">Integrity Delta</h3>
+          <p class="fund-card-ask">Clinical AI suppresses its own correct diagnoses under adversarial pressure. The validation study tests this at scale across 1,000 chest radiographs and produces the path to regulatory consideration.</p>
+          <div class="fund-tiers">
+            <div class="fund-tier">
+              <span class="fund-tier-range">$10 – $99</span>
+              <span class="fund-tier-perk">Early EIM framework access</span>
+            </div>
+            <div class="fund-tier">
+              <span class="fund-tier-range">$100 – $999</span>
+              <span class="fund-tier-perk">Access + research updates</span>
+            </div>
+            <div class="fund-tier">
+              <span class="fund-tier-range fund-tier-range--partner">Founding Partner</span>
+              <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20Integrity%20Delta" class="fund-tier-perk fund-tier-link">Get in touch →</a>
+            </div>
+          </div>
+          <div class="fund-actions">
+            <a href="mailto:team@polarity-lab.com?subject=Support%20Integrity%20Delta" class="fund-btn">Back this project →</a>
+            <a href="/research/integrity-delta.html" class="fund-btn fund-btn--outline">Full project →</a>
+          </div>
+        </div>
+
+        <!-- POLARITYGPS -->
+        <div class="fund-card reveal" style="--fund-accent:#BB8FCE;">
+          <p class="fund-card-label">Community Discovery</p>
+          <h3 class="fund-card-title">PolarityGPS</h3>
+          <p class="fund-card-ask">A narrative location game that maps opportunity and connection in your city. The instrument underneath measures how well communities are connected to the resources they need most.</p>
+          <div class="fund-tiers">
+            <div class="fund-tier">
+              <span class="fund-tier-range">$10 – $99</span>
+              <span class="fund-tier-perk">Founding credit</span>
+            </div>
+            <div class="fund-tier">
+              <span class="fund-tier-range">$100 – $999</span>
+              <span class="fund-tier-perk">Credit + early access</span>
+            </div>
+            <div class="fund-tier">
+              <span class="fund-tier-range fund-tier-range--partner">Founding Partner</span>
+              <a href="mailto:team@polarity-lab.com?subject=Founding%20Partner%20Interest%3A%20PolarityGPS" class="fund-tier-perk fund-tier-link">Get in touch →</a>
+            </div>
+          </div>
+          <div class="fund-actions">
+            <a href="mailto:team@polarity-lab.com?subject=Support%20PolarityGPS" class="fund-btn">Back this project →</a>
+            <a href="/research/polaritygps.html" class="fund-btn fund-btn--outline">Full project →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="reveal" style="text-align:center;font-size:13px;color:var(--text-tertiary);margin-top:40px;font-family:var(--font-mono);letter-spacing:0.05em;">$10–$999 contributions are gifts in exchange for perks. No financial return. <a href="/legal.html" style="color:var(--teal);">Full terms →</a></p>
+    </div>
+
+    <footer class="subpage-footer">
+      <span class="subpage-footer-left">Polarity Lab · Providence, RI · team@polarity-lab.com</span>
+      <a href="/" class="subpage-footer-back">← Back to site</a>
+    </footer>
+
+  </div>
+
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+
+    document.getElementById('theme-toggle')?.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    }, { passive: true });
+
+    document.getElementById('nav-logo')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = '/';
+    });
+
+    const navMobile = document.getElementById('nav-mobile');
+    const navLinks = document.getElementById('nav-links');
+    navMobile?.addEventListener('click', () => { navLinks.classList.toggle('open'); });
+
+    const researchDropdownBtn = document.getElementById('research-dropdown-btn');
+    const researchDropdownItem = researchDropdownBtn?.closest('.nav-item--dropdown');
+    researchDropdownBtn?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      researchDropdownItem.classList.toggle('open');
+    });
+    document.addEventListener('click', () => { researchDropdownItem?.classList.remove('open'); });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+    }, { rootMargin: '-80px', threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
