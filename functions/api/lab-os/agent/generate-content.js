@@ -12,8 +12,14 @@ function getISOWeek(date) {
 }
 
 export async function onRequestPost({ request, env }) {
-  const claims = await requireAdmin(request, env);
-  if (!claims) return err('Unauthorized', 401);
+  // Accept either a user JWT or the scheduled agent key
+  const auth = request.headers.get('Authorization') || '';
+  const agentKey = env.CONTENT_AGENT_KEY;
+  const isAgentCall = agentKey && auth === `Bearer ${agentKey}`;
+  if (!isAgentCall) {
+    const claims = await requireAdmin(request, env);
+    if (!claims) return err('Unauthorized', 401);
+  }
 
   const now = new Date();
   const week = getISOWeek(now);
