@@ -1,5 +1,14 @@
 [
   {
+    "id": "4d54a7c",
+    "date": "2026-04-10",
+    "title": "Commit accumulated site, docs, and agent file updates",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "24eba14",
     "date": "2026-04-10",
     "title": "Add indeterminate progress bar to doc generator",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "182a097",
-    "date": "2026-04-10",
-    "title": "Remove redundant vision section from join page",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Commit accumulated site, docs, and agent file updates (`4d54a7c`)
+
+### Apr 10, 2026
+
 - Add indeterminate progress bar to doc generator (`24eba14`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Rewrite lab page intros and get-involved sections (`e015cf9`)
-
-### Apr 10, 2026
-
-- Remove redundant vision section from join page (`182a097`)
 
 
 ---
