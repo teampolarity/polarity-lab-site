@@ -9,18 +9,33 @@
   <link rel="stylesheet" href="/admin/css/admin.css">
   <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('lab_os_theme') || 'dark')</script>
   <style>
+    /* Make the shell and main fill the full viewport height without scroll */
+    html, body { height: 100%; overflow: hidden; }
+    .shell { height: 100%; }
+    .main {
+      display: flex !important;
+      flex-direction: column;
+      overflow: hidden !important;
+      padding-bottom: 0 !important;
+    }
+    .topbar { flex-shrink: 0; }
+    .topbar .page-sub { margin-bottom: 0; }
+
     .chat-wrap {
       display: flex;
       flex-direction: column;
-      height: calc(100vh - 120px);
+      flex: 1;
+      min-height: 0; /* critical: lets flex children shrink below content size */
       max-width: 760px;
+      padding-bottom: 24px;
     }
 
     /* Message list */
     .messages {
       flex: 1;
+      min-height: 0; /* same fix */
       overflow-y: auto;
-      padding: 8px 0 24px;
+      padding: 16px 0 8px;
       display: flex;
       flex-direction: column;
       gap: 6px;
