@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Remove throat-clearing paragraph from film therapeutics diagnostic instrument section (`6dc1292`)
+
+### Apr 10, 2026
+
 - Fix chat: safe mdToHtml, live status indicator, timeout, faster model (`67daf02`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Improve grant section drafting: fix lab description, sharpen prompts (`b3d987d`)
-
-### Apr 10, 2026
-
-- Upgrade grant search agent with fetch_page deep crawl (`0bf4023`)
 
 
 ---

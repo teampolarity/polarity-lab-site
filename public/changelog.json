@@ -1,5 +1,14 @@
 [
   {
+    "id": "6dc1292",
+    "date": "2026-04-10",
+    "title": "Remove throat-clearing paragraph from film therapeutics diagnostic instrument section",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "67daf02",
     "date": "2026-04-10",
     "title": "Fix chat: safe mdToHtml, live status indicator, timeout, faster model",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "0bf4023",
-    "date": "2026-04-10",
-    "title": "Upgrade grant search agent with fetch_page deep crawl",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
