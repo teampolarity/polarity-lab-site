@@ -170,17 +170,22 @@
 
     /* Thinking indicator */
     .msg.thinking .msg-bubble {
-      color: var(--text-tertiary);
-      font-style: italic;
-      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
     }
-    .thinking-dots span {
-      animation: blink 1.2s infinite;
-      animation-fill-mode: both;
+    .thinking-spinner {
+      width: 14px; height: 14px;
+      border: 2px solid var(--border-subtle);
+      border-top-color: var(--teal);
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: spin 0.8s linear infinite;
     }
-    .thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
-    .thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes blink { 0%, 80%, 100% { opacity: 0; } 40% { opacity: 1; } }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .thinking-text { font-size: 12px; color: var(--text-tertiary); font-family: var(--font-mono); }
+    .thinking-elapsed { font-size: 11px; color: var(--border-subtle); margin-left: 4px; }
 
     /* Suggested prompts */
     .suggestions {
@@ -338,40 +343,52 @@
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 
-  // Markdown to HTML — simple sequential replacements, no loops that can stall
+  // Markdown to HTML — no nested quantifiers, no stateful loops
   function mdToHtml(md) {
-    return md
-      // Escape HTML
-      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-      // Headers (must run before bold/italic so ## isn't treated as text)
-      .replace(/^### (.+)$/gm, '<h3>$1</h3>')
-      .replace(/^## (.+)$/gm, '<h2>$1</h2>')
-      // Horizontal rule
-      .replace(/^---+$/gm, '<hr>')
-      // Inline: bold, italic, code
-      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*([^*\n]+?)\*/g, '<em>$1</em>')
-      .replace(/`([^`\n]+)`/g, '<code>$1</code>')
-      // Pipe table rows — strip | formatting, render as simple div rows
-      .replace(/^\|(.+)\|$/gm, (_, inner) => {
-        const cells = inner.split('|').map(c => c.trim());
-        // Skip separator rows like |---|---|
-        if (cells.every(c => /^[-: ]+$/.test(c))) return '';
-        return `<div class="trow">${cells.map(c => `<span>${c}</span>`).join('')}</div>`;
-      })
-      // Unordered lists
-      .replace(/^[*-] (.+)$/gm, '<li>$1</li>')
-      .replace(/(<li>[\s\S]+?<\/li>)(\n(?!<li>)|$)/g, '$1\n')
-      .replace(/((?:<li>.*\n?)+)/g, '<ul>$1</ul>')
-      // Paragraphs: double-newline blocks that aren't already HTML
-      .split('\n\n')
-      .map(block => {
-        block = block.trim();
-        if (!block) return '';
-        if (/^<[huo\d]/.test(block) || block === '<hr>') return block;
-        return `<p>${block.replace(/\n/g, '<br>')}</p>`;
-      })
-      .join('\n');
+    // Escape HTML first
+    let s = md.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    // Headers
+    s = s.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+    s = s.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+    // HR
+    s = s.replace(/^---+$/gm, '<hr>');
+    // Bold (non-greedy, no newlines inside)
+    s = s.replace(/\*\*([^\n*]+)\*\*/g, '<strong>$1</strong>');
+    // Code (no newlines inside)
+    s = s.replace(/`([^\n`]+)`/g, '<code>$1</code>');
+    // Pipe table separator rows — remove entirely
+    s = s.replace(/^\|[-| :]+\|$/gm, '');
+    // Pipe table data rows — simple divs
+    s = s.replace(/^\|(.+)\|$/gm, (_, inner) => {
+      const cells = inner.split('|').map(c => `<span>${c.trim()}</span>`).join('');
+      return `<div class="trow">${cells}</div>`;
+    });
+    // List items — wrap consecutive <li> blocks in <ul>
+    s = s.replace(/^[*-] (.+)$/gm, '<li>$1</li>');
+    s = s.replace(/^(\d+)\. (.+)$/gm, '<li>$2</li>');
+    // Wrap runs of <li> in <ul> — use split/join, not nested quantifier regex
+    s = s.split('\n').reduce((acc, line) => {
+      const inList = acc.length > 0 && acc[acc.length - 1].endsWith('_INLIST_');
+      if (line.startsWith('<li>')) {
+        if (inList) {
+          acc[acc.length - 1] = acc[acc.length - 1].replace('_INLIST_', '') + line + '_INLIST_';
+        } else {
+          acc.push(line + '_INLIST_');
+        }
+      } else {
+        if (inList) acc[acc.length - 1] = '<ul>' + acc[acc.length - 1].replace('_INLIST_', '') + '</ul>';
+        acc.push(line);
+      }
+      return acc;
+    }, []).map(l => l.endsWith('_INLIST_') ? '<ul>' + l.replace('_INLIST_', '') + '</ul>' : l).join('\n');
+    // Paragraphs
+    s = s.split('\n\n').map(block => {
+      block = block.trim();
+      if (!block) return '';
+      if (/^</.test(block)) return block;
+      return `<p>${block.replace(/\n/g, '<br>')}</p>`;
+    }).join('\n');
+    return s;
   }
 
   function toolLabel(name) {
@@ -411,6 +428,11 @@
     return div;
   }
 
+  const STATUS_LABELS = [
+    'checking pipeline', 'looking up data', 'analyzing', 'reading grants',
+    'checking leads', 'reviewing pipeline', 'preparing response'
+  ];
+
   function appendThinking() {
     const sug = document.getElementById('suggestions');
     if (sug) sug.remove();
@@ -418,9 +440,30 @@
     const msgs = document.getElementById('messages');
     const div = document.createElement('div');
     div.className = 'msg assistant thinking';
-    div.innerHTML = `<div class="msg-bubble"><span class="thinking-dots"><span>.</span><span>.</span><span>.</span></span></div>`;
+    div.innerHTML = `<div class="msg-bubble">
+      <div class="thinking-spinner"></div>
+      <span class="thinking-text" id="thinking-label">thinking</span>
+      <span class="thinking-elapsed" id="thinking-elapsed"></span>
+    </div>`;
     msgs.appendChild(div);
     msgs.scrollTop = msgs.scrollHeight;
+
+    // Elapsed timer + cycling status label
+    const start = Date.now();
+    let labelIdx = 0;
+    const timer = setInterval(() => {
+      const el = document.getElementById('thinking-elapsed');
+      const lbl = document.getElementById('thinking-label');
+      if (!el || !lbl) { clearInterval(timer); return; }
+      const secs = Math.floor((Date.now() - start) / 1000);
+      el.textContent = `${secs}s`;
+      if (secs > 0 && secs % 5 === 0) {
+        labelIdx = (labelIdx + 1) % STATUS_LABELS.length;
+        lbl.textContent = STATUS_LABELS[labelIdx];
+      }
+    }, 1000);
+
+    div._clearTimer = () => clearInterval(timer);
     return div;
   }
 
@@ -441,12 +484,29 @@
     appendMsg('user', esc(text));
     history.push({ role: 'user', content: text });
 
-    // Show thinking
+    // Show thinking with live status
     const thinking = appendThinking();
 
-    // Post to API
-    const data = await apiPost('/api/lab-os/chat', { messages: history });
+    // 55s timeout — CF functions cap at 30s on free tier, 100s on paid
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 55000);
 
+    let data = null;
+    try {
+      const res = await fetch('/api/lab-os/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
+        body: JSON.stringify({ messages: history }),
+        signal: controller.signal
+      });
+      clearTimeout(timeout);
+      data = await res.json().catch(() => null);
+    } catch (e) {
+      clearTimeout(timeout);
+      data = null;
+    }
+
+    if (thinking._clearTimer) thinking._clearTimer();
     thinking.remove();
     document.getElementById('send-btn').disabled = false;
 
@@ -454,7 +514,7 @@
       appendMsg('assistant', data.reply, data.tool_calls || []);
       history.push({ role: 'assistant', content: data.reply });
     } else {
-      appendMsg('assistant', 'Something went wrong. Try again.');
+      appendMsg('assistant', 'No response — the request may have timed out. Try a simpler question or refresh.');
     }
 
     input.focus();
