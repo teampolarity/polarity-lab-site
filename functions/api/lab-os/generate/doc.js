@@ -1,5 +1,21 @@
 import { json, err, requireAdmin, PROJECTS } from '../_utils.js';
 
+const LAB_PITCH_INSTRUCTIONS = `Write an institutional pitch for Polarity Lab. This is a pitch for the research institute itself — not a summary of its projects. The projects are evidence. The institute is the pitch. Structure with clear section headers:
+
+1. THE INSTITUTION — What Polarity Lab is and why it exists as an independent institute. Start with the thesis: how humans interact with AI, media, and discovery systems is a new class of measurable harm to human cognition. Explain why this required building a new kind of institution rather than working within existing ones. What does independence enable that affiliation cannot? What incentive structures does it avoid?
+
+2. THE THESIS — Explain the core claim precisely. This is not a general concern about technology — it is a specific, measurable failure mode: systems designed to optimize for engagement, preference, or accuracy suppress the conditions required for accurate perception, genuine connection, independent reasoning, and healthy cognition. The problem is instrumentation, not awareness. We lack the tools to measure the delta between what should happen and what does.
+
+3. THE RESEARCH PROGRAM — Four active projects as proof that the thesis is researchable and measurable. Present them briefly as a portfolio, not in detail. Integrity Delta measures the gap between AI internal correctness and output. AVDP measures whether authentic human connection on screen is restorable. WAXFEED measures whether cognitive similarity predicts friendship. PolarityGPS measures the gap between community infrastructure and platform visibility. What they share: each pairs a rigorous research question with a product that generates continuous behavioral data.
+
+4. WHY NOW — Why this class of harm is newly measurable. What has changed (model interpretability tools, behavioral data at scale, declining cost of longitudinal studies). Why independent research is the right structure for this moment specifically.
+
+5. WHAT WE NEED — Tailor to context if provided. Otherwise cover: research infrastructure funding, IRB sponsorship partnerships, advisory relationships, and access to institutional networks. Be specific about what each type of support enables and what it unlocks.
+
+6. THE ASK — Concrete and direct. What Polarity Lab is asking for from this specific reader/audience. If no context is provided, write a general version.
+
+Tone: you are pitching an institution, not a startup and not a university department. The register is serious, intellectually confident, and specific. No buzzwords. No mission statement padding. No em dashes.`;
+
 const DOC_INSTRUCTIONS = {
   pitch: `Write a pitch document for this project. Structure it with clear section headers. Sections:
 
@@ -77,11 +93,14 @@ export async function onRequestPost({ request, env }) {
   }
 
   const isLabLevel = body.project === 'Polarity Lab';
+  const instructions = isLabLevel && body.type === 'pitch'
+    ? LAB_PITCH_INSTRUCTIONS
+    : DOC_INSTRUCTIONS[body.type];
 
   const prompt = `You are writing a ${body.type} document for Polarity Lab, an independent research institute for the human condition in Providence, RI.
 
 ${isLabLevel
-  ? `SCOPE: This is a LAB-LEVEL document covering Polarity Lab as a whole — not any single project. The document should present the institute, its thesis, and all four projects as a portfolio. Do not focus on or lead with any single project.
+  ? `SCOPE: This is a LAB-LEVEL document about Polarity Lab as an institution — its thesis, structure, and research program. The four projects are evidence of the thesis, not the subject of the pitch.
 
 LAB OVERVIEW:
 ${PROJECTS['Polarity Lab']}`
@@ -92,7 +111,7 @@ ${PROJECTS[body.project]}`
 }
 
 ${body.context ? `ADDITIONAL CONTEXT: ${body.context}\n` : ''}
-${DOC_INSTRUCTIONS[body.type]}
+${instructions}
 
 Format the output in clean markdown with ## section headers. Write it ready to use — no placeholders except where explicitly instructed (like agreement party names and dates).`;
 
