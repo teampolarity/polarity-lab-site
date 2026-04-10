@@ -371,7 +371,7 @@
               <span class="fund-featured-tier-desc">Get in touch with the team directly. Early founding partnerships are available for those who want deeper involvement.</span>
             </div>
           </div>
-          <a href="mailto:team@polarity-lab.com?subject=General%20Fund%20Interest" class="fund-btn" style="width:100%;box-sizing:border-box;background:var(--teal);">Back the Lab →</a>
+          <button onclick="openGiftModal('General Fund')" class="fund-btn" style="width:100%;box-sizing:border-box;background:var(--teal);">Back the Lab →</button>
         </div>
       </div>
     </div>
@@ -402,7 +402,7 @@
             </div>
           </div>
           <div class="fund-actions">
-            <a href="mailto:team@polarity-lab.com?subject=Support%20AVDP" class="fund-btn">Back this project →</a>
+            <button onclick="openGiftModal('AVDP')" class="fund-btn">Back this project →</button>
             <a href="/research/avdp.html" class="fund-btn fund-btn--outline">Full project →</a>
           </div>
         </div>
@@ -427,7 +427,7 @@
             </div>
           </div>
           <div class="fund-actions">
-            <a href="mailto:team@polarity-lab.com?subject=Support%20WAXFEED" class="fund-btn">Back this project →</a>
+            <button onclick="openGiftModal('WAXFEED')" class="fund-btn">Back this project →</button>
             <a href="/research/wax-feed.html" class="fund-btn fund-btn--outline">Full project →</a>
           </div>
         </div>
@@ -452,7 +452,7 @@
             </div>
           </div>
           <div class="fund-actions">
-            <a href="mailto:team@polarity-lab.com?subject=Support%20Integrity%20Delta" class="fund-btn">Back this project →</a>
+            <button onclick="openGiftModal('Integrity Delta')" class="fund-btn">Back this project →</button>
             <a href="/research/integrity-delta.html" class="fund-btn fund-btn--outline">Full project →</a>
           </div>
         </div>
@@ -477,7 +477,7 @@
             </div>
           </div>
           <div class="fund-actions">
-            <a href="mailto:team@polarity-lab.com?subject=Support%20PolarityGPS" class="fund-btn">Back this project →</a>
+            <button onclick="openGiftModal('PolarityGPS')" class="fund-btn">Back this project →</button>
             <a href="/research/polaritygps.html" class="fund-btn fund-btn--outline">Full project →</a>
           </div>
         </div>
@@ -493,6 +493,73 @@
     </footer>
 
   </div>
+
+  <!-- Gift modal -->
+  <div id="gift-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:9000;align-items:center;justify-content:center;">
+    <div style="background:var(--void-elevated);border:1px solid var(--border-medium);border-radius:12px;padding:32px;width:100%;max-width:420px;margin:16px;">
+      <p style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;color:var(--text-tertiary);margin:0 0 8px;">BACK A PROJECT</p>
+      <h3 id="gift-modal-title" style="font-size:20px;font-weight:600;margin:0 0 24px;color:var(--text-primary);font-family:var(--font-display);"></h3>
+      <label style="display:block;font-family:var(--font-mono);font-size:12px;letter-spacing:0.05em;color:var(--text-secondary);margin-bottom:8px;">AMOUNT (USD)</label>
+      <input id="gift-amount" type="number" min="10" max="999" placeholder="10" style="width:100%;box-sizing:border-box;background:var(--void-surface);border:1px solid var(--border-medium);border-radius:6px;padding:10px 12px;font-size:16px;color:var(--text-primary);outline:none;font-family:var(--font-body);">
+      <p style="font-size:12px;color:var(--text-tertiary);margin:8px 0 24px;font-family:var(--font-mono);">$10 minimum · $999 maximum · gift perks, no equity</p>
+      <div style="display:flex;gap:12px;">
+        <button onclick="closeGiftModal()" style="flex:1;padding:10px;background:transparent;border:1px solid var(--border-medium);border-radius:6px;color:var(--text-secondary);cursor:pointer;font-size:14px;font-family:var(--font-body);">Cancel</button>
+        <button onclick="submitGift()" style="flex:2;padding:10px;background:var(--teal);border:none;border-radius:6px;color:#0a0a0f;font-weight:600;cursor:pointer;font-size:14px;font-family:var(--font-body);">Continue to payment →</button>
+      </div>
+      <p id="gift-error" style="display:none;color:#ff6b6b;font-size:12px;margin:12px 0 0;font-family:var(--font-mono);"></p>
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = 'https://polarity-api-vercel-red.vercel.app';
+    let _giftProject = '';
+
+    function openGiftModal(project) {
+      _giftProject = project;
+      document.getElementById('gift-modal-title').textContent = project;
+      document.getElementById('gift-amount').value = '';
+      document.getElementById('gift-error').style.display = 'none';
+      const modal = document.getElementById('gift-modal');
+      modal.style.display = 'flex';
+    }
+
+    function closeGiftModal() {
+      document.getElementById('gift-modal').style.display = 'none';
+    }
+
+    async function submitGift() {
+      const amountDollars = parseInt(document.getElementById('gift-amount').value, 10);
+      const errEl = document.getElementById('gift-error');
+      errEl.style.display = 'none';
+      if (!amountDollars || amountDollars < 10 || amountDollars > 999) {
+        errEl.textContent = 'Enter an amount between $10 and $999.';
+        errEl.style.display = 'block';
+        return;
+      }
+      const btn = document.querySelector('#gift-modal button:last-child');
+      btn.textContent = 'Loading...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(API_BASE + '/api/lab-os/gift/checkout', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ project: _giftProject, amount_cents: amountDollars * 100 })
+        });
+        if (!res.ok) throw new Error('Server error');
+        const data = await res.json();
+        window.location.href = data.checkout_url;
+      } catch (e) {
+        errEl.textContent = 'Payment unavailable right now. Email team@polarity-lab.com to contribute.';
+        errEl.style.display = 'block';
+        btn.textContent = 'Continue to payment →';
+        btn.disabled = false;
+      }
+    }
+
+    document.getElementById('gift-modal').addEventListener('click', function(e) {
+      if (e.target === this) closeGiftModal();
+    });
+  </script>
 
   <script>
     const savedTheme = localStorage.getItem('theme') || 'dark';
