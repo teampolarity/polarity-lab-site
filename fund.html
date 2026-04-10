@@ -371,7 +371,7 @@
               <span class="fund-featured-tier-desc">Get in touch with the team directly. Early founding partnerships are available for those who want deeper involvement.</span>
             </div>
           </div>
-          <a href="mailto:team@polarity-lab.com?subject=General%20Fund%20Interest" class="fund-btn" style="width:100%;box-sizing:border-box;background:var(--teal);">Back the Lab →</a>
+          <button class="fund-btn" style="width:100%;box-sizing:border-box;background:var(--teal)" onclick="openGiftModal('General Fund')">Back the Lab →</button>
         </div>
       </div>
     </div>
@@ -402,7 +402,7 @@
             </div>
           </div>
           <div class="fund-actions">
-            <a href="mailto:team@polarity-lab.com?subject=Support%20AVDP" class="fund-btn">Back this project →</a>
+            <button class="fund-btn" onclick="openGiftModal('AVDP')">Back this project →</button>
             <a href="/research/avdp.html" class="fund-btn fund-btn--outline">Full project →</a>
           </div>
         </div>
@@ -427,7 +427,7 @@
             </div>
           </div>
           <div class="fund-actions">
-            <a href="mailto:team@polarity-lab.com?subject=Support%20WAXFEED" class="fund-btn">Back this project →</a>
+            <button class="fund-btn" onclick="openGiftModal('WAXFEED')">Back this project →</button>
             <a href="/research/wax-feed.html" class="fund-btn fund-btn--outline">Full project →</a>
           </div>
         </div>
@@ -452,7 +452,7 @@
             </div>
           </div>
           <div class="fund-actions">
-            <a href="mailto:team@polarity-lab.com?subject=Support%20Integrity%20Delta" class="fund-btn">Back this project →</a>
+            <button class="fund-btn" onclick="openGiftModal('Integrity Delta')">Back this project →</button>
             <a href="/research/integrity-delta.html" class="fund-btn fund-btn--outline">Full project →</a>
           </div>
         </div>
@@ -477,7 +477,7 @@
             </div>
           </div>
           <div class="fund-actions">
-            <a href="mailto:team@polarity-lab.com?subject=Support%20PolarityGPS" class="fund-btn">Back this project →</a>
+            <button class="fund-btn" onclick="openGiftModal('PolarityGPS')">Back this project →</button>
             <a href="/research/polaritygps.html" class="fund-btn fund-btn--outline">Full project →</a>
           </div>
         </div>
@@ -485,6 +485,23 @@
       </div>
 
       <p class="reveal" style="text-align:center;font-size:13px;color:var(--text-tertiary);margin-top:40px;font-family:var(--font-mono);letter-spacing:0.05em;">$10–$999 contributions are gifts in exchange for perks. No financial return. <a href="/legal.html" style="color:var(--teal);">Full terms →</a></p>
+    </div>
+
+    <!-- Gift Modal -->
+    <div id="gift-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center;padding:24px">
+      <div style="background:var(--void-elevated);border:1px solid var(--border-subtle);border-radius:12px;padding:32px;width:100%;max-width:420px">
+        <p style="font-family:var(--font-mono);font-size:11px;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px" id="gift-project-label"></p>
+        <h2 style="font-family:var(--font-display);font-size:22px;font-weight:700;margin-bottom:20px">Back this project</h2>
+        <div style="margin-bottom:16px">
+          <label style="font-size:12px;font-family:var(--font-mono);color:var(--text-tertiary);letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:8px">Amount (USD)</label>
+          <input id="gift-amount" type="number" min="10" max="999" placeholder="25" style="width:100%;background:var(--void-surface);border:1px solid var(--border-subtle);border-radius:6px;padding:10px 14px;font-size:16px;color:var(--text-primary);font-family:var(--font-body);outline:none">
+          <p style="font-size:12px;color:var(--text-tertiary);margin-top:6px">$10–$99: founding credit. $100–$999: credit + physical artifact. <a href="/legal.html" style="color:var(--teal)">Full terms.</a></p>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:24px">
+          <button onclick="document.getElementById('gift-modal').style.display='none'" style="flex:1;padding:12px;background:var(--void-surface);border:1px solid var(--border-subtle);border-radius:6px;color:var(--text-secondary);font-family:var(--font-display);font-size:14px;font-weight:600;cursor:pointer">Cancel</button>
+          <button onclick="submitGift()" id="gift-pay-btn" style="flex:1;padding:12px;background:var(--teal);border:none;border-radius:6px;color:#000;font-family:var(--font-display);font-size:14px;font-weight:600;cursor:pointer">Continue</button>
+        </div>
+      </div>
     </div>
 
     <footer class="subpage-footer">
@@ -531,6 +548,51 @@
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { rootMargin: '-80px', threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Gift tier Stripe checkout
+    const GIFT_API = 'https://polarity-api-vercel-red.vercel.app';
+    let currentGiftProject = '';
+
+    function openGiftModal(project) {
+      currentGiftProject = project;
+      document.getElementById('gift-project-label').textContent = project;
+      document.getElementById('gift-amount').value = '';
+      document.getElementById('gift-modal').style.display = 'flex';
+    }
+
+    async function submitGift() {
+      const amount = parseInt(document.getElementById('gift-amount').value);
+      if (!amount || amount < 10 || amount > 999) {
+        alert('Please enter an amount between $10 and $999.');
+        return;
+      }
+      const btn = document.getElementById('gift-pay-btn');
+      btn.textContent = 'Loading...';
+      btn.disabled = true;
+      try {
+        const res = await fetch(`${GIFT_API}/api/lab-os/gift/checkout`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            project: currentGiftProject,
+            tier: amount < 100 ? 'tier1' : 'tier2',
+            amount_cents: amount * 100,
+            success_url: window.location.origin + '/fund.html?backed=1',
+            cancel_url: window.location.href
+          })
+        });
+        const data = await res.json();
+        if (data.checkout_url) {
+          window.location.href = data.checkout_url;
+        } else {
+          throw new Error('no checkout_url');
+        }
+      } catch {
+        alert('Something went wrong. Email team@polarity-lab.com to contribute.');
+        btn.textContent = 'Continue';
+        btn.disabled = false;
+      }
+    }
   </script>
 </body>
 </html>
