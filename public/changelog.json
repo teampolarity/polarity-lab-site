@@ -1,5 +1,14 @@
 [
   {
+    "id": "bea2a47",
+    "date": "2026-04-10",
+    "title": "Rewrite project page intros and get-involved cards for hook/reel/sink",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "b4d2df7",
     "date": "2026-04-10",
     "title": "fix: add /admin rewrite to _redirects for Cloudflare Pages",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "ed3afeb",
-    "date": "2026-04-09",
-    "title": "Restructure homepage for trust-first IA, remove Fund from nav",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]
