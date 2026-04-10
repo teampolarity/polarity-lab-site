@@ -1,5 +1,14 @@
 [
   {
+    "id": "f6cc869",
+    "date": "2026-04-10",
+    "title": "Improve grant cards: show deadline, notes, and direct link to grant URL",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "d8de898",
     "date": "2026-04-10",
     "title": "Add content/growth engine — weekly draft generation from pipeline activity",
@@ -165,15 +174,6 @@
     "id": "d3ead89",
     "date": "2026-04-10",
     "title": "Add people sections to all lab and project pages",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "fae8810",
-    "date": "2026-04-10",
-    "title": "Add Lab OS Phase 1 implementation plan",
     "category": {
       "label": "New Feature",
       "color": "teal"

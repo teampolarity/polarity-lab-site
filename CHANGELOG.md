@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Improve grant cards: show deadline, notes, and direct link to grant URL (`f6cc869`)
+
+### Apr 10, 2026
+
 - Add content/growth engine — weekly draft generation from pipeline activity (`d8de898`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Add people sections to all lab and project pages (`d3ead89`)
-
-### Apr 10, 2026
-
-- Add Lab OS Phase 1 implementation plan (`fae8810`)
 
 
 ---
