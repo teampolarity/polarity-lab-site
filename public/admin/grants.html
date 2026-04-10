@@ -25,7 +25,11 @@
         <h1 class="page-title">Grant Prospecting</h1>
         <p class="page-sub">Track and draft grant applications.</p>
       </div>
-      <button class="add-btn" id="add-btn">+ Add Grant</button>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="btn-sm btn-ghost" id="search-btn">Search for grants</button>
+        <span id="search-status" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);display:none"></span>
+        <button class="add-btn" id="add-btn">+ Add Grant</button>
+      </div>
     </div>
     <div class="pipeline" id="pipeline"></div>
   </main>
@@ -112,7 +116,7 @@
             ${g.amount ? `<div class="card-sub" style="margin-top:4px">${esc(g.amount)}</div>` : ''}
             ${g.fit_score ? `<span class="badge badge-teal" style="margin-top:8px;display:inline-block">Fit: ${g.fit_score}/5</span>` : ''}
             <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
-              ${(g.projects||[]).map(p=>`<span class="badge badge-purple">${esc(p)}</span>`).join('')}
+              ${(typeof g.projects === 'string' ? g.projects.split(',') : g.projects||[]).map(p=>p.trim()).filter(Boolean).map(p=>`<span class="badge badge-purple">${esc(p)}</span>`).join('')}
             </div>
             <div style="margin-top:10px">
               <button class="btn-sm btn-ghost" style="font-size:11px;padding:4px 10px" onclick="event.stopPropagation();openDraft(${g.id})">Draft section</button>
@@ -200,11 +204,34 @@
       section: document.getElementById('d-section').value
     });
     const out = document.getElementById('d-output');
-    out.textContent = data?.draft || 'Error generating draft.';
+    out.textContent = data?.text || 'Error generating draft.';
     out.style.display = 'block';
     btn.textContent = 'Generate';
     btn.disabled = false;
   }
+
+  document.getElementById('search-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('search-btn');
+    const status = document.getElementById('search-status');
+    btn.disabled = true;
+    btn.textContent = 'Searching...';
+    status.textContent = 'Scanning foundations and programs...';
+    status.style.display = 'inline';
+    try {
+      const data = await apiPost('/api/lab-os/agent/search-grants', {});
+      if (data?.added > 0) {
+        status.textContent = `${data.added} new grant${data.added === 1 ? '' : 's'} found`;
+        await load();
+      } else {
+        status.textContent = 'No new grants found';
+      }
+    } catch {
+      status.textContent = 'Search failed';
+    }
+    btn.disabled = false;
+    btn.textContent = 'Search for grants';
+    setTimeout(() => { status.style.display = 'none'; }, 6000);
+  });
 
   document.getElementById('add-btn').addEventListener('click', openAdd);
   document.getElementById('modal-cancel').addEventListener('click', () => document.getElementById('modal').style.display = 'none');
