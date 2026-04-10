@@ -1,5 +1,14 @@
 [
   {
+    "id": "625e368",
+    "date": "2026-04-10",
+    "title": "Add agent key auth to generate-content for scheduled remote trigger",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "b3d987d",
     "date": "2026-04-10",
     "title": "Improve grant section drafting: fix lab description, sharpen prompts",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "91725f2",
-    "date": "2026-04-10",
-    "title": "Remove timely AVDP Ghana reference from fund page for consistency",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]
