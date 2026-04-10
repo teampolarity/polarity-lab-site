@@ -23,8 +23,13 @@ async function fetchPageContent(url) {
 }
 
 export async function onRequestPost({ request, env }) {
-  const claims = await requireAdmin(request, env);
-  if (!claims) return err('Unauthorized', 401);
+  const auth = request.headers.get('Authorization') || '';
+  const agentKey = env.GRANTS_AGENT_KEY;
+  const isAgentCall = agentKey && auth === `Bearer ${agentKey}`;
+  if (!isAgentCall) {
+    const claims = await requireAdmin(request, env);
+    if (!claims) return err('Unauthorized', 401);
+  }
 
   const { results: existing } = await env.LAB_OS_DB
     .prepare('SELECT funder, program FROM lab_os_grants')
