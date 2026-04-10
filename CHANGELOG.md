@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Fix markdown rendering in chat and deadline day count on dashboard (`c7cae80`)
+
+### Apr 10, 2026
+
 - Fix chat layout to fill viewport — input bar always visible (`86add71`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - feat: light/dark mode for Lab OS admin (`a8f81ea`)
-
-### Apr 10, 2026
-
-- Fix duplicate Fund nav link on all research pages (`7cb7236`)
 
 
 ---

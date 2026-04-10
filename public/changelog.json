@@ -1,5 +1,14 @@
 [
   {
+    "id": "c7cae80",
+    "date": "2026-04-10",
+    "title": "Fix markdown rendering in chat and deadline day count on dashboard",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "86add71",
     "date": "2026-04-10",
     "title": "Fix chat layout to fill viewport — input bar always visible",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "7cb7236",
-    "date": "2026-04-10",
-    "title": "Fix duplicate Fund nav link on all research pages",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
