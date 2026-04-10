@@ -1,5 +1,14 @@
 [
   {
+    "id": "7c1141b",
+    "date": "2026-04-10",
+    "title": "Fix doc generator: lab-level vs project-level scope handling",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "96a016b",
     "date": "2026-04-10",
     "title": "Replace 'General Fund' with 'Polarity Lab' across all agent and UI references",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "9f7c758",
-    "date": "2026-04-10",
-    "title": "Remove contribution tier table from join page Path 02",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Fix doc generator: lab-level vs project-level scope handling (`7c1141b`)
+
+### Apr 10, 2026
+
 - Replace 'General Fund' with 'Polarity Lab' across all agent and UI references (`96a016b`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - feat: add Cloudflare Pages Functions backend for Lab OS (`b72e5fa`)
-
-### Apr 10, 2026
-
-- Remove contribution tier table from join page Path 02 (`9f7c758`)
 
 
 ---
