@@ -1,5 +1,14 @@
 [
   {
+    "id": "03d95f6",
+    "date": "2026-04-10",
+    "title": "Add institutional pitch instructions for Polarity Lab lab-level docs",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "7c1141b",
     "date": "2026-04-10",
     "title": "Fix doc generator: lab-level vs project-level scope handling",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "b72e5fa",
-    "date": "2026-04-10",
-    "title": "feat: add Cloudflare Pages Functions backend for Lab OS",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]

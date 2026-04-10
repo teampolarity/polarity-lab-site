@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Add institutional pitch instructions for Polarity Lab lab-level docs (`03d95f6`)
+
+### Apr 10, 2026
+
 - Fix doc generator: lab-level vs project-level scope handling (`7c1141b`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - feat: add manual grant search + fix projects render and draft text bugs (`7a39e3e`)
-
-### Apr 10, 2026
-
-- feat: add Cloudflare Pages Functions backend for Lab OS (`b72e5fa`)
 
 
 ---
