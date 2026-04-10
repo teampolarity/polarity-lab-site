@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Replace mdToHtml with safe sequential regex — no loops, no backtracking (`0449cef`)
+
+### Apr 10, 2026
+
 - Fix mdToHtml infinite loop — switch to regex-first then safe line parser (`bee16eb`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Improve grant cards: show deadline, notes, and direct link to grant URL (`f6cc869`)
-
-### Apr 10, 2026
-
-- Add content/growth engine — weekly draft generation from pipeline activity (`d8de898`)
 
 
 ---

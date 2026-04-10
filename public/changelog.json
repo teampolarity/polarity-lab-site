@@ -1,5 +1,14 @@
 [
   {
+    "id": "0449cef",
+    "date": "2026-04-10",
+    "title": "Replace mdToHtml with safe sequential regex — no loops, no backtracking",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "bee16eb",
     "date": "2026-04-10",
     "title": "Fix mdToHtml infinite loop — switch to regex-first then safe line parser",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "d8de898",
-    "date": "2026-04-10",
-    "title": "Add content/growth engine — weekly draft generation from pipeline activity",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
