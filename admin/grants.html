@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grants — Lab OS</title>
+  <link rel="icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+<div class="shell">
+  <nav class="sidebar">
+    <div class="sidebar-logo">LAB OS</div>
+    <div class="sidebar-label">Pipeline</div>
+    <a href="/admin/grants.html" class="sidebar-link active">Grants</a>
+    <a href="/admin/outreach.html" class="sidebar-link">Outreach</a>
+    <a href="/admin/believers.html" class="sidebar-link">Believers</a>
+    <div class="sidebar-label" style="margin-top:24px">Account</div>
+    <a href="#" class="sidebar-link" id="logout-btn">Sign out</a>
+  </nav>
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <h1 class="page-title">Grant Prospecting</h1>
+        <p class="page-sub">Track and draft grant applications.</p>
+      </div>
+      <button class="add-btn" id="add-btn">+ Add Grant</button>
+    </div>
+    <div class="pipeline" id="pipeline"></div>
+  </main>
+</div>
+
+<!-- Add/Edit Modal -->
+<div class="modal-overlay" id="modal" style="display:none">
+  <div class="modal">
+    <h2 class="modal-title" id="modal-title">Add Grant</h2>
+    <div class="field"><label>Funder *</label><input id="f-funder" placeholder="Knight Foundation"></div>
+    <div class="field"><label>Program *</label><input id="f-program" placeholder="Community Information"></div>
+    <div class="field"><label>Amount</label><input id="f-amount" placeholder="$50,000 – $150,000"></div>
+    <div class="field"><label>Deadline</label><input id="f-deadline" type="date"></div>
+    <div class="field"><label>Fit Score (1–5)</label><input id="f-fit" type="number" min="1" max="5"></div>
+    <div class="field"><label>Projects (comma-separated)</label><input id="f-projects" placeholder="PolarityGPS, AVDP"></div>
+    <div class="field"><label>Stage</label>
+      <select id="f-stage">
+        <option value="identified">Identified</option>
+        <option value="researching">Researching</option>
+        <option value="drafting">Drafting</option>
+        <option value="submitted">Submitted</option>
+        <option value="awarded">Awarded</option>
+        <option value="rejected">Rejected</option>
+      </select>
+    </div>
+    <div class="field"><label>URL</label><input id="f-url" placeholder="https://..."></div>
+    <div class="field"><label>Notes</label><textarea id="f-notes" placeholder="Any relevant context..."></textarea></div>
+    <div class="modal-footer">
+      <button class="btn-sm btn-ghost" id="modal-cancel">Cancel</button>
+      <button class="btn-sm btn-primary" id="modal-save">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- Draft Modal -->
+<div class="modal-overlay" id="draft-modal" style="display:none">
+  <div class="modal">
+    <h2 class="modal-title">Draft Application Section</h2>
+    <div class="field"><label>Section</label>
+      <select id="d-section">
+        <option value="problem_statement">Problem Statement</option>
+        <option value="methods">Methods</option>
+        <option value="team">Team</option>
+        <option value="budget_narrative">Budget Narrative</option>
+      </select>
+    </div>
+    <button class="btn-sm btn-primary" id="d-generate" style="margin-top:8px">Generate</button>
+    <div class="draft-box" id="d-output" style="display:none"></div>
+    <div class="modal-footer">
+      <button class="btn-sm btn-ghost" id="draft-close">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="/admin/js/auth.js"></script>
+<script>
+  requireAuth();
+  document.getElementById('logout-btn').addEventListener('click', () => { clearToken(); window.location.href = '/admin/index.html'; });
+
+  const STAGES = ['identified','researching','drafting','submitted','awarded','rejected'];
+  const STAGE_LABELS = {identified:'Identified',researching:'Researching',drafting:'Drafting',submitted:'Submitted',awarded:'Awarded',rejected:'Rejected'};
+  let grants = [];
+  let editingId = null;
+  let draftGrantId = null;
+
+  async function load() {
+    grants = await apiGet('/api/lab-os/grants') || [];
+    render();
+  }
+
+  function render() {
+    const pipeline = document.getElementById('pipeline');
+    pipeline.innerHTML = STAGES.map(stage => {
+      const items = grants.filter(g => g.stage === stage);
+      return `<div class="pipeline-col">
+        <div class="pipeline-col-header">
+          <span>${STAGE_LABELS[stage]}</span>
+          <span class="pipeline-col-count">${items.length}</span>
+        </div>
+        ${items.map(g => `
+          <div class="card" onclick="openEdit(${g.id})">
+            <div class="card-title">${esc(g.funder)}</div>
+            <div class="card-sub">${esc(g.program || '')}</div>
+            ${g.amount ? `<div class="card-sub" style="margin-top:4px">${esc(g.amount)}</div>` : ''}
+            ${g.fit_score ? `<span class="badge badge-teal" style="margin-top:8px;display:inline-block">Fit: ${g.fit_score}/5</span>` : ''}
+            <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+              ${(g.projects||[]).map(p=>`<span class="badge badge-purple">${esc(p)}</span>`).join('')}
+            </div>
+            <div style="margin-top:10px">
+              <button class="btn-sm btn-ghost" style="font-size:11px;padding:4px 10px" onclick="event.stopPropagation();openDraft(${g.id})">Draft section</button>
+            </div>
+          </div>`).join('')}
+      </div>`;
+    }).join('');
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function clearForm() {
+    ['funder','program','amount','deadline','fit','projects','url','notes'].forEach(f => {
+      const el = document.getElementById(`f-${f}`);
+      if (el) el.value = '';
+    });
+    document.getElementById('f-stage').value = 'identified';
+  }
+
+  function openAdd() {
+    editingId = null;
+    document.getElementById('modal-title').textContent = 'Add Grant';
+    clearForm();
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  function openEdit(id) {
+    const g = grants.find(x => x.id === id);
+    if (!g) return;
+    editingId = id;
+    document.getElementById('modal-title').textContent = 'Edit Grant';
+    document.getElementById('f-funder').value = g.funder || '';
+    document.getElementById('f-program').value = g.program || '';
+    document.getElementById('f-amount').value = g.amount || '';
+    document.getElementById('f-deadline').value = g.deadline ? g.deadline.slice(0,10) : '';
+    document.getElementById('f-fit').value = g.fit_score || '';
+    document.getElementById('f-projects').value = (g.projects||[]).join(', ');
+    document.getElementById('f-stage').value = g.stage || 'identified';
+    document.getElementById('f-url').value = g.url || '';
+    document.getElementById('f-notes').value = g.notes || '';
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  async function saveGrant() {
+    const funder = document.getElementById('f-funder').value.trim();
+    const program = document.getElementById('f-program').value.trim();
+    if (!funder || !program) { alert('Funder and Program are required.'); return; }
+    const body = {
+      funder,
+      program,
+      amount: document.getElementById('f-amount').value.trim() || null,
+      deadline: document.getElementById('f-deadline').value || null,
+      fit_score: parseInt(document.getElementById('f-fit').value) || null,
+      projects: document.getElementById('f-projects').value.split(',').map(s=>s.trim()).filter(Boolean),
+      stage: document.getElementById('f-stage').value,
+      url: document.getElementById('f-url').value.trim() || null,
+      notes: document.getElementById('f-notes').value.trim() || null,
+    };
+    if (editingId) {
+      await apiPut(`/api/lab-os/grants/${editingId}`, body);
+    } else {
+      await apiPost('/api/lab-os/grants', body);
+    }
+    document.getElementById('modal').style.display = 'none';
+    await load();
+  }
+
+  function openDraft(id) {
+    draftGrantId = id;
+    document.getElementById('d-output').style.display = 'none';
+    document.getElementById('d-output').textContent = '';
+    document.getElementById('d-generate').textContent = 'Generate';
+    document.getElementById('d-generate').disabled = false;
+    document.getElementById('draft-modal').style.display = 'flex';
+  }
+
+  async function generateDraft() {
+    const btn = document.getElementById('d-generate');
+    btn.textContent = 'Generating...';
+    btn.disabled = true;
+    const data = await apiPost('/api/lab-os/generate/grant-section', {
+      grant_id: draftGrantId,
+      section: document.getElementById('d-section').value
+    });
+    const out = document.getElementById('d-output');
+    out.textContent = data?.draft || 'Error generating draft.';
+    out.style.display = 'block';
+    btn.textContent = 'Generate';
+    btn.disabled = false;
+  }
+
+  document.getElementById('add-btn').addEventListener('click', openAdd);
+  document.getElementById('modal-cancel').addEventListener('click', () => document.getElementById('modal').style.display = 'none');
+  document.getElementById('modal-save').addEventListener('click', saveGrant);
+  document.getElementById('d-generate').addEventListener('click', generateDraft);
+  document.getElementById('draft-close').addEventListener('click', () => document.getElementById('draft-modal').style.display = 'none');
+
+  load();
+</script>
+</body>
+</html>

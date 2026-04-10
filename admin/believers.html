@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Believers — Lab OS</title>
+  <link rel="icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+<div class="shell">
+  <nav class="sidebar">
+    <div class="sidebar-logo">LAB OS</div>
+    <div class="sidebar-label">Pipeline</div>
+    <a href="/admin/grants.html" class="sidebar-link">Grants</a>
+    <a href="/admin/outreach.html" class="sidebar-link">Outreach</a>
+    <a href="/admin/believers.html" class="sidebar-link active">Believers</a>
+    <div class="sidebar-label" style="margin-top:24px">Account</div>
+    <a href="#" class="sidebar-link" id="logout-btn">Sign out</a>
+  </nav>
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <h1 class="page-title">Financial Believers</h1>
+        <p class="page-sub">Track founding partner conversations and agreements.</p>
+      </div>
+      <button class="add-btn" id="add-btn">+ Add Believer</button>
+    </div>
+    <div class="pipeline" id="pipeline"></div>
+  </main>
+</div>
+
+<!-- Add/Edit Modal -->
+<div class="modal-overlay" id="modal" style="display:none">
+  <div class="modal">
+    <h2 class="modal-title" id="modal-title">Add Believer</h2>
+    <div class="field"><label>Name *</label><input id="f-name" placeholder="James Osei"></div>
+    <div class="field"><label>Project *</label>
+      <select id="f-project">
+        <option value="Integrity Delta">Integrity Delta</option>
+        <option value="PolarityGPS">PolarityGPS</option>
+        <option value="AVDP">AVDP</option>
+        <option value="WAXFEED">WAXFEED</option>
+        <option value="General Fund">General Fund</option>
+      </select>
+    </div>
+    <div class="field"><label>Amount ($)</label><input id="f-amount" type="number" min="1000" placeholder="5000"></div>
+    <div class="field"><label>Email</label><input id="f-email" type="email" placeholder="james@example.com"></div>
+    <div class="field"><label>Stage</label>
+      <select id="f-stage">
+        <option value="lead">Lead</option>
+        <option value="conversation_scheduled">Call Scheduled</option>
+        <option value="agreement_drafting">Agreement Drafting</option>
+        <option value="signed">Signed</option>
+        <option value="active">Active</option>
+      </select>
+    </div>
+    <div class="field"><label>Last Contact</label><input id="f-last-contact" type="date"></div>
+    <div class="field"><label>Notes</label><textarea id="f-notes" placeholder="Any relevant context..."></textarea></div>
+    <div class="modal-footer">
+      <button class="btn-sm btn-ghost" id="modal-cancel">Cancel</button>
+      <button class="btn-sm btn-primary" id="modal-save">Save</button>
+    </div>
+  </div>
+</div>
+
+<script src="/admin/js/auth.js"></script>
+<script>
+  requireAuth();
+  document.getElementById('logout-btn').addEventListener('click', () => { clearToken(); window.location.href = '/admin/index.html'; });
+
+  const STAGES = ['lead','conversation_scheduled','agreement_drafting','signed','active'];
+  const STAGE_LABELS = {lead:'Lead',conversation_scheduled:'Call Scheduled',agreement_drafting:'Agreement',signed:'Signed',active:'Active'};
+  let believers = [];
+  let editingId = null;
+
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  async function load() {
+    believers = await apiGet('/api/lab-os/believers') || [];
+    render();
+  }
+
+  function render() {
+    const pipeline = document.getElementById('pipeline');
+    pipeline.innerHTML = STAGES.map(stage => {
+      const items = believers.filter(b => b.stage === stage);
+      const total = items.reduce((sum, b) => sum + (b.amount || 0), 0);
+      return `<div class="pipeline-col">
+        <div class="pipeline-col-header">
+          <span>${STAGE_LABELS[stage]}</span>
+          <span class="pipeline-col-count">${items.length}</span>
+        </div>
+        ${total > 0 ? `<div style="font-family:var(--font-mono);font-size:11px;color:var(--teal);margin-bottom:10px">$${total.toLocaleString()}</div>` : ''}
+        ${items.map(b => `
+          <div class="card" onclick="openEdit(${b.id})">
+            <div class="card-title">${esc(b.name)}</div>
+            <div class="card-sub">${esc(b.project)}</div>
+            ${b.amount ? `<div style="font-family:var(--font-mono);font-size:13px;color:var(--teal);margin-top:6px">$${b.amount.toLocaleString()}</div>` : ''}
+            ${b.notes ? `<div class="card-sub" style="margin-top:6px;font-size:11px">${esc(b.notes.slice(0,80))}${b.notes.length>80?'...':''}</div>` : ''}
+          </div>`).join('')}
+      </div>`;
+    }).join('');
+  }
+
+  function openAdd() {
+    editingId = null;
+    document.getElementById('modal-title').textContent = 'Add Believer';
+    ['name','amount','email','notes'].forEach(f => { const el = document.getElementById(`f-${f}`); if (el) el.value = ''; });
+    document.getElementById('f-project').value = 'Integrity Delta';
+    document.getElementById('f-stage').value = 'lead';
+    document.getElementById('f-last-contact').value = '';
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  function openEdit(id) {
+    const b = believers.find(x => x.id === id);
+    if (!b) return;
+    editingId = id;
+    document.getElementById('modal-title').textContent = 'Edit Believer';
+    document.getElementById('f-name').value = b.name || '';
+    document.getElementById('f-project').value = b.project || 'Integrity Delta';
+    document.getElementById('f-amount').value = b.amount || '';
+    document.getElementById('f-email').value = b.email || '';
+    document.getElementById('f-stage').value = b.stage || 'lead';
+    document.getElementById('f-last-contact').value = b.last_contact ? b.last_contact.slice(0,10) : '';
+    document.getElementById('f-notes').value = b.notes || '';
+    document.getElementById('modal').style.display = 'flex';
+  }
+
+  async function saveBeliever() {
+    const name = document.getElementById('f-name').value.trim();
+    if (!name) { alert('Name is required.'); return; }
+    const body = {
+      name,
+      project: document.getElementById('f-project').value,
+      amount: parseInt(document.getElementById('f-amount').value) || null,
+      email: document.getElementById('f-email').value.trim() || null,
+      stage: document.getElementById('f-stage').value,
+      last_contact: document.getElementById('f-last-contact').value || null,
+      notes: document.getElementById('f-notes').value.trim() || null,
+    };
+    if (editingId) {
+      await apiPut(`/api/lab-os/believers/${editingId}`, body);
+    } else {
+      await apiPost('/api/lab-os/believers', body);
+    }
+    document.getElementById('modal').style.display = 'none';
+    await load();
+  }
+
+  document.getElementById('add-btn').addEventListener('click', openAdd);
+  document.getElementById('modal-cancel').addEventListener('click', () => document.getElementById('modal').style.display = 'none');
+  document.getElementById('modal-save').addEventListener('click', saveBeliever);
+
+  load();
+</script>
+</body>
+</html>
