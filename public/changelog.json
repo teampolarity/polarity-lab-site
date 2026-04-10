@@ -1,5 +1,14 @@
 [
   {
+    "id": "d76130b",
+    "date": "2026-04-10",
+    "title": "Strengthen join page flow and add closing sink",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "bea2a47",
     "date": "2026-04-10",
     "title": "Rewrite project page intros and get-involved cards for hook/reel/sink",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "02b7264",
-    "date": "2026-04-09",
-    "title": "Update Theo's title from Principal Investigator to Executive Director",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

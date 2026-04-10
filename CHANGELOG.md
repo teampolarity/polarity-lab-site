@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Strengthen join page flow and add closing sink (`d76130b`)
+
+### Apr 10, 2026
+
 - Rewrite project page intros and get-involved cards for hook/reel/sink (`bea2a47`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 9, 2026
 
 - Fix Founding Partner label overflow on general fund card mobile (`7036540`)
-
-### Apr 9, 2026
-
-- Update Theo's title from Principal Investigator to Executive Director (`02b7264`)
 
 
 ---
