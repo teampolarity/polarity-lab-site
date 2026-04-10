@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Add agent key auth to search-grants for remote trigger (`f012e21`)
+
+### Apr 10, 2026
+
 - Add agent key auth to generate-content for scheduled remote trigger (`625e368`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - feat: add Stripe gift checkout modal to fund.html (`fb796b2`)
-
-### Apr 10, 2026
-
-- feat: add grants, outreach, and believers pipeline UI pages to Lab OS admin (`544d503`)
 
 
 ---

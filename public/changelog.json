@@ -1,5 +1,14 @@
 [
   {
+    "id": "f012e21",
+    "date": "2026-04-10",
+    "title": "Add agent key auth to search-grants for remote trigger",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "625e368",
     "date": "2026-04-10",
     "title": "Add agent key auth to generate-content for scheduled remote trigger",
@@ -165,15 +174,6 @@
     "id": "fb796b2",
     "date": "2026-04-10",
     "title": "feat: add Stripe gift checkout modal to fund.html",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "544d503",
-    "date": "2026-04-10",
-    "title": "feat: add grants, outreach, and believers pipeline UI pages to Lab OS admin",
     "category": {
       "label": "New Feature",
       "color": "teal"
