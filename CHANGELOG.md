@@ -6,6 +6,14 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Add Lab OS Chat: conversational interface with live pipeline access (`ebdbefb`)
+
+### Apr 10, 2026
+
+- Improve lab-level pitch instructions with institutional voice and tone rules (`1cec945`)
+
+### Apr 10, 2026
+
 - Add institutional pitch instructions for Polarity Lab lab-level docs (`03d95f6`)
 
 ### Apr 10, 2026
@@ -75,14 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - feat: add above-fold CTA to homepage hero (`1581111`)
-
-### Apr 10, 2026
-
-- feat: add Lab OS dashboard + accurate project descriptions throughout (`dad95e9`)
-
-### Apr 10, 2026
-
-- feat: add manual grant search + fix projects render and draft text bugs (`7a39e3e`)
 
 
 ---
