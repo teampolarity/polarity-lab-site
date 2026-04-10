@@ -2,19 +2,22 @@ import { json, err, requireAdmin, PROJECTS } from '../_utils.js';
 
 const LAB_PITCH_INSTRUCTIONS = `Write an institutional pitch for Polarity Lab. This is a pitch for the research institute itself — not a summary of its projects. The projects are evidence. The institute is the pitch. Structure with clear section headers:
 
-1. THE INSTITUTION — What Polarity Lab is and why it exists as an independent institute. Start with the thesis: how humans interact with AI, media, and discovery systems is a new class of measurable harm to human cognition. Explain why this required building a new kind of institution rather than working within existing ones. What does independence enable that affiliation cannot? What incentive structures does it avoid?
+1. THE INSTITUTION — What Polarity Lab is and why it exists as an independent institute. Open with authority, not explanation. Do not begin with "Polarity Lab is..." as a flat statement of fact — open with the problem that required building a new institution. Explain why the existing structures (universities, corporate labs, government research) are structurally incapable of doing this work — not because they are bad but because their incentives select against it. Independence is not a circumstance, it is a design decision with a specific argument behind it.
 
-2. THE THESIS — Explain the core claim precisely. This is not a general concern about technology — it is a specific, measurable failure mode: systems designed to optimize for engagement, preference, or accuracy suppress the conditions required for accurate perception, genuine connection, independent reasoning, and healthy cognition. The problem is instrumentation, not awareness. We lack the tools to measure the delta between what should happen and what does.
+2. THE THESIS — Explain the core claim with precision. Do not describe the thesis as "simple" — it is precise, which is harder and more valuable than simple. The claim: systems designed to optimize for engagement, preference, or accuracy suppress the conditions required for accurate perception, genuine connection, independent reasoning, and healthy cognition. This is an empirical claim, not a values claim. The problem is not awareness — researchers and the public broadly understand something is wrong. The problem is instrumentation. Frame it as a measurement gap, not a moral failing.
 
-3. THE RESEARCH PROGRAM — Four active projects as proof that the thesis is researchable and measurable. Present them briefly as a portfolio, not in detail. Integrity Delta measures the gap between AI internal correctness and output. AVDP measures whether authentic human connection on screen is restorable. WAXFEED measures whether cognitive similarity predicts friendship. PolarityGPS measures the gap between community infrastructure and platform visibility. What they share: each pairs a rigorous research question with a product that generates continuous behavioral data.
+3. THE RESEARCH PROGRAM — Four active projects as proof that the thesis is researchable and measurable. One tight paragraph per project maximum. What they share is structure, not subject matter: each pairs a rigorous research question with a product that generates continuous behavioral data. The products are not commercialization strategies — they are instrumentation. End this section by naming what the portfolio proves: this class of harm is measurable across domains.
 
-4. WHY NOW — Why this class of harm is newly measurable. What has changed (model interpretability tools, behavioral data at scale, declining cost of longitudinal studies). Why independent research is the right structure for this moment specifically.
+4. WHY NOW — Three specific developments that make this research newly feasible. Be concrete: model interpretability tools, behavioral data without platform cooperation, declining cost of longitudinal infrastructure. Create urgency without hyperbole. The window matters because the harms compound and the systems causing them are accelerating.
 
-5. WHAT WE NEED — Tailor to context if provided. Otherwise cover: research infrastructure funding, IRB sponsorship partnerships, advisory relationships, and access to institutional networks. Be specific about what each type of support enables and what it unlocks.
+5. THE ASK — Concrete, specific, and confident. Tailor directly to the context provided. If meeting with a fund or investor, be direct about what you want from them specifically. Three things maximum. Do not hedge. Do not use phrases like "we would love to" or "it would be great if" — write from the position that this institute should obviously exist and the question is whether this reader wants to be part of building it. The close should have gravity, not gratitude.
 
-6. THE ASK — Concrete and direct. What Polarity Lab is asking for from this specific reader/audience. If no context is provided, write a general version.
-
-Tone: you are pitching an institution, not a startup and not a university department. The register is serious, intellectually confident, and specific. No buzzwords. No mission statement padding. No em dashes.`;
+CRITICAL TONE RULES:
+- Do not describe the thesis as "simple." Use "precise."
+- Do not use self-deprecating framing ("might as well," "we think," "hopefully"). Write with institutional confidence.
+- Do not end with a question that invites the reader to judge whether the lab should exist. The lab exists. The question is what they want to do about it.
+- No buzzwords. No mission statement padding. No em dashes. No exclamation points.
+- The register is serious, intellectually confident, and specific. Think research institute director, not startup founder.`;
 
 const DOC_INSTRUCTIONS = {
   pitch: `Write a pitch document for this project. Structure it with clear section headers. Sections:
