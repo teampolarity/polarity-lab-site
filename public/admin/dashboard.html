@@ -209,7 +209,8 @@
     const deadlines = data.upcoming_deadlines || [];
     document.getElementById('attention-deadlines').innerHTML = deadlines.length
       ? deadlines.map(g => {
-          const due = new Date(g.deadline); due.setHours(0,0,0,0);
+          const [dy, dm, dd] = g.deadline.split('-').map(Number);
+          const due = new Date(dy, dm - 1, dd);
           const days = Math.round((due - today) / 86400000);
           const urgency = days <= 3 ? 'urgent' : days <= 10 ? 'soon' : 'ok';
           const label = days === 0 ? 'due today' : days === 1 ? 'due tomorrow' : `due in ${days}d`;

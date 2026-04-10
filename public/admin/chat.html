@@ -103,6 +103,53 @@
       padding: 1px 5px;
       border-radius: 3px;
     }
+    .msg-bubble h2 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 16px 0 6px;
+    }
+    .msg-bubble h2:first-child { margin-top: 0; }
+    .msg-bubble h3 {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 14px 0 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .msg-bubble h3:first-child { margin-top: 0; }
+    .msg-bubble hr {
+      border: none;
+      border-top: 1px solid var(--border-ghost);
+      margin: 14px 0;
+    }
+    .msg-bubble table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 10px 0;
+    }
+    .msg-bubble th {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-tertiary);
+      padding: 6px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .msg-bubble td {
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--border-ghost);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+    .msg-bubble tr:last-child td { border-bottom: none; }
 
     /* Thinking indicator */
     .msg.thinking .msg-bubble {
@@ -274,17 +321,80 @@
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 
-  // Simple markdown renderer
-  function mdToHtml(text) {
+  // Markdown renderer: headers, bold, inline code, lists, tables, hr
+  function mdToHtml(md) {
+    const lines = md.split('\n');
+    const out = [];
+    let i = 0;
+
+    while (i < lines.length) {
+      const line = lines[i];
+
+      // Pipe table: detect header row followed by separator
+      if (/^\|/.test(line) && i + 1 < lines.length && /^\|[-| :]+\|/.test(lines[i + 1])) {
+        const headers = line.split('|').filter((_, j, a) => j > 0 && j < a.length - 1).map(h => h.trim());
+        i += 2; // skip header + separator
+        const rows = [];
+        while (i < lines.length && /^\|/.test(lines[i])) {
+          rows.push(lines[i].split('|').filter((_, j, a) => j > 0 && j < a.length - 1).map(c => c.trim()));
+          i++;
+        }
+        out.push(`<table><thead><tr>${headers.map(h => `<th>${inline(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r => `<tr>${headers.map((_, ci) => `<td>${inline(r[ci] || '')}</td>`).join('')}</tr>`).join('')}</tbody></table>`);
+        continue;
+      }
+
+      // HR
+      if (/^---+$/.test(line.trim())) { out.push('<hr>'); i++; continue; }
+
+      // H2
+      if (/^## /.test(line)) { out.push(`<h2>${inline(line.slice(3))}</h2>`); i++; continue; }
+
+      // H3
+      if (/^### /.test(line)) { out.push(`<h3>${inline(line.slice(4))}</h3>`); i++; continue; }
+
+      // Unordered list block
+      if (/^[*-] /.test(line)) {
+        const items = [];
+        while (i < lines.length && /^[*-] /.test(lines[i])) {
+          items.push(`<li>${inline(lines[i].slice(2))}</li>`);
+          i++;
+        }
+        out.push(`<ul>${items.join('')}</ul>`);
+        continue;
+      }
+
+      // Numbered list block
+      if (/^\d+\. /.test(line)) {
+        const items = [];
+        while (i < lines.length && /^\d+\. /.test(lines[i])) {
+          items.push(`<li>${inline(lines[i].replace(/^\d+\. /, ''))}</li>`);
+          i++;
+        }
+        out.push(`<ol>${items.join('')}</ol>`);
+        continue;
+      }
+
+      // Blank line — skip
+      if (!line.trim()) { i++; continue; }
+
+      // Paragraph: collect consecutive non-blank, non-structural lines
+      const para = [];
+      while (i < lines.length && lines[i].trim() && !/^[#*\-|]/.test(lines[i]) && !/^---+$/.test(lines[i].trim()) && !/^\d+\. /.test(lines[i])) {
+        para.push(inline(lines[i]));
+        i++;
+      }
+      if (para.length) out.push(`<p>${para.join('<br>')}</p>`);
+    }
+
+    return out.join('');
+  }
+
+  function inline(text) {
     return text
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-      .replace(/`([^`]+)`/g, '<code>$1</code>')
-      .replace(/^- (.+)$/gm, '<li>$1</li>')
-      .replace(/(<li>.*<\/li>\n?)+/g, s => `<ul>${s}</ul>`)
-      .split('\n\n')
-      .filter(p => p.trim())
-      .map(p => p.startsWith('<') ? p : `<p>${p.replace(/\n/g, '<br>')}</p>`)
-      .join('');
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>');
   }
 
   function toolLabel(name) {
