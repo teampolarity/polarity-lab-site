@@ -1,5 +1,14 @@
 [
   {
+    "id": "1ad472b",
+    "date": "2026-04-10",
+    "title": "Restructure homepage around hook/reel/sink arc",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "9e5518e",
     "date": "2026-04-09",
     "title": "Drop location and founding year from hero",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "07a780b",
-    "date": "2026-04-08",
-    "title": "Update all research page badges to lab names; WAXFEED caps on hub",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

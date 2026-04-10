@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Apr 10, 2026
+
+- Restructure homepage around hook/reel/sink arc (`1ad472b`)
+
 ### Apr 9, 2026
 
 - Drop location and founding year from hero (`9e5518e`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Replace all Wax Feed with WAXFEED throughout site (`eb7f7f3`)
-
-### Apr 8, 2026
-
-- Update all research page badges to lab names; WAXFEED caps on hub (`07a780b`)
 
 
 ---
