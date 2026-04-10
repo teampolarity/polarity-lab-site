@@ -1,5 +1,14 @@
 [
   {
+    "id": "b72e5fa",
+    "date": "2026-04-10",
+    "title": "feat: add Cloudflare Pages Functions backend for Lab OS",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "9f7c758",
     "date": "2026-04-10",
     "title": "Remove contribution tier table from join page Path 02",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "088a373",
-    "date": "2026-04-09",
-    "title": "Remove tier labels and multipliers from project role cards",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]

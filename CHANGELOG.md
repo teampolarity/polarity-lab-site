@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- feat: add Cloudflare Pages Functions backend for Lab OS (`b72e5fa`)
+
+### Apr 10, 2026
+
 - Remove contribution tier table from join page Path 02 (`9f7c758`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 9, 2026
 
 - Rewrite lab vision copy on homepage and join page (`550d46b`)
-
-### Apr 9, 2026
-
-- Remove tier labels and multipliers from project role cards (`088a373`)
 
 
 ---
