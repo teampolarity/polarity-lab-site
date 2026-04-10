@@ -1,5 +1,5 @@
 // admin/js/auth.js
-const API_BASE = 'https://polarity-api-vercel-red.vercel.app';
+const API_BASE = '';
 
 function getToken() {
   return localStorage.getItem('lab_os_token');
