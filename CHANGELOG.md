@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Rewrite lab page intros and get-involved sections (`e015cf9`)
+
+### Apr 10, 2026
+
 - Remove redundant vision section from join page (`182a097`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 9, 2026
 
 - Sharpen project card pitches to hook-first, curiosity-driven copy (`69cf513`)
-
-### Apr 9, 2026
-
-- Restructure homepage for trust-first IA and add fund page (`ec7e1ef`)
 
 
 ---

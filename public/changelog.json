@@ -1,5 +1,14 @@
 [
   {
+    "id": "e015cf9",
+    "date": "2026-04-10",
+    "title": "Rewrite lab page intros and get-involved sections",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "182a097",
     "date": "2026-04-10",
     "title": "Remove redundant vision section from join page",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "ec7e1ef",
-    "date": "2026-04-09",
-    "title": "Restructure homepage for trust-first IA and add fund page",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
