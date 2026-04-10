@@ -1,5 +1,14 @@
 [
   {
+    "id": "1581111",
+    "date": "2026-04-10",
+    "title": "feat: add above-fold CTA to homepage hero",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "dad95e9",
     "date": "2026-04-10",
     "title": "feat: add Lab OS dashboard + accurate project descriptions throughout",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "fd2d86d",
-    "date": "2026-04-09",
-    "title": "Fix recognition paragraph to not single out academia",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

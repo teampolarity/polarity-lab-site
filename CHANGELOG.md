@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- feat: add above-fold CTA to homepage hero (`1581111`)
+
+### Apr 10, 2026
+
 - feat: add Lab OS dashboard + accurate project descriptions throughout (`dad95e9`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 9, 2026
 
 - Drop location and founding year from hero (`9e5518e`)
-
-### Apr 9, 2026
-
-- Fix recognition paragraph to not single out academia (`fd2d86d`)
 
 
 ---
