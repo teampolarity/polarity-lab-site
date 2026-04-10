@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Fix chat: safe mdToHtml, live status indicator, timeout, faster model (`67daf02`)
+
+### Apr 10, 2026
+
 - Replace mdToHtml with safe sequential regex — no loops, no backtracking (`0449cef`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Upgrade grant search agent with fetch_page deep crawl (`0bf4023`)
-
-### Apr 10, 2026
-
-- Improve grant cards: show deadline, notes, and direct link to grant URL (`f6cc869`)
 
 
 ---

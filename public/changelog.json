@@ -1,5 +1,14 @@
 [
   {
+    "id": "67daf02",
+    "date": "2026-04-10",
+    "title": "Fix chat: safe mdToHtml, live status indicator, timeout, faster model",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "0449cef",
     "date": "2026-04-10",
     "title": "Replace mdToHtml with safe sequential regex — no loops, no backtracking",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "f6cc869",
-    "date": "2026-04-10",
-    "title": "Improve grant cards: show deadline, notes, and direct link to grant URL",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]
