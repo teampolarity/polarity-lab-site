@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polarity Lab OS</title>
+  <link rel="icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+<div class="login-wrap">
+  <div class="login-card">
+    <div class="login-logo">POLARITY</div>
+    <h1 class="login-label">Lab OS</h1>
+    <p class="login-sub">Admin access only.</p>
+    <div class="field">
+      <label>Password</label>
+      <input type="password" id="password" placeholder="Enter admin password" autofocus>
+    </div>
+    <button class="btn" id="login-btn">Sign in</button>
+    <p class="error-msg" id="error-msg">Wrong password.</p>
+  </div>
+</div>
+<script src="/admin/js/auth.js"></script>
+<script>
+  if (getToken()) window.location.href = '/admin/grants.html';
+
+  async function doLogin() {
+    const pw = document.getElementById('password').value.trim();
+    const btn = document.getElementById('login-btn');
+    const err = document.getElementById('error-msg');
+    if (!pw) return;
+    btn.disabled = true;
+    btn.textContent = 'Signing in...';
+    err.style.display = 'none';
+    try {
+      const res = await fetch(`${API_BASE}/api/lab-os/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pw })
+      });
+      const data = await res.json();
+      if (data.token) {
+        setToken(data.token);
+        window.location.href = '/admin/grants.html';
+      } else {
+        err.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = 'Sign in';
+      }
+    } catch {
+      err.textContent = 'Connection error. Try again.';
+      err.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Sign in';
+    }
+  }
+
+  document.getElementById('login-btn').addEventListener('click', doLogin);
+  document.getElementById('password').addEventListener('keydown', e => {
+    if (e.key === 'Enter') doLogin();
+  });
+</script>
+</body>
+</html>

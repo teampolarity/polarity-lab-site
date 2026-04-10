@@ -3,6 +3,10 @@
   "outputDirectory": "public",
   "cleanUrls": true,
   "framework": null,
+  "rewrites": [
+    { "source": "/admin", "destination": "/admin/index.html" },
+    { "source": "/admin/(.*)", "destination": "/admin/$1" }
+  ],
   "redirects": [
     { "source": "/polarity", "destination": "https://app.polarity-lab.com", "permanent": false },
     { "source": "/polarity/:path*", "destination": "https://app.polarity-lab.com/:path*", "permanent": false }
