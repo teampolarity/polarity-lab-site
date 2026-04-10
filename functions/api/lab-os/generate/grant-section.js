@@ -23,19 +23,24 @@ export async function onRequestPost({ request, env }) {
     .map(p => `${p}: ${PROJECTS[p]}`)
     .join('\n');
 
-  const prompt = `You are writing a grant application section for Polarity Lab, an environmental therapeutics research lab.
+  const prompt = `You are writing a grant application section for Polarity Lab, an independent research institute for the human condition in Providence, RI. Lab thesis: how humans interact with AI, media, and discovery systems represents a new class of measurable harm to human cognition. Measurement reveals what design can change.
 
-Funder: ${grant.funder}, Program: ${grant.program || 'General'}
+GRANT CONTEXT
+Funder: ${grant.funder}
+Program: ${grant.program || 'General'}
 Amount: ${grant.amount || 'Not specified'}
 Deadline: ${grant.deadline || 'Not specified'}
 Projects covered: ${projectList}
+${grant.notes ? `Funder notes: ${grant.notes}` : ''}
 
-Project descriptions:
+PROJECT DESCRIPTIONS
 ${projectContexts || projectList}
 
-${grant.notes ? `Grant notes: ${grant.notes}` : ''}
+SECTION TO WRITE: ${body.section.replace(/_/g, ' ').toUpperCase()}
 
-${GRANT_SECTION_INSTRUCTIONS[body.section]} Write for a ${grant.funder} audience. Be specific and credible. No fluff. Do not use em dashes. 300-500 words.`;
+${GRANT_SECTION_INSTRUCTIONS[body.section]}
+
+Tone: precise, credible, intellectually serious. Write for a ${grant.funder} reviewer. No fluff, no buzzwords, no em dashes. Every claim should be grounded in what Polarity has already done or can specifically commit to doing.`;
 
   try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
@@ -47,7 +52,7 @@ ${GRANT_SECTION_INSTRUCTIONS[body.section]} Write for a ${grant.funder} audience
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-6',
-        max_tokens: 1024,
+        max_tokens: 2048,
         messages: [{ role: 'user', content: prompt }]
       })
     });

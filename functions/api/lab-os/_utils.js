@@ -87,8 +87,42 @@ export const PROJECTS = {
 };
 
 export const GRANT_SECTION_INSTRUCTIONS = {
-  problem_statement: 'Write a compelling 2-3 paragraph problem statement for a grant application.',
-  methods: 'Write a detailed methods section describing the research approach and methodology.',
-  team: 'Write a team qualifications section highlighting relevant expertise.',
-  budget_narrative: 'Write a budget narrative section explaining how funds will be used.'
+  problem_statement: `Write a 3-paragraph problem statement for this grant application.
+
+Paragraph 1 — The core problem: How humans interact with AI, media, and discovery systems represents a new class of measurable harm to human cognition. This is not a vague concern about screen time — it is a specific, quantifiable failure mode: systems designed to optimize for engagement or preference suppress the conditions required for accurate perception, genuine connection, and independent reasoning. Frame this for the specific funder's domain (documentary/arts: the conditions for empathy and connection; AI safety: systems that agree when they shouldn't; civic tech: platforms that hide community infrastructure by design).
+
+Paragraph 2 — Why existing approaches fall short: Current research treats these harms as secondary effects of otherwise-neutral systems. Polarity Lab's thesis is that they are primary design outputs — measurable, predictable, and correctable. The gap is not awareness but instrumentation. We lack tools to measure the delta between what a system could surface and what it does, between internal correctness and external output, between cognitive similarity and platform-mediated connection.
+
+Paragraph 3 — The specific problem this project addresses: Draw directly from the project description provided. Be concrete about the research question, the population affected, and what becomes possible if this measurement problem is solved. Do not overstate. Do not use the word "revolutionary."`,
+
+  methods: `Write a 3-4 paragraph methods section for this grant application.
+
+The methods section is where Polarity's work is most differentiated — lead with the measurement instrument, not the hypothesis.
+
+For each project, the key methodological hook is:
+- Integrity Delta: logit-lens analysis to access internal model representations; the IΔ metric as a signed gap score; the pilot replication protocol using Llama 3.1 8B and chest radiograph data; OSF pre-registration.
+- AVDP: the format IS the methodology — controlled removal of phones, live-mixed ambient soundscapes, post-session surveys validated against independent rater assessments, dual-language production as a cross-cultural control.
+- WAXFEED: song rating as a harder-to-fake cognitive proxy than self-report; prediction gap analysis; relationship formation tracked at 30 and 90 days; longitudinal cognitive baseline construction.
+- PolarityGPS: the Proximity Index as a quantitative gap metric; controlled 90-day intervention vs. control group using standard platforms; platform audit methodology drawing from MUSEOFRI network and manual coverage mapping.
+
+Write the methods clearly: what is measured, how it is measured, what controls are in place, what the deliverable is. Address IRB or ethical review status honestly — note where sponsorship is being sought if applicable. 300-400 words.`,
+
+  team: `Write a 2-paragraph team qualifications section.
+
+Paragraph 1 — Address the independent structure directly and positively: Polarity Lab is deliberately unaffiliated. Independence from institutional incentives is not a limitation — it is the structural condition that makes this research possible. Labs embedded in universities optimize for publication cycles, departmental politics, and PI career trajectories. Polarity optimizes for the research question. Note Providence RI base, active partnerships being developed for IRB sponsorship, and the multi-disciplinary nature of the work (AI/ML, clinical informatics, documentary film, cognitive science, civic technology).
+
+Paragraph 2 — Specific qualifications relevant to this grant and project: Draw from the project description. Highlight what has already been built or validated — the Llama 3.1 8B pilot for Integrity Delta, the proof-of-concept AVDP sessions, the Providence pilot for PolarityGPS. Credibility comes from what has already been done, not from credentials. Be specific and honest about stage of development.`,
+
+  budget_narrative: `Write a concise budget narrative (2-3 paragraphs) for this grant application.
+
+Polarity is an independent lab — no indirect cost overhead, no institutional markup. Funds go directly to research activities. Frame this as a feature, not a disclaimer.
+
+Cover the major categories relevant to this project:
+- Researcher time: the primary cost. Be specific about what work this covers (data collection, analysis, production, software development).
+- IRB sponsorship and ethics review: required for human subjects work; Polarity is actively securing university partnership for this.
+- Equipment and infrastructure: what is needed and why (recording equipment for AVDP, compute for Integrity Delta analysis, mobile development for PolarityGPS/WAXFEED).
+- Participant compensation: for studies involving human subjects — appropriate rates, ethical compensation.
+- Dissemination: open-access publication, pre-registration, dataset release where applicable.
+
+Be specific about numbers where possible. If amount is listed in the grant context, size the narrative accordingly. Do not include line items for things not relevant to this project.`
 };
