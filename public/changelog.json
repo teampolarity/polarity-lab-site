@@ -1,5 +1,14 @@
 [
   {
+    "id": "b4d2df7",
+    "date": "2026-04-10",
+    "title": "fix: add /admin rewrite to _redirects for Cloudflare Pages",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "bcd787a",
     "date": "2026-04-10",
     "title": "fix: move admin portal into public/ and fix fund.html gift modal CSS vars",
@@ -167,15 +176,6 @@
     "title": "Restructure homepage for trust-first IA, remove Fund from nav",
     "category": {
       "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "a0aab34",
-    "date": "2026-04-09",
-    "title": "Fix legal compliance, light mode nav, and mobile fund layout",
-    "category": {
-      "label": "Bug Fix",
       "color": "coral"
     }
   }

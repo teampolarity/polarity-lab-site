@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- fix: add /admin rewrite to _redirects for Cloudflare Pages (`b4d2df7`)
+
+### Apr 10, 2026
+
 - fix: move admin portal into public/ and fix fund.html gift modal CSS vars (`bcd787a`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 9, 2026
 
 - Restructure homepage for trust-first IA, remove Fund from nav (`ed3afeb`)
-
-### Apr 9, 2026
-
-- Fix legal compliance, light mode nav, and mobile fund layout (`a0aab34`)
 
 
 ---
