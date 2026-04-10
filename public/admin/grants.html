@@ -120,12 +120,15 @@
             <div class="card-title">${esc(g.funder)}</div>
             <div class="card-sub">${esc(g.program || '')}</div>
             ${g.amount ? `<div class="card-sub" style="margin-top:4px">${esc(g.amount)}</div>` : ''}
+            ${g.deadline ? `<div class="card-sub" style="margin-top:2px;font-family:var(--font-mono);font-size:10px">due ${g.deadline.slice(0,10)}</div>` : ''}
             ${g.fit_score ? `<span class="badge badge-teal" style="margin-top:8px;display:inline-block">Fit: ${g.fit_score}/5</span>` : ''}
+            ${g.notes ? `<div class="card-sub" style="margin-top:8px;font-size:11px;line-height:1.5">${esc(g.notes)}</div>` : ''}
             <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
               ${(typeof g.projects === 'string' ? g.projects.split(',') : g.projects||[]).map(p=>p.trim()).filter(Boolean).map(p=>`<span class="badge badge-purple">${esc(p)}</span>`).join('')}
             </div>
-            <div style="margin-top:10px">
+            <div style="margin-top:10px;display:flex;gap:6px;flex-wrap:wrap">
               <button class="btn-sm btn-ghost" style="font-size:11px;padding:4px 10px" onclick="event.stopPropagation();openDraft(${g.id})">Draft section</button>
+              ${g.url ? `<a href="${esc(g.url)}" target="_blank" rel="noopener" class="btn-sm btn-ghost" style="font-size:11px;padding:4px 10px;text-decoration:none" onclick="event.stopPropagation()">View grant ↗</a>` : ''}
             </div>
           </div>`).join('')}
       </div>`;
