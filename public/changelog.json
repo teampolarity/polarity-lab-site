@@ -1,5 +1,14 @@
 [
   {
+    "id": "7a39e3e",
+    "date": "2026-04-10",
+    "title": "feat: add manual grant search + fix projects render and draft text bugs",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "b72e5fa",
     "date": "2026-04-10",
     "title": "feat: add Cloudflare Pages Functions backend for Lab OS",
@@ -165,15 +174,6 @@
     "id": "c1c0945",
     "date": "2026-04-09",
     "title": "Replace hero tagline and clear remaining stale lab framing",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "550d46b",
-    "date": "2026-04-09",
-    "title": "Rewrite lab vision copy on homepage and join page",
     "category": {
       "label": "Update",
       "color": "text-secondary"

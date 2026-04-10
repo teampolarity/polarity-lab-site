@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- feat: add manual grant search + fix projects render and draft text bugs (`7a39e3e`)
+
+### Apr 10, 2026
+
 - feat: add Cloudflare Pages Functions backend for Lab OS (`b72e5fa`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 9, 2026
 
 - Replace hero tagline and clear remaining stale lab framing (`c1c0945`)
-
-### Apr 9, 2026
-
-- Rewrite lab vision copy on homepage and join page (`550d46b`)
 
 
 ---
