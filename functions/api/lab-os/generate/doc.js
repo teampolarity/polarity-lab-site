@@ -76,10 +76,20 @@ export async function onRequestPost({ request, env }) {
     return err(`project must be one of: ${Object.keys(PROJECTS).join(', ')}`);
   }
 
+  const isLabLevel = body.project === 'Polarity Lab';
+
   const prompt = `You are writing a ${body.type} document for Polarity Lab, an independent research institute for the human condition in Providence, RI.
 
+${isLabLevel
+  ? `SCOPE: This is a LAB-LEVEL document covering Polarity Lab as a whole — not any single project. The document should present the institute, its thesis, and all four projects as a portfolio. Do not focus on or lead with any single project.
+
+LAB OVERVIEW:
+${PROJECTS['Polarity Lab']}`
+  : `SCOPE: This is a PROJECT-LEVEL document focused specifically on ${body.project}. Do not write about other projects except briefly as context.
+
 PROJECT: ${body.project}
-${PROJECTS[body.project]}
+${PROJECTS[body.project]}`
+}
 
 ${body.context ? `ADDITIONAL CONTEXT: ${body.context}\n` : ''}
 ${DOC_INSTRUCTIONS[body.type]}
