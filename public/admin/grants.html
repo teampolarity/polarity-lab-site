@@ -194,7 +194,7 @@
     document.getElementById('f-amount').value = g.amount || '';
     document.getElementById('f-deadline').value = g.deadline ? g.deadline.slice(0,10) : '';
     document.getElementById('f-fit').value = g.fit_score || '';
-    document.getElementById('f-projects').value = (g.projects||[]).join(', ');
+    document.getElementById('f-projects').value = typeof g.projects === 'string' ? g.projects : (g.projects||[]).join(', ');
     document.getElementById('f-stage').value = g.stage || 'identified';
     document.getElementById('f-url').value = g.url || '';
     document.getElementById('f-notes').value = g.notes || '';
