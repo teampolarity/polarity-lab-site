@@ -321,38 +321,42 @@
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 
-  // Markdown renderer: headers, bold, inline code, lists, tables, hr
+  // Inline escaping + formatting (safe to call on any string)
+  function inline(t) {
+    return t
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/`([^`]+)`/g, '<code>$1</code>');
+  }
+
+  // Markdown renderer — regex-based, no loop state that can stall
   function mdToHtml(md) {
+    // 1. Extract pipe tables before any other processing
+    md = md.replace(/^(\|.+\|[ \t]*\n\|[-| \t:]+\|[ \t]*\n(?:\|.+\|[ \t]*\n?)*)/gm, match => {
+      const rows = match.trim().split('\n');
+      const headers = rows[0].split('|').slice(1, -1).map(h => `<th>${inline(h.trim())}</th>`).join('');
+      const body = rows.slice(2).map(r =>
+        '<tr>' + r.split('|').slice(1, -1).map(c => `<td>${inline(c.trim())}</td>`).join('') + '</tr>'
+      ).join('');
+      return `<table><thead><tr>${headers}</tr></thead><tbody>${body}</tbody></table>\n`;
+    });
+
+    // 2. Process line by line — guaranteed to always advance
     const lines = md.split('\n');
     const out = [];
     let i = 0;
-
     while (i < lines.length) {
-      const line = lines[i];
+      const raw = lines[i];
+      const line = raw.trimEnd();
 
-      // Pipe table: detect header row followed by separator
-      if (/^\|/.test(line) && i + 1 < lines.length && /^\|[-| :]+\|/.test(lines[i + 1])) {
-        const headers = line.split('|').filter((_, j, a) => j > 0 && j < a.length - 1).map(h => h.trim());
-        i += 2; // skip header + separator
-        const rows = [];
-        while (i < lines.length && /^\|/.test(lines[i])) {
-          rows.push(lines[i].split('|').filter((_, j, a) => j > 0 && j < a.length - 1).map(c => c.trim()));
-          i++;
-        }
-        out.push(`<table><thead><tr>${headers.map(h => `<th>${inline(h)}</th>`).join('')}</tr></thead><tbody>${rows.map(r => `<tr>${headers.map((_, ci) => `<td>${inline(r[ci] || '')}</td>`).join('')}</tr>`).join('')}</tbody></table>`);
-        continue;
-      }
+      if (!line.trim())                      { i++; continue; }
+      if (/^<table/.test(line))              { out.push(line); i++; continue; }
+      if (/^---+\s*$/.test(line))            { out.push('<hr>'); i++; continue; }
+      if (/^### (.*)/.test(line))            { out.push(`<h3>${inline(line.slice(4))}</h3>`); i++; continue; }
+      if (/^## (.*)/.test(line))             { out.push(`<h2>${inline(line.slice(3))}</h2>`); i++; continue; }
+      if (/^# (.*)/.test(line))              { out.push(`<h2>${inline(line.slice(2))}</h2>`); i++; continue; }
 
-      // HR
-      if (/^---+$/.test(line.trim())) { out.push('<hr>'); i++; continue; }
-
-      // H2
-      if (/^## /.test(line)) { out.push(`<h2>${inline(line.slice(3))}</h2>`); i++; continue; }
-
-      // H3
-      if (/^### /.test(line)) { out.push(`<h3>${inline(line.slice(4))}</h3>`); i++; continue; }
-
-      // Unordered list block
       if (/^[*-] /.test(line)) {
         const items = [];
         while (i < lines.length && /^[*-] /.test(lines[i])) {
@@ -363,7 +367,6 @@
         continue;
       }
 
-      // Numbered list block
       if (/^\d+\. /.test(line)) {
         const items = [];
         while (i < lines.length && /^\d+\. /.test(lines[i])) {
@@ -374,27 +377,18 @@
         continue;
       }
 
-      // Blank line — skip
-      if (!line.trim()) { i++; continue; }
-
-      // Paragraph: collect consecutive non-blank, non-structural lines
+      // Plain text — collect until blank or structural line, then wrap as <p>
       const para = [];
-      while (i < lines.length && lines[i].trim() && !/^[#*\-|]/.test(lines[i]) && !/^---+$/.test(lines[i].trim()) && !/^\d+\. /.test(lines[i])) {
-        para.push(inline(lines[i]));
+      while (i < lines.length) {
+        const l = lines[i];
+        if (!l.trim() || /^[#*\-]/.test(l) || /^---+\s*$/.test(l) || /^\d+\. /.test(l) || /^<table/.test(l)) break;
+        para.push(inline(l));
         i++;
       }
       if (para.length) out.push(`<p>${para.join('<br>')}</p>`);
     }
 
     return out.join('');
-  }
-
-  function inline(text) {
-    return text
-      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.+?)\*/g, '<em>$1</em>')
-      .replace(/`([^`]+)`/g, '<code>$1</code>');
   }
 
   function toolLabel(name) {
