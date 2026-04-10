@@ -1,5 +1,32 @@
 [
   {
+    "id": "d3ead89",
+    "date": "2026-04-10",
+    "title": "Add people sections to all lab and project pages",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "fae8810",
+    "date": "2026-04-10",
+    "title": "Add Lab OS Phase 1 implementation plan",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "e9337ac",
+    "date": "2026-04-10",
+    "title": "Add Lab OS design document",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "1ad472b",
     "date": "2026-04-10",
     "title": "Restructure homepage around hook/reel/sink arc",
@@ -150,33 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "62cb142",
-    "date": "2026-04-08",
-    "title": "Make WAXFEED standalone: remove PolarityGPS comparisons, fix methods",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "1fd9a3a",
-    "date": "2026-04-08",
-    "title": "WAXFEED is a therapeutic environment, not the only one for music",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "eb7f7f3",
-    "date": "2026-04-08",
-    "title": "Replace all Wax Feed with WAXFEED throughout site",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

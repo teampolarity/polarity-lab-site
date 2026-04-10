@@ -6,6 +6,18 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Add people sections to all lab and project pages (`d3ead89`)
+
+### Apr 10, 2026
+
+- Add Lab OS Phase 1 implementation plan (`fae8810`)
+
+### Apr 10, 2026
+
+- Add Lab OS design document (`e9337ac`)
+
+### Apr 10, 2026
+
 - Restructure homepage around hook/reel/sink arc (`1ad472b`)
 
 ### Apr 9, 2026
@@ -71,18 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Fix all evidence links on WAXFEED page (`8a6604f`)
-
-### Apr 8, 2026
-
-- Make WAXFEED standalone: remove PolarityGPS comparisons, fix methods (`62cb142`)
-
-### Apr 8, 2026
-
-- WAXFEED is a therapeutic environment, not the only one for music (`1fd9a3a`)
-
-### Apr 8, 2026
-
-- Replace all Wax Feed with WAXFEED throughout site (`eb7f7f3`)
 
 
 ---
