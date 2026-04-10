@@ -15,16 +15,15 @@ export async function onRequestPost({ request, env }) {
 Search for 6–10 current grant opportunities across these areas:
 
 LAB-LEVEL:
-- Independent research labs, no university affiliation required
-- Health innovation, environmental health, emerging science
-- Providence RI / New England arts and science programs
-- Small and emerging research organizations
+- Independent research institutes without university affiliation (Providence RI)
+- Emerging fields: environmental therapeutics, cognitive harm from tech/media design
+- New England arts and science, community-based research infrastructure
 
 PROJECT-LEVEL:
-- Integrity Delta (clinical AI sycophancy, radiology, AI safety, patient safety, medical ethics)
-- AVDP — A Very Distant Perspective (documentary film, arts and health, end-of-life care, humanities)
-- WAXFEED (music and cognition, music tech, cognitive science, consumer health)
-- PolarityGPS (civic tech, community health, public health, urban research, participatory research)
+- Integrity Delta: "Polite Malpractice" — AI systems suppressing correct internal reasoning to produce preferred outputs. The Integrity Delta (IΔ) measures the gap between a model's internal correctness (logit-lens) and final output. Pilot confirmed on Llama 3.1 8B with chest radiographs. Manuscript in prep, OSF pre-registration drafted. Relevant funders: AI safety, patient safety, clinical informatics, medical ethics, NIH, Wellcome Trust, health tech.
+- AVDP — A Very Distant Perspective: long-form video interview as research instrument testing whether watching authentic human connection is measurably restorative. Format is the methodology — removes phones, uses live-mixed ambient soundscapes, measures via post-session surveys and independent rater assessments. Produced in English and Mandarin Chinese. Grounded in narrative medicine (Charon 2001), emotional contagion (Kramer 2014). Relevant funders: arts and health, narrative medicine, documentary film, Ford Foundation, Robert Wood Johnson, Sundance, Tribeca.
+- WAXFEED: music platform where how you rate music reveals how you think. Cognitive similarity hypothesis — does musical response predict lasting friendships? Longer-term angle: baseline cognitive profiles from music as early detection for neurological disease. Relevant funders: music and health, cognitive science, Mozilla, Wellcome Collection, MacArthur, consumer health.
+- PolarityGPS: location-based game where proximity missions surface civic/cultural infrastructure invisible on standard platforms. The Proximity Index measures the gap between community output within a radius and what platforms surface. Providence pilot confirmed gap by design. 90-day controlled intervention study upcoming. Relevant funders: civic tech, community health, Knight Foundation, Kresge, NEA, community foundations, urban research.
 
 CRITICAL: Only include grants that do NOT require a PI (Principal Investigator) or university/hospital institutional affiliation. Independent researchers and small organizations must be eligible.
 

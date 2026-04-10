@@ -24,7 +24,7 @@
 </div>
 <script src="/admin/js/auth.js"></script>
 <script>
-  if (getToken()) window.location.href = '/admin/grants.html';
+  if (getToken()) window.location.href = '/admin/dashboard.html';
 
   async function doLogin() {
     const pw = document.getElementById('password').value.trim();
@@ -43,7 +43,7 @@
       const data = await res.json();
       if (data.token) {
         setToken(data.token);
-        window.location.href = '/admin/grants.html';
+        window.location.href = '/admin/dashboard.html';
       } else {
         err.style.display = 'block';
         btn.disabled = false;

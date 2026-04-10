@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Lab OS</title>
+  <link rel="icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+  <style>
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .stat-card { background: var(--void-elevated); border: 1px solid var(--border-ghost); border-radius: 10px; padding: 20px 24px; }
+    .stat-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 10px; }
+    .stat-value { font-family: var(--font-display); font-size: 32px; font-weight: 700; color: var(--text-primary); line-height: 1; }
+    .stat-sub { font-size: 12px; color: var(--text-tertiary); margin-top: 6px; }
+    .stat-value.teal { color: var(--teal); }
+    .agents-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-bottom: 40px; }
+    .agent-card { background: var(--void-elevated); border: 1px solid var(--border-ghost); border-radius: 10px; padding: 20px 24px; }
+    .agent-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+    .agent-name { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--text-primary); }
+    .agent-type { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.08em; color: var(--text-tertiary); text-transform: uppercase; margin-bottom: 4px; }
+    .agent-status { font-size: 12px; color: var(--text-tertiary); }
+    .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; }
+    .dot-teal { background: var(--teal); box-shadow: 0 0 6px var(--teal); }
+    .dot-ghost { background: var(--text-tertiary); }
+    .section-label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 16px; }
+    .stage-bars { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+    .stage-row { display: flex; align-items: center; gap: 10px; font-size: 12px; }
+    .stage-name { color: var(--text-tertiary); width: 110px; font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .stage-bar-wrap { flex: 1; height: 4px; background: var(--void-surface); border-radius: 2px; overflow: hidden; }
+    .stage-bar { height: 100%; border-radius: 2px; background: var(--teal); transition: width 0.4s; }
+    .stage-count { color: var(--text-secondary); font-family: var(--font-mono); font-size: 11px; width: 20px; text-align: right; }
+    .pipeline-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .pipeline-mini { background: var(--void-elevated); border: 1px solid var(--border-ghost); border-radius: 10px; padding: 20px 24px; }
+    .mini-title { font-family: var(--font-display); font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .mini-link { font-family: var(--font-mono); font-size: 10px; color: var(--teal); text-decoration: none; letter-spacing: 0.05em; }
+    .mini-link:hover { opacity: 0.8; }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <nav class="sidebar">
+    <div class="sidebar-logo">LAB OS</div>
+    <div class="sidebar-label">Overview</div>
+    <a href="/admin/dashboard.html" class="sidebar-link active">Dashboard</a>
+    <div class="sidebar-label" style="margin-top:16px">Pipeline</div>
+    <a href="/admin/grants.html" class="sidebar-link">Grants</a>
+    <a href="/admin/outreach.html" class="sidebar-link">Outreach</a>
+    <a href="/admin/believers.html" class="sidebar-link">Believers</a>
+    <div class="sidebar-label" style="margin-top:24px">Account</div>
+    <a href="#" class="sidebar-link" id="logout-btn">Sign out</a>
+  </nav>
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <h1 class="page-title">Lab OS</h1>
+        <p class="page-sub" id="greeting">Loading...</p>
+      </div>
+    </div>
+
+    <!-- Key stats -->
+    <div class="section-label">Pipeline</div>
+    <div class="stats-grid" id="stats-grid">
+      <div class="stat-card"><div class="stat-label">Grants</div><div class="stat-value" id="s-grants">—</div><div class="stat-sub" id="s-grants-sub">loading</div></div>
+      <div class="stat-card"><div class="stat-label">Active Leads</div><div class="stat-value" id="s-leads">—</div><div class="stat-sub" id="s-leads-sub">loading</div></div>
+      <div class="stat-card"><div class="stat-label">Believers Pipeline</div><div class="stat-value teal" id="s-believers">—</div><div class="stat-sub" id="s-believers-sub">loading</div></div>
+      <div class="stat-card"><div class="stat-label">Awarded</div><div class="stat-value teal" id="s-awarded">—</div><div class="stat-sub">grants won</div></div>
+    </div>
+
+    <!-- Agents -->
+    <div class="section-label">Agents</div>
+    <div class="agents-grid">
+      <div class="agent-card">
+        <div class="agent-header">
+          <div>
+            <div class="agent-type">Grant Prospecting</div>
+            <div class="agent-name">Grant Search</div>
+          </div>
+          <span><span class="dot dot-teal"></span><span style="font-size:12px;color:var(--teal);font-family:var(--font-mono)">active</span></span>
+        </div>
+        <div class="agent-status">Runs every Monday at 9am. Searches for no-PI-required grants across all four projects and lab level. Writes directly to pipeline.</div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <a href="/admin/grants.html" class="mini-link">View pipeline →</a>
+        </div>
+      </div>
+      <div class="agent-card" style="opacity:0.5">
+        <div class="agent-header">
+          <div>
+            <div class="agent-type">Content</div>
+            <div class="agent-name">Growth Engine</div>
+          </div>
+          <span><span class="dot dot-ghost"></span><span style="font-size:12px;color:var(--text-tertiary);font-family:var(--font-mono)">pending</span></span>
+        </div>
+        <div class="agent-status">Weekly LinkedIn posts, newsletter blurbs, and project updates drafted from active pipeline activity.</div>
+      </div>
+      <div class="agent-card" style="opacity:0.5">
+        <div class="agent-header">
+          <div>
+            <div class="agent-type">Docs</div>
+            <div class="agent-name">Doc Generator</div>
+          </div>
+          <span><span class="dot dot-ghost"></span><span style="font-size:12px;color:var(--text-tertiary);font-family:var(--font-mono)">pending</span></span>
+        </div>
+        <div class="agent-status">Pitch decks, onboarding packets, and agreement drafts generated from live project data.</div>
+      </div>
+    </div>
+
+    <!-- Pipeline breakdown -->
+    <div class="section-label">Breakdown</div>
+    <div class="pipeline-preview">
+      <div class="pipeline-mini">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px">
+          <div class="mini-title">Grants</div>
+          <a href="/admin/grants.html" class="mini-link">Open pipeline →</a>
+        </div>
+        <div class="stage-bars" id="grants-bars"></div>
+      </div>
+      <div class="pipeline-mini">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px">
+          <div class="mini-title">Outreach</div>
+          <a href="/admin/outreach.html" class="mini-link">Open pipeline →</a>
+        </div>
+        <div class="stage-bars" id="leads-bars"></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/admin/js/auth.js"></script>
+<script>
+  requireAuth();
+  document.getElementById('logout-btn').addEventListener('click', () => { clearToken(); window.location.href = '/admin/index.html'; });
+
+  const hour = new Date().getHours();
+  document.getElementById('greeting').textContent = hour < 12 ? 'Good morning.' : hour < 17 ? 'Good afternoon.' : 'Good evening.';
+
+  function fmt$(n) {
+    if (!n) return '$0';
+    if (n >= 1000) return '$' + (n / 1000).toFixed(0) + 'k';
+    return '$' + n;
+  }
+
+  async function load() {
+    const data = await apiGet('/api/lab-os/stats');
+    if (!data) return;
+
+    document.getElementById('s-grants').textContent = data.grants.total;
+    document.getElementById('s-grants-sub').textContent = `${data.grants.active} in progress`;
+    document.getElementById('s-leads').textContent = data.leads.active;
+    document.getElementById('s-leads-sub').textContent = `${data.leads.total} total leads`;
+    document.getElementById('s-believers').textContent = fmt$(data.believers.pipeline_value);
+    document.getElementById('s-believers-sub').textContent = `${data.believers.total} in pipeline`;
+    document.getElementById('s-awarded').textContent = data.grants.by_stage?.awarded || 0;
+
+    const GRANT_STAGES = ['identified','researching','drafting','submitted','awarded','rejected'];
+    const maxGrant = Math.max(1, ...GRANT_STAGES.map(s => data.grants.by_stage?.[s] || 0));
+    document.getElementById('grants-bars').innerHTML = GRANT_STAGES.map(s => {
+      const n = data.grants.by_stage?.[s] || 0;
+      return `<div class="stage-row">
+        <div class="stage-name">${s}</div>
+        <div class="stage-bar-wrap"><div class="stage-bar" style="width:${Math.round((n/maxGrant)*100)}%"></div></div>
+        <div class="stage-count">${n}</div>
+      </div>`;
+    }).join('');
+
+    const LEAD_STAGES = ['new','contacted','replied','in_conversation','won','lost'];
+    const maxLead = Math.max(1, ...LEAD_STAGES.map(s => data.leads.by_stage?.[s] || 0));
+    document.getElementById('leads-bars').innerHTML = LEAD_STAGES.map(s => {
+      const n = data.leads.by_stage?.[s] || 0;
+      const label = s.replace('_', ' ');
+      return `<div class="stage-row">
+        <div class="stage-name">${label}</div>
+        <div class="stage-bar-wrap"><div class="stage-bar" style="width:${Math.round((n/maxLead)*100)}%"></div></div>
+        <div class="stage-count">${n}</div>
+      </div>`;
+    }).join('');
+  }
+
+  load();
+</script>
+</body>
+</html>
