@@ -1,5 +1,14 @@
 [
   {
+    "id": "7cb7236",
+    "date": "2026-04-10",
+    "title": "Fix duplicate Fund nav link on all research pages",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "1581111",
     "date": "2026-04-10",
     "title": "feat: add above-fold CTA to homepage hero",
@@ -165,15 +174,6 @@
     "id": "1ad472b",
     "date": "2026-04-10",
     "title": "Restructure homepage around hook/reel/sink arc",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
-    }
-  },
-  {
-    "id": "9e5518e",
-    "date": "2026-04-09",
-    "title": "Drop location and founding year from hero",
     "category": {
       "label": "Update",
       "color": "text-secondary"

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Fix duplicate Fund nav link on all research pages (`7cb7236`)
+
+### Apr 10, 2026
+
 - feat: add above-fold CTA to homepage hero (`1581111`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Restructure homepage around hook/reel/sink arc (`1ad472b`)
-
-### Apr 9, 2026
-
-- Drop location and founding year from hero (`9e5518e`)
 
 
 ---
