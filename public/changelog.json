@@ -1,5 +1,14 @@
 [
   {
+    "id": "dad95e9",
+    "date": "2026-04-10",
+    "title": "feat: add Lab OS dashboard + accurate project descriptions throughout",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "7a39e3e",
     "date": "2026-04-10",
     "title": "feat: add manual grant search + fix projects render and draft text bugs",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "c1c0945",
-    "date": "2026-04-09",
-    "title": "Replace hero tagline and clear remaining stale lab framing",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

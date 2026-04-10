@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- feat: add Lab OS dashboard + accurate project descriptions throughout (`dad95e9`)
+
+### Apr 10, 2026
+
 - feat: add manual grant search + fix projects render and draft text bugs (`7a39e3e`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 9, 2026
 
 - Fix recognition paragraph to not single out academia (`fd2d86d`)
-
-### Apr 9, 2026
-
-- Replace hero tagline and clear remaining stale lab framing (`c1c0945`)
 
 
 ---
