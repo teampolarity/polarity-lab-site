@@ -38,6 +38,10 @@
     .output-content li { margin-bottom: 6px; }
     .output-content strong { color: var(--text-primary); font-weight: 600; }
     .gen-status { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); margin-top: 10px; text-align: center; min-height: 16px; }
+    .progress-wrap { height: 3px; background: var(--void-surface); border-radius: 2px; margin-top: 12px; overflow: hidden; display: none; }
+    .progress-wrap.active { display: block; }
+    .progress-bar { height: 100%; width: 40%; background: var(--teal); border-radius: 2px; animation: indeterminate 1.4s ease-in-out infinite; }
+    @keyframes indeterminate { 0% { transform: translateX(-100%); } 100% { transform: translateX(300%); } }
   </style>
 </head>
 <body>
@@ -79,7 +83,7 @@
           <option value="Integrity Delta">Integrity Delta</option>
           <option value="AVDP">AVDP</option>
           <option value="WAXFEED">WAXFEED</option>
-          <option value="PolarityGPS">PolarityGPS</option>
+          <option value="Polarity GPS">Polarity GPS</option>
           <option value="General Fund">General Fund</option>
         </select>
 
@@ -87,6 +91,7 @@
         <textarea class="context-input" id="context-input" placeholder="e.g. for a $25k grant ask from Knight Foundation, for a software engineer joining the team, for a university IRB partnership..."></textarea>
 
         <button class="generate-btn" id="generate-btn">Generate</button>
+        <div class="progress-wrap" id="progress-wrap"><div class="progress-bar"></div></div>
         <div class="gen-status" id="gen-status"></div>
       </div>
 
@@ -151,7 +156,8 @@
 
     btn.disabled = true;
     btn.textContent = 'Generating...';
-    status.textContent = 'Drafting document...';
+    status.textContent = 'Usually 15–30 seconds...';
+    document.getElementById('progress-wrap').classList.add('active');
     document.getElementById('output-content').className = 'output-content empty';
     document.getElementById('output-content').innerHTML = 'Drafting...';
     document.getElementById('copy-btn').style.display = 'none';
@@ -161,6 +167,7 @@
     btn.disabled = false;
     btn.textContent = 'Generate';
     status.textContent = '';
+    document.getElementById('progress-wrap').classList.remove('active');
 
     if (data?.content) {
       lastMarkdown = data.content;
