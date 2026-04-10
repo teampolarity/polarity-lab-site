@@ -1,5 +1,14 @@
 [
   {
+    "id": "a8f81ea",
+    "date": "2026-04-10",
+    "title": "feat: light/dark mode for Lab OS admin",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "7cb7236",
     "date": "2026-04-10",
     "title": "Fix duplicate Fund nav link on all research pages",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "1ad472b",
-    "date": "2026-04-10",
-    "title": "Restructure homepage around hook/reel/sink arc",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

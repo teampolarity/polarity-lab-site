@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- feat: light/dark mode for Lab OS admin (`a8f81ea`)
+
+### Apr 10, 2026
+
 - Fix duplicate Fund nav link on all research pages (`7cb7236`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Add Lab OS design document (`e9337ac`)
-
-### Apr 10, 2026
-
-- Restructure homepage around hook/reel/sink arc (`1ad472b`)
 
 
 ---
