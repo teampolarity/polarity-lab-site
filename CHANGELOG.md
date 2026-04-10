@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Upgrade grant search agent with fetch_page deep crawl (`0bf4023`)
+
+### Apr 10, 2026
+
 - Improve grant cards: show deadline, notes, and direct link to grant URL (`f6cc869`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - feat: add Lab OS admin frontend shell, login screen, and CSS (`9db6699`)
-
-### Apr 10, 2026
-
-- Add people sections to all lab and project pages (`d3ead89`)
 
 
 ---
