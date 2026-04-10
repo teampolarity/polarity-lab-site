@@ -1,5 +1,14 @@
 [
   {
+    "id": "bcd787a",
+    "date": "2026-04-10",
+    "title": "fix: move admin portal into public/ and fix fund.html gift modal CSS vars",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "fb796b2",
     "date": "2026-04-10",
     "title": "feat: add Stripe gift checkout modal to fund.html",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "2918002",
-    "date": "2026-04-09",
-    "title": "Rebuild site as lab-as-fund platform with four research fields",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

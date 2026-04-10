@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- fix: move admin portal into public/ and fix fund.html gift modal CSS vars (`bcd787a`)
+
+### Apr 10, 2026
+
 - feat: add Stripe gift checkout modal to fund.html (`fb796b2`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 9, 2026
 
 - Fix legal compliance, light mode nav, and mobile fund layout (`a0aab34`)
-
-### Apr 9, 2026
-
-- Rebuild site as lab-as-fund platform with four research fields (`2918002`)
 
 
 ---
