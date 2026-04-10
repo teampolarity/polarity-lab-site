@@ -6,6 +6,14 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Remove timely AVDP Ghana reference from fund page for consistency (`91725f2`)
+
+### Apr 10, 2026
+
+- feat: add Lab OS admin frontend shell, login screen, and CSS (`9db6699`)
+
+### Apr 10, 2026
+
 - Add people sections to all lab and project pages (`d3ead89`)
 
 ### Apr 10, 2026
@@ -75,14 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 8, 2026
 
 - Fix two incorrect evidence links on WAXFEED page (`69a8639`)
-
-### Apr 8, 2026
-
-- Update homepage research section and Shadrack's project tags (`3748aa7`)
-
-### Apr 8, 2026
-
-- Fix all evidence links on WAXFEED page (`8a6604f`)
 
 
 ---

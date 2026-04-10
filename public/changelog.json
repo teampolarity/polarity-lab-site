@@ -1,5 +1,23 @@
 [
   {
+    "id": "91725f2",
+    "date": "2026-04-10",
+    "title": "Remove timely AVDP Ghana reference from fund page for consistency",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
+    "id": "9db6699",
+    "date": "2026-04-10",
+    "title": "feat: add Lab OS admin frontend shell, login screen, and CSS",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "d3ead89",
     "date": "2026-04-10",
     "title": "Add people sections to all lab and project pages",
@@ -156,24 +174,6 @@
     "id": "69a8639",
     "date": "2026-04-08",
     "title": "Fix two incorrect evidence links on WAXFEED page",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "3748aa7",
-    "date": "2026-04-08",
-    "title": "Update homepage research section and Shadrack's project tags",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
-    }
-  },
-  {
-    "id": "8a6604f",
-    "date": "2026-04-08",
-    "title": "Fix all evidence links on WAXFEED page",
     "category": {
       "label": "Bug Fix",
       "color": "coral"
