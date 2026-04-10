@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Fix mdToHtml infinite loop — switch to regex-first then safe line parser (`bee16eb`)
+
+### Apr 10, 2026
+
 - Fix markdown rendering in chat and deadline day count on dashboard (`c7cae80`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Add content/growth engine — weekly draft generation from pipeline activity (`d8de898`)
-
-### Apr 10, 2026
-
-- feat: light/dark mode for Lab OS admin (`a8f81ea`)
 
 
 ---

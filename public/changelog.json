@@ -1,5 +1,14 @@
 [
   {
+    "id": "bee16eb",
+    "date": "2026-04-10",
+    "title": "Fix mdToHtml infinite loop — switch to regex-first then safe line parser",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "c7cae80",
     "date": "2026-04-10",
     "title": "Fix markdown rendering in chat and deadline day count on dashboard",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "a8f81ea",
-    "date": "2026-04-10",
-    "title": "feat: light/dark mode for Lab OS admin",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
