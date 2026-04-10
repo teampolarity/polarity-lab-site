@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Improve grant section drafting: fix lab description, sharpen prompts (`b3d987d`)
+
+### Apr 10, 2026
+
 - Upgrade grant search agent with fetch_page deep crawl (`0bf4023`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Remove timely AVDP Ghana reference from fund page for consistency (`91725f2`)
-
-### Apr 10, 2026
-
-- feat: add Lab OS admin frontend shell, login screen, and CSS (`9db6699`)
 
 
 ---
