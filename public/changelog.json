@@ -1,5 +1,14 @@
 [
   {
+    "id": "24eba14",
+    "date": "2026-04-10",
+    "title": "Add indeterminate progress bar to doc generator",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "4867562",
     "date": "2026-04-10",
     "title": "Add doc generator: pitch decks, onboarding packets, agreement drafts",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Removed",
       "color": "coral"
-    }
-  },
-  {
-    "id": "d76130b",
-    "date": "2026-04-10",
-    "title": "Strengthen join page flow and add closing sink",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]

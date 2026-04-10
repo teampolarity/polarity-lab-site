@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Add indeterminate progress bar to doc generator (`24eba14`)
+
+### Apr 10, 2026
+
 - Add doc generator: pitch decks, onboarding packets, agreement drafts (`4867562`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Remove redundant vision section from join page (`182a097`)
-
-### Apr 10, 2026
-
-- Strengthen join page flow and add closing sink (`d76130b`)
 
 
 ---
