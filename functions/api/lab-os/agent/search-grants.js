@@ -1,14 +1,50 @@
 import { json, err, requireAdmin } from '../_utils.js';
 
+// Fetch a grant page, strip HTML, return readable text (max 10k chars)
+async function fetchPageContent(url) {
+  try {
+    const res = await fetch(url, {
+      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1)' },
+      signal: AbortSignal.timeout(8000)
+    });
+    if (!res.ok) return `Page returned ${res.status}`;
+    const html = await res.text();
+    return html
+      .replace(/<script[\s\S]*?<\/script>/gi, '')
+      .replace(/<style[\s\S]*?<\/style>/gi, '')
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .slice(0, 10000);
+  } catch (e) {
+    return `Failed to fetch: ${e.message}`;
+  }
+}
+
 export async function onRequestPost({ request, env }) {
   const claims = await requireAdmin(request, env);
   if (!claims) return err('Unauthorized', 401);
 
-  // Fetch existing funder+program pairs to deduplicate
   const { results: existing } = await env.LAB_OS_DB
     .prepare('SELECT funder, program FROM lab_os_grants')
     .all();
   const existingSet = new Set(existing.map(r => `${r.funder}||${r.program}`.toLowerCase()));
+
+  const tools = [
+    { type: 'web_search_20250305', name: 'web_search' },
+    {
+      name: 'fetch_page',
+      description: 'Fetch the full text of a grant program page. Use this after finding a grant via web_search to: (1) discover sub-programs, cycles, or tracks only listed on the page itself, not in search snippets, (2) verify eligibility requirements, (3) confirm exact deadlines. Always fetch the page for any program that looks relevant.',
+      input_schema: {
+        type: 'object',
+        properties: {
+          url: { type: 'string', description: 'The URL to fetch and read' }
+        },
+        required: ['url']
+      }
+    }
+  ];
 
   const prompt = `You are a grant research assistant for Polarity Lab, an independent research institute for the human condition in Providence, RI. The lab's thesis: how humans interact with AI, media, and discovery systems represents a new class of harm to human cognition.
 
@@ -20,54 +56,86 @@ LAB-LEVEL:
 - New England arts and science, human-centered technology, community-based research infrastructure
 
 PROJECT-LEVEL:
-- Integrity Delta: "Polite Malpractice" — AI systems suppressing correct internal reasoning to produce preferred outputs. The Integrity Delta (IΔ) measures the gap between a model's internal correctness (logit-lens) and final output. Pilot confirmed on Llama 3.1 8B with chest radiographs. Manuscript in prep, OSF pre-registration drafted. Relevant funders: AI safety, patient safety, clinical informatics, medical ethics, NIH, Wellcome Trust, health tech.
-- AVDP — A Very Distant Perspective: long-form video interview as research instrument testing whether watching authentic human connection is measurably restorative. Format is the methodology — removes phones, uses live-mixed ambient soundscapes, measures via post-session surveys and independent rater assessments. Produced in English and Mandarin Chinese. Grounded in narrative medicine (Charon 2001), emotional contagion (Kramer 2014). Relevant funders: arts and health, narrative medicine, documentary film, Ford Foundation, Robert Wood Johnson, Sundance, Tribeca.
-- WAXFEED: music platform where how you rate music reveals how you think. Cognitive similarity hypothesis — does musical response predict lasting friendships? Longer-term angle: baseline cognitive profiles from music as early detection for neurological disease. Relevant funders: music and health, cognitive science, Mozilla, Wellcome Collection, MacArthur, consumer health.
-- PolarityGPS: location-based game where proximity missions surface civic/cultural infrastructure invisible on standard platforms. The Proximity Index measures the gap between community output within a radius and what platforms surface. Providence pilot confirmed gap by design. 90-day controlled intervention study upcoming. Relevant funders: civic tech, community health, Knight Foundation, Kresge, NEA, community foundations, urban research.
+- Integrity Delta: AI systems suppressing correct internal reasoning ("Polite Malpractice"). IΔ measures gap between model's internal correctness (logit-lens) and final output. Pilot confirmed on Llama 3.1 8B with chest radiographs. Relevant funders: AI safety, patient safety, clinical informatics, medical ethics, NIH, Wellcome Trust.
+- AVDP — A Very Distant Perspective: experimental long-form video interview format testing whether watching authentic human connection is measurably restorative. Format is the methodology — removes phones, ambient soundscapes, post-session surveys. English and Mandarin. Relevant funders: arts and health, narrative medicine, documentary film, Ford Foundation, Robert Wood Johnson, Sundance, Tribeca.
+- WAXFEED: music platform where how you rate music reveals cognitive profile. Does musical response predict lasting friendships? Early detection angle for neurological disease. Relevant funders: music and health, cognitive science, Mozilla, MacArthur, Wellcome Collection.
+- PolarityGPS: location-based game surfacing civic/cultural infrastructure invisible on standard platforms. Providence pilot confirmed gap. Relevant funders: civic tech, community health, Knight Foundation, Kresge, NEA.
 
-CRITICAL: Only include grants that do NOT require a PI (Principal Investigator) or university/hospital institutional affiliation. Independent researchers and small organizations must be eligible.
+CRITICAL: Only include grants that do NOT require a PI or university/hospital affiliation.
 
-For each grant you find, return a JSON array. Each item must have these exact keys:
+IMPORTANT WORKFLOW: After finding a grant program via web_search, always use fetch_page on its URL before writing up the result. Grant pages often list multiple sub-programs, funding tracks, or application cycles that are invisible in search snippets. Treat each sub-program as a separate entry. A single foundation page may yield 2–4 distinct opportunities.
+
+For each grant or sub-program, return a JSON array with these exact keys:
 {
   "funder": "Foundation name",
-  "program": "Specific program name",
+  "program": "Specific program or sub-program name",
   "amount": "e.g. up to $25,000 or varies",
   "deadline": "YYYY-MM-DD or null if unknown",
   "fit_score": 1-5 integer,
-  "projects": "comma-separated Polarity project names this fits",
+  "projects": "comma-separated Polarity project names",
   "notes": "1-2 sentences on fit and eligibility",
   "url": "direct URL to the grant page"
 }
 
-Fit score guide: 5=near-perfect, 4=strong, 3=moderate, 2=weak (skip unless amount >$50k), 1=skip.
+Fit score: 5=near-perfect, 4=strong, 3=moderate, 2=weak (skip unless >$50k), 1=skip.
 
-After searching, return ONLY a valid JSON array with no surrounding text or markdown. Start your response with [ and end with ].`;
+After all searching and reading, return ONLY a valid JSON array. Start with [ and end with ].`;
 
-  let responseText;
+  let messages = [{ role: 'user', content: prompt }];
+  let fetchCount = 0;
+  const MAX_FETCHES = 8;
+  let responseText = '';
+
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: {
-        'x-api-key': env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify({
-        model: 'claude-opus-4-5',
-        max_tokens: 4096,
-        tools: [{ type: 'web_search_20250305', name: 'web_search' }],
-        messages: [{ role: 'user', content: prompt }]
-      })
-    });
-    const data = await res.json();
-    // Find the final text block (may come after tool_use blocks)
-    const textBlock = data.content?.findLast(b => b.type === 'text');
-    responseText = textBlock?.text || '';
+    while (true) {
+      const res = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {
+          'x-api-key': env.ANTHROPIC_API_KEY,
+          'anthropic-version': '2023-06-01',
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          model: 'claude-opus-4-5',
+          max_tokens: 8192,
+          tools,
+          messages
+        })
+      });
+
+      const data = await res.json();
+
+      // web_search is handled server-side by Anthropic — only fetch_page needs our executor
+      const fetchCalls = (data.content || []).filter(
+        b => b.type === 'tool_use' && b.name === 'fetch_page'
+      );
+
+      if (fetchCalls.length === 0 || fetchCount >= MAX_FETCHES) {
+        const textBlock = data.content?.findLast(b => b.type === 'text');
+        responseText = textBlock?.text || '';
+        break;
+      }
+
+      // Execute all fetch_page calls, respecting the cap
+      const toolResults = [];
+      for (const call of fetchCalls) {
+        const content = fetchCount < MAX_FETCHES
+          ? await fetchPageContent(call.input.url)
+          : 'Fetch limit reached — stop fetching and return results now.';
+        toolResults.push({ type: 'tool_result', tool_use_id: call.id, content });
+        fetchCount++;
+      }
+
+      messages = [
+        ...messages,
+        { role: 'assistant', content: data.content },
+        { role: 'user', content: toolResults }
+      ];
+    }
   } catch {
     return err('Search failed — Anthropic API error', 502);
   }
 
-  // Parse JSON from response
   let candidates = [];
   try {
     const match = responseText.match(/\[[\s\S]*\]/);
@@ -76,7 +144,6 @@ After searching, return ONLY a valid JSON array with no surrounding text or mark
     return err('Failed to parse grant results from search', 502);
   }
 
-  // Insert non-duplicate grants
   const added = [];
   for (const g of candidates) {
     if (!g.funder || !g.program) continue;
