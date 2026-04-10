@@ -6,6 +6,14 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- feat: add Stripe gift checkout modal to fund.html (`fb796b2`)
+
+### Apr 10, 2026
+
+- feat: add grants, outreach, and believers pipeline UI pages to Lab OS admin (`544d503`)
+
+### Apr 10, 2026
+
 - Remove timely AVDP Ghana reference from fund page for consistency (`91725f2`)
 
 ### Apr 10, 2026
@@ -75,14 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 9, 2026
 
 - Rebuild site as lab-as-fund platform with four research fields (`2918002`)
-
-### Apr 8, 2026
-
-- Add memory and self-relation dimension to AVDP research program (`ca71db3`)
-
-### Apr 8, 2026
-
-- Fix two incorrect evidence links on WAXFEED page (`69a8639`)
 
 
 ---

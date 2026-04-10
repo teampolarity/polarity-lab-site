@@ -1,5 +1,23 @@
 [
   {
+    "id": "fb796b2",
+    "date": "2026-04-10",
+    "title": "feat: add Stripe gift checkout modal to fund.html",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "544d503",
+    "date": "2026-04-10",
+    "title": "feat: add grants, outreach, and believers pipeline UI pages to Lab OS admin",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "91725f2",
     "date": "2026-04-10",
     "title": "Remove timely AVDP Ghana reference from fund page for consistency",
@@ -159,24 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "ca71db3",
-    "date": "2026-04-08",
-    "title": "Add memory and self-relation dimension to AVDP research program",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "69a8639",
-    "date": "2026-04-08",
-    "title": "Fix two incorrect evidence links on WAXFEED page",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
