@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Remove contribution tier table from join page Path 02 (`9f7c758`)
+
+### Apr 10, 2026
+
 - Rewrite lab page intros and get-involved sections (`e015cf9`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 9, 2026
 
 - Remove tier labels and multipliers from project role cards (`088a373`)
-
-### Apr 9, 2026
-
-- Sharpen project card pitches to hook-first, curiosity-driven copy (`69cf513`)
 
 
 ---

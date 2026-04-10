@@ -1,5 +1,14 @@
 [
   {
+    "id": "9f7c758",
+    "date": "2026-04-10",
+    "title": "Remove contribution tier table from join page Path 02",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "e015cf9",
     "date": "2026-04-10",
     "title": "Rewrite lab page intros and get-involved sections",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Removed",
       "color": "coral"
-    }
-  },
-  {
-    "id": "69cf513",
-    "date": "2026-04-09",
-    "title": "Sharpen project card pitches to hook-first, curiosity-driven copy",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
