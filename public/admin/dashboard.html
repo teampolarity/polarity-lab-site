@@ -64,6 +64,8 @@
     <div class="sidebar-label" style="margin-top:16px">Growth</div>
     <a href="/admin/content.html" class="sidebar-link">Content</a>
     <a href="/admin/docs.html" class="sidebar-link">Docs</a>
+    <div class="sidebar-label" style="margin-top:16px">Intelligence</div>
+    <a href="/admin/chat.html" class="sidebar-link">Chat</a>
     <div class="sidebar-label" style="margin-top:24px">Account</div>
     <button class="theme-toggle" id="theme-toggle"><!-- icon injected by auth.js --></button>
     <a href="#" class="sidebar-link" id="logout-btn">Sign out</a>
@@ -126,7 +128,7 @@
           <a href="/admin/content.html" class="mini-link">View drafts →</a>
         </div>
       </div>
-      <div class="agent-card" 
+      <div class="agent-card">
         <div class="agent-header">
           <div>
             <div class="agent-type">Docs</div>
@@ -137,6 +139,19 @@
         <div class="agent-status">Pitch decks, onboarding packets, and agreement drafts generated from live project data.</div>
         <div style="margin-top:12px;display:flex;gap:8px">
           <a href="/admin/docs.html" class="mini-link">Generate a doc →</a>
+        </div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-header">
+          <div>
+            <div class="agent-type">Intelligence</div>
+            <div class="agent-name">Lab OS Chat</div>
+          </div>
+          <span><span class="dot dot-teal"></span><span style="font-size:12px;color:var(--teal);font-family:var(--font-mono)">active</span></span>
+        </div>
+        <div class="agent-status">Ask about pipeline status, get attention flags, and take actions directly — update stages, add records, check deadlines.</div>
+        <div style="margin-top:12px;display:flex;gap:8px">
+          <a href="/admin/chat.html" class="mini-link">Open chat →</a>
         </div>
       </div>
     </div>
