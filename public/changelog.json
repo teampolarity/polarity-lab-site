@@ -1,5 +1,14 @@
 [
   {
+    "id": "d8de898",
+    "date": "2026-04-10",
+    "title": "Add content/growth engine — weekly draft generation from pipeline activity",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "a8f81ea",
     "date": "2026-04-10",
     "title": "feat: light/dark mode for Lab OS admin",
@@ -165,15 +174,6 @@
     "id": "fae8810",
     "date": "2026-04-10",
     "title": "Add Lab OS Phase 1 implementation plan",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "e9337ac",
-    "date": "2026-04-10",
-    "title": "Add Lab OS design document",
     "category": {
       "label": "New Feature",
       "color": "teal"

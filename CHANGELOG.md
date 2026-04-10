@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Add content/growth engine — weekly draft generation from pipeline activity (`d8de898`)
+
+### Apr 10, 2026
+
 - feat: light/dark mode for Lab OS admin (`a8f81ea`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Add Lab OS Phase 1 implementation plan (`fae8810`)
-
-### Apr 10, 2026
-
-- Add Lab OS design document (`e9337ac`)
 
 
 ---
