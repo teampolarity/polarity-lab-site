@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Fix chat layout to fill viewport — input bar always visible (`86add71`)
+
+### Apr 10, 2026
+
 - Add Lab OS Chat: conversational interface with live pipeline access (`ebdbefb`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Fix duplicate Fund nav link on all research pages (`7cb7236`)
-
-### Apr 10, 2026
-
-- feat: add above-fold CTA to homepage hero (`1581111`)
 
 
 ---

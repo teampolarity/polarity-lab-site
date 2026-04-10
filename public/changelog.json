@@ -1,5 +1,14 @@
 [
   {
+    "id": "86add71",
+    "date": "2026-04-10",
+    "title": "Fix chat layout to fill viewport — input bar always visible",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "ebdbefb",
     "date": "2026-04-10",
     "title": "Add Lab OS Chat: conversational interface with live pipeline access",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "1581111",
-    "date": "2026-04-10",
-    "title": "feat: add above-fold CTA to homepage hero",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
