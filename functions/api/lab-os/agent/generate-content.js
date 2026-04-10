@@ -1,6 +1,6 @@
 import { json, err, requireAdmin, PROJECTS } from '../_utils.js';
 
-const PROJECT_ORDER = ['Integrity Delta', 'AVDP', 'WAXFEED', 'Polarity GPS', 'General Fund'];
+const PROJECT_ORDER = ['Integrity Delta', 'AVDP', 'WAXFEED', 'PolarityGPS', 'Polarity Lab'];
 
 function getISOWeek(date) {
   const d = new Date(date);
