@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content — Lab OS</title>
+  <link rel="icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('lab_os_theme') || 'dark')</script>
+  <style>
+    .filter-bar { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
+    .filter-btn { padding: 6px 14px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid var(--border-subtle); background: none; border-radius: 4px; color: var(--text-tertiary); cursor: pointer; transition: all 0.15s; }
+    .filter-btn.active { background: var(--teal-subtle); border-color: var(--teal); color: var(--teal); }
+    .filter-btn:hover:not(.active) { color: var(--text-secondary); border-color: var(--border-ghost); }
+    .week-group { margin-bottom: 40px; }
+    .week-label { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 14px; padding-bottom: 8px; border-bottom: 1px solid var(--border-ghost); }
+    .content-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+    .content-card { background: var(--void-elevated); border: 1px solid var(--border-ghost); border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 12px; }
+    .content-card.approved { border-color: rgba(78,205,196,0.3); }
+    .content-card.published { border-color: rgba(187,143,206,0.3); opacity: 0.7; }
+    .card-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .type-badge { font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; }
+    .type-linkedin { background: rgba(78,205,196,0.1); color: var(--teal); }
+    .type-newsletter { background: rgba(255,138,101,0.1); color: var(--coral); }
+    .type-update { background: rgba(187,143,206,0.1); color: var(--purple); }
+    .status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; }
+    .status-draft { background: var(--text-tertiary); }
+    .status-approved { background: var(--teal); box-shadow: 0 0 5px var(--teal); }
+    .status-published { background: var(--purple); }
+    .card-title { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: var(--text-primary); line-height: 1.3; }
+    .card-body { font-size: 13px; color: var(--text-secondary); line-height: 1.7; white-space: pre-wrap; }
+    .card-body.collapsed { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+    .expand-btn { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); background: none; border: none; cursor: pointer; padding: 0; text-align: left; }
+    .expand-btn:hover { color: var(--text-secondary); }
+    .card-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    .action-btn { padding: 5px 12px; font-family: var(--font-mono); font-size: 11px; border-radius: 4px; border: 1px solid var(--border-subtle); background: none; color: var(--text-secondary); cursor: pointer; transition: all 0.15s; letter-spacing: 0.04em; }
+    .action-btn:hover { background: var(--void-surface); color: var(--text-primary); }
+    .action-btn.approve { border-color: rgba(78,205,196,0.4); color: var(--teal); }
+    .action-btn.approve:hover { background: var(--teal-subtle); }
+    .action-btn.delete { color: var(--coral); border-color: rgba(255,138,101,0.3); }
+    .action-btn.delete:hover { background: rgba(255,138,101,0.08); }
+    .copy-confirm { color: var(--teal); }
+    .empty-state { text-align: center; padding: 80px 24px; color: var(--text-tertiary); font-size: 14px; }
+    .empty-icon { font-size: 32px; margin-bottom: 12px; opacity: 0.4; }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <nav class="sidebar">
+    <div class="sidebar-logo">LAB OS</div>
+    <div class="sidebar-label">Overview</div>
+    <a href="/admin/dashboard.html" class="sidebar-link">Dashboard</a>
+    <div class="sidebar-label" style="margin-top:16px">Pipeline</div>
+    <a href="/admin/grants.html" class="sidebar-link">Grants</a>
+    <a href="/admin/outreach.html" class="sidebar-link">Outreach</a>
+    <a href="/admin/believers.html" class="sidebar-link">Believers</a>
+    <div class="sidebar-label" style="margin-top:16px">Growth</div>
+    <a href="/admin/content.html" class="sidebar-link active">Content</a>
+    <div class="sidebar-label" style="margin-top:24px">Account</div>
+    <button class="theme-toggle" id="theme-toggle"></button>
+    <a href="#" class="sidebar-link" id="logout-btn">Sign out</a>
+  </nav>
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <h1 class="page-title">Growth Engine</h1>
+        <p class="page-sub">Weekly content drafted from active pipeline activity.</p>
+      </div>
+      <div style="display:flex;gap:10px;align-items:center">
+        <span id="gen-status" style="font-family:var(--font-mono);font-size:12px;color:var(--text-tertiary);display:none"></span>
+        <button class="add-btn" id="generate-btn">Generate this week</button>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="draft">Draft</button>
+      <button class="filter-btn" data-filter="approved">Approved</button>
+      <button class="filter-btn" data-filter="published">Published</button>
+    </div>
+
+    <div id="content-list"></div>
+  </main>
+</div>
+
+<script src="/admin/js/auth.js"></script>
+<script>
+  requireAuth();
+  document.getElementById('logout-btn').addEventListener('click', () => { clearToken(); window.location.href = '/admin/index.html'; });
+
+  let allContent = [];
+  let activeFilter = 'all';
+
+  const TYPE_LABELS = { linkedin_post: 'LinkedIn', newsletter_blurb: 'Newsletter', short_update: 'Update' };
+  const TYPE_CLASS = { linkedin_post: 'type-linkedin', newsletter_blurb: 'type-newsletter', short_update: 'type-update' };
+
+  function esc(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  async function load() {
+    allContent = await apiGet('/api/lab-os/content') || [];
+    render();
+  }
+
+  function render() {
+    const filtered = activeFilter === 'all' ? allContent : allContent.filter(c => c.status === activeFilter);
+    const list = document.getElementById('content-list');
+
+    if (filtered.length === 0) {
+      list.innerHTML = `<div class="empty-state"><div class="empty-icon">✦</div><div>${activeFilter === 'all' ? 'No content yet. Hit "Generate this week" to create your first drafts.' : `No ${activeFilter} content.`}</div></div>`;
+      return;
+    }
+
+    // Group by week
+    const byWeek = {};
+    for (const item of filtered) {
+      const w = item.week || 'Unscheduled';
+      if (!byWeek[w]) byWeek[w] = [];
+      byWeek[w].push(item);
+    }
+
+    const weeks = Object.keys(byWeek).sort((a, b) => b.localeCompare(a));
+    list.innerHTML = weeks.map(week => `
+      <div class="week-group">
+        <div class="week-label">${formatWeek(week)}</div>
+        <div class="content-cards">
+          ${byWeek[week].map(item => renderCard(item)).join('')}
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function formatWeek(w) {
+    if (!w || w === 'Unscheduled') return 'Unscheduled';
+    const [year, week] = w.split('-W');
+    return `Week ${week}, ${year}`;
+  }
+
+  function renderCard(item) {
+    const typeClass = TYPE_CLASS[item.type] || 'type-linkedin';
+    const typeLabel = TYPE_LABELS[item.type] || item.type;
+    const isApproved = item.status === 'approved';
+    const isPublished = item.status === 'published';
+    const bodyId = `body-${item.id}`;
+    return `
+      <div class="content-card ${item.status}" id="card-${item.id}">
+        <div class="card-meta">
+          <span class="type-badge ${typeClass}">${esc(typeLabel)}</span>
+          ${item.project ? `<span class="badge badge-purple">${esc(item.project)}</span>` : ''}
+          <span class="status-dot status-${item.status}" title="${item.status}"></span>
+        </div>
+        ${item.title ? `<div class="card-title">${esc(item.title)}</div>` : ''}
+        <div class="card-body collapsed" id="${bodyId}">${esc(item.body)}</div>
+        <button class="expand-btn" onclick="toggleExpand(${item.id})">Show more</button>
+        <div class="card-actions">
+          <button class="action-btn" onclick="copyContent(${item.id})" id="copy-${item.id}">Copy</button>
+          ${!isApproved && !isPublished ? `<button class="action-btn approve" onclick="approve(${item.id})">Approve</button>` : ''}
+          ${isApproved ? `<button class="action-btn" onclick="markPublished(${item.id})">Mark published</button>` : ''}
+          <button class="action-btn delete" onclick="deleteItem(${item.id})">Delete</button>
+        </div>
+      </div>`;
+  }
+
+  function toggleExpand(id) {
+    const el = document.getElementById(`body-${id}`);
+    const btn = el.nextElementSibling;
+    if (el.classList.contains('collapsed')) {
+      el.classList.remove('collapsed');
+      btn.textContent = 'Show less';
+    } else {
+      el.classList.add('collapsed');
+      btn.textContent = 'Show more';
+    }
+  }
+
+  async function copyContent(id) {
+    const item = allContent.find(c => c.id === id);
+    if (!item) return;
+    await navigator.clipboard.writeText(item.body);
+    const btn = document.getElementById(`copy-${id}`);
+    btn.textContent = 'Copied!';
+    btn.classList.add('copy-confirm');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copy-confirm'); }, 2000);
+  }
+
+  async function approve(id) {
+    const item = allContent.find(c => c.id === id);
+    if (!item) return;
+    await apiPut(`/api/lab-os/content/${id}`, { ...item, status: 'approved' });
+    await load();
+  }
+
+  async function markPublished(id) {
+    const item = allContent.find(c => c.id === id);
+    if (!item) return;
+    await apiPut(`/api/lab-os/content/${id}`, { ...item, status: 'published' });
+    await load();
+  }
+
+  async function deleteItem(id) {
+    if (!confirm('Delete this draft?')) return;
+    await apiDelete(`/api/lab-os/content/${id}`);
+    allContent = allContent.filter(c => c.id !== id);
+    render();
+  }
+
+  document.getElementById('generate-btn').addEventListener('click', async () => {
+    const btn = document.getElementById('generate-btn');
+    const status = document.getElementById('gen-status');
+    btn.disabled = true;
+    btn.textContent = 'Generating...';
+    status.textContent = 'Drafting content from pipeline...';
+    status.style.display = 'inline';
+    try {
+      const data = await apiPost('/api/lab-os/agent/generate-content', {});
+      if (data?.added > 0) {
+        status.textContent = `${data.added} draft${data.added === 1 ? '' : 's'} added — ${data.project} spotlight`;
+        await load();
+      } else {
+        status.textContent = 'No content generated';
+      }
+    } catch {
+      status.textContent = 'Generation failed';
+    }
+    btn.disabled = false;
+    btn.textContent = 'Generate this week';
+    setTimeout(() => { status.style.display = 'none'; }, 8000);
+  });
+
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilter = btn.dataset.filter;
+      render();
+    });
+  });
+
+  load();
+</script>
+</body>
+</html>

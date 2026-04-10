@@ -10,14 +10,14 @@ export async function onRequestPost({ request, env }) {
     .all();
   const existingSet = new Set(existing.map(r => `${r.funder}||${r.program}`.toLowerCase()));
 
-  const prompt = `You are a grant research assistant for Polarity Lab, an independent environmental therapeutics research lab in Providence, RI.
+  const prompt = `You are a grant research assistant for Polarity Lab, an independent research institute for the human condition in Providence, RI. The lab's thesis: how humans interact with AI, media, and discovery systems represents a new class of harm to human cognition.
 
 Search for 6–10 current grant opportunities across these areas:
 
 LAB-LEVEL:
 - Independent research institutes without university affiliation (Providence RI)
-- Emerging fields: environmental therapeutics, cognitive harm from tech/media design
-- New England arts and science, community-based research infrastructure
+- Cognitive harm from AI, media, and discovery system design
+- New England arts and science, human-centered technology, community-based research infrastructure
 
 PROJECT-LEVEL:
 - Integrity Delta: "Polite Malpractice" — AI systems suppressing correct internal reasoning to produce preferred outputs. The Integrity Delta (IΔ) measures the gap between a model's internal correctness (logit-lens) and final output. Pilot confirmed on Llama 3.1 8B with chest radiographs. Manuscript in prep, OSF pre-registration drafted. Relevant funders: AI safety, patient safety, clinical informatics, medical ethics, NIH, Wellcome Trust, health tech.
