@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Fix grant card click: projects field is string from D1, not array (`8cd8dc3`)
+
+### Apr 10, 2026
+
 - Add archived stage to grants pipeline (`fd84233`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - fix: add /admin rewrite to _redirects for Cloudflare Pages (`b4d2df7`)
-
-### Apr 10, 2026
-
-- fix: move admin portal into public/ and fix fund.html gift modal CSS vars (`bcd787a`)
 
 
 ---
