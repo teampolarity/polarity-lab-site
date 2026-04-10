@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Dashboard: add Attention section, content drafts stat, deadline awareness (`24faa69`)
+
+### Apr 10, 2026
+
 - Fix grant card click: projects field is string from D1, not array (`8cd8dc3`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Rewrite project page intros and get-involved cards for hook/reel/sink (`bea2a47`)
-
-### Apr 10, 2026
-
-- fix: add /admin rewrite to _redirects for Cloudflare Pages (`b4d2df7`)
 
 
 ---
