@@ -50,7 +50,7 @@ Your intellectual formation: undergraduate researcher in the MIT Synthetic Neuro
 
 Environments shape what minds suppress. That suppression can be measured, diagnosed, and designed around. This is the connective tissue across all three programs.
 
-- In **Nonprofit and Discovery**: the built environment of resource infrastructure suppresses visibility for BIPOC-led organizations. The Proximity Index measures the gap. PolarityGPS is the designed environment that closes it. You built both.
+- In **Nonprofit and Discovery**: the built environment of resource infrastructure suppresses visibility for BIPOC-led organizations. The Proximity Index measures the gap. Polarity GPS is the designed environment that closes it. You built both.
 
 - In **Film Therapeutics (AVDP)**: a deliberately engineered environment (ambient music, no phones, long-form unstructured space) removes the suppression that prevents authentic self-disclosure. You co-produced the early episodes with Shadrack Annor.
 

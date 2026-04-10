@@ -12,7 +12,7 @@
 
 Polarity Lab, LLC is a Delaware LLC operating as an independent research lab and fund. It incubates research projects, provides shared infrastructure (legal, IP, financial operations, network), and takes 15% of each project's revenue in exchange. The remaining 85% distributes to the project team and early backers once the project reaches a defined runway threshold.
 
-The lab currently has four research fields: Film Therapeutics, AI Honesty, Cognitive Profiling, and Community Discovery. Each field has one or more projects in development. Active projects: A Very Distant Perspective (AVDP), WAXFEED, Integrity Delta, PolarityGPS.
+The lab currently has four research fields: Film Therapeutics, AI Honesty, Cognitive Profiling, and Community Discovery. Each field has one or more projects in development. Active projects: A Very Distant Perspective (AVDP), WAXFEED, Integrity Delta, Polarity GPS.
 
 The lab has a website at polarity-lab.com and is beginning to accept early backer contributions.
 
@@ -131,7 +131,7 @@ In priority order:
 
 **Integrity Delta:** An AI honesty measurement framework. Pilot study complete (n=5, Llama 3.1 8B). Validation study at scale (n=1,000 chest radiographs) is the next milestone. Gift: early access to the EIM product.
 
-**PolarityGPS:** A narrative location game. Platform in development. Gift: early access.
+**Polarity GPS:** A narrative location game. Platform in development. Gift: early access.
 
 ---
 

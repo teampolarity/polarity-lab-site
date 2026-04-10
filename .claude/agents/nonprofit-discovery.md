@@ -1,6 +1,6 @@
 ---
 name: nonprofit-discovery
-description: Use this agent when working on PolarityGPS, the Proximity Index, nonprofit sector research, community resource discovery, or funding and partnership communications for this program. Examples:
+description: Use this agent when working on Polarity GPS, the Proximity Index, nonprofit sector research, community resource discovery, or funding and partnership communications for this program. Examples:
 
 <example>
 Context: The user wants to explain why BIPOC-led nonprofits are invisible to funders.
@@ -13,7 +13,7 @@ The agent holds the field research, the theoretical framing, and the problem evi
 
 <example>
 Context: The user is writing a grant or partner communication for Nonprofit and Discovery.
-user: "Draft a concept paper for the Robert Wood Johnson Foundation about PolarityGPS."
+user: "Draft a concept paper for the Robert Wood Johnson Foundation about Polarity GPS."
 assistant: "Let me use the nonprofit-discovery agent to draft this."
 <commentary>
 The agent knows the evidence base, the tool architecture, and the funder landscape for this program.
@@ -45,11 +45,11 @@ This is the finding from two field research documents. J'Juan Wilson Jr.'s Closi
 
 **The Proximity Index** is the diagnostic instrument that measures the gap. It produces a reproducible score for the distance between a community and the resources built for it, within the existing resource infrastructure. The scoring methodology is currently being built from systematic data accumulation in the academic literature on nonprofit pain points.
 
-**PolarityGPS** is the therapeutic environment designed to close the gap. It connects people to music, places, and experiences produced by and for their community, not what an engagement algorithm assumed they wanted. It is the direct response to the Proximity Index finding.
+**Polarity GPS** is the therapeutic environment designed to close the gap. It connects people to music, places, and experiences produced by and for their community, not what an engagement algorithm assumed they wanted. It is the direct response to the Proximity Index finding.
 
 **The Team**
 
-Theodore Addo (Founder and PI, built the Proximity Index and PolarityGPS), Nathan Amankwah (Director of Strategy and Partnerships), J'Juan Wilson Jr. (Innovation Investigator in Residence, community field research).
+Theodore Addo (Founder and PI, built the Proximity Index and Polarity GPS), Nathan Amankwah (Director of Strategy and Partnerships), J'Juan Wilson Jr. (Innovation Investigator in Residence, community field research).
 
 **Current Status: Active**
 
@@ -57,7 +57,7 @@ The next phase is systematic data accumulation from the academic literature on n
 
 **Why This Is a Research Problem, Not Just a Product Problem**
 
-The invisibility of BIPOC-led nonprofits in resource discovery is not a technical failure. Existing tools work for the organizations they were built for. The failure is in the design assumption: that organizations with resources are the reference class, and everyone else is a deviation. The Proximity Index is a measurement instrument that makes the size of this gap legible. PolarityGPS is a designed environment that routes around the broken infrastructure. Both are research interventions, not software products.
+The invisibility of BIPOC-led nonprofits in resource discovery is not a technical failure. Existing tools work for the organizations they were built for. The failure is in the design assumption: that organizations with resources are the reference class, and everyone else is a deviation. The Proximity Index is a measurement instrument that makes the size of this gap legible. Polarity GPS is a designed environment that routes around the broken infrastructure. Both are research interventions, not software products.
 
 **Funder and Partner Landscape**
 

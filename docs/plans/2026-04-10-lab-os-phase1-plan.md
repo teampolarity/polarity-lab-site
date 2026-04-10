@@ -335,7 +335,7 @@ TOKEN="<your-admin-token>"
 curl -X POST http://localhost:8000/api/lab-os/grants \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
-  -d '{"funder":"Knight Foundation","program":"Community Information","fit_score":5,"projects":["PolarityGPS"],"stage":"identified"}'
+  -d '{"funder":"Knight Foundation","program":"Community Information","fit_score":5,"projects":["Polarity GPS"],"stage":"identified"}'
 ```
 
 Expected: `{"id": 1, "funder": "Knight Foundation", ...}`
@@ -592,7 +592,7 @@ git -C ~/polarity-os commit -m "feat: add financial believers CRUD to Lab OS rou
 
 PROJECTS = {
     "Integrity Delta": "Clinical AI honesty research. We measure the gap between what an AI model computes internally and what it actually tells the doctor. A positive gap means it knew the right diagnosis but said the wrong one to be agreeable. We call this Polite Malpractice. We are running a validation study using 1,000 chest radiographs from the NIH CheXpert corpus.",
-    "PolarityGPS": "A location game and community discovery platform. Every move players make draws a live map of how well their city connects people to opportunity. The underlying research is the Proximity Index, which measures the gap between cultural output produced by or for a community and what discovery platforms actually surface to that community.",
+    "Polarity GPS": "A location game and community discovery platform. Every move players make draws a live map of how well their city connects people to opportunity. The underlying research is the Proximity Index, which measures the gap between cultural output produced by or for a community and what discovery platforms actually surface to that community.",
     "AVDP": "A Very Distant Perspective. A documentary series testing whether watching authentic, unscripted long-form conversation in a carefully engineered environment (ambient music, no phones) has measurable therapeutic value. Next episode: Ghana national football team.",
     "WAXFEED": "Music discovery platform that surfaces the cognitive signature in your listening history. The platform and the research are the same thing.",
     "General Fund": "Polarity Lab general fund. Backs the lab as a whole, not a single project. Think of it as investing in the portfolio rather than a single stock.",
@@ -1042,7 +1042,7 @@ git -C ~/polarity-site commit -m "feat: add Lab OS admin frontend shell and logi
     <div class="field"><label>Amount</label><input id="f-amount" placeholder="$50,000 – $150,000"></div>
     <div class="field"><label>Deadline</label><input id="f-deadline" type="date"></div>
     <div class="field"><label>Fit (1-5)</label><input id="f-fit" type="number" min="1" max="5"></div>
-    <div class="field"><label>Projects (comma-separated)</label><input id="f-projects" placeholder="PolarityGPS, AVDP"></div>
+    <div class="field"><label>Projects (comma-separated)</label><input id="f-projects" placeholder="Polarity GPS, AVDP"></div>
     <div class="field"><label>Stage</label>
       <select id="f-stage">
         <option value="identified">Identified</option>
@@ -1232,7 +1232,7 @@ git -C ~/polarity-site commit -m "feat: add grants pipeline UI to Lab OS admin"
 Same pattern as grants.html but for leads. Pipeline stages: new → contacted → replied → in_conversation → won → lost. Add a "Draft email →" button per card that calls `/api/lab-os/generate/outreach-email`.
 
 Key differences from grants UI:
-- Fields: name, organization, role, email, project (select from AVDP/WAXFEED/Integrity Delta/PolarityGPS/General Fund), source, stage, notes, last_contact (date)
+- Fields: name, organization, role, email, project (select from AVDP/WAXFEED/Integrity Delta/Polarity GPS/General Fund), source, stage, notes, last_contact (date)
 - Draft modal takes optional `context` textarea, calls `/api/lab-os/generate/outreach-email` with `lead_id` and `context`
 - Stage labels: New, Contacted, Replied, In Conversation, Won, Lost
 

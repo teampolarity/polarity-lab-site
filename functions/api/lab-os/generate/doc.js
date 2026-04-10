@@ -27,7 +27,7 @@ Tone: clear, precise, intellectually serious. No buzzwords. No em dashes. Write 
 
 3. WHERE WE ARE — Current status. What has been built, validated, or produced so far. What is actively in progress. Be honest about what is done vs. what is planned.
 
-4. HOW YOU CAN CONTRIBUTE — Specific contribution types based on the project's actual needs (varies by project: Integrity Delta needs ML researchers; AVDP needs producers and IRB partners; WAXFEED needs mobile developers; PolarityGPS needs community connectors). 3-5 concrete contribution types with a sentence on each.
+4. HOW YOU CAN CONTRIBUTE — Specific contribution types based on the project's actual needs (varies by project: Integrity Delta needs ML researchers; AVDP needs producers and IRB partners; WAXFEED needs mobile developers; Polarity GPS needs community connectors). 3-5 concrete contribution types with a sentence on each.
 
 5. GETTING STARTED — Practical next steps. First week actions. Key materials to review. Questions to ask. Keep it actionable.
 

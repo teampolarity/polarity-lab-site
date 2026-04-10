@@ -479,7 +479,7 @@ Add these styles to the `<style>` block. Do NOT remove existing styles, only add
       <a href="research/nonprofit.html" class="research-card">
         <p class="research-card-question">Why can't the communities that need resources the most find the ones built specifically for them?</p>
         <div class="research-card-meta">
-          <span class="research-card-project">Proximity Index · PolarityGPS</span>
+          <span class="research-card-project">Proximity Index · Polarity GPS</span>
           <div class="research-card-footer">
             <span class="research-card-badge research-card-badge--active">Active</span>
             <span class="research-card-arrow">→</span>
@@ -961,7 +961,7 @@ git commit -m "feat: add sub-page template and CSS foundation"
 
 - Title: `Nonprofit & Discovery — Polarity Lab`
 - Question: "Why can't the communities that need resources the most find the ones built specifically for them?"
-- Project label: `Proximity Index · PolarityGPS`
+- Project label: `Proximity Index · Polarity GPS`
 - Status badge: Active (teal)
 - Team: Theodore Addo (TA), Shadrack Annor (SA), J'Juan Wilson Jr. (JW)
 
@@ -972,7 +972,7 @@ Two documents motivated this project. J'Juan Wilson Jr.'s Closing the Gap whitep
 
 The finding: BIPOC-led nonprofits and the communities they serve are not invisible because they're doing bad work. They're invisible because the pathways between resources and the people who need them were never built.
 
-The Proximity Index is the instrument that measures this gap. PolarityGPS is the environment designed to close it.
+The Proximity Index is the instrument that measures this gap. Polarity GPS is the environment designed to close it.
 ```
 
 ### Step 3: Background Research cards
@@ -1003,13 +1003,13 @@ The instrument was developed in partnership with MUSEOFRI (Providence, RI, 2026)
 ```
 Across BIPOC-led communities in Providence, the gap was not caused by a lack of output. Communities were actively producing. The problem was in the pathways.
 
-This gives PolarityGPS a specific, measurable target: not to create new cultural content, but to fix the discovery infrastructure so that what already exists can reach the people it was made for.
+This gives Polarity GPS a specific, measurable target: not to create new cultural content, but to fix the discovery infrastructure so that what already exists can reach the people it was made for.
 ```
 
 ### Step 6: Discussion copy
 
 ```
-PolarityGPS is the direct response to the Proximity Index finding. It connects people to music, places, and experiences produced by and for their community — not what an engagement algorithm assumed they wanted.
+Polarity GPS is the direct response to the Proximity Index finding. It connects people to music, places, and experiences produced by and for their community — not what an engagement algorithm assumed they wanted.
 
 The next phase of this research involves systematic data accumulation from the academic literature on nonprofit pain points, building the evidentiary base for the Proximity Index scoring methodology.
 ```
@@ -1276,7 +1276,7 @@ Before deploying, verify everything manually:
 - [ ] Light/dark toggle persists from homepage
 
 **Nonprofit page:**
-- [ ] PolarityGPS link in discussion goes to polaritygps.com
+- [ ] Polarity GPS link in discussion goes to polaritygps.com
 - [ ] Funding ask email CTA works
 
 **AVDP page:**

@@ -64,7 +64,7 @@ PROJECT-LEVEL:
 - Integrity Delta: AI systems suppressing correct internal reasoning ("Polite Malpractice"). IΔ measures gap between model's internal correctness (logit-lens) and final output. Pilot confirmed on Llama 3.1 8B with chest radiographs. Relevant funders: AI safety, patient safety, clinical informatics, medical ethics, NIH, Wellcome Trust.
 - AVDP — A Very Distant Perspective: experimental long-form video interview format testing whether watching authentic human connection is measurably restorative. Format is the methodology — removes phones, ambient soundscapes, post-session surveys. English and Mandarin. Relevant funders: arts and health, narrative medicine, documentary film, Ford Foundation, Robert Wood Johnson, Sundance, Tribeca.
 - WAXFEED: music platform where how you rate music reveals cognitive profile. Does musical response predict lasting friendships? Early detection angle for neurological disease. Relevant funders: music and health, cognitive science, Mozilla, MacArthur, Wellcome Collection.
-- PolarityGPS: location-based game surfacing civic/cultural infrastructure invisible on standard platforms. Providence pilot confirmed gap. Relevant funders: civic tech, community health, Knight Foundation, Kresge, NEA.
+- Polarity GPS: location-based game surfacing civic/cultural infrastructure invisible on standard platforms. Providence pilot confirmed gap. Relevant funders: civic tech, community health, Knight Foundation, Kresge, NEA.
 
 CRITICAL: Only include grants that do NOT require a PI or university/hospital affiliation.
 

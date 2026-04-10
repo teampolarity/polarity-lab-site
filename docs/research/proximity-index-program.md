@@ -24,9 +24,9 @@ Polarity Lab's institutional thesis is that technology is creating a new class o
 
 The **Proximity Index** is a diagnostic instrument. It takes two inputs, cultural and civic output produced by or for a specific community, and what discovery platforms actually surface to that community, and produces a score. Zero means everything made for you reaches you. A high score means your own culture, resources, and infrastructure are algorithmically invisible to you. The score is reproducible. It can be tracked over time and compared across geographies.
 
-**PolarityGPS** is the corresponding therapeutic environment. It is a live cultural discovery platform (polaritygps.com) that connects people to music, places, and experiences produced by and for their community. PolarityGPS is the counter-infrastructure: what a discovery platform looks like when it is designed from proximity rather than engagement maximization.
+**Polarity GPS** is the corresponding therapeutic environment. It is a live cultural discovery platform (polaritygps.com) that connects people to music, places, and experiences produced by and for their community. Polarity GPS is the counter-infrastructure: what a discovery platform looks like when it is designed from proximity rather than engagement maximization.
 
-Together, the Proximity Index and PolarityGPS give us a closed loop. We can measure the gap, intervene, and measure again.
+Together, the Proximity Index and Polarity GPS give us a closed loop. We can measure the gap, intervene, and measure again.
 
 The work is grounded in two partner research documents produced in 2026:
 
@@ -134,7 +134,7 @@ NFF's survey finds that 64% of BIPOC-led organizations experienced significant d
 
 Candid's sector analysis of 59,550 public charities finds that commitments to racial equity in philanthropy surged to $16.5 billion in 2020 before retreating significantly. By 2022-2023 a substantial proportion of 2020-era racial justice grants had not been renewed. Organizations in communities with high racial inequity and low existing philanthropic capital remained systematically underfunded.
 
-*Relevance:* The funding retraction documented by Candid creates urgency for a different approach to resource discovery. Grant money will not stabilize the problem. What can change is how communities find the resources that do exist. The Proximity Index measures the discovery gap; PolarityGPS is the infrastructure correction.
+*Relevance:* The funding retraction documented by Candid creates urgency for a different approach to resource discovery. Grant money will not stabilize the problem. What can change is how communities find the resources that do exist. The Proximity Index measures the discovery gap; Polarity GPS is the infrastructure correction.
 
 ---
 
@@ -203,32 +203,32 @@ This policy-facing report synthesizes research on algorithmic discrimination acr
 
 **Team:** PI + research coordinator + J'Juan Wilson Jr. (GOODhumanz) as co-investigator and community partner for Providence cohort. Academic partner for statistical analysis.
 
-**Primary output:** Peer-reviewed paper and a public data dashboard showing Proximity Scores for workforce development resources in the three cities. Dashboard will be built into PolarityGPS infrastructure.
+**Primary output:** Peer-reviewed paper and a public data dashboard showing Proximity Scores for workforce development resources in the three cities. Dashboard will be built into Polarity GPS infrastructure.
 
 **Why this matters:** This aim produces the evidence base that converts the Closing the Gap whitepaper from a field observation to a testable scientific claim. If the hypothesis is confirmed, it supports a direct policy argument: discovery platforms for workforce development resources have a measurable, correctable racial bias. It also creates the empirical foundation for Aim 3.
 
 ---
 
-### Aim 3: Measure PolarityGPS as a Proximity-Reducing Intervention
+### Aim 3: Measure Polarity GPS as a Proximity-Reducing Intervention
 
-**Hypothesis:** Providence-area users who actively engage with PolarityGPS for a 90-day period will show significantly reduced Proximity Scores for cultural and civic resources relevant to their community, compared to a control group using standard discovery platforms.
+**Hypothesis:** Providence-area users who actively engage with Polarity GPS for a 90-day period will show significantly reduced Proximity Scores for cultural and civic resources relevant to their community, compared to a control group using standard discovery platforms.
 
-**Background:** Aims 1 and 2 establish the problem. This aim tests the intervention. PolarityGPS (polaritygps.com) is a live product with an existing user base. It was designed specifically to surface cultural production by and for communities, with architecture that inverts the engagement-maximization logic of commercial discovery platforms. The question is whether it actually moves the Index.
+**Background:** Aims 1 and 2 establish the problem. This aim tests the intervention. Polarity GPS (polaritygps.com) is a live product with an existing user base. It was designed specifically to surface cultural production by and for communities, with architecture that inverts the engagement-maximization logic of commercial discovery platforms. The question is whether it actually moves the Index.
 
 **Approach:**
-- Recruit 80-120 Providence-area participants across two cohorts: PolarityGPS users (existing and newly onboarded) and a waitlist control group using standard platforms (Google, Yelp, Spotify, Eventbrite).
+- Recruit 80-120 Providence-area participants across two cohorts: Polarity GPS users (existing and newly onboarded) and a waitlist control group using standard platforms (Google, Yelp, Spotify, Eventbrite).
 - Compute baseline Proximity Scores for each participant at enrollment using a standardized query protocol (the participant describes their community affiliations; the research team runs structured queries across both cohorts' platforms and scores the gap).
 - Re-administer the Proximity Score protocol at 30, 60, and 90 days.
 - Collect platform usage logs (with consent) to measure engagement depth, session frequency, and category distribution.
 - Conduct exit interviews with a purposive subsample (n=20) to characterize the qualitative experience of discovery: did participants find resources they did not know existed? Did they act on them?
-- Primary outcome: within-subject change in Proximity Score at 90 days, compared between PolarityGPS and control groups.
+- Primary outcome: within-subject change in Proximity Score at 90 days, compared between Polarity GPS and control groups.
 - Secondary outcomes: self-reported resource utilization, self-reported sense of community connection (using validated scales from the McMillan-Chavis Sense of Community Index).
 
 **Timeline:** 18-24 months, running concurrently with Aim 2 after Aim 1 completion.
 
-**Team:** PI + research coordinator + PolarityGPS product team for platform instrumentation. IRB review required (Brown University or University of Rhode Island).
+**Team:** PI + research coordinator + Polarity GPS product team for platform instrumentation. IRB review required (Brown University or University of Rhode Island).
 
-**Why this matters:** Without a measured intervention effect, the Proximity Index is a diagnostic instrument with no demonstrated path to remedy. Aim 3 closes the loop between measurement and change. A positive result, that PolarityGPS demonstrably reduces Proximity Scores, establishes PolarityGPS as a therapeutic environment in the scientific sense Polarity Lab intends. It also produces the evidence needed for the next funding cycle and for potential replication with partner platforms.
+**Why this matters:** Without a measured intervention effect, the Proximity Index is a diagnostic instrument with no demonstrated path to remedy. Aim 3 closes the loop between measurement and change. A positive result, that Polarity GPS demonstrably reduces Proximity Scores, establishes Polarity GPS as a therapeutic environment in the scientific sense Polarity Lab intends. It also produces the evidence needed for the next funding cycle and for potential replication with partner platforms.
 
 ---
 
@@ -246,7 +246,7 @@ Digital divide literature (van Dijk, Pariser, Nguyen) measures access and conten
 
 3. **Pairs the diagnostic instrument with a live, deployable therapeutic environment and measures the intervention's effect on the Index.**
 
-Irth (Seals Allers) is the closest analog in structure: a community-centered platform designed to address a specific information asymmetry in BIPOC health experience, with backend data collection that builds a measurement layer. PolarityGPS does for cultural and civic discovery what Irth does for maternity care. But no one has yet built a randomized trial that shows a community-centered discovery platform measurably reduces an information asymmetry score.
+Irth (Seals Allers) is the closest analog in structure: a community-centered platform designed to address a specific information asymmetry in BIPOC health experience, with backend data collection that builds a measurement layer. Polarity GPS does for cultural and civic discovery what Irth does for maternity care. But no one has yet built a randomized trial that shows a community-centered discovery platform measurably reduces an information asymmetry score.
 
 4. **Integrates the workforce development resource gap specifically.**
 
@@ -261,10 +261,10 @@ The gap this lab fills is the space between the critique and the instrument. Man
 ### Federal Agencies
 
 **National Science Foundation, Directorate for Technology, Innovation and Partnerships**
-NSF's Smart and Connected Communities (S&CC) program (NSF 25-527) funds exactly this type of research: technology-mediated interventions in community resource access with rigorous measurement. The Proximity Index plus PolarityGPS is a textbook S&CC project. NSF's Racial Equity in STEM Education program (EDU Racial Equity, NSF 22-634) is also potentially relevant for the workforce development aim.
+NSF's Smart and Connected Communities (S&CC) program (NSF 25-527) funds exactly this type of research: technology-mediated interventions in community resource access with rigorous measurement. The Proximity Index plus Polarity GPS is a textbook S&CC project. NSF's Racial Equity in STEM Education program (EDU Racial Equity, NSF 22-634) is also potentially relevant for the workforce development aim.
 
 **National Endowment for the Arts, Challenge America and Research Grants**
-NEA's Challenge America grants specifically target "organizations with projects to reach historically underserved communities with rich and dynamic cultural identities." PolarityGPS is exactly this project. The NEA's research grant programs also fund investigations of how communities access arts and cultural resources, which is a narrow reframe of Aim 1.
+NEA's Challenge America grants specifically target "organizations with projects to reach historically underserved communities with rich and dynamic cultural identities." Polarity GPS is exactly this project. The NEA's research grant programs also fund investigations of how communities access arts and cultural resources, which is a narrow reframe of Aim 1.
 
 **Institute of Museum and Library Services**
 IMLS funds research on information access and community-centered collections. The Proximity Index's methodology for measuring what community-produced cultural content platforms surface is within IMLS's scope, particularly given MUSEOFRI's partnership.
@@ -286,7 +286,7 @@ WKKF's four grantmaking priorities (education, health, food and workforce system
 Scott's explicit criterion is to "pay special attention to organizations in communities facing high projected food insecurity, high measures of racial inequity, high local poverty rates and low access to philanthropic capital." Polarity Lab's research addresses the last criterion directly: low access to philanthropic capital is partly a discoverability problem. This is not a typical grant relationship but is a plausible general operating support target as the work matures.
 
 **Surdna Foundation**
-Surdna's Thriving Cultures program funds projects at the intersection of arts, culture, and community power, with an explicit focus on BIPOC-led organizations. PolarityGPS's cultural discovery mission and the Proximity Index's application to cultural production make this a strong fit.
+Surdna's Thriving Cultures program funds projects at the intersection of arts, culture, and community power, with an explicit focus on BIPOC-led organizations. Polarity GPS's cultural discovery mission and the Proximity Index's application to cultural production make this a strong fit.
 
 ---
 
@@ -321,7 +321,7 @@ The team's immediate priorities, in order:
 
 4. **Initiate an academic partnership conversation with Brown School of Public Health.** The IRB infrastructure and measurement expertise Brown can provide are blocking dependencies for Aim 3. This conversation should begin while methodology documentation is underway. Timeline: 30 days.
 
-5. **Instrument PolarityGPS for research-grade data collection.** Aim 3 requires usage logs, session data, and a platform query API. The PolarityGPS engineering team needs to be briefed on the research requirements and a data collection architecture designed with IRB compliance from the beginning. Timeline: 90 days, concurrent with items 1 and 2.
+5. **Instrument Polarity GPS for research-grade data collection.** Aim 3 requires usage logs, session data, and a platform query API. The Polarity GPS engineering team needs to be briefed on the research requirements and a data collection architecture designed with IRB compliance from the beginning. Timeline: 90 days, concurrent with items 1 and 2.
 
 ---
 

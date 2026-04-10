@@ -15,7 +15,7 @@ This is the same question the Community Discovery lab has been asking about civi
 
 The question has a specific shape in music. A city's music scene is not just an aesthetic product. It is social infrastructure. Local artists anchor listeners to local places and people. The way you find music determines, in part, who you find it with. And who you find it with shapes whether you have a community or not. When discovery platforms sever the connection between music and its social and geographic context, they are not making a neutral design choice. They are breaking something that held communities together.
 
-Wax Feed is the therapeutic environment. Like PolarityGPS responds to the Proximity Index finding in the civic resource domain, Wax Feed responds to the same finding in music. It surfaces music through proximity: what artists are building scenes in your city, what your social graph is listening to, what is being made by and for the community you belong to. This lab exists to measure whether that design choice produces real, observable community outcomes.
+Wax Feed is the therapeutic environment. Like Polarity GPS responds to the Proximity Index finding in the civic resource domain, Wax Feed responds to the same finding in music. It surfaces music through proximity: what artists are building scenes in your city, what your social graph is listening to, what is being made by and for the community you belong to. This lab exists to measure whether that design choice produces real, observable community outcomes.
 
 ---
 
@@ -25,7 +25,7 @@ Polarity Lab operates from the thesis that technology is creating a new class of
 
 The **Proximity Index** is the diagnostic instrument. It takes two inputs, what a community produces and what discovery platforms surface to that community, and produces a scalar score. The higher the score, the wider the gap between production and surfacing. The score is reproducible, trackable over time, and comparable across geographies and domains.
 
-**PolarityGPS** and **Wax Feed** are the therapeutic environments. Both are direct responses to the Proximity Index finding. PolarityGPS connects communities to civic resources, nonprofit services, and cultural institutions that platforms have made algorithmically invisible. Wax Feed does the same for music, artists, and scenes. They address different domains of the same underlying problem.
+**Polarity GPS** and **Wax Feed** are the therapeutic environments. Both are direct responses to the Proximity Index finding. Polarity GPS connects communities to civic resources, nonprofit services, and cultural institutions that platforms have made algorithmically invisible. Wax Feed does the same for music, artists, and scenes. They address different domains of the same underlying problem.
 
 This is the architecture the Community Discovery lab is built on: one diagnostic instrument, multiple domain-specific therapeutic environments. The Proximity Index scales because the gap it measures is not sector-specific. It appears wherever discovery infrastructure was designed around engagement rather than proximity. This research program extends the Proximity Index into the music domain and tests Wax Feed as the corresponding intervention.
 
@@ -190,23 +190,23 @@ Already foundational to the Proximity Index methodology. Gender Shades establish
 
 ### Aim 3: Measure Wax Feed as a Proximity-Reducing Intervention in the Music Domain
 
-**Hypothesis:** Providence-area music listeners who use Wax Feed as their primary discovery platform for 90 days will show significantly greater reduction in their personal Proximity Score than a control group using Spotify as their primary discovery platform, with effect size comparable to the PolarityGPS intervention in the civic resource domain.
+**Hypothesis:** Providence-area music listeners who use Wax Feed as their primary discovery platform for 90 days will show significantly greater reduction in their personal Proximity Score than a control group using Spotify as their primary discovery platform, with effect size comparable to the Polarity GPS intervention in the civic resource domain.
 
-**Background:** The Proximity Index lab's Aim 3 tests PolarityGPS as a Proximity-reducing intervention in the civic resource domain. This aim runs the same design for Wax Feed in the music domain. The research architecture is identical. The therapeutic environment is different. A positive result in both domains would establish the Proximity Index as a validated general instrument with two demonstrated interventions.
+**Background:** The Proximity Index lab's Aim 3 tests Polarity GPS as a Proximity-reducing intervention in the civic resource domain. This aim runs the same design for Wax Feed in the music domain. The research architecture is identical. The therapeutic environment is different. A positive result in both domains would establish the Proximity Index as a validated general instrument with two demonstrated interventions.
 
 **Approach:**
 - Recruit 100 Providence-area participants (18-35, regular music listeners, not current primary Wax Feed users).
 - Randomly assign to Wax Feed (n=50) or Spotify (n=50) as primary discovery platform for 90 days.
 - Compute Proximity Scores at baseline, 45 days, and 90 days using the validated music domain methodology from Aim 1.
 - Collect platform usage logs (with consent) to verify compliance and characterize discovery behavior within each condition.
-- Administer McMillan-Chavis Sense of Community Index and Putnam social capital subscales at each time point, consistent with the PolarityGPS arm.
+- Administer McMillan-Chavis Sense of Community Index and Putnam social capital subscales at each time point, consistent with the Polarity GPS arm.
 - Conduct exit interviews with n=20 purposive subsample: Did they find artists they subsequently connected with in person? Did discovery change how they think about their city?
 - Primary outcome: 90-day change in Proximity Score, compared across conditions.
 - Secondary outcomes: community connection scores, new local social ties formed, local event attendance.
 
 **Timeline:** 18-24 months, following Aim 1 methodology finalization.
 
-**Team:** PI + research coordinator + IRB infrastructure from Brown University or URI (shared with the PolarityGPS arm). Wax Feed product team for platform instrumentation.
+**Team:** PI + research coordinator + IRB infrastructure from Brown University or URI (shared with the Polarity GPS arm). Wax Feed product team for platform instrumentation.
 
 ---
 
@@ -259,7 +259,7 @@ AS220 is the anchor institution for Providence's independent arts and music scen
 RISD's music and sound studies faculty, combined with its design research infrastructure, make it the strongest local academic partner for the music domain arm. A cross-institutional relationship with RISD and Brown (which anchors the civic domain arm) would position Polarity Lab's research across two universities, strengthening any federal grant application.
 
 **Brown University School of Public Health**
-Already the target academic partner for the PolarityGPS arm. Shared IRB infrastructure and consistent use of the McMillan-Chavis and Putnam measures across both therapeutic environment arms allows for cross-domain comparison in a single research program.
+Already the target academic partner for the Polarity GPS arm. Shared IRB infrastructure and consistent use of the McMillan-Chavis and Putnam measures across both therapeutic environment arms allows for cross-domain comparison in a single research program.
 
 **Bandcamp**
 Bandcamp's explicit commitment to independent and underground music culture, and its artist-first data posture, make it a natural data partner for the artist and release inventories that anchor the Proximity Score computation in Aim 1 and Aim 2.
@@ -270,13 +270,13 @@ Bandcamp's explicit commitment to independent and underground music culture, and
 
 1. **Formalize the Proximity Index music domain adaptation.** Before the validation study can begin, the methodology needs to be specified for music: which query procedures work on each platform, how community relevance of surfaced results is coded, and how Proximity Scores are computed and compared across the civic and music domains. Target: a methodology addendum to the existing Proximity Index protocol paper. Timeline: 45 days.
 
-2. **Instrument Wax Feed for research-grade data collection.** Aim 3 requires consent-based usage logs, session data, and a platform query API, consistent with the PolarityGPS instrumentation design. The Wax Feed engineering team should be briefed on IRB-compliant data collection architecture alongside the PolarityGPS team. Timeline: 90 days.
+2. **Instrument Wax Feed for research-grade data collection.** Aim 3 requires consent-based usage logs, session data, and a platform query API, consistent with the Polarity GPS instrumentation design. The Wax Feed engineering team should be briefed on IRB-compliant data collection architecture alongside the Polarity GPS team. Timeline: 90 days.
 
 3. **Establish an academic partnership at RISD.** The music studies disciplinary grounding is a blocking dependency for Aim 1. This conversation should begin immediately, and should be coordinated with the Brown conversation for the civic resource arm. Timeline: first meeting within 30 days.
 
 4. **Conduct the Providence artist and listener baseline.** A Providence-only pilot of the music domain Proximity Score will produce the first Scene Proximity Score for a defined local scene and refine the instrument before extending to five cities. Timeline: 90 days.
 
-5. **Submit a joint LOI to RWJF's Exploring Equitable Futures program.** A joint application covering both the civic resource arm (PolarityGPS) and the music arm (Wax Feed) under a single Proximity Index research program is a stronger submission than two separate applications. Timeline: coordinate with the civic domain team for a joint 45-day submission.
+5. **Submit a joint LOI to RWJF's Exploring Equitable Futures program.** A joint application covering both the civic resource arm (Polarity GPS) and the music arm (Wax Feed) under a single Proximity Index research program is a stronger submission than two separate applications. Timeline: coordinate with the civic domain team for a joint 45-day submission.
 
 ---
 

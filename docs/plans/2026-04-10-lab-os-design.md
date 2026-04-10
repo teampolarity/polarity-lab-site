@@ -62,7 +62,7 @@ Targeted lead management and cold outreach drafting per project.
 
 **Lead targets by project:**
 - Integrity Delta: hospital CTOs, radiology department heads, AI safety researchers, clinical AI teams, health regulators
-- PolarityGPS: foundation program officers (Knight, RWJF, RI Foundation), city planners, nonprofit infrastructure orgs
+- Polarity GPS: foundation program officers (Knight, RWJF, RI Foundation), city planners, nonprofit infrastructure orgs
 - AVDP: film festival programmers, media brands, therapeutics researchers, documentary distributors
 - WAXFEED: music platform engineers, cognitive science researchers, early adopters
 
@@ -86,14 +86,14 @@ Tracks relevant grant opportunities, manages application pipeline, and drafts ap
 
 | Funder | Focus | Fit | Deadline cadence |
 |---|---|---|---|
-| Knight Foundation | Community, media, civic tech | PolarityGPS, AVDP | Rolling / annual |
+| Knight Foundation | Community, media, civic tech | Polarity GPS, AVDP | Rolling / annual |
 | Mozilla Foundation | Trustworthy AI, open web | Integrity Delta | Annual |
 | Open Philanthropy | AI safety, global health | Integrity Delta | Rolling |
-| RWJF | Health equity, community health | Integrity Delta, PolarityGPS | Varied |
+| RWJF | Health equity, community health | Integrity Delta, Polarity GPS | Varied |
 | Rhode Island Foundation | Providence-based work | All projects | Rolling |
-| NSF SBIR Phase I | Early-stage tech ($275k) | WAXFEED, PolarityGPS | 3x/year |
+| NSF SBIR Phase I | Early-stage tech ($275k) | WAXFEED, Polarity GPS | 3x/year |
 | NEA / NEH | Arts, humanities, media | AVDP | Annual |
-| Ford Foundation | Racial equity, community power | PolarityGPS | Annual |
+| Ford Foundation | Racial equity, community power | Polarity GPS | Annual |
 | Microsoft Research | AI safety | Integrity Delta | Rolling |
 
 **Workflow:**

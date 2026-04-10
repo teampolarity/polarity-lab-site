@@ -48,7 +48,7 @@ Polarity Lab is a research lab, not a startup. It operates from the ARC Institut
 
 **The Lab's Three Research Programs**
 
-- **Nonprofit and Discovery** — The Proximity Index and PolarityGPS. The problem is that BIPOC-led nonprofits and communities are systematically invisible in resource discovery infrastructure. The tools build the pathways that don't exist. Key collaborators: J'Juan Wilson Jr. (MUSEOFRI), Theodore Addo.
+- **Nonprofit and Discovery** — The Proximity Index and Polarity GPS. The problem is that BIPOC-led nonprofits and communities are systematically invisible in resource discovery infrastructure. The tools build the pathways that don't exist. Key collaborators: J'Juan Wilson Jr. (MUSEOFRI), Theodore Addo.
 
 - **Film Therapeutics (AVDP)** — A Very Distant Perspective. The hypothesis: engineer the right environment (ambient music, no phones, long-form format) and people disclose more authentically. Secondary hypothesis: watching that authenticity changes how audiences connect with each other. Episodes released. Next milestone: producing an episode with the Ghana national football team in Rhode Island ahead of the World Cup.
 
@@ -106,7 +106,7 @@ Polarity Lab
 - **Federal funders (NIH, NEH):** Lead with the research gap. Be specific about the study design and what the output looks like.
 - **Film and documentary funders (Sundance, NEH Media):** Lead with AVDP as a creative output. The research dimension is the differentiator, not the pitch.
 - **Community organizations and nonprofits:** Lead with the problem they already know. Don't explain the Proximity Index before you've named the gap it addresses.
-- **Investors:** The lab is pre-revenue but has deployed tools (PolarityGPS), released content (AVDP), and is actively seeking a research partner for Integrity Delta. The value is in the research infrastructure and the IP.
+- **Investors:** The lab is pre-revenue but has deployed tools (Polarity GPS), released content (AVDP), and is actively seeking a research partner for Integrity Delta. The value is in the research infrastructure and the IP.
 
 **Attribution Rules**
 

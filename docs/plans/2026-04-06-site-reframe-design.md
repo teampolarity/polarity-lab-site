@@ -13,7 +13,7 @@ Complete reframe of polarity-lab.com from a product/output-first site to a resea
 ```
 index.html                  homepage (single scroll, all sections)
 research/
-  nonprofit.html            Proximity Index / PolarityGPS
+  nonprofit.html            Proximity Index / Polarity GPS
   avdp.html                 AVDP / film therapeutics
   integrity-delta.html      Integrity Delta / clinical AI honesty
 ```
@@ -59,7 +59,7 @@ POLARITY LOGO (left)     Research v | About | Contact    [light/dark toggle]
   - Team avatars (initials or photos)
   - `Explore →` link to sub-page
 
-Card 1: "Why can't the communities that need resources the most find the ones built specifically for them?" — Proximity Index · PolarityGPS — Active
+Card 1: "Why can't the communities that need resources the most find the ones built specifically for them?" — Proximity Index · Polarity GPS — Active
 Card 2: "Can the right environment make people genuinely open up, and does watching that change how we connect with each other?" — AVDP · A Very Distant Perspective — In Production
 Card 3: "When a hospital's AI system knows the right diagnosis, what stops it from telling the doctor?" — Integrity Delta · IΔ — Seeking Funding
 
@@ -96,7 +96,7 @@ Advisor slots: Not shown yet. Added when confirmed.
 ### Header
 - Breadcrumb: Polarity Lab / Research
 - Question (large): "Why can't the communities that need resources the most find the ones built specifically for them?"
-- Project label: Proximity Index · PolarityGPS
+- Project label: Proximity Index · Polarity GPS
 - Status badge: Active
 - Team: Theodore Addo, Shadrack Annor, J'Juan Wilson Jr. (avatars + names inline)
 
@@ -115,10 +115,10 @@ Advisor slots: Not shown yet. Added when confirmed.
 
 ### Results
 - The MUSEOFRI Providence finding: across BIPOC-led communities in Providence, the gap was not caused by a lack of output. Communities were actively producing. The problem was in the pathways.
-- This gives PolarityGPS a specific, measurable target.
+- This gives Polarity GPS a specific, measurable target.
 
 ### Discussion
-- PolarityGPS as the direct response to the finding. Link to polaritygps.com.
+- Polarity GPS as the direct response to the finding. Link to polaritygps.com.
 - Conference/presentation links as they come.
 
 ### Funding Ask (footer block)
