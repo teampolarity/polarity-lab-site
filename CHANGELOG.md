@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Replace 'General Fund' with 'Polarity Lab' across all agent and UI references (`96a016b`)
+
+### Apr 10, 2026
+
 - Commit accumulated site, docs, and agent file updates (`4d54a7c`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Remove contribution tier table from join page Path 02 (`9f7c758`)
-
-### Apr 10, 2026
-
-- Rewrite lab page intros and get-involved sections (`e015cf9`)
 
 
 ---

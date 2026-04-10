@@ -1,5 +1,14 @@
 [
   {
+    "id": "96a016b",
+    "date": "2026-04-10",
+    "title": "Replace 'General Fund' with 'Polarity Lab' across all agent and UI references",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "4d54a7c",
     "date": "2026-04-10",
     "title": "Commit accumulated site, docs, and agent file updates",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Removed",
       "color": "coral"
-    }
-  },
-  {
-    "id": "e015cf9",
-    "date": "2026-04-10",
-    "title": "Rewrite lab page intros and get-involved sections",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
