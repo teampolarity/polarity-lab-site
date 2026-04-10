@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 10, 2026
 
+- Remove redundant vision section from join page (`182a097`)
+
+### Apr 10, 2026
+
 - Strengthen join page flow and add closing sink (`d76130b`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 9, 2026
 
 - Restructure homepage for trust-first IA and add fund page (`ec7e1ef`)
-
-### Apr 9, 2026
-
-- Fix Founding Partner label overflow on general fund card mobile (`7036540`)
 
 
 ---

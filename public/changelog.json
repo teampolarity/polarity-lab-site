@@ -1,5 +1,14 @@
 [
   {
+    "id": "182a097",
+    "date": "2026-04-10",
+    "title": "Remove redundant vision section from join page",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "d76130b",
     "date": "2026-04-10",
     "title": "Strengthen join page flow and add closing sink",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "7036540",
-    "date": "2026-04-09",
-    "title": "Fix Founding Partner label overflow on general fund card mobile",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
