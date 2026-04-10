@@ -1,5 +1,14 @@
 [
   {
+    "id": "fd84233",
+    "date": "2026-04-10",
+    "title": "Add archived stage to grants pipeline",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "f012e21",
     "date": "2026-04-10",
     "title": "Add agent key auth to search-grants for remote trigger",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "fb796b2",
-    "date": "2026-04-10",
-    "title": "feat: add Stripe gift checkout modal to fund.html",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
