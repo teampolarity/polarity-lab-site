@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- feat: add get_commentary tool to Lab OS chat (`01bf7f1`)
+
+### Apr 11, 2026
+
 - fix: wrap commentary DB inserts in try/catch for end-to-end resilience (`88f2a23`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Rewrite AVDP project card with accurate description of format and research (`18ac89a`)
-
-### Apr 11, 2026
-
-- Fix AVDP description: filmed wherever guests are comfortable, not controlled environments (`f3687f5`)
 
 
 ---

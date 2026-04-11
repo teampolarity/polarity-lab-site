@@ -1,5 +1,14 @@
 [
   {
+    "id": "01bf7f1",
+    "date": "2026-04-11",
+    "title": "feat: add get_commentary tool to Lab OS chat",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "88f2a23",
     "date": "2026-04-11",
     "title": "fix: wrap commentary DB inserts in try/catch for end-to-end resilience",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "f3687f5",
-    "date": "2026-04-11",
-    "title": "Fix AVDP description: filmed wherever guests are comfortable, not controlled environments",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
