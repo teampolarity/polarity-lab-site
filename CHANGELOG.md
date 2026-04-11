@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Update AVDP and film therapeutics copy with accurate methodology (`83dc982`)
+
+### Apr 11, 2026
+
 - Update film therapeutics copy and fix Get Involved spacing (`7fd8bd7`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Commit accumulated site, docs, and agent file updates (`4d54a7c`)
-
-### Apr 10, 2026
-
-- Add indeterminate progress bar to doc generator (`24eba14`)
 
 
 ---
