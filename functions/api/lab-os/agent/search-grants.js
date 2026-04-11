@@ -225,9 +225,11 @@ After all searching and reading, return ONLY a valid JSON array. Start with [ an
   // Generate and store agent commentary
   const commentary = await generateCommentary(env, added, candidates.length - added.length);
   if (commentary) {
-    await env.LAB_OS_DB.prepare(
-      `INSERT INTO lab_os_commentary (agent, body) VALUES ('grant_search', ?)`
-    ).bind(commentary).run();
+    try {
+      await env.LAB_OS_DB.prepare(
+        `INSERT INTO lab_os_commentary (agent, body) VALUES ('grant_search', ?)`
+      ).bind(commentary).run();
+    } catch { /* commentary insert failure should not crash the agent */ }
   }
 
   return json({ added: added.length, grants: added, commentary: commentary || null });

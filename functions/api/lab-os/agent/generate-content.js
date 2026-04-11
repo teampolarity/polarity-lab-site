@@ -179,9 +179,11 @@ Return exactly this JSON structure:
   const format = hasHighActivity ? 'storytelling' : 'insight';
   const commentary = await generateContentCommentary(env, added, spotlightProject, week, format, pipelineSummary);
   if (commentary) {
-    await env.LAB_OS_DB.prepare(
-      `INSERT INTO lab_os_commentary (agent, body) VALUES ('content_engine', ?)`
-    ).bind(commentary).run();
+    try {
+      await env.LAB_OS_DB.prepare(
+        `INSERT INTO lab_os_commentary (agent, body) VALUES ('content_engine', ?)`
+      ).bind(commentary).run();
+    } catch { /* commentary insert failure should not crash the agent */ }
   }
 
   return json({ added: added.length, week, project: spotlightProject, content: added, commentary: commentary || null });
