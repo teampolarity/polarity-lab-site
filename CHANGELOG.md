@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Add four background research citations to AVDP page (`ea176b4`)
+
+### Apr 11, 2026
+
 - Expand research framing to include guest experience, not just viewer (`eb92de4`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Fix doc generator: lab-level vs project-level scope handling (`7c1141b`)
-
-### Apr 10, 2026
-
-- Replace 'General Fund' with 'Polarity Lab' across all agent and UI references (`96a016b`)
 
 
 ---

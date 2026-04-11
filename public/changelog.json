@@ -1,5 +1,14 @@
 [
   {
+    "id": "ea176b4",
+    "date": "2026-04-11",
+    "title": "Add four background research citations to AVDP page",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "eb92de4",
     "date": "2026-04-11",
     "title": "Expand research framing to include guest experience, not just viewer",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "96a016b",
-    "date": "2026-04-10",
-    "title": "Replace 'General Fund' with 'Polarity Lab' across all agent and UI references",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
