@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Replace AVDP $100 tier perk with Year 1 guest zine (`ee7898e`)
+
+### Apr 11, 2026
+
 - Fix research collaborator card to match actual methodology framing (`52cee4c`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Fix markdown rendering in chat and deadline day count on dashboard (`c7cae80`)
-
-### Apr 10, 2026
-
-- Fix chat layout to fill viewport — input bar always visible (`86add71`)
 
 
 ---

@@ -1,5 +1,14 @@
 [
   {
+    "id": "ee7898e",
+    "date": "2026-04-11",
+    "title": "Replace AVDP $100 tier perk with Year 1 guest zine",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "52cee4c",
     "date": "2026-04-11",
     "title": "Fix research collaborator card to match actual methodology framing",
@@ -165,15 +174,6 @@
     "id": "c7cae80",
     "date": "2026-04-10",
     "title": "Fix markdown rendering in chat and deadline day count on dashboard",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "86add71",
-    "date": "2026-04-10",
-    "title": "Fix chat layout to fill viewport — input bar always visible",
     "category": {
       "label": "Bug Fix",
       "color": "coral"
