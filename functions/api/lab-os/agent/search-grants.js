@@ -23,23 +23,24 @@ async function fetchPageContent(url) {
 }
 
 async function generateCommentary(env, added, skipped) {
-  const { results: upcoming } = await env.LAB_OS_DB.prepare(
-    `SELECT funder, program, deadline, fit_score, stage
-     FROM lab_os_grants
-     WHERE deadline IS NOT NULL AND deadline >= date('now') AND deadline <= date('now', '+30 days')
-     AND stage != 'archived'
-     ORDER BY deadline ASC LIMIT 10`
-  ).all();
+  try {
+    const { results: upcoming } = await env.LAB_OS_DB.prepare(
+      `SELECT funder, program, deadline, fit_score, stage
+       FROM lab_os_grants
+       WHERE deadline IS NOT NULL AND deadline >= date('now') AND deadline <= date('now', '+30 days')
+       AND stage != 'archived'
+       ORDER BY deadline ASC LIMIT 10`
+    ).all();
 
-  const newList = added.length > 0
-    ? added.map(g => `- ${g.funder}: ${g.program} (fit ${g.fit_score}/5, deadline: ${g.deadline || 'TBD'}, projects: ${g.projects || 'lab-level'})\n  ${g.notes || ''}`).join('\n')
-    : 'No new grants added this run.';
+    const newList = added.length > 0
+      ? added.map(g => `- ${g.funder}: ${g.program} (fit ${g.fit_score}/5, deadline: ${g.deadline || 'TBD'}, projects: ${g.projects || 'lab-level'})\n  ${g.notes || ''}`).join('\n')
+      : 'No new grants added this run.';
 
-  const deadlineList = upcoming.length > 0
-    ? upcoming.map(g => `- ${g.funder}: ${g.program} — ${g.deadline} (fit ${g.fit_score}/5, stage: ${g.stage})`).join('\n')
-    : 'No deadlines in the next 30 days.';
+    const deadlineList = upcoming.length > 0
+      ? upcoming.map(g => `- ${g.funder}: ${g.program} — ${g.deadline} (fit ${g.fit_score}/5, stage: ${g.stage})`).join('\n')
+      : 'No deadlines in the next 30 days.';
 
-  const prompt = `You are the grant intelligence layer for Polarity Lab. You just completed a grant prospecting run. Write a short internal memo for the lab director.
+    const prompt = `You are the grant intelligence layer for Polarity Lab. You just completed a grant prospecting run. Write a short internal memo for the lab director.
 
 NEW GRANTS ADDED (${added.length} new, ${skipped} already existed):
 ${newList}
@@ -53,7 +54,6 @@ Write two paragraphs:
 
 Tone: direct, specific, no filler. This is an internal note, not a press release. Max 150 words total.`;
 
-  try {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
