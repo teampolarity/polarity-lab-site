@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- fix: wrap commentary DB inserts in try/catch for end-to-end resilience (`88f2a23`)
+
+### Apr 11, 2026
+
 - feat: add commentary generation to content engine agent (`ba7581b`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Fix AVDP description: filmed wherever guests are comfortable, not controlled environments (`f3687f5`)
-
-### Apr 11, 2026
-
-- Remove unsourced affective dataset claim from Ghana production mention (`991e679`)
 
 
 ---

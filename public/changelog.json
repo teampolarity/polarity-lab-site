@@ -1,5 +1,14 @@
 [
   {
+    "id": "88f2a23",
+    "date": "2026-04-11",
+    "title": "fix: wrap commentary DB inserts in try/catch for end-to-end resilience",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "ba7581b",
     "date": "2026-04-11",
     "title": "feat: add commentary generation to content engine agent",
@@ -167,15 +176,6 @@
     "title": "Fix AVDP description: filmed wherever guests are comfortable, not controlled environments",
     "category": {
       "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "991e679",
-    "date": "2026-04-11",
-    "title": "Remove unsourced affective dataset claim from Ghana production mention",
-    "category": {
-      "label": "Removed",
       "color": "coral"
     }
   }
