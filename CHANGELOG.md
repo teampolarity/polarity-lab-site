@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Update AVDP funding section: replace signed artifact with Year 1 zine (`fca71de`)
+
+### Apr 11, 2026
+
 - Replace AVDP $100 tier perk with Year 1 guest zine (`ee7898e`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Fix mdToHtml infinite loop — switch to regex-first then safe line parser (`bee16eb`)
-
-### Apr 10, 2026
-
-- Fix markdown rendering in chat and deadline day count on dashboard (`c7cae80`)
 
 
 ---

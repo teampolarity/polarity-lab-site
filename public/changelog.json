@@ -1,5 +1,14 @@
 [
   {
+    "id": "fca71de",
+    "date": "2026-04-11",
+    "title": "Update AVDP funding section: replace signed artifact with Year 1 zine",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "ee7898e",
     "date": "2026-04-11",
     "title": "Replace AVDP $100 tier perk with Year 1 guest zine",
@@ -165,15 +174,6 @@
     "id": "bee16eb",
     "date": "2026-04-10",
     "title": "Fix mdToHtml infinite loop — switch to regex-first then safe line parser",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "c7cae80",
-    "date": "2026-04-10",
-    "title": "Fix markdown rendering in chat and deadline day count on dashboard",
     "category": {
       "label": "Bug Fix",
       "color": "coral"
