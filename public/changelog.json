@@ -1,5 +1,14 @@
 [
   {
+    "id": "eb92de4",
+    "date": "2026-04-11",
+    "title": "Expand research framing to include guest experience, not just viewer",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "83dc982",
     "date": "2026-04-11",
     "title": "Update AVDP and film therapeutics copy with accurate methodology",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "4d54a7c",
-    "date": "2026-04-10",
-    "title": "Commit accumulated site, docs, and agent file updates",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

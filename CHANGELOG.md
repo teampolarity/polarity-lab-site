@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Expand research framing to include guest experience, not just viewer (`eb92de4`)
+
+### Apr 11, 2026
+
 - Update AVDP and film therapeutics copy with accurate methodology (`83dc982`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Replace 'General Fund' with 'Polarity Lab' across all agent and UI references (`96a016b`)
-
-### Apr 10, 2026
-
-- Commit accumulated site, docs, and agent file updates (`4d54a7c`)
 
 
 ---
