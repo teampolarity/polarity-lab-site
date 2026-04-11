@@ -1,5 +1,14 @@
 [
   {
+    "id": "f08dd1a",
+    "date": "2026-04-11",
+    "title": "Update film therapeutics copy: format flexibility and Ghana opportunity",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "6ed709e",
     "date": "2026-04-11",
     "title": "Remove long-form specificity from AVDP descriptions",
@@ -165,15 +174,6 @@
     "id": "fd84233",
     "date": "2026-04-10",
     "title": "Add archived stage to grants pipeline",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "f012e21",
-    "date": "2026-04-10",
-    "title": "Add agent key auth to search-grants for remote trigger",
     "category": {
       "label": "New Feature",
       "color": "teal"
