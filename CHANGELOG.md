@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Add agent commentary design doc (`fcf3179`)
+
+### Apr 11, 2026
+
 - Update AVDP funding section: replace signed artifact with Year 1 zine (`fca71de`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Replace mdToHtml with safe sequential regex — no loops, no backtracking (`0449cef`)
-
-### Apr 10, 2026
-
-- Fix mdToHtml infinite loop — switch to regex-first then safe line parser (`bee16eb`)
 
 
 ---

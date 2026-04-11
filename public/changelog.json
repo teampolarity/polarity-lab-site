@@ -1,5 +1,14 @@
 [
   {
+    "id": "fcf3179",
+    "date": "2026-04-11",
+    "title": "Add agent commentary design doc",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "fca71de",
     "date": "2026-04-11",
     "title": "Update AVDP funding section: replace signed artifact with Year 1 zine",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "bee16eb",
-    "date": "2026-04-10",
-    "title": "Fix mdToHtml infinite loop — switch to regex-first then safe line parser",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]
