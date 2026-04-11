@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Show 3 refs by default in expand grid to avoid orphaned row (`d0d6ce3`)
+
+### Apr 11, 2026
+
 - Add expand/collapse to reference grids across all research pages (`d4b1801`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Improve lab-level pitch instructions with institutional voice and tone rules (`1cec945`)
-
-### Apr 10, 2026
-
-- Add institutional pitch instructions for Polarity Lab lab-level docs (`03d95f6`)
 
 
 ---
