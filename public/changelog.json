@@ -1,5 +1,23 @@
 [
   {
+    "id": "bdf90ab",
+    "date": "2026-04-11",
+    "title": "feat: add GET /api/lab-os/commentary endpoint",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
+    "id": "07dd919",
+    "date": "2026-04-11",
+    "title": "chore: create lab_os_commentary D1 table (migration run)",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "2634458",
     "date": "2026-04-11",
     "title": "Add agent commentary implementation plan",
@@ -158,24 +176,6 @@
     "title": "Remove redundant root research/ directory",
     "category": {
       "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "6dc1292",
-    "date": "2026-04-10",
-    "title": "Remove throat-clearing paragraph from film therapeutics diagnostic instrument section",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "67daf02",
-    "date": "2026-04-10",
-    "title": "Fix chat: safe mdToHtml, live status indicator, timeout, faster model",
-    "category": {
-      "label": "Bug Fix",
       "color": "coral"
     }
   }

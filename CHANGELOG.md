@@ -6,6 +6,14 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- feat: add GET /api/lab-os/commentary endpoint (`bdf90ab`)
+
+### Apr 11, 2026
+
+- chore: create lab_os_commentary D1 table (migration run) (`07dd919`)
+
+### Apr 11, 2026
+
 - Add agent commentary implementation plan (`2634458`)
 
 ### Apr 11, 2026
@@ -75,14 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Remove redundant root research/ directory (`99f5a6f`)
-
-### Apr 10, 2026
-
-- Remove throat-clearing paragraph from film therapeutics diagnostic instrument section (`6dc1292`)
-
-### Apr 10, 2026
-
-- Fix chat: safe mdToHtml, live status indicator, timeout, faster model (`67daf02`)
 
 
 ---
