@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- feat: add Agent notes section to dashboard (`acbc528`)
+
+### Apr 11, 2026
+
 - feat: add get_commentary tool to Lab OS chat (`01bf7f1`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Update film therapeutics copy and fix Get Involved spacing (`7fd8bd7`)
-
-### Apr 11, 2026
-
-- Rewrite AVDP project card with accurate description of format and research (`18ac89a`)
 
 
 ---

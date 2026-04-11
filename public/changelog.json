@@ -1,5 +1,14 @@
 [
   {
+    "id": "acbc528",
+    "date": "2026-04-11",
+    "title": "feat: add Agent notes section to dashboard",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "01bf7f1",
     "date": "2026-04-11",
     "title": "feat: add get_commentary tool to Lab OS chat",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "18ac89a",
-    "date": "2026-04-11",
-    "title": "Rewrite AVDP project card with accurate description of format and research",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
