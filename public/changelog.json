@@ -1,5 +1,14 @@
 [
   {
+    "id": "18ac89a",
+    "date": "2026-04-11",
+    "title": "Rewrite AVDP project card with accurate description of format and research",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "f3687f5",
     "date": "2026-04-11",
     "title": "Fix AVDP description: filmed wherever guests are comfortable, not controlled environments",
@@ -165,15 +174,6 @@
     "id": "4867562",
     "date": "2026-04-10",
     "title": "Add doc generator: pitch decks, onboarding packets, agreement drafts",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "24faa69",
-    "date": "2026-04-10",
-    "title": "Dashboard: add Attention section, content drafts stat, deadline awareness",
     "category": {
       "label": "New Feature",
       "color": "teal"
