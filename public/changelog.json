@@ -1,5 +1,14 @@
 [
   {
+    "id": "f3687f5",
+    "date": "2026-04-11",
+    "title": "Fix AVDP description: filmed wherever guests are comfortable, not controlled environments",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "991e679",
     "date": "2026-04-11",
     "title": "Remove unsourced affective dataset claim from Ghana production mention",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "8cd8dc3",
-    "date": "2026-04-10",
-    "title": "Fix grant card click: projects field is string from D1, not array",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

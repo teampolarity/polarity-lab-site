@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Fix AVDP description: filmed wherever guests are comfortable, not controlled environments (`f3687f5`)
+
+### Apr 11, 2026
+
 - Remove unsourced affective dataset claim from Ghana production mention (`991e679`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Dashboard: add Attention section, content drafts stat, deadline awareness (`24faa69`)
-
-### Apr 10, 2026
-
-- Fix grant card click: projects field is string from D1, not array (`8cd8dc3`)
 
 
 ---
