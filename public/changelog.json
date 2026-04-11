@@ -1,5 +1,14 @@
 [
   {
+    "id": "2634458",
+    "date": "2026-04-11",
+    "title": "Add agent commentary implementation plan",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "fcf3179",
     "date": "2026-04-11",
     "title": "Add agent commentary design doc",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "0449cef",
-    "date": "2026-04-10",
-    "title": "Replace mdToHtml with safe sequential regex — no loops, no backtracking",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

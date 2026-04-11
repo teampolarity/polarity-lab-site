@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Add agent commentary implementation plan (`2634458`)
+
+### Apr 11, 2026
+
 - Add agent commentary design doc (`fcf3179`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Fix chat: safe mdToHtml, live status indicator, timeout, faster model (`67daf02`)
-
-### Apr 10, 2026
-
-- Replace mdToHtml with safe sequential regex — no loops, no backtracking (`0449cef`)
 
 
 ---
