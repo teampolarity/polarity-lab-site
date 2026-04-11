@@ -1,5 +1,14 @@
 [
   {
+    "id": "7446fc4",
+    "date": "2026-04-11",
+    "title": "fix: wrap full generateCommentary body in try/catch",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "9977659",
     "date": "2026-04-11",
     "title": "feat: add commentary generation to grant search agent",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "6ed709e",
-    "date": "2026-04-11",
-    "title": "Remove long-form specificity from AVDP descriptions",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
     }
   }
 ]

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- fix: wrap full generateCommentary body in try/catch (`7446fc4`)
+
+### Apr 11, 2026
+
 - feat: add commentary generation to grant search agent (`9977659`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Update film therapeutics copy: format flexibility and Ghana opportunity (`f08dd1a`)
-
-### Apr 11, 2026
-
-- Remove long-form specificity from AVDP descriptions (`6ed709e`)
 
 
 ---
