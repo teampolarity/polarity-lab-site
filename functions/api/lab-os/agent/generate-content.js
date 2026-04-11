@@ -11,6 +11,47 @@ function getISOWeek(date) {
   return `${d.getFullYear()}-W${String(weekNo).padStart(2, '0')}`;
 }
 
+async function generateContentCommentary(env, added, spotlightProject, week, format, pipelineSummary) {
+  try {
+    const pieceList = added.map(p => `- ${p.type}: "${p.title}"`).join('\n');
+
+    const prompt = `You are the content intelligence layer for Polarity Lab. You just completed a weekly content generation run. Write a short internal memo for the lab director.
+
+WEEK: ${week}
+SPOTLIGHT PROJECT: ${spotlightProject}
+FORMAT USED: ${format}
+PIECES GENERATED:
+${pieceList}
+
+PIPELINE CONTEXT THAT SHAPED THIS:
+${pipelineSummary}
+
+Write two paragraphs:
+1. Summary: what was generated, which project was spotlighted, why that format was used.
+2. What to review: which piece to prioritize reviewing first and why, any pipeline item worth acting on this week.
+
+Tone: direct, specific, no filler. Internal note. Max 120 words total.`;
+
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-5',
+        max_tokens: 512,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    return data.content?.find(b => b.type === 'text')?.text || null;
+  } catch {
+    return null;
+  }
+}
+
 export async function onRequestPost({ request, env }) {
   // Accept either a user JWT or the scheduled agent key
   const auth = request.headers.get('Authorization') || '';
@@ -135,5 +176,13 @@ Return exactly this JSON structure:
     if (results[0]) added.push(results[0]);
   }
 
-  return json({ added: added.length, week, project: spotlightProject, content: added });
+  const format = hasHighActivity ? 'storytelling' : 'insight';
+  const commentary = await generateContentCommentary(env, added, spotlightProject, week, format, pipelineSummary);
+  if (commentary) {
+    await env.LAB_OS_DB.prepare(
+      `INSERT INTO lab_os_commentary (agent, body) VALUES ('content_engine', ?)`
+    ).bind(commentary).run();
+  }
+
+  return json({ added: added.length, week, project: spotlightProject, content: added, commentary: commentary || null });
 }
