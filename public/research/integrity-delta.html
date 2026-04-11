@@ -689,6 +689,14 @@
       opacity: 1;
       transform: translateY(0);
     }
+    .ref-expand-btn {
+      margin-top: 20px; background: none;
+      border: 1px solid var(--border-subtle); border-radius: 8px;
+      padding: 10px 20px; font-family: var(--font-display);
+      font-size: 13px; font-weight: 600; color: var(--text-secondary);
+      cursor: pointer; transition: border-color 0.2s ease, color 0.2s ease; display: block;
+    }
+    .ref-expand-btn:hover { border-color: var(--teal); color: var(--text-primary); }
   </style>
 </head>
 <body>
@@ -998,6 +1006,22 @@
     }, { rootMargin: '-80px', threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Ref grid expand/collapse
+    document.querySelectorAll('.ref-grid').forEach(grid => {
+      const cards = grid.querySelectorAll('.ref-card');
+      if (cards.length <= 4) return;
+      cards.forEach((card, i) => { if (i >= 4) card.style.display = 'none'; });
+      const btn = document.createElement('button');
+      btn.className = 'ref-expand-btn';
+      btn.textContent = `Show all ${cards.length} references`;
+      btn.addEventListener('click', () => {
+        const hidden = cards[4].style.display === 'none';
+        cards.forEach((card, i) => { if (i >= 4) card.style.display = hidden ? 'flex' : 'none'; });
+        btn.textContent = hidden ? 'Show fewer' : `Show all ${cards.length} references`;
+      });
+      grid.after(btn);
+    });
   </script>
 </body>
 </html>
