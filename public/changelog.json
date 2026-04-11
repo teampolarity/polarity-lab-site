@@ -1,5 +1,14 @@
 [
   {
+    "id": "9977659",
+    "date": "2026-04-11",
+    "title": "feat: add commentary generation to grant search agent",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "bdf90ab",
     "date": "2026-04-11",
     "title": "feat: add GET /api/lab-os/commentary endpoint",
@@ -165,15 +174,6 @@
     "id": "6ed709e",
     "date": "2026-04-11",
     "title": "Remove long-form specificity from AVDP descriptions",
-    "category": {
-      "label": "Removed",
-      "color": "coral"
-    }
-  },
-  {
-    "id": "99f5a6f",
-    "date": "2026-04-11",
-    "title": "Remove redundant root research/ directory",
     "category": {
       "label": "Removed",
       "color": "coral"

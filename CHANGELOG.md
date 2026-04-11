@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- feat: add commentary generation to grant search agent (`9977659`)
+
+### Apr 11, 2026
+
 - feat: add GET /api/lab-os/commentary endpoint (`bdf90ab`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Remove long-form specificity from AVDP descriptions (`6ed709e`)
-
-### Apr 11, 2026
-
-- Remove redundant root research/ directory (`99f5a6f`)
 
 
 ---
