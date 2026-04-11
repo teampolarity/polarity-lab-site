@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Fix research collaborator card to match actual methodology framing (`52cee4c`)
+
+### Apr 11, 2026
+
 - Update Chris Zou card: creative vision, offered (not proposed), series arc (`9c1ccaf`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Fix chat layout to fill viewport — input bar always visible (`86add71`)
-
-### Apr 10, 2026
-
-- Add Lab OS Chat: conversational interface with live pipeline access (`ebdbefb`)
 
 
 ---

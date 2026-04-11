@@ -1,5 +1,14 @@
 [
   {
+    "id": "52cee4c",
+    "date": "2026-04-11",
+    "title": "Fix research collaborator card to match actual methodology framing",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "9c1ccaf",
     "date": "2026-04-11",
     "title": "Update Chris Zou card: creative vision, offered (not proposed), series arc",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "ebdbefb",
-    "date": "2026-04-10",
-    "title": "Add Lab OS Chat: conversational interface with live pipeline access",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
