@@ -15,8 +15,11 @@ async function generateContentCommentary(env, added, spotlightProject, week, for
   try {
     const pieceList = added.map(p => `- ${p.type}: "${p.title}"`).join('\n');
 
-    const prompt = `You are the content intelligence layer for Polarity Lab. You just completed a weekly content generation run. Write a short internal memo for the lab director.
+    const today = new Date().toISOString().split('T')[0];
 
+    const prompt = `You are the content intelligence layer for Polarity Lab. You just completed a weekly content generation run. Write a short note for the lab director.
+
+TODAY: ${today}
 WEEK: ${week}
 SPOTLIGHT PROJECT: ${spotlightProject}
 FORMAT USED: ${format}
@@ -26,11 +29,11 @@ ${pieceList}
 PIPELINE CONTEXT THAT SHAPED THIS:
 ${pipelineSummary}
 
-Write two paragraphs:
+Write two short paragraphs. Plain text only — no markdown, no bold, no headers, no bullet points.
 1. Summary: what was generated, which project was spotlighted, why that format was used.
 2. What to review: which piece to prioritize reviewing first and why, any pipeline item worth acting on this week.
 
-Tone: direct, specific, no filler. Internal note. Max 120 words total.`;
+Max 110 words total. Direct, specific, no filler.`;
 
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',

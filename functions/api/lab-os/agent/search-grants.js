@@ -40,7 +40,11 @@ async function generateCommentary(env, added, skipped) {
       ? upcoming.map(g => `- ${g.funder}: ${g.program} — ${g.deadline} (fit ${g.fit_score}/5, stage: ${g.stage})`).join('\n')
       : 'No deadlines in the next 30 days.';
 
-    const prompt = `You are the grant intelligence layer for Polarity Lab. You just completed a grant prospecting run. Write a short internal memo for the lab director.
+    const today = new Date().toISOString().split('T')[0];
+
+    const prompt = `You are the grant intelligence layer for Polarity Lab. You just completed a grant prospecting run. Write a short note for the lab director.
+
+TODAY: ${today}
 
 NEW GRANTS ADDED (${added.length} new, ${skipped} already existed):
 ${newList}
@@ -48,11 +52,11 @@ ${newList}
 UPCOMING DEADLINES ACROSS FULL PIPELINE:
 ${deadlineList}
 
-Write two paragraphs:
+Write two short paragraphs. Plain text only — no markdown, no bold, no headers, no bullet points.
 1. Summary: what the run found, how many were added, any standouts by fit score or amount.
-2. What needs attention: specific deadlines approaching, which to prioritize and why, any recommended next action.
+2. What needs attention: specific deadlines approaching (use actual days remaining, calculated from ${today}), which to prioritize and why, recommended next action.
 
-Tone: direct, specific, no filler. This is an internal note, not a press release. Max 150 words total.`;
+Max 130 words total. Direct, specific, no filler.`;
 
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
