@@ -49,6 +49,12 @@
     .attention-days { font-family: var(--font-mono); font-size: 11px; color: var(--text-tertiary); flex-shrink: 0; }
     .attention-days.urgent { color: var(--coral); }
     .attention-empty { font-size: 13px; color: var(--text-tertiary); padding: 12px 0; }
+    .commentary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+    .commentary-card { background: var(--void-elevated); border: 1px solid var(--border-ghost); border-radius: 8px; padding: 18px; }
+    .commentary-agent { font-family: var(--font-mono); font-size: 10px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+    .commentary-time { font-size: 10px; color: var(--text-tertiary); }
+    .commentary-body { font-size: 13px; color: var(--text-secondary); line-height: 1.65; white-space: pre-wrap; }
+    .commentary-empty { font-size: 12px; color: var(--text-tertiary); font-style: italic; }
   </style>
 </head>
 <body>
@@ -97,6 +103,19 @@
         <span class="attention-label">Content drafts pending review <span id="attention-drafts-count"></span></span>
         <span class="attention-days">Review →</span>
       </a>
+    </div>
+
+    <!-- Agent notes -->
+    <div class="section-label">Agent notes</div>
+    <div class="commentary-grid" id="commentary-grid">
+      <div class="commentary-card">
+        <div class="commentary-agent">Grant Search <span class="commentary-time" id="commentary-grants-time"></span></div>
+        <div id="commentary-grants"><span class="commentary-empty">No notes yet — runs Monday 9am</span></div>
+      </div>
+      <div class="commentary-card">
+        <div class="commentary-agent">Content Engine <span class="commentary-time" id="commentary-content-time"></span></div>
+        <div id="commentary-content"><span class="commentary-empty">No notes yet — runs Wednesday 9am</span></div>
+      </div>
     </div>
 
     <!-- Agents -->
@@ -191,8 +210,17 @@
     return '$' + n;
   }
 
+  function relativeTime(iso) {
+    const d = new Date(iso + 'Z');
+    const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    return `${days[d.getDay()]} · ${d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+  }
+
   async function load() {
-    const data = await apiGet('/api/lab-os/stats');
+    const [data, commentaryData] = await Promise.all([
+      apiGet('/api/lab-os/stats'),
+      apiGet('/api/lab-os/commentary')
+    ]);
     if (!data) return;
 
     document.getElementById('s-grants').textContent = data.grants.total;
@@ -227,6 +255,20 @@
     if (drafts > 0) {
       document.getElementById('attention-content').style.display = 'flex';
       document.getElementById('attention-drafts-count').textContent = `(${drafts})`;
+    }
+
+    // Agent notes
+    if (commentaryData) {
+      const grants = commentaryData.find(c => c.agent === 'grant_search');
+      const content = commentaryData.find(c => c.agent === 'content_engine');
+      if (grants) {
+        document.getElementById('commentary-grants').innerHTML = `<div class="commentary-body">${grants.body.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>`;
+        document.getElementById('commentary-grants-time').textContent = relativeTime(grants.created_at);
+      }
+      if (content) {
+        document.getElementById('commentary-content').innerHTML = `<div class="commentary-body">${content.body.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</div>`;
+        document.getElementById('commentary-content-time').textContent = relativeTime(content.created_at);
+      }
     }
 
     const GRANT_STAGES = ['identified','researching','drafting','submitted','awarded','rejected'];
