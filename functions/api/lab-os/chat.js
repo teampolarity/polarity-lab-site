@@ -102,6 +102,20 @@ const TOOLS = [
       },
       required: ['funder']
     }
+  },
+  {
+    name: 'get_commentary',
+    description: 'Get the latest commentary memo written by the grant search or content agent after their most recent run. Returns what the agent found/generated and what it recommended.',
+    input_schema: {
+      type: 'object',
+      properties: {
+        agent: {
+          type: 'string',
+          description: 'Filter by agent: "grant_search" or "content_engine". Omit to get latest from both.'
+        }
+      },
+      required: []
+    }
   }
 ];
 
@@ -211,6 +225,18 @@ async function executeTool(name, input, env) {
         input.stage || 'identified', input.notes || null, input.url || null
       ).all();
       return { created: results[0] };
+    }
+
+    case 'get_commentary': {
+      let query = 'SELECT * FROM lab_os_commentary';
+      const binds = [];
+      if (input.agent) {
+        query += ' WHERE agent = ?';
+        binds.push(input.agent);
+      }
+      query += ' ORDER BY created_at DESC LIMIT 4';
+      const { results } = await env.LAB_OS_DB.prepare(query).bind(...binds).all();
+      return { commentary: results };
     }
 
     default:
