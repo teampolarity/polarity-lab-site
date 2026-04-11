@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Fix commentary prompts: inject today's date, strip markdown formatting (`3dfbfa7`)
+
+### Apr 11, 2026
+
 - fix: remove duplicate dot-teal rule that was overriding teal glow (`1759193`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Expand research framing to include guest experience, not just viewer (`eb92de4`)
-
-### Apr 11, 2026
-
-- Update AVDP and film therapeutics copy with accurate methodology (`83dc982`)
 
 
 ---

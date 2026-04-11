@@ -1,5 +1,14 @@
 [
   {
+    "id": "3dfbfa7",
+    "date": "2026-04-11",
+    "title": "Fix commentary prompts: inject today's date, strip markdown formatting",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "1759193",
     "date": "2026-04-11",
     "title": "fix: remove duplicate dot-teal rule that was overriding teal glow",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "83dc982",
-    "date": "2026-04-11",
-    "title": "Update AVDP and film therapeutics copy with accurate methodology",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]
