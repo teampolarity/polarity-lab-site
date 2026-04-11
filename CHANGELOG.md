@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Remove long-form specificity from AVDP descriptions (`6ed709e`)
+
+### Apr 11, 2026
+
 - Remove redundant root research/ directory (`99f5a6f`)
 
 ### Apr 10, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Add agent key auth to search-grants for remote trigger (`f012e21`)
-
-### Apr 10, 2026
-
-- Add agent key auth to generate-content for scheduled remote trigger (`625e368`)
 
 
 ---
