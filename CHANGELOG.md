@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Remove unsourced affective dataset claim from Ghana production mention (`991e679`)
+
+### Apr 11, 2026
+
 - Update film therapeutics copy: format flexibility and Ghana opportunity (`f08dd1a`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Fix grant card click: projects field is string from D1, not array (`8cd8dc3`)
-
-### Apr 10, 2026
-
-- Add archived stage to grants pipeline (`fd84233`)
 
 
 ---

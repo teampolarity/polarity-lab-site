@@ -1,5 +1,14 @@
 [
   {
+    "id": "991e679",
+    "date": "2026-04-11",
+    "title": "Remove unsourced affective dataset claim from Ghana production mention",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "f08dd1a",
     "date": "2026-04-11",
     "title": "Update film therapeutics copy: format flexibility and Ghana opportunity",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "fd84233",
-    "date": "2026-04-10",
-    "title": "Add archived stage to grants pipeline",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]
