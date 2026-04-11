@@ -1,5 +1,14 @@
 [
   {
+    "id": "1759193",
+    "date": "2026-04-11",
+    "title": "fix: remove duplicate dot-teal rule that was overriding teal glow",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "acbc528",
     "date": "2026-04-11",
     "title": "feat: add Agent notes section to dashboard",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "7fd8bd7",
-    "date": "2026-04-11",
-    "title": "Update film therapeutics copy and fix Get Involved spacing",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

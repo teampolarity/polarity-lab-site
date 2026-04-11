@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- fix: remove duplicate dot-teal rule that was overriding teal glow (`1759193`)
+
+### Apr 11, 2026
+
 - feat: add Agent notes section to dashboard (`acbc528`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Update AVDP and film therapeutics copy with accurate methodology (`83dc982`)
-
-### Apr 11, 2026
-
-- Update film therapeutics copy and fix Get Involved spacing (`7fd8bd7`)
 
 
 ---
