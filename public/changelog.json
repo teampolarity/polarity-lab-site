@@ -1,5 +1,14 @@
 [
   {
+    "id": "99f5a6f",
+    "date": "2026-04-11",
+    "title": "Remove redundant root research/ directory",
+    "category": {
+      "label": "Removed",
+      "color": "coral"
+    }
+  },
+  {
     "id": "6dc1292",
     "date": "2026-04-10",
     "title": "Remove throat-clearing paragraph from film therapeutics diagnostic instrument section",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "b3d987d",
-    "date": "2026-04-10",
-    "title": "Improve grant section drafting: fix lab description, sharpen prompts",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

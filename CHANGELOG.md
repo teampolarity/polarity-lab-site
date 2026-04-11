@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Apr 11, 2026
+
+- Remove redundant root research/ directory (`99f5a6f`)
+
 ### Apr 10, 2026
 
 - Remove throat-clearing paragraph from film therapeutics diagnostic instrument section (`6dc1292`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Add agent key auth to generate-content for scheduled remote trigger (`625e368`)
-
-### Apr 10, 2026
-
-- Improve grant section drafting: fix lab description, sharpen prompts (`b3d987d`)
 
 
 ---
