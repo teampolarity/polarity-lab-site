@@ -22,6 +22,58 @@ async function fetchPageContent(url) {
   }
 }
 
+async function generateCommentary(env, added, skipped) {
+  const { results: upcoming } = await env.LAB_OS_DB.prepare(
+    `SELECT funder, program, deadline, fit_score, stage
+     FROM lab_os_grants
+     WHERE deadline IS NOT NULL AND deadline >= date('now') AND deadline <= date('now', '+30 days')
+     AND stage != 'archived'
+     ORDER BY deadline ASC LIMIT 10`
+  ).all();
+
+  const newList = added.length > 0
+    ? added.map(g => `- ${g.funder}: ${g.program} (fit ${g.fit_score}/5, deadline: ${g.deadline || 'TBD'}, projects: ${g.projects || 'lab-level'})\n  ${g.notes || ''}`).join('\n')
+    : 'No new grants added this run.';
+
+  const deadlineList = upcoming.length > 0
+    ? upcoming.map(g => `- ${g.funder}: ${g.program} — ${g.deadline} (fit ${g.fit_score}/5, stage: ${g.stage})`).join('\n')
+    : 'No deadlines in the next 30 days.';
+
+  const prompt = `You are the grant intelligence layer for Polarity Lab. You just completed a grant prospecting run. Write a short internal memo for the lab director.
+
+NEW GRANTS ADDED (${added.length} new, ${skipped} already existed):
+${newList}
+
+UPCOMING DEADLINES ACROSS FULL PIPELINE:
+${deadlineList}
+
+Write two paragraphs:
+1. Summary: what the run found, how many were added, any standouts by fit score or amount.
+2. What needs attention: specific deadlines approaching, which to prioritize and why, any recommended next action.
+
+Tone: direct, specific, no filler. This is an internal note, not a press release. Max 150 words total.`;
+
+  try {
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: {
+        'x-api-key': env.ANTHROPIC_API_KEY,
+        'anthropic-version': '2023-06-01',
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-5',
+        max_tokens: 512,
+        messages: [{ role: 'user', content: prompt }]
+      })
+    });
+    const data = await res.json();
+    return data.content?.find(b => b.type === 'text')?.text || null;
+  } catch {
+    return null;
+  }
+}
+
 export async function onRequestPost({ request, env }) {
   const auth = request.headers.get('Authorization') || '';
   const agentKey = env.GRANTS_AGENT_KEY;
@@ -170,5 +222,13 @@ After all searching and reading, return ONLY a valid JSON array. Start with [ an
     }
   }
 
-  return json({ added: added.length, grants: added });
+  // Generate and store agent commentary
+  const commentary = await generateCommentary(env, added, candidates.length - added.length);
+  if (commentary) {
+    await env.LAB_OS_DB.prepare(
+      `INSERT INTO lab_os_commentary (agent, body) VALUES ('grant_search', ?)`
+    ).bind(commentary).run();
+  }
+
+  return json({ added: added.length, grants: added, commentary: commentary || null });
 }
