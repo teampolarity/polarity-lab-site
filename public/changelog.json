@@ -1,5 +1,14 @@
 [
   {
+    "id": "ba7581b",
+    "date": "2026-04-11",
+    "title": "feat: add commentary generation to content engine agent",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "7446fc4",
     "date": "2026-04-11",
     "title": "fix: wrap full generateCommentary body in try/catch",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Removed",
       "color": "coral"
-    }
-  },
-  {
-    "id": "f08dd1a",
-    "date": "2026-04-11",
-    "title": "Update film therapeutics copy: format flexibility and Ghana opportunity",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]

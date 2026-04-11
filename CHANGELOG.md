@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- feat: add commentary generation to content engine agent (`ba7581b`)
+
+### Apr 11, 2026
+
 - fix: wrap full generateCommentary body in try/catch (`7446fc4`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Remove unsourced affective dataset claim from Ghana production mention (`991e679`)
-
-### Apr 11, 2026
-
-- Update film therapeutics copy: format flexibility and Ghana opportunity (`f08dd1a`)
 
 
 ---
