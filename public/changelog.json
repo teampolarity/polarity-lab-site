@@ -1,5 +1,14 @@
 [
   {
+    "id": "d4b1801",
+    "date": "2026-04-11",
+    "title": "Add expand/collapse to reference grids across all research pages",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "ea176b4",
     "date": "2026-04-11",
     "title": "Add four background research citations to AVDP page",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "7c1141b",
-    "date": "2026-04-10",
-    "title": "Fix doc generator: lab-level vs project-level scope handling",
-    "category": {
-      "label": "Bug Fix",
-      "color": "coral"
     }
   }
 ]

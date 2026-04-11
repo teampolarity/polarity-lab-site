@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Add expand/collapse to reference grids across all research pages (`d4b1801`)
+
+### Apr 11, 2026
+
 - Add four background research citations to AVDP page (`ea176b4`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Add institutional pitch instructions for Polarity Lab lab-level docs (`03d95f6`)
-
-### Apr 10, 2026
-
-- Fix doc generator: lab-level vs project-level scope handling (`7c1141b`)
 
 
 ---
