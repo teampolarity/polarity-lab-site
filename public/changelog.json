@@ -1,5 +1,14 @@
 [
   {
+    "id": "9c1ccaf",
+    "date": "2026-04-11",
+    "title": "Update Chris Zou card: creative vision, offered (not proposed), series arc",
+    "category": {
+      "label": "Enhancement",
+      "color": "purple"
+    }
+  },
+  {
     "id": "d0d6ce3",
     "date": "2026-04-11",
     "title": "Show 3 refs by default in expand grid to avoid orphaned row",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "1cec945",
-    "date": "2026-04-10",
-    "title": "Improve lab-level pitch instructions with institutional voice and tone rules",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]
