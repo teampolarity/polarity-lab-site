@@ -1,5 +1,14 @@
 [
   {
+    "id": "7fd8bd7",
+    "date": "2026-04-11",
+    "title": "Update film therapeutics copy and fix Get Involved spacing",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "18ac89a",
     "date": "2026-04-11",
     "title": "Rewrite AVDP project card with accurate description of format and research",
@@ -165,15 +174,6 @@
     "id": "24eba14",
     "date": "2026-04-10",
     "title": "Add indeterminate progress bar to doc generator",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "4867562",
-    "date": "2026-04-10",
-    "title": "Add doc generator: pitch decks, onboarding packets, agreement drafts",
     "category": {
       "label": "New Feature",
       "color": "teal"

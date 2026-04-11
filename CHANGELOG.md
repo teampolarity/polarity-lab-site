@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 11, 2026
 
+- Update film therapeutics copy and fix Get Involved spacing (`7fd8bd7`)
+
+### Apr 11, 2026
+
 - Rewrite AVDP project card with accurate description of format and research (`18ac89a`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 10, 2026
 
 - Add indeterminate progress bar to doc generator (`24eba14`)
-
-### Apr 10, 2026
-
-- Add doc generator: pitch decks, onboarding packets, agreement drafts (`4867562`)
 
 
 ---
