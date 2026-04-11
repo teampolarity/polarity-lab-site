@@ -985,14 +985,14 @@
     // Ref grid expand/collapse
     document.querySelectorAll('.ref-grid').forEach(grid => {
       const cards = grid.querySelectorAll('.ref-card');
-      if (cards.length <= 4) return;
-      cards.forEach((card, i) => { if (i >= 4) card.style.display = 'none'; });
+      if (cards.length <= 3) return;
+      cards.forEach((card, i) => { if (i >= 3) card.style.display = 'none'; });
       const btn = document.createElement('button');
       btn.className = 'ref-expand-btn';
       btn.textContent = `Show all ${cards.length} references`;
       btn.addEventListener('click', () => {
         const hidden = cards[4].style.display === 'none';
-        cards.forEach((card, i) => { if (i >= 4) card.style.display = hidden ? 'flex' : 'none'; });
+        cards.forEach((card, i) => { if (i >= 3) card.style.display = hidden ? 'flex' : 'none'; });
         btn.textContent = hidden ? 'Show fewer' : `Show all ${cards.length} references`;
       });
       grid.after(btn);
