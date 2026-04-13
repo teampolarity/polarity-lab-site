@@ -401,7 +401,7 @@ export async function onRequestPost({ request, env }) {
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-5',
-        max_tokens: 2048,
+        max_tokens: 4096,
         system: SYSTEM_PROMPT,
         tools: TOOLS,
         messages: loopMessages
