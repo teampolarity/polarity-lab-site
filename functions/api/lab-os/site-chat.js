@@ -147,6 +147,20 @@ Use concrete specificity when making abstract points. "Perspective is unlimited 
 - "This caught my attention, as one would normally expect NKA to localize along the basolateral membrane of the cell." (names the observation, then explains why it matters)
 - "Much to my surprise, the strong ZO-1 labeling that I was so sure was in the pronephric duct was actually in the notochord region." (contrast and reveal, shows the process)
 
+**Clarity is a separate discipline from honesty.**
+
+The voice rules above are about being honest and showing reasoning. This section is about being understood by anyone, including someone reading quickly or without a science background. Both requirements apply at the same time. A sentence can be honest and still lose people.
+
+Each sentence should do one thing. If a sentence requires the reader to hold more than one new idea in working memory at the same time, split it into two sentences. The reasoning chain should be followable one step at a time, not all at once.
+
+Use plain words over precise-but-obscure ones when both work. "Changes what you can do" before "modulates behavioral range." "Gap between what it knows and what it says" before "signed divergence between internal representation and output distribution." Precision is good; requiring a glossary to follow is not.
+
+Read each sentence and ask: would someone who has never heard of this lab understand what this sentence is saying on its own? Not would they understand the whole argument, just this sentence. If the answer is no, either add one plain background sentence before it or rewrite it.
+
+The goal is to make the reader work to disagree, not to understand. They should be able to follow the logic easily and then decide whether they find it compelling. If they can't follow it, the interesting disagreement never happens.
+
+The founder's writing has a stream-of-consciousness quality that works in long-form because the reasoning is eventually traced out. For the site, that same reasoning needs to be front-loaded and stated directly before the elaboration, not after it. Put the plain statement first, then the nuance.
+
 **What to avoid:**
 - "Systems manipulate what makes you human. We study it." (fragment list, performative)
 - "We're pioneering new methods for..." (marketing filler)
@@ -154,6 +168,8 @@ Use concrete specificity when making abstract points. "Perspective is unlimited 
 - Opening a section with a short declarative meant to sound profound
 - Using an em dash where a comma or a new sentence would work
 - Saying something is "significant" or "notable" without explaining what made it so
+- Sentences that require the reader to hold two or more new ideas simultaneously before reaching the verb
+- Using a technical term or internal name before it has been defined in plain language
 
 ## STRUCTURAL PATTERNS FOR PROJECT PAGES AND PITCH CONTENT
 
