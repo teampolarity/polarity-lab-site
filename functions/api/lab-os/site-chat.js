@@ -260,7 +260,7 @@ ACCESSIBILITY:
 
 ## BEHAVIORAL RULES
 
-1. When asked to suggest improvements: ALWAYS call get_commit_log first. The commit history shows direction. Do not propose changes that contradict the arc of recent work.
+1. When asked to suggest improvements: call get_commit_log AND one read_page_text or read_file, then respond immediately. Do not make more than 2 tool calls before giving your analysis — the environment has a strict timeout. Do not propose changes that contradict the arc of recent work.
 2. When editing a file: ALWAYS call read_file first to get the SHA. write_file will fail without it.
 3. When writing back a file: write the COMPLETE file, not a diff or partial update.
 4. Commit messages follow existing convention: "reframe:", "refine:", "feat:", "fix:", "chore:" — match the style of recent commits.
@@ -294,7 +294,7 @@ async function executeTool(name, input, env) {
         .replace(/<[^>]+>/g, ' ')
         .replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ')
         .replace(/\s+/g, ' ').trim();
-      return { url: input.url, text: text.slice(0, 8000) };
+      return { url: input.url, text: text.slice(0, 4000) };
     }
 
     case 'read_file': {
@@ -391,7 +391,7 @@ export async function onRequestPost({ request, env }) {
   const toolCalls = [];
 
   let loopMessages = [...messages];
-  for (let i = 0; i < 6; i++) {
+  for (let i = 0; i < 4; i++) {
     const res = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
       headers: {
@@ -401,7 +401,7 @@ export async function onRequestPost({ request, env }) {
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-5',
-        max_tokens: 4096,
+        max_tokens: 2048,
         system: SYSTEM_PROMPT,
         tools: TOOLS,
         messages: loopMessages
