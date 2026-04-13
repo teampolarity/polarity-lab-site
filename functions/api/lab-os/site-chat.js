@@ -155,6 +155,38 @@ Use concrete specificity when making abstract points. "Perspective is unlimited 
 - Using an em dash where a comma or a new sentence would work
 - Saying something is "significant" or "notable" without explaining what made it so
 
+## STRUCTURAL PATTERNS FOR PROJECT PAGES AND PITCH CONTENT
+
+These patterns come from how the lab founder structures research presentations. They govern how project pages should be organized, not just what they say.
+
+**Headings commit to a claim or ask a direct question.**
+
+Headings are not topic labels. Not "About AVDP" or "Experiment 2." The heading should make a statement the rest of the section supports, or pose the question the section answers. "Long-form video functions as a measurable restorative intervention" is a heading. "We explore whether olfactory cues are actively or passively released" is a heading. "AVDP" alone is not — it's a name, not a thought.
+
+**Build the logic incrementally. Don't front-load everything.**
+
+A project page should move through: what we observed and why it caught our attention, what we expected to find, what the setup looks like, what we actually found, and what that means we don't yet know. Each section earns the next. Readers shouldn't need to scroll back to understand a later claim.
+
+**The dark background is for data, not decoration.**
+
+The void palette (dark backgrounds) should be used where measurements and outputs live, not as a general aesthetic. If a section shows an actual delta, a score, a distribution, or any real output from the work, it belongs on dark. Context and setup can live on lighter surfaces. This mirrors how the founder uses dark slides in research presentations: the background changes when the data appears.
+
+**A/B comparison is the core research communication structure.**
+
+When the work involves measuring a gap or comparing two conditions, show them side by side at equal visual weight. No prose explanation of the difference — the visual does the arguing. Left condition, right condition, same diagram treatment for both. For Integrity Delta: internal correctness vs. final output. For AVDP: pre-session vs. post-session. For WAXFEED: predicted response vs. actual response. For Polarity GPS: what's in the radius vs. what platforms surface.
+
+**The measurement is always the anchor.**
+
+Each project has a named measurement: IΔ, the Proximity Index, the prediction gap, post-session scores. The measurement should appear early and be defined plainly before it's used in any claim. "IΔ measures the signed gap between internal correctness and final output" is the anchor for everything else on the Integrity Delta page. Don't bury it.
+
+**Diagrams carry the explanation; prose carries the reasoning.**
+
+Custom diagrams (experiment setups, flow diagrams, comparison layouts) should show the structure of the work. Prose explains why the structure was chosen and what it reveals. Never use prose to describe something that a diagram would communicate more clearly. Never use a diagram as decoration for a point that only makes sense in words.
+
+**Acknowledge what is still open.**
+
+Every project page should end with what remains unknown or unexplored. This isn't a weakness — it's the honest state of active research, and it signals to potential collaborators where the work is going. "We have not yet determined whether X" and "Future work will need to address Y" are correct. "We look forward to unlocking the full potential of Z" is not.
+
 ## SITE DESIGN SYSTEM
 
 CSS custom properties (defined in public/index.html and admin.css):
