@@ -114,11 +114,11 @@ The four active projects:
 
 The lab's voice builds logic rather than performs confidence. Every sentence should show the reasoning chain, not just assert the conclusion. This is how the lab founder writes, and all site copy should match this register.
 
-**How the voice works:**
+**Core rules:**
 
 Write complete sentences that trace causality. Use connectors like "because," "which allows us to," "this is important because," "therefore," and "this means that." The reader needs to be able to follow how one claim produces the next. If you can't explain why something matters, don't state it.
 
-Epistemic honesty is part of the voice. Acknowledge what is unknown, what is being explored, what we are still working to understand. "The underlying neurological basis is still unknown." "We believe this is important because..." Don't assert more than the work supports. Performed confidence is the opposite of what this lab stands for.
+Epistemic honesty is part of the voice. Acknowledge what is unknown, what is being explored, what we are still working to understand. Use "we believe," "we think," "we're not yet sure," and "in a mechanism still unknown." Don't assert more than the work supports. Performed confidence is the opposite of what this lab stands for.
 
 No em dashes. No en dashes. Rewrite the sentence instead of using dashes to staple clauses together.
 
@@ -126,20 +126,34 @@ No rhetorical fragment lists. Not "School. Work. Medicine." Not "We study it." N
 
 No marketing register. Not "pioneering," not "cutting-edge," not "passionate about," not "transforming." These words signal that something is being sold. Say what the thing is and why it matters, in plain language.
 
-Collaborative framing is natural. "We" is correct. The lab is a group doing work together.
+Collaborative framing is natural. "We" is correct for lab work. "I" is correct for personal observation or reaction. The distinction matters.
 
-Write like someone explaining real research to a peer who needs to understand the reasoning, not just the conclusion. The goal is to be understood, not to impress.
+**Additional patterns to follow:**
+
+Name what drew your attention and why, rather than just asserting what matters. "This caught our attention, because one would normally expect X, but here we found Y" is more honest than "Notably, X." The observation comes first; the significance follows from it.
+
+Set up expectations before revealing what actually happened. "We expected to find X. Instead, we found Y, which suggests Z." This pattern appears in the founder's writing across contexts, from lab notebooks to personal statements, and it works because it shows the reasoning process rather than just the conclusion.
+
+Short declarative sentences can exist, but they must be earned by the paragraph that precedes them, not used as openers. "Hope is a delicate virtue" lands because it follows a paragraph about what hope looks like in practice. The same sentence as a section header is a cliche.
+
+Assume the reader needs the background to follow the reasoning, and provide it without condescension. Not "as you know" and not a textbook definition, but a plain sentence that gives them what they need. "By degrading their sodium-potassium pumps, zebrafish embryos can adapt to low oxygen environments" is the right model: specific, functional, not insulting.
+
+Use concrete specificity when making abstract points. "Perspective is unlimited and a vector by nature, meaning each person has the potential to bring a new direction that has not yet been heard" is better than "diverse perspectives are valuable." The abstraction should point to something real.
 
 **Examples of the right register:**
-- "The understandings that we get from studying the zebrafish brain can give us insights on how the human brain works, and how behavior is modulated in the brain." (traces the logic, doesn't just assert it)
-- "I believe this is important because it defines behavior as something that can be manipulated in different situations versus something that is just a static outfit." (shows reasoning, not assertion)
-- "However, the underlying neurological basis that enables MHC genes and peptides to lead to behavioral action is still unknown." (honest about limits)
+- "The understandings that we get from studying the zebrafish brain can give us insights on how the human brain works, and how behavior is modulated in the brain." (traces the logic, doesn't assert it)
+- "I believe this is important because it defines behavior as something that can be manipulated in different situations versus something that is just a static outfit." (shows reasoning)
+- "In a mechanism still unknown, the zebrafish embryo degrades the sodium-potassium pump in order to conserve energy." (honest about limits)
+- "This caught my attention, as one would normally expect NKA to localize along the basolateral membrane of the cell." (names the observation, then explains why it matters)
+- "Much to my surprise, the strong ZO-1 labeling that I was so sure was in the pronephric duct was actually in the notochord region." (contrast and reveal, shows the process)
 
 **What to avoid:**
 - "Systems manipulate what makes you human. We study it." (fragment list, performative)
 - "We're pioneering new methods for..." (marketing filler)
 - "Cutting-edge research at the intersection of..." (generic AI copy)
+- Opening a section with a short declarative meant to sound profound
 - Using an em dash where a comma or a new sentence would work
+- Saying something is "significant" or "notable" without explaining what made it so
 
 ## SITE DESIGN SYSTEM
 
