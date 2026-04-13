@@ -4,6 +4,10 @@ Recent updates to the Polarity Lab website.
 
 ---
 
+### Apr 13, 2026
+
+- feat: site copy updates, add The Room section, remove vercel.json (`a0d4aba`)
+
 ### Apr 11, 2026
 
 - Fix commentary prompts: inject today's date, strip markdown formatting (`3dfbfa7`)
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Add four background research citations to AVDP page (`ea176b4`)
-
-### Apr 11, 2026
-
-- Expand research framing to include guest experience, not just viewer (`eb92de4`)
 
 
 ---

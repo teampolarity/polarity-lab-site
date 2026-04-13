@@ -1,5 +1,14 @@
 [
   {
+    "id": "a0d4aba",
+    "date": "2026-04-13",
+    "title": "feat: site copy updates, add The Room section, remove vercel.json",
+    "category": {
+      "label": "New Feature",
+      "color": "teal"
+    }
+  },
+  {
     "id": "3dfbfa7",
     "date": "2026-04-11",
     "title": "Fix commentary prompts: inject today's date, strip markdown formatting",
@@ -168,15 +177,6 @@
     "category": {
       "label": "New Feature",
       "color": "teal"
-    }
-  },
-  {
-    "id": "eb92de4",
-    "date": "2026-04-11",
-    "title": "Expand research framing to include guest experience, not just viewer",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]
