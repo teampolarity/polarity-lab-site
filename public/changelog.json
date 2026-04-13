@@ -1,5 +1,14 @@
 [
   {
+    "id": "a42905f",
+    "date": "2026-04-13",
+    "title": "refine: tighten homepage copy and flow",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "ae4c7ff",
     "date": "2026-04-13",
     "title": "fix: scroll-spy order, The Room h2, dedupe comment, Work heading",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Enhancement",
       "color": "purple"
-    }
-  },
-  {
-    "id": "d0d6ce3",
-    "date": "2026-04-11",
-    "title": "Show 3 refs by default in expand grid to avoid orphaned row",
-    "category": {
-      "label": "Update",
-      "color": "text-secondary"
     }
   }
 ]

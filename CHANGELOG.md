@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 13, 2026
 
+- refine: tighten homepage copy and flow (`a42905f`)
+
+### Apr 13, 2026
+
 - fix: scroll-spy order, The Room h2, dedupe comment, Work heading (`ae4c7ff`)
 
 ### Apr 13, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Update Chris Zou card: creative vision, offered (not proposed), series arc (`9c1ccaf`)
-
-### Apr 11, 2026
-
-- Show 3 refs by default in expand grid to avoid orphaned row (`d0d6ce3`)
 
 
 ---
