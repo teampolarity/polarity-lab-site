@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site — Lab OS</title>
+  <link rel="icon" href="/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/admin/css/admin.css">
+  <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('lab_os_theme') || 'dark')</script>
+  <style>
+    /* Make the shell and main fill the full viewport height without scroll */
+    html, body { height: 100%; overflow: hidden; }
+    .shell { height: 100%; }
+    .main {
+      display: flex !important;
+      flex-direction: column;
+      overflow: hidden !important;
+      padding-bottom: 0 !important;
+    }
+    .topbar { flex-shrink: 0; }
+    .topbar .page-sub { margin-bottom: 0; }
+
+    .chat-wrap {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0; /* critical: lets flex children shrink below content size */
+      max-width: 760px;
+      padding-bottom: 24px;
+    }
+
+    /* Message list */
+    .messages {
+      flex: 1;
+      min-height: 0; /* same fix */
+      overflow-y: auto;
+      padding: 16px 0 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .messages::-webkit-scrollbar { width: 4px; }
+    .messages::-webkit-scrollbar-track { background: transparent; }
+    .messages::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 2px; }
+
+    /* Individual messages */
+    .msg {
+      display: flex;
+      gap: 12px;
+      max-width: 100%;
+    }
+    .msg.user { flex-direction: row-reverse; }
+
+    .msg-bubble {
+      max-width: 80%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--text-primary);
+    }
+    .msg.user .msg-bubble {
+      background: var(--teal-subtle);
+      border: 1px solid rgba(78,205,196,0.2);
+      border-radius: 12px 12px 2px 12px;
+      color: var(--text-primary);
+    }
+    .msg.assistant .msg-bubble {
+      background: var(--void-elevated);
+      border: 1px solid var(--border-ghost);
+      border-radius: 12px 12px 12px 2px;
+    }
+
+    /* Tool call chips shown inside assistant bubble */
+    .tool-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .tool-chip {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(78,205,196,0.08);
+      border: 1px solid rgba(78,205,196,0.15);
+      color: var(--teal);
+      letter-spacing: 0.04em;
+    }
+
+    /* Markdown in assistant messages */
+    .msg-bubble strong { color: var(--text-primary); font-weight: 600; }
+    .msg-bubble ul, .msg-bubble ol { padding-left: 18px; margin: 8px 0; }
+    .msg-bubble li { margin-bottom: 4px; }
+    .msg-bubble p { margin-bottom: 8px; }
+    .msg-bubble p:last-child { margin-bottom: 0; }
+    .msg-bubble code {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      background: rgba(255,255,255,0.07);
+      padding: 1px 5px;
+      border-radius: 3px;
+    }
+    .msg-bubble h2 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 16px 0 6px;
+    }
+    .msg-bubble h2:first-child { margin-top: 0; }
+    .msg-bubble h3 {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 14px 0 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .msg-bubble h3:first-child { margin-top: 0; }
+    .msg-bubble hr {
+      border: none;
+      border-top: 1px solid var(--border-ghost);
+      margin: 14px 0;
+    }
+    .msg-bubble table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 10px 0;
+    }
+    .msg-bubble th {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-tertiary);
+      padding: 6px 10px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .msg-bubble td {
+      padding: 7px 10px;
+      border-bottom: 1px solid var(--border-ghost);
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
+    .msg-bubble tr:last-child td { border-bottom: none; }
+    /* Simplified pipe table rows */
+    .msg-bubble .trow {
+      display: flex;
+      gap: 12px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--border-ghost);
+      font-size: 13px;
+    }
+    .msg-bubble .trow:last-of-type { border-bottom: none; }
+    .msg-bubble .trow span { flex: 1; color: var(--text-secondary); }
+    .msg-bubble .trow:first-of-type span {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-tertiary);
+    }
+
+    /* Thinking indicator */
+    .msg.thinking .msg-bubble {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+    }
+    .thinking-spinner {
+      width: 14px; height: 14px;
+      border: 2px solid var(--border-subtle);
+      border-top-color: var(--teal);
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .thinking-text { font-size: 12px; color: var(--text-tertiary); font-family: var(--font-mono); }
+    .thinking-elapsed { font-size: 11px; color: var(--border-subtle); margin-left: 4px; }
+
+    /* Suggested prompts */
+    .suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 20px 0 8px;
+    }
+    .suggestion {
+      padding: 8px 14px;
+      background: var(--void-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: var(--font-body);
+    }
+    .suggestion:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+      background: var(--teal-subtle);
+    }
+
+    /* Input bar */
+    .input-bar {
+      display: flex;
+      gap: 10px;
+      padding: 16px 0 4px;
+      border-top: 1px solid var(--border-ghost);
+    }
+    .chat-input {
+      flex: 1;
+      padding: 11px 16px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      background: var(--void-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      color: var(--text-primary);
+      resize: none;
+      min-height: 44px;
+      max-height: 160px;
+      overflow-y: auto;
+      line-height: 1.5;
+      transition: border-color 0.15s;
+    }
+    .chat-input::placeholder { color: var(--text-tertiary); }
+    .chat-input:focus { outline: none; border-color: var(--teal); }
+
+    .send-btn {
+      padding: 11px 20px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      background: var(--teal);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+      align-self: flex-end;
+    }
+    .send-btn:hover { opacity: 0.85; }
+    .send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    .clear-btn {
+      padding: 11px 14px;
+      font-family: var(--font-display);
+      font-size: 12px;
+      background: none;
+      color: var(--text-tertiary);
+      border: 1px solid var(--border-ghost);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s;
+      align-self: flex-end;
+    }
+    .clear-btn:hover { color: var(--text-secondary); border-color: var(--border-subtle); }
+  </style>
+</head>
+<body>
+<div class="shell">
+  <nav class="sidebar">
+    <div class="sidebar-logo">LAB OS</div>
+    <div class="sidebar-label">Overview</div>
+    <a href="/admin/dashboard.html" class="sidebar-link">Dashboard</a>
+    <div class="sidebar-label" style="margin-top:16px">Pipeline</div>
+    <a href="/admin/grants.html" class="sidebar-link">Grants</a>
+    <a href="/admin/outreach.html" class="sidebar-link">Outreach</a>
+    <a href="/admin/believers.html" class="sidebar-link">Believers</a>
+    <div class="sidebar-label" style="margin-top:16px">Growth</div>
+    <a href="/admin/content.html" class="sidebar-link">Content</a>
+    <a href="/admin/docs.html" class="sidebar-link">Docs</a>
+    <div class="sidebar-label" style="margin-top:16px">Intelligence</div>
+    <a href="/admin/chat.html" class="sidebar-link">Chat</a>
+    <a href="/admin/site.html" class="sidebar-link active">Site</a>
+    <div class="sidebar-label" style="margin-top:24px">Account</div>
+    <button class="theme-toggle" id="theme-toggle"></button>
+    <a href="#" class="sidebar-link" id="logout-btn">Sign out</a>
+  </nav>
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <h1 class="page-title">Lab OS</h1>
+        <p class="page-sub">Read, understand, and evolve any page. Changes commit directly to main.</p>
+      </div>
+    </div>
+
+    <div class="chat-wrap">
+      <div class="messages" id="messages">
+        <div class="suggestions" id="suggestions">
+          <button class="suggestion" onclick="sendSuggestion(this)">What has the site been trying to say lately?</button>
+          <button class="suggestion" onclick="sendSuggestion(this)">Review the homepage and suggest copy improvements</button>
+          <button class="suggestion" onclick="sendSuggestion(this)">What changed in the last 10 commits?</button>
+          <button class="suggestion" onclick="sendSuggestion(this)">Tighten the work page copy</button>
+          <button class="suggestion" onclick="sendSuggestion(this)">Update the join page CTA to match the current thesis</button>
+          <button class="suggestion" onclick="sendSuggestion(this)">List all the pages I can edit</button>
+        </div>
+      </div>
+
+      <div class="input-bar">
+        <textarea
+          class="chat-input"
+          id="chat-input"
+          placeholder="Ask about any page, or tell it what to change..."
+          rows="1"
+        ></textarea>
+        <button class="clear-btn" id="clear-btn" onclick="clearChat()">Clear</button>
+        <button class="send-btn" id="send-btn" onclick="sendMessage()">Send</button>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/admin/js/auth.js"></script>
+<script>
+  requireAuth();
+  document.getElementById('logout-btn').addEventListener('click', () => { clearToken(); window.location.href = '/admin/index.html'; });
+
+  let history = []; // { role: 'user'|'assistant', content: string|array }
+
+  // Auto-resize textarea
+  const input = document.getElementById('chat-input');
+  input.addEventListener('input', () => {
+    input.style.height = 'auto';
+    input.style.height = Math.min(input.scrollHeight, 160) + 'px';
+  });
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+  });
+
+  function esc(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  // Markdown to HTML — no nested quantifiers, no stateful loops
+  function mdToHtml(md) {
+    // Escape HTML first
+    let s = md.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    // Headers
+    s = s.replace(/^### (.+)$/gm, '<h3>$1</h3>');
+    s = s.replace(/^## (.+)$/gm, '<h2>$1</h2>');
+    // HR
+    s = s.replace(/^---+$/gm, '<hr>');
+    // Bold (non-greedy, no newlines inside)
+    s = s.replace(/\*\*([^\n*]+)\*\*/g, '<strong>$1</strong>');
+    // Code (no newlines inside)
+    s = s.replace(/`([^\n`]+)`/g, '<code>$1</code>');
+    // Pipe table separator rows — remove entirely
+    s = s.replace(/^\|[-| :]+\|$/gm, '');
+    // Pipe table data rows — simple divs
+    s = s.replace(/^\|(.+)\|$/gm, (_, inner) => {
+      const cells = inner.split('|').map(c => `<span>${c.trim()}</span>`).join('');
+      return `<div class="trow">${cells}</div>`;
+    });
+    // List items — wrap consecutive <li> blocks in <ul>
+    s = s.replace(/^[*-] (.+)$/gm, '<li>$1</li>');
+    s = s.replace(/^(\d+)\. (.+)$/gm, '<li>$2</li>');
+    // Wrap runs of <li> in <ul> — use split/join, not nested quantifier regex
+    s = s.split('\n').reduce((acc, line) => {
+      const inList = acc.length > 0 && acc[acc.length - 1].endsWith('_INLIST_');
+      if (line.startsWith('<li>')) {
+        if (inList) {
+          acc[acc.length - 1] = acc[acc.length - 1].replace('_INLIST_', '') + line + '_INLIST_';
+        } else {
+          acc.push(line + '_INLIST_');
+        }
+      } else {
+        if (inList) acc[acc.length - 1] = '<ul>' + acc[acc.length - 1].replace('_INLIST_', '') + '</ul>';
+        acc.push(line);
+      }
+      return acc;
+    }, []).map(l => l.endsWith('_INLIST_') ? '<ul>' + l.replace('_INLIST_', '') + '</ul>' : l).join('\n');
+    // Paragraphs
+    s = s.split('\n\n').map(block => {
+      block = block.trim();
+      if (!block) return '';
+      if (/^</.test(block)) return block;
+      return `<p>${block.replace(/\n/g, '<br>')}</p>`;
+    }).join('\n');
+    return s;
+  }
+
+  function toolLabel(name) {
+    const labels = {
+      list_pages: 'page inventory',
+      read_page_text: 'reading page',
+      read_file: 'reading file',
+      write_file: 'writing file',
+      get_commit_log: 'commit history',
+      get_diff: 'reading diff'
+    };
+    return labels[name] || name;
+  }
+
+  function appendMsg(role, text, tools) {
+    // Hide suggestions after first message
+    const sug = document.getElementById('suggestions');
+    if (sug) sug.remove();
+
+    const msgs = document.getElementById('messages');
+    const div = document.createElement('div');
+    div.className = `msg ${role}`;
+
+    let inner = '';
+
+    if (tools && tools.length > 0) {
+      const chips = tools.map(t => `<span class="tool-chip">looked up ${toolLabel(t.name)}</span>`).join('');
+      inner += `<div class="tool-chips">${chips}</div>`;
+    }
+
+    inner += mdToHtml(text);
+    div.innerHTML = `<div class="msg-bubble">${inner}</div>`;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+    return div;
+  }
+
+  const STATUS_LABELS = [
+    'checking pipeline', 'looking up data', 'analyzing', 'reading grants',
+    'checking leads', 'reviewing pipeline', 'preparing response'
+  ];
+
+  function appendThinking() {
+    const sug = document.getElementById('suggestions');
+    if (sug) sug.remove();
+
+    const msgs = document.getElementById('messages');
+    const div = document.createElement('div');
+    div.className = 'msg assistant thinking';
+    div.innerHTML = `<div class="msg-bubble">
+      <div class="thinking-spinner"></div>
+      <span class="thinking-text" id="thinking-label">thinking</span>
+      <span class="thinking-elapsed" id="thinking-elapsed"></span>
+    </div>`;
+    msgs.appendChild(div);
+    msgs.scrollTop = msgs.scrollHeight;
+
+    // Elapsed timer + cycling status label
+    const start = Date.now();
+    let labelIdx = 0;
+    const timer = setInterval(() => {
+      const el = document.getElementById('thinking-elapsed');
+      const lbl = document.getElementById('thinking-label');
+      if (!el || !lbl) { clearInterval(timer); return; }
+      const secs = Math.floor((Date.now() - start) / 1000);
+      el.textContent = `${secs}s`;
+      if (secs > 0 && secs % 5 === 0) {
+        labelIdx = (labelIdx + 1) % STATUS_LABELS.length;
+        lbl.textContent = STATUS_LABELS[labelIdx];
+      }
+    }, 1000);
+
+    div._clearTimer = () => clearInterval(timer);
+    return div;
+  }
+
+  function sendSuggestion(btn) {
+    input.value = btn.textContent;
+    sendMessage();
+  }
+
+  async function sendMessage() {
+    const text = input.value.trim();
+    if (!text) return;
+
+    input.value = '';
+    input.style.height = 'auto';
+    document.getElementById('send-btn').disabled = true;
+
+    // Add user message
+    appendMsg('user', esc(text));
+    history.push({ role: 'user', content: text });
+
+    // Show thinking with live status
+    const thinking = appendThinking();
+
+    // 55s timeout — CF functions cap at 30s on free tier, 100s on paid
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 55000);
+
+    let data = null;
+    try {
+      const res = await fetch('/api/lab-os/site-chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
+        body: JSON.stringify({ messages: history }),
+        signal: controller.signal
+      });
+      clearTimeout(timeout);
+      data = await res.json().catch(() => null);
+    } catch (e) {
+      clearTimeout(timeout);
+      data = null;
+    }
+
+    if (thinking._clearTimer) thinking._clearTimer();
+    thinking.remove();
+    document.getElementById('send-btn').disabled = false;
+
+    if (data?.reply) {
+      appendMsg('assistant', data.reply, data.tool_calls || []);
+      history.push({ role: 'assistant', content: data.reply });
+    } else {
+      appendMsg('assistant', 'No response — the request may have timed out. Try a simpler question or refresh.');
+    }
+
+    input.focus();
+  }
+
+  function clearChat() {
+    history = [];
+    const msgs = document.getElementById('messages');
+    msgs.innerHTML = `<div class="suggestions" id="suggestions">
+      <button class="suggestion" onclick="sendSuggestion(this)">What has the site been trying to say lately?</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">Review the homepage and suggest copy improvements</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">What changed in the last 10 commits?</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">Tighten the work page copy</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">Update the join page CTA to match the current thesis</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">List all the pages I can edit</button>
+    </div>`;
+  }
+</script>
+</body>
+</html>
