@@ -1,5 +1,14 @@
 [
   {
+    "id": "ae4c7ff",
+    "date": "2026-04-13",
+    "title": "fix: scroll-spy order, The Room h2, dedupe comment, Work heading",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "c60dea5",
     "date": "2026-04-13",
     "title": "fix: merge hook into hero section, remove dead void on mobile",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Update",
       "color": "text-secondary"
-    }
-  },
-  {
-    "id": "d4b1801",
-    "date": "2026-04-11",
-    "title": "Add expand/collapse to reference grids across all research pages",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
     }
   }
 ]

@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 13, 2026
 
+- fix: scroll-spy order, The Room h2, dedupe comment, Work heading (`ae4c7ff`)
+
+### Apr 13, 2026
+
 - fix: merge hook into hero section, remove dead void on mobile (`c60dea5`)
 
 ### Apr 13, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Show 3 refs by default in expand grid to avoid orphaned row (`d0d6ce3`)
-
-### Apr 11, 2026
-
-- Add expand/collapse to reference grids across all research pages (`d4b1801`)
 
 
 ---
