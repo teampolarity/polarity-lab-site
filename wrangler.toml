@@ -4,4 +4,4 @@ pages_build_output_dir = "public"
 [[d1_databases]]
 binding = "LAB_OS_DB"
 database_name = "polarity-lab-os"
-database_id = "237d0afa-3ce6-4542-bcfb-729925e231e3"
+database_id = "27cea3ac-f06c-407a-9394-cd5a7091c067"
