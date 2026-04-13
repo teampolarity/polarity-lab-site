@@ -310,7 +310,7 @@ export async function onRequestPost({ request, env }) {
       },
       body: JSON.stringify({
         model: 'claude-sonnet-4-5',
-        max_tokens: 8192,
+        max_tokens: 4096,
         system: SYSTEM_PROMPT,
         tools: TOOLS,
         messages: loopMessages
@@ -318,7 +318,7 @@ export async function onRequestPost({ request, env }) {
     });
 
     const data = await res.json();
-    if (!data.content) return err('LLM error', 502);
+    if (!data.content) return err(`LLM error: ${JSON.stringify(data?.error || data)}`, 502);
 
     loopMessages.push({ role: 'assistant', content: data.content });
 
