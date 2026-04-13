@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 13, 2026
 
+- restore: tagline 'An institute for the human condition.' (`1b1bb9c`)
+
+### Apr 13, 2026
+
 - refine: tighten homepage copy and flow (`a42905f`)
 
 ### Apr 13, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Fix research collaborator card to match actual methodology framing (`52cee4c`)
-
-### Apr 11, 2026
-
-- Update Chris Zou card: creative vision, offered (not proposed), series arc (`9c1ccaf`)
 
 
 ---

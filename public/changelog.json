@@ -1,5 +1,14 @@
 [
   {
+    "id": "1b1bb9c",
+    "date": "2026-04-13",
+    "title": "restore: tagline 'An institute for the human condition.'",
+    "category": {
+      "label": "Update",
+      "color": "text-secondary"
+    }
+  },
+  {
     "id": "a42905f",
     "date": "2026-04-13",
     "title": "refine: tighten homepage copy and flow",
@@ -168,15 +177,6 @@
     "category": {
       "label": "Bug Fix",
       "color": "coral"
-    }
-  },
-  {
-    "id": "9c1ccaf",
-    "date": "2026-04-11",
-    "title": "Update Chris Zou card: creative vision, offered (not proposed), series arc",
-    "category": {
-      "label": "Enhancement",
-      "color": "purple"
     }
   }
 ]
