@@ -6,6 +6,10 @@ Recent updates to the Polarity Lab website.
 
 ### Apr 13, 2026
 
+- fix: merge hook into hero section, remove dead void on mobile (`c60dea5`)
+
+### Apr 13, 2026
+
 - feat: site copy updates, add The Room section, remove vercel.json (`a0d4aba`)
 
 ### Apr 11, 2026
@@ -79,10 +83,6 @@ Recent updates to the Polarity Lab website.
 ### Apr 11, 2026
 
 - Add expand/collapse to reference grids across all research pages (`d4b1801`)
-
-### Apr 11, 2026
-
-- Add four background research citations to AVDP page (`ea176b4`)
 
 
 ---

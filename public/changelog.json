@@ -1,5 +1,14 @@
 [
   {
+    "id": "c60dea5",
+    "date": "2026-04-13",
+    "title": "fix: merge hook into hero section, remove dead void on mobile",
+    "category": {
+      "label": "Bug Fix",
+      "color": "coral"
+    }
+  },
+  {
     "id": "a0d4aba",
     "date": "2026-04-13",
     "title": "feat: site copy updates, add The Room section, remove vercel.json",
@@ -165,15 +174,6 @@
     "id": "d4b1801",
     "date": "2026-04-11",
     "title": "Add expand/collapse to reference grids across all research pages",
-    "category": {
-      "label": "New Feature",
-      "color": "teal"
-    }
-  },
-  {
-    "id": "ea176b4",
-    "date": "2026-04-11",
-    "title": "Add four background research citations to AVDP page",
     "category": {
       "label": "New Feature",
       "color": "teal"
