@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#050508">
-  <meta name="description" content="Bring a project, join a project, or back one. Polarity Lab is the institution where research and product are built together.">
+  <meta name="description" content="One investigation into what a human looks like when the compliance apparatus is removed. Four instruments.">
   <link rel="icon" type="image/png" href="/favicon.png">
-  <title>Join the Lab — Polarity Lab</title>
+  <title>The Work — Polarity Lab</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -202,37 +202,6 @@
     [data-theme="light"] .theme-toggle .moon { display: block; }
 
     /* ==========================================
-       RESEARCH DROPDOWN
-       ========================================== */
-    .nav-item--dropdown { position: relative; }
-    .nav-link--dropdown {
-      background: none; border: none; cursor: pointer;
-      display: flex; align-items: center; gap: 4px;
-      font-family: var(--font-body); font-size: 13px; font-weight: 500;
-      color: var(--text-tertiary); transition: color 0.3s ease; padding: 8px 0;
-    }
-    .nav-link--dropdown:hover { color: var(--teal); }
-    .nav-dropdown-chevron { width: 14px; height: 14px; transition: transform 0.3s ease; }
-    .nav-item--dropdown.open .nav-dropdown-chevron { transform: rotate(180deg); }
-    .nav-dropdown {
-      position: absolute; top: calc(100% + 12px); left: 50%;
-      transform: translateX(-50%) translateY(-8px);
-      background: var(--void-elevated); border: 1px solid var(--border-subtle);
-      border-radius: 10px; padding: 6px; min-width: 210px;
-      opacity: 0; pointer-events: none;
-      transition: opacity 0.2s ease, transform 0.2s ease; z-index: 100;
-    }
-    .nav-item--dropdown.open .nav-dropdown {
-      opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0);
-    }
-    .nav-dropdown-item {
-      display: block; padding: 10px 14px; border-radius: 6px;
-      font-size: 13px; color: var(--text-secondary); text-decoration: none;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-    .nav-dropdown-item:hover { background: var(--void-surface); color: var(--teal); }
-
-    /* ==========================================
        PAGE LAYOUT
        ========================================== */
     .page-wrapper { position: relative; z-index: 2; min-height: 100vh; }
@@ -259,12 +228,6 @@
     .breadcrumb a { color: var(--teal); text-decoration: none; transition: opacity 0.2s ease; }
     .breadcrumb a:hover { opacity: 0.7; }
 
-    .subpage-eyebrow {
-      font-family: var(--font-mono); font-size: 11px; color: var(--teal);
-      letter-spacing: 0.14em; text-transform: uppercase;
-      margin-bottom: 20px; display: block;
-    }
-
     .subpage-title {
       font-family: var(--font-display);
       font-size: clamp(32px, 5vw, 64px);
@@ -280,146 +243,76 @@
     }
 
     /* ==========================================
-       PAPER SECTIONS
+       INSTRUMENTS SECTION
        ========================================== */
-    .paper-section {
-      padding: 80px 48px;
+    .instruments-section {
+      padding: 80px 48px 100px;
       max-width: 1200px;
       margin: 0 auto;
-      border-bottom: 1px solid var(--border-ghost);
     }
 
     @media (max-width: 768px) {
-      .paper-section { padding: 60px 24px; }
+      .instruments-section { padding: 60px 24px 80px; }
     }
 
-    .paper-section-label {
-      font-family: var(--font-mono); font-size: 11px;
-      color: var(--teal); letter-spacing: 0.12em;
-      text-transform: uppercase; margin-bottom: 12px;
-    }
-
-    .paper-section-title {
-      font-family: var(--font-display);
-      font-size: clamp(22px, 3vw, 34px);
-      font-weight: 700; color: var(--text-pure);
-      margin-bottom: 28px;
-    }
-
-    .paper-body p {
-      font-size: 16px; color: var(--text-secondary);
-      line-height: 1.8; max-width: 720px; margin-bottom: 20px;
-    }
-    .paper-body p:last-child { margin-bottom: 0; }
-
-    /* ==========================================
-       PATH CARDS (involve-grid style)
-       ========================================== */
-    .paths-grid {
+    .instruments-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-      margin-top: 8px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2px;
     }
 
-    .path-card {
-      background: var(--void-elevated);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      transition: border-color 0.3s ease;
+    @media (max-width: 768px) {
+      .instruments-grid { grid-template-columns: 1fr; }
     }
 
-    .path-card:hover { border-color: var(--teal); }
-
-    .path-card-number {
-      font-family: var(--font-mono); font-size: 10px; font-weight: 600;
-      letter-spacing: 0.14em; color: var(--teal); text-transform: uppercase;
-      margin-bottom: 12px;
+    .instrument-block {
+      padding: 52px 48px;
+      border: 1px solid var(--border-ghost);
+      transition: border-color 0.3s ease, background 0.3s ease;
     }
 
-    .path-card-title {
-      font-family: var(--font-display); font-size: 20px; font-weight: 700;
-      color: var(--text-pure); letter-spacing: -0.01em;
-      margin-bottom: 12px; line-height: 1.2;
+    .instrument-block:hover {
+      border-color: var(--border-subtle);
+      background: var(--void-nebula);
     }
 
-    .path-card-tagline {
-      font-size: 14px; color: var(--text-secondary);
-      line-height: 1.6; margin-bottom: 24px;
+    @media (max-width: 768px) {
+      .instrument-block { padding: 40px 24px; }
     }
 
-    .path-card-section-label {
-      font-family: var(--font-mono); font-size: 10px;
-      color: var(--text-ghost); letter-spacing: 0.1em;
-      text-transform: uppercase; margin-bottom: 10px; margin-top: 20px;
+    .instrument-name {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 700;
+      color: var(--text-pure);
+      letter-spacing: -0.02em;
+      line-height: 1;
+      margin-bottom: 20px;
     }
 
-    .path-card-list {
-      list-style: none; padding: 0; margin: 0 0 4px;
+    .instrument-desc {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 420px;
+      margin-bottom: 32px;
     }
 
-    .path-card-list li {
-      font-size: 13px; color: var(--text-secondary);
-      line-height: 1.55; padding: 6px 0;
-      border-bottom: 1px solid var(--border-void);
-      padding-left: 14px;
-      position: relative;
-    }
-
-    .path-card-list li::before {
-      content: '';
-      position: absolute; left: 0; top: 14px;
-      width: 4px; height: 4px; border-radius: 50%;
-      background: var(--teal); opacity: 0.6;
-    }
-
-    .path-card-list li:last-child { border-bottom: none; }
-
-    .path-card-tiers {
-      margin-top: 4px;
-    }
-
-    .tier-row {
-      display: flex; align-items: baseline; justify-content: space-between;
-      padding: 8px 0; border-bottom: 1px solid var(--border-void);
-      gap: 12px;
-    }
-
-    .tier-row:last-child { border-bottom: none; }
-
-    .tier-name {
-      font-size: 13px; color: var(--text-secondary); line-height: 1.4;
-    }
-
-    .tier-weight {
-      font-family: var(--font-mono); font-size: 11px; color: var(--teal);
-      white-space: nowrap; flex-shrink: 0;
-    }
-
-    .path-card-note {
-      font-size: 12px; color: var(--text-ghost); line-height: 1.55;
-      margin-top: 14px; font-style: italic;
-    }
-
-    .path-card-footer {
-      margin-top: auto;
-      padding-top: 28px;
-    }
-
-    .path-cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--teal); color: #000;
-      font-family: var(--font-display); font-size: 13px; font-weight: 700;
-      padding: 12px 22px; border-radius: 8px;
-      text-decoration: none; transition: opacity 0.2s ease;
+    .instrument-link {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--teal);
+      text-decoration: none;
       letter-spacing: 0.02em;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.3s ease, opacity 0.2s ease;
     }
 
-    .path-cta:hover { opacity: 0.85; }
+    .instrument-link:hover { gap: 10px; opacity: 0.8; }
 
     /* ==========================================
        SUBPAGE FOOTER
@@ -487,9 +380,9 @@
     </a>
 
     <ul class="nav-links" id="nav-links">
-      <li><a href="/work.html" class="nav-link">The Work</a></li>
-      <li><a href="/join.html" class="nav-link active">Join</a></li>
-      <li><a href="/#fund" class="nav-link">Fund</a></li>
+      <li><a href="/work.html" class="nav-link active">The Work</a></li>
+      <li><a href="/join.html" class="nav-link">Join</a></li>
+      <li><a href="/fund.html" class="nav-link">Fund</a></li>
       <li>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
           <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -517,91 +410,40 @@
       <div class="breadcrumb reveal">
         <a href="/">Polarity Lab</a>
         <span>/</span>
-        <span>Join the Lab</span>
+        <span>The Work</span>
       </div>
-      <span class="subpage-eyebrow reveal">Join the Lab</span>
-      <h1 class="subpage-title reveal">Bring a product. We'll show you the research. Bring research. We'll show you the product.</h1>
-      <p class="subpage-subtitle reveal">Most projects only have one. Polarity Lab builds the other.</p>
+      <h1 class="subpage-title reveal">One investigation.<br>What does a human look like when the compliance apparatus is removed?</h1>
     </div>
 
-    <!-- THREE PATHS -->
-    <section class="paper-section">
-      <p class="paper-section-label reveal">Three paths</p>
-      <h2 class="paper-section-title reveal">Three ways to show up.</h2>
-      <div class="paths-grid">
+    <!-- INSTRUMENTS -->
+    <section class="instruments-section">
+      <div class="instruments-grid">
 
-        <!-- PATH 1: BRING A PROJECT -->
-        <div class="path-card reveal">
-          <p class="path-card-number">Path 01</p>
-          <h3 class="path-card-title">Bring a Project</h3>
-          <p class="path-card-tagline">You have something real, a product, a research program, or both, that belongs in this lab. You want infrastructure, IP protection, legal support, a network, and a model that pays you without giving away permanent equity.</p>
-
-          <p class="path-card-section-label">What the lab looks for</p>
-          <ul class="path-card-list">
-            <li>Research with a product path, or a product that needs a research layer</li>
-            <li>An MVP or working prototype. The lab strengthens projects, it doesn't build them from scratch.</li>
-            <li>A named domain lead who will run it</li>
-            <li>No geographic constraint</li>
-          </ul>
-
-          <p class="path-card-section-label">What the lab provides</p>
-          <ul class="path-card-list">
-            <li>Legal and IP infrastructure</li>
-            <li>Cross-project collaboration — your project benefits from every other project in the lab</li>
-            <li>The disbursement model: 15% to lab, you keep the leading majority of what you build</li>
-            <li>Network and institutional relationships</li>
-          </ul>
-
-          <p class="path-card-section-label">How to apply</p>
-          <p class="path-card-tagline" style="margin-bottom:0;">Short written application. Include a one-line description, which field it fits (or whether it opens a new one), a link to your MVP, and what you need from the lab. Email to team@polarity-lab.com with subject "Project Application: [Project Name]".</p>
-
-          <div class="path-card-footer">
-            <a href="mailto:team@polarity-lab.com?subject=Project%20Application" class="path-cta">Apply to bring a project →</a>
-          </div>
+        <div class="instrument-block reveal">
+          <h2 class="instrument-name">AVDP</h2>
+          <p class="instrument-desc">Film is where performance identity is most visible. This series puts people in environments designed to drop the filter.</p>
+          <a href="/research/avdp.html" class="instrument-link">View project →</a>
         </div>
 
-        <!-- PATH 2: JOIN A PROJECT -->
-        <div class="path-card reveal">
-          <p class="path-card-number">Path 02</p>
-          <h3 class="path-card-title">Join a Project</h3>
-          <p class="path-card-tagline">You want to work on problems that actually matter, with a team that takes the work seriously. Open roles are listed on each project page. Reach out directly or apply through the project.</p>
-
-          <p class="path-card-note">Contribution is weighted by your involvement level and reviewed quarterly. Disbursement starts after each project hits its 3–6 month runway threshold.</p>
-
-          <div class="path-card-footer">
-            <a href="/#research" class="path-cta">See open roles →</a>
-          </div>
+        <div class="instrument-block reveal" style="transition-delay: 0.08s;">
+          <h2 class="instrument-name">WAXFEED</h2>
+          <p class="instrument-desc">Your taste gets shaped by what the systems around you reward. WAXFEED measures the cognitive signature underneath: what you actually are, not what you've been trained to prefer.</p>
+          <a href="/research/wax-feed.html" class="instrument-link">View project →</a>
         </div>
 
-        <!-- PATH 3: BACK A PROJECT -->
-        <div class="path-card reveal">
-          <p class="path-card-number">Path 03</p>
-          <h3 class="path-card-title">Back a Project</h3>
-          <p class="path-card-tagline">You believe in something before it's obvious. Gift-tier backing ($10–$999) earns perks: founding credits, physical artifacts from the work. For deeper financial involvement, reach out to the team directly.</p>
+        <div class="instrument-block reveal" style="transition-delay: 0.16s;">
+          <h2 class="instrument-name">INTEGRITY DELTA</h2>
+          <p class="instrument-desc">Clinical AI was trained to be agreeable. It learned to filter correct answers through acceptable ones. Integrity Delta measures the gap.</p>
+          <a href="/research/integrity-delta.html" class="instrument-link">View project →</a>
+        </div>
 
-          <p class="path-card-section-label">Gift tiers</p>
-          <ul class="path-card-list">
-            <li>$10–$99 — Founding credit on the project</li>
-            <li>$100–$499 — Founding credit plus physical artifact from the work</li>
-            <li>$500–$999 — Above plus early access to project outputs</li>
-            <li>$1,000+ — Reach out directly to discuss</li>
-          </ul>
-
-          <p class="path-card-note">For deeper financial involvement or institutional backing, email team@polarity-lab.com directly.</p>
-
-          <div class="path-card-footer">
-            <a href="/#fund" class="path-cta">See what's open →</a>
-          </div>
+        <div class="instrument-block reveal" style="transition-delay: 0.24s;">
+          <h2 class="instrument-name">POLARITY GPS</h2>
+          <p class="instrument-desc">Who you know is downstream of how well you've performed belonging. Polarity GPS maps what gets hidden when discovery infrastructure sorts by conformity.</p>
+          <a href="/research/polaritygps.html" class="instrument-link">View project →</a>
         </div>
 
       </div>
-    </section>
-
-    <!-- CLOSING SINK -->
-    <section class="paper-section reveal" style="border-bottom:none;text-align:center;padding-top:64px;padding-bottom:100px;">
-      <p style="font-size:clamp(20px,2.8vw,28px);font-weight:700;color:var(--text-pure);max-width:560px;margin:0 auto 16px;font-family:var(--font-display);letter-spacing:-0.01em;line-height:1.2;">You already know which of these is you.</p>
-      <p style="font-size:16px;color:var(--text-secondary);max-width:440px;margin:0 auto 32px;line-height:1.7;">The first step is the same for all three. Send an email. We'll take it from there.</p>
-      <a href="mailto:team@polarity-lab.com" style="font-family:var(--font-display);font-size:14px;font-weight:700;color:var(--teal);text-decoration:none;letter-spacing:0.04em;">team@polarity-lab.com →</a>
     </section>
 
     <!-- FOOTER -->
@@ -637,16 +479,6 @@
     const navLinks = document.getElementById('nav-links');
     navMobile?.addEventListener('click', () => {
       navLinks.classList.toggle('open');
-    });
-
-    const researchDropdownBtn = document.getElementById('research-dropdown-btn');
-    const researchDropdownItem = researchDropdownBtn?.closest('.nav-item--dropdown');
-    researchDropdownBtn?.addEventListener('click', (e) => {
-      e.stopPropagation();
-      researchDropdownItem.classList.toggle('open');
-    });
-    document.addEventListener('click', () => {
-      researchDropdownItem?.classList.remove('open');
     });
 
     const observer = new IntersectionObserver((entries) => {
