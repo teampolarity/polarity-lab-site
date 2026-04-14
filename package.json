@@ -10,7 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "astro build && CLOUDFLARE_API_TOKEN=cfut_2uHZPJeFKFI5dh2qR0nmDLIjG0YNC99rYUt0MKFNea7afad4 npx wrangler pages deploy dist/ --project-name polarity-site"
+    "deploy": "astro build && npx wrangler pages deploy dist/ --project-name polarity-site"
   },
   "dependencies": {
     "astro": "^6.1.6"

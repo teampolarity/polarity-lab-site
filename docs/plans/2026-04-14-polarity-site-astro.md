@@ -2243,7 +2243,7 @@ cat .wrangler/cache/pages.json 2>/dev/null | head -20
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "deploy": "astro build && CLOUDFLARE_API_TOKEN=cfut_vAbpkApD6sclTYEPK0t9E0j02eIBZV8Bx0otnHgm0c2447ea npx wrangler pages deploy dist/ --project-name polarity-site"
+    "deploy": "astro build && npx wrangler pages deploy dist/ --project-name polarity-site"
   }
 }
 ```
