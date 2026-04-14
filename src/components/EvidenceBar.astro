@@ -1,0 +1,65 @@
+---
+// src/components/EvidenceBar.astro
+import type { EvidenceState } from '../data/projects';
+
+interface Props {
+  state: EvidenceState;
+  label: string;
+}
+
+const { state, label } = Astro.props;
+---
+<div class:list={['evidence-bar', state]}>
+  <span class="indicator" aria-hidden="true"></span>
+  <span class="label">{label}</span>
+</div>
+
+<style>
+  .evidence-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+    border: 1px solid var(--border-ghost);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+  }
+
+  .indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--text-ghost);
+    flex-shrink: 0;
+  }
+
+  /* State-specific colors */
+  .observability-pilot {
+    border-color: rgba(78, 205, 196, 0.2);
+  }
+  .observability-pilot .indicator {
+    background: var(--teal);
+  }
+  .observability-pilot .label {
+    color: var(--teal-deep);
+  }
+
+  .platform-live-study-pending {
+    border-color: rgba(187, 143, 206, 0.2);
+  }
+  .platform-live-study-pending .indicator {
+    background: var(--purple);
+  }
+  .platform-live-study-pending .label {
+    color: var(--purple);
+  }
+
+  .design-iteration {
+    border-color: var(--border-ghost);
+  }
+  .design-iteration .indicator {
+    background: var(--text-ghost);
+  }
+</style>
