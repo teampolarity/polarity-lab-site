@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import Base from '../../../layouts/Base.astro';
+import LabBase from '../../../layouts/LabBase.astro';
 
 export async function getStaticPaths() {
   const roles = await getCollection('roles');
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
-<Base title={entry.data.title} description={`${entry.data.title} — Polarity Lab`}>
+<LabBase title={entry.data.title} description={`${entry.data.title} — Polarity Lab`}>
   <div class="gate" id="gate">
     <form id="gate-form" autocomplete="off">
       <label for="gate-input">Polarity Lab</label>
@@ -33,7 +33,7 @@ const { Content } = await render(entry);
       <Content />
     </div>
   </div>
-</Base>
+</LabBase>
 
 <style>
   /* Gate */

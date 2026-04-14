@@ -1,7 +1,7 @@
 ---
-import Base from '../layouts/Base.astro';
+import LabBase from '../layouts/LabBase.astro';
 ---
-<Base title="Lab" description="Polarity Lab internal overview.">
+<LabBase title="Lab" description="Polarity Lab internal overview.">
   <div class="gate" id="gate">
     <form id="gate-form" autocomplete="off">
       <svg class="gate-logo" viewBox="0 0 100 100" aria-hidden="true">
@@ -30,7 +30,7 @@ import Base from '../layouts/Base.astro';
 
   <div class="lab-content" id="lab-content" hidden>
     <div class="lab-header">
-      <h1>Polarity Lab HQ</h1>
+      <h1>Polarity HQ</h1>
       <p class="lab-subtitle">Internal — April 2026</p>
     </div>
 
@@ -70,161 +70,47 @@ import Base from '../layouts/Base.astro';
           </div>
         </div>
 
-        <!-- Queue by person -->
-        <div class="queues">
+        <!-- Notices -->
+        <div class="notices">
 
-          <div class="queue-card">
-            <div class="queue-header">
-              <span class="queue-name">Theodore</span>
-              <span class="queue-role">Founder + Domain Lead, Integrity Delta</span>
+          <div class="notice notice--urgent">
+            <span class="notice-tag">Today 3:30pm</span>
+            <div class="notice-body">
+              <p class="notice-title">1517 Fund meeting</p>
+              <p class="notice-desc">Theodore leads. Core ask: capital for the IΔ validation study and first proof contract. If you are in the room, support only. <a href="/lab/pitch-1517">Pitch doc and meeting prep</a>.</p>
             </div>
-            <p class="queue-note">Two roles, one person. As Founder, Theodore holds the methodology, the research agenda, and institutional approval. As IΔ Domain Lead, he directs the validation study and holds the research question. Neither role runs first meetings or manages financial conversations. That is Nathan's function.</p>
-            <ul class="queue-list">
-              <li>
-                <span class="q-tag q-tag--urgent">First</span>
-                <span class="q-text">Lock IΔ instrument specification: four operational parameters (valid case definition, gap score calculation, suppression profile characterization, assessment report format). Everything downstream depends on this being settled.</span>
-              </li>
-              <li>
-                <span class="q-tag q-tag--urgent">60 days</span>
-                <span class="q-text">Write 2-3 page technical briefing for patent counsel on 63/940,728 (cognitive biometric authentication). Deadline: December 2026. Legal drives from there once the briefing exists.</span>
-              </li>
-              <li>
-                <span class="q-tag q-tag--urgent">60 days</span>
-                <span class="q-text">Write technical disclosure for defensive publication of 63/960,633 (Conversational Connectomics). Legal coordinates Research Disclosure submission after.</span>
-              </li>
-              <li>
-                <span class="q-tag">Parallel</span>
-                <span class="q-text">Build IΔ assessment report sample from pilot data. Most important sales artifact for the first proof contract. A buyer needs to see what they're getting before they sign.</span>
-              </li>
-              <li>
-                <span class="q-tag">After spec</span>
-                <span class="q-text">Write validation study protocol: case set, models to test, adversarial pressure conditions, statistical framework, timeline.</span>
-              </li>
-              <li>
-                <span class="q-tag">Unblocks Nathan</span>
-                <span class="q-text">Define what a qualified IΔ prospect looks like: what problem, what scale, what makes a buyer real versus curious. Write it down and hand to Nathan. Nathan runs outreach.</span>
-              </li>
-              <li>
-                <span class="q-tag">Unblocks Nathan</span>
-                <span class="q-text">Brief Nathan on the IΔ pilot data and what the lab needs from an academic co-PI. Nathan identifies specific faculty and runs the first meeting. Theodore re-engages when someone is genuinely interested.</span>
-              </li>
-              <li>
-                <span class="q-tag">Review</span>
-                <span class="q-text">Review and approve scientific framing of Knight Foundation LOI before Nathan submits. Nathan drafts, Theodore approves.</span>
-              </li>
-            </ul>
           </div>
 
-          <div class="queue-card">
-            <div class="queue-header">
-              <span class="queue-name">Nathan</span>
-              <span class="queue-role">Director of Strategy and Partnerships</span>
+          <div class="notice">
+            <span class="notice-tag">This phase</span>
+            <div class="notice-body">
+              <p class="notice-title">IΔ first proof contract is the unlock</p>
+              <p class="notice-desc">Everything else sequences behind it. Pilot is done (n=5). Validation study protocol and instrument spec are the immediate deliverables. Nothing else gets prioritized above this.</p>
             </div>
-            <p class="queue-note">Nathan runs first meetings, builds relationships, drafts grant applications, and owns financial believer conversations. He does not direct research or define what the instruments measure. Tasks below activate as founder briefs unblock them.</p>
-            <ul class="queue-list">
-              <li>
-                <span class="q-tag">Active now</span>
-                <span class="q-text">Draft Knight Foundation LOI from existing outline — <a href="/lab/grants/knight-gps-outline">view full outline</a>. Founder reviews scientific framing before submission. Target: 60 days.</span>
-              </li>
-              <li>
-                <span class="q-tag">Active now</span>
-                <span class="q-text">Get collaborator agreements in place before anything else formalizes. Work with legal. Map who has one, get outstanding ones drafted and signed.</span>
-              </li>
-              <li>
-                <span class="q-tag">Needs brief</span>
-                <span class="q-text">Identify 2-3 Brown Psychiatry or Lifespan faculty for co-PI outreach. Run the first 30-minute meeting. Brief founder when someone is genuinely interested in co-authorship and co-PI credit.</span>
-              </li>
-              <li>
-                <span class="q-tag">Needs brief</span>
-                <span class="q-text">Start IΔ prospect identification and qualification conversations. Bring the founder in when a prospect is ready for a close. Nathan qualifies. Founder closes.</span>
-              </li>
-              <li>
-                <span class="q-tag">Groundwork</span>
-                <span class="q-text">Understand how 1517 Fund engages and what the lab needs in place before that conversation. First proof contract should come first. This is not yet an action item, but needs a clear picture of what "ready" means.</span>
-              </li>
-              <li>
-                <span class="q-tag">Groundwork</span>
-                <span class="q-text">Map Providence community organizations for GPS partnerships. GPS needs local density before the formal study design is meaningful. MUSEOFRI and GOODhumanz are in place. Who else?</span>
-              </li>
-            </ul>
           </div>
 
-          <div class="queue-card queue-card--blocked">
-            <div class="queue-header">
-              <span class="queue-name">Lab Manager</span>
-              <span class="queue-role queue-role--open">Open — contact Theodore</span>
+          <div class="notice">
+            <span class="notice-tag">In progress</span>
+            <div class="notice-body">
+              <p class="notice-title">Collaborator agreements</p>
+              <p class="notice-desc">Nathan is tracking who has a signed agreement and who does not. Nothing else formalizes until this is complete. If you have not signed, expect outreach from Nathan.</p>
             </div>
-            <p class="queue-note">Operational layer. Not filled yet. Theodore is the interim point of contact for anything this role would handle. When filled, this person takes the operational load off everyone else so they can do what they're here to do.</p>
-            <ul class="queue-list">
-              <li>
-                <span class="q-tag q-tag--blocked">On hold</span>
-                <span class="q-text">Map who has a collaborator agreement and who does not. Close the gaps with legal. Nothing else formalizes until this is done.</span>
-              </li>
-              <li>
-                <span class="q-tag q-tag--blocked">On hold</span>
-                <span class="q-text">Define quarterly review format. Run the first review for each active project. This is the function that keeps the founder informed without four separate conversations.</span>
-              </li>
-              <li>
-                <span class="q-tag q-tag--blocked">On hold</span>
-                <span class="q-text">Build disbursement readiness picture per project: runway threshold, current runway, trajectory. Should be reportable in one conversation without looking things up.</span>
-              </li>
-              <li>
-                <span class="q-tag q-tag--blocked">On hold</span>
-                <span class="q-text">Document the onboarding sequence so it is repeatable. What each new person reads, signs, and gets access to. Who confirms it is done.</span>
-              </li>
-            </ul>
           </div>
 
-          <div class="queue-card">
-            <div class="queue-header">
-              <span class="queue-name">Shadrack</span>
-              <span class="queue-role">Technical Director + Domain Lead, WAXFEED</span>
+          <div class="notice">
+            <span class="notice-tag">60 days</span>
+            <div class="notice-body">
+              <p class="notice-title">Knight Foundation LOI</p>
+              <p class="notice-desc">Nathan is drafting from the GPS grant outline. Theodore reviews scientific framing before submission. <a href="/lab/grants/knight-gps-outline">View full outline</a>.</p>
             </div>
-            <p class="queue-note">Two roles, one person. As Technical Director, Shadrack holds the shared infrastructure and technical viability across all projects. As WAXFEED Domain Lead, he holds the research question and drives the platform. These are not in tension. Building WAXFEED is how the technical thinking develops.</p>
-            <ul class="queue-list">
-              <li>
-                <span class="q-tag q-tag--urgent">First</span>
-                <span class="q-text">Define the WAXFEED instrument precisely: what an authentic taste response is as distinct from a conditioned one, how the platform distinguishes genuine preference from habituated engagement, what the gap is measured against, and what closing it looks like in the data.</span>
-              </li>
-              <li>
-                <span class="q-tag">Parallel</span>
-                <span class="q-text">Get the WAXFEED prototype to instrument-ready state: capable of generating behavioral data the instrument can actually run on. That's the threshold that makes the research claim credible.</span>
-              </li>
-              <li>
-                <span class="q-tag">Parallel</span>
-                <span class="q-text">Establish shared infrastructure baseline across all four projects: deployment, authentication, instrument data recording. Do this before individual projects build their own versions and create conflicts.</span>
-              </li>
-              <li>
-                <span class="q-tag">Parallel</span>
-                <span class="q-text">Define IΔ technical validation pipeline architecture: how to process clinical cases, record intermediate layer activations, and generate signed gap metrics reliably at validation study scale.</span>
-              </li>
-              <li>
-                <span class="q-tag">Brief Nathan</span>
-                <span class="q-text">Map music cognition researchers and information systems faculty doing adjacent work. What behavioral data licensing conversations would require. Which academic affiliations strengthen the instrument's credibility. Hand this to Nathan. Nathan runs the first outreach.</span>
-              </li>
-              <li>
-                <span class="q-tag">Infrastructure</span>
-                <span class="q-text">Define behavioral data architecture and privacy/consent framework for WAXFEED before any institutional data licensing conversations happen. This is a precondition for that revenue path.</span>
-              </li>
-            </ul>
           </div>
 
-          <div class="queue-card queue-card--blocked">
-            <div class="queue-header">
-              <span class="queue-name">Theodore</span>
-              <span class="queue-role">Domain Lead, GPS + AVDP</span>
+          <div class="notice notice--open">
+            <span class="notice-tag">Open roles</span>
+            <div class="notice-body">
+              <p class="notice-title">GPS Domain Lead, AVDP Domain Lead, Lab Manager</p>
+              <p class="notice-desc">Three roles without a home. The lab is not actively recruiting until IΔ closes its first contract, but the right person is welcome to reach out. Contact Theodore.</p>
             </div>
-            <p class="queue-note">Theodore holds both programs until the right co-builders come in. These are co-builder roles with defined economics, not research assistant roles. The right person recognizes what the lab is describing because they have already encountered it.</p>
-            <ul class="queue-list">
-              <li>
-                <span class="q-tag q-tag--blocked">GPS</span>
-                <span class="q-text">Platform live, community partnerships in place, grant outline done. Domain lead takes the program from here to formal study. Requires lived experience of being invisible to the infrastructure that should see you.</span>
-              </li>
-              <li>
-                <span class="q-tag q-tag--blocked">AVDP</span>
-                <span class="q-text">Counter-format designed, proof-of-concept footage exists. Domain lead designs the matched conventional condition study and owns trained rater calibration. Requires lived experience of authentic expression being suppressed by a conventional format.</span>
-              </li>
-            </ul>
           </div>
 
         </div>
@@ -234,7 +120,7 @@ import Base from '../layouts/Base.astro';
       <!-- ROLES -->
       <section class="tab-panel" id="panel-roles" role="tabpanel" hidden>
 
-        <p class="roles-intro">Every role in the lab. Expand any row for scope. For current task queues, see the Now tab.</p>
+        <p class="roles-intro">Every role in the lab. Expand any row for scope and links to full role documentation.</p>
 
         <div class="role-group">
           <span class="role-group-label">Lab-level</span>
@@ -565,7 +451,7 @@ import Base from '../layouts/Base.astro';
 
     </div>
   </div>
-</Base>
+</LabBase>
 
 <style>
   /* Gate */
@@ -658,9 +544,9 @@ import Base from '../layouts/Base.astro';
     color: var(--text-ghost);
   }
 
-  /* Tabs */
+  /* Tabs — hidden, navigation handled by LabBase nav */
   .tabs {
-    display: flex;
+    display: none;
     gap: 0;
     border-bottom: 1px solid var(--border-ghost);
     margin-bottom: 2.5rem;
@@ -747,102 +633,61 @@ import Base from '../layouts/Base.astro';
     color: var(--text-tertiary);
   }
 
-  /* Queue cards */
-  .queues {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-
-  .queue-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid var(--border-ghost);
-  }
-
-  .queue-card:last-child {
-    border-bottom: none;
-  }
-
-  .queue-card--blocked {
-    opacity: 0.6;
-  }
-
-  .queue-header {
-    display: flex;
-    align-items: baseline;
-    gap: 0.875rem;
-    flex-wrap: wrap;
-  }
-
-  .queue-name {
-    font-family: var(--font-display);
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-pure);
-  }
-
-  .queue-role {
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    color: var(--teal);
-  }
-
-  .queue-role--open {
-    color: var(--text-ghost);
-  }
-
-  .queue-note {
-    font-size: 0.875rem;
-    line-height: 1.65;
-    color: var(--text-tertiary);
-    font-style: italic;
-  }
-
-  .queue-list {
-    list-style: none;
+  /* Notices */
+  .notices {
     display: flex;
     flex-direction: column;
     gap: 1px;
     background: var(--border-ghost);
   }
 
-  .queue-list li {
-    background: var(--void-deep);
-    padding: 0.875rem 1.25rem;
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
+  .notice {
+    background: var(--void-elevated);
+    padding: 1.25rem 1.5rem;
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 1.5rem;
+    align-items: start;
   }
 
-  .q-tag {
+  .notice--urgent {
+    background: rgba(255, 107, 107, 0.04);
+  }
+
+  .notice--open {
+    opacity: 0.6;
+  }
+
+  .notice-tag {
     font-family: var(--font-mono);
     font-size: 0.6875rem;
-    color: var(--text-ghost);
     text-transform: uppercase;
     letter-spacing: 0.07em;
-    flex-shrink: 0;
-    width: 120px;
-    padding-top: 0.1rem;
+    color: var(--text-ghost);
+    padding-top: 0.15rem;
     line-height: 1.4;
   }
 
-  .q-tag--urgent {
+  .notice--urgent .notice-tag {
     color: var(--coral);
   }
 
-  .q-tag--blocked {
-    color: var(--text-ghost);
-    opacity: 0.5;
+  .notice-title {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-pure);
+    margin-bottom: 0.375rem;
   }
 
-  .q-text {
+  .notice-desc {
     font-size: 0.875rem;
     line-height: 1.65;
     color: var(--text-secondary);
   }
+
+  .notice-desc a { color: var(--teal); }
+  .notice-desc a:hover { color: var(--teal-bright); }
 
   /* Shared list styles */
   .task-list {
@@ -1322,14 +1167,29 @@ import Base from '../layouts/Base.astro';
   const tabs = document.querySelectorAll<HTMLButtonElement>('.tab');
   const panels = document.querySelectorAll<HTMLElement>('.tab-panel');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.dataset.tab;
-      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
-      panels.forEach(p => p.setAttribute('hidden', ''));
+  function activateTab(target: string) {
+    tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+    panels.forEach(p => p.setAttribute('hidden', ''));
+    const tab = document.querySelector<HTMLButtonElement>(`.tab[data-tab="${target}"]`);
+    if (tab) {
       tab.classList.add('active');
       tab.setAttribute('aria-selected', 'true');
-      document.getElementById(`panel-${target}`)?.removeAttribute('hidden');
+    }
+    document.getElementById(`panel-${target}`)?.removeAttribute('hidden');
+    document.dispatchEvent(new CustomEvent('lab:tabchange', { detail: target }));
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab!;
+      history.replaceState(null, '', `#${target}`);
+      activateTab(target);
     });
   });
+
+  // Activate tab from hash on load
+  const hash = window.location.hash.replace('#', '');
+  if (hash && document.querySelector(`.tab[data-tab="${hash}"]`)) {
+    activateTab(hash);
+  }
 </script>

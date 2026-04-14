@@ -1,0 +1,176 @@
+---
+// src/pages/now.astro
+import Base from '../layouts/Base.astro';
+---
+<Base title="Now" description="What Polarity Lab is focused on right now.">
+  <div class="now-page">
+    <div class="now-header">
+      <p class="now-label">Now</p>
+      <p class="now-date">April 2026</p>
+    </div>
+
+    <div class="now-body">
+
+      <section class="now-section">
+        <h2>Primary focus</h2>
+        <p>
+          Closing the first Integrity Delta proof contract. The IΔ pilot is complete: five cases,
+          measurable at the layer level, showing clinical AI suppressing its own correct diagnosis
+          under adversarial pressure. The next step is a validation study at scale, which produces
+          the paper, plants the citation trail, and makes the methodology credible to institutional buyers.
+        </p>
+        <p>
+          Every other resource decision at the lab is downstream of this one milestone.
+        </p>
+      </section>
+
+      <section class="now-section">
+        <h2>Active instruments</h2>
+        <ul>
+          <li>
+            <strong>Integrity Delta</strong> — pilot complete. Validation study design in progress.
+            First assessment target identified.
+          </li>
+          <li>
+            <strong>Cosmos</strong> — running. The counter-environment for executive function is
+            operational. Ongoing as both a working tool and the proof-of-concept for the return.
+          </li>
+          <li>
+            <strong>Proximity Index</strong> — methodology in development for Providence.
+            Architecture work with Shadrack ongoing.
+          </li>
+          <li>
+            <strong>WAXFEED</strong> — pre-launch audience and architecture phase.
+          </li>
+        </ul>
+      </section>
+
+      <section class="now-section">
+        <h2>Team</h2>
+        <p>
+          Theodore Addo, founder. Shadrack Annor, technical director and WAXFEED domain lead.
+          Nathan, director of strategy and partnerships. Roles formalized with documented
+          scope and compensation structure.
+        </p>
+      </section>
+
+      <section class="now-section">
+        <h2>What is not happening</h2>
+        <p>
+          No fundraising for the sake of fundraising. No pivots. No expansion of scope before the
+          first IΔ contract closes. The lab is not a startup optimizing for growth — it is a
+          research lab proving a methodology, one instrument at a time.
+        </p>
+      </section>
+
+    </div>
+
+    <p class="now-footer">
+      This page follows the <a href="https://nownownow.com/about" target="_blank" rel="noopener">now page convention</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .now-page {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 5rem 2rem 6rem;
+  }
+
+  .now-header {
+    margin-bottom: 3rem;
+  }
+
+  .now-label {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 600;
+    color: var(--text-pure);
+    letter-spacing: -0.03em;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .now-date {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-ghost);
+    letter-spacing: 0.05em;
+  }
+
+  .now-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .now-section h2 {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 0.875rem;
+  }
+
+  .now-section p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .now-section p:last-child { margin-bottom: 0; }
+
+  .now-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .now-section li {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .now-section li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--text-ghost);
+    font-family: var(--font-mono);
+  }
+
+  .now-section strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .now-footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-ghost);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-ghost);
+  }
+
+  .now-footer a {
+    color: var(--text-ghost);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .now-footer a:hover { color: var(--teal); }
+
+  @media (max-width: 640px) {
+    .now-page { padding: 3rem 1.25rem 4rem; }
+  }
+</style>
