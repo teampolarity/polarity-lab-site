@@ -1,0 +1,1335 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Lab" description="Polarity Lab internal overview.">
+  <div class="gate" id="gate">
+    <form id="gate-form" autocomplete="off">
+      <svg class="gate-logo" viewBox="0 0 100 100" aria-hidden="true">
+        <defs>
+          <radialGradient id="gateGrad" cx="30%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#6EE7DF"/>
+            <stop offset="50%" stop-color="#4ECDC4"/>
+            <stop offset="100%" stop-color="#2BA89F"/>
+          </radialGradient>
+          <filter id="gateGlow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#4ECDC4" stroke-width="1.5" transform="rotate(-60 50 50)" filter="url(#gateGlow)" opacity="0.9"/>
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" filter="url(#gateGlow)" opacity="0.9"/>
+        <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" filter="url(#gateGlow)" opacity="0.9"/>
+        <circle cx="50" cy="50" r="14" fill="url(#gateGrad)" filter="url(#gateGlow)"/>
+        <circle cx="45" cy="45" r="5" fill="white" opacity="0.25"/>
+      </svg>
+      <label for="gate-input">Polarity Lab</label>
+      <input type="password" id="gate-input" placeholder="Access code" autocomplete="new-password" />
+      <p class="gate-error" id="gate-error" aria-live="polite"></p>
+    </form>
+  </div>
+
+  <div class="lab-content" id="lab-content" hidden>
+    <div class="lab-header">
+      <h1>Polarity Lab HQ</h1>
+      <p class="lab-subtitle">Internal — April 2026</p>
+    </div>
+
+    <nav class="tabs" role="tablist">
+      <button class="tab active" data-tab="now" role="tab" aria-selected="true">Now</button>
+      <button class="tab" data-tab="roles" role="tab" aria-selected="false">Roles</button>
+      <button class="tab" data-tab="grants" role="tab" aria-selected="false">Grants</button>
+      <button class="tab" data-tab="context" role="tab" aria-selected="false">Context</button>
+    </nav>
+
+    <div class="tab-panels">
+
+      <!-- NOW -->
+      <section class="tab-panel active" id="panel-now" role="tabpanel">
+
+        <!-- Program status strip -->
+        <div class="status-strip">
+          <div class="status-row">
+            <span class="status-program">Integrity Delta</span>
+            <span class="status-chip chip-teal">Observability confirmed</span>
+            <span class="status-next">Next: first proof contract + validation study protocol</span>
+          </div>
+          <div class="status-row">
+            <span class="status-program">Polarity GPS</span>
+            <span class="status-chip chip-purple">Platform live, study pending</span>
+            <span class="status-next">Next: Knight Foundation LOI (60 days)</span>
+          </div>
+          <div class="status-row">
+            <span class="status-program">WAXFEED</span>
+            <span class="status-chip chip-ghost">In development</span>
+            <span class="status-next">Shadrack: instrument spec + prototype</span>
+          </div>
+          <div class="status-row">
+            <span class="status-program">AVDP</span>
+            <span class="status-chip chip-ghost">In development</span>
+            <span class="status-next">Waiting on domain lead</span>
+          </div>
+        </div>
+
+        <!-- Queue by person -->
+        <div class="queues">
+
+          <div class="queue-card">
+            <div class="queue-header">
+              <span class="queue-name">Theodore</span>
+              <span class="queue-role">Founder + Domain Lead, Integrity Delta</span>
+            </div>
+            <p class="queue-note">Two roles, one person. As Founder, Theodore holds the methodology, the research agenda, and institutional approval. As IΔ Domain Lead, he directs the validation study and holds the research question. Neither role runs first meetings or manages financial conversations. That is Nathan's function.</p>
+            <ul class="queue-list">
+              <li>
+                <span class="q-tag q-tag--urgent">First</span>
+                <span class="q-text">Lock IΔ instrument specification: four operational parameters (valid case definition, gap score calculation, suppression profile characterization, assessment report format). Everything downstream depends on this being settled.</span>
+              </li>
+              <li>
+                <span class="q-tag q-tag--urgent">60 days</span>
+                <span class="q-text">Write 2-3 page technical briefing for patent counsel on 63/940,728 (cognitive biometric authentication). Deadline: December 2026. Legal drives from there once the briefing exists.</span>
+              </li>
+              <li>
+                <span class="q-tag q-tag--urgent">60 days</span>
+                <span class="q-text">Write technical disclosure for defensive publication of 63/960,633 (Conversational Connectomics). Legal coordinates Research Disclosure submission after.</span>
+              </li>
+              <li>
+                <span class="q-tag">Parallel</span>
+                <span class="q-text">Build IΔ assessment report sample from pilot data. Most important sales artifact for the first proof contract. A buyer needs to see what they're getting before they sign.</span>
+              </li>
+              <li>
+                <span class="q-tag">After spec</span>
+                <span class="q-text">Write validation study protocol: case set, models to test, adversarial pressure conditions, statistical framework, timeline.</span>
+              </li>
+              <li>
+                <span class="q-tag">Unblocks Nathan</span>
+                <span class="q-text">Define what a qualified IΔ prospect looks like: what problem, what scale, what makes a buyer real versus curious. Write it down and hand to Nathan. Nathan runs outreach.</span>
+              </li>
+              <li>
+                <span class="q-tag">Unblocks Nathan</span>
+                <span class="q-text">Brief Nathan on the IΔ pilot data and what the lab needs from an academic co-PI. Nathan identifies specific faculty and runs the first meeting. Theodore re-engages when someone is genuinely interested.</span>
+              </li>
+              <li>
+                <span class="q-tag">Review</span>
+                <span class="q-text">Review and approve scientific framing of Knight Foundation LOI before Nathan submits. Nathan drafts, Theodore approves.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="queue-card">
+            <div class="queue-header">
+              <span class="queue-name">Nathan</span>
+              <span class="queue-role">Director of Strategy and Partnerships</span>
+            </div>
+            <p class="queue-note">Nathan runs first meetings, builds relationships, drafts grant applications, and owns financial believer conversations. He does not direct research or define what the instruments measure. Tasks below activate as founder briefs unblock them.</p>
+            <ul class="queue-list">
+              <li>
+                <span class="q-tag">Active now</span>
+                <span class="q-text">Draft Knight Foundation LOI from existing outline — <a href="/lab/grants/knight-gps-outline">view full outline</a>. Founder reviews scientific framing before submission. Target: 60 days.</span>
+              </li>
+              <li>
+                <span class="q-tag">Active now</span>
+                <span class="q-text">Get collaborator agreements in place before anything else formalizes. Work with legal. Map who has one, get outstanding ones drafted and signed.</span>
+              </li>
+              <li>
+                <span class="q-tag">Needs brief</span>
+                <span class="q-text">Identify 2-3 Brown Psychiatry or Lifespan faculty for co-PI outreach. Run the first 30-minute meeting. Brief founder when someone is genuinely interested in co-authorship and co-PI credit.</span>
+              </li>
+              <li>
+                <span class="q-tag">Needs brief</span>
+                <span class="q-text">Start IΔ prospect identification and qualification conversations. Bring the founder in when a prospect is ready for a close. Nathan qualifies. Founder closes.</span>
+              </li>
+              <li>
+                <span class="q-tag">Groundwork</span>
+                <span class="q-text">Understand how 1517 Fund engages and what the lab needs in place before that conversation. First proof contract should come first. This is not yet an action item, but needs a clear picture of what "ready" means.</span>
+              </li>
+              <li>
+                <span class="q-tag">Groundwork</span>
+                <span class="q-text">Map Providence community organizations for GPS partnerships. GPS needs local density before the formal study design is meaningful. MUSEOFRI and GOODhumanz are in place. Who else?</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="queue-card queue-card--blocked">
+            <div class="queue-header">
+              <span class="queue-name">Lab Manager</span>
+              <span class="queue-role queue-role--open">Open — contact Theodore</span>
+            </div>
+            <p class="queue-note">Operational layer. Not filled yet. Theodore is the interim point of contact for anything this role would handle. When filled, this person takes the operational load off everyone else so they can do what they're here to do.</p>
+            <ul class="queue-list">
+              <li>
+                <span class="q-tag q-tag--blocked">On hold</span>
+                <span class="q-text">Map who has a collaborator agreement and who does not. Close the gaps with legal. Nothing else formalizes until this is done.</span>
+              </li>
+              <li>
+                <span class="q-tag q-tag--blocked">On hold</span>
+                <span class="q-text">Define quarterly review format. Run the first review for each active project. This is the function that keeps the founder informed without four separate conversations.</span>
+              </li>
+              <li>
+                <span class="q-tag q-tag--blocked">On hold</span>
+                <span class="q-text">Build disbursement readiness picture per project: runway threshold, current runway, trajectory. Should be reportable in one conversation without looking things up.</span>
+              </li>
+              <li>
+                <span class="q-tag q-tag--blocked">On hold</span>
+                <span class="q-text">Document the onboarding sequence so it is repeatable. What each new person reads, signs, and gets access to. Who confirms it is done.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="queue-card">
+            <div class="queue-header">
+              <span class="queue-name">Shadrack</span>
+              <span class="queue-role">Technical Director + Domain Lead, WAXFEED</span>
+            </div>
+            <p class="queue-note">Two roles, one person. As Technical Director, Shadrack holds the shared infrastructure and technical viability across all projects. As WAXFEED Domain Lead, he holds the research question and drives the platform. These are not in tension. Building WAXFEED is how the technical thinking develops.</p>
+            <ul class="queue-list">
+              <li>
+                <span class="q-tag q-tag--urgent">First</span>
+                <span class="q-text">Define the WAXFEED instrument precisely: what an authentic taste response is as distinct from a conditioned one, how the platform distinguishes genuine preference from habituated engagement, what the gap is measured against, and what closing it looks like in the data.</span>
+              </li>
+              <li>
+                <span class="q-tag">Parallel</span>
+                <span class="q-text">Get the WAXFEED prototype to instrument-ready state: capable of generating behavioral data the instrument can actually run on. That's the threshold that makes the research claim credible.</span>
+              </li>
+              <li>
+                <span class="q-tag">Parallel</span>
+                <span class="q-text">Establish shared infrastructure baseline across all four projects: deployment, authentication, instrument data recording. Do this before individual projects build their own versions and create conflicts.</span>
+              </li>
+              <li>
+                <span class="q-tag">Parallel</span>
+                <span class="q-text">Define IΔ technical validation pipeline architecture: how to process clinical cases, record intermediate layer activations, and generate signed gap metrics reliably at validation study scale.</span>
+              </li>
+              <li>
+                <span class="q-tag">Brief Nathan</span>
+                <span class="q-text">Map music cognition researchers and information systems faculty doing adjacent work. What behavioral data licensing conversations would require. Which academic affiliations strengthen the instrument's credibility. Hand this to Nathan. Nathan runs the first outreach.</span>
+              </li>
+              <li>
+                <span class="q-tag">Infrastructure</span>
+                <span class="q-text">Define behavioral data architecture and privacy/consent framework for WAXFEED before any institutional data licensing conversations happen. This is a precondition for that revenue path.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="queue-card queue-card--blocked">
+            <div class="queue-header">
+              <span class="queue-name">Theodore</span>
+              <span class="queue-role">Domain Lead, GPS + AVDP</span>
+            </div>
+            <p class="queue-note">Theodore holds both programs until the right co-builders come in. These are co-builder roles with defined economics, not research assistant roles. The right person recognizes what the lab is describing because they have already encountered it.</p>
+            <ul class="queue-list">
+              <li>
+                <span class="q-tag q-tag--blocked">GPS</span>
+                <span class="q-text">Platform live, community partnerships in place, grant outline done. Domain lead takes the program from here to formal study. Requires lived experience of being invisible to the infrastructure that should see you.</span>
+              </li>
+              <li>
+                <span class="q-tag q-tag--blocked">AVDP</span>
+                <span class="q-text">Counter-format designed, proof-of-concept footage exists. Domain lead designs the matched conventional condition study and owns trained rater calibration. Requires lived experience of authentic expression being suppressed by a conventional format.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- ROLES -->
+      <section class="tab-panel" id="panel-roles" role="tabpanel" hidden>
+
+        <p class="roles-intro">Every role in the lab. Expand any row for scope. For current task queues, see the Now tab.</p>
+
+        <div class="role-group">
+          <span class="role-group-label">Lab-level</span>
+          <div class="role-directory">
+
+            <details class="role-row">
+              <summary class="role-row-header">
+                <span class="role-row-title">Founder</span>
+                <span class="role-row-holder">Theodore</span>
+              </summary>
+              <p class="role-row-scope">Holds the research agenda, methodology, and thesis across all programs. Approves all institutional commitments. Sets the terms for collaborator relationships and financial believer access. No one else can commit the lab to a position or an agreement.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-founder">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row">
+              <summary class="role-row-header">
+                <span class="role-row-title">Technical Director</span>
+                <span class="role-row-holder">Shadrack</span>
+              </summary>
+              <p class="role-row-scope">Holds the technical architecture across all programs. Makes infrastructure decisions that affect every project. Builds the shared stack so domain leads do not duplicate foundational work. When two projects need the same thing, this role decides how it gets built once.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-technical-director">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row">
+              <summary class="role-row-header">
+                <span class="role-row-title">Director of Strategy and Partnerships</span>
+                <span class="role-row-holder">Nathan</span>
+              </summary>
+              <p class="role-row-scope">Runs first meetings with partners, funders, and institutional contacts. Owns the grant pipeline and financial believer relationships. Scopes the vision when it runs ahead of execution. Does not direct research or define what instruments measure.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-director-strategy-partnerships">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row role-row--open">
+              <summary class="role-row-header">
+                <span class="role-row-title">Lab Manager</span>
+                <span class="role-row-holder role-row-holder--open">Open — contact Theodore</span>
+              </summary>
+              <p class="role-row-scope">Operational layer between the vision and the work. Runs quarterly reviews, tracks all active agreements, owns collaborator onboarding, and tracks disbursement readiness per project. This role takes the operational load off everyone else so they can do what they are here to do.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-lab-manager">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row role-row--open">
+              <summary class="role-row-header">
+                <span class="role-row-title">Data Analyst</span>
+                <span class="role-row-holder role-row-holder--open">Open — contact Theodore</span>
+              </summary>
+              <p class="role-row-scope">Builds and maintains data pipelines for research programs. Works across active studies to produce clean, analysis-ready instrument data. Works at the direction of domain leads.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-data-analyst">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row role-row--open">
+              <summary class="role-row-header">
+                <span class="role-row-title">Design</span>
+                <span class="role-row-holder role-row-holder--open">Open — contact Theodore</span>
+              </summary>
+              <p class="role-row-scope">Visual and product design for lab platforms and public-facing materials. Works across programs as needs arise. Does not set platform direction. Executes what domain leads and the technical director define.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-design">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row role-row--open">
+              <summary class="role-row-header">
+                <span class="role-row-title">Legal</span>
+                <span class="role-row-holder role-row-holder--open">Open — contact Theodore</span>
+              </summary>
+              <p class="role-row-scope">Drafts collaborator agreements, handles IP filings, and coordinates with outside counsel on patent matters. All agreements go through this role before execution. Works closely with the Lab Manager on agreement integrity.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-legal">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row role-row--open">
+              <summary class="role-row-header">
+                <span class="role-row-title">HR</span>
+                <span class="role-row-holder role-row-holder--open">Open — contact Theodore</span>
+              </summary>
+              <p class="role-row-scope">Collaborator tier documentation, agreement integrity, and onboarding process. Ensures every working relationship is properly structured before work begins. Works closely with Legal and the Lab Manager.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-hr">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row role-row--open">
+              <summary class="role-row-header">
+                <span class="role-row-title">Marketing</span>
+                <span class="role-row-holder role-row-holder--open">Open — contact Theodore</span>
+              </summary>
+              <p class="role-row-scope">Lab narrative and external communications across programs. Does not set the research agenda. Translates it for the audiences the lab needs to reach: grant reviewers, institutional partners, and the public.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-marketing">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row role-row--open">
+              <summary class="role-row-header">
+                <span class="role-row-title">Sales</span>
+                <span class="role-row-holder role-row-holder--open">Open — contact Theodore</span>
+              </summary>
+              <p class="role-row-scope">Institutional relationship development for IΔ proof contracts and WAXFEED data licensing. Works within qualified prospect criteria set by domain leads. Brings qualified prospects to domain leads for close. Does not define qualification criteria.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-sales">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row role-row--open">
+              <summary class="role-row-header">
+                <span class="role-row-title">Intern</span>
+                <span class="role-row-holder role-row-holder--open">Open — contact Theodore</span>
+              </summary>
+              <p class="role-row-scope">Research assistance, field documentation, and platform support across projects. Assigned to specific programs based on lab needs at the time of onboarding.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-intern">Read role doc →</a></p>
+            </details>
+
+          </div>
+        </div>
+
+        <div class="role-group">
+          <span class="role-group-label">Domain leads</span>
+          <div class="role-directory">
+
+            <details class="role-row">
+              <summary class="role-row-header">
+                <span class="role-row-title">Integrity Delta</span>
+                <span class="role-row-holder">Theodore</span>
+              </summary>
+              <p class="role-row-scope">Holds the research question, directs the validation study, and leads the paper. Defines what a qualified IΔ prospect looks like and briefs the Director of Strategy before outreach begins. Theodore re-engages when a prospect is ready to close.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-domain-lead-integrity-delta">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row">
+              <summary class="role-row-header">
+                <span class="role-row-title">WAXFEED</span>
+                <span class="role-row-holder">Shadrack</span>
+              </summary>
+              <p class="role-row-scope">Holds the research question and drives the platform. Defines what an authentic taste response is as distinct from a conditioned one. Determines what the instrument measures and what closing the gap looks like in the data.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-domain-lead-waxfeed">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row">
+              <summary class="role-row-header">
+                <span class="role-row-title">Cosmos</span>
+                <span class="role-row-holder">Theodore</span>
+              </summary>
+              <p class="role-row-scope">Cognitive extension and life management system. Founder-built, founder-tested proof of concept. The next phase is generalizing the approach to other users. Not yet in active development beyond the founder's own use.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-domain-lead-cosmos">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row">
+              <summary class="role-row-header">
+                <span class="role-row-title">Polarity GPS</span>
+                <span class="role-row-holder">Theodore</span>
+              </summary>
+              <p class="role-row-scope">Platform is live at polaritygps.com. Community partnerships in place with MUSEOFRI and GOODhumanz in Providence. Theodore holds the program and is building toward the formal measurement study. The right co-builder takes this on as a co-lead with defined economics. Requires lived experience of being invisible to the infrastructure that should see you.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-domain-lead-gps">Read role doc →</a></p>
+            </details>
+
+            <details class="role-row">
+              <summary class="role-row-header">
+                <span class="role-row-title">AVDP</span>
+                <span class="role-row-holder">Theodore</span>
+              </summary>
+              <p class="role-row-scope">Counter-format for long-form interview. Proof-of-concept footage exists. Theodore holds the program. The right co-builder designs the matched conventional condition study, owns trained rater calibration, and defines what recovery of authentic expression looks like in the data. Requires lived experience of authentic expression being suppressed by a conventional format.</p>
+              <p class="role-row-doc-link"><a href="/lab/roles/role-domain-lead-avdp">Read role doc →</a></p>
+            </details>
+
+          </div>
+        </div>
+
+      </section>
+
+      <!-- GRANTS -->
+      <section class="tab-panel" id="panel-grants" role="tabpanel" hidden>
+
+        <div class="panel-section">
+          <h2>Active grant pipeline</h2>
+          <div class="grant-list">
+
+            <div class="grant-item">
+              <div class="grant-header">
+                <span class="grant-name">Knight Foundation</span>
+                <span class="grant-program">GPS</span>
+                <span class="grant-status status-active">LOI in progress</span>
+              </div>
+              <p>Community Information Challenge or Arts program. Grant outline complete. Director of Strategy drafts the LOI. Founder reviews scientific framing. Target submission: within 60 days.</p>
+              <p class="grant-owner">Owner: Director of Strategy. Reviewer: Founder.</p>
+              <p class="grant-doc-link"><a href="/lab/grants/knight-gps-outline">View full outline →</a></p>
+            </div>
+
+            <div class="grant-item">
+              <div class="grant-header">
+                <span class="grant-name">Mozilla Technology Fund</span>
+                <span class="grant-program">WAXFEED</span>
+                <span class="grant-status status-dev">Application in development</span>
+              </div>
+              <p>Responsible AI track. Funds validation of the measurement approach and open-source tooling. Range: $50k to $250k over 12 to 18 months. Outline exists. Shadrack provides technical sections and instrument framing.</p>
+              <p class="grant-owner">Owner: Director of Strategy + Shadrack (WAXFEED).</p>
+              <p class="grant-doc-link"><a href="/lab/grants/mozilla-waxfeed-outline">View full outline →</a></p>
+            </div>
+
+            <div class="grant-item">
+              <div class="grant-header">
+                <span class="grant-name">NIMH / NIH R21</span>
+                <span class="grant-program">Integrity Delta</span>
+                <span class="grant-status status-dev">Application in development</span>
+              </div>
+              <p>Exploratory research mechanism. Clinical AI gap measurement in health systems. IΔ observability pilot provides preliminary data. Requires academic co-PI and IRB infrastructure. Advance in parallel with academic partnership outreach.</p>
+              <p class="grant-owner">Owner: Director of Strategy + IΔ Domain Lead + Academic Co-PI (to be identified).</p>
+              <p class="grant-doc-link"><a href="/lab/grants/nimh-id-cosmos-outline">View full outline →</a></p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <h2>1517 Fund</h2>
+          <p>The lab has a pitch. It is not ready to send yet. The first IΔ proof contract should come first. Director of Strategy is responsible for understanding how 1517 engages and what the lab needs to have in place before that conversation happens. Not a current action item. A near-term one.</p>
+        </div>
+
+        <div class="panel-section">
+          <h2>Financial believer model</h2>
+          <p>Financial believers contribute to the lab at large during a defined early window. This is not equity, not shares, not board seats. Believers participate in outcomes across all programs through a structured revenue participation model.</p>
+          <p>The lab takes 15% of any program revenue. Domain leads hold approximately 40% of project revenue. Contributors participate through defined tiers. Believers receive time-bounded participation in the lab's 15% share.</p>
+          <p>Financial believer conversations are owned by the Director of Strategy. Founder sets the terms and approves who gets offered access to a given project's pool. Read the legal brief before any financial believer conversation.</p>
+        </div>
+
+      </section>
+
+      <!-- CONTEXT -->
+      <section class="tab-panel" id="panel-context" role="tabpanel" hidden>
+
+        <p class="context-intro">Orientation for anyone entering the lab. New team member, collaborator, investor, or institutional partner. Read in order. Each section builds on the one before.</p>
+
+        <div class="panel-section">
+          <h2><span class="section-num">01</span> The thesis</h2>
+          <p>Every platform that optimizes for engagement builds a model of the user from behavioral history. That model is not the person. Over time, the model trained on engagement diverges from authentic capacity: authentic musical preference, authentic local presence, authentic clinical judgment, authentic human expression.</p>
+          <p>This divergence is measurable. Polarity Lab builds counter-environments designed to surface what engagement optimization suppresses, and measurement approaches designed to score the gap. Ivan Illich named the mechanism in 1973 and called it counterproductivity. He could not measure it. The lab closes the loop.</p>
+        </div>
+
+        <div class="panel-section">
+          <h2><span class="section-num">02</span> The programs</h2>
+          <p class="panel-section-note">Five active programs. Each targets a different domain where the gap between authentic capacity and optimized model is measurable and closeable. Expand any program for detail.</p>
+          <div class="program-list">
+
+            <details class="program-item">
+              <summary class="program-item-header">
+                <span class="program-item-name">Integrity Delta</span>
+                <span class="program-item-lead">Theodore</span>
+              </summary>
+              <p>Clinical AI gap methodology. Measures the divergence between what a clinical AI system recommends and what a clinical specialist would catch. The instrument produces a signed gap score for any clinical case. Observability pilot complete with a radiology-trained model. Moving toward first proof contract and validation study.</p>
+            </details>
+
+            <details class="program-item">
+              <summary class="program-item-header">
+                <span class="program-item-name">Polarity GPS</span>
+                <span class="program-item-lead">Theodore</span>
+              </summary>
+              <p>Neighborhood recommendation gap. Measures the divergence between what recommendation platforms surface in a neighborhood and what physically exists there. The counter-environment maps presence rather than popularity. Platform live at <a href="https://polaritygps.com" target="_blank" rel="noopener">polaritygps.com</a> with community partnerships in Providence. Moving toward formal measurement study.</p>
+            </details>
+
+            <details class="program-item">
+              <summary class="program-item-header">
+                <span class="program-item-name">WAXFEED</span>
+                <span class="program-item-lead">Shadrack</span>
+              </summary>
+              <p>Music discovery gap. Measures the divergence between authentic musical preference and recommendation history. The counter-environment is a discovery platform that bypasses engagement optimization. Platform and instrument in development. Shadrack holds the research question and prototype.</p>
+            </details>
+
+            <details class="program-item">
+              <summary class="program-item-header">
+                <span class="program-item-name">AVDP</span>
+                <span class="program-item-lead">Theodore</span>
+              </summary>
+              <p>Authentic expression gap. Measures the suppression of authentic self-presentation by conventional interview format. The counter-environment removes the format constraints and measures what comes back. Proof-of-concept footage exists. Moving toward matched conventional condition study with trained rater calibration.</p>
+            </details>
+
+            <details class="program-item">
+              <summary class="program-item-header">
+                <span class="program-item-name">Cosmos</span>
+                <span class="program-item-lead">Theodore</span>
+              </summary>
+              <p>Cognitive extension system. Measures the gap between what a person can do with the right cognitive environment versus without it. Founder-built, founder-tested proof of concept. Generalizing to other users is the next phase.</p>
+            </details>
+
+          </div>
+        </div>
+
+        <div class="panel-section">
+          <h2><span class="section-num">03</span> Why you are here</h2>
+          <p>The domain lead and the people closest to the work must have lived some version of the second threshold before they run the project. You cannot design the counter-environment from outside the experience of needing one. The pattern recognition that tells you where the suppression is, what recovery actually feels like versus what just registers as improvement on a metric: that comes from having been the subject, not from studying subjects.</p>
+          <p>If you are uncertain whether this describes you, it probably does. People who have not experienced the second threshold do not usually recognize what the lab is describing.</p>
+        </div>
+
+        <div class="panel-section">
+          <h2><span class="section-num">04</span> How the work works</h2>
+          <p>The product is the instrument. The instrument is the research. They are the same thing. You cannot measure what WAXFEED suppresses without running WAXFEED. Every decision about the product is also a decision about the research. When product growth and instrument integrity appear to be in tension, the instrument integrity wins. Always.</p>
+          <p>The return has to be real before it gets called a return. The lab's entire credibility rests on this. A partial return published as a complete one destroys the value of every instrument the lab has built and will build.</p>
+        </div>
+
+        <div class="panel-section">
+          <h2><span class="section-num">05</span> The structure</h2>
+          <p>Polarity Lab LLC is a single-member LLC. Theodore is the sole member. This is the governance architecture that protects the methodology from external capture. Collaborators participate in the lab's economics through the revenue structure. No collaborator holds governance rights over the research agenda, methodology, or direction.</p>
+          <p>15% of every dollar of revenue goes to the lab first. The remaining 85% accumulates until the project hits 3 to 6 months of operating expenses (the runway threshold). Once hit, distributions begin. The domain lead pool is approximately 40% of total revenue. The time collaborator pool is approximately 30%. The financial believer pool is approximately 15%. The complete economics document is shared when you join or when you are in a formal conversation about participation.</p>
+          <p>Domain lead status reflects active contribution to the program. It is not a permanent appointment. If contribution falls below what the program requires, the lead changes. The lab cannot protect a title from someone who is no longer doing the work.</p>
+        </div>
+
+        <div class="panel-section">
+          <h2><span class="section-num">06</span> What the lab will not do</h2>
+          <p>The instrument does not change its finding because of who paid for the assessment. Independence is the asset. The moment a finding becomes unpublishable because of a funder relationship, the methodology is worthless.</p>
+          <p>The counter-environment restores without altering. What the person, community, or system gets back has to be the thing that was there before. No funder sets the research agenda. No growth target overrides instrument integrity. No urgency makes a partial return into a complete one.</p>
+        </div>
+
+        <div class="panel-section">
+          <h2><span class="section-num">07</span> Where to go from here</h2>
+          <p class="panel-section-note">Depends on why you are reading this.</p>
+          <div class="orient-list">
+            <div class="orient-item">
+              <span class="orient-label">Joining the lab</span>
+              <span class="orient-desc">You are reading the right thing. Read this tab in full first. Then go to the Roles tab and find your position. Then check the Now tab to see what is active this week. Your onboarding contact will walk you through the full economics and send you the relevant program documentation before you start.</span>
+            </div>
+            <div class="orient-item">
+              <span class="orient-label">Potential collaborator</span>
+              <span class="orient-desc">The thesis and programs above cover what the lab is building. The Roles tab shows every position and what is open. Domain lead roles are co-builder positions with defined economics, not research assistant slots. Reach out to discuss fit.</span>
+            </div>
+            <div class="orient-item">
+              <span class="orient-label">Investor or financial believer</span>
+              <span class="orient-desc">The structure section above covers the model. The Grants tab shows where each program stands and what funding is in motion. Financial believer conversations go through the Director of Strategy. Reach out to discuss timing.</span>
+            </div>
+            <div class="orient-item">
+              <span class="orient-label">Institutional partner</span>
+              <span class="orient-desc">The programs section above covers what each instrument measures and where it stands. Integrity Delta has an observability pilot complete and is the most institutionally ready. Polarity GPS has community partnerships in place and a grant LOI in motion. Reach out to discuss what partnership would look like.</span>
+            </div>
+          </div>
+          <p class="contact-line">All inquiries: <a href="mailto:team@polarity-lab.com">team@polarity-lab.com</a></p>
+        </div>
+
+      </section>
+
+    </div>
+  </div>
+</Base>
+
+<style>
+  /* Gate */
+  .gate {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #gate-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 320px;
+    padding: 2rem;
+  }
+
+  .gate-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  #gate-form label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--text-pure);
+    text-transform: uppercase;
+  }
+
+  #gate-input {
+    width: 100%;
+    background: var(--void-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--text-pure);
+    text-align: center;
+    letter-spacing: 0.1em;
+    outline: none;
+    transition: border-color 0.2s var(--ease-smooth);
+  }
+
+  #gate-input:focus {
+    border-color: var(--teal);
+  }
+
+  .gate-error {
+    font-size: 0.8125rem;
+    color: var(--coral);
+    font-family: var(--font-mono);
+    min-height: 1.2em;
+  }
+
+  /* Lab content */
+  .lab-content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .lab-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-ghost);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .lab-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--text-pure);
+    letter-spacing: -0.02em;
+  }
+
+  .lab-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-ghost);
+  }
+
+  /* Tabs */
+  .tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border-ghost);
+    margin-bottom: 2.5rem;
+  }
+
+  .tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.75rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--text-ghost);
+    cursor: pointer;
+    transition: color 0.2s var(--ease-smooth), border-color 0.2s var(--ease-smooth);
+    margin-bottom: -1px;
+  }
+
+  .tab:hover {
+    color: var(--text-secondary);
+  }
+
+  .tab.active {
+    color: var(--text-pure);
+    border-bottom-color: var(--teal);
+  }
+
+  /* NOW tab */
+  .status-chip {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    border: 1px solid;
+    white-space: nowrap;
+  }
+
+  .chip-teal {
+    color: var(--teal);
+    border-color: var(--teal-border);
+    background: var(--teal-subtle);
+  }
+
+  .chip-purple {
+    color: var(--purple);
+    border-color: var(--purple-border);
+    background: rgba(187, 143, 206, 0.08);
+  }
+
+  .chip-ghost {
+    color: var(--text-ghost);
+    border-color: var(--border-ghost);
+    background: transparent;
+  }
+
+  /* Status strip */
+  .status-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-ghost);
+    margin-bottom: 3rem;
+  }
+
+  .status-row {
+    background: var(--void-elevated);
+    padding: 0.75rem 1.25rem;
+    display: grid;
+    grid-template-columns: 140px auto 1fr;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .status-program {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-pure);
+  }
+
+  .status-next {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+  }
+
+  /* Queue cards */
+  .queues {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .queue-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border-ghost);
+  }
+
+  .queue-card:last-child {
+    border-bottom: none;
+  }
+
+  .queue-card--blocked {
+    opacity: 0.6;
+  }
+
+  .queue-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.875rem;
+    flex-wrap: wrap;
+  }
+
+  .queue-name {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-pure);
+  }
+
+  .queue-role {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--teal);
+  }
+
+  .queue-role--open {
+    color: var(--text-ghost);
+  }
+
+  .queue-note {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-tertiary);
+    font-style: italic;
+  }
+
+  .queue-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-ghost);
+  }
+
+  .queue-list li {
+    background: var(--void-deep);
+    padding: 0.875rem 1.25rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .q-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    color: var(--text-ghost);
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    flex-shrink: 0;
+    width: 120px;
+    padding-top: 0.1rem;
+    line-height: 1.4;
+  }
+
+  .q-tag--urgent {
+    color: var(--coral);
+  }
+
+  .q-tag--blocked {
+    color: var(--text-ghost);
+    opacity: 0.5;
+  }
+
+  .q-text {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  /* Shared list styles */
+  .task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .task-list li {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .task-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--text-ghost);
+    font-size: 0.75rem;
+  }
+
+  /* ROLES tab */
+  .roles-intro {
+    font-size: 0.9375rem;
+    color: var(--text-tertiary);
+    font-family: var(--font-mono);
+    margin-bottom: 2.5rem;
+  }
+
+  .role-group {
+    margin-bottom: 3rem;
+  }
+
+  .role-group:last-child {
+    margin-bottom: 0;
+  }
+
+  .role-group-label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-ghost);
+    margin-bottom: 0.75rem;
+  }
+
+  .role-directory {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-ghost);
+  }
+
+  .role-row {
+    background: var(--void-deep);
+    transition: background 0.15s var(--ease-smooth);
+    list-style: none;
+  }
+
+  .role-row:hover {
+    background: var(--void-elevated);
+  }
+
+  .role-row--open {
+    opacity: 0.55;
+  }
+
+  .role-row-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .role-row-header::-webkit-details-marker {
+    display: none;
+  }
+
+  .role-row-header::after {
+    content: '+';
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-ghost);
+    flex-shrink: 0;
+    margin-left: auto;
+  }
+
+  .role-row[open] > .role-row-header::after {
+    content: '−';
+  }
+
+  .role-row-title {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-pure);
+  }
+
+  .role-row-holder {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--teal);
+    white-space: nowrap;
+  }
+
+  .role-row-holder--open {
+    color: var(--text-ghost);
+  }
+
+  .role-row-holder-note {
+    color: var(--text-ghost);
+    font-size: 0.75rem;
+  }
+
+  .role-row-scope {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    padding: 0 1.25rem 1rem;
+    border-top: 1px solid var(--border-ghost);
+    padding-top: 0.875rem;
+  }
+
+  /* CONTEXT tab extras */
+  .context-intro {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+    margin-bottom: 2.5rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border-ghost);
+    border-left: 2px solid var(--border-medium);
+  }
+
+  .panel-section-note {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+    margin-bottom: 0.5rem;
+  }
+
+  .program-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-ghost);
+  }
+
+  .program-item {
+    background: var(--void-deep);
+    transition: background 0.15s var(--ease-smooth);
+  }
+
+  .program-item:hover {
+    background: var(--void-elevated);
+  }
+
+  .program-item-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+
+  .program-item-header::-webkit-details-marker {
+    display: none;
+  }
+
+  .program-item-header::after {
+    content: '+';
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-ghost);
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  .program-item[open] > .program-item-header::after {
+    content: '−';
+  }
+
+  .program-item-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--text-pure);
+  }
+
+  .program-item-lead {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-ghost);
+  }
+
+  .program-item p {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    padding: 0 1.25rem 1rem;
+    border-top: 1px solid var(--border-ghost);
+    padding-top: 0.875rem;
+  }
+
+  .orient-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-ghost);
+    margin-bottom: 1rem;
+  }
+
+  .orient-item {
+    background: var(--void-deep);
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .orient-label {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--teal);
+  }
+
+  .orient-desc {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  /* GRANTS tab */
+  .panel-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border-ghost);
+  }
+
+  .panel-section:last-child {
+    border-bottom: none;
+  }
+
+  .panel-section h2 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-pure);
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+  }
+
+  .section-num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-ghost);
+    font-weight: 400;
+  }
+
+  .panel-section p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+
+  .grant-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-ghost);
+  }
+
+  .grant-item {
+    background: var(--void-deep);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .grant-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .grant-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--text-pure);
+  }
+
+  .grant-program {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-ghost);
+  }
+
+  .grant-status {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    border: 1px solid;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .status-active {
+    color: var(--teal);
+    border-color: var(--teal-border);
+    background: var(--teal-subtle);
+  }
+
+  .status-dev {
+    color: var(--text-ghost);
+    border-color: var(--border-ghost);
+    background: transparent;
+  }
+
+  .grant-item p {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  .grant-owner {
+    font-family: var(--font-mono) !important;
+    font-size: 0.8125rem !important;
+    color: var(--text-ghost) !important;
+  }
+
+  .grant-doc-link {
+    font-family: var(--font-mono) !important;
+    font-size: 0.8125rem !important;
+  }
+
+  .grant-doc-link a {
+    color: var(--teal) !important;
+  }
+
+  .role-row-doc-link {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    padding: 0.5rem 1.25rem 0.875rem;
+  }
+
+  .role-row-doc-link a {
+    color: var(--teal);
+  }
+
+  /* CONTEXT tab */
+  .docs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-ghost);
+    margin-bottom: 1rem;
+  }
+
+  .doc-item {
+    background: var(--void-elevated);
+    padding: 0.875rem 1.25rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .doc-name {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-pure);
+    white-space: nowrap;
+  }
+
+  .doc-desc {
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
+  }
+
+  .contact-line {
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
+  }
+
+  .contact-line a {
+    color: var(--teal);
+  }
+
+  @media (max-width: 640px) {
+    .status-row {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+    }
+
+    .status-next {
+      grid-column: 1 / -1;
+      padding-top: 0.25rem;
+    }
+
+    .now-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .tabs {
+      overflow-x: auto;
+    }
+
+    .tab {
+      white-space: nowrap;
+      padding: 0.75rem 1rem;
+    }
+
+    .blocker-item {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .lab-header {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  }
+</style>
+
+<script>
+  const CORRECT = '2025';
+  const STORAGE_KEY = 'pl_lab_auth';
+
+  const gate = document.getElementById('gate');
+  const content = document.getElementById('lab-content');
+  const input = document.getElementById('gate-input') as HTMLInputElement;
+  const error = document.getElementById('gate-error');
+
+  function unlock() {
+    if (gate) (gate as HTMLElement).style.display = 'none';
+    if (content) (content as HTMLElement).style.display = 'block';
+    localStorage.setItem(STORAGE_KEY, '1');
+  }
+
+  if (localStorage.getItem(STORAGE_KEY) === '1') {
+    unlock();
+  }
+
+  input?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (input.value === CORRECT) {
+        unlock();
+      } else {
+        if (error) error.textContent = 'Incorrect.';
+        input.value = '';
+      }
+    }
+  });
+
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.tab');
+  const panels = document.querySelectorAll<HTMLElement>('.tab-panel');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      panels.forEach(p => p.setAttribute('hidden', ''));
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      document.getElementById(`panel-${target}`)?.removeAttribute('hidden');
+    });
+  });
+</script>

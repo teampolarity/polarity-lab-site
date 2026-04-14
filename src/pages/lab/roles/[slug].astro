@@ -1,0 +1,312 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+
+export async function getStaticPaths() {
+  const roles = await getCollection('roles');
+  return roles.map(entry => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<Base title={entry.data.title} description={`${entry.data.title} — Polarity Lab role documentation`}>
+  <div class="gate" id="gate">
+    <form id="gate-form" autocomplete="off">
+      <label for="gate-input">Polarity Lab</label>
+      <input type="password" id="gate-input" placeholder="Access code" autocomplete="new-password" />
+      <p class="gate-error" id="gate-error" aria-live="polite"></p>
+    </form>
+  </div>
+
+  <div class="doc-content" id="doc-content" hidden>
+    <div class="doc-nav">
+      <a href="/lab#roles" class="back-link">← Roles</a>
+      {entry.data.person && (
+        <span class="doc-person">{entry.data.person}</span>
+      )}
+    </div>
+
+    <div class="doc-header">
+      <h1>{entry.data.title}</h1>
+      <span class="doc-type">{entry.data.type === 'domain-lead' ? 'Domain Lead' : 'Lab-level'}</span>
+    </div>
+
+    <div class="doc-body">
+      <Content />
+    </div>
+  </div>
+</Base>
+
+<style>
+  /* Gate */
+  .gate {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #gate-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 320px;
+    padding: 2rem;
+  }
+
+  #gate-form label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    color: var(--text-pure);
+    text-transform: uppercase;
+  }
+
+  #gate-input {
+    width: 100%;
+    background: var(--void-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: 4px;
+    padding: 0.75rem 1rem;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--text-pure);
+    text-align: center;
+    letter-spacing: 0.1em;
+    outline: none;
+    transition: border-color 0.2s var(--ease-smooth);
+  }
+
+  #gate-input:focus {
+    border-color: var(--teal);
+  }
+
+  .gate-error {
+    font-size: 0.8125rem;
+    color: var(--coral);
+    font-family: var(--font-mono);
+    min-height: 1.2em;
+  }
+
+  /* Doc content */
+  .doc-content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 2rem 6rem;
+  }
+
+  .doc-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-ghost);
+  }
+
+  .back-link {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-ghost);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .back-link:hover {
+    color: var(--teal);
+  }
+
+  .doc-person {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--teal);
+  }
+
+  .doc-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+
+  .doc-header h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--text-pure);
+    letter-spacing: -0.02em;
+  }
+
+  .doc-type {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-ghost);
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--border-ghost);
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  /* Markdown body */
+  .doc-body {
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  .doc-body h2 {
+    font-family: var(--font-display);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--text-pure);
+    margin: 2.5rem 0 0.875rem;
+    letter-spacing: -0.01em;
+  }
+
+  .doc-body h3 {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 1.75rem 0 0.625rem;
+  }
+
+  .doc-body p {
+    margin-bottom: 1rem;
+  }
+
+  .doc-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .doc-body strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .doc-body em {
+    color: var(--text-tertiary);
+    font-style: italic;
+  }
+
+  .doc-body ul,
+  .doc-body ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .doc-body li {
+    line-height: 1.7;
+  }
+
+  .doc-body hr {
+    border: none;
+    border-top: 1px solid var(--border-ghost);
+    margin: 2rem 0;
+  }
+
+  .doc-body blockquote {
+    border-left: 2px solid var(--border-medium);
+    padding-left: 1rem;
+    color: var(--text-tertiary);
+    font-style: italic;
+    margin: 1.5rem 0;
+  }
+
+  .doc-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .doc-body th {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-ghost);
+    padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid var(--border-subtle);
+    text-align: left;
+  }
+
+  .doc-body td {
+    padding: 0.625rem 0.75rem;
+    border-bottom: 1px solid var(--border-ghost);
+    color: var(--text-secondary);
+    vertical-align: top;
+  }
+
+  .doc-body code {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    background: var(--void-elevated);
+    padding: 0.1rem 0.35rem;
+    border-radius: 3px;
+    color: var(--teal);
+  }
+
+  /* Suppress H1 from markdown (we render it ourselves) */
+  .doc-body h1 {
+    display: none;
+  }
+
+  @media (max-width: 640px) {
+    .doc-content {
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    .doc-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+
+<script>
+  const CORRECT = '2025';
+  const STORAGE_KEY = 'pl_lab_auth';
+
+  const gate = document.getElementById('gate');
+  const content = document.getElementById('doc-content');
+  const input = document.getElementById('gate-input') as HTMLInputElement;
+  const error = document.getElementById('gate-error');
+
+  function unlock() {
+    if (gate) (gate as HTMLElement).style.display = 'none';
+    if (content) (content as HTMLElement).style.display = 'block';
+    localStorage.setItem(STORAGE_KEY, '1');
+  }
+
+  if (localStorage.getItem(STORAGE_KEY) === '1') {
+    unlock();
+  }
+
+  input?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      if (input.value === CORRECT) {
+        unlock();
+      } else {
+        if (error) error.textContent = 'Incorrect.';
+        input.value = '';
+      }
+    }
+  });
+</script>
