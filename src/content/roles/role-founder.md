@@ -4,7 +4,7 @@ person: "Theodore"
 type: "lab-level"
 ---
 
-*Read alongside onboarding.md, polarity-fund-model.md, and the theoretical-framework.*
+*Read alongside the onboarding materials, the fund model, and the theoretical-framework.*
 
 ---
 
@@ -76,7 +76,7 @@ The distinction that matters here: some items require the founder to run the ful
 
 ## How This Role Gets Paid
 
-The Executive Director is part of the core pool — the lab's 15% share of revenue distributed across lab-level roles using a points system that resets each quarter. The core pool points and activity bonuses for this role are documented in polarity-fund-model.md.
+The Executive Director is part of the core pool — the lab's 15% share of revenue distributed across lab-level roles using a points system that resets each quarter. The core pool points and activity bonuses for this role are documented in the fund model.
 
 The honest version: the lab doesn't pay the founder a market salary. Not yet. The structure is designed so that when the lab's projects hit their runway thresholds and disbursements begin, the distribution flows to everyone who's been contributing — including the founder through the core pool. Until then, the work runs on the conviction that the thesis is real and the proof is coming.
 

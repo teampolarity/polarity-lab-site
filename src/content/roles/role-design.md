@@ -3,7 +3,7 @@ title: "Design"
 type: "lab-level"
 ---
 
-*Read alongside onboarding.md and the domain documentation for your assigned project.*
+*Read alongside the onboarding materials and the domain documentation for your assigned project.*
 
 ---
 
@@ -43,7 +43,7 @@ Lab identity decisions — the lab's name, how it describes itself, what vocabul
 
 Design is a project-level contributing collaborator role. Your tier and weight within the time collaborator pool are agreed at project start and documented in the project agreement. Tier options: core collaborator (1.0x), contributing collaborator (0.6x), advisor (0.25x). Most design contributors at early stage come in as contributing collaborators.
 
-Distributions don't begin until the project hits its runway threshold. The full mechanics are in polarity-fund-model.md.
+Distributions don't begin until the project hits its runway threshold. The full mechanics are in the fund model.
 
 If you're doing design work across multiple projects, you have a separate agreement for each project.
 

@@ -3,7 +3,7 @@ title: "Data Analyst"
 type: "lab-level"
 ---
 
-*Read alongside onboarding.md and the research program documentation for your assigned project.*
+*Read alongside the onboarding materials and the research program documentation for your assigned project.*
 
 ---
 
@@ -45,7 +45,7 @@ Publication decisions — what gets published, when, in what form — are not yo
 
 Data analysis is a project-level contributing collaborator role. Your tier and weight within the time collaborator pool are agreed at project start and documented in the project agreement. Most data contributors come in as contributing collaborators (0.6x) or core collaborators (1.0x) depending on how central the analysis work is to the project's current phase.
 
-Distributions don't begin until the project hits its runway threshold. The full mechanics are in polarity-fund-model.md.
+Distributions don't begin until the project hits its runway threshold. The full mechanics are in the fund model.
 
 If you're working across multiple projects, you have a separate agreement for each.
 

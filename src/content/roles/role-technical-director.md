@@ -4,7 +4,7 @@ person: "Shadrack"
 type: "lab-level"
 ---
 
-*For Shadrack. Read alongside onboarding.md, polarity-fund-model.md, and role-domain-lead-waxfeed.md.*
+*For Shadrack. Read alongside the onboarding materials, the fund model, and the WAXFEED Domain Lead role doc.*
 
 ---
 
@@ -14,7 +14,7 @@ The lab's vision moves faster than any single technical implementation. Your job
 
 You came to this through your own encounter with the second threshold. Your blog shows the philosophy arriving from a different direction before you named what it had in common with the lab's work. The technical role is an extension of that — not building because it's interesting to build, but building because the thing being built needs to exist for the proof to be real.
 
-This document covers the lab-level technical role. Your work running WAXFEED specifically is in role-domain-lead-waxfeed.md.
+This document covers the lab-level technical role. Your work running WAXFEED specifically is in the WAXFEED Domain Lead role doc.
 
 ---
 
@@ -48,7 +48,7 @@ Your compensation runs through two channels, one for this role and one for WAXFE
 
 As Technical Director, you're part of the core pool — the lab's 15% share of revenue distributed to lab-level roles. The core pool uses a points system that resets quarterly. Your base points and any activity bonuses for the Technical Director function are agreed at the start of each quarter. Your share equals your points divided by total points across all core pool roles that quarter.
 
-The WAXFEED Domain Lead compensation is separate and runs through the project's 85% distribution. Those mechanics are in role-domain-lead-waxfeed.md and in polarity-fund-model.md.
+The WAXFEED Domain Lead compensation is separate and runs through the project's 85% distribution. Those mechanics are in the WAXFEED Domain Lead role doc and in the fund model.
 
 Neither channel pays out until the relevant runway threshold is hit. That's the reality. It's better said plainly.
 

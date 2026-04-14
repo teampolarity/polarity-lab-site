@@ -4,7 +4,7 @@ person: "Nathan"
 type: "lab-level"
 ---
 
-*For Nathan. Read alongside onboarding.md and polarity-fund-model.md.*
+*For Nathan. Read alongside the onboarding materials and the fund model.*
 
 ---
 
@@ -48,7 +48,7 @@ You earn points each quarter through the core pool — the lab's share of revenu
 
 At each disbursement, your share of the core pool equals your points divided by the total points earned across all core pool roles that quarter. Points reset each quarter. If the lab earns less, everyone earns less. No fixed salary until the lab can sustain one.
 
-None of this starts until the lab hits its runway threshold. That's the reality of early-stage work and it's better to say it plainly. The full mechanics are in polarity-fund-model.md.
+None of this starts until the lab hits its runway threshold. That's the reality of early-stage work and it's better to say it plainly. The full mechanics are in the fund model.
 
 ---
 
@@ -66,11 +66,11 @@ If anything here doesn't match your understanding of your role, that conversatio
 
 **Collaborator agreements first.** Everyone doing work for the lab needs something in writing that makes the structure clear. This protects the lab and the collaborators. Work with legal counsel to get standard agreement language in place before anything else formalizes.
 
-**Academic partnership first meetings.** The academic-partnership-strategy.md document names the specific institutions (Brown Psychiatry, Brown School of Public Health, MIT Media Lab) and what each conversation needs. Your job is to identify 2-3 specific faculty contacts at Brown Psychiatry, draft the introduction email, and run the first 30-minute meeting. The founder will brief you on the IΔ pilot data and what the lab needs from a co-PI before you go in. When you find someone genuinely interested, you brief the founder and they take the next meeting.
+**Academic partnership first meetings.** The academic partnership strategy names the specific institutions (Brown Psychiatry, Brown School of Public Health, MIT Media Lab) and what each conversation needs. Your job is to identify 2-3 specific faculty contacts at Brown Psychiatry, draft the introduction email, and run the first 30-minute meeting. The founder will brief you on the IΔ pilot data and what the lab needs from a co-PI before you go in. When you find someone genuinely interested, you brief the founder and they take the next meeting.
 
 **IΔ institutional outreach.** The pilot is done. The first proof contract -- one clinical AI vendor or hospital system paying for an IΔ assessment -- is the lab's first real commercial milestone. Define what a qualified prospect looks like with the founder, then start finding them. Run the qualification conversations. Bring the founder in when a prospect is ready to hear a close.
 
-**Knight Foundation LOI.** The grant outline is complete (docs/grants/knight-gps-outline.md). Draft the LOI from the existing outline. The founder reviews and approves the scientific framing. Target: within 60 days.
+**Knight Foundation LOI.** The grant outline is complete (the grant outline on the Grants tab). Draft the LOI from the existing outline. The founder reviews and approves the scientific framing. Target: within 60 days.
 
 **Grant pipeline.** Non-dilutive capital is the safest early money. Knight Foundation for GPS. NIMH for IΔ + Cosmos. Mozilla for WAXFEED. The outlines exist. Your job is to move them from outlines to submissions -- coordinating with domain leads on the technical sections, managing timelines, and keeping the founder in the loop at review points rather than execution points.
 

@@ -3,7 +3,7 @@ title: "Lab Manager"
 type: "lab-level"
 ---
 
-*Read alongside onboarding.md and polarity-fund-model.md.*
+*Read alongside the onboarding materials and the fund model.*
 
 ---
 
@@ -23,7 +23,7 @@ You run the quarterly project reviews. Each active project gets a quarterly revi
 
 You track the state of all active agreements. Collaborator agreements, financial believer agreements, institutional partnerships, IP transfer documents. You know which ones are executed, which are outstanding, and which are overdue. You don't draft the agreements — that's legal. You make sure they move from drafted to signed and that nothing sits unsigned indefinitely.
 
-You own the collaborator onboarding process end to end. When a new collaborator joins any project, you make sure the right documents are in place, their tier and weight are documented, they have access to what they need, and they've actually read onboarding.md. HR earns points for each collaborator onboarded. You're responsible for making those onboardings real, not nominal.
+You own the collaborator onboarding process end to end. When a new collaborator joins any project, you make sure the right documents are in place, their tier and weight are documented, they have access to what they need, and they've actually read the onboarding materials. HR earns points for each collaborator onboarded. You're responsible for making those onboardings real, not nominal.
 
 You track disbursement readiness for each project. You're not calculating disbursements — that's a financial function. But you know which projects are approaching their runway threshold, which ones have hit it, and which ones are still early. When a project hits its threshold, you flag it so disbursements can begin on time. Year 1 for financial believers starts from first disbursement. Letting that slip costs believers and the lab's credibility.
 
@@ -49,7 +49,7 @@ You earn points through the core pool each quarter — the lab's 15% share of re
 
 At each disbursement, your share of the core pool equals your points divided by the total points earned across all core pool roles that quarter. Points reset each quarter. Current contribution determines current compensation.
 
-This doesn't start until the lab hits its runway threshold. That's the reality of early-stage work and it's better said plainly. The full mechanics are in polarity-fund-model.md.
+This doesn't start until the lab hits its runway threshold. That's the reality of early-stage work and it's better said plainly. The full mechanics are in the fund model.
 
 ---
 
