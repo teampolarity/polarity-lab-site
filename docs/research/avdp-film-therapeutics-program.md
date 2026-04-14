@@ -1,6 +1,7 @@
 # AVDP Film Therapeutics Lab — Research Program
 
-**Principal Investigator:** Polarity Lab, Providence, RI
+**Executive Director:** Theodore Addo, Polarity Lab
+**Location:** Providence, RI
 **Version:** April 2026 (Pre-Grant Draft)
 **Status:** Active development — circulating to advisors and collaborators
 
@@ -8,23 +9,31 @@
 
 ## The Question
 
-Can the right environment make people genuinely open up, and does watching that change how we connect with each other, and with ourselves?
+How do media format constraints suppress authentic human expression, and what does recovery look like when the format is designed against the suppression rather than for the platform?
 
-This question has three nested hypotheses. The first is about subjects: that specific, engineerable environmental conditions, particularly the removal of smartphones paired with live-mixed ambient music, lower psychological barriers and produce more authentic self-disclosure than standard conversation settings. The second is about audiences: that witnessing this kind of authentic expression through a long-form video format creates measurable prosocial effects in viewers, including increased empathy, reduced social avoidance, and real-world connection-seeking behavior. The third is about memory and self-relation: that when subjects revisit their own recorded conversations, the act of rewatching a fixed artifact of authentic self-disclosure changes how they remember, interpret, and relate to the experience and to themselves. AVDP produces not just a conversation but a document, and that document becomes a tool for ongoing self-encounter.
+Every media format carries an optimization inside it. Runtime constraints, platform requirements, audience retention curves, production norms, advertiser comfort. At some point these constraints stop serving the subject and start suppressing them. What gets produced is what the format can accommodate, not what the person actually is. The participant edits themselves in advance of the format. What reaches the audience is a format-compliant version of something real.
 
-AVDP (A Very Distant Perspective) is both a test of these hypotheses and an instrument for pursuing them.
+AVDP (A Very Distant Perspective) is a video podcast series engineered as a counter-format. Each design element — the removal of smartphones, the live-mixed ambient music, the long-form temporal structure, the absence of production pressure — is a hypothesis about the specific mechanism by which conventional formats suppress authentic expression. The counter-format tests those hypotheses by removing the suppressants and measuring how much more of the person comes through.
+
+The **Format Effectiveness Measure (FEM)** is the diagnostic instrument. It measures the signed gap between what a subject expresses in an unconstrained counter-format setting and what a conventional format would have allowed through. A large FEM score means the conventional format was suppressing significantly. The counter-format AVDP produces is the therapeutic environment. The FEM measures whether it works.
+
+This research program also pursues three nested questions about what the counter-format produces: whether authentic disclosure on camera changes how subjects remember and relate to their own experience, whether audiences who witness authentic expression are measurably changed by it, and whether the recordings constitute a corpus of ecological validity rare enough to matter for affective computing.
 
 ---
 
 ## Institutional Context
 
-Polarity Lab operates from the thesis that technology is creating a new class of harm to human cognition and connection. Each lab at Polarity either builds a diagnostic instrument, a scoring tool that produces a reproducible number for something medicine has not yet measured, or a therapeutic environment, a designed experience that produces a specific, measurable change in the people who go through it.
+Polarity Lab's thesis is that designed environments have a second threshold. Below it, the environment extends the capacity it was built to serve. Beyond it, optimization for the environment's own metrics begins to suppress the capacity it was built to develop. Media formats crossed this threshold when their optimization for platform performance became optimization against authentic expression.
 
-The AVDP lab builds a therapeutic environment. Its intervention is a video podcast series that engineers a specific set of conditions for authentic human expression: in-depth conversation, live-mixed ambient music, no phones in frame, long-form format. These are not aesthetic choices. Each is a hypothesis about the causal mechanism by which psychological safety and genuine disclosure are produced or suppressed.
+Each lab at Polarity builds either a diagnostic instrument — a scoring tool that produces a reproducible number for something not currently measured — or a therapeutic environment — a designed experience that produces a specific, measurable change in the people who pass through it.
 
-At the same time, if these conditions succeed in eliciting naturalistic emotional expression, the recordings constitute something unusually valuable for a second purpose: a corpus of real-world, contextually rich affective data. The affective computing field is constrained by a documented shortage of ecologically valid training data. AVDP exists at the intersection of a therapeutic design experiment and an AI data infrastructure problem.
+The AVDP Lab builds both.
 
-The institutional stakes are not small. Loneliness is now classified as a global health epidemic. Holt-Lunstad et al. (2015) demonstrated that social isolation carries mortality risk equivalent to smoking 15 cigarettes per day. Twenge et al. (2019) documented a generational collapse in in-person social interaction among U.S. adolescents, with face-to-face engagement declining by roughly one hour per day between the late 1980s and 2016. The clinical infrastructure for addressing this does not yet exist. AVDP is an early attempt to build part of it.
+The **Format Effectiveness Measure** is the diagnostic instrument. It takes two inputs: what a subject expresses in the AVDP counter-format environment and what that same subject expresses in a conventional interview format. The FEM score is the signed gap between them — a measure of how much authentic expression the conventional format suppressed. Zero means no gap: the conventional format allowed everything through. A large positive score means the counter-format produced materially more authentic expression than the conventional format would have.
+
+**AVDP** is the therapeutic environment. Its design elements are not aesthetic choices. Each is a specific environmental manipulation grounded in the literature on what suppresses and enables authentic self-disclosure. Phone removal, ambient music, long-form pacing, absence of production interruption — each has a documented causal mechanism. Together they constitute a counter-format engineered to maximize the FEM in the direction of authentic expression.
+
+The additional institutional stakes are real. Loneliness is classified as a global health epidemic. Holt-Lunstad et al. (2015) demonstrated that social isolation carries mortality risk equivalent to smoking 15 cigarettes per day. Twenge et al. (2019) documented a generational collapse in in-person social interaction among U.S. adolescents. The clinical infrastructure for addressing this does not yet exist. If authentic conversation in a designed counter-format produces measurable prosocial effects in both subjects and audiences — and if the recordings constitute a rare corpus of ecologically valid affective data — AVDP is building part of that infrastructure.
 
 ---
 
@@ -168,9 +177,11 @@ A methodological review of video-stimulated recall, a research technique in whic
 
 ## Research Aims
 
-### Aim 1: Does the AVDP environmental protocol produce measurably deeper self-disclosure than standard interview conditions?
+### Aim 1: Validate the Format Effectiveness Measure and Establish the AVDP Counter-Format Effect
 
-**Specific Claim:** Participants in the AVDP condition (ambient music present, no phones visible, long-form format with unstructured conversational space) will produce significantly higher scores on established self-disclosure depth measures (Jourard Self-Disclosure Questionnaire; Linguistic Inquiry and Word Count emotional disclosure subscales) compared to participants in a standard interview condition (no music, phones present but not used, time-limited format) when discussing equivalent topic prompts.
+**Specific Aim:** To validate the Format Effectiveness Measure as a reproducible instrument for the gap between authentic expression in a counter-format and authentic expression in a conventional format, and to establish that the AVDP counter-format produces a significantly positive FEM score — that it allows materially more authentic expression through than conventional interview conditions.
+
+**Specific Claim:** Participants in the AVDP condition (ambient music present, no phones visible, long-form format with unstructured conversational space) will produce significantly higher scores on established self-disclosure depth measures (Jourard Self-Disclosure Questionnaire; Linguistic Inquiry and Word Count emotional disclosure subscales) compared to participants in a standard interview condition (no music, phones present but not used, time-limited format) when discussing equivalent topic prompts. The FEM score — the signed gap between these conditions — is the primary outcome.
 
 **Design:** A/B experiment with volunteer participant pairs randomly assigned to condition. Both conditions are filmed. Raters blind to condition code disclosure depth from transcripts. Post-session participant self-report (perceived authenticity, comfort, willingness to disclose). The existing AVDP proof-of-concept footage (the Zay episode) is used to train rater calibration.
 

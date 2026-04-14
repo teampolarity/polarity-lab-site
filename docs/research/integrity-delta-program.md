@@ -1,8 +1,8 @@
 # Integrity Delta Lab — Research Program
 
-**Polarity Lab | Environmental Therapeutics Institute | Providence, RI**
+**Polarity Lab | Providence, RI**
 **Draft 1.0 | April 2026**
-**Principal Investigator: Polarity Lab, Integrity Delta Research Group**
+**Executive Director: Theodore Addo | Integrity Delta Research Group**
 
 ---
 

@@ -1,6 +1,6 @@
 # Proximity Index Lab — Research Program
 
-**Principal Investigator:** Polarity Lab
+**Executive Director:** Theodore Addo, Polarity Lab
 **Partner Researcher:** J'Juan Wilson Jr. (GOODhumanz, Providence RI)
 **Location:** Providence, RI
 **Document Version:** April 2026
@@ -170,7 +170,7 @@ This policy-facing report synthesizes research on algorithmic discrimination acr
 
 **Hypothesis:** A community's Proximity Score, defined as the measured gap between cultural and civic output produced by or for that community and what discovery platforms surface to that community, can be calculated with sufficient reliability (test-retest r > 0.80) and validity to detect meaningful differences across geographies and population groups.
 
-**Background:** The Proximity Index was piloted in Providence with MUSEOFRI in 2026, demonstrating proof of concept. However, a single-site pilot is not sufficient to establish the Index as a validated scientific instrument. Without formal validation, it cannot anchor grant applications, appear in peer-reviewed literature, or inform policy. This aim closes that gap.
+**Background:** The Proximity Index methodology was developed in partnership with MUSEOFRI in Providence in 2026, and the counter-environment is live at polaritygps.com. The instrument is fully specified. A formal scored pilot has not yet been run. This aim produces the first scored results and establishes proof of concept at a level sufficient for scientific publication. Without formal validation, the Index cannot anchor grant applications, appear in peer-reviewed literature, or inform policy. This aim closes that gap.
 
 **Approach:**
 - Administer the Index methodology across three to five geographically and demographically distinct communities (e.g., Providence RI, New Orleans LA, Detroit MI, Albuquerque NM) selected for variation in nonprofit density, digital infrastructure, and demographic composition.
@@ -182,7 +182,7 @@ This policy-facing report synthesizes research on algorithmic discrimination acr
 
 **Team:** PI + one research coordinator + MUSEOFRI as community partner. External validation by one academic partner with measurement expertise (target: Brown University School of Public Health or MIT Media Lab).
 
-**Why now:** The pilot data exists. The field is actively looking for measurement tools in this domain, as demonstrated by Candid's public commitment to demographic data collection and the Bridgespan Group's call for sector-level equity metrics. A validated Index is fundable, publishable, and useful to sector partners immediately upon completion.
+**Why now:** The platform is built, the community partnerships are in place, and the instrument is specified. The field is actively looking for measurement tools in this domain, as demonstrated by Candid's public commitment to demographic data collection and the Bridgespan Group's call for sector-level equity metrics. A validated Index is fundable, publishable, and useful to sector partners immediately upon completion.
 
 ---
 
