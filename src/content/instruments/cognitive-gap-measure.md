@@ -11,4 +11,4 @@ limitations:
   - "The instrument does not yet distinguish between restoration of authentic musical preference and dependency on the counter-environment."
 ---
 
-The Cognitive Gap Measure scores the divergence between a listener's authentic musical preference and the recommendation system's behavioral model of that listener — the gap produced by years of engagement-optimized surfacing.
+The Cognitive Gap Measure scores the divergence between a listener's authentic musical preference and the recommendation system's behavioral model of that listener, the gap produced by years of engagement-optimized surfacing.

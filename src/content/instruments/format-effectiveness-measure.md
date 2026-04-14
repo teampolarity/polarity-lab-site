@@ -12,4 +12,4 @@ limitations:
   - "The instrument does not yet distinguish between restoration of authentic expression and dependency on the counter-format environment."
 ---
 
-The Format Effectiveness Measure scores the signed gap between what a subject expresses in the AVDP counter-format and what the same subject expresses under conventional interview conditions — a direct measure of how much authentic expression conventional formats suppress.
+The Format Effectiveness Measure scores the signed gap between what a subject expresses in the AVDP counter-format and what the same subject expresses under conventional interview conditions, a direct measure of how much authentic expression conventional formats suppress.

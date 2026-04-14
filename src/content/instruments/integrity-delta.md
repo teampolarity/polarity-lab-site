@@ -11,6 +11,6 @@ limitations:
   - "Resolution Valley values referenced in early documentation are illustrative predictions, not empirical data."
 ---
 
-IΔ measures the gap between what a deployed clinical AI system produces and independently verifiable ground truth — the divergence that standard workflow review does not surface.
+IΔ measures the gap between what a deployed clinical AI system produces and independently verifiable ground truth, the divergence that standard workflow review does not surface.
 
 The measurement logic is domain-agnostic. The initial observability study was conducted in diagnostic radiology. The instrument applies wherever clinical AI produces outputs against which a ground truth standard can be established.

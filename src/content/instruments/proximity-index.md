@@ -11,4 +11,4 @@ limitations:
   - "The Proximity Index does not yet distinguish between restoration of genuine place-knowledge and substitution for embodied neighborhood experience."
 ---
 
-The Proximity Index measures the gap between what local recommendation surfaces and what actually exists at the neighborhood scale — the stores, organizations, and places that have persisted but do not appear in algorithmic surfaces because they do not optimize for engagement.
+The Proximity Index measures the gap between what local recommendation surfaces and what actually exists at the neighborhood scale: the stores, organizations, and places that have persisted but do not appear in algorithmic surfaces because they do not optimize for engagement.
