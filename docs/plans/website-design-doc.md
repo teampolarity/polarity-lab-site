@@ -119,7 +119,11 @@ Plain-language explanation of the suppression mechanism: how optimization for en
 **Prestige (second scroll)**
 Four project cards. Each card: name, one-line thesis, honest evidence state, link to project page. No hero images. No "coming soon" language for design-iteration projects -- they show their thesis and counter-environment concept.
 
-Footer navigation. The Pledge section serves as the lab's about statement -- no separate about section on the homepage.
+Footer: wordmark only ("Polarity Lab"). No navigation links, no location. Nav handles all primary navigation.
+
+**Nav links:** Integrity Delta, Polarity GPS, WAXFEED, AVDP, Fund, Join. No Research link until research layer is reinstated.
+
+The Pledge section serves as the lab's about statement -- no separate about section on the homepage.
 
 ---
 
@@ -165,9 +169,13 @@ Three sections:
 
 **Pledge:** "Discovery platforms surface what's around you."
 
-**Turn:** "They surface what's popular around you. Proximity is not the same as presence. What exists at the neighborhood scale -- the store that's been there for twenty years, the church that anchors the block -- is not what recommendation surfaces. The Proximity Index measures the gap."
+**Turn:** "They surface what's popular around you. Popularity is not the same as presence. What exists at the neighborhood scale -- the store that's been there for twenty years, the church that anchors the block -- is not what recommendation surfaces, because it does not optimize for engagement. That gap is what GPS is being built to measure."
 
-**Evidence block:** Platform live at polaritygps.com. Community partnerships established (MUSEOFRI, GOODhumanz). Instrument specified. Formal study pending -- this is the next step, not a gap.
+**The question section:** Is the gap between what recommendation surfaces and what actually exists in a neighborhood measurable? Platform live at polaritygps.com. Community partnerships established (MUSEOFRI, GOODhumanz). Formal measurement study is the next step.
+
+**Evidence block:** Platform live. Community partnerships established. Formal scored study not yet run.
+
+Note: Do not name the Proximity Index on this page. Instrument name is not confirmed and direction may change.
 
 ---
 
@@ -175,9 +183,13 @@ Three sections:
 
 **Pledge:** "The platform knows what you want to hear."
 
-**Turn:** "It knows your engagement history. Engagement was shaped by what it showed you. The Cognitive Gap Measure scores the divergence between your recommendation system's model and your authentic musical preference. WAXFEED is the counter-environment designed to close it."
+**Turn:** "It knows your engagement history. Engagement was shaped by what it showed you, when it showed it, how it framed it. Over years of use, the model trained on your engagement diverges from your genuine musical identity. WAXFEED is the counter-environment designed to surface what the recommendation system has suppressed."
 
-**Evidence block:** Counter-environment in development. CGM is a working instrument design. No formal study yet.
+**The question section:** Is the gap between what a recommendation system predicts and what a listener actually prefers measurable at the individual level? That is what WAXFEED is being built to test.
+
+**Evidence block:** Counter-environment in development. No formal study has been run yet. Measurement approach being designed concurrently with the platform.
+
+Note: Do not name the CGM on this page. Instrument name is not confirmed and direction may change.
 
 ---
 
@@ -185,17 +197,21 @@ Three sections:
 
 **Pledge:** "Interview formats capture who people are."
 
-**Turn:** "They capture what people are willing to say under production pressure, with phones visible, with a clock running. That is not the same thing. AVDP removes the suppressants and measures how much more of the person comes through."
+**Turn:** "They capture what people are willing to say under production pressure, with phones visible, with a clock running. That is not the same thing. Every design element of AVDP is a hypothesis about the specific mechanism by which conventional formats suppress authentic expression."
 
-**Evidence block:** Counter-format in development. Proof-of-concept footage exists. FEM is a working instrument design. No formal study yet.
+**The question section:** Does the same person express more authentically when production pressure is removed? That is what AVDP is being designed to test. Proof-of-concept footage exists.
+
+**Evidence block:** Counter-format in development. Proof-of-concept footage exists. No formal study has been run yet.
+
+Note: Do not name the FEM on this page. Instrument name is not confirmed and direction may change.
 
 ---
 
 ### Research (`/research`)
 
-For academic partners and grant reviewers, not general public. Not in primary navigation -- linked from project pages and from the footer.
+**Currently offline -- not linked from anywhere on the site.** Pages exist in the codebase but are undiscoverable until instrument names and directions are confirmed.
 
-Index of instruments with status. Each instrument page rendered from content collection: what it measures, validation protocol, current status, limitations (including restoration vs. dependency distinction). Links to full instrument specification documents. No generated scores anywhere on this layer.
+When reinstated: for academic partners and grant reviewers only. Index of measurement approaches with status. Each page rendered from content collection. Instrument names (CGM, FEM, Proximity Index) appear here only -- not on public project pages -- because this audience understands concept vs. validated instrument.
 
 ---
 
@@ -221,9 +237,9 @@ For contributors and collaborators. Role types, what the lab is building toward,
 
 **No Cosmos on the public site.** Evidence is founder self-report only. Does not meet the site's evidence standard.
 
-**Pledge/Turn/Prestige governs the whole site.** Not just the homepage -- every project page, every section.
+**Pledge/Turn/Prestige governs the whole site.** Not just the homepage -- every project page, every section. These labels are internal framing only -- they do not appear as visible headings on any public page.
 
-**The research layer is for experts.** `/research` is not consumer content. It exists to give academic partners and grant reviewers what they need to evaluate the work.
+**The research layer is for experts and is currently offline.** When reinstated, `/research` exists for academic partners and grant reviewers only. Instrument names live here, not on public project pages.
 
 ---
 
@@ -231,8 +247,10 @@ For contributors and collaborators. Role types, what the lab is building toward,
 
 The current site is a single static HTML file (~5,000 lines). The Astro build replaces it. The existing `public/` directory stays in place during migration. Cloudflare Pages deploys from the Astro build output (`dist/`).
 
-Deploy command (unchanged from current):
+Deploy command:
 ```
-CLOUDFLARE_API_TOKEN=cfut_vAbpkApD6sclTYEPK0t9E0j02eIBZV8Bx0otnHgm0c2447ea npx wrangler pages deploy dist/ --project-name theo-os
+npm run deploy
 ```
-Note: confirm project name matches polarity-site's Cloudflare Pages project, not theo-os.
+Which runs: `astro build && CLOUDFLARE_API_TOKEN=... npx wrangler pages deploy dist/ --project-name polarity-site`
+
+Cloudflare Pages project: `polarity-site` on team@polarity-lab.com account. Contact email for all CTAs: team@polarity-lab.com.

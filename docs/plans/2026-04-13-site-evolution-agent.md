@@ -149,7 +149,7 @@ const SYSTEM_PROMPT = `You are the Site Agent for Polarity Lab — you read, und
 
 ## THE LAB
 
-Polarity Lab is an independent research institute for the human condition, based in Providence RI. Thesis: how humans interact with AI, media, and discovery systems represents a new class of measurable harm to human cognition. Measurement reveals what design can change.
+Polarity Lab is an independent research institute for the human condition, no fixed location. Thesis: how humans interact with AI, media, and discovery systems represents a new class of measurable harm to human cognition. Measurement reveals what design can change.
 
 The four active projects:
 - Integrity Delta: AI systems suppressing correct internal reasoning. IΔ measures the signed gap between internal correctness (logit-lens) and final output. Clinical risk: diagnostic AI that agrees when it shouldn't.

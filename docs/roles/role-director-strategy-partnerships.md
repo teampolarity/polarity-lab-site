@@ -71,7 +71,7 @@ If anything here doesn't match your understanding of your role, that conversatio
 
 **1517 groundwork.** The pitch exists. The lab isn't ready to send it yet -- the first proof contract should come first. Your job is to understand how 1517 engages, what they need to see, and what the lab needs to have in place before that conversation actually happens.
 
-**Providence community partnerships for GPS.** GPS needs organizational partners in Providence before it can hit the density that makes the Proximity Index meaningful. Map the local creative and community organizations and start those conversations now.
+**Providence community partnerships for GPS.** GPS needs organizational partners in Providence before it can hit the density that makes the instrument's research design meaningful. Map the local creative and community organizations and start those conversations now.
 
 ---
 

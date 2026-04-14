@@ -10,7 +10,7 @@
 
 Designed environments have a second threshold. Below it, a system extends authentic human capacity. Beyond it, the system's compliance demands suppress the authentic signal it was built to serve. The suppression is measurable. Recovery through counter-environment design is real and provable.
 
-The first generation instruments (IΔ, CGM, CRM, SAM, FEM, Proximity Index) measure the gap between authentic capacity and what a given system has suppressed. The counter-environments (Cosmos, WAXFEED, GPS, AVDP) are designed to close that gap.
+The first generation instruments (IΔ, CGM, CRM, SAM, FEM, Proximity Index — all working names except IΔ, which has confirmed observability) are designed to measure the gap between authentic capacity and what a given system has suppressed. The counter-environments (Cosmos, WAXFEED, GPS, AVDP) are designed to close that gap.
 
 ---
 

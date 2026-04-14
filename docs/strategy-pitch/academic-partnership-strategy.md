@@ -177,11 +177,15 @@ For Knight and Mozilla, an academic co-PI strengthens the proposal and demonstra
 
 ### The research question first
 
-Every first conversation should start with the scientific problem, not the grant opportunity. Lead with what the lab is measuring and why it matters. The IΔ is the strongest hook for clinical academic partners: sycophantic AI suppresses correct psychiatric diagnosis in the models community mental health centers are deploying. The GPS is the strongest hook for public health partners: 70% of Providence BIPOC-led workforce development resources are invisible to standard platforms.
+Every first conversation should start with the scientific problem, not the grant opportunity. Lead with what the lab is measuring and why it matters. The IΔ is the strongest hook for clinical academic partners: sycophantic AI suppresses correct psychiatric diagnosis in the models community mental health centers are deploying. The GPS is the strongest hook for public health partners: the MUSEOFRI Pain Points Report and GOODhumanz Closing the Gap whitepaper document that BIPOC-led nonprofit resources are systematically invisible — the Proximity Index is the instrument designed to score and reproduce that finding formally.
+
+<!-- NOTE: Original text cited "70% of Providence BIPOC-led workforce development resources are invisible to standard platforms" as if this were a formal Proximity Index result. No formal Proximity Index pilot scores have been computed. The 70%+ figure was a placeholder in the Knight grant draft. Do not cite it as an existing measurement until Aim 1 data exists. -->
 
 ### The pilot data
 
-Every conversation should include a leave-behind: for IΔ, the pilot sample assessment report; for GPS, the Proximity Index specification and pilot score; for WAXFEED, the CGM specification. These documents demonstrate that the lab has done the technical work. An academic partner is being asked to co-sign methodology that already has substance, not to develop from scratch.
+Every conversation should include a leave-behind: for IΔ, the pilot sample assessment report; for GPS, the Proximity Index specification and partner research documentation (MUSEOFRI Pain Points Report, Closing the Gap whitepaper); for WAXFEED, the CGM specification. These documents demonstrate that the lab has done the technical work. An academic partner is being asked to co-sign methodology that already has substance, not to develop from scratch.
+
+<!-- NOTE: Original text said "Proximity Index specification and pilot score" but no formal pilot scores exist yet. Updated to reference partner research documentation as the evidence base for the GPS hypothesis. -->
 
 ### The honest ask
 

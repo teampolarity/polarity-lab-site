@@ -17,7 +17,7 @@ That's what you're building and why you're the one building it.
 
 ## What WAXFEED Is
 
-A music discovery platform that builds a cognitive profile from listening behavior, measuring the gap between what the recommendation environment predicts you want and what your genuine taste response actually is. The platform is the counter-environment. The Cognitive Gap Measure is the instrument. The data they generate together is the research.
+A music discovery platform that builds a cognitive profile from listening behavior, measuring the gap between what the recommendation environment predicts you want and what your genuine taste response actually is. The platform is the counter-environment. The instrument being built to measure that gap is working under the name Cognitive Gap Measure (working name, direction not confirmed). The data they generate together is the research.
 
 This is not a streaming service with better recommendations. It is a proof — that authentic musical identity survives algorithmic suppression and can be surfaced back to the person who lost it. The before-and-after is the deliverable. To the user, and to the research record.
 
@@ -31,13 +31,13 @@ You direct the product development. Technical architecture decisions, feature se
 
 You build the WAXFEED collaborator team. As the project adds technical partners, research contributors, or domain-specific advisors, you're identifying who belongs in the project and at what tier. The lab's contributor framework applies. Tier, weight, compensation, and time commitment get set at acceptance.
 
-You know the WAXFEED research landscape -- which music cognition or information systems researchers are doing adjacent work, what behavioral data licensing conversations would require, which academic affiliations would strengthen the CGM's credibility. That knowledge is yours. Brief the Director of Strategy on it. Strategy runs the first institutional meetings and data licensing conversations. You provide the scientific depth once a conversation is real.
+You know the WAXFEED research landscape -- which music cognition or information systems researchers are doing adjacent work, what behavioral data licensing conversations would require, which academic affiliations would strengthen the instrument's credibility. That knowledge is yours. Brief the Director of Strategy on it. Strategy runs the first institutional meetings and data licensing conversations. You provide the scientific depth once a conversation is real.
 
 You keep the instrument honest. When WAXFEED's commercial incentives create pressure to design for engagement over instrument integrity — and they will — you're the one who holds the line. The product that maximizes listening time is not the same product as the one that proves recovery is real. That tension is always live. Resolving it in favor of the instrument is what makes the project worth doing.
 
 ---
 
-## The Cognitive Gap Measure
+## The Cognitive Gap Measure (working name, direction not confirmed)
 
 The instrument has to be defined precisely before the platform can generate meaningful data. At minimum, the Cognitive Gap Measure needs to specify:
 
@@ -53,7 +53,7 @@ This is the research design question at the center of the project. The technical
 
 ## What Stays With the Founder
 
-The lab-level research agenda and the four instruments' foundational methodology stay with the founder. The Cognitive Gap Measure is WAXFEED's application of the lab's methodology. You develop and refine the instrument for this domain. You don't redefine what the underlying methodology is.
+The lab-level research agenda and the foundational methodology stay with the founder. The instrument WAXFEED is developing (working name: Cognitive Gap Measure) is your application of the lab's methodology to this domain. You develop and refine the instrument for this domain. You don't redefine what the underlying methodology is.
 
 Financial believer and institutional contract conversations are owned by the Director of Strategy, within terms set by the founder. You have visibility into these as needed. You're not conducting those conversations unilaterally.
 

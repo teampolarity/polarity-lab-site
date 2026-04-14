@@ -126,7 +126,7 @@ The founder hit the second threshold in medicine — one of the most optimized c
 - Algorithmic audit researchers: measure harm at population level. No portable instruments. No reversibility. No unified methodology. Dependent on platform API access that's being shut down.
 - Media effects researchers: document outcomes. Can't operate platforms. No instruments. No reversibility research.
 - MIT Media Lab flourishing benchmarks: broad values-based dimensions, academic timeline, not tied to specific design decisions.
-- Jonathan Haidt: documents and advocates. Can't tell you what the Proximity Index score for Providence is.
+- Jonathan Haidt: documents and advocates. Can't produce a formal Proximity Index score for Providence. The lab is building the instrument to do that — first formal scored result produced by the Knight-funded Aim 1.
 
 **DSA audit gap (confirmed by research):**
 DSA audit reports show "massive divergence" — the delegated regulation does not provide standard definitions, methodologies, or benchmarks. Auditors are operating without comparable frameworks. CDT published "Auditing in the Dark" about exactly this gap. No unified measurement framework exists. The lab's instruments are the supply the regulatory demand is looking for.

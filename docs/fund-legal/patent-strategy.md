@@ -288,7 +288,7 @@ The six instruments (CGM, IΔ, SAM, FEM, CRM, Proximity Index) are protected thr
 - Bundled with an assessment service (the lab scores, delivers report): as per SoW pricing
 
 **What to do now:**
-1. Add explicit copyright notices to all instrument specification documents: "© 2026 Polarity Lab LLC. All rights reserved. Non-commercial research use with attribution permitted. Commercial use requires a license. Contact licensing@polarity-lab.com."
+1. Add explicit copyright notices to all instrument specification documents: "© 2026 Polarity Lab LLC. All rights reserved. Non-commercial research use with attribution permitted. Commercial use requires a license. Contact team@polarity-lab.com."
 2. Publish a one-page instrument licensing schedule on the website specifying the terms for commercial use
 3. Register copyright on the six instrument specifications with the US Copyright Office (~$65/work, or $55 for a group registration of related works)
 

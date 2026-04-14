@@ -1,19 +1,50 @@
 ---
 // src/components/Nav.astro
-const navLinks = [
+const projectLinks = [
   { href: '/projects/integrity-delta', label: 'Integrity Delta' },
   { href: '/projects/polarity-gps', label: 'Polarity GPS' },
   { href: '/projects/waxfeed', label: 'WAXFEED' },
   { href: '/projects/avdp', label: 'AVDP' },
+];
+
+const secondaryLinks = [
   { href: '/fund', label: 'Fund' },
+  { href: '/join', label: 'Join' },
 ];
 
 const currentPath = Astro.url.pathname;
 ---
 <nav>
-  <a href="/" class="wordmark">Polarity Lab</a>
-  <ul>
-    {navLinks.map(link => (
+  <a href="/" class="wordmark">
+    <svg class="logo-atom" viewBox="0 0 100 100" aria-hidden="true">
+      <defs>
+        <radialGradient id="navCoreGrad" cx="30%" cy="30%" r="70%">
+          <stop offset="0%" stop-color="#6EE7DF"/>
+          <stop offset="50%" stop-color="#4ECDC4"/>
+          <stop offset="100%" stop-color="#2BA89F"/>
+        </radialGradient>
+        <filter id="navGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#4ECDC4" stroke-width="1.5" transform="rotate(-60 50 50)" filter="url(#navGlow)" opacity="0.9"/>
+      <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" filter="url(#navGlow)" opacity="0.9"/>
+      <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" filter="url(#navGlow)" opacity="0.9"/>
+      <circle cx="70" cy="15" r="4" fill="#4ECDC4" filter="url(#navGlow)"/>
+      <circle cx="30" cy="15" r="4" fill="#FFA07A" filter="url(#navGlow)"/>
+      <circle cx="90" cy="50" r="4" fill="#BB8FCE" filter="url(#navGlow)"/>
+      <circle cx="50" cy="50" r="14" fill="url(#navCoreGrad)" filter="url(#navGlow)"/>
+      <circle cx="45" cy="45" r="5" fill="white" opacity="0.25"/>
+    </svg>
+    <span class="wordmark-text">POLARITY</span>
+  </a>
+
+  <ul class="nav-links" id="nav-links">
+    {projectLinks.map(link => (
       <li>
         <a
           href={link.href}
@@ -23,7 +54,30 @@ const currentPath = Astro.url.pathname;
         </a>
       </li>
     ))}
+    <li class="nav-divider" aria-hidden="true"></li>
+    {secondaryLinks.map(link => (
+      <li>
+        <a
+          href={link.href}
+          class:list={['nav-link nav-link--secondary', { active: currentPath.startsWith(link.href) }]}
+        >
+          {link.label}
+        </a>
+      </li>
+    ))}
   </ul>
+
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+    <svg class="icon-menu" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+    <svg class="icon-close" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+      <line x1="18" y1="6" x2="6" y2="18"/>
+      <line x1="6" y1="6" x2="18" y2="18"/>
+    </svg>
+  </button>
 </nav>
 
 <style>
@@ -41,21 +95,46 @@ const currentPath = Astro.url.pathname;
   }
 
   .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo-atom {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 8px var(--teal-glow));
+    transition: transform 0.6s var(--ease-out-expo);
+  }
+
+  .wordmark:hover .logo-atom {
+    transform: rotate(180deg);
+  }
+
+  .wordmark-text {
     font-family: var(--font-display);
     font-weight: 600;
     font-size: 1.1rem;
     color: var(--text-pure);
-    letter-spacing: -0.01em;
+    letter-spacing: 0.05em;
   }
 
-  .wordmark:hover {
+  .wordmark:hover .wordmark-text {
     color: var(--text-pure);
   }
 
-  ul {
+  .nav-links {
     display: flex;
+    align-items: center;
     gap: 2rem;
     list-style: none;
+  }
+
+  .nav-divider {
+    width: 1px;
+    height: 1rem;
+    background: var(--border-subtle);
   }
 
   .nav-link {
@@ -66,12 +145,95 @@ const currentPath = Astro.url.pathname;
     letter-spacing: 0.01em;
   }
 
+  .nav-link--secondary {
+    color: var(--text-ghost);
+  }
+
   .nav-link:hover,
   .nav-link.active {
     color: var(--text-primary);
   }
 
+  .hamburger {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    color: rgba(255,255,255,0.65);
+    line-height: 0;
+  }
+
+  .icon-close {
+    display: none;
+  }
+
+  .hamburger[aria-expanded="true"] .icon-menu {
+    display: none;
+  }
+
+  .hamburger[aria-expanded="true"] .icon-close {
+    display: block;
+  }
+
   @media (max-width: 768px) {
-    ul { display: none; }
+    .hamburger {
+      display: flex;
+    }
+
+    .nav-links {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      background: var(--void-surface);
+      border-bottom: 1px solid var(--border-ghost);
+      padding: 1rem 2rem 1.5rem;
+    }
+
+    .nav-links.open {
+      display: flex;
+    }
+
+    .nav-links li {
+      width: 100%;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 0.625rem 0;
+      font-size: 1rem;
+      border-bottom: 1px solid var(--border-ghost);
+    }
+
+    .nav-link--secondary {
+      color: var(--text-ghost);
+    }
+
+    .nav-divider {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-atom,
+    .hamburger span {
+      transition: none;
+    }
   }
 </style>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger?.addEventListener('click', () => {
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+    hamburger.setAttribute('aria-expanded', String(!expanded));
+    navLinks?.classList.toggle('open');
+  });
+</script>

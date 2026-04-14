@@ -30,13 +30,13 @@ The StyleDNA process is already doing revealed preference inference from image r
 
 Computer vision deepens this in two directions:
 
-**SAM baseline measurement.** The Style Authenticity Measure requires a baseline that captures what conventional algorithms have already shaped before Phresh onboarding. Computer vision applied to a person's existing digital wardrobe (saved items, purchase history, social media fashion content) could provide an objective read of algorithm-trained drift — what the environment has been surfacing and what the person has been absorbing — separate from what StyleDNA captures as the authentic signal. The gap between those two is the SAM.
+**SAM baseline measurement.** The working instrument concept for Phresh (working name SAM, direction not confirmed) requires a baseline that captures what conventional algorithms have already shaped before Phresh onboarding. Computer vision applied to a person's existing digital wardrobe (saved items, purchase history, social media fashion content) could provide an objective read of algorithm-trained drift — what the environment has been surfacing and what the person has been absorbing — separate from what StyleDNA captures as the authentic signal. The gap between those two is what the instrument would measure.
 
 **Preference drift detection.** Over time, computer vision analysis of how StyleDNA evolves can detect whether authentic preferences are shifting or stabilizing. Stabilization after onboarding is the expected counter-environment effect. Drift in a consistent direction would indicate that even Phresh is training preference rather than modeling it — a critical quality control signal for the instrument.
 
-### AVDP — Format Effectiveness Measure
+### AVDP — Format Effectiveness Measure (working name, direction not confirmed)
 
-The Format Effectiveness Measure distinguishes authentic expression from format-suppressed output. Currently the FEM relies substantially on self-report: subjects describe how they felt in each format, what they were able to say or not say, how close the output felt to authentic expression. That is a valid measurement approach. It is not sufficient alone.
+The working instrument concept for AVDP (working name FEM) would distinguish authentic expression from format-suppressed output. Currently the approach relies substantially on self-report: subjects describe how they felt in each format, what they were able to say or not say, how close the output felt to authentic expression. That is a valid measurement approach. It is not sufficient alone.
 
 Computer vision applied to footage analysis provides a behavioral channel that does not depend on the subject's ability to articulate what they experienced:
 
@@ -44,7 +44,7 @@ Computer vision applied to footage analysis provides a behavioral channel that d
 - **Body language and postural alignment**: open vs. closed postures, forward lean, gestural fluency, eye contact patterns — all behavioral correlates of authentic engagement vs. performed or constrained expression.
 - **Spontaneous vs. composed speech indicators**: disfluencies, self-interruptions, genuine laughter, unplanned elaborations are markers of authentic cognitive engagement. Highly polished, on-message delivery is a marker of format compliance. Computer vision (combined with audio analysis) can distinguish these without asking the subject.
 
-The FEM with a behavioral computer vision layer is a substantially stronger instrument than the FEM on self-report alone. It also opens a publication pathway that conventional film studies and media psychology cannot access: objective behavioral measurement of format effects on authentic expression.
+This working instrument concept with a behavioral computer vision layer would be a substantially stronger measurement approach than self-report alone. It also opens a publication pathway that conventional film studies and media psychology cannot access: objective behavioral measurement of format effects on authentic expression.
 
 ### Cross-Project: Revealed Preference as Lab Methodology
 
@@ -72,8 +72,8 @@ The key architectural decision is whether to build a shared computer vision serv
 ## Open Questions
 
 - Can the StyleDNA image-response methodology generalize to other sensory domains beyond fashion? WAXFEED currently relies on self-report and listening behavior. A visual version (album art, concert footage, artist imagery) could provide a revealed preference channel for music taste that doesn't depend on explicit ratings.
-- What is the IRB pathway for computer vision analysis of facial expressions and body language in AVDP footage? Subjects consent to being filmed. Do they separately consent to automated behavioral analysis? This needs to be clarified before the FEM instrument layer is designed.
-- Is there a GPS application? Spatial behavior (movement patterns, dwelling, social clustering) is a form of revealed preference for community. Computer vision applied to physical space observation could supplement the Proximity Index's survey-based methods.
+- What is the IRB pathway for computer vision analysis of facial expressions and body language in AVDP footage? Subjects consent to being filmed. Do they separately consent to automated behavioral analysis? This needs to be clarified before the measurement layer is designed.
+- Is there a GPS application? Spatial behavior (movement patterns, dwelling, social clustering) is a form of revealed preference for community. Computer vision applied to physical space observation could supplement the Proximity Index's (working name, direction not confirmed) survey-based methods.
 
 ---
 

@@ -27,13 +27,13 @@ Cosmos is the multi-user product that delivers that design principle to other pe
 
 ## What You Do
 
-You own the research question for the project. Does a personal operating system designed to model who you are restore executive function without suppressing authentic cognitive capacity? That question needs a precise answer before Cosmos can be positioned as anything more than a better productivity app. The Cognitive Return Measure is the instrument. You define what it measures, how it measures it, and what a valid result looks like.
+You own the research question for the project. Does a personal operating system designed to model who you are restore executive function without suppressing authentic cognitive capacity? That question needs a precise answer before Cosmos can be positioned as anything more than a better productivity app. The instrument you are building to answer it is working under the name Cognitive Return Measure (working name, direction not confirmed). You define what it measures, how it measures it, and what a valid result looks like.
 
 You direct the product development. Cosmos is currently a single-user implementation. The target is a multi-user product with a different architecture, an onboarding process designed to build the system's model of the person from the start, and an instrument layer that generates the data the research question requires. That transition is yours to design. The research question drives the product architecture, not the other way around.
 
 You know the Cosmos research landscape -- which clinical psychology or cognitive science researchers are doing adjacent work, what a clinical validation partner would need to contribute, how the grant applications frame Cosmos as a mental health intervention. Brief the Director of Strategy on that landscape. Strategy runs the first institutional meetings. You're in the room when a conversation is substantive enough to require the person who built the system.
 
-You hold the instrument honest. The biggest risk for Cosmos is that it becomes a better productivity app with good UX — easier to use than Notion, more personal than Todoist, but not actually doing what it claims. The Cognitive Return Measure is the guard against that. If Cosmos's data doesn't show measurable cognitive restoration for users who have experienced the same trade, it doesn't get called a counter-environment.
+You hold the instrument honest. The biggest risk for Cosmos is that it becomes a better productivity app with good UX — easier to use than Notion, more personal than Todoist, but not actually doing what it claims. The instrument (working name: Cognitive Return Measure) is the guard against that. If Cosmos's data doesn't show measurable cognitive restoration for users who have experienced the same trade, it doesn't get called a counter-environment.
 
 ---
 
@@ -65,7 +65,7 @@ The transition from single-user to multi-user is also a research design transiti
 
 ---
 
-## The Cognitive Return Measure
+## The Cognitive Return Measure (working name, direction not confirmed)
 
 The instrument needs to be defined before Cosmos can generate meaningful research data. At minimum:
 
@@ -94,7 +94,7 @@ The distinction: Cosmos's financial believer pool won't open until there's multi
 
 ## What to Work On Right Now
 
-**Define the Cognitive Return Measure.** The four operational parameters above before anything else. The research program document covers the academic framing. The instrument needs practical definition — what gets measured during Cosmos onboarding, what gets tracked over time, what a positive result looks like in the data.
+**Define the instrument.** The four operational parameters above before anything else. The research program document covers the academic framing. The instrument (working name: Cognitive Return Measure) needs practical definition — what gets measured during Cosmos onboarding, what gets tracked over time, what a positive result looks like in the data.
 
 **Architecture for multi-user Cosmos.** The current implementation is a single-user system on a personal admin page. The multi-user architecture requires per-user data isolation, a model-building onboarding sequence, and an instrument layer that generates research-grade data. Map the delta from the current implementation before writing any code.
 

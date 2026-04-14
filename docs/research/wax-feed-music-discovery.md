@@ -2,7 +2,6 @@
 
 **Executive Director:** Theodore Addo, Polarity Lab
 **Domain Lead:** Shadrack Annor
-**Location:** Providence, RI
 **Document Version:** April 2026
 **Status:** Working draft — for advisor, collaborator, and funder review
 
@@ -16,7 +15,7 @@ This question has a precise shape. Every major music platform constructs a liste
 
 At some point the person listening is no longer discovering music. They are receiving confirmation of a prediction about themselves that was built from the engagement history of a person who was already receiving confirmation of a prediction. Genuine musical identity — the taste that exists independent of algorithmic mediation — has gone somewhere. This lab exists to measure where, and to prove it can come back.
 
-The **Cognitive Gap Measure (CGM)** is the instrument. WAXFEED is the counter-environment. The platform is built to surface what the recommendation system has suppressed. The CGM measures whether it does.
+The **Cognitive Gap Measure (CGM, working name — instrument direction not yet confirmed)** is the proposed instrument. WAXFEED is the counter-environment. The platform is designed to surface what the recommendation system has suppressed. The CGM is designed to measure whether it does, pending instrument validation.
 
 ---
 
@@ -28,9 +27,9 @@ Music recommendation platforms crossed the second threshold when their optimizat
 
 Each lab at Polarity builds either a diagnostic instrument or a therapeutic environment. The WAXFEED Lab builds both.
 
-The **Cognitive Gap Measure** is the diagnostic instrument. It produces a scalar score representing the signed gap between what a recommendation environment predicts a listener wants and what that listener's genuine taste response actually is. A CGM score of zero means the recommendation environment's model of the person matches the person's own authentic preference. A large positive CGM score means the platform's model has diverged from the person — that there is measurable authentic musical identity that the platform's predictions do not account for.
+The **Cognitive Gap Measure (CGM)** is the proposed diagnostic instrument (working name; instrument design not yet confirmed, no validated scores exist). It is designed to produce a scalar score representing the signed gap between what a recommendation environment predicts a listener wants and what that listener's genuine taste response actually is. A CGM score of zero would mean the recommendation environment's model of the person matches the person's own authentic preference. A large positive CGM score would mean the platform's model has diverged from the person — that there is measurable authentic musical identity that the platform's predictions do not account for.
 
-**WAXFEED** is the corresponding therapeutic environment. It is a music discovery platform designed to build a cognitive profile from listening behavior and surface what the recommendation environment has suppressed. The platform is the counter-environment. The CGM measures whether it works. The before-and-after is the proof.
+**WAXFEED** is the corresponding therapeutic environment. It is a music discovery platform designed to build a cognitive profile from listening behavior and surface what the recommendation environment has suppressed. The platform is the counter-environment. The CGM is designed to measure whether it works. The before-and-after is the intended proof.
 
 This research program designs, validates, and applies the Cognitive Gap Measure, and tests WAXFEED as the intervention that closes it.
 
@@ -164,7 +163,7 @@ The CGM requires precise specification of two quantities: the recommendation sys
 
 *Validation.* Construct validity: does the CGM correlate with the listener's MUSIC taxonomy profile (Rentfrow and Gosling 2003) as estimated from personality measures independent of listening history? Test-retest reliability: does the CGM score remain stable at 30-day intervals in the absence of significant new listening activity? Sensitivity: does the CGM change measurably after 90 days of WAXFEED use?
 
-*Sample.* 200 listeners recruited from WAXFEED's Providence user base and direct recruitment. Inclusion criteria: at least 2 years of active streaming platform use on a single primary platform.
+*Sample.* 200 listeners recruited through direct outreach and early WAXFEED user recruitment (platform in development at time of writing). Inclusion criteria: at least 2 years of active streaming platform use on a single primary platform.
 
 *Timeline.* 12-18 months.
 

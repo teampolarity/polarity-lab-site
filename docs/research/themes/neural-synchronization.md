@@ -36,18 +36,18 @@ Neural coupling during real communication. Coupling predicts comprehension. Anti
 Emotional synchrony during shared experience. Emotionally engaging content produces stronger neural alignment than neutral content. This connects to AVDP: counter-format environments that permit authentic emotional expression should produce stronger synchrony between subject and audience than conventional format environments.
 
 **Zatorre, R. J., & Salimpoor, V. N. (2013).** From perception to pleasure: Music and its neural substrates. *PNAS, 110*(Suppl 2), 10430-10437.
-Music engages reward circuitry and produces neural synchrony among listeners. The dopaminergic response to music that feels authentic to the listener (vs. algorithm-curated music that doesn't) likely differs. This is the theoretical link between WAXFEED's Cognitive Gap Measure and neural synchronization.
+Music engages reward circuitry and produces neural synchrony among listeners. The dopaminergic response to music that feels authentic to the listener (vs. algorithm-curated music that doesn't) likely differs. This is the theoretical link between WAXFEED's working instrument concept (working name Cognitive Gap Measure, direction not confirmed) and neural synchronization.
 
 **Dikker, S., Wan, L., Davidesco, I., Kaggen, L., Oostrik, M., McClintock, J., ... & Poeppel, D. (2017).** Brain-to-brain synchrony tracks real-world dynamic group interactions in the classroom. *Current Biology, 27*(9), 1375-1380.
-ISC in real-world social settings outside the scanner. Stronger engagement and social cohesion predict stronger neural alignment. Directly relevant to GPS: the Proximity Index predicts that authentic community environments produce neural synchrony that digitally-mediated or algorithmically-managed social environments do not.
+ISC in real-world social settings outside the scanner. Stronger engagement and social cohesion predict stronger neural alignment. Directly relevant to GPS: the working instrument concept (working name Proximity Index, direction not confirmed) predicts that authentic community environments produce neural synchrony that digitally-mediated or algorithmically-managed social environments do not.
 
 ---
 
 ## Where Neural Synchronization Appears Across the Lab
 
-### AVDP — Format Effectiveness Measure
+### AVDP — Format Effectiveness Measure (working name, direction not confirmed)
 
-This is the most direct application. The Format Effectiveness Measure asks whether counter-format environments produce more authentic expression than conventional formats. Neural synchronization is the strongest available evidence that authentic expression has occurred -- not because the subject says they felt more authentic, but because the audience's brains aligned with the signal.
+This is the most direct application. The working instrument concept for AVDP (working name FEM) asks whether counter-format environments produce more authentic expression than conventional formats. Neural synchronization is the strongest available evidence that authentic expression has occurred -- not because the subject says they felt more authentic, but because the audience's brains aligned with the signal.
 
 The hypothesis: documentary footage produced in the AVDP counter-format environment will produce higher inter-subject correlation in audience members than footage of the same subject produced under conventional format constraints. Higher ISC means the signal got through. Lower ISC means the format deformed the signal before it reached the audience.
 
@@ -58,19 +58,19 @@ This is a testable prediction. It requires:
 
 The AVDP research program's Aim 3 (therapeutic counter-environment testing) is already designed to generate paired footage. Adding audience ISC measurement to Aim 3 would make neural synchronization the outcome measure, not just self-report of authenticity. That is a substantially stronger claim.
 
-### GPS — Proximity Index
+### GPS — Proximity Index (working name, direction not confirmed)
 
-The Proximity Index asks whether physical proximity and authentic community connection produce a different kind of social bond than digitally-mediated or algorithmically-curated connection. Neural synchronization is the neurological substrate of that difference.
+The working instrument concept for GPS (working name Proximity Index) asks whether physical proximity and authentic community connection produce a different kind of social bond than digitally-mediated or algorithmically-curated connection. Neural synchronization is the neurological substrate of that difference.
 
 Dikker et al.'s classroom study showed that real-world social engagement and group cohesion predict neural alignment outside the scanner. The GPS thesis is that genuine community proximity produces a qualitatively different form of social connection than platform-mediated social graphs. If that is true, it should be measurable in neural synchrony between community members during shared activities -- neighborhood events, community rituals, collective decision-making -- compared to digitally-connected but physically dispersed groups performing the same activities.
 
-This is not currently in the GPS research program. It is a future direction that becomes available when the Proximity Index has a validated behavioral measure of authentic community connection and a research partner with EEG capacity for naturalistic measurement.
+This is not currently in the GPS research program. It is a future direction that becomes available when the working instrument has a validated behavioral measure of authentic community connection and a research partner with EEG capacity for naturalistic measurement.
 
-### WAXFEED — Cognitive Gap Measure
+### WAXFEED — Cognitive Gap Measure (working name, direction not confirmed)
 
-Music is one of the most reliable inducers of neural synchrony. Zatorre's work establishes that music that produces genuine emotional response activates reward circuitry in ways that passively received or habituated listening does not. The Cognitive Gap Measure distinguishes authentic musical response from algorithm-trained habituation. Neural synchrony among listeners who share authentic taste preferences should be measurable and should exceed synchrony among listeners whose stated preferences reflect algorithmic training rather than genuine taste.
+Music is one of the most reliable inducers of neural synchrony. Zatorre's work establishes that music that produces genuine emotional response activates reward circuitry in ways that passively received or habituated listening does not. The working instrument concept for WAXFEED would distinguish authentic musical response from algorithm-trained habituation. Neural synchrony among listeners who share authentic taste preferences should be measurable and should exceed synchrony among listeners whose stated preferences reflect algorithmic training rather than genuine taste.
 
-This is an exploratory direction rather than a current aim. It becomes available if WAXFEED's study design can incorporate EEG or fNIRS measurement during listening sessions. The payoff would be a neural correlate for the Cognitive Gap -- not just behavioral and self-report evidence that authentic taste differs from algorithm-trained preference, but a brain signature for the difference.
+This is an exploratory direction rather than a current aim. It becomes available if WAXFEED's study design can incorporate EEG or fNIRS measurement during listening sessions. The payoff would be a neural correlate for the working instrument -- not just behavioral and self-report evidence that authentic taste differs from algorithm-trained preference, but a brain signature for the difference.
 
 ### IΔ — Integrity Delta
 

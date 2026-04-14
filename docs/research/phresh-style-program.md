@@ -2,7 +2,6 @@
 
 **Executive Director:** Theodore Addo, Polarity Lab
 **Domain Lead:** [Director of Strategy and Partnerships] — active when available
-**Location:** Providence, RI
 **Document Version:** April 2026
 **Status:** Pre-development placeholder — thesis established, instrument definition and validation study pending domain lead availability
 

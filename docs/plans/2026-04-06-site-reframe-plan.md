@@ -458,7 +458,7 @@ Add these styles to the `<style>` block. Do NOT remove existing styles, only add
 <section class="hero-minimal" id="hero">
   <h1 class="hero-minimal-title reveal">POLARITY</h1>
   <p class="hero-minimal-tagline reveal">An environmental therapeutics lab.</p>
-  <p class="hero-minimal-location reveal">Providence, RI · Est. 2025</p>
+  <p class="hero-minimal-location reveal">Est. 2025</p>
 </section>
 ```
 
@@ -999,6 +999,8 @@ The instrument was developed in partnership with MUSEOFRI (Providence, RI, 2026)
 ```
 
 ### Step 5: Results copy
+
+<!-- NOTE FOR HUMAN REVIEW: This section heading is "Results" but the Proximity Index has no formal scored results yet. The content below draws from partner reports (MUSEOFRI Pain Points Report, GOODhumanz Closing the Gap whitepaper), not from Proximity Index scoring. Before this page goes live, either (a) rename the section to "Partner Findings" or "What We Know So Far" and clarify the source, or (b) replace with Proximity Index data once Aim 1 is complete. Do not publish under a "Results" heading that implies scored instrument output. -->
 
 ```
 Across BIPOC-led communities in Providence, the gap was not caused by a lack of output. Communities were actively producing. The problem was in the pathways.

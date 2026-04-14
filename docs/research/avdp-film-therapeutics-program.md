@@ -1,7 +1,6 @@
 # AVDP Film Therapeutics Lab — Research Program
 
 **Executive Director:** Theodore Addo, Polarity Lab
-**Location:** Providence, RI
 **Version:** April 2026 (Pre-Grant Draft)
 **Status:** Active development — circulating to advisors and collaborators
 
@@ -15,7 +14,7 @@ Every media format carries an optimization inside it. Runtime constraints, platf
 
 AVDP (A Very Distant Perspective) is a video podcast series engineered as a counter-format. Each design element — the removal of smartphones, the live-mixed ambient music, the long-form temporal structure, the absence of production pressure — is a hypothesis about the specific mechanism by which conventional formats suppress authentic expression. The counter-format tests those hypotheses by removing the suppressants and measuring how much more of the person comes through.
 
-The **Format Effectiveness Measure (FEM)** is the diagnostic instrument. It measures the signed gap between what a subject expresses in an unconstrained counter-format setting and what a conventional format would have allowed through. A large FEM score means the conventional format was suppressing significantly. The counter-format AVDP produces is the therapeutic environment. The FEM measures whether it works.
+The **Format Effectiveness Measure (FEM, working name — instrument direction not yet confirmed)** is the proposed diagnostic instrument. It is designed to measure the signed gap between what a subject expresses in an unconstrained counter-format setting and what a conventional format would have allowed through. A large FEM score would mean the conventional format was suppressing significantly. The counter-format AVDP produces is the therapeutic environment. The FEM measures whether it works, pending instrument validation.
 
 This research program also pursues three nested questions about what the counter-format produces: whether authentic disclosure on camera changes how subjects remember and relate to their own experience, whether audiences who witness authentic expression are measurably changed by it, and whether the recordings constitute a corpus of ecological validity rare enough to matter for affective computing.
 
@@ -29,7 +28,7 @@ Each lab at Polarity builds either a diagnostic instrument — a scoring tool th
 
 The AVDP Lab builds both.
 
-The **Format Effectiveness Measure** is the diagnostic instrument. It takes two inputs: what a subject expresses in the AVDP counter-format environment and what that same subject expresses in a conventional interview format. The FEM score is the signed gap between them — a measure of how much authentic expression the conventional format suppressed. Zero means no gap: the conventional format allowed everything through. A large positive score means the counter-format produced materially more authentic expression than the conventional format would have.
+The **Format Effectiveness Measure (FEM)** is the proposed diagnostic instrument (working name; instrument design not yet confirmed). It is designed to take two inputs: what a subject expresses in the AVDP counter-format environment and what that same subject expresses in a conventional interview format. The FEM score would be the signed gap between them — a designed measure of how much authentic expression the conventional format suppressed. Zero means no gap: the conventional format allowed everything through. A large positive score means the counter-format produced materially more authentic expression than the conventional format would have.
 
 **AVDP** is the therapeutic environment. Its design elements are not aesthetic choices. Each is a specific environmental manipulation grounded in the literature on what suppresses and enables authentic self-disclosure. Phone removal, ambient music, long-form pacing, absence of production interruption — each has a documented causal mechanism. Together they constitute a counter-format engineered to maximize the FEM in the direction of authentic expression.
 

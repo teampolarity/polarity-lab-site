@@ -9,13 +9,13 @@ AVDP exists because media format is not neutral. Every format — the documentar
 
 You run this project because you have lived that. You've been on the inside of a media production process where the format's requirements started overriding the reality of what was being documented. Where the edit, the framing, the runtime, the platform's requirements turned something real into something the platform could process. That experience is what makes you able to build the counter-environment — not a format that performs authenticity, but one designed to prove that authentic expression survives the formats built to suppress it.
 
-AVDP is a media production project and a research instrument. The Format Effectiveness Measure is the tool that makes the research claim precise. The films and formats it produces are the proof.
+AVDP is a media production project and a research instrument. The instrument being built to make the research claim precise is working under the name Format Effectiveness Measure (working name, direction not confirmed). The films and formats it produces are the proof.
 
 ---
 
 ## What AVDP Is
 
-A media production project that documents environments where format suppresses authentic expression, and builds counter-formats designed to recover it. The Format Effectiveness Measure is the instrument: it measures the signed gap between what a subject expresses in an unconstrained setting versus what a given format allows through.
+A media production project that documents environments where format suppresses authentic expression, and builds counter-formats designed to recover it. The instrument being developed to make the research claim precise (working name: Format Effectiveness Measure) is intended to measure the signed gap between what a subject expresses in an unconstrained setting versus what a given format allows through.
 
 The counter-environment is the film or format itself — built to surface what conventional media formats suppress. The before-and-after is the research finding. The production is the proof.
 
@@ -37,7 +37,7 @@ You keep the instrument honest. When the production creates pressure to make the
 
 ---
 
-## The Format Effectiveness Measure
+## The Format Effectiveness Measure (working name, direction not confirmed)
 
 The instrument needs precise definition before productions can generate meaningful research data:
 

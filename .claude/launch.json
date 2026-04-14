@@ -3,9 +3,9 @@
   "configurations": [
     {
       "name": "polarity-site",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-p", "4242", "public"],
-      "port": 4242
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "port": 4321
     }
   ]
 }

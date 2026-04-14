@@ -31,7 +31,7 @@ You recruit and orient technical collaborators. As projects add engineers, analy
 
 Which environments the lab enters is not a technical decision. The question the lab is asking comes before the question of how to build the tool for asking it. You can raise technical feasibility concerns about any proposed direction. You don't determine the research agenda.
 
-Instrument methodology — what IΔ measures, how the Proximity Index is defined, what the Cognitive Gap Measure is actually calculating — belongs to the research function. You build the systems that implement those methodologies and generate clean data. The methodology itself isn't yours to redefine.
+Instrument methodology — what IΔ measures, and how the instruments under development (working names: Proximity Index, Cognitive Gap Measure, and others) are defined and what they calculate — belongs to the research function. You build the systems that implement those methodologies and generate clean data. The methodology itself isn't yours to redefine.
 
 Financial structure, collaborator agreements, and investor relationships stay with the founder. You may have visibility into these as needed for technical scoping. You're not party to them.
 

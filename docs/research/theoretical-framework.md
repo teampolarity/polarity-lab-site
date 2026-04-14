@@ -3,6 +3,7 @@
 **Executive Director:** Theodore Addo
 **Document Version:** April 2026
 **Status:** Working draft — for research affiliate review, sophisticated funder prospecting, and academic partnership conversations
+**Instrument name note:** CGM, FEM, and Proximity Index are working concept names. Direction not yet confirmed. None have been formally validated. CRM and SAM are also pre-validation. IΔ has confirmed observability (n=5 pilot).
 
 ---
 

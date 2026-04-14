@@ -1,67 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" width="120" height="140">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
   <defs>
-    <!-- Main sphere gradient - ultra realistic -->
-    <radialGradient id="sphereGradIcon" cx="32%" cy="32%" r="68%">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="15%" stop-color="#FFE5E8"/>
-      <stop offset="30%" stop-color="#FFB0BB"/>
-      <stop offset="50%" stop-color="#FF4466"/>
-      <stop offset="75%" stop-color="#CC2244"/>
-      <stop offset="90%" stop-color="#991133"/>
-      <stop offset="100%" stop-color="#771122"/>
+    <radialGradient id="coreGrad" cx="30%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#6EE7DF"/>
+      <stop offset="50%" stop-color="#4ECDC4"/>
+      <stop offset="100%" stop-color="#2BA89F"/>
     </radialGradient>
-    
-    <!-- Orbital ring gradient -->
-    <linearGradient id="ringGradIcon" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FF4466" stop-opacity="0.1"/>
-      <stop offset="50%" stop-color="#FFD0DD"/>
-      <stop offset="100%" stop-color="#FF4466" stop-opacity="0.1"/>
-    </linearGradient>
-    
-    <!-- Polar beam gradient -->
-    <linearGradient id="beamGradIcon" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
-      <stop offset="30%" stop-color="#FF8899" stop-opacity="0.6"/>
-      <stop offset="50%" stop-color="#FF4466" stop-opacity="1"/>
-      <stop offset="70%" stop-color="#FF8899" stop-opacity="0.6"/>
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
-    </linearGradient>
-    
-    <filter id="glowIcon" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="3" result="b"/>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
       <feMerge>
-        <feMergeNode in="b"/>
-        <feMergeNode in="b"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    
-    <filter id="sphereGlowIcon" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="8" result="b"/>
-      <feMerge>
-        <feMergeNode in="b"/>
-        <feMergeNode in="b"/>
+        <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
-
-  <!-- O - THE ICONIC SPHERE (centered) -->
-  <g transform="translate(8, 0)">
-    <!-- Polar beam top -->
-    <rect x="48" y="2" width="8" height="30" rx="4" fill="url(#beamGradIcon)" filter="url(#glowIcon)"/>
-    <!-- Polar beam bottom -->
-    <rect x="48" y="108" width="8" height="30" rx="4" fill="url(#beamGradIcon)" filter="url(#glowIcon)"/>
-    <!-- Orbital ring 1 -->
-    <ellipse cx="52" cy="70" rx="48" ry="14" transform="rotate(-20 52 70)" stroke="url(#ringGradIcon)" stroke-width="3" fill="none" filter="url(#glowIcon)"/>
-    <!-- Orbital ring 2 -->
-    <ellipse cx="52" cy="70" rx="44" ry="12" transform="rotate(25 52 70)" stroke="url(#ringGradIcon)" stroke-width="1.5" fill="none" opacity="0.5" filter="url(#glowIcon)"/>
-    <!-- Main sphere -->
-    <circle cx="52" cy="70" r="38" fill="url(#sphereGradIcon)" filter="url(#sphereGlowIcon)"/>
-    <!-- Highlight 1 -->
-    <circle cx="38" cy="56" r="12" fill="white" opacity="0.3"/>
-    <!-- Highlight 2 -->
-    <circle cx="33" cy="50" r="5" fill="white" opacity="0.5"/>
-  </g>
+  <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#4ECDC4" stroke-width="1.5" transform="rotate(-60 50 50)" filter="url(#glow)" opacity="0.9"/>
+  <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#FFA07A" stroke-width="1.5" transform="rotate(60 50 50)" filter="url(#glow)" opacity="0.9"/>
+  <ellipse cx="50" cy="50" rx="40" ry="12" fill="none" stroke="#BB8FCE" stroke-width="1.5" filter="url(#glow)" opacity="0.9"/>
+  <circle cx="70" cy="15" r="4" fill="#4ECDC4" filter="url(#glow)"/>
+  <circle cx="30" cy="15" r="4" fill="#FFA07A" filter="url(#glow)"/>
+  <circle cx="90" cy="50" r="4" fill="#BB8FCE" filter="url(#glow)"/>
+  <circle cx="50" cy="50" r="14" fill="url(#coreGrad)" filter="url(#glow)"/>
+  <circle cx="45" cy="45" r="5" fill="white" opacity="0.25"/>
 </svg>

@@ -619,7 +619,7 @@ async def generate_outreach_email(body: OutreachDraftRequest, admin: dict = Depe
         raise HTTPException(status_code=404, detail="lead not found")
 
     project_context = PROJECTS.get(lead["project"], lead["project"])
-    prompt = f"""You are writing a cold outreach email on behalf of Polarity Lab, a research and product lab based in Providence, RI.
+    prompt = f"""You are writing a cold outreach email on behalf of Polarity Lab, a research and product lab.
 
 Lead:
 - Name: {lead['name']}

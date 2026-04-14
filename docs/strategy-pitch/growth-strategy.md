@@ -101,7 +101,7 @@ The dataset is the growth asset that compounds across all four products simultan
 - IΔ data deepens the methodology for AI honesty measurement
 - GPS behavioral data feeds the Proximity Index validation
 - WAXFEED's dataset feeds cognitive profiling that enriches IΔ's clinical deskilling research
-- AVDP's format research adds another domain where the return has been measured
+- AVDP's format research adds another domain where the return will be measured (instrument design complete; validation study pending)
 
 Every loop tightens every other loop. A competitor starting today would need to run all four platforms simultaneously for years to generate comparable data. And they couldn't do it independently — structural conflict of interest blocks every well-resourced institution that would otherwise have the capacity.
 

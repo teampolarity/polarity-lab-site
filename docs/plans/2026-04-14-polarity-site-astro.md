@@ -348,7 +348,8 @@ git commit -m "feat: add nav component with project links"
       <a href="/fund">Fund</a>
       <a href="/join">Join</a>
     </nav>
-    <span class="location">Providence, RI</span>
+    <!-- NOTE: Lab has no fixed location. Do not display a city. Remove this span or replace with a different footer element. -->
+    <!-- <span class="location">Providence, RI</span> -->
   </div>
 </footer>
 
@@ -1355,7 +1356,7 @@ import Base from '../../../layouts/Base.astro';
           The first step is a scoping conversation with Polarity Lab's Director of Strategy.
           No commitment required. Tell us what you have and we tell you what IΔ would find.
         </p>
-        <a href="mailto:strategy@polarity-lab.com" class="contact-cta">
+        <a href="mailto:team@polarity-lab.com?subject=IΔ%20Scoping%20Conversation" class="contact-cta">
           Begin scoping conversation
         </a>
         <p class="contact-note">
@@ -1482,7 +1483,7 @@ import Base from '../../../layouts/Base.astro';
 </style>
 ```
 
-**Step 2: Update email address.** Replace `strategy@polarity-lab.com` with the actual Director of Strategy contact email before deploy.
+**Step 2: Email address.** Updated to `team@polarity-lab.com` (per lab CTA policy — no role-specific addresses). No further email substitution needed.
 
 **Step 3: Verify build**
 ```bash
@@ -2082,7 +2083,7 @@ import Base from '../layouts/Base.astro';
 
     <section class="fund-section">
       <h2>Get in touch</h2>
-      <a href="mailto:fund@polarity-lab.com" class="contact-cta">Contact the fund</a>
+      <a href="mailto:team@polarity-lab.com?subject=Fund%20Inquiry" class="contact-cta">Contact the fund</a>
     </section>
   </div>
 </Base>
@@ -2191,7 +2192,7 @@ import Base from '../layouts/Base.astro';
 
     <section class="join-section">
       <h2>Get in touch</h2>
-      <a href="mailto:join@polarity-lab.com" class="contact-cta">Contact the lab</a>
+      <a href="mailto:team@polarity-lab.com?subject=Join%20Inquiry" class="contact-cta">Contact the lab</a>
     </section>
   </div>
 </Base>
@@ -2281,7 +2282,7 @@ git commit -m "feat: add cloudflare pages deploy config"
 
 ## Post-Build Cleanup (after all tasks pass)
 
-1. **Email addresses:** Replace all placeholder emails (`strategy@polarity-lab.com`, `fund@polarity-lab.com`, `join@polarity-lab.com`) with real addresses or a single contact address.
+1. **Email addresses:** All CTAs now use `team@polarity-lab.com` per lab policy (no role-specific addresses). No further substitution needed. The placeholder role-specific addresses (`strategy@`, `fund@`, `join@`) have been replaced throughout this document.
 
 2. **Old static HTML:** Once Astro build is live, the old `public/index.html`, `public/fund.html`, `public/join.html`, `public/work.html` can be removed. Keep `public/favicon.svg`, `public/og-image.png`, and image assets -- Astro copies `public/` contents to `dist/` automatically.
 

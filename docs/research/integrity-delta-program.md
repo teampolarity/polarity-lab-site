@@ -1,6 +1,6 @@
 # Integrity Delta Lab — Research Program
 
-**Polarity Lab | Providence, RI**
+**Polarity Lab**
 **Draft 1.0 | April 2026**
 **Executive Director: Theodore Addo | Integrity Delta Research Group**
 

@@ -9,15 +9,15 @@ GPS exists because cities make themselves invisible. Not by accident — by opti
 
 You run this project because you have lived that. Not necessarily in Providence. But you have been in a community where the infrastructure built to connect people to their place was actually doing the opposite — optimizing for something other than authentic local culture and making the real thing harder to find. That experience is what makes you able to build the counter-environment, not just describe the problem.
 
-GPS is a discovery platform built to make cities legible to themselves. The Proximity Index is the instrument that measures the gap between what a city's discovery infrastructure surfaces and what the city's actual cultural density looks like. Providence is where it starts.
+GPS is a discovery platform built to make cities legible to themselves. The instrument being built to measure the gap between what a city's discovery infrastructure surfaces and what the city's actual cultural density looks like is working under the name Proximity Index (working name, direction not confirmed). Providence is where it starts.
 
 ---
 
 ## What GPS Is
 
-A location-based discovery platform designed to surface authentic local culture — the things that exist because a community made them, not because an engagement algorithm promoted them. The platform is the counter-environment. The Proximity Index is the instrument. The data they generate together is the research.
+A location-based discovery platform designed to surface authentic local culture — the things that exist because a community made them, not because an engagement algorithm promoted them. The platform is the counter-environment. The instrument being built to measure the gap is working under the name Proximity Index (working name, direction not confirmed). The data they generate together is the research.
 
-The Proximity Index measures the signed gap between what the city's existing discovery infrastructure predicts you'll find in a location and what is actually there. When the gap is large, the algorithm has made the real city invisible. The platform is built to close that gap — to route people toward what the algorithm has hidden and prove that authentic discovery is recoverable.
+The working model for the instrument: it measures the signed gap between what the city's existing discovery infrastructure predicts you'll find in a location and what is actually there. When the gap is large, the algorithm has made the real city invisible. The platform is built to close that gap — to route people toward what the algorithm has hidden and prove that authentic discovery is recoverable. The precise definition of this instrument, including its scoring behavior, is yours to lock before the platform generates research data.
 
 This is not a better Yelp or a hipper Google Maps. It is a proof — that the culture a city's algorithms have made invisible still exists and can be surfaced to the people who live there.
 
@@ -39,7 +39,7 @@ You keep the instrument honest. When growth incentives push toward surfacing wha
 
 ---
 
-## The Proximity Index
+## The Proximity Index (working name, direction not confirmed)
 
 The instrument needs precise definition before the platform can generate meaningful data. At minimum:
 
@@ -88,7 +88,7 @@ If anything here doesn't match your understanding of your role, that conversatio
 
 **Platform technical prototype.** Work with the Technical Director on the architecture. What does the platform need to do to generate Proximity Index data? That determines what gets built first.
 
-**Knight Foundation application.** GPS is a strong fit for Knight's community information funding. The grant outline exists (docs/grants/knight-gps-outline.md). Brief the Director of Strategy on the Providence community partnerships and what the Proximity Index actually found. Strategy drafts the LOI from the existing outline; the founder approves the scientific framing before submission.
+**Knight Foundation application.** GPS is a strong fit for Knight's community information funding. The grant outline exists (docs/grants/knight-gps-outline.md). Brief the Director of Strategy on the Providence community partnerships and the current state of the instrument definition. Strategy drafts the LOI from the existing outline; the founder approves the scientific framing before submission.
 
 ---
 

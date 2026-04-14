@@ -36,9 +36,11 @@ Knight's median grant in this area is $100,000-$250,000 for validation-stage res
 
 ## Project Summary (300 words, for LOI)
 
-Cultural and civic organizations built by and for communities of color are systematically less discoverable through standard digital platforms than equivalent white-led organizations. This is not an impression. It is a measurable, reproducible phenomenon with a scoring methodology, pilot data, and a counter-environment already deployed. This proposal funds the scientific validation of that measurement and its application across three urban communities.
+Cultural and civic organizations built by and for communities of color are systematically less discoverable through standard digital platforms than equivalent white-led organizations. This is not an impression. It is a documented phenomenon with a scoring methodology developed in partnership with community organizations, and a counter-environment already deployed. This proposal funds the first formal scored measurement and its validation across three urban communities.
 
-The Proximity Index is a diagnostic instrument that produces a scalar score representing the gap between what a defined community produces (cultural events, civic services, workforce training, public health resources) and what standard discovery platforms surface to that community. A score of 0 means platforms surface everything built for you. A score of 0.70, which is what we found in Providence for BIPOC-led workforce development resources, means 70% of the community's relevant resources are invisible through standard search. That score is reproducible. It can be tracked over time, compared across cities, and used to evaluate whether interventions work.
+The Proximity Index is a diagnostic instrument that produces a scalar score representing the gap between what a defined community produces (cultural events, civic services, workforce training, public health resources) and what standard discovery platforms surface to that community. A score of 0 means platforms surface everything built for you. A score of 0.70 would mean 70% of the community's relevant resources are invisible through standard search. That score is reproducible once established. It can be tracked over time, compared across cities, and used to evaluate whether interventions work. This proposal funds the first formal scored pilot that will produce that number.
+
+<!-- NOTE: The original draft contained "A score of 0.70, which is what we found in Providence" — this was removed because no formal Proximity Index pilot scores have been computed yet (per the instrument specification). The first scored results are produced by this grant's Aim 1. Do not restore the specific score claim until Aim 1 data exists. The framing sections below referring to "pilot data" have been left as-is since they can refer to the MUSEOFRI Pain Points Report and Closing the Gap whitepaper as evidence of the phenomenon, not as a formal Proximity Index score. Review with the grants lead before submission. -->
 
 Polarity GPS is the paired counter-infrastructure. It is a live cultural discovery platform (polaritygps.com) designed from proximity rather than engagement maximization. It is already deployed in Providence. The research question is whether using it measurably reduces Proximity Scores, and whether the same pattern of algorithmic invisibility documented in Providence exists in other communities.
 
@@ -118,9 +120,11 @@ This aim requires IRB approval and platform instrumentation not yet in place. In
 
 **Name the tool.** Polarity GPS is live at polaritygps.com. Knight funds platforms, not just studies. The fact that the counter-environment already exists and has users distinguishes this from a pure academic proposal.
 
-**The Providence anchor.** MUSEOFRI and J'Juan Wilson Jr. (GOODhumanz) are named community partners with existing documentation. The pilot was run in partnership with real organizations. This is not speculative fieldwork.
+**The Providence anchor.** MUSEOFRI and J'Juan Wilson Jr. (GOODhumanz) are named community partners with existing documentation. The methodology was developed in partnership with these organizations, and the community relationships are real and documented. The formal scored pilot is what this grant funds -- it is grounded fieldwork, not speculative.
 
-**Be precise about what validation means.** Knight's program officers are not academics, but they fund organizations that produce research. Frame validation as: "we have a methodology that found a real thing in one city; this grant establishes that it finds the same thing in other cities with the same reliability, making the tool usable for anyone." That is the Knight deliverable.
+<!-- NOTE: Original text said "The pilot was run in partnership with real organizations" which implies a scored pilot already exists. No formal Proximity Index scores have been computed. Corrected to reflect that the partnerships are established and the methodology is designed, but the first formal score is produced by this grant. -->
+
+**Be precise about what validation means.** Knight's program officers are not academics, but they fund organizations that produce research. Frame validation as: "we have a methodology designed to find a documented phenomenon in one city; this grant produces the first formal score and establishes that it replicates in other cities with sufficient reliability to be usable by anyone." That is the Knight deliverable.
 
 ---
 

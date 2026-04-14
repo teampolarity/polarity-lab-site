@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'Polarity GPS',
     slug: 'polarity-gps',
-    thesis: 'Recommendation surfaces what is popular nearby. The Proximity Index measures what exists but does not appear.',
+    thesis: 'Recommendation surfaces what is popular nearby, not what exists. Polarity GPS is being built to measure that gap.',
     evidenceState: 'platform-live-study-pending',
     evidenceLabel: 'Platform live, formal study pending',
     href: '/projects/polarity-gps',
@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'WAXFEED',
     slug: 'waxfeed',
-    thesis: 'Recommendation platforms build a model of the listener from engagement history. The Cognitive Gap Measure scores how far that model has drifted from who the person actually is.',
+    thesis: 'Recommendation platforms build a model of the listener from engagement history. That model drifts from who the person actually is. WAXFEED is the counter-environment designed to surface what it has suppressed.',
     evidenceState: 'design-iteration',
     evidenceLabel: 'Counter-environment in development',
     href: '/projects/waxfeed',
@@ -42,7 +42,7 @@ export const PROJECTS: Project[] = [
   {
     name: 'AVDP',
     slug: 'avdp',
-    thesis: 'Media format constraints suppress authentic expression. AVDP removes the suppressants and measures how much more of the person comes through.',
+    thesis: 'Conventional interview formats suppress authentic expression. AVDP removes the production conditions that cause suppression and tests whether more of the person comes through.',
     evidenceState: 'design-iteration',
     evidenceLabel: 'Counter-format in development',
     href: '/projects/avdp',

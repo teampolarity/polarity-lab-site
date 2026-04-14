@@ -21,7 +21,7 @@ Your work is organized by project. Each project generates different data types w
 
 **If you're on WAXFEED:** You're working with behavioral listening data — what users play, how long, what they skip, how their behavior changes over time as the platform surfaces less predicted and more authentic taste responses. The analysis has to distinguish genuine preference signals from habituated engagement, novelty effects, and platform-induced behavior. This is harder than it sounds. Work closely with the domain lead on what a "real" preference signal looks like in the data versus what looks like one but isn't.
 
-**If you're on GPS:** You're working with proximity and movement data — what locations people visit, in what sequence, how that maps against the Proximity Index's model of what a city's culture actually looks like versus what discovery infrastructure makes visible. The analysis produces the Proximity Index score and the gap between predicted and actual cultural density.
+**If you're on GPS:** You're working with proximity and movement data — what locations people visit, in what sequence, how that maps against the domain lead's working model of what a city's culture actually looks like versus what discovery infrastructure makes visible. The analysis works toward producing the gap score between predicted and actual cultural density, once the instrument definition is locked by the domain lead.
 
 Across all projects: you clean the data before anyone else touches it. You document what you did and why. You flag anomalies rather than smoothing them over. You produce outputs in formats the domain lead and researcher can use without having to re-derive your work.
 

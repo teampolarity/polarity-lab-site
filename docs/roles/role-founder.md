@@ -23,7 +23,7 @@ One thing this lab should be practicing on itself: the roles are designed to min
 
 **Decides which domains the lab enters.** New projects come from the founder identifying a new instance of the second threshold that is measurable and for which a counter-environment can be designed. No collaborator proposes a new domain and launches it. That conversation starts with the founder and either results in a new research program or it doesn't.
 
-**Defines instrument methodology.** The six instruments (IΔ, CGM, SAM, FEM, CRM, Proximity Index) are the lab's scientific contribution. Their methodological integrity — what they measure, why they measure it that way, and what would falsify them — is the founder's responsibility. Domain leads run the instruments. The founder is accountable for whether they remain honest.
+**Defines instrument methodology.** The lab's instruments are its scientific contribution. IΔ is defined and piloted. The others (working names: CGM, SAM, FEM, CRM, Proximity Index) are in development and their names, scoring behavior, and definitions are not yet confirmed. Their methodological integrity — what they measure, why they measure it that way, and what would falsify them — is the founder's responsibility. Domain leads run the instruments. The founder is accountable for whether they remain honest.
 
 **Makes all weight adjustment decisions.** Collaborator weight upgrades, reductions, and exits are the founder's call. The Lab Manager surfaces the performance picture. The domain lead gives context. The founder decides. These decisions are not delegated.
 

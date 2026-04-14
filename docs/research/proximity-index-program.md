@@ -2,7 +2,6 @@
 
 **Executive Director:** Theodore Addo, Polarity Lab
 **Partner Researcher:** J'Juan Wilson Jr. (GOODhumanz, Providence RI)
-**Location:** Providence, RI
 **Document Version:** April 2026
 **Status:** Working draft — for advisor, collaborator, and funder review
 
@@ -22,7 +21,7 @@ This lab exists to measure that gap precisely, give it a reproducible number, an
 
 Polarity Lab's institutional thesis is that technology is creating a new class of harm to human cognition and connection. Each lab at Polarity produces either a diagnostic instrument or a therapeutic environment. This lab produces both.
 
-The **Proximity Index** is a diagnostic instrument. It takes two inputs, cultural and civic output produced by or for a specific community, and what discovery platforms actually surface to that community, and produces a score. Zero means everything made for you reaches you. A high score means your own culture, resources, and infrastructure are algorithmically invisible to you. The score is reproducible. It can be tracked over time and compared across geographies.
+The **Proximity Index** (working name — instrument direction not yet confirmed, no formal scores computed) is the proposed diagnostic instrument. It is designed to take two inputs, cultural and civic output produced by or for a specific community, and what discovery platforms actually surface to that community, and produce a score. Zero would mean everything made for you reaches you. A high score would mean your own culture, resources, and infrastructure are algorithmically invisible to you. Once validated, the score is designed to be reproducible and comparable across geographies.
 
 **Polarity GPS** is the corresponding therapeutic environment. It is a live cultural discovery platform (polaritygps.com) that connects people to music, places, and experiences produced by and for their community. Polarity GPS is the counter-infrastructure: what a discovery platform looks like when it is designed from proximity rather than engagement maximization.
 

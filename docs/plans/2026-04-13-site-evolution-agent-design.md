@@ -82,7 +82,7 @@ Input: `{ sha: string }`
 The system prompt embeds four layers of context:
 
 ### 1. Brand and Thesis
-- Polarity Lab: independent research institute for the human condition, Providence RI
+- Polarity Lab: independent research institute for the human condition, no fixed location
 - Core thesis: systems act on human variance through compliance apparatuses
 - Four projects: Integrity Delta, AVDP, WAXFEED, Polarity GPS
 - Tone register: spare, precise, no filler, no pleasantries

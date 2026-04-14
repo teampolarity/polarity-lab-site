@@ -1,7 +1,6 @@
 # Cosmos — Research Program
 
 **Executive Director:** Theodore Addo, Polarity Lab
-**Location:** Providence, RI
 **Document Version:** April 2026
 **Status:** Working draft — for advisor, collaborator, and funder review
 

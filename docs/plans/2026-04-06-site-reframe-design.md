@@ -46,7 +46,7 @@ POLARITY LOGO (left)     Research v | About | Contact    [light/dark toggle]
 ### Hero
 - Wordmark: POLARITY LAB
 - One-liner: "An environmental therapeutics lab."
-- Sub-line: Providence, RI · Est. 2025
+- Sub-line: Est. 2025
 - No cinematic scroll text. Short, clean, typographic.
 
 ### Research Section (`#research`)
@@ -78,7 +78,7 @@ Advisor slots: Not shown yet. Added when confirmed.
 ### About Section (`#about`)
 - Label: "About the Lab"
 - Opening: "An environmental therapeutics lab."
-- 3-4 paragraphs: what the lab does, the diagnostic instrument / therapeutic environment framework explained in plain language, why Providence, why now.
+- 3-4 paragraphs: what the lab does, the diagnostic instrument / therapeutic environment framework explained in plain language, why now. [Do not reference a city — the lab has no fixed location.]
 - Research domain tags (existing tags from current site work well here).
 
 ### Contact Section (`#contact`)
@@ -87,7 +87,7 @@ Advisor slots: Not shown yet. Added when confirmed.
   - Research collaboration: `team@polarity-lab.com`
   - Funding / investment: `team@polarity-lab.com?subject=Integrity%20Delta%20Brief`
 - Newsletter signup (existing Formspree integration)
-- Location: Providence, RI
+- Location: [no fixed location — do not display a city]
 
 ---
 
