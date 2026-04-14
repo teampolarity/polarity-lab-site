@@ -1,0 +1,57 @@
+---
+// src/layouts/Research.astro
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+<Base title={title} description={description}>
+  <div class="research-page">
+    <header class="research-header">
+      <p class="breadcrumb"><a href="/research">Research</a></p>
+      <h1>{title}</h1>
+    </header>
+    <div class="research-body">
+      <slot />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .research-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .breadcrumb {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 600;
+    color: var(--text-pure);
+    letter-spacing: -0.02em;
+  }
+
+  .research-header {
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-ghost);
+    margin-bottom: 2rem;
+  }
+
+  .research-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+</style>

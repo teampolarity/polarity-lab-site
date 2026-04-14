@@ -1,0 +1,110 @@
+---
+// src/pages/research/[instrument].astro
+import { getCollection, render } from 'astro:content';
+import Research from '../../layouts/Research.astro';
+import EvidenceBar from '../../components/EvidenceBar.astro';
+
+export async function getStaticPaths() {
+  const instruments = await getCollection('instruments');
+  return instruments.map(entry => ({
+    params: { instrument: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+<Research title={entry.data.title}>
+
+  <EvidenceBar state={entry.data.status} label={entry.data.evidenceSummary} />
+
+  <div class="meta-row">
+    <span class="meta-label">Project</span>
+    <a href={`/projects/${entry.data.projectSlug}`} class="meta-value">
+      {entry.data.project}
+    </a>
+    <span class="meta-label">Version</span>
+    <span class="meta-value mono">{entry.data.version}</span>
+  </div>
+
+  <div class="instrument-body">
+    <Content />
+  </div>
+
+  {entry.data.limitations && entry.data.limitations.length > 0 && (
+    <div class="limitations">
+      <h2>Limitations</h2>
+      <ul>
+        {entry.data.limitations.map(limitation => (
+          <li>{limitation}</li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+</Research>
+
+<style>
+  .meta-row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .meta-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-ghost);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .meta-value {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  .meta-value.mono {
+    font-family: var(--font-mono);
+  }
+
+  .instrument-body {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+
+  .limitations {
+    padding: 1.5rem;
+    border: 1px solid var(--border-ghost);
+    background: var(--void-surface);
+  }
+
+  .limitations h2 {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+
+  .limitations ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .limitations li {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+    line-height: 1.6;
+    padding-left: 1rem;
+    border-left: 1px solid var(--border-ghost);
+  }
+</style>
