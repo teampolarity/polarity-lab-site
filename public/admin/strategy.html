@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat — Lab OS</title>
+  <title>Strategy — Lab OS</title>
   <link rel="icon" href="/favicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/admin/css/admin.css">
   <script>document.documentElement.setAttribute('data-theme', localStorage.getItem('lab_os_theme') || 'dark')</script>
   <style>
-    /* Make the shell and main fill the full viewport height without scroll */
     html, body { height: 100%; overflow: hidden; }
     .shell { height: 100%; }
     .main {
@@ -25,15 +24,14 @@
       display: flex;
       flex-direction: column;
       flex: 1;
-      min-height: 0; /* critical: lets flex children shrink below content size */
+      min-height: 0;
       max-width: 760px;
       padding-bottom: 24px;
     }
 
-    /* Message list */
     .messages {
       flex: 1;
-      min-height: 0; /* same fix */
+      min-height: 0;
       overflow-y: auto;
       padding: 16px 0 8px;
       display: flex;
@@ -44,7 +42,6 @@
     .messages::-webkit-scrollbar-track { background: transparent; }
     .messages::-webkit-scrollbar-thumb { background: var(--border-subtle); border-radius: 2px; }
 
-    /* Individual messages */
     .msg {
       display: flex;
       gap: 12px;
@@ -72,7 +69,6 @@
       border-radius: 12px 12px 12px 2px;
     }
 
-    /* Tool call chips shown inside assistant bubble */
     .tool-chips {
       display: flex;
       flex-wrap: wrap;
@@ -90,7 +86,6 @@
       letter-spacing: 0.04em;
     }
 
-    /* Markdown in assistant messages */
     .msg-bubble strong { color: var(--text-primary); font-weight: 600; }
     .msg-bubble ul, .msg-bubble ol { padding-left: 18px; margin: 8px 0; }
     .msg-bubble li { margin-bottom: 4px; }
@@ -126,55 +121,20 @@
       border-top: 1px solid var(--border-ghost);
       margin: 14px 0;
     }
-    .msg-bubble table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 13px;
-      margin: 10px 0;
-    }
+    .msg-bubble table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 10px 0; }
     .msg-bubble th {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-tertiary);
-      padding: 6px 10px;
-      text-align: left;
-      border-bottom: 1px solid var(--border-subtle);
+      font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-tertiary);
+      padding: 6px 10px; text-align: left; border-bottom: 1px solid var(--border-subtle);
     }
-    .msg-bubble td {
-      padding: 7px 10px;
-      border-bottom: 1px solid var(--border-ghost);
-      color: var(--text-secondary);
-      vertical-align: top;
-    }
+    .msg-bubble td { padding: 7px 10px; border-bottom: 1px solid var(--border-ghost); color: var(--text-secondary); vertical-align: top; }
     .msg-bubble tr:last-child td { border-bottom: none; }
-    /* Simplified pipe table rows */
-    .msg-bubble .trow {
-      display: flex;
-      gap: 12px;
-      padding: 6px 0;
-      border-bottom: 1px solid var(--border-ghost);
-      font-size: 13px;
-    }
+    .msg-bubble .trow { display: flex; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--border-ghost); font-size: 13px; }
     .msg-bubble .trow:last-of-type { border-bottom: none; }
     .msg-bubble .trow span { flex: 1; color: var(--text-secondary); }
-    .msg-bubble .trow:first-of-type span {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-tertiary);
-    }
+    .msg-bubble .trow:first-of-type span { font-family: var(--font-mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-tertiary); }
 
-    /* Thinking indicator */
-    .msg.thinking .msg-bubble {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-    }
+    .msg.thinking .msg-bubble { display: flex; align-items: center; gap: 10px; padding: 10px 14px; }
     .thinking-spinner {
       width: 14px; height: 14px;
       border: 2px solid var(--border-subtle);
@@ -187,7 +147,6 @@
     .thinking-text { font-size: 12px; color: var(--text-tertiary); font-family: var(--font-mono); }
     .thinking-elapsed { font-size: 11px; color: var(--border-subtle); margin-left: 4px; }
 
-    /* Suggested prompts */
     .suggestions {
       display: flex;
       flex-wrap: wrap;
@@ -205,13 +164,8 @@
       transition: all 0.15s;
       font-family: var(--font-body);
     }
-    .suggestion:hover {
-      border-color: var(--teal);
-      color: var(--teal);
-      background: var(--teal-subtle);
-    }
+    .suggestion:hover { border-color: var(--teal); color: var(--teal); background: var(--teal-subtle); }
 
-    /* Input bar */
     .input-bar {
       display: flex;
       gap: 10px;
@@ -283,9 +237,9 @@
     <a href="/admin/content.html" class="sidebar-link">Content</a>
     <a href="/admin/docs.html" class="sidebar-link">Docs</a>
     <div class="sidebar-label" style="margin-top:16px">Intelligence</div>
-    <a href="/admin/chat.html" class="sidebar-link active">Chat</a>
+    <a href="/admin/chat.html" class="sidebar-link">Chat</a>
     <a href="/admin/site.html" class="sidebar-link">Site</a>
-    <a href="/admin/strategy.html" class="sidebar-link">Strategy</a>
+    <a href="/admin/strategy.html" class="sidebar-link active">Strategy</a>
     <div class="sidebar-label" style="margin-top:24px">Account</div>
     <button class="theme-toggle" id="theme-toggle"></button>
     <a href="#" class="sidebar-link" id="logout-btn">Sign out</a>
@@ -293,20 +247,20 @@
   <main class="main">
     <div class="topbar">
       <div>
-        <h1 class="page-title">Lab OS</h1>
-        <p class="page-sub">Ask about the pipeline, take actions, or get a status read.</p>
+        <h1 class="page-title">Strategy</h1>
+        <p class="page-sub">Find what's genuinely irreplaceable about the lab. Keep digging.</p>
       </div>
     </div>
 
     <div class="chat-wrap">
       <div class="messages" id="messages">
         <div class="suggestions" id="suggestions">
-          <button class="suggestion" onclick="sendSuggestion(this)">What needs attention this week?</button>
-          <button class="suggestion" onclick="sendSuggestion(this)">Which grants have deadlines coming up?</button>
-          <button class="suggestion" onclick="sendSuggestion(this)">Give me a pipeline summary</button>
-          <button class="suggestion" onclick="sendSuggestion(this)">Who's stale in outreach?</button>
-          <button class="suggestion" onclick="sendSuggestion(this)">How are the believers looking?</button>
-          <button class="suggestion" onclick="sendSuggestion(this)">What content is in draft?</button>
+          <button class="suggestion" onclick="sendSuggestion(this)">What makes this lab irreplaceable?</button>
+          <button class="suggestion" onclick="sendSuggestion(this)">What are we not saying that we should be?</button>
+          <button class="suggestion" onclick="sendSuggestion(this)">Who else could make our current claim? Why can't they?</button>
+          <button class="suggestion" onclick="sendSuggestion(this)">What's the sharpest version of the optimization thesis?</button>
+          <button class="suggestion" onclick="sendSuggestion(this)">Read the homepage and tell me what's still soft</button>
+          <button class="suggestion" onclick="sendSuggestion(this)">If the lab disappeared tomorrow, what would be permanently lost?</button>
         </div>
       </div>
 
@@ -314,7 +268,7 @@
         <textarea
           class="chat-input"
           id="chat-input"
-          placeholder="Ask anything about the pipeline..."
+          placeholder="Push deeper..."
           rows="1"
         ></textarea>
         <button class="clear-btn" id="clear-btn" onclick="clearChat()">Clear</button>
@@ -329,9 +283,8 @@
   requireAuth();
   document.getElementById('logout-btn').addEventListener('click', () => { clearToken(); window.location.href = '/admin/index.html'; });
 
-  let history = []; // { role: 'user'|'assistant', content: string|array }
+  let history = [];
 
-  // Auto-resize textarea
   const input = document.getElementById('chat-input');
   input.addEventListener('input', () => {
     input.style.height = 'auto';
@@ -345,45 +298,31 @@
     return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 
-  // Markdown to HTML — no nested quantifiers, no stateful loops
   function mdToHtml(md) {
-    // Escape HTML first
     let s = md.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    // Headers
     s = s.replace(/^### (.+)$/gm, '<h3>$1</h3>');
     s = s.replace(/^## (.+)$/gm, '<h2>$1</h2>');
-    // HR
     s = s.replace(/^---+$/gm, '<hr>');
-    // Bold (non-greedy, no newlines inside)
     s = s.replace(/\*\*([^\n*]+)\*\*/g, '<strong>$1</strong>');
-    // Code (no newlines inside)
     s = s.replace(/`([^\n`]+)`/g, '<code>$1</code>');
-    // Pipe table separator rows — remove entirely
     s = s.replace(/^\|[-| :]+\|$/gm, '');
-    // Pipe table data rows — simple divs
     s = s.replace(/^\|(.+)\|$/gm, (_, inner) => {
       const cells = inner.split('|').map(c => `<span>${c.trim()}</span>`).join('');
       return `<div class="trow">${cells}</div>`;
     });
-    // List items — wrap consecutive <li> blocks in <ul>
     s = s.replace(/^[*-] (.+)$/gm, '<li>$1</li>');
     s = s.replace(/^(\d+)\. (.+)$/gm, '<li>$2</li>');
-    // Wrap runs of <li> in <ul> — use split/join, not nested quantifier regex
     s = s.split('\n').reduce((acc, line) => {
       const inList = acc.length > 0 && acc[acc.length - 1].endsWith('_INLIST_');
       if (line.startsWith('<li>')) {
-        if (inList) {
-          acc[acc.length - 1] = acc[acc.length - 1].replace('_INLIST_', '') + line + '_INLIST_';
-        } else {
-          acc.push(line + '_INLIST_');
-        }
+        if (inList) { acc[acc.length - 1] = acc[acc.length - 1].replace('_INLIST_', '') + line + '_INLIST_'; }
+        else { acc.push(line + '_INLIST_'); }
       } else {
         if (inList) acc[acc.length - 1] = '<ul>' + acc[acc.length - 1].replace('_INLIST_', '') + '</ul>';
         acc.push(line);
       }
       return acc;
     }, []).map(l => l.endsWith('_INLIST_') ? '<ul>' + l.replace('_INLIST_', '') + '</ul>' : l).join('\n');
-    // Paragraphs
     s = s.split('\n\n').map(block => {
       block = block.trim();
       if (!block) return '';
@@ -395,34 +334,24 @@
 
   function toolLabel(name) {
     const labels = {
-      get_pipeline_summary: 'pipeline summary',
-      get_grants: 'grants',
-      update_grant: 'update grant',
-      get_leads: 'leads',
-      get_believers: 'believers',
-      get_content: 'content',
-      update_lead: 'update lead',
-      add_grant: 'add grant'
+      read_page_text: 'reading page',
+      read_file: 'reading file',
+      get_commit_log: 'commit history'
     };
     return labels[name] || name;
   }
 
   function appendMsg(role, text, tools) {
-    // Hide suggestions after first message
     const sug = document.getElementById('suggestions');
     if (sug) sug.remove();
-
     const msgs = document.getElementById('messages');
     const div = document.createElement('div');
     div.className = `msg ${role}`;
-
     let inner = '';
-
     if (tools && tools.length > 0) {
       const chips = tools.map(t => `<span class="tool-chip">looked up ${toolLabel(t.name)}</span>`).join('');
       inner += `<div class="tool-chips">${chips}</div>`;
     }
-
     inner += mdToHtml(text);
     div.innerHTML = `<div class="msg-bubble">${inner}</div>`;
     msgs.appendChild(div);
@@ -430,15 +359,11 @@
     return div;
   }
 
-  const STATUS_LABELS = [
-    'checking pipeline', 'looking up data', 'analyzing', 'reading grants',
-    'checking leads', 'reviewing pipeline', 'preparing response'
-  ];
+  const STATUS_LABELS = ['thinking', 'digging', 'reading', 'questioning', 'pushing deeper', 'looking for the gold'];
 
   function appendThinking() {
     const sug = document.getElementById('suggestions');
     if (sug) sug.remove();
-
     const msgs = document.getElementById('messages');
     const div = document.createElement('div');
     div.className = 'msg assistant thinking';
@@ -449,8 +374,6 @@
     </div>`;
     msgs.appendChild(div);
     msgs.scrollTop = msgs.scrollHeight;
-
-    // Elapsed timer + cycling status label
     const start = Date.now();
     let labelIdx = 0;
     const timer = setInterval(() => {
@@ -459,12 +382,11 @@
       if (!el || !lbl) { clearInterval(timer); return; }
       const secs = Math.floor((Date.now() - start) / 1000);
       el.textContent = `${secs}s`;
-      if (secs > 0 && secs % 5 === 0) {
+      if (secs > 0 && secs % 4 === 0) {
         labelIdx = (labelIdx + 1) % STATUS_LABELS.length;
         lbl.textContent = STATUS_LABELS[labelIdx];
       }
     }, 1000);
-
     div._clearTimer = () => clearInterval(timer);
     return div;
   }
@@ -477,25 +399,17 @@
   async function sendMessage() {
     const text = input.value.trim();
     if (!text) return;
-
     input.value = '';
     input.style.height = 'auto';
     document.getElementById('send-btn').disabled = true;
-
-    // Add user message
     appendMsg('user', esc(text));
     history.push({ role: 'user', content: text });
-
-    // Show thinking with live status
     const thinking = appendThinking();
-
-    // 55s timeout — CF functions cap at 30s on free tier, 100s on paid
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 55000);
-
     let data = null;
     try {
-      const res = await fetch('/api/lab-os/chat', {
+      const res = await fetch('/api/lab-os/strategy-chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${getToken()}` },
         body: JSON.stringify({ messages: history }),
@@ -507,18 +421,15 @@
       clearTimeout(timeout);
       data = null;
     }
-
     if (thinking._clearTimer) thinking._clearTimer();
     thinking.remove();
     document.getElementById('send-btn').disabled = false;
-
     if (data?.reply) {
       appendMsg('assistant', data.reply, data.tool_calls || []);
       history.push({ role: 'assistant', content: data.reply });
     } else {
       appendMsg('assistant', 'No response — the request may have timed out. Try a simpler question or refresh.');
     }
-
     input.focus();
   }
 
@@ -526,12 +437,12 @@
     history = [];
     const msgs = document.getElementById('messages');
     msgs.innerHTML = `<div class="suggestions" id="suggestions">
-      <button class="suggestion" onclick="sendSuggestion(this)">What needs attention this week?</button>
-      <button class="suggestion" onclick="sendSuggestion(this)">Which grants have deadlines coming up?</button>
-      <button class="suggestion" onclick="sendSuggestion(this)">Give me a pipeline summary</button>
-      <button class="suggestion" onclick="sendSuggestion(this)">Who's stale in outreach?</button>
-      <button class="suggestion" onclick="sendSuggestion(this)">How are the believers looking?</button>
-      <button class="suggestion" onclick="sendSuggestion(this)">What content is in draft?</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">What makes this lab irreplaceable?</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">What are we not saying that we should be?</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">Who else could make our current claim? Why can't they?</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">What's the sharpest version of the optimization thesis?</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">Read the homepage and tell me what's still soft</button>
+      <button class="suggestion" onclick="sendSuggestion(this)">If the lab disappeared tomorrow, what would be permanently lost?</button>
     </div>`;
   }
 </script>
