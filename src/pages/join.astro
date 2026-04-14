@@ -1,0 +1,99 @@
+---
+// src/pages/join.astro
+import Base from '../layouts/Base.astro';
+---
+<Base title="Join" description="Contributing to Polarity Lab.">
+  <div class="simple-page">
+    <h1>Join</h1>
+    <p class="lead">
+      Polarity Lab is building four research programs. Each one needs specific people
+      at specific stages.
+    </p>
+
+    <section class="join-section">
+      <h2>Research contributors</h2>
+      <p>
+        Domain leads, research coordinators, and technical contributors across
+        Integrity Delta, Polarity GPS, WAXFEED, and AVDP. If you have relevant
+        domain knowledge and want to contribute to one of the programs, start here.
+      </p>
+    </section>
+
+    <section class="join-section">
+      <h2>Academic partners</h2>
+      <p>
+        The validation studies for each instrument require IRB infrastructure,
+        statistical review, and co-authorship. If you are at a research institution
+        and see alignment with your work, the research layer at
+        <a href="/research">polarity-lab.com/research</a> has the instrument specifications.
+      </p>
+    </section>
+
+    <section class="join-section">
+      <h2>Get in touch</h2>
+      <a href="mailto:join@polarity-lab.com" class="contact-cta">Contact the lab</a>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .simple-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: var(--text-pure);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+  }
+
+  .join-section {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-ghost);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+
+  .contact-cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    align-self: flex-start;
+    transition: border-color 0.2s var(--ease-smooth);
+  }
+
+  .contact-cta:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+</style>

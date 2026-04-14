@@ -1,0 +1,99 @@
+---
+// src/pages/fund.astro
+import Base from '../layouts/Base.astro';
+---
+<Base title="Fund" description="Supporting Polarity Lab's research before the results are in.">
+  <div class="simple-page">
+    <h1>Fund</h1>
+    <p class="lead">
+      Polarity Lab is a research lab funded by people who believe the work matters
+      before the validation studies are complete.
+    </p>
+
+    <section class="fund-section">
+      <h2>What you are funding</h2>
+      <p>
+        Four research programs building diagnostic instruments and therapeutic counter-environments
+        for authentic human capacity. All four are at early stages. The evidence picture is honest
+        on every project page.
+      </p>
+    </section>
+
+    <section class="fund-section">
+      <h2>How it works</h2>
+      <p>
+        Financial believers contribute to the lab's general research fund.
+        Contributions support instrument development, validation studies, and
+        the infrastructure for all four programs. This is not philanthropy at scale,
+        it is early belief in a research direction.
+      </p>
+    </section>
+
+    <section class="fund-section">
+      <h2>Get in touch</h2>
+      <a href="mailto:fund@polarity-lab.com" class="contact-cta">Contact the fund</a>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .simple-page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: var(--text-pure);
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+  }
+
+  .fund-section {
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-ghost);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+
+  .contact-cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    align-self: flex-start;
+    transition: border-color 0.2s var(--ease-smooth);
+  }
+
+  .contact-cta:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+</style>
