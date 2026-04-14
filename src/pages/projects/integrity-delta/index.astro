@@ -1,0 +1,153 @@
+---
+// src/pages/projects/integrity-delta/index.astro
+import Project from '../../../layouts/Project.astro';
+---
+<Project
+  title="Integrity Delta"
+  description="A gap measurement methodology for clinical AI."
+  evidenceState="observability-pilot"
+  evidenceLabel="Observability confirmed, validation study designed"
+>
+
+  <!-- Pledge -->
+  <section class="act">
+    <p class="act-label">Pledge</p>
+    <p class="act-body">
+      AI reads the scan. The clinician confirms it. That is the workflow.
+    </p>
+  </section>
+
+  <!-- Turn -->
+  <section class="act">
+    <p class="act-label">Turn</p>
+    <p class="act-body">
+      Confirmation is not independent evaluation. When AI confidence shapes how clinicians look,
+      the gap between what the system flagged and what is actually present is not caught.
+      It is inherited. IΔ makes that gap visible before it propagates.
+    </p>
+  </section>
+
+  <!-- What IΔ does -->
+  <section class="section">
+    <h2>What IΔ measures</h2>
+    <p>
+      IΔ is a gap measurement methodology for clinical AI. It measures the divergence between
+      what a deployed AI system produces and independently verifiable ground truth — the gap
+      that standard workflow review does not surface.
+    </p>
+    <p>
+      The measurement logic is domain-agnostic. The initial observability study was conducted
+      in diagnostic radiology. The instrument applies wherever clinical AI produces outputs
+      against which a ground truth standard can be established.
+    </p>
+  </section>
+
+  <!-- Evidence -->
+  <section class="section evidence-section">
+    <h2>Evidence</h2>
+    <div class="evidence-block">
+      <p>
+        Observability confirmed in initial diagnostic radiology study. IΔ detected divergence
+        between AI-assigned labels and ground truth in cases not surfaced by standard workflow
+        review. Prevalence study designed and pre-registerable. Validation protocol available
+        on request.
+      </p>
+      <p class="evidence-note">
+        The observability study confirms the gap is detectable. It does not establish prevalence,
+        reliability across sites, or generalizability across clinical AI domains.
+        That is what the validation study is designed to establish.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <h2>For institutions</h2>
+    <p>
+      If your organization has deployed a clinical AI system and wants to know what
+      IΔ would find, the path starts with a scoping conversation.
+    </p>
+    <a href="/projects/integrity-delta/assess" class="primary-cta">Start the assessment process</a>
+  </section>
+
+</Project>
+
+<style>
+  .act {
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--border-ghost);
+  }
+
+  .act-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-ghost);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  .act-body {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--text-primary);
+    font-family: var(--font-display);
+  }
+
+  .section {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border-ghost);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .section:last-child { border-bottom: none; }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+  }
+
+  .evidence-block {
+    padding: 1.5rem;
+    border: 1px solid var(--border-ghost);
+    background: var(--void-surface);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .evidence-note {
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
+    font-family: var(--font-mono);
+    line-height: 1.6;
+  }
+
+  .primary-cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--teal);
+    color: var(--teal);
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    align-self: flex-start;
+    transition: background 0.2s var(--ease-smooth);
+  }
+
+  .primary-cta:hover {
+    background: var(--teal-subtle);
+    color: var(--teal-bright);
+  }
+</style>
