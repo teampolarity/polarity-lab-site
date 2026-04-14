@@ -1,17 +1,221 @@
 ---
-
+// src/pages/index.astro
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { PROJECTS } from '../data/projects';
 ---
+<Base title="Polarity Lab" description="Counter-environments for authentic capacity.">
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+  <!-- Pledge -->
+  <section class="pledge">
+    <div class="pledge-inner">
+      <h1 class="headline">
+        Every platform you use has a model of you.
+      </h1>
+      <p class="body">
+        That model was built from your engagement history. Engagement history is not you.
+        The gap between the model and the person is measurable. We measure it.
+      </p>
+      <a href="#work" class="cta">See the work</a>
+    </div>
+  </section>
+
+  <!-- Turn -->
+  <section class="turn">
+    <div class="turn-inner">
+      <div class="turn-text">
+        <h2>The mechanism</h2>
+        <p>
+          Every environment optimized for engagement metrics reaches a second threshold.
+          Below it, the environment serves the person it was built for.
+          Beyond it, optimization for the environment's own metrics begins
+          to suppress the capacity it was built to develop.
+        </p>
+        <p>
+          Music recommendation learns your engagement, not your taste.
+          Clinical AI learns your workflow, not your judgment.
+          Local discovery learns what is popular, not what exists.
+          Interview formats learn what gets clicks, not what people actually are.
+        </p>
+        <p>
+          The gap between what the environment has made of you
+          and what you actually are is not hypothetical. It is measurable.
+        </p>
+      </div>
+      <div class="turn-diagram" aria-hidden="true">
+        <div class="gap-visual">
+          <span class="line authentic">authentic capacity</span>
+          <span class="gap-label">gap</span>
+          <span class="line modeled">environment's model</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prestige -->
+  <section class="prestige" id="work">
+    <div class="prestige-inner">
+      <h2 class="section-label">The work</h2>
+      <div class="projects-grid">
+        {PROJECTS.map(project => (
+          <ProjectCard project={project} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+</Base>
+
+<style>
+  /* Pledge */
+  .pledge {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    padding: 6rem 2rem;
+  }
+
+  .pledge-inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .headline {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    color: var(--text-pure);
+  }
+
+  .pledge-inner .body {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 600px;
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-subtle);
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: border-color 0.2s var(--ease-smooth), color 0.2s var(--ease-smooth);
+    align-self: flex-start;
+  }
+
+  .cta:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+
+  /* Turn */
+  .turn {
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--border-ghost);
+  }
+
+  .turn-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .turn-text h2 {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--teal);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .turn-text p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  .turn-text p:last-child { margin-bottom: 0; }
+
+  /* Gap diagram */
+  .gap-visual {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    border: 1px solid var(--border-ghost);
+    background: var(--void-surface);
+  }
+
+  .line {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-ghost);
+  }
+
+  .line.authentic {
+    border-color: var(--teal-border);
+    color: var(--teal);
+  }
+
+  .gap-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-ghost);
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Prestige */
+  .prestige {
+    padding: 6rem 2rem;
+    border-top: 1px solid var(--border-ghost);
+  }
+
+  .prestige-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border-ghost);
+  }
+
+  .projects-grid > * {
+    background: var(--void-deep);
+  }
+
+  @media (max-width: 768px) {
+    .turn-inner { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+</style>
