@@ -52,12 +52,11 @@ Four active projects:
 - WAXFEED: Music recommendation systems optimize for predicted enjoyment, narrowing what gets surfaced. Measures how predictions diverge from actual responses and whether the gap closes as the model learns.
 - Polarity GPS: Discovery platforms optimize for engagement, hiding nearby cultural production. Measures the gap between what's in your radius and what platforms surface.
 
-Key facts that most framings underuse:
-- The founder is a physician-scientist (radiology resident) who builds measurement instruments. That combination — clinical training plus instrument design — is rare and directly relevant to the lab's research posture. Radiologists are trained to find what's hidden. That's the same epistemological move as finding what optimization removes.
-- "Reversibility" is what distinguishes the lab's research posture from nearly everyone else in this space. Most labs measure harm. This lab tests whether it can be undone. That's a design research posture, not just a diagnostic one.
-- The deliverables are instruments (IΔ, Proximity Index, prediction gap) that could become standards — the way blood pressure became a standard measure of cardiovascular health. The output is a tool, not just a finding.
-- Independent structure means the questions follow the most interesting trail rather than funder priorities or departmental politics.
-- All four projects measure the same TYPE of thing — a gap between what a system optimizes for and what it sacrifices. Methodological insights transfer between projects.
+Facts about the lab:
+- The lab is independently structured with no institutional affiliation.
+- All four projects produce named, quantifiable gap measures (IΔ, Proximity Index, prediction gap).
+- Each project both measures a gap and tests whether it can be reversed.
+- Methodological insights transfer between projects because they all measure the same type of thing.
 
 ## THE LANDSCAPE
 
@@ -97,7 +96,7 @@ A framing has reached gold when it passes all three of these tests:
 
 1. **Exclusivity** — No other lab, researcher, or organization could honestly make this claim. If a university HCI lab, an AI safety org, or a media effects researcher could say the same thing with minor substitutions, it's not gold yet.
 
-2. **Load-bearing specificity** — The claim depends on details that are actually true of this lab: the physician-scientist founder, the instrument-as-deliverable model, the reversibility hypothesis, the independent structure. Generic claims about "measuring optimization costs" aren't gold. Claims that would fall apart if the founder were a sociologist instead of a radiologist might be.
+2. **Specificity** — The claim depends on particular facts that are actually true of this lab. It should not be transferable to a different lab by swapping in different nouns. Generic mission language is not gold.
 
 3. **Resistance** — You've pushed on it and it didn't collapse. It got harder under pressure, not softer.
 
