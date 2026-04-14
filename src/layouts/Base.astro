@@ -1,5 +1,8 @@
 ---
 // src/layouts/Base.astro
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -20,9 +23,11 @@ const { title, description = 'Polarity Lab — counter-environments for authenti
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
+    <Nav />
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
 

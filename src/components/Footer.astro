@@ -1,0 +1,58 @@
+---
+// src/components/Footer.astro
+---
+<footer>
+  <div class="footer-inner">
+    <span class="lab-name">Polarity Lab</span>
+    <nav class="footer-links">
+      <a href="/research">Research</a>
+      <a href="/fund">Fund</a>
+      <a href="/join">Join</a>
+    </nav>
+    <span class="location">Providence, RI</span>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--border-ghost);
+    padding: 2rem;
+    margin-top: auto;
+  }
+
+  .footer-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .lab-name {
+    font-family: var(--font-display);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-links a {
+    font-size: 0.875rem;
+    color: var(--text-tertiary);
+    transition: color 0.2s var(--ease-smooth);
+  }
+
+  .footer-links a:hover {
+    color: var(--text-secondary);
+  }
+
+  .location {
+    font-size: 0.8125rem;
+    color: var(--text-ghost);
+    font-family: var(--font-mono);
+  }
+</style>

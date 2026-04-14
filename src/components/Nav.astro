@@ -1,0 +1,77 @@
+---
+// src/components/Nav.astro
+const navLinks = [
+  { href: '/projects/integrity-delta', label: 'Integrity Delta' },
+  { href: '/projects/polarity-gps', label: 'Polarity GPS' },
+  { href: '/projects/waxfeed', label: 'WAXFEED' },
+  { href: '/projects/avdp', label: 'AVDP' },
+  { href: '/fund', label: 'Fund' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+<nav>
+  <a href="/" class="wordmark">Polarity Lab</a>
+  <ul>
+    {navLinks.map(link => (
+      <li>
+        <a
+          href={link.href}
+          class:list={['nav-link', { active: currentPath.startsWith(link.href) }]}
+        >
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid var(--border-ghost);
+    position: sticky;
+    top: 0;
+    background: rgba(2, 2, 4, 0.92);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-pure);
+    letter-spacing: -0.01em;
+  }
+
+  .wordmark:hover {
+    color: var(--text-pure);
+  }
+
+  ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-link {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    transition: color 0.2s var(--ease-smooth);
+    letter-spacing: 0.01em;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 768px) {
+    ul { display: none; }
+  }
+</style>
