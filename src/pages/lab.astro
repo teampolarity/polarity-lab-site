@@ -46,71 +46,97 @@ import LabBase from '../layouts/LabBase.astro';
       <!-- NOW -->
       <section class="tab-panel active" id="panel-now" role="tabpanel">
 
-        <!-- Program status strip -->
-        <div class="status-strip">
-          <div class="status-row">
-            <span class="status-program">Integrity Delta</span>
-            <span class="status-chip chip-teal">Observability confirmed</span>
-            <span class="status-next">Next: first proof contract + validation study protocol</span>
-          </div>
-          <div class="status-row">
-            <span class="status-program">Polarity GPS</span>
-            <span class="status-chip chip-purple">Platform live, study pending</span>
-            <span class="status-next">Next: Knight Foundation LOI (60 days)</span>
-          </div>
-          <div class="status-row">
-            <span class="status-program">WAXFEED</span>
-            <span class="status-chip chip-ghost">In development</span>
-            <span class="status-next">Shadrack: instrument spec + prototype</span>
-          </div>
-          <div class="status-row">
-            <span class="status-program">AVDP</span>
-            <span class="status-chip chip-ghost">In development</span>
-            <span class="status-next">Waiting on domain lead</span>
-          </div>
-        </div>
-
-        <!-- Notices -->
         <div class="notices">
 
-          <div class="notice notice--urgent">
-            <span class="notice-tag">Today 3:30pm</span>
+          <div class="notice notice--win">
+            <span class="notice-tag">Just in</span>
             <div class="notice-body">
-              <p class="notice-title">1517 Fund meeting</p>
-              <p class="notice-desc">Theodore leads. Core ask: capital for the IΔ validation study and first proof contract. If you are in the room, support only. <a href="/lab/pitch-1517">Pitch doc and meeting prep</a>.</p>
+              <p class="notice-title">1517 Fund is in. Congratulations to the team.</p>
+              <p class="notice-desc">This is what serious, sustained work looks like when it lands. Theodore, Nathan, Shadrack: every person who put time into this when the outcome was uncertain helped make this real. The lab has capital. Now we build.</p>
             </div>
           </div>
 
-          <div class="notice">
-            <span class="notice-tag">This phase</span>
-            <div class="notice-body">
-              <p class="notice-title">IΔ first proof contract is the unlock</p>
-              <p class="notice-desc">Everything else sequences behind it. Pilot is done (n=5). Validation study protocol and instrument spec are the immediate deliverables. Nothing else gets prioritized above this.</p>
+        </div>
+
+        <div class="queue-section">
+
+          <div class="queue-block">
+            <div class="queue-block-header">
+              <span class="queue-person">Nathan</span>
+              <span class="queue-person-role">Director of Strategy and Partnerships</span>
             </div>
+            <ul class="queue-items">
+              <li>
+                <span class="qi-tag">1517</span>
+                <span class="qi-text">Secure the $2k from 1517 Fund. Follow up on disbursement and brief the team on next steps for joining the community and how to best use 1517 leverage before the check-in next month.</span>
+              </li>
+              <li>
+                <span class="qi-tag">Outreach</span>
+                <span class="qi-text">Reach out to Nicole Dyszlewski at RWU. Thank her for the $20 donation to the Polarity GPS fund. Then ask Juan for the bands.</span>
+              </li>
+              <li>
+                <span class="qi-tag">Intro</span>
+                <span class="qi-text">Get a warm intro to Diana Freed to help coordinate contact on behalf of the lab.</span>
+              </li>
+              <li>
+                <span class="qi-tag">Grants</span>
+                <span class="qi-text">Source grants and potential funders for Polarity GPS. Anything that fits the neighborhood-level civic data angle.</span>
+              </li>
+            </ul>
           </div>
 
-          <div class="notice">
-            <span class="notice-tag">In progress</span>
-            <div class="notice-body">
-              <p class="notice-title">Collaborator agreements</p>
-              <p class="notice-desc">Nathan is tracking who has a signed agreement and who does not. Nothing else formalizes until this is complete. If you have not signed, expect outreach from Nathan.</p>
+          <div class="queue-block">
+            <div class="queue-block-header">
+              <span class="queue-person">Shadrack</span>
+              <span class="queue-person-role">Technical Director</span>
             </div>
+            <ul class="queue-items">
+              <li>
+                <span class="qi-tag">If easy</span>
+                <span class="qi-text">Prepare Teniola's podcast render and send to her for review. She may decide she does not want to post it. Do not invest heavily if the render is not straightforward.</span>
+              </li>
+              <li>
+                <span class="qi-tag">Infra</span>
+                <span class="qi-text">Port all relevant lab projects to your Cloudflare account. Share credentials with the team and disable 2FA so anyone can log in without friction.</span>
+              </li>
+              <li>
+                <span class="qi-tag">WAXFEED</span>
+                <span class="qi-text">Continue building WAXFEED. Direction: surface more album groupings tied to recent news headlines. Group albums together and attach related news to the cluster. The home page becomes a stream of lists: news-driven album groups mixed with friend groupings, recs, and ratings. Lean into the list format as the core unit.</span>
+              </li>
+              <li>
+                <span class="qi-tag">After Theo</span>
+                <span class="qi-text">Port the Cosmos backend from Claude to Kimi K2 when available, or whichever model you think is best. Theo finishes the build first.</span>
+              </li>
+              <li>
+                <span class="qi-tag">After Theo</span>
+                <span class="qi-text">Get Cosmos production ready once the build is done.</span>
+              </li>
+            </ul>
           </div>
 
-          <div class="notice">
-            <span class="notice-tag">60 days</span>
-            <div class="notice-body">
-              <p class="notice-title">Knight Foundation LOI</p>
-              <p class="notice-desc">Nathan is drafting from the GPS grant outline. Theodore reviews scientific framing before submission. <a href="/lab/grants/knight-gps-outline">View full outline</a>.</p>
+          <div class="queue-block">
+            <div class="queue-block-header">
+              <span class="queue-person">Theodore</span>
+              <span class="queue-person-role">Founder</span>
             </div>
-          </div>
-
-          <div class="notice notice--open">
-            <span class="notice-tag">Open roles</span>
-            <div class="notice-body">
-              <p class="notice-title">GPS Domain Lead, AVDP Domain Lead, Lab Manager</p>
-              <p class="notice-desc">Three roles without a home. The lab is not actively recruiting until IΔ closes its first contract, but the right person is welcome to reach out. Contact Theodore.</p>
-            </div>
+            <ul class="queue-items">
+              <li>
+                <span class="qi-tag">Review</span>
+                <span class="qi-text">Review Antler interview opportunity Shadrack forwarded to team@polarity-lab.com.</span>
+              </li>
+              <li>
+                <span class="qi-tag">Apr 17</span>
+                <span class="qi-text">Jonathan Speed podcast. Confirm details.</span>
+              </li>
+              <li>
+                <span class="qi-tag">Active</span>
+                <span class="qi-text">Finish the Cosmos build. Prepare the Cosmos lab page.</span>
+              </li>
+              <li>
+                <span class="qi-tag">Q2</span>
+                <span class="qi-text">Prepare Polarity GPS for Q2 revamp. Add more neighborhood-level depth to prove value in Providence.</span>
+              </li>
+            </ul>
           </div>
 
         </div>
@@ -654,6 +680,11 @@ import LabBase from '../layouts/LabBase.astro';
     background: rgba(255, 107, 107, 0.04);
   }
 
+  .notice--win {
+    background: rgba(78, 205, 196, 0.05);
+    border-left: 2px solid rgba(78, 205, 196, 0.35);
+  }
+
   .notice--open {
     opacity: 0.6;
   }
@@ -672,6 +703,14 @@ import LabBase from '../layouts/LabBase.astro';
     color: var(--coral);
   }
 
+  .notice--win .notice-tag {
+    color: var(--teal);
+  }
+
+  .notice--win .notice-title {
+    color: var(--teal-light);
+  }
+
   .notice-title {
     font-family: var(--font-display);
     font-size: 0.9375rem;
@@ -688,6 +727,77 @@ import LabBase from '../layouts/LabBase.astro';
 
   .notice-desc a { color: var(--teal); }
   .notice-desc a:hover { color: var(--teal-bright); }
+
+  /* Queue section */
+  .queue-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .queue-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .queue-block-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-ghost);
+    margin-bottom: 1px;
+    flex-wrap: wrap;
+  }
+
+  .queue-person {
+    font-family: var(--font-display);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-pure);
+  }
+
+  .queue-person-role {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--teal);
+    opacity: 0.7;
+  }
+
+  .queue-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border-ghost);
+  }
+
+  .queue-items li {
+    background: var(--void-deep);
+    padding: 0.875rem 1rem;
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .qi-tag {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--text-ghost);
+    padding-top: 0.1rem;
+    line-height: 1.4;
+  }
+
+  .qi-text {
+    font-size: 0.875rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
 
   /* Shared list styles */
   .task-list {
